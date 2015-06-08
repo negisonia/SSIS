@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportRestrictions(reportId integer, restrictionIds integer[])
+﻿CREATE OR REPLACE FUNCTION test001createReportRestrictions(reportId integer, restrictionIds integer[])
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;

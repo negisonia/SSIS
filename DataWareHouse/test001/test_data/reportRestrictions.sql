@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportCriteriaGroups(reportId integer,reportClientiId integer, restrictionIds integer[], groupName varchar)
+﻿CREATE OR REPLACE FUNCTION test001createReportCriteriaGroups(reportId integer,reportClientiId integer, restrictionIds integer[], groupName varchar)
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;

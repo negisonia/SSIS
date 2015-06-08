@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportTestData()
+﻿CREATE OR REPLACE FUNCTION test001createReportTestData()
 RETURNS integer AS $$
 DECLARE
   success boolean DEFAULT false;

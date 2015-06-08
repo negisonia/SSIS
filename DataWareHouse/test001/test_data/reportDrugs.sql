@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportDrugsTestData(reportId integer, drugsIds integer[],indicationId integer)
+﻿CREATE OR REPLACE FUNCTION test001createReportDrugsTestData(reportId integer, drugsIds integer[],indicationId integer)
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;

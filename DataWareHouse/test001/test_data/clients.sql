@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION  createReportClientTestData(reportId integer)
+﻿CREATE OR REPLACE FUNCTION  test001createReportClientTestData(reportId integer)
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;

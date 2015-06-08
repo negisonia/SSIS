@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION clearReportTestData()
+﻿CREATE OR REPLACE FUNCTION test001cleartestdata()
   RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
