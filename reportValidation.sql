@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION validatereportdata()
+﻿CREATE OR REPLACE FUNCTION validateTestData()
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT false;
@@ -9,8 +9,12 @@ DECLARE
   reportName varchar DEFAULT 'TEST REPORT NAME 001';
   drugIds INTEGER[] := ARRAY[156, 160];
   restrictionsIds INTEGER[]:= ARRAY[775,776,706,707];
+
   drugIds2 INTEGER[] := ARRAY[2059, 2268];
+
   groupExists boolean DEFAULT false;
+  group1Restrictions integer[]:= ARRAY[775,776];
+  group2Restrictions integer[]:= ARRAY[706,707];
 
 BEGIN
 	--GET THE TEST REPORT ID
@@ -67,13 +71,30 @@ BEGIN
 	--	RETURN success;	
 	--END IF;
 
-	END IF;
+	--VALIDATE THAT THE TEST REPORT GROUP RESTRICTIONS ARE VALID
+	 FOREACH restrictionid IN ARRAY group1Restrictions
+	 LOOP
+	   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 001' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
+		RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
+		success:=false;
+		RETURN success;	  
+	   END IF;
+	 END LOOP;
 
+	--VALIDATE THAT THE TEST REPORT GROUP2 RESTRICTIONS ARE VALID
+	 FOREACH restrictionid IN ARRAY group2Restrictions
+	 LOOP
+	   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 002' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
+		RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
+		success:=false;
+		RETURN success;	  
+	   END IF;
+	 END LOOP;
+
+END IF;
 success:=true;
-RETURN success;
-EXCEPTION  when others then
-raise notice 'Error validating data';
-success:=false; 
-RETURN success;	
+RETURN success;	  
+	
+
 END
 $$ LANGUAGE plpgsql;
