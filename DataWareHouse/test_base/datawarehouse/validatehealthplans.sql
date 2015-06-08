@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION validatehealthplansdata()
+﻿CREATE OR REPLACE FUNCTION validatehealthplansdata()-- DATA WAREHOUSE
 RETURNS BOOLEAN AS $$
 DECLARE
 SUCCESS BOOLEAN DEFAULT FALSE;
@@ -14,7 +14,7 @@ SELECT COUNT(*) INTO FE_HEALTH_PLANS_COUNT FROM fe.health_plans fehp;
 
 --IF FE AND FF SCHEMAS HAVE EQUAL COUNTS
 IF FF_HEALTH_PLANS_COUNT = FE_HEALTH_PLANS_COUNT THEN
-	SELECT COUNT(*) INTO FF_FE_MERGED_HEALTH_PLANS_COUNT FROM ff.health_plans_import hpi JOIN fe.health_plans fehp ON hpi.id=fehp.id AND hpi.health_plan_type_id = fe.health_plan_type_id and hpi.name=fehp.name and hpi.formulary_url = fehp.formulary_url and hpi.formulary_id = fehp.formulary_id and hpi.provider_id = fehp.provider_id and hpi.qualifier_url = fehp.qualifier_url;
+	SELECT COUNT(*) INTO FF_FE_MERGED_HEALTH_PLANS_COUNT FROM ff.health_plans_import ffhp JOIN fe.health_plans fehp ON ffhp.id=fehp.id AND ffhp.health_plan_type_id = fehp.health_plan_type_id and ffhp.name=fehp.name and ffhp.formulary_url = fehp.formulary_url and ffhp.formulary_id = fehp.formulary_id and ffhp.provider_id = fehp.provider_id and ffhp.qualifier_url = fehp.qualifier_url;
 	--VALIDATE IF FF AND FE SCHEMAS HAVE THE SAME RECORDS
 	IF FF_HEALTH_PLANS_COUNT = FF_FE_MERGED_HEALTH_PLANS_COUNT THEN
 		SUCCESS :=TRUE;
