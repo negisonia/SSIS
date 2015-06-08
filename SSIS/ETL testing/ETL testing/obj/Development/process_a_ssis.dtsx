@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/9/2015 3:47:10 AM"
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADVb4Aztnb2bqv4UvjRAGghxDxmyc/2Z8sMhvyy8byVFAAAAAAOgAAAAAIAACAAAACOq7q/W4n3gbwqzi1YkbwreO0SN6Rc1hFYvSTTEEgW3zAAAABL5o3WmRD7uzlhQeBhUXfyjjIMcYw9jzGfq8OFhkGocVz2I3/d5Ga3nWtfxePSDxZAAAAAr7vFJHYqH42XPkoq/JGKGlRRI6PeYU4vqpwbkJykNFmytKP17CY2ltlsvlmI/A7w/tnUF7Wpi+mdXrHK2DezNA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZKEZtb6GHMJLUAfsdVxDFgzq+1eniIJaWZuxrdj6EsgAAAAAOgAAAAAIAACAAAACsCZO809YvKh1XqlpRbBiUKkRyNfwGnK756Oqv/e1anDAAAAB61EY8UHnSZgu66hJAL+OpXoxyeWYM3+zWOdLmbQMHC8rsm5rcTU6rxF5wZHh6j31AAAAAjzPFmDDJC3CzuwL0vBjTT+EwwfiyqXqCPk36DrRR0hf4pJA0q6kXW9Th2rC2ZmeibB0h94XbVuYcXkWHGEncqQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFhJmpiKc3JktpWouWpJDCA5mdnlm17KwZD28+qwpLLQAAAAAOgAAAAAIAACAAAADxErS5i0aQ4ox3612EH60aiKXuDxIZiI3TrpJuXOho7DAAAACIsDHy/5ThulfbfTOFuaN8o8LxQqH9M5N9EBq8NZjiVvKQKRpUMqQEo3sVdO7M3vRAAAAAKNZZjvI51QGHDn/odjqW3iPPh7q4hDBTl1+eNUqg/8y8f1B0FsUVMioDLK1/898HrbMLXLAhW/kgUTrb9tjKMQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC8b4OylN/GdyFHoYic5wKOTUbayUAdC9s4S7fI43I6xwAAAAAOgAAAAAIAACAAAAAxL6lcU89AbTscGBczS7lnTAbfCoCmCmxbEgMgvYVmlzAAAABjMBuMg/hx7Lj9FqTXcsDcSI2BOfc6XJgolQVXWGsYU4tPO4cOC0qQ1Yb+COjDTqtAAAAAKdASz7xh+fHbQaP96dKyjjfvcpGQNcupFGn+BZPsngkra5zIXIfH7jjVYwJ2vm2B05Tt0irmeiX2MBUWbMOLnw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADsa6AbXLwWHD15ttZOVMyNTsYO0S6oSz2quDv6FiYyBgAAAAAOgAAAAAIAACAAAABmLP4Rg7/kaB53mdQ/dEehhCyBfNiEO8fUKxo6yScInjAAAAAHB6Hm/kDwDma06W4jf/AGQEcewGwabIzJslvCmMDrIL+DEZNmwmqNzyIifNtwdJZAAAAAFq9kZ5r/sJ0X3N0qciTSyvdl7xiVFPyTZCLa/FUXMCPv4JlFoGVgvIDAx+I6pMGRDXLzC4p4L/yW7U+8JplWEA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAMoioEJgJJtJxiOL0fsQrk6sxFrwBWTRaWs8hxu7lbpQAAAAAOgAAAAAIAACAAAAC/d3/g/rVDoNq8Iy0aEjBTB1wrk1joYNh0ezRjVX8zXTAAAADMqP5xjC6fvoepcX7SMRRuOW9dqRJbm7+BA4u2z5owfjoxtcRpopXmnzB0G747IV9AAAAAB4LNGyM28rnKiYqCTMaxsAGPuQSSAfLljrHQqYtspQewGUQZunc6mi1NY0Gd46EeSq+mq98TWm1oVELi97avIQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -165,7 +165,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE counties_criteria_reports"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -182,7 +182,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE criteria_reports_dim_criteria_restriction"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -199,7 +199,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE criteria_reports_drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -216,7 +216,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE criteria_reports_health_plan_types"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -233,7 +233,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE criteria_reports_metro_stat_areas"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -250,7 +250,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="ANALYZE criteria_reports_states"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1657,7 +1657,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="log process done"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1701,7 +1701,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="dw_active_reports"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1718,7 +1718,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="post_data_publish_checks"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1735,7 +1735,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="public_active_reports"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1816,7 +1816,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create_custom_dim_criteria_restriction_mapping"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1918,7 +1918,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="process_fact_data"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1969,7 +1969,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="process_formulary_detail"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1986,7 +1986,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="process_unspecified_cases"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4062,14 +4062,35 @@
               Language="CSharp"
               ReadOnlyVariables="System::ContainerStartTime,System::TaskName,System::ErrorCode,System::ErrorDescription,System::SourceID,System::SourceName,User::db_prefix,User::db_server,User::email_recipients,System::MachineName,System::PackageID,System::PackageName,System::StartTime,System::UserName">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4570,35 +4591,14 @@ namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
