@@ -18,15 +18,15 @@ restrictionsIds2 INTEGER[]:= ARRAY[706,707];
 BEGIN
 
   --CREATE REPORT AND STORE ID ON REPORTID  VARIABLE FOR FURTHER USAGE
-  select createreporttestdata() INTO reportId;
+  select test001createreporttestdata() INTO reportId;
   IF reportId > -1 THEN --IF RESULT OF REPORT CREATION WAS SUCCESS THE ID MOST BE GREATER THAN -1
-	SELECT createReportClientTestData(reportId) into reportClientId; --CREATE  CLIENT AND REPORT CLIENT
+	SELECT test001createReportClientTestData(reportId) into reportClientId; --CREATE  CLIENT AND REPORT CLIENT
 	IF reportClientId > -1 THEN --IF RESULT OF REPORT CLIENT CREATION WAS SUCCESS THE ID MOST BE GREATER THAN -1
-		SELECT createreportdrugstestdata(reportId,drugIds,indicationId) into reportDrugsStatus;--ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
+		SELECT test001createreportdrugstestdata(reportId,drugIds,indicationId) into reportDrugsStatus;--ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
 		IF reportDrugsStatus THEN
-			SELECT createreportrestrictions(reportId,restrictionsIds) into reportRestrictionsStatus;--CREATE REPORT RESTRICTIONS
+			SELECT test001createreportrestrictions(reportId,restrictionsIds) into reportRestrictionsStatus;--CREATE REPORT RESTRICTIONS
 			IF reportRestrictionsStatus THEN
-				SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds,'TEST GROUP 001') into reportCriteriaGroupStatus;--CREATE REPORT CUSTOM CRITERIA  GROUPS
+				SELECT test001createreportcriteriagroups(reportId,reportClientId,restrictionsIds,'TEST GROUP 001') into reportCriteriaGroupStatus;--CREATE REPORT CUSTOM CRITERIA  GROUPS
 				IF reportCriteriaGroupStatus then
 				success:=true;
 				ELSE
@@ -45,11 +45,11 @@ BEGIN
 			 RETURN success;
 		END IF;
 
-		SELECT createreportdrugstestdata(reportId,drugIds2,indicationId2) into reportDrugsStatus;--ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
+		SELECT test001createreportdrugstestdata(reportId,drugIds2,indicationId2) into reportDrugsStatus;--ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
 		IF reportDrugsStatus THEN
-			SELECT createreportrestrictions(reportId,restrictionsIds2) into reportRestrictionsStatus; --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
+			SELECT test001createreportrestrictions(reportId,restrictionsIds2) into reportRestrictionsStatus; --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
 			IF reportRestrictionsStatus THEN
-				SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,'TEST GROUP 002') into reportCriteriaGroupStatus;--CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
+				SELECT test001createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,'TEST GROUP 002') into reportCriteriaGroupStatus;--CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
 				IF reportCriteriaGroupStatus then
 				success:=true;
 				ELSE
