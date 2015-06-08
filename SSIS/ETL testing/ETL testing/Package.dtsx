@@ -1,0 +1,185 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2015 3:34:02 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="GAPUSER-PC"
+  DTS:CreatorName="gapuser-PC\gapuser"
+  DTS:DTSID="{36CF39CE-3862-4FB0-AC75-51A70C0FD06B}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5583.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{9670F4E0-2719-484F-87CC-505F601E9CD6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data_warehouse]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
+      DTS:ObjectName="data_warehouse">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[ff_db_host] + ";uid=" + @[ff_db_username] + ";password=" + @[ff_db_password] + ";Database=" + @[dw_db] + ";port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=172.17.66.124;uid=restrictions20;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADxSi/ettGALgX8WOMkirdX8G0f+204ohtTfE1WVjrcjgAAAAAOgAAAAAIAACAAAABtOi9xGNdwwGY2E/sX47i0fIIzxQy+XGZOo1L/ApHGdjAAAADo64uLDy7X5iyzQsunPTepfob1hSKVU82gquHdxZh0Htj7YgT6DmcDN/b8qnwVN2FAAAAA/kI83LN2waAMqBXMyuRoH+P8L2t7RCvWNGg3PQUr6CtfReKnJLA99xp8XvZHt8rGucTHcCGgzJCWXMJzZHL1MA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DD464ACB-2761-4DB6-9F8A-DB42A0D36018}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="admin_db">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_admin</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{419BB28B-76D2-42AF-AAE6-58D7082A698F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dw_db">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_data_warehouse</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{94308E4D-803C-4644-9E7B-D7B205036D47}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dw_db_host">
+      <DTS:VariableValue
+        DTS:DataType="8">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{044286A2-C9D6-43C1-82A6-0C5272C62E59}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dw_db_password">
+      <DTS:VariableValue
+        DTS:DataType="8">VsOCWIozIelwQcRgR4w3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7D78E021-C949-4704-8307-A19869B2B9A6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dw_db_username">
+      <DTS:VariableValue
+        DTS:DataType="8">postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{879DB835-A717-46C7-8B71-53712B6F5E69}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="fe_db">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_front_end</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B05B5A9E-B6A5-4036-A359-C98A1427BD16}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ff_db">
+      <DTS:VariableValue
+        DTS:DataType="8">ff_new</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3DBE4708-A9D2-47A2-83DA-A19AEAA4EE75}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ff_db_host">
+      <DTS:VariableValue
+        DTS:DataType="8">172.17.66.124</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{834A17BF-6F82-47C9-B89E-7F4771F72370}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ff_db_password">
+      <DTS:VariableValue
+        DTS:DataType="8">ooJaGhee6Rahxeb0fiez</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FD55E045-2EF8-45EF-9F60-63F03EBEB6C0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ff_db_username">
+      <DTS:VariableValue
+        DTS:DataType="8">restrictions20</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Test Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B7F722FA-D111-464A-B16B-6CBFFED14FC1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Test Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Create Test Data\Test001"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1B4D8C6F-4B09-4DE5-A301-ED2007BB3DEE}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test001"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Create Test Data\Test001"
+          TopLeft="38,66" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="553,285"
+          Size="553,328"
+          Id="Package\Create Test Data"
+          TopLeft="354,51" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
