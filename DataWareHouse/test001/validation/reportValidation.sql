@@ -48,14 +48,14 @@ BEGIN
 	 END LOOP;
 
 	--VALIDATE THAT THE TEST REPORT RESTRICTIONS IN THE FRONT END DATABASE ARE THE SAME AS ADMIN  DATABASE
-	-- FOREACH restrictionid IN ARRAY restrictionsIds
-	-- LOOP
-	--   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
-	--	RAISE EXCEPTION 'TEST REPORT RESTRICTION DOES NOT EXISTS';
-	--	success:=false;
-	--	RETURN success;	  
-	--  END IF;
-	-- END LOOP;
+	 FOREACH restrictionid IN ARRAY restrictionsIds
+	 LOOP
+	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
+		RAISE EXCEPTION 'TEST REPORT RESTRICTION DOES NOT EXISTS';
+		success:=false;
+		RETURN success;	  
+	  END IF;
+	 END LOOP;
 
 	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name='TEST GROUP 001' AND ccs.report_id=reportId) INTO groupExists;
 	IF groupExists = false THEN
@@ -72,24 +72,24 @@ BEGIN
 	--END IF;
 
 	--VALIDATE THAT THE TEST REPORT GROUP RESTRICTIONS ARE VALID
-	 FOREACH restrictionid IN ARRAY group1Restrictions
-	 LOOP
-	   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 001' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
-		RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
-		success:=false;
-		RETURN success;	  
-	   END IF;
-	 END LOOP;
+	 --FOREACH restrictionid IN ARRAY group1Restrictions
+	 --LOOP
+	   --IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 001' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
+		--RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
+		--success:=false;
+		--RETURN success;	  
+	   --END IF;
+	 --END LOOP;
 
 	--VALIDATE THAT THE TEST REPORT GROUP2 RESTRICTIONS ARE VALID
-	 FOREACH restrictionid IN ARRAY group2Restrictions
-	 LOOP
-	   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 002' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
-		RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
-		success:=false;
-		RETURN success;	  
-	   END IF;
-	 END LOOP;
+	-- FOREACH restrictionid IN ARRAY group2Restrictions
+	-- LOOP
+	  -- IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.criteria_restriction_name='TEST GROUP 002' and ccs.dim_criteria_restriction_id=restrictionid) = false) THEN
+		--RAISE EXCEPTION 'TEST REPORT CRITERIA DOES NOT EXISTS';
+		--success:=false;
+		--RETURN success;	  
+	  -- END IF;
+	 --END LOOP;
 
 END IF;
 success:=true;
