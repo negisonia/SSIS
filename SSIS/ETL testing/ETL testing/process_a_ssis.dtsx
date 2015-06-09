@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="r20_process_a"
   DTS:PackageType="5"
-  DTS:VersionBuild="103"
-  DTS:VersionGUID="{F95751F7-0F6C-45C3-9885-F3E36BBA88CD}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{18D7EAAD-12A1-4A58-8AB4-BEAE1C04D61C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADVb4Aztnb2bqv4UvjRAGghxDxmyc/2Z8sMhvyy8byVFAAAAAAOgAAAAAIAACAAAACOq7q/W4n3gbwqzi1YkbwreO0SN6Rc1hFYvSTTEEgW3zAAAABL5o3WmRD7uzlhQeBhUXfyjjIMcYw9jzGfq8OFhkGocVz2I3/d5Ga3nWtfxePSDxZAAAAAr7vFJHYqH42XPkoq/JGKGlRRI6PeYU4vqpwbkJykNFmytKP17CY2ltlsvlmI/A7w/tnUF7Wpi+mdXrHK2DezNA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSBv1uJLWaArLNY8Fm9DvHd3M2Lj7UYAf62DoJ5Wn2HAAAAAAOgAAAAAIAACAAAADq9ZIaj/gsjDTbJokinezjrnhn4xWXvLsXmWOqza/I4jAAAADgt+uvHMxubom1tCvXds8ziYfnVFlC692oSKkg4mvTYL3+lJsj8bM9moh54GMh0B5AAAAAjpovCymMnsEc1MNEmAL1jVapJHd2TXMtxdhUgEfMPajba95ialk/FgrPkcxkIf1VmuEY3ltkQt6IPB2DpCLeMg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFhJmpiKc3JktpWouWpJDCA5mdnlm17KwZD28+qwpLLQAAAAAOgAAAAAIAACAAAADxErS5i0aQ4ox3612EH60aiKXuDxIZiI3TrpJuXOho7DAAAACIsDHy/5ThulfbfTOFuaN8o8LxQqH9M5N9EBq8NZjiVvKQKRpUMqQEo3sVdO7M3vRAAAAAKNZZjvI51QGHDn/odjqW3iPPh7q4hDBTl1+eNUqg/8y8f1B0FsUVMioDLK1/898HrbMLXLAhW/kgUTrb9tjKMQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADBrqbtYYw6yKs5ObZPbzt3jCRw/UI4LQXQkU3te5V4dQAAAAAOgAAAAAIAACAAAADhdxrKBzFw1reDMLwHPnqU6a5jc5NY6vmGNHpyT91cpzAAAADQE721fdMV4EWH/QAv/k6fyNfGvM1DzeORkhfOZZMnoIb37c9wiyiBeH3/2av5zyhAAAAAou2hDi1D0dmJW3OynPMFoxK3KYwGQYQiqejCVMXid0yS9utt/SYP2enCzqjxI8AjhnwSjcusVLqfmwp5VyuVsA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADsa6AbXLwWHD15ttZOVMyNTsYO0S6oSz2quDv6FiYyBgAAAAAOgAAAAAIAACAAAABmLP4Rg7/kaB53mdQ/dEehhCyBfNiEO8fUKxo6yScInjAAAAAHB6Hm/kDwDma06W4jf/AGQEcewGwabIzJslvCmMDrIL+DEZNmwmqNzyIifNtwdJZAAAAAFq9kZ5r/sJ0X3N0qciTSyvdl7xiVFPyTZCLa/FUXMCPv4JlFoGVgvIDAx+I6pMGRDXLzC4p4L/yW7U+8JplWEA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADEvutZfF9QtNOpw9vEACPuJkd+6GJSEWZ8xrlwLYek4AAAAAAOgAAAAAIAACAAAACO6iTYMM0t26PP1nBDQsqeT0iiGXwAdIScQT60IuwEIjAAAADAK/tGQDCmpBrH+TArT8i5BYelFC87OcbMQnpFtKD2RhmIUbeT22GOYlOSa0iTN6ZAAAAAmSUq+gWPvcyv7wSdrQv9WhGEN07ELtomSw/5wOO2mB0sZ1cd2gL84+BqxdkaE+B6z2yjBlXwm+s6blUsmnsJew</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -4062,14 +4062,35 @@
               Language="CSharp"
               ReadOnlyVariables="System::ContainerStartTime,System::TaskName,System::ErrorCode,System::ErrorDescription,System::SourceID,System::SourceName,User::db_prefix,User::db_server,User::email_recipients,System::MachineName,System::PackageID,System::PackageName,System::StartTime,System::UserName">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4570,35 +4591,14 @@ namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -7761,6 +7761,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="4781,5311.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,120"
+              Start="0,0"
+              End="-9.5,112.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56"
+                    Point2="0,60"
+                    Point3="-4,60" />
+                  <mssgle:LineSegment
+                    End="-5.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,60"
+                    Point2="-9.5,60"
+                    Point3="-9.5,64" />
+                  <mssgle:LineSegment
+                    End="-9.5,112.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 18]"
           TopLeft="4651,4961.5">
           <EdgeLayout.Curve>
@@ -8076,40 +8110,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="4781,5311.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.5,120"
-              Start="0,0"
-              End="-9.5,112.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,56"
-                    Point2="0,60"
-                    Point3="-4,60" />
-                  <mssgle:LineSegment
-                    End="-5.5,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.5,60"
-                    Point2="-9.5,60"
-                    Point3="-9.5,64" />
-                  <mssgle:LineSegment
-                    End="-9.5,112.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
