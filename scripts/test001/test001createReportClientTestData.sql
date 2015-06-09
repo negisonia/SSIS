@@ -29,14 +29,14 @@ IF reportExists  THEN
 
 		
 ELSE 
-	RAISE NOTICE 'REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS';	 
+	RAISE EXCEPTION 'REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS';	 
         RETURN -1;
 END IF;
 
 RETURN reportClientId;
 
 EXCEPTION  when others then
-	RAISE NOTICE 'Error creating client test data';	
+	RAISE EXCEPTION 'Error creating client test data';	
 	RETURN -1;	
 END
 $$ LANGUAGE plpgsql;

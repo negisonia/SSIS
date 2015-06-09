@@ -12,7 +12,7 @@ SELECT EXISTS (SELECT 1 FROM reports r WHERE r.id=reportId) INTO reportExists;
 
 --VALIDATE IF THE REPORT ID PASSED AS ARGUMENT EXISTS
 IF reportExists = false THEN
-	RAISE NOTICE 'REPORT ID DOES NOT EXISTS';
+	RAISE EXCEPTION 'REPORT ID DOES NOT EXISTS';
 	success:=false; 
 	RETURN success;	
 ELSE
@@ -21,7 +21,7 @@ ELSE
 	LOOP
 	  SELECT EXISTS (SELECT 1 FROM drug_indications di where di.drug_id=drugid) INTO drugExists;	
 	  IF drugExists = false THEN
-		RAISE NOTICE 'DRUG ID DOES NOT EXISTS';
+		RAISE EXCEPTION 'DRUG ID DOES NOT EXISTS';
 		success:=false; 
 		RETURN success;	
 	  END IF;
@@ -32,7 +32,7 @@ ELSE
 	LOOP
 	  SELECT EXISTS (SELECT 1 FROM drug_indications di where di.drug_id=drugid AND di.indication_id=indicationId) INTO drugExists;	
 	  IF drugExists = false THEN
-		RAISE NOTICE 'DRUG WITH INDICATION ID DOES NOT EXISTS';
+		RAISE EXCEPTION 'DRUG WITH INDICATION ID DOES NOT EXISTS';
 		success:=false; 
 		RETURN success;				
 	  END IF;
@@ -54,7 +54,7 @@ END IF;
 success:=true;
 RETURN success;
 EXCEPTION  when others then
-raise notice 'Error loading report data';
+raise EXCEPTION 'Error loading report data';
 success:=false; 
 RETURN success;	
 END
