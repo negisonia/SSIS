@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{3500D87E-3C19-4305-B392-E6130401678D}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{C8DF3525-CE67-47E3-9C05-16BEFC6648AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvTNtBYUm4dwGJzv/EZhPF0LnE91plo4XY6GwU0u5GXAAAAAAOgAAAAAIAACAAAABogCP2izBHIQRHQuWWQ4Hd0S004RWod3IDCUWE+d7LuTAAAAAPvPe3760ZSYyVyk/NdrHI6zzf/6zFObhF7gKw7mZxJXzj/uDap0d3b4DtLzPYKURAAAAA7X3Cno9c/WUyZ4U1ZlZW3Wy98x13cxZtcxxwThmoRJB6wjm9tiNOmAebYzec/iNk4V4j4fGCD9LcJsf8eb6fVA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABvdceUQqQDJGvyaymmdZWJq9HJMdHuuN3Xhvm+LBR5gAAAAAAOgAAAAAIAACAAAABsJ4Hffzmfq+R8LKlJbEoabRfzxatNzBatr7uYBwPMKzAAAABMTMJFPFHpZSPD6U1U53Z1hGP8jEqtSObR8fizAMzWyx0eodNL2bScKXYoNwcfOcxAAAAA1d71JrGzzape7F/Nv7E8OVku3EtKZZ1oDhOpU/iYj4efY9b6QP8zbQ2ng1t+ONziXd/XQqudC68QOe5ZxIpEig</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADy2ggzULQ8BjArumqyOPX6Y5d3gPhb9aRBhdMSrsmRTAAAAAAOgAAAAAIAACAAAABoHU+lF4bRSqx1989cfeb1PP0M8zbxcXgJqf0tksflWzAAAAAokKdrvh7XLg47xbcjOHgk/sNb8yE+DD9ipbtq3QJBrm05UivxNenPdBKg/G4OnOlAAAAAMV7XiOyyyPNRkgJYXBUNmqqwFao0b1ES7HmPtgxDUp23bAOjW477fzXBG8xBepKot99o+reXeWU3ZDiLKEUpbg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAH7rU6r2E45ZlBivgIIARf138hZGyGqfxt0lMJUK1AbwAAAAAOgAAAAAIAACAAAAArcfJhMzXPMzIoFKb6m8Xg/4ooKP4IB/8+HWaA1Zuq4zAAAABlmDbTpRntr6zu+9ZU0KvezDBXOZzn6EwIB5zgwRroLyOrLO0uH0abDOLrDmV5ThtAAAAAp6lx77c6WnpQ9G5D0c8Lc8k5quCwAUFqrENvYJDgYpv6o9IfABxDTwSE6gaGyqvA3em6vl6s84pY8aQF9bhgAQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAHG7MiBiID7F5ziWN2v1W/EvgGBpnqd+LmKoLoabpb5AAAAAAOgAAAAAIAACAAAADJ8nER3lBBwEuUaGA7wm1sfHVpB3k0BbbXdU87DpCO2jAAAACO3d/fWklkDVTN05zg4Wv8nJ2EBnKZFBwMmWMABIhdTNXFYr/J+kiz/H5A4v+f7ndAAAAArfIUb/YmOGxZUSp8eheAmBLjqIfi+PrBlAD6DpKF4Nelq5a50V2dzVdjKKwVSJt8pw4IQyQrJH0V2qrx5E2RHw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC3bW8zD3aupEEggaQtknHZoztzSNB24f/LA/xPU9hWkgAAAAAOgAAAAAIAACAAAAB3poI/XsERRZMv1+YF1u9cyvkgCf6W7W2lG3dmx2n3TDAAAAA9XdRSBRLSVu6PK+KzhtiHBJh7QsKlTGxtq59F/E90V6rz6v9HY84DJWZ9dx8ObjlAAAAABQLXpzp307K38ryNwUcPr+1cvgbt09EEaChOR3t4PUrua21cgNI8qB/T+LEuoxIWOvvTGmJHw7XoBVmK2puD2Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABV66r5GQJHoPnSAPc76lSqO5kLk51UnwLT0pWM43187wAAAAAOgAAAAAIAACAAAACVWYZ+np8tlxjrKVLdMqKaC151wuloCcaKFrGNCRzExDAAAADQbiehorzFAy97U7kaKGrczxHlVs47OoIez8tGcaQNdSHm2eFIFPgSwMIIUeJQ82RAAAAAP3HFOAtXp+k6RUjuPbFwLJgf4A5AZEHS6mH8s12jBmjpOHSCnwoJk+hF+zj+87JGpPb7D1QgID0sWB1Ate+UBQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD22kOFUY++H2C7P65wX9UtQ2nUxbCqKxc3azZudE7QcAAAAAAOgAAAAAIAACAAAABkmq4otP+w6aBLe3SDr/5qHzPHZOMlfi3Ls2sr+GZ/+zAAAAA8DmqIVdssdm14AmHkA8n7L/iKDbas3KPkL7zc4W4Y6FCAqJtXYcTaxf1z259TzZZAAAAAmh9XDW3f6Dm9tYlXWxvXx/fGD+DvBpDg28FTiRMsDE+ejvDuzbd16kQyTV9T+//PKr0DeB0VR7GEiucsewFAZw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -282,7 +282,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-              SQLTask:SqlStatementSource="select 001validateTestData()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select test001validatetestdata()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -351,94 +351,26 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="553,285"
-          Size="553,328"
+          PanelSize="553,210"
+          Size="553,253"
           Id="Package\Create Test Data"
           TopLeft="301,47" />
         <NodeLayout
           Size="156,42"
           Id="Package\ETL PROCESS A"
-          TopLeft="367,439" />
+          TopLeft="367,520" />
         <NodeLayout
           Size="156,42"
           Id="Package\ETL PROCESS B"
-          TopLeft="671,439" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="577.5,375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-132.5,64"
-              Start="0,0"
-              End="-132.5,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="-4,32" />
-                  <mssgle:LineSegment
-                    End="-128.5,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-128.5,32"
-                    Point2="-132.5,32"
-                    Point3="-132.5,36" />
-                  <mssgle:LineSegment
-                    End="-132.5,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="668.333333333333,375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.6666666666667,64"
-              Start="0,0"
-              End="80.6666666666667,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7107825459791" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.7107825459791"
-                    Point2="0,25.7107825459791"
-                    Point3="4,25.7107825459791" />
-                  <mssgle:LineSegment
-                    End="76.6666666666667,25.7107825459791" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.6666666666667,25.7107825459791"
-                    Point2="80.6666666666667,25.7107825459791"
-                    Point3="80.6666666666667,29.7107825459791" />
-                  <mssgle:LineSegment
-                    End="80.6666666666667,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence Container\Validate Test 001"
-          TopLeft="60,45" />
+          TopLeft="671,520" />
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\Clear test 001 data"
           TopLeft="60,158" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Validate Test 001"
+          TopLeft="60,45" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="143.5,87">
@@ -467,10 +399,78 @@
           PanelSize="585,354"
           Size="585,397"
           Id="Package\Sequence Container"
-          TopLeft="302,535" />
+          TopLeft="302,616" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="486.666666666667,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.6666666666666,220"
+              Start="0,0"
+              End="-41.6666666666666,212.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.3808150018031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,84.3808150018031"
+                    Point2="0,88.3808150018031"
+                    Point3="-4,88.3808150018031" />
+                  <mssgle:LineSegment
+                    End="-37.6666666666666,88.3808150018031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.6666666666666,88.3808150018031"
+                    Point2="-41.6666666666666,88.3808150018031"
+                    Point3="-41.6666666666666,92.3808150018031" />
+                  <mssgle:LineSegment
+                    End="-41.6666666666666,212.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="668.333333333333,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.6666666666667,220"
+              Start="0,0"
+              End="80.6666666666667,212.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.3808150018031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,84.3808150018031"
+                    Point2="0,88.3808150018031"
+                    Point3="4,88.3808150018031" />
+                  <mssgle:LineSegment
+                    End="76.6666666666667,88.3808150018031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.6666666666667,88.3808150018031"
+                    Point2="80.6666666666667,88.3808150018031"
+                    Point3="80.6666666666667,92.3808150018031" />
+                  <mssgle:LineSegment
+                    End="80.6666666666667,212.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="445,481">
+          TopLeft="445,562">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -504,7 +504,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="749,481">
+          TopLeft="749,562">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
