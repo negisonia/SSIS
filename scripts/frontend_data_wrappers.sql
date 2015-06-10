@@ -54,6 +54,23 @@ SERVER foreign_ff_new
 OPTIONS (schema_name 'public', table_name 'healthplan');  
 
 
+--health_plan_types
+		CREATE FOREIGN TABLE ff.health_plan_types_import
+		(
+		  id integer NOT NULL ,
+		  is_active boolean OPTIONS (column_name 'isactive') NOT NULL,
+		  --name character varying(255) NOT NULL,
+		  name character varying(255)  OPTIONS (column_name 'webname') NOT NULL
+		  -- explanationtext text,
+		  -- iscommercial boolean NOT NULL,
+		  -- ismedicare boolean NOT NULL,
+		  -- health_plan_type_group_id integer,
+		  -- health_plan_type_aggregate_id integer
+		)
+		SERVER foreign_ff_new
+		OPTIONS (schema_name 'public', table_name 'healthplantype');  
+
+
 --drugs
 CREATE FOREIGN TABLE IF NOT EXISTS ff.drugs_import
 	(
@@ -124,3 +141,24 @@ CREATE FOREIGN TABLE IF NOT EXISTS ff.tier_import
 	)
 	SERVER foreign_ff_new
 	OPTIONS (schema_name 'public', table_name 'tier');  
+
+
+--providers
+		CREATE FOREIGN TABLE ff.providers_import
+		(
+		  id integer NOT NULL ,
+		  is_active boolean OPTIONS (column_name 'isactive') NOT NULL,
+		  --name character varying(255) NOT NULL,
+		  name character varying(255)  OPTIONS (column_name 'webname') NOT NULL
+		  -- suppressrollup integer NOT NULL DEFAULT 0,
+		  -- altwebname character varying(255) NOT NULL,
+		  -- parentsfid integer,
+		  -- corporatestructure integer,
+		  -- ptdates character varying(1000),
+		  -- ptmembers character varying(1000),
+		  -- ptcomments character varying(1000),
+		  -- top_provider boolean DEFAULT false,
+		  -- is_medical_benefits boolean DEFAULT false
+		)
+		SERVER foreign_ff_new
+		OPTIONS (schema_name 'public', table_name 'provider');  
