@@ -7,9 +7,9 @@ DECLARE
   restrictionid integer;
   reportBussinesId varchar DEFAULT 'TEST REPORT 001';
   reportName varchar DEFAULT 'TEST REPORT NAME 001';
+  restrictionGroupName varchar DEFAULT 'TEST GROUP 001';
   drugIds INTEGER[] := ARRAY[156, 160];
   restrictionsIds INTEGER[]:= ARRAY[775,776,706,707];
-
   drugIds2 INTEGER[] := ARRAY[2059, 2268];
 
   groupExists boolean DEFAULT false;
@@ -22,7 +22,7 @@ BEGIN
 
 	--VALIDATE THAT THE TEST REPORT IS AVAILABLE IN THE FRONT END DATABASE
 	IF reportId = null THEN
-		RAISE EXCEPTION 'TEST REPORT DOES NOT EXISTS';
+		SELECT throw_error('TEST REPORT DOES NOT EXISTS');
 		success:=false;
 		RETURN success;
 	ELSE
@@ -31,7 +31,7 @@ BEGIN
 	 FOREACH drugid IN ARRAY drugIds
 	 LOOP
 	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
-		RAISE EXCEPTION 'TEST REPORT DRUG DOES NOT EXISTS';
+		select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
 		success:=false;
 		RETURN success;
 	   END IF;
@@ -41,7 +41,7 @@ BEGIN
 	 FOREACH drugid IN ARRAY drugIds2
 	 LOOP
 	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
-		RAISE EXCEPTION 'TEST REPORT DRUG DOES NOT EXISTS';
+		select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
 		success:=false;
 		RETURN success;	  
 	   END IF;
@@ -51,15 +51,15 @@ BEGIN
 	 FOREACH restrictionid IN ARRAY restrictionsIds
 	 LOOP
 	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
-		RAISE EXCEPTION 'TEST REPORT RESTRICTION DOES NOT EXISTS';
+		select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
 		success:=false;
 		RETURN success;	  
 	  END IF;
 	 END LOOP;
 
-	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name='TEST GROUP 001' AND ccs.report_id=reportId) INTO groupExists;
+	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=restrictionGroupName AND ccs.report_id=reportId) INTO groupExists;
 	IF groupExists = false THEN
-		RAISE EXCEPTION 'TEST REPORT GROUP 1 DOES NOT EXISTS';
+		select throw_error('TEST REPORT GROUP 1 DOES NOT EXISTS');
 		success:=false;
 		RETURN success;	
 	END IF;

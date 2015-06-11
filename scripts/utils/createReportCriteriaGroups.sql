@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test001createReportCriteriaGroups(reportId integer,reportClientiId integer, restrictionIds integer[], groupName varchar)
+﻿CREATE OR REPLACE FUNCTION createReportCriteriaGroups(reportId integer,reportClientiId integer, restrictionIds integer[], groupName varchar,userEmail varchar)
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -10,7 +10,7 @@ restictionBelongsToReport boolean DEFAULT false;
 groupExists boolean DEFAULT false;
 restrictionId integer;
 groupId integer;
-testUserEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
+--testUserEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
 testMultiIndication boolean DEFAULT false;
 
 
@@ -64,7 +64,7 @@ ELSE
 
 			
 			IF groupExists = false THEN --IF GROUP DOES NOT EXISTS CREATE IT
-           		  INSERT INTO custom_criteria_groups ( name, indication_field_name, is_multi_indication, created_by, created_at, updated_at) VALUES (groupName,'', testMultiIndication, testUserEmail, now(), now()) RETURNING id INTO groupId;
+           		  INSERT INTO custom_criteria_groups ( name, indication_field_name, is_multi_indication, created_by, created_at, updated_at) VALUES (groupName,'', testMultiIndication, userEmail, now(), now()) RETURNING id INTO groupId;
 			ELSE --IF THE GROUP EXISTS GET THE ID
 			  SELECT ccg.id INTO groupId from custom_criteria_groups ccg WHERE ccg.name=groupName;		                
 			END IF;

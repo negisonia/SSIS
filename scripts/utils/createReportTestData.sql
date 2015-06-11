@@ -1,11 +1,10 @@
-﻿CREATE OR REPLACE FUNCTION test001createReportTestData()
+﻿CREATE OR REPLACE FUNCTION createReportTestData(reportBussinesId varchar, reportName varchar)
 RETURNS integer AS $$
 DECLARE
   success boolean DEFAULT false;
   reportId integer;
   reportExists boolean DEFAULT false;
-  reportBussinesId varchar DEFAULT 'TEST REPORT 001';
-  reportName varchar DEFAULT 'TEST REPORT NAME 001';
+
 BEGIN
 
 SELECT EXISTS(SELECT 1 FROM reports r WHERE r.business_id=reportBussinesId and r.name=reportName) INTO reportExists;
@@ -18,7 +17,7 @@ END IF;
 
 RETURN reportId;
 EXCEPTION  when others then
-	raise exception 'Error creating report test data';
+	select throw_error('Error creating report test data');
 	RETURN -1;	
 END
 $$ LANGUAGE plpgsql;

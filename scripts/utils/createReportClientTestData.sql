@@ -1,11 +1,11 @@
-﻿CREATE OR REPLACE FUNCTION  test001createReportClientTestData(reportId integer)
+﻿CREATE OR REPLACE FUNCTION  createReportClientTestData(reportId integer, clientName varchar)
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;
 reportExists boolean;
 reportClientExists boolean;
 clientId integer;
-clientName varchar DEFAULT 'TEST CLIENT 01';
+--clientName varchar DEFAULT 'TEST CLIENT 01';
 reportClientId integer;
 BEGIN
 
@@ -25,18 +25,16 @@ IF reportExists  THEN
 	ELSE
 		SELECT rc.id INTO reportClientId FROM report_clients rc WHERE rc.report_id=reportId AND rc.client_id=clientId;		
 	END IF;
-
-
 		
 ELSE 
-	RAISE EXCEPTION 'REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS';	 
+	select throw_eror('REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS');	 
         RETURN -1;
 END IF;
 
 RETURN reportClientId;
 
 EXCEPTION  when others then
-	RAISE EXCEPTION 'Error creating client test data';	
+	select throw_eror('Error creating client test data');	
 	RETURN -1;	
 END
 $$ LANGUAGE plpgsql;

@@ -7,6 +7,12 @@ reportClientId INTEGER;
 reportDrugsStatus boolean DEFAULT FALSE;
 reportRestrictionsStatus boolean DEFAULT false;
 reportCriteriaGroupStatus boolean DEFAULT false;
+reportClientName varchar DEFAULT 'TEST CLIENT 01';
+userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com'
+groupName1 varchar DEFAULT 'TEST GROUP 001';
+groupName2 varchar DEFAULT 'TEST GROUP 002';
+reportBussinesId varchar DEFAULT 'TEST REPORT 001';
+reportName varchar DEFAULT 'TEST REPORT NAME 001';
 
 indicationId integer:=7;
 drugIds INTEGER[] := ARRAY[156, 160];
@@ -18,29 +24,28 @@ restrictionsIds2 INTEGER[]:= ARRAY[706,707];
 BEGIN
 
   --CREATE REPORT AND STORE ID ON REPORTID  VARIABLE FOR FURTHER USAGE
-  select test001createreporttestdata() INTO reportId;
+  select createreporttestdata(reportBussinesId,reportName) INTO reportId;
   --CREATE  CLIENT AND REPORT CLIENT
-  SELECT test001createReportClientTestData(reportId) into reportClientId;
+  SELECT createReportClientTestData(reportId,reportClientName) into reportClientId;
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  SELECT test001createreportdrugstestdata(reportId,drugIds,indicationId) into reportDrugsStatus;
+  SELECT createreportdrugstestdata(reportId,drugIds,indicationId) into reportDrugsStatus;
   --CREATE REPORT RESTRICTIONS
-  SELECT test001createreportrestrictions(reportId,restrictionsIds) into reportRestrictionsStatus;
+  SELECT createreportrestrictions(reportId,restrictionsIds) into reportRestrictionsStatus;
   --CREATE REPORT CUSTOM CRITERIA  GROUP
-  SELECT test001createreportcriteriagroups(reportId,reportClientId,restrictionsIds,'TEST GROUP 001') into reportCriteriaGroupStatus;
+  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail) into reportCriteriaGroupStatus;
   --ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
-  SELECT test001createreportdrugstestdata(reportId,drugIds2,indicationId2) into reportDrugsStatus;
+  SELECT createreportdrugstestdata(reportId,drugIds2,indicationId2) into reportDrugsStatus;
   --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
-  SELECT test001createreportrestrictions(reportId,restrictionsIds2) into reportRestrictionsStatus; 
+  SELECT createreportrestrictions(reportId,restrictionsIds2) into reportRestrictionsStatus; 
   --CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
-  SELECT test001createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,'TEST GROUP 002') into reportCriteriaGroupStatus;
+  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2) into reportCriteriaGroupStatus;
   
-  
-
+ 
 success:=true;
 RETURN success;
 
 EXCEPTION  when others then
-	RAISE EXCEPTION 'Error creating test data';	
+	select throw_error('Error creating test data');	
 	RETURN FALSE;
 END
 $$ LANGUAGE plpgsql;
