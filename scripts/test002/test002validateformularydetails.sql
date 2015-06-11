@@ -6,20 +6,24 @@ DW_FORMULARY_DETAILS_COUNT INTEGER;
 DW_MERGED_FORMULARY_DETAILS_COUNT INTEGER;
 BEGIN
 
-SELECT COUNT(*) INTO DW_FORMULARY_DETAILS_COUNT FROM  ff.mv_active_formularies_import ffaf where ffaf.formulary_id > 0;
-SELECT COUNT(*) INTO DW_ACTIVE_FORMULARIES_COUNT FROM ff.formulary_entry  fffe;
+SELECT COUNT(*) INTO DW_FORMULARY_DETAILS_COUNT FROM dw.formulary_detail;
 
-IF FF_ACTIVE_FORMULARIES_COUNT = DW_ACTIVE_FORMULARIES_COUNT THEN
-	SELECT COUNT(*) INTO FF_DW_MERGED_FORMULARY_COUNT FROM ff.mv_active_formularies_import ffaf JOIN ff.formulary_entry  fffe ON ffaf.formulary_id=fffe.formulary_id AND ffaf.drug_id=fffe.drug_id AND ffaf.tier_id=fffe.tier_id AND ffaf.has_quantity_limit=fffe.has_quantity_limit AND ffaf.has_prior_authorization=fffe.has_prior_authorization AND fffa.has_step_therapy=fffe.has_step_therapy AND fffa.has_other_restriction=fffe.has_other_restriction AND fffa.reason_code_id=fffe.reason_code_id;
-	IF FF_ACTIVE_FORMULARIES_COUNT = FF_DW_MERGED_FORMULARY_COUNT THEN
-		SUCCESS:=TRUE;
-	ELSE
-		RAISE EXCEPTION 'FF SOURCE DATA AND DATAWAREHOUSE CONTAINS DIFFERENT ACTIVE FORMULARIES';
-	END IF;
-ELSE
+SELECT COUNT(fd.*) INTO DW_MERGED_FORMULARY_DETAILS_COUNT from dw.formulary_detail fd inner join ff.formulary_entry fe
+on fd.formulary_id=fe.formulary_id
+and fd.tier_id=fe.tier_id
+and fd.drug_id=fe.drug_id
+left outer join ff.reason_code rc on rc.id= fd.reason_code_id 
+and fd.has_quantity_limit = CASE  WHEN fd.tier_id=10 AND rc.code IN ('40', '41', '42') THEN false ELSE fe.has_quantity_limit END
+and fd.has_prior_authorization = CASE WHEN fd.tier_id = 10 AND rc.code IN ('40','41','42') THEN FALSE ELSE fe.has_prior_authorization END
+and fd.has_step_therapy= CASE WHEN fd.tier_id = 10 AND rc.code IN ('40','41','42') THEN FALSE ELSE fe.has_step_therapy END 
+and fd.has_other_restriction=CASE WHEN fd.tier_id = 10 AND rc.code IN ('40','41','42') THEN FALSE ELSE fe.has_other_restriction END;
 
-END IF;
- 
+ IF DW_FORMULARY_DETAILS_COUNT = DW_MERGED_FORMULARY_DETAILS_COUNT THEN 
+	SUCCESS:=TRUE;
+ ELSE
+	RAISE EXCEPTION 'FORMULARY DETAILS DATA MISMATCH';
+ END IF;
+
 RETURN SUCCESS;
 END
 $$ LANGUAGE plpgsql;

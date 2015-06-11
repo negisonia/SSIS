@@ -10,6 +10,60 @@ DROP SERVER IF EXISTS  foreign_ff_new CASCADE;
 CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '172.17.66.124', dbname 'ff_new', port '5432');
 CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'restrictions20', password 'ooJaGhee6Rahxeb0fiez'); 
 
+--===================UPDATES===========================
+alter table dw.formulary_detail add formulary_id integer
+
+
+CREATE OR REPLACE FUNCTION dw.process_formulary_detail() 
+		RETURNS void AS $$
+		BEGIN
+			TRUNCATE TABLE dw.formulary_detail;
+
+			INSERT INTO dw.formulary_detail (
+				provider_id, provider_name, health_plan_id, health_plan_name, 
+	            formulary_url, drug_id, drug_name, health_plan_type_id, health_plan_type_name, 
+	            tier_id, preferred_brand_tier_id, has_quantity_limit, has_prior_authorization, 
+	            has_step_therapy, has_other_restriction, has_pharmacy, has_medical, reason_code_id, 
+	            reason_code_code, reason_code_desc,formulary_id)
+			SELECT 
+				p.id provider_id,
+				p.name provider_name,
+				hp.id health_plan_id, 
+				hp.name health_plan_name, 
+				hp.formulary_url,
+				d.id drug_id, 
+				d.name drug_name, 
+				hpt.id health_plan_type_id, 
+				hpt.name health_plan_type_name, 
+				fe.tier_id, 
+				f.preferred_brand_tier_id, 
+				CASE WHEN fe.tier_id = 10 AND rc.code IN ('40', '41', '42') THEN false ELSE fe.has_quantity_limit END has_quantity_limit,
+				CASE WHEN fe.tier_id = 10 AND rc.code IN ('40', '41', '42') THEN false ELSE fe.has_prior_authorization END has_prior_authorization,
+				CASE WHEN fe.tier_id = 10 AND rc.code IN ('40', '41', '42') THEN false ELSE fe.has_step_therapy END has_step_therapy,
+				CASE WHEN fe.tier_id = 10 AND rc.code IN ('40', '41', '42') THEN false ELSE fe.has_other_restriction END has_other_restriction,
+				CASE WHEN fe.tier_id = 10 AND rc.code IN ('40', '41', '42') THEN false ELSE true END has_pharmacy,  
+				CASE WHEN coalesce(rc.code, '') IN ('40', '41', '42') THEN true ELSE false END has_medical,  
+				rc.id reason_code_id, 
+				rc.code reason_code_code,
+				rc.description reason_code_desc,
+				hp.formulary_id
+			FROM 
+				ff.formulary_entry fe 
+				INNER JOIN 
+				(
+					SELECT DISTINCT drug_id FROM dw.report
+				) dd ON dd.drug_id = fe.drug_id
+				INNER JOIN ff.drugs d ON fe.drug_id = d.id
+				INNER JOIN ff.formulary f ON f.id = fe.formulary_id
+				INNER JOIN ff.health_plans hp ON hp.formulary_id = fe.formulary_id
+				INNER JOIN ff.providers p ON p.id = hp.provider_id
+				INNER JOIN ff.health_plan_types hpt ON hpt.id = hp.health_plan_type_id
+				LEFT OUTER JOIN ff.reason_code rc ON rc.id = fe.reason_code_id
+				
+			;
+		END;
+		$$ LANGUAGE plpgsql; 
+
 --===================LINK FF_NEW TABLES===========================
 
 --health_plans
