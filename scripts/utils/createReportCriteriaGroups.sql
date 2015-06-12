@@ -23,19 +23,19 @@ SELECT EXISTS(SELECT 1 FROM custom_criteria_groups ccg WHERE ccg.name=groupName)
 
 --VALIDATE THAT THE REPORT ID PASSED AS ARGUMENT EXISTS
 IF reportExists = false THEN
-	RAISE EXCEPTION 'REPORT DOES NOT EXISTS';		
+	select throw_error('REPORT DOES NOT EXISTS');		
 	success:=false; 
 	RETURN success;	
 ELSE 
 	    --VALIDATE THAT THE REPORT CLIENT ID PASSED AS ARGUMENT EXISTS
 	    IF reportClientExists = false THEN
-		RAISE EXCEPTION 'REPORT CLIENT ID DOES NOT EXISTS';		
+		select throw_error('REPORT CLIENT ID DOES NOT EXISTS');		
 		success:=false; 
 		RETURN success;	
 	    ELSE
 		--VALIDATE THAT THE REPORT_CLIENT_ID BELONGS TO THE REPORT
 		IF clientBelongsToReport = false THEN
-			RAISE EXCEPTION 'CLIENT DOES NOT BELONG TO REPORT';		
+			select throw_error('CLIENT DOES NOT BELONG TO REPORT');		
 			success:=false; 
 			RETURN success;	
 		ELSE
@@ -44,7 +44,7 @@ ELSE
 			LOOP
 				SELECT EXISTS(SELECT 1 FROM criteria_restriction cr WHERE cr.id=restrictionId) INTO restrictionExists;
 				IF restrictionExists = false THEN
-					RAISE EXCEPTION 'RESTRICTION ID DOES NOT EXISTS';	
+					select throw_error('RESTRICTION ID DOES NOT EXISTS');	
 					success:=false; 
 					RETURN success;	
 				END IF;
@@ -56,7 +56,7 @@ ELSE
 			LOOP
 				SELECT EXISTS(SELECT 1 FROM report_criterias rc WHERE rc.report_id=reportId AND rc.criteria_restriction_id=restrictionId) INTO restictionBelongsToReport;
 				IF restictionBelongsToReport = false THEN
-				        RAISE EXCEPTION 'RESTRICTION ID DOES NOT BELONG TO THE REPORT';	
+				        select throw_error('RESTRICTION ID DOES NOT BELONG TO THE REPORT');	
 					success:=false; 
 					RETURN success;	
 				END IF;				
@@ -88,10 +88,5 @@ END IF;
 
 success:=true;
 RETURN success;
-
-EXCEPTION  when others then
-	RAISE EXCEPTION 'Error creating report criteria groups';	
-	RETURN FALSE;
-
 END
 $$ LANGUAGE plpgsql;

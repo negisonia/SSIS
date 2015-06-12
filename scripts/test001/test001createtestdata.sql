@@ -8,7 +8,7 @@ reportDrugsStatus boolean DEFAULT FALSE;
 reportRestrictionsStatus boolean DEFAULT false;
 reportCriteriaGroupStatus boolean DEFAULT false;
 reportClientName varchar DEFAULT 'TEST CLIENT 01';
-userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com'
+userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
 groupName1 varchar DEFAULT 'TEST GROUP 001';
 groupName2 varchar DEFAULT 'TEST GROUP 002';
 reportBussinesId varchar DEFAULT 'TEST REPORT 001';

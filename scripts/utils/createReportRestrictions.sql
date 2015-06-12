@@ -14,7 +14,7 @@ SELECT EXISTS(SELECT 1 FROM reports r WHERE r.id=reportId) INTO reportExists;
 
 --VALIDATE THAT THE REPORT ID PASSED AS ARGUMENT EXISTS
 IF reportExists =false THEN 
-	RAISE EXCEPTION 'REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS';	
+	select throw_error('REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS');	
 	success:=false; 
 	RETURN success;	
 ELSE
@@ -23,7 +23,7 @@ ELSE
 	LOOP
 		SELECT EXISTS(SELECT 1 FROM criteria_restriction cr WHERE cr.id=restrictionId) INTO restrictionExists;
 		IF restrictionExists = false THEN
-			RAISE EXCEPTION 'RESTRICTION ID DOES NOT EXISTS';	
+			select throw_error('RESTRICTION ID DOES NOT EXISTS');	
 			success:=false; 
 			RETURN success;	
 		END IF;
@@ -37,7 +37,7 @@ ELSE
 		SELECT cr.indication_id INTO indicationId FROM criteria_restriction cr WHERE cr.id=restrictionId;--FIND THE RESTRICTION INDICATION_ID
 		SELECT EXISTS(SELECT 1 from report_drugs rd WHERE rd.report_id=reportId AND rd.indication_id=indicationId) INTO validRestrictionForReport;--VALIDATE THAT THE REPORT CONSTAINS A DRUG WITH THE SAME INDICATION_ID AS THE RESTRICTION
 		IF validRestrictionForReport = false THEN 
-		        RAISE EXCEPTION 'RESTRICTION NOT VALID FOR REPORT';	
+		        select throw_error('RESTRICTION NOT VALID FOR REPORT');	
 			success:=false; 
 			RETURN success;		
 		END IF;
@@ -55,10 +55,6 @@ ELSE
 END IF;
 
 success:=true;
-RETURN success;
-EXCEPTION  when others then
-raise notice 'Error creating restrictions for report';
-success:=false; 
 RETURN success;	
 END
 $$ LANGUAGE plpgsql;
