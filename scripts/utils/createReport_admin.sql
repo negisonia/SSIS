@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReport(reportBussinesId varchar, reportName varchar)
+﻿CREATE OR REPLACE FUNCTION createReport(reportBussinesId varchar, reportName varchar) --ADMIN DB
 RETURNS integer AS $$
 DECLARE
   success boolean DEFAULT false;

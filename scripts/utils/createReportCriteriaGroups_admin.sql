@@ -10,7 +10,6 @@ restictionBelongsToReport boolean DEFAULT false;
 groupExists boolean DEFAULT false;
 restrictionId integer;
 groupId integer;
---testUserEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
 testMultiIndication boolean DEFAULT false;
 
 

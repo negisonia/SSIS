@@ -21,21 +21,21 @@ restrictionsIds2 INTEGER[]:= ARRAY[706,707];
 BEGIN
 
   --CREATE REPORT AND STORE ID ON REPORTID  VARIABLE FOR FURTHER USAGE
-  select createreport(reportBussinesId,reportName) INTO reportId;
+  SELECT createreport(reportBussinesId,reportName) INTO reportId;
   --CREATE  CLIENT AND REPORT CLIENT
-  SELECT createReportClient(reportId,reportClientName) into reportClientId;
+  SELECT createreportclient(reportId,reportClientName) INTO reportClientId;
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  SELECT createReportDrugs(reportId,drugIds,indicationId);
+  PERFORM createReportDrugs(reportId,drugIds,indicationId);
   --CREATE REPORT RESTRICTIONS
-  SELECT createreportrestrictions(reportId,restrictionsIds);
+  PERFORM createreportrestrictions(reportId,restrictionsIds);
   --CREATE REPORT CUSTOM CRITERIA  GROUP
-  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail);
+  PERFORM createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail);
   --ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
-  SELECT createReportDrugs(reportId,drugIds2,indicationId2) ;
+  PERFORM createReportDrugs(reportId,drugIds2,indicationId2) ;
   --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
-  SELECT createreportrestrictions(reportId,restrictionsIds2); 
+  PERFORM createreportrestrictions(reportId,restrictionsIds2); 
   --CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
-  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2);
+  PERFORM createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2,userEmail);
   
  
 success:=true;

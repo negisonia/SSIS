@@ -1,9 +1,14 @@
 ﻿CREATE OR REPLACE FUNCTION cleartestdata() --ADMIN DB
-  RETURNS void AS $$
+RETURNS boolean AS $$
+DECLARE
+success boolean DEFAULT false;
 BEGIN
 
 --CLEAR TEST001 DATA
-select test001cleartestdata();
+perform test001cleartestdata();
 	
+
+SUCCESS:=true;
+return SUCCESS;
 END
 $$ LANGUAGE plpgsql;

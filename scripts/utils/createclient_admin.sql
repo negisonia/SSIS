@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION  createClient(clientName varchar)
+﻿CREATE OR REPLACE FUNCTION  createClient(clientName varchar) --ADMIN DB
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;
@@ -16,11 +16,7 @@ SELECT EXISTS( SELECT 1 FROM clients c WHERE c.name=clientName) INTO clientExist
 	SELECT c.id INTO clientId FROM clients c WHERE c.name=clientName;
 	
 
-RETURN clientId;
-
-EXCEPTION  when others then
-	select throw_eror('Error creating client test data');	
-	RETURN -1;	
+RETURN clientId;	
 END
 $$ LANGUAGE plpgsql;
 

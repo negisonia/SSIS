@@ -32,19 +32,19 @@ BEGIN
   SELECT createReportClient(reportId,reportClientName) into reportClientId;
 
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  SELECT createreportdrugsreportId,drugIds,indicationId);
+  PERFORM createreportdrugs(reportId,drugIds,indicationId);
 
   --CREATE REPORT RESTRICTIONS
-  SELECT createreportrestrictions(reportId,restrictionsIds);
+  PERFORM createreportrestrictions(reportId,restrictionsIds);
   
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #1 DIM CRITERION TYPE
-  SELECT createreportcriteriagroups(reportId,reportClientId,group1Restrictions,group1Name,userEmail);
+  PERFORM createreportcriteriagroups(reportId,reportClientId,group1Restrictions,group1Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #2 DIM CRITERION TYPE
-  SELECT createreportcriteriagroups(reportId,reportClientId,group2Restrictions,group2Name,userEmail);
+  PERFORM createreportcriteriagroups(reportId,reportClientId,group2Restrictions,group2Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #3 DIM CRITERION TYPE
-  SELECT createreportcriteriagroups(reportId,reportClientId,group3Restrictions,group3Name,userEmail);
+  PERFORM createreportcriteriagroups(reportId,reportClientId,group3Restrictions,group3Name,userEmail);
  
 success:=true;
 RETURN success;

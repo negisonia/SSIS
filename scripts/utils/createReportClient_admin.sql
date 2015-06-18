@@ -9,10 +9,9 @@ reportClientId integer;
 BEGIN
 
 SELECT EXISTS( SELECT 1 FROM reports r WHERE r.id=reportId) INTO reportExists;
-SELECT createClient() INTO clientId;
-IF reportExists  THEN
-	SELECT 
+SELECT createclient(clientName) INTO clientId;
 
+IF reportExists  THEN
 	SELECT EXISTS( SELECT 1 FROM report_clients rc WHERE rc.report_id=reportId AND rc.client_id=clientId) INTO reportClientExists;
 
 	IF reportClientExists = false THEN
@@ -22,15 +21,15 @@ IF reportExists  THEN
 	END IF;
 		
 ELSE 
-	select throw_eror('REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS');	 
+	select throw_error('REPORT ID PASSED AS ARGUMENT DOES NOT EXISTS');	 
         RETURN -1;
 END IF;
 
 RETURN reportClientId;
 
-EXCEPTION  when others then
-	select throw_eror('Error creating client test data');	
-	RETURN -1;	
+--EXCEPTION  when others then
+--	select throw_error('Error creating client test data');	
+--	RETURN -1;	
 END
 $$ LANGUAGE plpgsql;
 
