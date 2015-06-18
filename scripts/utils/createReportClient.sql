@@ -1,23 +1,18 @@
-﻿CREATE OR REPLACE FUNCTION  createReportClientTestData(reportId integer, clientName varchar)
+﻿CREATE OR REPLACE FUNCTION  createReportClient(reportId integer, clientName varchar) --ADMIN DB
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;
 reportExists boolean;
 reportClientExists boolean;
 clientId integer;
---clientName varchar DEFAULT 'TEST CLIENT 01';
 reportClientId integer;
 BEGIN
 
-SELECT EXISTS( SELECT 1 FROM clients c WHERE c.name=clientName) INTO clientExists;
 SELECT EXISTS( SELECT 1 FROM reports r WHERE r.id=reportId) INTO reportExists;
-
+SELECT createClient() INTO clientId;
 IF reportExists  THEN
-	IF clientExists = false THEN
-		INSERT INTO clients (name) VALUES (clientName);
-	END IF;
+	SELECT 
 
-	SELECT c.id INTO clientId FROM clients c WHERE c.name=clientName;
 	SELECT EXISTS( SELECT 1 FROM report_clients rc WHERE rc.report_id=reportId AND rc.client_id=clientId) INTO reportClientExists;
 
 	IF reportClientExists = false THEN

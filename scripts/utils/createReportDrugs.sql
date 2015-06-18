@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportDrugsTestData(reportId integer, drugsIds integer[],indicationId integer)
+﻿CREATE OR REPLACE FUNCTION createReportDrugs(reportId integer, drugsIds integer[],indicationId integer) --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -16,28 +16,18 @@ IF reportExists = false THEN
 	success:=false; 
 	RETURN success;	
 ELSE
-	--VALIDATE THAT EACH DRUG ID PASSED AS ARGUMENT EXISTS
+	--VALIDATE THAT EACH DRUG ID PASSED AS ARGUMENT EXISTS 
 	FOREACH drugid IN ARRAY drugsIds
 	LOOP
-	  SELECT EXISTS (SELECT 1 FROM drug_indications di where di.drug_id=drugid) INTO drugExists;	
+	  SELECT EXISTS (SELECT 1 FROM drug_indications di where di.drug_id=drugid and di.indication_id=indicationId) INTO drugExists;	
 	  IF drugExists = false THEN
-		select throw_error('DRUG ID DOES NOT EXISTS');
+		select throw_error('DRUG ID DOES NOT EXISTS FOR SPECIFIED INDICATION');
 		success:=false; 
 		RETURN success;	
 	  END IF;
 	END LOOP;
 	
-	--VALIDATE THAT EACH DRUG EXISTS WITH THE INDICATION SPECIFIED
-       FOREACH drugid IN ARRAY drugsIds
-	LOOP
-	  SELECT EXISTS (SELECT 1 FROM drug_indications di where di.drug_id=drugid AND di.indication_id=indicationId) INTO drugExists;	
-	  IF drugExists = false THEN
-		select throw_error('DRUG WITH INDICATION ID DOES NOT EXISTS');
-		success:=false; 
-		RETURN success;				
-	  END IF;
-	END LOOP;
-
+	
 	--INSERT ALL THE DRUGS IN TO THE REPORT_DRUGS TABLE
 		FOREACH drugid IN ARRAY drugsIds
 		LOOP

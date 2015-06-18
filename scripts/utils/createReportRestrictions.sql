@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportRestrictions(reportId integer, restrictionIds integer[])
+﻿CREATE OR REPLACE FUNCTION createReportRestrictions(reportId integer, restrictionIds integer[]) --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -35,7 +35,7 @@ ELSE
 	FOREACH restrictionId IN ARRAY restrictionIds
 	LOOP		
 		SELECT cr.indication_id INTO indicationId FROM criteria_restriction cr WHERE cr.id=restrictionId;--FIND THE RESTRICTION INDICATION_ID
-		SELECT EXISTS(SELECT 1 from report_drugs rd WHERE rd.report_id=reportId AND rd.indication_id=indicationId) INTO validRestrictionForReport;--VALIDATE THAT THE REPORT CONSTAINS A DRUG WITH THE SAME INDICATION_ID AS THE RESTRICTION
+		SELECT EXISTS(SELECT 1 from report_drugs rd WHERE rd.report_id=reportId AND rd.indication_id=indicationId) INTO validRestrictionForReport;--VALIDATE THAT THE RESTRICTION IS VALID BASED ON THE REPORT DRUGS
 		IF validRestrictionForReport = false THEN 
 		        select throw_error('RESTRICTION NOT VALID FOR REPORT');	
 			success:=false; 

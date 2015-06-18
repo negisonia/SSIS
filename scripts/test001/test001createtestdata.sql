@@ -1,12 +1,9 @@
-﻿CREATE OR REPLACE FUNCTION test001createtestdata()
+﻿CREATE OR REPLACE FUNCTION test001createtestdata() --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
 reportId INTEGER;
 reportClientId INTEGER;
-reportDrugsStatus boolean DEFAULT FALSE;
-reportRestrictionsStatus boolean DEFAULT false;
-reportCriteriaGroupStatus boolean DEFAULT false;
 reportClientName varchar DEFAULT 'TEST CLIENT 01';
 userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
 groupName1 varchar DEFAULT 'TEST GROUP 001';
@@ -24,21 +21,21 @@ restrictionsIds2 INTEGER[]:= ARRAY[706,707];
 BEGIN
 
   --CREATE REPORT AND STORE ID ON REPORTID  VARIABLE FOR FURTHER USAGE
-  select createreporttestdata(reportBussinesId,reportName) INTO reportId;
+  select createreport(reportBussinesId,reportName) INTO reportId;
   --CREATE  CLIENT AND REPORT CLIENT
-  SELECT createReportClientTestData(reportId,reportClientName) into reportClientId;
+  SELECT createReportClient(reportId,reportClientName) into reportClientId;
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  SELECT createreportdrugstestdata(reportId,drugIds,indicationId) into reportDrugsStatus;
+  SELECT createReportDrugs(reportId,drugIds,indicationId);
   --CREATE REPORT RESTRICTIONS
-  SELECT createreportrestrictions(reportId,restrictionsIds) into reportRestrictionsStatus;
+  SELECT createreportrestrictions(reportId,restrictionsIds);
   --CREATE REPORT CUSTOM CRITERIA  GROUP
-  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail) into reportCriteriaGroupStatus;
+  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail);
   --ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
-  SELECT createreportdrugstestdata(reportId,drugIds2,indicationId2) into reportDrugsStatus;
+  SELECT createReportDrugs(reportId,drugIds2,indicationId2) ;
   --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
-  SELECT createreportrestrictions(reportId,restrictionsIds2) into reportRestrictionsStatus; 
+  SELECT createreportrestrictions(reportId,restrictionsIds2); 
   --CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
-  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2) into reportCriteriaGroupStatus;
+  SELECT createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2);
   
  
 success:=true;
