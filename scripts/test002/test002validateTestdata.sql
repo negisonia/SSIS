@@ -6,6 +6,7 @@ DECLARE
   drugid integer;
 
   restrictionid integer;
+  dim_restriction record;
   reportBussinesId varchar DEFAULT 'TEST REPORT 002';
   reportName varchar DEFAULT 'TEST REPORT NAME 002';
 
@@ -72,55 +73,62 @@ BEGIN
 		END IF;	
 	
 		--VALIDATE GROUP 1 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 3
+		FOR  dim_restriction IN select c.criteria_restriction_name, c.dim_criteria_restriction_id, c.dim_criterion_type_id from custom_criteron_selection c where c.report_id=reportId and c.indication_id=reportIndication  group by c.criteria_restriction_name, c.dim_criteria_restriction_id, c.dim_criterion_type_id order by c.dim_criteria_restriction_id
+		LOOP
+			IF (dim_restriction.criteria_restriction_name like '%' || group1Name )  and (dim_restriction.dim_criterion_type_id != 3)  THEN --IF WE ARE ITERATING OVER A GROUP 1 DIM CRITERIA RESTRICION
+				select throw_error(group1Name || ' Contains Invalid Dim Criterion type');
+			        success:=false;
+			        RETURN success;				
+			END IF;
+			
+		END LOOP;
+
+
 		FOREACH restrictionid IN ARRAY group1Restrictions
 		LOOP
-		IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=3) = FALSE) THEN
-   		        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
-			success:=false;
-			RETURN success;	
-		END IF;
+		
 		END LOOP;
 	-----------------------------------------------------	
 
 	-- VALIDATE CUSTOM GROUP 2
 		-- VALIDATE GROUP2 EXISTS IN FRONT END WITH ITS VALID DIM CRITERION TYPE (3)
-		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group2Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group2Exists;		
-		IF group2Exists = false THEN
-			select throw_error(group2Name || ' DOES NOT EXISTS');
-			success:=false;
-			RETURN success;	
-		END IF;	
+	--	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group2Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group2Exists;		
+	--	IF group2Exists = false THEN
+	--		select throw_error(group2Name || ' DOES NOT EXISTS');
+	--		success:=false;
+	--		RETURN success;	
+	--	END IF;	
 
 		--VALIDATE GROUP 2 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 5
-		FOREACH restrictionid IN ARRAY group2Restrictions
-		LOOP
-		IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
-   		        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
-			success:=false;
-			RETURN success;	
-		END IF;
-		END LOOP;
+	--	FOREACH restrictionid IN ARRAY group2Restrictions
+	--	LOOP
+	--	IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
+   	--	        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
+	--		success:=false;
+	--		RETURN success;	
+	--	END IF;
+	--	END LOOP;
 
 	-----------------------------------------------------	
 
 	-- VALIDATE CUSTOM GROUP 3
 		-- VALIDATE GROUP3 EXISTS IN FRONT END WITH ITS VALID DIM CRITERION TYPE (5)
-		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group3Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group3Exists;		
-		IF group3Exists = false THEN
-			select throw_error(group3Name || ' DOES NOT EXISTS');
-			success:=false;
-			RETURN success;	
-		END IF;	
+	--	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group3Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group3Exists;		
+	--	IF group3Exists = false THEN
+	--		select throw_error(group3Name || ' DOES NOT EXISTS');
+	--		success:=false;
+	--		RETURN success;	
+	--	END IF;	
 
 		--VALIDATE GROUP 3 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 5
-		FOREACH restrictionid IN ARRAY group3Restrictions
-		LOOP
-		IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
-   		        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
-			success:=false;
-			RETURN success;	
-		END IF;
-		END LOOP;
+	--	FOREACH restrictionid IN ARRAY group3Restrictions
+	--	LOOP
+	--	IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
+   	--	        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
+	--		success:=false;
+	--		RETURN success;	
+	--	END IF;
+	--	END LOOP;
 
 
 END IF;

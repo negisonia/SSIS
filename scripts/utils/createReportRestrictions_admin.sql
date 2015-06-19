@@ -22,7 +22,7 @@ ELSE
 	FOREACH restrictionId IN ARRAY restrictionIds
 	LOOP
 		SELECT EXISTS(SELECT 1 FROM criteria_restriction cr WHERE cr.id=restrictionId) INTO restrictionExists;
-		IF restrictionExists = false THEN
+		IF restrictionExists = false THEN			
 			select throw_error('RESTRICTION ID DOES NOT EXISTS');	
 			success:=false; 
 			RETURN success;	
