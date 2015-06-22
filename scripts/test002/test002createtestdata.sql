@@ -14,13 +14,13 @@ restrictionsIds INTEGER[]:= ARRAY[809,810,811,776,777,778,812,813,775,840,1865,1
 
 userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
 
---CRITERION TYPES: 
+--CRITERION TYPES ( CT ): 
 --PREDEFINED:    1
 --STEPS:         2
 --ADMIN PORTAL:  3
 --STEP+CUSTOM:   5
 
-group1Name varchar DEFAULT 'TEST_002_GROUP_1';-- this group contains only type 1 pharmacy restrictions (dim_restriction_type_id=1 and dim_criterion_type_id=1)
+group1Name varchar DEFAULT 'TEST_002_GROUP_1';-- this group contains only criterion type 1 pharmacy restrictions (dim_restriction_type_id=1 and dim_criterion_type_id=1)
 group1Restrictions INTEGER[] :=ARRAY[809,810,811];
 --809 (PHARMACY) CT:1
 --810 (PHARMACY) CT:1
@@ -29,12 +29,12 @@ group1Restrictions INTEGER[] :=ARRAY[809,810,811];
 
 
 group2Name varchar DEFAULT 'TEST_002_GROUP_2';
-group2Restrictions INTEGER[] :=ARRAY[776,777,778];--this group contains only type 1 medical restrictions (dim_restriction_type_id=2 and dim_criterion_type_id=1)
+group2Restrictions INTEGER[] :=ARRAY[776,777,778];--this group contains only  criterion type 1 medical restrictions (dim_restriction_type_id=2 and dim_criterion_type_id=1)
 --776 (Medical) CT:1
 --777 (Medical) CT:1
 --778 (Medical) CT:1
 
-group3Name varchar DEFAULT 'TEST_002_GROUP_3';--this group contains only type 1 medical and pharmacy restrictions  (dim_criterion_type_id=1 and (dim_restriction_type_id=2 or dim_restriction_type_id=1))
+group3Name varchar DEFAULT 'TEST_002_GROUP_3';--this group contains only criterion type 1 restriction (1 medical and 1 pharmacy restriction  (dim_criterion_type_id=1  (dim_restriction_type_id=2 or dim_restriction_type_id=1))
 group3Restrictions INTEGER[] :=ARRAY[812,813,775];
 --812 (Pharmacy) CT:1
 --813 (Pharmacy) CT:1
@@ -49,8 +49,14 @@ group4Restrictions INTEGER[] :=ARRAY[840,1865,1867];
 group5Name varchar DEFAULT 'TEST_002_GROUP_5';--this group contains pharmacy mixed(single , double, triple, quadruple) steps criterias
 group5Restrictions INTEGER[] :=ARRAY[840,1864,1865,841,842,2111,1882,1881,1880,1869];
 
-group6Name varchar DEFAULT 'TEST_002_GROUP_6';--this group contains pharmacy and medical Single steps criterias
+group6Name varchar DEFAULT 'TEST_002_GROUP_6';--this group contains  medical Single steps criterias
 group6Restrictions INTEGER[] :=ARRAY[1860,2106,2172,1861];
+
+group7Name varchar DEFAULT 'TEST_002_GROUP_7';--this group contains pharmacy and medical Single steps criterias
+group7Restrictions INTEGER[] :=ARRAY[840,1865,1867];
+
+group8Name varchar DEFAULT 'TEST_002_GROUP_8';--this group contains pharmacy and medical  standard and steps criterias
+group8Restrictions INTEGER[] :=ARRAY[776,809,1860,841];
 
 BEGIN
 
@@ -83,6 +89,12 @@ BEGIN
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #6
   PERFORM createreportcriteriagroups(reportId,reportClientId,group6Restrictions,group6Name,userEmail);
+
+  --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #7
+  PERFORM createreportcriteriagroups(reportId,reportClientId,group7Restrictions,group7Name,userEmail);
+
+  --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #8
+  PERFORM createreportcriteriagroups(reportId,reportClientId,group8Restrictions,group8Name,userEmail);
   
 success:=true;
 RETURN success;

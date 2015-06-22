@@ -11,7 +11,7 @@ DECLARE
   reportBussinesId varchar DEFAULT 'TEST REPORT 002';
   reportName varchar DEFAULT 'TEST REPORT NAME 002';
   drugIds INTEGER[] := ARRAY[156,160,2182, 3098, 3199, 3237, 3584];
-  restrictionsIds INTEGER[]:= ARRAY[809,810,811,812,813,775,776,777,778,840,1865,1867];
+  restrictionsIds INTEGER[]:= ARRAY[809,810,811,776,777,778,812,813,775,840,1865,1864,1867,841,842,2111,1882,1881,1880,1869,1860,2106,2172,1861];
 
   group1Name varchar DEFAULT 'TEST_002_GROUP_1';
   group2Name varchar DEFAULT 'TEST_002_GROUP_2';
@@ -19,6 +19,8 @@ DECLARE
   group4Name varchar DEFAULT 'TEST_002_GROUP_4';
   group5Name varchar DEFAULT 'TEST_002_GROUP_5';
   group6Name varchar DEFAULT 'TEST_002_GROUP_6';
+  group7Name varchar DEFAULT 'TEST_002_GROUP_7';
+  group8Name varchar DEFAULT 'TEST_002_GROUP_8';
 
 BEGIN
 	--GET THE TEST REPORT ID
@@ -168,6 +170,37 @@ BEGIN
 			    select throw_error(group6Name || ' GROUP DOES NOT EXISTS');			
 			END IF;	
 		END IF;
+
+
+		--VALIDATE THAT GROUP7 EXISTS IN FRONT END DATABASE  MEDICAL AND PHARMACY GROUPS		
+		IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group7Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=2) = false) and
+		   (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group7Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6) = false)
+		THEN
+		    select throw_error(group7Name || ' GROUP DOES NOT EXISTS');			
+		ELSE
+		                IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group7Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=6) = false) and
+			           (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group7Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=1) = false) and
+			           (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group7Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=2) = false)
+				THEN
+					select throw_error(group7Name || ' GROUP INVALID STEPS GROUPING VALUES');			
+				END IF;	
+		END IF;	
+
+
+		--VALIDATE THAT GROUP8 EXISTS IN FRONT END DATABASE  MEDICAL AND PHARMACY GROUPS		
+		IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group8Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=2) = false) and
+		   (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group8Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6) = false)
+		THEN
+		    select throw_error(group8Name || ' GROUP DOES NOT EXISTS');			
+		ELSE
+		                IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group8Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=6) = false) and
+			           (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group8Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=1) = false) and
+			           (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group8Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=2) = false)
+				THEN
+					select throw_error(group8Name || ' GROUP INVALID STEPS GROUPING VALUES');			
+				END IF;	
+		END IF;	
+		
 
        END IF;
 
