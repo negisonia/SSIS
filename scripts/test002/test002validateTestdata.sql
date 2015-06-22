@@ -11,26 +11,28 @@ DECLARE
   reportName varchar DEFAULT 'TEST REPORT NAME 002';
 
   drugIds INTEGER[] := ARRAY[156,160,2182, 3098, 3199, 3237, 3584];
-  restrictionsIds INTEGER[]:= ARRAY[775,776,777,778,779,780,781,782,783,784,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,844,845,846,847,848,1860,1861,1864,1865,1866,1867,1868,1869,1870,1871,1872,1873,1874,1875,1876,1877,1878,1879,1880,1881,1882,1883,1884,1885,2105,2106,2107,2108,2109,2110,2111,2172,2174,2175];
+  restrictionsIds INTEGER[]:= ARRAY[809,810,811,812,813,775,776,777,778,840,1865,1867];
   
 
   reportIndication integer:=7; 	
 
-  group1id integer DEFAULT null;	
-  group2id integer DEFAULT null;
-  group3id integer DEFAULT null;
+  
   
   group1Exists boolean DEFAULT false;
   group2Exists boolean DEFAULT false;
   group3Exists boolean DEFAULT false;
+  group4Exists boolean DEFAULT false;
 
-  group1Name varchar DEFAULT 'TEST_002_GROUP_TYPE_1';
-  group2Name varchar DEFAULT 'TEST_002_GROUP_TYPE_2';
-  group3Name varchar DEFAULT 'TEST_002_GROUP_TYPE_1_2';
+  group1Name varchar DEFAULT 'TEST_002_GROUP_1';
+  group2Name varchar DEFAULT 'TEST_002_GROUP_2';
+  group3Name varchar DEFAULT 'TEST_002_GROUP_3';
+  group4Name varchar DEFAULT 'TEST_002_GROUP_4';
 
-  group1Restrictions integer[]:= ARRAY[775,776,777,787,788,789,809,810,811,812,813,821,822,823,846];
-  group2Restrictions integer[]:= ARRAY[840,841,842,847,848,1860,1861,1864,1865,1866,1867,1868,1869,1870,1871,1872,1873,1874,1875,1876,1877,1878,1879,1880,1881,1882,1883,1884,1885,2105,2106,2107,2108,2109,2110,2111,2172,2174,2175];
-  group3Restrictions integer[]:= ARRAY[775,776,777,787,788,789,809,810,811,840,841,842,847,848,1860,1861,1864,1865,1866];
+  group1Restrictions integer[]:= ARRAY[809,810,811];
+  group2Restrictions integer[]:= ARRAY[776,777,778];
+  group3Restrictions integer[]:= ARRAY[776,777,778];
+
+
 
 BEGIN
 	--GET THE TEST REPORT ID
@@ -43,98 +45,73 @@ BEGIN
 		RETURN success;
 	ELSE
 	
-	--VALIDATE THAT THE TEST REPORT DRUGS IN THE FRONT END DATABASE ARE THE SAME AS THE REPORT DRUGS IN THE ADMIN DATABASE
-	 FOREACH drugid IN ARRAY drugIds
-	 LOOP
-	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
-		select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
-		success:=false;
-		RETURN success;
-	   END IF;
-	 END LOOP;
-	
-	--VALIDATE THAT THE TEST REPORT RESTRICTIONS IN THE FRONT END DATABASE ARE THE SAME AS ADMIN  DATABASE
-	 FOREACH restrictionid IN ARRAY restrictionsIds
-	 LOOP
-	   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
-		select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
-		success:=false;
-		RETURN success;	  
-	  END IF;
-	 END LOOP;
+		--VALIDATE THAT THE TEST REPORT DRUGS IN THE FRONT END DATABASE ARE THE SAME AS THE REPORT DRUGS IN THE ADMIN DATABASE
+		 FOREACH drugid IN ARRAY drugIds
+		 LOOP
+		   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
+			select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
+			success:=false;
+			RETURN success;
+		   END IF;
+		 END LOOP;
+		
+		--VALIDATE THAT THE TEST REPORT RESTRICTIONS IN THE FRONT END DATABASE ARE THE SAME AS ADMIN  DATABASE
+		 FOREACH restrictionid IN ARRAY restrictionsIds
+		 LOOP
+		   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
+			select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
+			success:=false;
+			RETURN success;	  
+		  END IF;
+		 END LOOP;
 
-	--VALIDATE CUSTOM GROUP1
-		-- VALIDATE GROUP1 EXISTS IN FRONT END WITH ITS VALID DIM CRITERION TYPE (3)
-		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group1Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group1Exists;		
+		--VALIDATE THAT GROUP1 EXISTS IN FRONT END DATABASE (criterion type must be 3 and restriction type must be 6)
+		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group1Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6) INTO group1Exists;		
 		IF group1Exists = false THEN
-			select throw_error(group1Name || ' DOES NOT EXISTS');
+			select throw_error(group1Name || 'GROUP DOES NOT EXISTS');
 			success:=false;
 			RETURN success;			
 		END IF;	
-	
-		--VALIDATE GROUP 1 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 3
-		FOR  dim_restriction IN select c.criteria_restriction_name, c.dim_criteria_restriction_id, c.dim_criterion_type_id from custom_criteron_selection c where c.report_id=reportId and c.indication_id=reportIndication  group by c.criteria_restriction_name, c.dim_criteria_restriction_id, c.dim_criterion_type_id order by c.dim_criteria_restriction_id
-		LOOP
-			IF (dim_restriction.criteria_restriction_name like '%' || group1Name )  and (dim_restriction.dim_criterion_type_id != 3)  THEN --IF WE ARE ITERATING OVER A GROUP 1 DIM CRITERIA RESTRICION
-				select throw_error(group1Name || ' Contains Invalid Dim Criterion type');
-			        success:=false;
-			        RETURN success;				
-			END IF;
-			
-		END LOOP;
+
+		--VALIDATE THAT GROUP2 EXISTS IN FRONT END DATABASE (criterion type must be 3 and restriction type must be 2)
+		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group2Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=2) INTO group2Exists;
+		IF group2Exists = false THEN
+			select throw_error(group2Name || 'GROUP DOES NOT EXISTS');
+			success:=false;
+			RETURN success;			
+		END IF;	
 
 
-		FOREACH restrictionid IN ARRAY group1Restrictions
-		LOOP
-		
-		END LOOP;
-	-----------------------------------------------------	
+		--VALIDATE THAT GROUP3 EXISTS IN FRONT END DATABASE ( should exists 2 custom groups both with criterion type = 3 and one with restriction type = 2 for Medical and the other restriction type =6 for Pharmacy restrictions )
+		IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group3Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=2) = false) or
+		   (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group3Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6) = false)
+		 THEN
+			select throw_error(group3Name || ' GROUP DOES NOT EXISTS');
+			success:=false;
+			RETURN success;			
+		END IF;	
 
-	-- VALIDATE CUSTOM GROUP 2
-		-- VALIDATE GROUP2 EXISTS IN FRONT END WITH ITS VALID DIM CRITERION TYPE (3)
-	--	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group2Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group2Exists;		
-	--	IF group2Exists = false THEN
-	--		select throw_error(group2Name || ' DOES NOT EXISTS');
-	--		success:=false;
-	--		RETURN success;	
-	--	END IF;	
+		--VALIDATE THAT GROUP4 EXISTS IN FRONT END DATABASE (criterion type must be 3 and restriction type must be 6)
+		SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group4Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6) INTO group4Exists;
+		IF group4Exists = false THEN
+			select throw_error(group4Name || ' GROUP DOES NOT EXISTS');
+			success:=false;
+			RETURN success;			
+		END IF;	
 
-		--VALIDATE GROUP 2 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 5
-	--	FOREACH restrictionid IN ARRAY group2Restrictions
-	--	LOOP
-	--	IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
-   	--	        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
-	--		success:=false;
-	--		RETURN success;	
-	--	END IF;
-	--	END LOOP;
-
-	-----------------------------------------------------	
-
-	-- VALIDATE CUSTOM GROUP 3
-		-- VALIDATE GROUP3 EXISTS IN FRONT END WITH ITS VALID DIM CRITERION TYPE (5)
-	--	SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group3Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3) INTO group3Exists;		
-	--	IF group3Exists = false THEN
-	--		select throw_error(group3Name || ' DOES NOT EXISTS');
-	--		success:=false;
-	--		RETURN success;	
-	--	END IF;	
-
-		--VALIDATE GROUP 3 RESTRICTIONS CONTAINS DIM CRITERION TYPE EQUALS 5
-	--	FOREACH restrictionid IN ARRAY group3Restrictions
-	--	LOOP
-	--	IF ( SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs where ccs.report_id = reportId and ccs.indication_id=reportIndication and ccs.dim_criteria_restriction_id=restrictionid and ccs.dim_criterion_type_id=5) = FALSE) THEN
-   	--	        select throw_error( 'RESTRICTION ' || restrictionid || ' CONTAINS AN INVALID DIM CRITERION TYPE');
-	--		success:=false;
-	--		RETURN success;	
-	--	END IF;
-	--	END LOOP;
+		IF  (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group4Name || ' - %' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=6) = false) or
+			(SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group4Name || ' - %' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=1) = false)
+		THEN
+			select throw_error(group4Name || ' GROUP DOES NOT EXISTS');
+			success:=false;
+			RETURN success;			
+		END IF;	
 
 
-END IF;
+       END IF;
+
 success:=true;
 RETURN success;	  
 	
-
 END
 $$ LANGUAGE plpgsql;
