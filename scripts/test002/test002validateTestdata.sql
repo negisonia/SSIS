@@ -152,20 +152,22 @@ BEGIN
 			END IF;	
 		END IF;
 
-
-
 		--VALIDATE THAT GROUP6 EXISTS IN FRONT END DATABASE THERE SHOULD EXIST 2 RECORDS ONLY 
 		SELECT COUNT(*) INTO groupCount FROM custom_criteron_selection ccs WHERE ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.restriction_name like group6Name || '%';
 		IF groupCount <> 2 THEN
 			select throw_error( 'INVALID GROUP COUNT FOR ' || group6Name );
 		ELSE
+			--VALIDATE one record contains (criterion type=3 and restriction type = 2)
+			IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name=group6Name AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=2) = false) 			   
+			THEN
+			    select throw_error(group6Name || ' GROUP DOES NOT EXISTS');			
+			END IF;	
 			--VALIDATE that records contain (criterion type=5 and restriction type = 2)
 			IF (SELECT EXISTS ( SELECT 1 FROM custom_criteron_selection ccs WHERE ccs.restriction_name like group6Name || ' -%' AND ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.dim_criterion_type_id=5 and ccs.dim_restriction_type_id=2) = false) 			   
 			THEN
 			    select throw_error(group6Name || ' GROUP DOES NOT EXISTS');			
 			END IF;	
 		END IF;
-
 
        END IF;
 
