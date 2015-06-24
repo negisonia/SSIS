@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportFrontEnd(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], restriction_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [])--FRONT END
+﻿CREATE OR REPLACE FUNCTION createRestrictionReport(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], restriction_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [])--FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 reportfeid integer DEFAULT NULL;
@@ -98,7 +98,7 @@ END CASE;
 
 
 --INSERT RECORD INTO CRITERIA REPORTS
-INSERT INTO criteria_reports(report_id,user_id,view_type_id,crated_at,updated_at,geography) VALUES(reportId,userid,viewtype,now(),now(),geography) RETURNING id INTO reportfeid;
+INSERT INTO criteria_reports(report_id,user_id,view_type_id,cre1ated_at,updated_at,geography) VALUES(reportId,userid,viewtype,now(),now(),geography) RETURNING id INTO reportfeid;
 
 --VALIDATE REPORT ID IS NOT NULL
 IF reportfeid = null THEN
