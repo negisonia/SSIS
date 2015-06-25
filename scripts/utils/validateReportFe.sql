@@ -1,8 +1,8 @@
 ﻿--VALIDATES THAT THE REPORT WITH THE SPECIFIES PARAMETER EXISTS IN THE FRONT END DATABASE
-CREATE OR REPLACE FUNCTION validatereport(reportBussinesId integer,reportName varchar,drugids integer[], restrictionids integer[], customgroups varchar[]) --FRONT END
-RETURNS boolean AS $$
+DROP FUNCTION validatereport(character varying,character varying,integer[],integer[],character varying[]);
+CREATE OR REPLACE FUNCTION validatereport(reportBussinesId varchar,reportName varchar,drugids integer[], restrictionids integer[], customgroups varchar[]) --FRONT END
+RETURNS void AS $$
 DECLARE
-  success boolean DEFAULT false;
   reportId integer;
   drugid integer;
   restrictionid integer;
@@ -26,7 +26,7 @@ BEGIN
 		 END LOOP;
 		
 		--VALIDATE THAT THE TEST REPORT RESTRICTIONS IN THE FRONT END DATABASE ARE THE SAME AS ADMIN  DATABASE
-		 FOREACH restrictionid IN ARRAY restrictionsIds
+		 FOREACH restrictionid IN ARRAY restrictionids
 		 LOOP
 		   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
 			select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
@@ -42,9 +42,5 @@ BEGIN
 		 END LOOP;		
 
        END IF;
-
-success:=true;
-RETURN success;	  
-	
 END
 $$ LANGUAGE plpgsql;
