@@ -2,18 +2,60 @@
 RETURNS void AS $$
 DECLARE
   success boolean DEFAULT false;
-  groupCount integer;
-  reportIndication integer:=7; 	
-  group1Name varchar DEFAULT 'TEST_002_GROUP_1';
-  group2Name varchar DEFAULT 'TEST_002_GROUP_2';
-  group3Name varchar DEFAULT 'TEST_002_GROUP_3';
-  group4Name varchar DEFAULT 'TEST_002_GROUP_4';
-  group5Name varchar DEFAULT 'TEST_002_GROUP_5';
-  group6Name varchar DEFAULT 'TEST_002_GROUP_6';
-  group7Name varchar DEFAULT 'TEST_002_GROUP_7';
-  group8Name varchar DEFAULT 'TEST_002_GROUP_8';
+  aux record;
+  intValue integer;
   
 BEGIN
+
+   IF reportId = NULL THEN
+       select throw_error('report id is required');
+   END IF;
+   
+   FOR aux IN SELECT * FROM criteria_restriction_selection crs where crs.report_id=reportId
+   LOOP
+	  --IF RECORD IS A PHARMACY RESTRICTION
+	  IF aux.benefit_name ='Pharmacy' THEN
+
+			  -- IF RECORD IS A NORMAL RESTRICTION  
+			  IF aux.dim_criterion_type_id=1 THEN
+			    	SELECT COUNT(*) INTO intValue FROM custom_criteron_selection ccs WHERE ccs.restriction_name=aux.restriction_name AND ccs.report_id=reportId and ccs.indication_id=aux.indication_id and ccs.dim_criterion_type_id=3 and ccs.dim_restriction_type_id=6
+				IF intValue <> 1 THEN
+				    SELECT throw_error('INVALID RECORD COUNT WAS GENERATED FOR RESTRICTION ' || aux.dim_criteria_restriction_id || ' INDICATION ' || aux.indication_id || ' TYPE PHARMACY ' || ' CRITERION TYPE ' || aux.dim_criterion_type_id);
+				END IF;
+			  -- IF RECORD IS A STEPS RESTRICTION
+			  ELSIF aux.dim_criterion_type=2
+				CASE aux.dim_restriction_type_id
+				   WHEN 1 THEN --IS A PA RESTRICTION (6 Y 1)
+				   WHEN 3 THEN --IS QUANTITY LIMIT
+			        END CASE;   
+			  END IF;
+		
+	  --IF RECORD IS A MEDICAL RESTRICTION
+	  ELSEIF aux.benefit_name ='Medical' THEN		     
+		           -- IF RECORD IS A NORMAL RESTRICTION  
+			  IF aux.dim_criterion_type_id=1 THEN
+			      CASE aux.dim_restriction_type_id
+				   WHEN 2 THEN --IS A MEDICAL RESTRICTION				   
+			      END CASE;
+			  -- IF RECORD IS A STEPS RESTRICTION
+			  ELSIF aux.dim_criterion_type=2
+				CASE aux.dim_restriction_type_id
+				   WHEN 2 THEN --IS A MEDICAL RESTRICTION
+			        END CASE;   
+			  END IF;
+	  END IF
+  END LOOP;
+
+	
+
+
+
+
+
+
+
+
+
 
 	--VALIDATE THAT GROUP1 EXISTS IN FRONT END DATABASE (must exist only one record) 
 	SELECT COUNT(*) INTO groupCount FROM custom_criteron_selection ccs WHERE ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.restriction_name like group1Name || '%';

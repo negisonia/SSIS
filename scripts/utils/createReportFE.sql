@@ -157,7 +157,7 @@ ELSE
 	END LOOP;
 
 	--INSERT RESTRICTIONS DATA
-	IF restriction_ids!=NULL THEN
+	IF( array_length(restriction_ids,1) > 0) THEN
 		FOREACH intvalue IN ARRAY restriction_ids
 		LOOP	
 			INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,reportfeid); 
@@ -165,7 +165,7 @@ ELSE
 	END IF;       
 
         --INSERT CUSTOM RESTRICTIONS DATA
-        IF custom_restriction_ids != NULL THEN
+        IF array_length(custom_restriction_ids,1) > 0 THEN
 	FOREACH intvalue IN ARRAY custom_restriction_ids
 		LOOP	
 			INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,reportfeid); 
@@ -174,7 +174,7 @@ ELSE
 
 END IF;
 
-RETURN 1;
+RETURN reportfeid;
 END
 $$ LANGUAGE plpgsql;
 
