@@ -6,8 +6,7 @@ DECLARE
   reportfeId integer DEFAULT 0;
   drugid integer;
   restrictionid integer;
-  groupRestrictionedDrugs integer[];
-  rpt_drug_drugs integer[];
+
   reportBussinesId varchar DEFAULT 'TEST REPORT 002';
   reportName varchar DEFAULT 'TEST REPORT NAME 002';
   drugIds INTEGER[] := ARRAY[156,160,2182, 3098, 3199, 3237, 3584];
@@ -52,22 +51,67 @@ BEGIN
 		
                --CREATE STEPS REPORT USING CUSTOM GROUP #1
                 SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions, NULL) INTO reportfeId;
-
 		RAISE NOTICE 'generated report :%',reportfeId;
-                
-		--GET THE LIST OF DRUGS ASSOCIATED WITH THE CRITERIA SELECTED (LIST OF REPORT DRUGS THAT CONTAINS A RESTRICTION ON IT)
-		groupRestrictionedDrugs :=getreportrestrictioneddrugs(reportId,reportfeId);
 
-		--GET THE LIST OF DRUGS RETURNED BY RPT_DRUG FUNCTION	
-		rpt_drug_drugs:=ARRAY(select drug_id from rpt_drug(reportfeId) group by drug_id);
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
 
-		RAISE NOTICE 'RPT_DRUGS: %',rpt_drug_drugs;
-		RAISE NOTICE 'EXPECTED DRUGS: %',groupRestrictionedDrugs;
-	
-		--COMPARE DRUGS RETURNED BY RPT FUNCTION WITH THE ONES EXPECTED
-		IF (array_sort(rpt_drug_drugs) = array_sort(groupRestrictionedDrugs)) = FALSE THEN
-			SELECT throw_error('REPORT DRUGS MISMATCH');
-		END IF;
+		------------GROUP 2-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #2
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 3-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #2
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 4-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #4
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group4Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 5-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #5
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group5Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 5-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #6
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group6Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 7-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #7
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group7Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+		------------GROUP 8-----------------
+		--CREATE STEPS REPORT USING CUSTOM GROUP #7
+                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group8Restrictions, NULL) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+		
        END IF;
 
 success:=true;
