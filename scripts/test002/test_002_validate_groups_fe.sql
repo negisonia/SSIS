@@ -4,7 +4,17 @@ DECLARE
   success boolean DEFAULT false;
   aux record;
   intValue integer;
-  groupCount integer;
+  groupCount integer :=0;
+  reportIndication integer :=7;
+
+  group1Name varchar DEFAULT 'TEST_002_GROUP_1';
+  group2Name varchar DEFAULT 'TEST_002_GROUP_2';
+  group3Name varchar DEFAULT 'TEST_002_GROUP_3';
+  group4Name varchar DEFAULT 'TEST_002_GROUP_4';
+  group5Name varchar DEFAULT 'TEST_002_GROUP_5';
+  group6Name varchar DEFAULT 'TEST_002_GROUP_6';
+  group7Name varchar DEFAULT 'TEST_002_GROUP_7';
+  group8Name varchar DEFAULT 'TEST_002_GROUP_8';
 BEGIN
 
    IF reportId = NULL THEN
@@ -14,6 +24,7 @@ BEGIN
 	--VALIDATE THAT GROUP1 EXISTS IN FRONT END DATABASE (must exist only one record) 
 	SELECT COUNT(*) INTO groupCount FROM custom_criteron_selection ccs WHERE ccs.report_id=reportId and ccs.indication_id=reportIndication and ccs.restriction_name like group1Name || '%';
 	IF groupCount <> 1 THEN
+                RAISE NOTICE 'COUNT:%',groupCount;
 		select throw_error( 'INVALID GROUP COUNT FOR ' || group1Name );
 	 ELSE
 		--VALIDATE THAT GROUP1 criterion type is equals 3 and restriction type equals 6  		
