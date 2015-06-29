@@ -3,10 +3,11 @@ RETURNS VOID AS $$
 DECLARE
   groupRestrictionedDrugs integer[];
   rpt_drug_drugs integer[];
+  rpt_drug_restriction_ids integer[];
+  expected_restriction_ids integer[];
 BEGIN
 
-		--VALIDATE DRUGS 
-
+		--========VALIDATE DRUGS 
 	        --GET THE LIST OF DRUGS ASSOCIATED WITH THE CRITERIA SELECTED (LIST OF REPORT DRUGS THAT CONTAINS A RESTRICTION ON IT)
 		groupRestrictionedDrugs :=get_report_restrictioned_drugs(reportId,reportfeId);
 
@@ -19,5 +20,19 @@ BEGIN
 			RAISE NOTICE 'EXPECTED DRUGS: %',groupRestrictionedDrugs;
 			SELECT throw_error('REPORT DRUGS MISMATCH');
 		END IF;
-END;
+
+
+		--VALIDATE RESTRICTIONS
+		--GET THE LIST OF RESTRICTIONS  RETURNED BY RPT_DRUG_FUNCTION
+		rpt_drug_restriction_ids:=ARRAY(select dim_criteria_restriction_id from rpt_drug(reportfeId) group by dim_criteria_restriction_id);
+		--GET EXPECTED LIST OF RESTRICTIONS
+		expected_restriction_ids:=get_report_active_restrictions(reportId,reportfeId);
+
+		--COMPARE RPT_DRUGS RESTRICTIONS WITH THE ONES EXPECTED
+		IF (array_sort(rpt_drug_restriction_ids) = array_sort(expected_restriction_ids)) = FALSE THEN
+			RAISE NOTICE 'RPT_RESTRICTIONS: %',rpt_drug_restriction_ids;
+			RAISE NOTICE 'EXPECTED RESTRICTIONS: %',expected_restriction_ids;
+			SELECT throw_error('REPORT RESTRICTIONS MISMATCH');
+		END IF;
+END;	
 $$ LANGUAGE plpgsql;
