@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION  createClient(clientName varchar) --ADMIN DB
+CREATE OR REPLACE FUNCTION  create_client(clientName varchar) --ADMIN DB
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;

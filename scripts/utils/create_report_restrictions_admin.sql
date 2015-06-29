@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportRestrictions(reportId integer, restrictionIds integer[]) --ADMIN DB
+CREATE OR REPLACE FUNCTION create_report_restrictions(reportId integer, restrictionIds integer[]) --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;

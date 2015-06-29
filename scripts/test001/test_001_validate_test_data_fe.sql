@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test001validateTestData()--FRONT END
+CREATE OR REPLACE FUNCTION test_001_validate_test_data()--FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT false;

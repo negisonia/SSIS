@@ -1,11 +1,11 @@
-﻿CREATE OR REPLACE FUNCTION cleartestdata() --ADMIN DB
+﻿CREATE OR REPLACE FUNCTION clear_test_data() --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
 BEGIN
 
 --CLEAR TEST001 DATA
-perform test001cleartestdata();
+perform test_001_clear_test_data();
 	
 
 SUCCESS:=true;

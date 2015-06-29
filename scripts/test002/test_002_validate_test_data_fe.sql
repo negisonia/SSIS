@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test002validatetestdata() --FRONT END
+﻿CREATE OR REPLACE FUNCTION test_002_validate_test_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT false;
@@ -36,7 +36,7 @@ DECLARE
 BEGIN
 
         --VALIDATE REPORT DATA (DRUGS, RESTRICTIONS, CUSTOM GROUPS, REPORT) EXISTS IN FE DATABASE
-        PERFORM validatereport(reportBussinesId,reportName,drugIds,restrictionsIds,groups);
+        PERFORM validate_report(reportBussinesId,reportName,drugIds,restrictionsIds,groups);
 
 	--GET THE TEST REPORT ID
 	SELECT crr.report_id FROM criteria_restriction_reports crr WHERE crr.business_id=reportBussinesId and  crr.report_name=reportName INTO reportId;
@@ -45,12 +45,12 @@ BEGIN
 	IF reportId <> 0 THEN
                 
 		--VALIDATE REPORT GROUPS
-		PERFORM test002validategroups(reportId);
+		PERFORM test_002_validate_groups(reportId);
 
 		------------GROUP 1-----------------
 		
                --CREATE STEPS REPORT USING CUSTOM GROUP #1
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -58,7 +58,7 @@ BEGIN
 
 		------------GROUP 2-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #2
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -66,7 +66,7 @@ BEGIN
 
 		------------GROUP 3-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #2
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -74,7 +74,7 @@ BEGIN
 
 		------------GROUP 4-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #4
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group4Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group4Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -90,7 +90,7 @@ BEGIN
 
 		------------GROUP 5-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #6
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group6Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group6Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -98,7 +98,7 @@ BEGIN
 
 		------------GROUP 7-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #7
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group7Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group7Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -106,7 +106,7 @@ BEGIN
 
 		------------GROUP 8-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #7
-                SELECT createRestrictionReport(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group8Restrictions, NULL) INTO reportfeId;
+                SELECT create_restriction_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group8Restrictions, NULL) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT

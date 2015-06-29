@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createRestrictionReport(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [], restriction_ids integer[], custom_restriction_ids integer[] )--FRONT END
+CREATE OR REPLACE FUNCTION create_report(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [], restriction_ids integer[], custom_restriction_ids integer[] )--FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 reportfeid integer DEFAULT NULL;

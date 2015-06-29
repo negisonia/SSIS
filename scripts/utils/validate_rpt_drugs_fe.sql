@@ -8,7 +8,7 @@ BEGIN
 		--VALIDATE DRUGS 
 
 	        --GET THE LIST OF DRUGS ASSOCIATED WITH THE CRITERIA SELECTED (LIST OF REPORT DRUGS THAT CONTAINS A RESTRICTION ON IT)
-		groupRestrictionedDrugs :=getreportrestrictioneddrugs(reportId,reportfeId);
+		groupRestrictionedDrugs :=get_report_restrictioned_drugs(reportId,reportfeId);
 
 		--GET THE LIST OF DRUGS RETURNED BY RPT_DRUG FUNCTION	
 		rpt_drug_drugs:=ARRAY(select drug_id from rpt_drug(reportfeId) group by drug_id);

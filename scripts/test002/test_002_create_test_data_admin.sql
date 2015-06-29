@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test002createtestdata() --ADMIN DB
+﻿CREATE OR REPLACE FUNCTION test_002_create_test_data() --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -61,40 +61,40 @@ group8Restrictions INTEGER[] :=ARRAY[776,809,1860,841];
 BEGIN
 
   --CREATE REPORT
-  select createreport(reportBussinesId,reportName) INTO reportId;
+  select create_report(reportBussinesId,reportName) INTO reportId;
 
   --CREATE REPORT CLIENT
-  SELECT createReportClient(reportId,reportClientName) into reportClientId;
+  SELECT create_report_client(reportId,reportClientName) into reportClientId;
 
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  PERFORM createreportdrugs(reportId,drugIds,indicationId);
+  PERFORM create_report_drugs(reportId,drugIds,indicationId);
 
   --CREATE REPORT RESTRICTIONS
-  PERFORM createreportrestrictions(reportId,restrictionsIds);
+  PERFORM create_report_restrictions(reportId,restrictionsIds);
   
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #1 
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group1Restrictions,group1Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group1Restrictions,group1Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #2 
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group2Restrictions,group2Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group2Restrictions,group2Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #3 
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group3Restrictions,group3Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group3Restrictions,group3Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #4
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group4Restrictions,group4Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group4Restrictions,group4Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #5
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group5Restrictions,group5Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group5Restrictions,group5Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #6
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group6Restrictions,group6Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group6Restrictions,group6Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #7
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group7Restrictions,group7Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group7Restrictions,group7Name,userEmail);
 
   --CREATE REPORT CUSTOM CRITERIA  GROUP FOR #8
-  PERFORM createreportcriteriagroups(reportId,reportClientId,group8Restrictions,group8Name,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,group8Restrictions,group8Name,userEmail);
   
 success:=true;
 RETURN success;

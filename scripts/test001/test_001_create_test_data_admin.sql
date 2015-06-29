@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test001createtestdata() --ADMIN DB
+﻿CREATE OR REPLACE FUNCTION test_001_create_test_data() --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -21,21 +21,21 @@ restrictionsIds2 INTEGER[]:= ARRAY[706,707];
 BEGIN
 
   --CREATE REPORT AND STORE ID ON REPORTID  VARIABLE FOR FURTHER USAGE
-  SELECT createreport(reportBussinesId,reportName) INTO reportId;
+  SELECT create_report(reportBussinesId,reportName) INTO reportId;
   --CREATE  CLIENT AND REPORT CLIENT
-  SELECT createreportclient(reportId,reportClientName) INTO reportClientId;
+  SELECT create_report_client(reportId,reportClientName) INTO reportClientId;
   --ADD DRUGS TO THE CREATED REPORT FOR THE SPECIFIED INDICATION ID
-  PERFORM createReportDrugs(reportId,drugIds,indicationId);
+  PERFORM create_report_drugs(reportId,drugIds,indicationId);
   --CREATE REPORT RESTRICTIONS
-  PERFORM createreportrestrictions(reportId,restrictionsIds);
+  PERFORM create_report_restrictions(reportId,restrictionsIds);
   --CREATE REPORT CUSTOM CRITERIA  GROUP
-  PERFORM createreportcriteriagroups(reportId,reportClientId,restrictionsIds,groupName1,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,restrictionsIds,groupName1,userEmail);
   --ADD DRUGS TO THE REPORT (DIFFERENT INDICATION THAN PREVIOUS DRUGS)
-  PERFORM createReportDrugs(reportId,drugIds2,indicationId2) ;
+  PERFORM create_report_drugs(reportId,drugIds2,indicationId2) ;
   --ADD REPORT RESTRICTIONS (RESTRICTIONS THAT MATCHES THE NEW DRUGS INDICATION)
-  PERFORM createreportrestrictions(reportId,restrictionsIds2); 
+  PERFORM create_report_restrictions(reportId,restrictionsIds2); 
   --CREATE CRITERIA GROUPS FOR THE SECOND GROUP OF RESTRICTIONS
-  PERFORM createreportcriteriagroups(reportId,reportClientId,restrictionsIds2,groupName2,userEmail);
+  PERFORM create_report_criteria_groups(reportId,reportClientId,restrictionsIds2,groupName2,userEmail);
   
  
 success:=true;

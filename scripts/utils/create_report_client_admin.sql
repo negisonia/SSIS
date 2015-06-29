@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION  createReportClient(reportId integer, clientName varchar) --ADMIN DB
+﻿CREATE OR REPLACE FUNCTION  create_report_client(reportId integer, clientName varchar) --ADMIN DB
 RETURNS integer AS $$
 DECLARE
 clientExists boolean;
@@ -9,7 +9,7 @@ reportClientId integer;
 BEGIN
 
 SELECT EXISTS( SELECT 1 FROM reports r WHERE r.id=reportId) INTO reportExists;
-SELECT createclient(clientName) INTO clientId;
+SELECT create_client(clientName) INTO clientId;
 
 IF reportExists  THEN
 	SELECT EXISTS( SELECT 1 FROM report_clients rc WHERE rc.report_id=reportId AND rc.client_id=clientId) INTO reportClientExists;

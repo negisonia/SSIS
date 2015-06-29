@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION getReportRestrictionedDrugs(reportid integer,reportfe integer)
+CREATE OR REPLACE FUNCTION get_report_restrictioned_drugs(reportid integer,reportfe integer)
 RETURNS integer[] AS $$
 DECLARE
 restrictioned_drugs integer[];

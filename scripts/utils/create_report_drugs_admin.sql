@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION createReportDrugs(reportId integer, drugsIds integer[],indicationId integer) --ADMIN DB
+CREATE OR REPLACE FUNCTION create_report_drugs(reportId integer, drugsIds integer[],indicationId integer) --ADMIN DB
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;

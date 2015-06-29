@@ -1,6 +1,5 @@
 ﻿--VALIDATES THAT THE REPORT WITH THE SPECIFIES PARAMETER EXISTS IN THE FRONT END DATABASE
-DROP FUNCTION validatereport(character varying,character varying,integer[],integer[],character varying[]);
-CREATE OR REPLACE FUNCTION validatereport(reportBussinesId varchar,reportName varchar,drugids integer[], restrictionids integer[], customgroups varchar[]) --FRONT END
+CREATE OR REPLACE FUNCTION validate_report(reportBussinesId varchar,reportName varchar,drugids integer[], restrictionids integer[], customgroups varchar[]) --FRONT END
 RETURNS void AS $$
 DECLARE
   reportId integer;

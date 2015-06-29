@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION validate_activeformularies_data()
+CREATE OR REPLACE FUNCTION validate_active_formularies_data()
 RETURNS BOOLEAN AS $$
 DECLARE
 SUCCESS BOOLEAN DEFAULT FALSE;
