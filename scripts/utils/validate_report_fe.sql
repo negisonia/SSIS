@@ -17,28 +17,34 @@ BEGIN
 	ELSE
 	
 		--VALIDATE THAT THE TEST REPORT DRUGS IN THE FRONT END DATABASE ARE THE SAME AS THE REPORT DRUGS IN THE ADMIN DATABASE
-		 FOREACH drugid IN ARRAY drugIds
-		 LOOP
-		   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
-			select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
-		   END IF;
-		 END LOOP;
+		IF drugIds != NULL THEN
+			 FOREACH drugid IN ARRAY drugIds
+			 LOOP
+			   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportId AND crd.drug_id=drugid) = false) THEN
+				select throw_error('TEST REPORT DRUG DOES NOT EXISTS');
+			   END IF;
+			 END LOOP;
+		END IF;
 		
 		--VALIDATE THAT THE TEST REPORT RESTRICTIONS IN THE FRONT END DATABASE ARE THE SAME AS ADMIN  DATABASE
-		 FOREACH restrictionid IN ARRAY restrictionids
-		 LOOP
-		   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
-			select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
-		  END IF;
-		 END LOOP;
+		IF restrictionids != NULL THEN 
+			 FOREACH restrictionid IN ARRAY restrictionids
+			 LOOP
+			   IF (SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection  crs WHERE crs.report_id=reportId and crs.dim_criteria_restriction_id=restrictionid) = false) THEN
+				select throw_error('TEST REPORT RESTRICTION DOES NOT EXISTS');
+			  END IF;
+			 END LOOP;
+		END IF;
 
 		 --VALIDATE THAT THE TEST REPORT CUSTOM GROUPS EXISTS IN THE FRONT END DATABASE
-		 FOREACH customgroup IN ARRAY customgroups
-		 LOOP
-		   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.dim_criterion_type_id=3 and ccs.restriction_name=customgroup) = false) THEN
-			select throw_error('CUSTOM GROUP '|| customgroup ||' NOT EXISTS');
-		  END IF;
-		 END LOOP;		
+		IF customgroups != NULL THEN
+			 FOREACH customgroup IN ARRAY customgroups
+			 LOOP
+			   IF (SELECT EXISTS (SELECT 1 FROM custom_criteron_selection  ccs WHERE ccs.report_id=reportId and ccs.dim_criterion_type_id=3 and ccs.restriction_name=customgroup) = false) THEN
+				select throw_error('CUSTOM GROUP '|| customgroup ||' NOT EXISTS');
+			  END IF;
+			 END LOOP;		
+		END IF;
 
        END IF;
 END

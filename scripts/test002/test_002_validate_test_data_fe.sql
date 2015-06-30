@@ -50,7 +50,7 @@ BEGIN
 		------------GROUP 1-----------------
 		
                --CREATE STEPS REPORT USING CUSTOM GROUP #1
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -58,7 +58,7 @@ BEGIN
 
 		------------GROUP 2-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #2
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -66,7 +66,7 @@ BEGIN
 
 		------------GROUP 3-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #2
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -74,7 +74,7 @@ BEGIN
 
 		------------GROUP 4-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #4
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group4Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group4Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -82,7 +82,7 @@ BEGIN
 
 		------------GROUP 5-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #5
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group5Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group5Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -90,7 +90,7 @@ BEGIN
 
 		------------GROUP 5-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #6
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group6Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group6Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -98,7 +98,7 @@ BEGIN
 
 		------------GROUP 7-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #7
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group7Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group7Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT
@@ -106,7 +106,7 @@ BEGIN
 
 		------------GROUP 8-----------------
 		--CREATE STEPS REPORT USING CUSTOM GROUP #7
-                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group8Restrictions, NULL) INTO reportfeId;
+                SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group8Restrictions) INTO reportfeId;
 		RAISE NOTICE 'generated report :%',reportfeId;
 
 		--VALIDATE RPT_DRUG FOR REPORT

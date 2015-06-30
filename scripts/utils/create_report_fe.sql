@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION create_report(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [], restriction_ids integer[], custom_restriction_ids integer[] )--FRONT END
+﻿CREATE OR REPLACE FUNCTION create_report(reportId integer,userid integer,viewtype integer,geography varchar, drugids integer[],health_plan_ids integer[], states_ids integer [], msa_ids integer [], countie_ids integer [], restriction_ids integer[] )--FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 reportfeid integer DEFAULT NULL;
@@ -8,8 +8,8 @@ recordExist BOOLEAN DEFAULT FALSE;
 BEGIN
 
 --VALIDATE PARAMETERS ARE NOT NULL
-IF (reportid = null) or (userid = null) or (viewtype=null) or (geography = null) or (drugids = null)  or (health_plan_ids = null) or (restriction_ids= null and custom_restriction_ids= null) THEN
-	SELECT throw_error('PARAMETERS reportid, userid, viewtype, geography are required');
+IF (reportid = null) or (userid = null) or (viewtype=null) or (geography = null) or (drugids = null)  or (health_plan_ids = null) or (restriction_ids= null) THEN
+	SELECT throw_error('PARAMETERS reportid, userid, viewtype, geography and restrictions are required');
 END IF;
 
 --VALIDATE REPORT PASSED AS ARGUMENT EXISTS
@@ -29,7 +29,6 @@ IF ((viewtype = 1) or (viewtype = 2)) =false THEN
 END IF;
 
 --VALIDATE THAT DRUGS PASSED AS PARAMETER ARE VALID DRUGS FOR THE REPORT
-
 FOREACH intvalue IN ARRAY drugids
 LOOP
 SELECT EXISTS(SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=reportid AND crd.drug_id=intvalue) INTO recordExist;
@@ -60,16 +59,6 @@ IF restriction_ids !=NULL THEN
 	END LOOP;
 END IF;
 
---VALIDATE THAT CUSTOM RESTRICTIONS PASSED AS PARAMETER ARE VALID  FOR THE REPORT
-IF custom_restriction_ids != NULL  THEN
-	FOREACH intvalue IN ARRAY custom_restriction_ids
-	LOOP
-	SELECT EXISTS(select 1 from custom_criteron_selection ccs where ccs.report_id=reportid and ccs.dim_criteria_restriction_id=intvalue) INTO recordExist;
-		IF recordExist = FALSE THEN
-			SELECT throw_error('RESTRICTION '|| intvalue ||' IS NOT A VALID CUSTOM RESTRICTION FOR THE REPORT '|| reportid);
-		END IF;	
-	END LOOP;
-END IF;
 
 --VALIDATE GEOGRAPHY DATA IS VALID
 CASE geography
@@ -156,22 +145,14 @@ ELSE
 		INSERT INTO criteria_reports_drugs(drug_id,criteria_report_id) VALUES(intvalue,reportfeid); 
 	END LOOP;
 
+
 	--INSERT RESTRICTIONS DATA
-	IF( array_length(restriction_ids,1) > 0) THEN
-		FOREACH intvalue IN ARRAY restriction_ids
-		LOOP	
-			INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,reportfeid); 
-		END LOOP;
-	END IF;       
-
-        --INSERT CUSTOM RESTRICTIONS DATA
-        IF array_length(custom_restriction_ids,1) > 0 THEN
-	FOREACH intvalue IN ARRAY custom_restriction_ids
-		LOOP	
-			INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,reportfeid); 
-		END LOOP;
-        END IF;
-
+	FOREACH intvalue IN ARRAY restriction_ids
+	LOOP	
+		INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,reportfeid); 
+	END LOOP;
+	
+     
 END IF;
 
 RETURN reportfeid;
