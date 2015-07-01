@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{CE89C136-E9FC-4329-8C62-CA6CA4A2EF3E}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{DABC6F3F-2BBD-4ECD-8A0C-1FE9360D015C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACYvIV73t5YW3nl0yQprYx+DeNBhuatKrSjS85FjZzhAwAAAAAOgAAAAAIAACAAAAAW9RvUcGjvsAN3zuVIsadE3+vkKhUA9sF7B2aYuBd36jAAAAAxprwVmyaODaLsLalL9g4ynO3lOCuG3qkNAvIqxYdfHgR13kN3znwHN38I7atJUNdAAAAASyF+ZHjbX2AW7fvODNQ/SkHW5l/Bia6JKHZZ/EYsORsvFXsq0LcOnYdvoWgbx8ujtHy84e57slU99FJ8Xp1vqA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABvSIx9Pvgh38QoUixwcWU78QaYt44rHiKlQ0u6KH/cfgAAAAAOgAAAAAIAACAAAABhVRwCQxXW6inHwzpjZ0qjUAgQslGhavtMTHZb4AFVETAAAAA+p+j+XTU7RRwGEwl8lXBBUl6WajGQ/PbOT3y2zjWaDX1339jZNzwGO4PuX142OBBAAAAAmJk9PgT0csD8EepF6PpXAwP69iAJ2vMtYjY+j0xJK/X5ztYZqQ4BvU6d13ILeuIA+ioriY5lCJBiPvgLAb2JSw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnObUSHo0RH+cd1gmHQTbkDKB4JUdR6EqHCNoEQioPeAAAAAAOgAAAAAIAACAAAABtQrLYZ3zU//wMIAgX0jGrrAuc1dB/rbVfpJNesNS3ejAAAABX6egGuH8HYqsy8f3GEI2/Ykm/eySbWlMyBgtMpLU8enwAIcakxqfoi7my95csR8FAAAAAIddHzAgWyjsglPynOPs5HOCAVxttAwUSzMZbLMSWUaqxND2ArQX1lJLRRMca2+eeAMwXHRQ0sE4dknoKOnLP4g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADy8nKjTGpK7YiIhhd3dXl9G0gYpTOXqHRGS4KYBVUPVQAAAAAOgAAAAAIAACAAAAB/Grom9eYc/AW/T4eSDt/vXDnltQ74GCrA8Tm2EqtDSTAAAAACiOrWvSXwf7Y99Gf6xzqWggx2FV7zgISw2x0p3Iw8UzYk3a9pAEMu2y1pmv7gAR9AAAAAttvHzMJH1X4RBY6l8BVE6EI7PnZn5pC0Rh1nyQlrf9Du17tQoC9W94LJ6afho5/8WALBonwwvCKYfV4BqvB4fA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACt+8X4/uqNIZ1MXQJ2FUgJPMCWPq2PlnwxX9brNuVVvQAAAAAOgAAAAAIAACAAAABIEMRRxcRXbiJ+GYrZXdCn9iGhiVyUTmQ/Y2J2qbxZ9jAAAADYLe8+u6iqZug1BsUxIcx4bwGqvcx5+uxLcgzAaKrG/FFByPN2fRduCrjRct60/8RAAAAAfGSSreesCAcg7mEIUMMKk+EukcJBJ9X6JD+chN9FWs+FvP/9Een5lfjpQzbjkNaJdYUT6FAixwxzoTNzeS8nvQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD2CGOZGazYMn9AnOzTypyc1qJpsIRcu6Ywi9GI+SPjjgAAAAAOgAAAAAIAACAAAADxAeSggA1sj24zaaMQ/mZSxBdJ1ISEUwTNvuVqSHGbJDAAAAAlVfgWSj4hfLxZwUZ41IViLryaWsVQM1EucweeVp88IY0OrHwz0U3ZGYbuI7sh5chAAAAAjbinwrXvPw+8/rCE3/kHjOWwOTGaql4b49ph4YNEdp3QgBTA/ogAvQQ4y4yA2BEmWZ7cnU9OZq3xtubERPdkTg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4HAAmKvIl5GC2oZih0IZeI0qemuYXzaNo567jgafnCQAAAAAOgAAAAAIAACAAAAC30LMCMNVOozwvUY22WlGdhqRKR28l1hIrmPhFiZ5JqjAAAAD2WCq5h+whjk0+r3BMngorG1OvV1r52ziZ/fBm5htoy0ykYTK4Guy5SFA41wAuJX9AAAAAIGGhO9lFxxZDQOE/Sun/IbNQx3wokA3NJjbzhA+4h5WHON6aHQ7oiAudy+owFsu2QEjrMlPej0Ck9B3PlJ6Y5g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9F1eeeDxgGVHxR4sXKW3mv2bKJAkt3FkMuiCfwed6sAAAAAAOgAAAAAIAACAAAACHRPeJ6ieTIGF1htld+PhBq1OMrPy05C43yFjbYJYtKTAAAAAVpYMkY1zF4lK7zj6lo3qgsrF4//lyVh6oV5k6TYvAnJ8nXiiZQG76cQxBv395DbJAAAAAGdkCArAQZhwZQqh8o7Lo3zRkBCqja3LpETIfJbgJOxUPl5CWUG22BqYoP/dLSXKZyitcURfIaoxtxlrNl7WnbQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -214,7 +214,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test001_TestData"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -231,7 +231,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test002_TestData"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -248,12 +248,46 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test003_TestData"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{d07ad3d3-48c5-4af2-9634-da25a66cc4f3}"
               SQLTask:SqlStatementSource="select test_003_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create Test Data\Test004_TestData"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E9A85B7A-5DA9-44AE-A9FB-CC6990609FAC}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test004_TestData"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{d07ad3d3-48c5-4af2-9634-da25a66cc4f3}"
+              SQLTask:SqlStatementSource="select test_004_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create Test Data\Test005_TestData"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{10EE39F8-DDD0-450A-A960-FF965C6ADCF2}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test005_TestData"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{d07ad3d3-48c5-4af2-9634-da25a66cc4f3}"
+              SQLTask:SqlStatementSource="select test_005_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -328,7 +362,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Test 001"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -345,7 +379,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Test 002"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -362,12 +396,46 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Test 003"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
               SQLTask:SqlStatementSource="select test_003_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ETL Tests\Validate Test 004"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8FD034D1-16F7-45DE-AD65-8B928F41176C}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Validate Test 004"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
+              SQLTask:SqlStatementSource="select test_004_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ETL Tests\Validate Test 005"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{AE7D5998-591F-4DEB-983A-6FBAF4F4E505}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Validate Test 005"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
+              SQLTask:SqlStatementSource="select test_005_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -386,13 +454,12 @@
           DTS:refId="Package\General validation Tests\Validate Active Formularies DW"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{D87EEAD4-098D-462E-BCD6-80D388237839}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Active Formularies DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -409,7 +476,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Drugs DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -426,7 +493,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Drugs FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -443,7 +510,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Formulary Details FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -461,7 +528,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Formulary DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -478,7 +545,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Health Plan Types DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -495,7 +562,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Health Plan Types FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -507,13 +574,12 @@
           DTS:refId="Package\General validation Tests\Validate HealthPlans DW"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{7D72D9EF-7860-4D52-A526-84D67992F474}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate HealthPlans DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -525,13 +591,12 @@
           DTS:refId="Package\General validation Tests\Validate Helathplans FE"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{E34F6A72-9A90-4D2B-81BF-78696220E4C4}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Helathplans FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -548,7 +613,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Providers DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -565,7 +630,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Providers FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -582,7 +647,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Reason Codes DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -599,7 +664,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Tiers DW"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -616,7 +681,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Tiers FE"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -746,12 +811,20 @@
         <NodeLayout
           Size="167,42"
           Id="Package\Create Test Data\Test003_TestData"
-          TopLeft="462,72" />
+          TopLeft="414,75" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Create Test Data\Test004_TestData"
+          TopLeft="600,75" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Create Test Data\Test005_TestData"
+          TopLeft="796.444444444445,77.6666666666666" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="708,210"
-          Size="708,253"
+          PanelSize="1039,210"
+          Size="1039,253"
           Id="Package\Create Test Data"
           TopLeft="758.416666666667,176" />
         <NodeLayout
@@ -778,6 +851,14 @@
           Size="163,42"
           Id="Package\ETL Tests\Validate Test 003"
           TopLeft="470,48" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\ETL Tests\Validate Test 004"
+          TopLeft="665,49" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\ETL Tests\Validate Test 005"
+          TopLeft="854.888888888889,50" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -960,13 +1041,13 @@
           TopLeft="128.416666666667,671.083333333334" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1112.41666666667,429">
+          TopLeft="1277.91666666667,429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.25000000000296,36"
+              EndConnector="-157.249999999997,36"
               Start="0,0"
-              End="8.25000000000296,28.5">
+              End="-157.249999999997,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -975,15 +1056,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="0,14"
                     Point2="0,18"
-                    Point3="4,18" />
+                    Point3="-4,18" />
                   <mssgle:LineSegment
-                    End="4.25000000000296,18" />
+                    End="-153.249999999997,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="4.25000000000296,18"
-                    Point2="8.25000000000296,18"
-                    Point3="8.25000000000296,22" />
+                    Point1="-153.249999999997,18"
+                    Point2="-157.249999999997,18"
+                    Point3="-157.249999999997,22" />
                   <mssgle:LineSegment
-                    End="8.25000000000296,28.5" />
+                    End="-157.249999999997,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1106,18 +1187,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1114.16666666667,140.75">
+          TopLeft="1115.91666666667,140.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.25"
+              EndConnector="161.999999999997,35.25"
               Start="0,0"
-              End="0,27.75">
+              End="161.999999999997,27.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.75" />
+                    End="0,13.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.625"
+                    Point2="0,17.625"
+                    Point3="4,17.625" />
+                  <mssgle:LineSegment
+                    End="157.999999999997,17.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="157.999999999997,17.625"
+                    Point2="161.999999999997,17.625"
+                    Point3="161.999999999997,21.625" />
+                  <mssgle:LineSegment
+                    End="161.999999999997,27.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
