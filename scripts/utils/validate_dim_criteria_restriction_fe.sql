@@ -3,6 +3,7 @@ RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT false;
   intvalue integer;
+  intvalue2 integer;
   value_exists boolean DEFAULT false;
 BEGIN
 
@@ -21,8 +22,18 @@ BEGIN
 	SELECT throw_error('EXPECTED RESTRICTION TYPES ARE REQUIRED');
      END IF;	
 
-     
-   
+    --VALIDATE ONLY EXPECTED RESTRICTION EXISTS (total restrictions compared with expected total)
+    intvalue:=array_length(expected_restriction_types,0);
+    IF intvalue <> 0 THEN
+	--GET TOTAL RESTRICTION IN DB
+	SELECT count(*) into intvalue2 from criteria_restriction_selection crs where crs.indication_id=indicationid and crs.report_id=reportid and crs.restriction_name=expected_restriction_name and crs.dim_criterion_type_id=4 and  crs.view_type_id=2;
+	IF intvalue2 != intvalue THEN
+		SELECT throw_error('EXPECTED RESTRICTION COUNT MISMATCH');
+	END IF;
+    END IF;
+    
+    
+    --VALIDATE EACH RESTRICTION EXPECTED EXISTS (validate each restriction data)
     FOREACH intvalue IN ARRAY expected_restriction_types
      LOOP
 	SELECT EXISTS(SELECT 1 from criteria_restriction_selection crs where crs.indication_id=indicationid and crs.report_id=reportid and crs.restriction_name=expected_restriction_name and  crs.dim_restriction_type_id=intvalue and  crs.dim_criterion_type_id=4 and  crs.view_type_id=2) INTO value_exists;
