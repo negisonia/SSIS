@@ -11,7 +11,7 @@ DECLARE
   reportName varchar DEFAULT 'TEST REPORT NAME 003';
   drugIds INTEGER[] := ARRAY[156,160,2182, 3098, 3199, 3237, 3584];
   health_plan_ids INTEGER[] := ARRAY[1,2,3,4,5,6,7,8,9,10,11,12,13];
-  restrictionsIds INTEGER[]:= ARRAY[841,842,1870,1871,1872,848,1883,840,1864,1865,1866,847,1880,1881,1882,1869,1885,1860,1861,2106,2172,2105]; 
+  restrictionsIds INTEGER[]:= ARRAY[841,842,1870,1871,1860,1861,2106,2172,848,1883,1884,2175,840,1864,1865,1866,2105,847,1880,1881,1882,1869,1885]; 
 
 
 BEGIN
@@ -24,17 +24,16 @@ BEGIN
 
 	
 	--VALIDATE DIM_RESTRICTIONS	
-	PERFORM validate_dim_criteria_restriction(indicationid,'Single',ARRAY[1,2,3,6]);
-	PERFORM validate_dim_criteria_restriction(indicationid,'Double',ARRAY[1,2,3,6]);
-	PERFORM validate_dim_criteria_restriction(indicationid,'Triple',ARRAY[1,6]);
-	PERFORM validate_dim_criteria_restriction(indicationid,'Quadruple',ARRAY[1,6]);
-	PERFORM validate_dim_criteria_restriction(indicationid,'Unspecified',ARRAY[3,6]);
+	PERFORM validate_dim_criteria_restriction(indicationid,reportId,'Single',ARRAY[1,2,3,6]);
+	PERFORM validate_dim_criteria_restriction(indicationid,reportId,'Double',ARRAY[1,2,3,6]);
+	PERFORM validate_dim_criteria_restriction(indicationid,reportId,'Triple',ARRAY[1,6]);
+	PERFORM validate_dim_criteria_restriction(indicationid,reportId,'Quadruple',ARRAY[1,6]);
+	PERFORM validate_dim_criteria_restriction(indicationid,reportId,'Unspecified',ARRAY[3,6]);
 	
 	IF reportId <> 0 THEN
-                	
-		
-		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
-		RAISE NOTICE 'generated report :%',reportfeId;		
+                			
+		--SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
+		--RAISE NOTICE 'generated report :%',reportfeId;		
 		
        END IF;
 
