@@ -4,9 +4,9 @@ DECLARE
 success boolean DEFAULT false;
 BEGIN
 
---CLEAR TEST001 DATA
+--CLEAR DATA
 perform test_001_clear_test_data();
-	
+perform test_002_clear_test_data();	
 
 SUCCESS:=true;
 return SUCCESS;
