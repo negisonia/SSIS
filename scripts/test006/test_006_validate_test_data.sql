@@ -8,6 +8,7 @@ DECLARE
   restrictionid integer;
   
   indicationid integer:=7;
+  indicationid2 integer:=2;
   reportBussinesId varchar DEFAULT 'TEST REPORT 006';
   reportName varchar DEFAULT 'TEST REPORT NAME 006';
   drugIds INTEGER[] := ARRAY[156,160,2182,3098,3199,3237,3584];
@@ -45,7 +46,7 @@ BEGIN
 
 		SELECT COUNT(*) INTO  intvalue FROM criteria_restriction_selection crs where  crs.report_id=reportId and crs.indication_id=indicationid2 and crs.dim_criterion_type_id=4;
 		--WE EXPECT 7 TOTAL RECORDS BASED ON THE RESTRICTION SELECTED
-		IF intvalue <> 8 THEN 
+		IF intvalue <> 7 THEN 
 			SELECT throw_error('UNEXPECTED CRITERIA RESTRICTION RECORD FOUND');
 		END IF;	
 		
