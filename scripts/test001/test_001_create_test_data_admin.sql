@@ -6,8 +6,8 @@ reportId INTEGER;
 reportClientId INTEGER;
 reportClientName varchar DEFAULT 'TEST CLIENT 01';
 userEmail varchar DEFAULT 'vsansilvestre@growthaccelerationpartners.com';
-groupName1 varchar DEFAULT 'TEST GROUP 001';
-groupName2 varchar DEFAULT 'TEST GROUP 002';
+groupName1 varchar DEFAULT 'TEST_001_GROUP_1';
+groupName2 varchar DEFAULT 'TEST_001_GROUP_2';
 reportBussinesId varchar DEFAULT 'TEST REPORT 001';
 reportName varchar DEFAULT 'TEST REPORT NAME 001';
 

@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION test_001_validate_test_data()--FRONT END
+﻿CREATE OR REPLACE FUNCTION test_001_validate_test_data()--FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT false;
@@ -7,7 +7,7 @@ DECLARE
   restrictionid integer;
   reportBussinesId varchar DEFAULT 'TEST REPORT 001';
   reportName varchar DEFAULT 'TEST REPORT NAME 001';
-  restrictionGroupName varchar DEFAULT 'TEST GROUP 001';
+  restrictionGroupName varchar DEFAULT 'TEST_001_GROUP_1';
   drugIds INTEGER[] := ARRAY[156, 160];
   restrictionsIds INTEGER[]:= ARRAY[775,776,706,707];
   drugIds2 INTEGER[] := ARRAY[2059, 2268];
