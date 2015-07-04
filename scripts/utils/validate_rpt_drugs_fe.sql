@@ -5,6 +5,8 @@ DECLARE
   rpt_drug_drugs integer[];
   rpt_drug_restriction_ids integer[];
   expected_restriction_ids integer[];
+  aux record;
+  intvalue integer;
 BEGIN
 
 		--========VALIDATE DRUGS 
@@ -34,5 +36,16 @@ BEGIN
 			RAISE NOTICE 'EXPECTED RESTRICTIONS: %',expected_restriction_ids;
 			SELECT throw_error('REPORT RESTRICTIONS MISMATCH');
 		END IF;
+
+		--VALIDATE HEALTH PLAN COUNT
+		FOR aux IN EXECUTE format('select drug_id, SUM(health_plan_count) as total from rpt_drug(%s) group by drug_id',reportfeId)
+		LOOP
+		  intvalue:= get_health_plan_counts(reportfeId, aux.drug_id);
+		  IF aux.total != intvalue THEN	--VALIDATE CURRENT HEALTH PLAN COUNT FOR EACH DRUG IS THE EXPECTED ONE
+			--RAISE NOTICE 'UNEXPECTED HEALTH PLAN COUNT FOR DRUG %  REPORT FE ID: %', aux.drug_id,reportfeId;
+			select throw_error('error drugid'|| aux.drug_id ||' reportfe' || reportfeId);
+		END IF;
+		END LOOP;
+		
 END;	
 $$ LANGUAGE plpgsql;
