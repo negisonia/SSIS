@@ -13,6 +13,12 @@ DECLARE
   health_plan_ids INTEGER[] := ARRAY[1,2,3,4,5,6,7,8,9,10,11,12,13];
   restrictionsIds INTEGER[]:= ARRAY[809,810,811,812,813,814,821,822,823,827,828,829,830,831,832,835,836,837,838,839,843,844,845,775,776,777,778,787,788,789,796,797,798,801,802,803,846]; 
   intvalue integer;
+
+
+group1Restrictions INTEGER[] :=ARRAY[809,810,811,812,813,814,821,822,823,827,828,829,830,831,832,835,836,837,838,839,843,844,845];--restriction type 1
+group2Restrictions INTEGER[] :=ARRAY[775,776,777,778,787,788,789,796,797,798,801,802,803];--restriction type 2
+group3Restrictions INTEGER[] :=ARRAY[846];--restriction type 4
+
 BEGIN
 
         --VALIDATE REPORT DATA (DRUGS, RESTRICTIONS, CUSTOM GROUPS, REPORT) EXISTS IN FE DATABASE
@@ -29,9 +35,31 @@ BEGIN
 		IF intvalue <> 0 THEN 
 			SELECT throw_error('UNEXPECTED CRITERIA RESTRICTION RECORD FOUND');
 		END IF;						
-		
-		--SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
-		--RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--GROUP#1 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+
+
+		--GROUP#2 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+
+		--GROUP#3 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
 		
        END IF;
 

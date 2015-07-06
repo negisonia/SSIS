@@ -13,6 +13,11 @@ DECLARE
   health_plan_ids INTEGER[] := ARRAY[1,2,3,4,5,6,7,8,9,10,11,12,13];
   restrictionsIds INTEGER[]:= ARRAY[261,262,263,264,265,266,267,1802,289,290,291,293,268,269,270,271,272,1803,1804,1838,260]; 
   intvalue integer;
+
+group1Restrictions INTEGER[] :=ARRAY[261,262,263,264,265,266,267,1802,289,290,291,293];--restriction type 1,2,3
+group2Restrictions INTEGER[] :=ARRAY[268,269,270,271,272,1803,1804,1838];--restriction type 1,2,3
+group3Restrictions INTEGER[] :=ARRAY[260];--restriction type 1
+
 BEGIN
 
         --VALIDATE REPORT DATA (DRUGS, RESTRICTIONS, CUSTOM GROUPS, REPORT) EXISTS IN FE DATABASE
@@ -35,8 +40,29 @@ BEGIN
 			SELECT throw_error('UNEXPECTED CRITERIA RESTRICTION RECORD FOUND');
 		END IF;						
 		
-		--SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
-		--RAISE NOTICE 'generated report :%',reportfeId;		
+		--GROUP#1 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group1Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+
+		--GROUP#2 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group2Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
+
+                
+
+		--GROUP#3 RPT DRUGS VALIDATIONS
+		SELECT create_report(reportId,1,2,'national',drugIds,health_plan_ids, NULL, NULL, NULL, group3Restrictions) INTO reportfeId;
+		RAISE NOTICE 'generated report :%',reportfeId;		
+
+		--VALIDATE RPT_DRUG FOR REPORT
+                PERFORM validate_rpt_drug(reportId,reportfeId);
 		
        END IF;
 
