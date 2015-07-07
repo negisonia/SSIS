@@ -7,9 +7,10 @@ DECLARE
   expected_restriction_ids integer[];
   aux record;
   intvalue integer;
+  intvalue2 integer;
 BEGIN
 
-		--========VALIDATE DRUGS 
+		--VALIDATE DRUGS 
 	        --GET THE LIST OF DRUGS ASSOCIATED WITH THE CRITERIA SELECTED (LIST OF REPORT DRUGS THAT CONTAINS A RESTRICTION ON IT)
 		groupRestrictionedDrugs :=get_report_restrictioned_drugs(reportId,reportfeId);
 
@@ -46,6 +47,17 @@ BEGIN
 			select throw_error('error drugid'|| aux.drug_id ||' reportfe' || reportfeId);
 		END IF;
 		END LOOP;
+
+
+		--VALIDATE TOTAL HEALTH PLAN COUNT
+		select distinct total_health_plan_count into intvalue from rpt_drug(reportfeId) where dim_restriction_type_id != 2;
+		intvalue2:= get_total_health_plan_count(reportfeId);
+		IF intvalue!=intvalue2 THEN
+			select throw_error('TOTAL HEALTH PLAN COUNT MISMATCH: EXPECTED '||intvalue2 || ' ACTUAL: ' || intvalue);
+		END IF;
+
+
+
 		
 END;	
 $$ LANGUAGE plpgsql;
