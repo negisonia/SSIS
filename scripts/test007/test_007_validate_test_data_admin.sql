@@ -34,11 +34,13 @@ BEGIN
 
 	        --QUANTITY LIMIT RESTRICTION  HPT=1  		
                -----------------------------------------------------------	       
+			--CREATE REPORT
 			SELECT create_report(reportId,1,1,'national', ARRAY[2182],ARRAY[1], NULL, NULL, NULL, ARRAY[846]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
 			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
 			
+			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_01_output,reportfeId) THEN
 				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
 				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_01_output;
@@ -47,11 +49,13 @@ BEGIN
 
 	        --PRIOR AUTHORIZATION RESTRICTION HPT=1 
                -----------------------------------------------------------
+			--CREATE REPORT
 			SELECT create_report(reportId,1,1,'national', ARRAY[156],ARRAY[1], NULL, NULL, NULL, ARRAY[826]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
 			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
 			
+			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_02_output,reportfeId) THEN
 				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
 				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_02_output;
@@ -60,11 +64,13 @@ BEGIN
 
 		--STEP THERAPY RESTRICTION HPT=1 
                -----------------------------------------------------------
+			--CREATE REPORT
 			SELECT create_report(reportId,1,1,'national', ARRAY[2182],ARRAY[1], NULL, NULL, NULL, ARRAY[1885]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
 			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
-			
+
+			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_03_output,reportfeId) THEN
 				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
 				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_02_output;
@@ -74,11 +80,13 @@ BEGIN
 
 		--VALIDATE DRUGS WITH NO RESTRICTION APPLICABLE (zero records retuned)
                -----------------------------------------------------------
+                       --CREATE REPORT
 			SELECT create_report(reportId,1,1,'national', ARRAY[156],ARRAY[1], NULL, NULL, NULL, ARRAY[775]) INTO reportfeId;  
 			
 			--RUN RPT_DRUG FUNCTION
 			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
 
+			--VALIDATE REPORT
 			IF actual_rpt_drug_output != NULL THEN
 				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
 				RAISE NOTICE 'EXPECTED:%',NULL;
