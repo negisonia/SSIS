@@ -92,6 +92,22 @@ BEGIN
 				RAISE NOTICE 'EXPECTED:%',NULL;
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
+
+		--VALIDATE RESTRICTIONED DRUGS NOT AVAILABLE IN SELECTED HEALTH PLAN ( restricted drugs no available in select health plan)
+               -----------------------------------------------------------
+                       --CREATE REPORT
+			SELECT create_report(reportId,1,1,'national', ARRAY[2182],ARRAY[2], NULL, NULL, NULL, ARRAY[1882]) INTO reportfeId;  
+			
+			--RUN RPT_DRUG FUNCTION
+			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
+
+			--VALIDATE REPORT
+			IF actual_rpt_drug_output != NULL THEN
+				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
+				RAISE NOTICE 'EXPECTED:%',NULL;
+				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
+			END IF;
+		
 		
        END IF;
 
