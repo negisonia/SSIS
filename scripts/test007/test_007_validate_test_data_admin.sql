@@ -9,9 +9,9 @@ DECLARE
   intvalue integer; 
   
   --EXPECTED VALUES
-  expected_rpt_drug_01_output VARCHAR:='(%s,ALL,846,2182,24559932,108,0,49430874,0,253,0,Pharmacy,"QL - Quantity Limits",Sprycel,4,QL)';
-  expected_rpt_drug_02_output VARCHAR:='(%s,ALL,826,156,12493312,52,0,49430874,0,253,0,Pharmacy,"PA - Diagnosis - Relapsed or refractory disease.",Gleevec,1,"PA - Diagnosis")';
-  expected_rpt_drug_03_output VARCHAR:='(%s,ALL,1885,2182,11120680,14,0,49430874,0,253,0,Pharmacy,"ST - Unspecified - Unspecified",Sprycel,3,"ST - Unspecified")';
+  expected_rpt_drug_01_output VARCHAR:='{"criteria_report_id":%s,"indication_name":"ALL","dim_criteria_restriction_id":846,"drug_id":2182,"lives":24559932,"health_plan_count":108,"provider_count":0,"total_pharmacy_lives":49430874,"total_medical_lives":0,"total_health_plan_count":253,"total_provider_count":0,"benefit_name":"Pharmacy","criteria_restriction_name":"QL - Quantity Limits","drug_name":"Sprycel","dim_restriction_type_id":4,"restriction_name":"QL"}';
+  expected_rpt_drug_02_output VARCHAR:='{"criteria_report_id":%s,"indication_name":"ALL","dim_criteria_restriction_id":826,"drug_id":156,"lives":12493312,"health_plan_count":52,"provider_count":0,"total_pharmacy_lives":49430874,"total_medical_lives":0,"total_health_plan_count":253,"total_provider_count":0,"benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - Relapsed or refractory disease.","drug_name":"Gleevec","dim_restriction_type_id":1,"restriction_name":"PA - Diagnosis"}';
+  expected_rpt_drug_03_output VARCHAR:='{"criteria_report_id":%s,"indication_name":"ALL","dim_criteria_restriction_id":1885,"drug_id":2182,"lives":11120680,"health_plan_count":14,"provider_count":0,"total_pharmacy_lives":49430874,"total_medical_lives":0,"total_health_plan_count":253,"total_provider_count":0,"benefit_name":"Pharmacy","criteria_restriction_name":"ST - Unspecified - Unspecified","drug_name":"Sprycel","dim_restriction_type_id":3,"restriction_name":"ST - Unspecified"}';
 
   --ACTUAL VALUES
   actual_rpt_drug_output VARCHAR;
@@ -38,11 +38,11 @@ BEGIN
 			SELECT create_report(reportId,1,1,'national', ARRAY[2182],ARRAY[1], NULL, NULL, NULL, ARRAY[846]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
-			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
-			
+			SELECT to_json(rpt_drug(reportfeId)) INTO actual_rpt_drug_output;
+			RAISE  NOTICE 'TEST1: %', actual_rpt_drug_output;
 			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_01_output,reportfeId) THEN
-				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
+				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
 				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_01_output;
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
@@ -53,11 +53,11 @@ BEGIN
 			SELECT create_report(reportId,1,1,'national', ARRAY[156],ARRAY[1], NULL, NULL, NULL, ARRAY[826]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
-			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
-			
+			SELECT to_json(rpt_drug(reportfeId)) INTO actual_rpt_drug_output;
+			RAISE  NOTICE 'TEST2: %', actual_rpt_drug_output;
 			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_02_output,reportfeId) THEN
-				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
+				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
 				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_02_output;
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
@@ -68,12 +68,12 @@ BEGIN
 			SELECT create_report(reportId,1,1,'national', ARRAY[2182],ARRAY[1], NULL, NULL, NULL, ARRAY[1885]) INTO reportfeId;  
 
 			--RUN RPT_DRUG FUNCTION
-			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
-
+			SELECT to_json(rpt_drug(reportfeId)) INTO actual_rpt_drug_output;
+			RAISE  NOTICE 'TEST3: %', actual_rpt_drug_output;
 			--VALIDATE REPORT
 			IF actual_rpt_drug_output!=format(expected_rpt_drug_03_output,reportfeId) THEN
-				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_ouput;
-				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_02_output;
+				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
+				RAISE NOTICE 'EXPECTED:%',expected_rpt_drug_03_output;
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
 
@@ -85,7 +85,7 @@ BEGIN
 			
 			--RUN RPT_DRUG FUNCTION
 			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
-
+	
 			--VALIDATE REPORT
 			IF actual_rpt_drug_output != NULL THEN
 				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
@@ -108,7 +108,20 @@ BEGIN
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
 		
-		
+		--VALIDATE SELECTED HEALTH PLAN NOT OPERATING IN SELECTED STATE( selected health plan not operates in selected state zero records returned)
+               -----------------------------------------------------------
+                       --CREATE REPORT
+			SELECT create_report(reportId,1,1,'state', ARRAY[156],ARRAY[3], ARRAY[1], NULL, NULL, ARRAY[1885]) INTO reportfeId;  
+			
+			--RUN RPT_DRUG FUNCTION
+			SELECT rpt_drug(reportfeId) INTO actual_rpt_drug_output;
+
+			--VALIDATE REPORT
+			IF actual_rpt_drug_output != NULL THEN
+				RAISE NOTICE 'ACTUAL:%',actual_rpt_drug_output;
+				RAISE NOTICE 'EXPECTED:%',NULL;
+				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
+			END IF;
        END IF;
 
 success:=true;
