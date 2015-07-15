@@ -122,6 +122,7 @@ BEGIN
 				RAISE NOTICE 'EXPECTED:%',NULL;
 				SELECT throw_error('RPT DRUG FUNCTION VALUES MISMATCH');
 			END IF;
+		
        END IF;
 
 success:=true;
