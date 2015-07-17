@@ -21,7 +21,7 @@ IF health_plan_id IS NULL THEN
             VALUES (health_plan_type_id, CASE when is_active IS NULL THEN TRUE ELSE is_active END , health_plan_name, web_name, re_write_name, 
             NULL, NULL,formulary_id, CASE WHEN comming_soon IS NULL THEN TRUE ELSE comming_soon END, NULL, 
             provider_id, current_timestamp, current_timestamp, NULL, 
-            0, NULL, NULL, NULL, 
+            NEXTVAL('health_plan_display_id_seq'), NULL, NULL, NULL, 
             NULL, NULL, 0, NULL, 
             NULL, NULL, NULL, NULL, NULL, NULL, 
             NULL, NULL, NULL, NULL, 
