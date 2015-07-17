@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION clear_test_data(reportBussinessId varchar,reportName varchar, groupNames varchar[])--ADMIN
+﻿CREATE OR REPLACE FUNCTION clear_test_data()--ADMIN
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
