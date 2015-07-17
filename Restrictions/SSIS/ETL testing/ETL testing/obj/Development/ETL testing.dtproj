@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">GAPUSER-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAACAAAAAAAQZgAAAAEAACAAAACt1rgioWODeeZZo5Rx2qGOqKgH14hKF8W8sK7l9Z+6zAAAAAAOgAAAAAIAACAAAADDLzULkbA50OgFOZljarHBmra0l9AgHKyKjbKSDYUjrpAAAAAIo1UHzLYXmm3iTnRTqMPtCVRDLDmlpsEVuwUnJSJocU6en388kybBkRbOQlOOZX38i6J/Qs3Eud6c05153n9l9YzeVZCGmSKwjuKCTVjBBav9yXAXP023VhwFlh4LP7o3e+KwuTlLZ4zTddLZeI2mIZLI+qsIgt5GZAUND8QanYEIDtI8Aw1xr9o3mYP3H5RAAAAAm+zrfN8d5z2v+tPLq/DdLndr4qoXadRxavDAtIMM2Cbona7SLv/8AvRTINEnq17S0TDuAaM6BzFvqitgIYerBQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAACAAAAAAAQZgAAAAEAACAAAADdaXSRIJy791lmdM05bXhC3G0iFQh66EeG6MC1VBPYeQAAAAAOgAAAAAIAACAAAADvBFGl/ZHW18DRxU+jaG1T2FU/P7LKGx9nAkI1i28gb5AAAAAXenF6WGtyDxZ1mHGrHAV+QSZAk+nRg4LKyTTO6NENbz3F9LVLmvdJhRSc/yXcI8MxIZ++GBBLFwbnzwx1Rc68Jf+ZZM1mTQf/DQPVwDKlYALCHbHxaeThbgFCB8ZWr/kbciLRNqPXo7M8JSttqpUoudbYpskWI17G4lBH+xpHoyI9eieNCyNrhadptrLt3tNAAAAAdbYUMejcoHXJAvg47vMFs7gB3+q+4yNY5dmGdrg/cja5BqqT6MGzx+qSbX9azh/UwmspS5JVhOQv6TZcchBEKQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,10 +44,10 @@
                 <SSIS:Property SSIS:Name="Name">r20_process_a</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">107</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">108</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{26B62B8B-66C2-4214-B127-C55DDB2B93D9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CD0816C0-C5DD-4740-BCAB-14BAACE2D505}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -372,10 +372,10 @@
                 <SSIS:Property SSIS:Name="Name">etl_testing</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">63</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">67</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F7516323-9938-4C73-84AD-9C88ADB8F2EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A8B8C014-42CA-4447-B8A8-F4D1683390DB}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -582,7 +582,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">172.17.66.124</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -597,7 +597,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">restrictions20</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">postgres</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
