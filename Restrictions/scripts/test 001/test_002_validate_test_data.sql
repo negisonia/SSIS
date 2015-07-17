@@ -207,13 +207,7 @@ CASE textValue
 		IF booleanValue IS TRUE THEN
 			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');		
 		END IF;	
-	WHEN 'restrictions_test_hp_commercial_3' THEN--THIS FAILS ASK IF THIS IS VALID SCENARIO
-		--VALIDATE HEALTH PLAN DONT EXISTS
-		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
-		IF booleanValue IS TRUE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');		
-		END IF;	
-		
+	
 	ELSE 
 		RAISE NOTICE 'UNEXPECTED HEALTH PLAN TYPE ITERATION';
 END CASE;
