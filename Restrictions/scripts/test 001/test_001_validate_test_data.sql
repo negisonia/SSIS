@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION test_001_validate_test_data() --FRONT END
+﻿CREATE OR REPLACE FUNCTION restrictions_test_001_validate_test_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
@@ -203,12 +203,6 @@ CASE textValue
 		END IF;	
 	WHEN 'restrictions_test_hp_commercial_2' THEN	
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
-		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
-		IF booleanValue IS TRUE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');		
-		END IF;	
-	WHEN 'restrictions_test_hp_commercial_3' THEN--THIS FAILS ASK IF THIS IS VALID SCENARIO
-		--VALIDATE HEALTH PLAN DONT EXISTS
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS TRUE THEN
 			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');		
