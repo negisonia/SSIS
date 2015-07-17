@@ -4,6 +4,7 @@ DECLARE
   success boolean DEFAULT FALSE;
   booleanValue BOOLEAN DEFAULT FALSE;
   intValue INTEGER;
+  textValue VARCHAR;
   health_plans VARCHAR[] := ARRAY['restrictions_test_hp_commercial_1','restrictions_test_hp_hix_1','restrictions_test_hp_bcbs_1','restrictions_test_hp_employeer_1','restrictions_test_hp_na_1','restrictions_test_hp_sn_1','restrictions_test_hp_pdp_1','restrictions_test_hp_state_1','restrictions_test_hp_dpp_1','restrictions_test_hp_commercial_medicaid_1','restrictions_test_hp_union_1','restrictions_test_hp_municipal_plan_1','restrictions_test_hp_pbm_1','restrictions_test_hp_commercial_2','restrictions_test_hp_commercial_3']; 
 BEGIN
 
