@@ -14,49 +14,49 @@ LOOP
 
 --INSERT HEALTHPLAN TYPES
 CASE textValue 
-	WHEN 'restrictions_test_commercial' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_1','restrictions_test_hp_commercial_1','restrictions_test_hp_commercial_1',NULL,NULL,FALSE);	
-		PERFORM common_create_healthplan(intvalue,FALSE,'restrictions_test_hp_commercial_2','restrictions_test_hp_commercial_2','restrictions_test_hp_commercial_2',NULL,NULL,FALSE);	
+	WHEN 'restrictions_test_commercial' THEN		
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;		
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_1',NULL,NULL);		
+		PERFORM common_create_healthplan(intvalue,FALSE,'restrictions_test_hp_commercial_2',NULL,NULL);			
 	WHEN 'restrictions_test_hix' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_hix_1','restrictions_test_hp_hix_1','restrictions_test_hp_hix_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_hix_1',NULL,NULL);
 	WHEN 'restrictions_test_commercial_bcbs' THEN		
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-	        PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_bcbs_1','restrictions_test_hp_bcbs_1','restrictions_test_hp_bcbs_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+	        PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_bcbs_1',NULL,NULL);
 	WHEN 'restrictions_test_employer' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_employeer_1','restrictions_test_hp_employeer_1','restrictions_test_hp_employeer_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_employeer_1',NULL,NULL);
 	WHEN 'restrictions_test_medicare_ma' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_na_1','restrictions_test_hp_na_1','restrictions_test_hp_na_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_na_1',NULL,NULL);
 	WHEN 'restrictions_test_medicare_sn' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_sn_1','restrictions_test_hp_sn_1','restrictions_test_hp_sn_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_sn_1',NULL,NULL);
 	WHEN 'restrictions_test_medicare_pdp' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_pdp_1','restrictions_test_hp_pdp_1','restrictions_test_hp_pdp_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_pdp_1',NULL,NULL);
 	WHEN 'restrictions_test_state_medicare' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_state_1','restrictions_test_hp_state_1','restrictions_test_hp_state_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_state_1',NULL,NULL);
 	WHEN 'restrictions_test_dpp' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_dpp_1','restrictions_test_hp_dpp_1','restrictions_test_hp_dpp_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_dpp_1',NULL,NULL);
 	WHEN 'restrictions_test_commercial_medicaid' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_medicaid_1','restrictions_test_hp_commercial_medicaid_1','restrictions_test_hp_commercial_medicaid_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_medicaid_1',NULL,NULL);
 	WHEN 'restrictions_test_union' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_union_1','restrictions_test_hp_union_1','restrictions_test_hp_union_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_union_1',NULL,NULL);
 	WHEN 'restrictions_test_municipal_plan' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_municipal_plan_1','restrictions_test_hp_municipal_plan_1','restrictions_test_hp_municipal_plan_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_municipal_plan_1',NULL,NULL);
 	WHEN 'restrictions_test_pbm' THEN
-		SELECT common_create_health_plan_type(TRUE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_pbm_1','restrictions_test_hp_pbm_1','restrictions_test_hp_pbm_1',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(TRUE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_pbm_1',NULL,NULL);
 	WHEN 'restrictions_test_commercial_inactive' THEN		
-		SELECT common_create_health_plan_type(FALSE,textValue,textValue, TRUE, TRUE) INTO intvalue;
-		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_3','restrictions_test_hp_commercial_3','restrictions_test_hp_commercial_3',NULL,NULL,FALSE);
+		SELECT common_create_health_plan_type(FALSE,textValue, TRUE, TRUE) INTO intvalue;
+		PERFORM common_create_healthplan(intvalue,TRUE,'restrictions_test_hp_commercial_3',NULL,NULL);
 	ELSE 
 		RAISE NOTICE 'UNEXPECTED HEALTH PLAN TYPE ITERATION';
 END CASE;
