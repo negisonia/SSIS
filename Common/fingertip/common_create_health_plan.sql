@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION common_create_healthplan(health_plan_type_id INTEGER, is_active BOOLEAN, health_plan_name VARCHAR, web_name VARCHAR,re_write_name VARCHAR, formulary_id INTEGER,provider_id INTEGER, comming_soon BOOLEAN ) --FF_NEW DB
+﻿CREATE OR REPLACE FUNCTION common_create_healthplan(health_plan_type_id INTEGER, is_active BOOLEAN, health_plan_name VARCHAR, formulary_id INTEGER,provider_id INTEGER) --FF_NEW DB
 RETURNS INTEGER AS $$
 DECLARE
 health_plan_id INTEGER DEFAULT NULL;
@@ -18,8 +18,8 @@ IF health_plan_id IS NULL THEN
             formularyname, tiers, tierstructure, ptdates, ptmembers, ptcomments, 
             corporatestructure, county_url, county_comment, existing_formularyfid, 
             existing_comingformularyfid)
-            VALUES (health_plan_type_id, CASE when is_active IS NULL THEN TRUE ELSE is_active END , health_plan_name, web_name, re_write_name, 
-            NULL, NULL,formulary_id, CASE WHEN comming_soon IS NULL THEN TRUE ELSE comming_soon END, NULL, 
+            VALUES (health_plan_type_id, CASE when is_active IS NULL THEN TRUE ELSE is_active END , health_plan_name, health_plan_name, health_plan_name, 
+            NULL, NULL,formulary_id, TRUE, NULL, 
             provider_id, current_timestamp, current_timestamp, NULL, 
             NEXTVAL('health_plan_display_id_seq'), NULL, NULL, NULL, 
             NULL, NULL, 0, NULL, 
