@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{F1800D2E-C425-4ECD-B60E-955B5748BD2E}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{0ABB1688-FDC5-4480-91B1-69D244A4100B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADyiBT+oHMXF9wd3Fe5RvPGsXJwP5HlG7oZrO1+kbU57gAAAAAOgAAAAAIAACAAAACGKgDg5mooCm+l6JJlKWDEvHElzcTUHcgEsKKyRNzrfTAAAADaAg/GD+mX1jHO2f7YW3xfe6ICs8gssb5B8484l7Evh3KNa1boGvNnLSms78KV2RJAAAAArjKIkj7OjOvXRLhj21jdeZdQLK5W1iNW6MJWPVmHsS0pd+Mo3BLg3mB0m0BlXoCkXsudf5JKAp2Mnk0YRNMQyQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADtfV1z1xzd6acMiBoBYXue00xdQO3WbLSDx+4F/dLmMgAAAAAOgAAAAAIAACAAAADwyeMcx1qRS0y68HdgMBcH5MaNnEsfEymoneh/mF4dljAAAACZpkLt0Loj7XmtrCOFgz0y8oLKg8PtgyDeaXuBWnnHLYEx47hjJLSB3MNNDyKP52FAAAAAb1dM2XHJ1Bb5gjosdTOVGjWR8DtH2FxVjgLzcQc2jfIG+TqSDStjBalRgxia3gW/KfsYH952/CqEAi+Q3p3jRw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADViLd7iW/qlgixuRmSTmIo2dCfiChZ0NJIJpqv+VE4XgAAAAAOgAAAAAIAACAAAADUADmREbicvoo1CGzlvmkKud9wjnaRSh/32QljchX8/DAAAACnMViMHXG1a3ALrU4CXzhLpdsPTMzEVFqzrKGJk/klJn7HhHlCDG0VI/puGz+alndAAAAAAip6YfXgsMULXxPQ0yMKz/eLLAIN8JscXnLiq/PnOQxSzb+oA6kn2rzAucNGtMOqK5mT6v9WEbWxasdQ4JIESA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACigIqL/Oxf/UZsOHexUhEnOK0FU99DnkJ/au14xFi19gAAAAAOgAAAAAIAACAAAADOCGwufWRvw7UHcyXwgzbxH9+hQOs3of+AkeLSWmxyAjAAAADObJqsGWeizLdIxhVsP/zvOpo5fYaJWnfekvTnne6mxM7+haRR/gcXVAGX8JEO6YRAAAAAAPunray7VxhejRyluaKWNBU8HSLqULI0OluzCh9fPrZVe86E1TNVytUidLkKEc5ElCLJGWKUCz4QcrSTgnucqA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
