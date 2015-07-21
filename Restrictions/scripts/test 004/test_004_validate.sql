@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION restrictions_test_003_validate_test_data() --FRONT END
+﻿CREATE OR REPLACE FUNCTION restrictions_test_004_validate_test_data() --DATA WAREHOUSE
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
