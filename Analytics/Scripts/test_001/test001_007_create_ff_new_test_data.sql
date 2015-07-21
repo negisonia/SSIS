@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION test_001_006_create_ff_new_test_data() --FF NEW DB
+CREATE OR REPLACE FUNCTION test_001_007_create_ff_new_test_data() --FF NEW DB
 RETURNS boolean AS $$
 DECLARE
 parent_001_id INTEGER;
@@ -53,15 +53,15 @@ SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_001_id;
 SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_002_id;
 SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_003_id;
 SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_004_id;
-SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_005_id;
-SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_006_id;
+SELECT common_create_formulary(TRUE,FALSE,1)    INTO formulary_005_id;
+SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formulary_006_id;
 
 SELECT common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', formulary_001_id, provider_001_id) INTO health_plan_001_id;
 SELECT common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', formulary_002_id, provider_001_id) INTO health_plan_002_id;
 SELECT common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_003', formulary_003_id, provider_002_id) INTO health_plan_003_id;
 SELECT common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_004', formulary_004_id, provider_002_id) INTO health_plan_004_id;
 SELECT common_create_healthplan(health_plan_type_003_id, TRUE, 'TEST_PLAN_005', formulary_005_id, provider_003_id) INTO health_plan_005_id;
-SELECT common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_006', formulary_006_id, provider_003_id) INTO health_plan_006_id;
+SELECT common_create_healthplan(health_plan_type_001_id, FALSE, 'TEST_PLAN_006', formulary_006_id, provider_003_id) INTO health_plan_006_id;
 
 SELECT common_create_drug(TRUE, FALSE, 'DRUG_001') INTO drug_001_id;
 SELECT common_create_drug(TRUE, FALSE, 'DRUG_002') INTO drug_002_id;
