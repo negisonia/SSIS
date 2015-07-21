@@ -22,9 +22,9 @@ SELECT common_create_jcode('J9678') INTO jcode1;
 SELECT common_create_jcode('J675') INTO jcode2;
 
 --CREATE DRUG CLASSES
-SELECT common_create_drugclass(TRUE,'restrictions_drug_class_1','restrictions_drug_class_1','restrictions_drug_class_1','restrictions_drug_class_1') INTO drug_class_1;
-SELECT common_create_drugclass(TRUE,'restrictions_drug_class_2','restrictions_drug_class_2','restrictions_drug_class_2','restrictions_drug_class_2') INTO drug_class_2;
-SELECT common_create_drugclass(TRUE,'restrictions_drug_class_3','restrictions_drug_class_3','restrictions_drug_class_3','restrictions_drug_class_3') INTO drug_class_3;
+SELECT common_create_drugclass(TRUE,'restrictions_drug_class_1') INTO drug_class_1;
+SELECT common_create_drugclass(TRUE,'restrictions_drug_class_2') INTO drug_class_2;
+SELECT common_create_drugclass(TRUE,'restrictions_drug_class_3') INTO drug_class_3;
 
 --ITERATE DRUGS NAMES
 FOREACH textValue IN ARRAY drug_names
