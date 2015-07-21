@@ -30,6 +30,7 @@ BEGIN
   ALTER SEQUENCE formulary_id_seq RESTART;
   ALTER SEQUENCE drug_id_seq RESTART;
   ALTER SEQUENCE tier_id_seq RESTART;
+  ALTER SEQUENCE tier_order_index_id_seq RESTART;
   ALTER SEQUENCE country_id_seq RESTART;
   ALTER SEQUENCE state_id_seq RESTART;
   ALTER SEQUENCE formularyentry_id_seq RESTART;
