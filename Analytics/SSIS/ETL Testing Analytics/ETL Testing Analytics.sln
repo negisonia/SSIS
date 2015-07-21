@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETL Testing Analytics", "ETL Testing Analytics\ETL Testing Analytics.dtproj", "{99687ED7-A21E-4B49-A297-C69ACA74CDC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99687ED7-A21E-4B49-A297-C69ACA74CDC6}.Development|Default.ActiveCfg = Development
+		{99687ED7-A21E-4B49-A297-C69ACA74CDC6}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

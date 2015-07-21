@@ -20,7 +20,7 @@ IF drug_id IS NULL THEN
     VALUES (CASE when is_active IS NULL THEN TRUE ELSE is_active END,CASE when is_generic IS NULL THEN TRUE ELSE is_generic END, drug_name, drug_name, drug_name, drug_name, 
             NULL, NULL, NULL, NULL, current_timestamp, 
             NULL, current_timestamp, current_timestamp, NULL, 
-            0, NULL, 0, 0, NULL, 
+            NEXTVAL('drug_display_id_seq'), NULL, 0, 0, NULL, 
             NULL, FALSE, FALSE, FALSE, 
             FALSE) RETURNING id INTO drug_id;
 
