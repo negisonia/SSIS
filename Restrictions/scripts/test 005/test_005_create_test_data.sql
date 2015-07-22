@@ -34,6 +34,8 @@ drug_11 INTEGER;
 health_plan_type_commercial INTEGER;
 health_plan_type_hix INTEGER;
 
+provider_id INTEGER;
+
 formularyId INTEGER;
 formularyEntryId INTEGER;
 
@@ -80,6 +82,9 @@ SELECT hpt.id INTO health_plan_type_commercial FROM healthplantype hpt WHERE hpt
 SELECT hpt.id INTO health_plan_type_hix  FROM healthplantype hpt WHERE hpt.name='restrictions_test_hix' and hpt.isactive IS TRUE LIMIT 1;
 
 
+--CREATE PROVIDER
+SELECT common_create_provider(TRUE,'restrictions_provider_9',NULL) INTO provider_id;
+
 --CREATE TIERS
 SELECT common_create_tier(TRUE,'restrictions_tier_1','restrictions_tier_1') INTO tier_1;
 SELECT common_create_tier(TRUE,'restrictions_tier_2','restrictions_tier_2') INTO tier_2;
@@ -105,12 +110,12 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
 
 --CREATE FORMULARIES
 --FORMULARY 1
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_1) INTO formularyId;
     --FORMULARY ENTRY
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_1,reason_code_1,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_1',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_1',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
@@ -118,11 +123,11 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
 
 --FORMULARY 2
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_2) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_2,tier_2,reason_code_2,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_1',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_1',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
@@ -130,41 +135,41 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
 
 --FORMULARY 3
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_3) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_2,tier_3,reason_code_3,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_2',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_2',formularyId,provider_id);
 
 --FORMULARY 4
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_3p) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_3p,reason_code_4,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_2',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_2',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
 
 --FORMULARY 5
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_3,tier_4,reason_code_5,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_3',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_3',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_1);
 
 --FORMULARY 6
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_4,tier_4,reason_code_6,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_4',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_4',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_3);
@@ -172,19 +177,19 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
 
 --FORMULARY 7
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_5,tier_4,reason_code_3,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_3',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_3',formularyId,provider_id);
 
 --FORMULARY 8
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_6,tier_4,NULL,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_4',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_4',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_1);
@@ -193,47 +198,47 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
 
 --FORMULARY 9
     --FORMULARY ENTRY
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(TRUE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_7,tier_4,NULL,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_5',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_5',formularyId,provider_id);
 
 --FORMULARY 10
     --FORMULARY ENTRY
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(FALSE,FALSE,tier_3p) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_2,tier_3p,NULL,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,FALSE,'restrictions_test_05_commercial_6',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,FALSE,'restrictions_test_05_commercial_6',formularyId,provider_id);
 
 --FORMULARY 11
     --FORMULARY ENTRY
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(FALSE,FALSE,tier_1) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_1,reason_code_4,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,FALSE,'restrictions_test_05_commercial_7',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,FALSE,'restrictions_test_05_commercial_7',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
 
 --FORMULARY 12
     --FORMULARY ENTRY
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(FALSE,FALSE,tier_2) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_11,tier_2,NULL,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_5',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'restrictions_test_05_hix_5',formularyId,provider_id);
 
 
 --FORMULARY 13
     --FORMULARY ENTRY
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formularyId;
+    SELECT common_create_formulary(FALSE,FALSE,tier_4) INTO formularyId;
     SELECT common_create_formulary_entry(formularyId,drug_11,tier_4,NULL,NULL) INTO formularyEntryId;
 
     --HEALTHPLAN
-    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_8',formularyId,NULL);
+    PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'restrictions_test_05_commercial_8',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
