@@ -5,21 +5,21 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BURDEVSQL1"
   DTS:CreatorName="DRESOURCES\miLee"
-  DTS:DTSID="{F65519AE-F1CD-436E-B040-EED03288350D}"
+  DTS:DTSID="{A326D1D7-896B-4145-9513-EA540D570BD1}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="r20_process_b"
   DTS:PackageType="5"
   DTS:VersionBuild="45"
-  DTS:VersionGUID="{B6C7597F-3026-4742-9455-8747F4BDBC55}">
+  DTS:VersionGUID="{D4000D22-AB2E-43B9-ABAA-7D0251EE796C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_warehouse]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+      DTS:DTSID="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
       DTS:ObjectName="data_warehouse">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_warehouse;port=5432;"</DTS:PropertyExpression>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAy0Ax1R9YOjOJLHIvIpfy0xiXHYbmAo/qw7Bdoi99mgAAAAAOgAAAAAIAACAAAAAAgk44wDaXp9w1AWsbdaVmWJbXvVRrhx2JFH59HbCM0zAAAABOG6pO+C/EEeSWZryrsEp1LQLlZF0/GEHFxUkyvCvoKgt4k6xxrzMkoQ1Ls+2Qg5xAAAAAW8LL3vsBTtegZKYDNV0+Ubz/TKWPElpAnFzclB5iUlctIvT7LrzQqVPXXj8czn/088vm0kPS0abQza3RFfYxKg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADShVw4cqo39Bu74EdNT2KtuN4NFfKCRudF5k01VX6m7wAAAAAOgAAAAAIAACAAAABMWN80yYdV8ZI49Fx0xpjxJsTSNKOIlJuuSA4hmNdsNzAAAAAckh8nPEsOiN88fW+wC8Xk+QydsbbIRNFGn4YmId/tHy6z5kCF3BiB80oQGQCtnZVAAAAANRCYlYqPOHPn4wmUEbNeaQF7cDmdV6/iY0tWAa76RbpZAtUpCVaKLMiOVHewN5BEJ/3xS9MZuxJ+MFFXhcE20Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -37,7 +37,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F5828F68-2677-4994-A40A-F748244A6C7A}"
+      DTS:DTSID="{78CED346-7882-4D25-A134-E44430AE9876}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
@@ -46,7 +46,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C7590928-C410-438A-BDAF-BF626CCF7610}"
+      DTS:DTSID="{7F56611D-383E-432B-A0D9-9FE8F0CC2B09}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_prefix">
@@ -55,7 +55,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{18C1B173-00E1-465E-8E43-1881DAE0FA04}"
+      DTS:DTSID="{7E2F83BD-9346-4A39-84AC-F19BA93037A6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
@@ -64,7 +64,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5814EA58-9331-452A-894E-051986B0E366}"
+      DTS:DTSID="{CE1463FC-8672-4E56-B0AF-A5DF393A8A23}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_username">
@@ -73,12 +73,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6712D6DC-D8E6-4293-AE60-35429B0EC5FC}"
+      DTS:DTSID="{0BBA99DF-4E4A-4396-9AEF-112B5C0302F6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="email_recipients">
       <DTS:VariableValue
-        DTS:DataType="8">vsansilvestre@growthaccelerationpartners.com</DTS:VariableValue>
+        DTS:DataType="8">vsansilvestre@wearegap.com</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -86,7 +86,7 @@
       DTS:refId="Package\DW Import Source Data (for larger set)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{BDD98FD3-3F20-41DA-9683-016EC4C2D3BE}"
+      DTS:DTSID="{082EB64A-06DA-44B9-9E04-392ABBBEA4C6}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW Import Source Data (for larger set)">
@@ -96,7 +96,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\health_plan_county"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{68BCAE35-BACA-4A4B-9E73-2FF1520FA0F8}"
+          DTS:DTSID="{366A7E30-BDF1-4472-89BE-241BAB0D1999}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plan_county"
@@ -105,7 +105,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+              SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.health_plan_county_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -113,7 +113,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\health_plan_county_lives"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F5095D67-AC7D-4E6E-81C8-348255050527}"
+          DTS:DTSID="{3D2B939C-9B24-4F69-9EE8-48B748EDE6F1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plan_county_lives"
@@ -122,7 +122,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+              SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.health_plan_county_lives_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -130,7 +130,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\hli_medical_benefit_lives"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{90D4B2C8-85EB-41A9-A3B6-F711946828A1}"
+          DTS:DTSID="{A173CF5E-1FE3-41E3-B954-9678DF5C14BD}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="hli_medical_benefit_lives"
@@ -139,7 +139,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+              SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.hli_medical_benefit_lives_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -147,7 +147,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\mv_active_formularies_stage"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0A200411-0CE3-49B2-BAF0-A8981ED56C08}"
+          DTS:DTSID="{05EFB710-7DC0-4E11-96AA-6E5D70F8DCFD}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="mv_active_formularies_stage"
@@ -156,7 +156,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+              SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.mv_active_formularies_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -164,7 +164,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\specialty_pharmacy_drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{41F73C5E-6196-4190-B969-6D3EF3469218}"
+          DTS:DTSID="{3FFCF77E-7E0A-4D3C-92F5-CA948CFE3FAF}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacy_drugs"
@@ -173,7 +173,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+              SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.specialty_pharmacy_drugs_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -183,7 +183,7 @@
       DTS:refId="Package\log ETL done"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="log ETL process_b done"
-      DTS:DTSID="{F2ED51D7-AC36-471A-A99E-D0AFC2CF8CBB}"
+      DTS:DTSID="{C3EF34A2-9CC3-4CF8-91D2-14C8FA262EE8}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="log ETL done"
@@ -192,7 +192,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+          SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
           SQLTask:SqlStatementSource="UPDATE log_etl_process_b SET process_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_process_b);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -200,7 +200,7 @@
       DTS:refId="Package\Log ETL Start"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Log ETL process_b Start"
-      DTS:DTSID="{C6A6CE4A-0E85-40C8-90DE-45056557B6BE}"
+      DTS:DTSID="{E773A5CD-B802-411C-A059-035308C4CF2D}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log ETL Start"
@@ -209,7 +209,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+          SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
           SQLTask:SqlStatementSource="INSERT INTO log_etl_process_b (process_started_at) VALUES (now());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -217,7 +217,7 @@
       DTS:refId="Package\Pre-ETL-Check"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Pre-ETL-Check for process_b"
-      DTS:DTSID="{655A90C7-12F1-49B3-B9CE-19C08C8E90FD}"
+      DTS:DTSID="{1FF95BD5-94FF-406B-ABAA-068683AC592F}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-ETL-Check"
@@ -226,7 +226,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A4A23FA3-BD5E-439A-BFCD-78600B95BE3B}"
+          SQLTask:Connection="{94FDAC6B-BCF1-40C7-8BA9-CBAD1DA82032}"
           SQLTask:SqlStatementSource="select dw.pre_etl_checks('process_b');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -235,7 +235,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{65267004-F2D5-4DCD-BDDA-45D1898112B2}"
+      DTS:DTSID="{B6C1556A-C25C-4486-BD6D-D8F21BA73E58}"
       DTS:From="Package\Pre-ETL-Check"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -243,7 +243,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{6DFAA792-B28C-4945-85CD-E1DD9CD5246E}"
+      DTS:DTSID="{B7284A81-59F0-48E5-8CC7-19DF2F6A2D0F}"
       DTS:From="Package\Log ETL Start"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -251,7 +251,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{A33F18E2-248F-4602-9750-37FD1DFF714E}"
+      DTS:DTSID="{0BCE7F36-DE14-404F-B38E-AC2742409A20}"
       DTS:From="Package\DW Import Source Data (for larger set)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -261,7 +261,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{85125660-81B9-401B-B75B-D2C08F793240}"
+      DTS:DTSID="{D14872FA-49C7-45A3-A72F-E3F3CEE697A3}"
       DTS:EventID="6553705"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -269,7 +269,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{4A46A835-B03D-416F-9C0A-79E52B6E565B}"
+          DTS:DTSID="{A7355087-F16C-4EC0-83D9-4D73F7ACDF1A}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -282,7 +282,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Send ETL status OnError Alert"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Script Task"
-          DTS:DTSID="{8F923E72-6392-45E5-8322-492F49BC3402}"
+          DTS:DTSID="{A59B5D7A-A543-47F3-8A0B-2C32C12D7CBB}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Send ETL status OnError Alert">

@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL testing</Name>
-    <LastWriteTime>2015-07-17T03:54:36.9663935Z</LastWriteTime>
+    <LastWriteTime>2015-07-22T19:22:31.4494018Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
+      <Name>etl_testing.dtsx</Name>
+      <LastWriteTime>2015-07-23T16:39:45.2077683Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
       <Name>process_a_ssis.dtsx</Name>
-      <LastWriteTime>2015-07-17T03:57:57.287614Z</LastWriteTime>
+      <LastWriteTime>2015-07-22T19:22:31.0812377Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>process_b_ssis.dtsx</Name>
-      <LastWriteTime>2015-07-17T03:43:38.9706972Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>etl_testing.dtsx</Name>
-      <LastWriteTime>2015-07-21T21:41:21.2895168Z</LastWriteTime>
+      <LastWriteTime>2015-07-22T19:23:04.5492809Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
