@@ -14,7 +14,7 @@ BEGIN
 -- Current Month
 SELECT extract(month from date_trunc('month', current_date)) INTO current_month_int;
 -- Create Criteria Report Id
-SELECT test_001_006_create_fe_test_data() INTO criteria_report_id;
+SELECT test_001_007_create_fe_test_data() INTO criteria_report_id;
 -- Get Drug 001 id
 SELECT id from drugs where name = 'DRUG_001' limit 1 INTO drug_001_id;
 -- Get Tier id

@@ -66,8 +66,8 @@ SELECT common_create_healthplan(health_plan_type_001_id, FALSE, 'TEST_PLAN_006',
 SELECT common_create_drug(TRUE, FALSE, 'DRUG_001') INTO drug_001_id;
 SELECT common_create_drug(TRUE, FALSE, 'DRUG_002') INTO drug_002_id;
 
-SELECT common_create_tier(TRUE, 'TIER_001', 'TIER_001', 1) INTO tier_001_id;
-SELECT common_create_tier(TRUE, 'TIER_002', 'TIER_002', 2) INTO tier_002_id;
+SELECT common_create_tier(TRUE, 'TIER_001', 'TIER_001') INTO tier_001_id;
+SELECT common_create_tier(TRUE, 'TIER_002', 'TIER_002') INTO tier_002_id;
 
 PERFORM common_create_formulary_entry(formulary_001_id, drug_001_id, tier_001_id, 0, FALSE);
 PERFORM common_create_formulary_entry(formulary_002_id, drug_002_id, tier_001_id, 0, FALSE);
