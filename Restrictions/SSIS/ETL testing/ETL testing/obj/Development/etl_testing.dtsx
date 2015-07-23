@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{42EBA2EF-0EA4-4988-832F-8E1D30DACA77}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{3AE3D9D2-AEF0-4032-AF43-F4766075FFCE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAGZEWffbO8ikl9sgB/FgEs7biSwRCWojVjKqu7DgFr2wAAAAAOgAAAAAIAACAAAAB2NIpZ/mT8SxyhULuHuiLWL6t9LDYLxQ8AtiH3ykGwtDAAAABdIBOpkWpu6TXXJeXHK+kUIq9KWVkYWpde5WW8QXlXTa7Xfn+JJrW+4y+O6HwjXZRAAAAA/RuUm/xzJMbJmWriwBA1h1eS6vpM4t1XO5pbD4hrvYjCKyX1CpPad7rJWojwBY2JKvNXpSKakKXzSJKQkQwvXA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACCLA13d9GOTIhw8Crw3H6GKk0Mq1YcrY5kAZe/U0Qu6QAAAAAOgAAAAAIAACAAAABuRmk3Euux1O9gk5gUai/QL/EgnCglFm/tdFZJ44zdlDAAAAAKy26+bp2GbDDCqK4KAYJmLmrsAhKt/JIj3U8F5OtMl+cbTYuRruoz/yvqvjaffjZAAAAARb8v8shbN8bEuB9J70iyzMFTQ5l7Oa//+NW7GdLCcYBXI7RNeY442Q3e01XhB4FceIvTBTnOnvydjypyYL96Zw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnY7p8akjzJT8ujYyR14TtRrILnPmEJouXyjxwqCU3ngAAAAAOgAAAAAIAACAAAAB4QkLk2xudjRhcALqVBTN6IwkZVkgtI95YtJ51QIJKtjAAAAA4pm2kaJOGPTQ3WGoWujKsbLzHB1FkoqCrkKSQFmMD0V+oLdC2jSFv5u81m942cLVAAAAAdclcuKZSuCkJnNg6CEZbsJmpA13q6e7y/qST+ane4a80XuOmYvUcZryxeywonG0ANZ1OHhpVGzmBF/pHzgQyaQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD5OcfkokOY7USO0xyrJtrMVJXl68PwmDjjxd3uraOcDgAAAAAOgAAAAAIAACAAAABLLiDXEHVX1hx8pGJGd+Aw5r5sgxkSObuVgwIwkO0qIDAAAADGFWa8Kw0VMqkZy6krkAQdsjkHRe0cYBJv1XElTyYJJD8WNl3TjP1yyTTAG36YsAZAAAAAMgDM+AM/sM4QKiZDhiqdnBFXj5ohBfztckXXjNkmZToBsesXaya5LR5gmVI0kjrLKx3RzuDHBWVXah4TPGiHQg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC9lKYG3y7NQ4R11kd6zjVrr827g1Zo+iZkuAp9kr9oEwAAAAAOgAAAAAIAACAAAAD6IvXwdiENG5tsy6vdIpVdl93OOxQr5HV6fyi0q5fk3TAAAAB+IrRySl/fbmI+ZEb8A4xGo49jx90RZbOmZI03xDz8N3UMUgbe4a4tmhP0eJJOn7RAAAAAItd524UCP8+cvWf6F90HZFE1A3nmVknMWDeUbo5rRyl/eHkFZJmfmtRGRwcodAoKpHihW6mANwA4pd9RfeDkTw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABJKeTNToT4rUMhTcIejbj5NnLDxjjusfhC8eAwODO7vQAAAAAOgAAAAAIAACAAAAAu1R/K+EhnMHye2bwGzPgBklH1P5v6Wo1cFHdDMNukrTAAAABAqB3cJa+3DGZNH5vtewWOHwqhbUT9x5B1e+APehm+YJNJM76IBTcfIOrhb/SsC2RAAAAAwsLFJsSfnlp0UVVI/yJTv6DBYbWOqoiVRaqTy4ShzWew+UOd5jtGoPamvZo/TOhJZISlLL3m+M7hIb6phtWJhg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRoELRw1pnTmIv0OrJw0E+gShBRybErQEoPi8KQSJH/wAAAAAOgAAAAAIAACAAAACLnws+T3mGRyuscriv/UyBdS1cHD+rfGyN1shJHBixCzAAAABjrlYCduykousdHEmo+0JyEr2Mp2a0csI3PbeZ1AadCeuyKO9O1Za8deZlMBZAp6hAAAAAQnxoDxr5S5hpgN87eZFvTKvYkBJlqAGpE4XlwvpR/e/6jNKO6b+F/D7weMhqKmelaaFLVZi8z7Zp5BxbZ2Zw5A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAUcUEkhHVSFMLqkA79zYmbnp8ucCgsdwidU60jCmrXhgAAAAAOgAAAAAIAACAAAADcOipA5QcWkPqOFfuWOwX86yAmB5VUBYhshX69Y6QcUDAAAAB8ZP3qD3JcrxHiQtaVEEQjvyYacSNz6qzQdy+Oi2x2PsrtS5XYLuJxchupon3tTv9AAAAA2XuV/aSQI2p8zOKvKY2XciGdqhbajKfA0WCMx4n7gVDWDY+dIz3LKoZTRR40NRVix7xUcB5HkRdRwgYdWXxNjQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -226,7 +226,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 001 create test data"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -243,7 +243,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 003 create test data"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -341,7 +341,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 001 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -358,7 +358,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 002 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -375,7 +375,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 003 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -392,7 +392,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 004 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -409,7 +409,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 005 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -417,7 +417,50 @@
               SQLTask:SqlStatementSource="select restrictions_test_005_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Validation\Test 006 validation"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B4203454-E519-461A-8C3A-1938BB2C4BCC}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test 006 validation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
+              SQLTask:SqlStatementSource="SELECT  restrictions_test_006_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7D7E4EB0-B6C2-4BD1-B142-F8C0D5858DA2}"
+          DTS:From="Package\Validation\Test 001 validation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Validation\Test 002 validation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8C46A936-58D8-470F-9FE6-4B90FB520C1E}"
+          DTS:From="Package\Validation\Test 003 validation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Validation\Test 004 Validation" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{3BB66278-AA3C-493F-8228-75F473AB10D7}"
+          DTS:From="Package\Validation\Test 005 validation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Validation\Test 006 validation" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -565,58 +608,51 @@
           Id="Package\Create Test Data"
           TopLeft="1378.13888888889,567.25" />
         <NodeLayout
+          Size="156,42"
+          Id="Package\ETL PROCESS A"
+          TopLeft="1716,1000" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ETL PROCESS B"
+          TopLeft="1717,881" />
+        <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 001 validation"
-          TopLeft="87.7142857142862,72.5714285714287" />
+          TopLeft="70.7142857142862,24.5714285714287" />
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 002 validation"
-          TopLeft="307,78" />
+          TopLeft="69,96" />
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 003 validation"
-          TopLeft="519,79" />
+          TopLeft="281,26" />
         <NodeLayout
           Size="171,42"
           Id="Package\Validation\Test 004 Validation"
-          TopLeft="753,79" />
+          TopLeft="282,98" />
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 005 validation"
-          TopLeft="995,82" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="1533,202"
-          Size="1533,245"
-          Id="Package\Validation"
-          TopLeft="1381.0018037518,1122.20490620491" />
+          TopLeft="491,28" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Validation\Test 006 validation"
+          TopLeft="487,100" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1836.5,508">
+          Id="Package\Validation.PrecedenceConstraints[Constraint]"
+          TopLeft="154.857142857143,66.5714285714287">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="319.13888888889,59.25"
+              EndConnector="0,29.4285714285713"
               Start="0,0"
-              End="319.13888888889,51.75">
+              End="0,21.9285714285713">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.625"
-                    Point2="0,29.625"
-                    Point3="4,29.625" />
-                  <mssgle:LineSegment
-                    End="315.13888888889,29.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="315.13888888889,29.625"
-                    Point2="319.13888888889,29.625"
-                    Point3="319.13888888889,33.625" />
-                  <mssgle:LineSegment
-                    End="319.13888888889,51.75" />
+                    End="0,21.9285714285713" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -625,14 +661,57 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\ETL PROCESS B"
-          TopLeft="1717,881" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\ETL PROCESS A"
-          TopLeft="1716,1000" />
+        <EdgeLayout
+          Id="Package\Validation.PrecedenceConstraints[Constraint 1]"
+          TopLeft="366.75,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Validation.PrecedenceConstraints[Constraint 2]"
+          TopLeft="574,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="1533,202"
+          Size="1533,245"
+          Id="Package\Validation"
+          TopLeft="1381.0018037518,1122.20490620491" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="2155.63888888889,827.25">
@@ -715,6 +794,40 @@
                     Point3="353.5018037518,44.102453102455" />
                   <mssgle:LineSegment
                     End="353.5018037518,72.70490620491" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="1836.5,508">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="319.13888888889,59.25"
+              Start="0,0"
+              End="319.13888888889,51.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.625"
+                    Point2="0,29.625"
+                    Point3="4,29.625" />
+                  <mssgle:LineSegment
+                    End="315.13888888889,29.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="315.13888888889,29.625"
+                    Point2="319.13888888889,29.625"
+                    Point3="319.13888888889,33.625" />
+                  <mssgle:LineSegment
+                    End="319.13888888889,51.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
