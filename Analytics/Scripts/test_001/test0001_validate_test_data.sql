@@ -15,8 +15,8 @@ SELECT test_001_007_create_fe_test_data() INTO criteria_report_id;
 --Query the actual value
 SELECT total_lives from rpt_coverage_tier_drug(criteria_report_id,current_month_int) limit 1 INTO actual_value;
 
-IF actual_value != expected_value THEN
-  SELECT throw_error('test_001_validate_test_data-error: EXPECTED VALUE OF ' || expected_value || ' GOT ' || actual_value ||);
+IF actual_value IS NULL OR actual_value != expected_value THEN
+  SELECT throw_error('test_001_validate_test_data-error: EXPECTED VALUE OF ' || concat_ws('GOT ', expected_value, actual_value));
 END IF; 
 
 success:=true;

@@ -24,8 +24,8 @@ SELECT id from dim_tier where name = 'TIER_002' limit 1 INTO tier_002_id;
 SELECT SUM(health_plan_count) from rpt_coverage_tier_drug(criteria_report_id,current_month_int) where drug_id = drug_002_id and dim_tier_id = tier_001_id and dim_tier_id = tier_002_id INTO actual_value;
 
 
-IF actual_value != expected_value THEN
-  SELECT throw_error('test_006_validate_test_data-error: EXPECTED VALUE OF ' || expected_value || ' GOT ' || actual_value ||);
+IF actual_value IS NULL OR actual_value != expected_value THEN
+  SELECT throw_error('test_006_validate_test_data-error: EXPECTED VALUE OF ' || concat_ws('GOT ', expected_value, actual_value));
 END IF; 
 
 success:=true;
