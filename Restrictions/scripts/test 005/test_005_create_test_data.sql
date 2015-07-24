@@ -83,7 +83,7 @@ SELECT hpt.id INTO health_plan_type_hix  FROM healthplantype hpt WHERE hpt.name=
 
 
 --CREATE PROVIDER
-SELECT common_create_provider(TRUE,'restrictions_provider_9',NULL) INTO provider_id;
+SELECT common_create_provider(TRUE,'restrictions_provider_11',NULL) INTO provider_id;
 
 --CREATE TIERS
 SELECT common_create_tier(TRUE,'restrictions_tier_1','restrictions_tier_1') INTO tier_1;

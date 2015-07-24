@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION restrictions_test_001_create_test_data() --FF NEW DB
+﻿CREATE OR REPLACE FUNCTION restrictions_test_001_create_test_data() --FF NEW
 RETURNS boolean AS $$
 DECLARE
 health_plan_types VARCHAR[] := ARRAY['restrictions_test_commercial','restrictions_test_hix','restrictions_test_commercial_bcbs','restrictions_test_employer','restrictions_test_medicare_ma','restrictions_test_medicare_sn','restrictions_test_medicare_pdp','restrictions_test_state_medicare','restrictions_test_dpp','restrictions_test_commercial_medicaid','restrictions_test_union','restrictions_test_municipal_plan','restrictions_test_pbm','restrictions_test_commercial_inactive'];
@@ -14,6 +14,8 @@ provider_5 INTEGER;
 provider_6 INTEGER;
 provider_7 INTEGER;
 provider_8 INTEGER;
+provider_9 INTEGER;
+provider_10 INTEGER;
 
 success BOOLEAN:=FALSE;
 BEGIN
@@ -26,6 +28,8 @@ SELECT common_create_provider(TRUE,'restrictions_provider_5',NULL) INTO provider
 SELECT common_create_provider(TRUE,'restrictions_provider_6',NULL) INTO provider_6;
 SELECT common_create_provider(TRUE,'restrictions_provider_7',NULL) INTO provider_7;
 SELECT common_create_provider(TRUE,'restrictions_provider_8',NULL) INTO provider_8;
+SELECT common_create_provider(FALSE,'restrictions_provider_9',NULL) INTO provider_9;
+SELECT common_create_provider(FALSE,'restrictions_provider_10',NULL) INTO provider_10;
 
 
 
