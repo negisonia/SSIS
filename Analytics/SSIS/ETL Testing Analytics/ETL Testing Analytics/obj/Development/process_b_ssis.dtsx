@@ -5,31 +5,31 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BURDEVSQL1"
   DTS:CreatorName="DRESOURCES\miLee"
-  DTS:DTSID="{9ECCA8CC-D372-4A8D-8278-5ED4EA95F9CD}"
+  DTS:DTSID="{68B412D6-81CF-4FE8-846E-28B4A32E4129}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="r20_process_b"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{A80914EF-DBC2-4548-9897-F56EB1A93879}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{1EDD8F9D-B3A6-4300-A2DE-F9EB1E8922D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_warehouse]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+      DTS:DTSID="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
       DTS:ObjectName="data_warehouse">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_warehouse;port=5432;"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + ";port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnVhrrA+6UK4xWZ4KX5K0NGHjJfS78fzaEhdvVnrq9fQAAAAAOgAAAAAIAACAAAACuBF6PWAq9qZQ4SYpqa+WHZSvHRf3/buUI5ddZReV88jAAAAB7gsyXD1qr/hRvt6nzWNuD2TlMTvFksv4umznfbOVmEuuyuQvq93XorPR7OwADggJAAAAAYkTPLNxcDKJpL4Xgy+UFDQ8B1Z2S3vnKAAfNGSSY8zQRIwy470TcJ+lzd6MuGytgO9Rcwh3RhOfa9kmu360G2A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABeJsSYIjRaqR2mszg15B3kpS1FhHj5B+RoUn1E6l8tXQAAAAAOgAAAAAIAACAAAADffxgTS+YToTVOpLQiyAOons9Qe+/phi9NEx6p7aoI7DAAAAAEpziFJZ3QixC2UbMHN0eM6464rVhESdyQUUJgZsd3L73cBOW+plGFdgeAXwusQ4JAAAAAAetuEbt/FpMk0JZKVI5fKhEwrT2T1UwmX+WbUYq7VF+fEb4mPNkSsSWryEThAVUHbu9nJpjW9T81U0GXguqkug</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -37,7 +37,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5A641BD3-070F-4D36-AA2E-901F0F2462BF}"
+      DTS:DTSID="{3327A650-6C03-4F8A-9F30-313D945F7D8E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
@@ -46,16 +46,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{70909900-A5D4-4593-B50D-ED071AC222A3}"
+      DTS:DTSID="{7B6E8235-9455-44B7-B065-219CEE5BA5E7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_prefix">
       <DTS:VariableValue
-        DTS:DataType="8">sandbox</DTS:VariableValue>
+        DTS:DataType="8">sandbox_data_warehouse</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7E6F9B09-20DC-4087-9FD6-DE2A0527F4B5}"
+      DTS:DTSID="{9BA5E5BB-E359-42A6-9D6F-2AA4D072EEF9}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
@@ -64,7 +64,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B54CC14E-1A4F-43DC-93E3-8140AF6A13A5}"
+      DTS:DTSID="{C39AB06D-B671-42A8-A3FE-D7114F7E55DE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_username">
@@ -73,12 +73,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D97EA941-25D5-4DA4-B8AF-2CC80BEF55E9}"
+      DTS:DTSID="{C4523A1A-1F37-43C8-B7B4-4D7416C6D28F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="email_recipients">
       <DTS:VariableValue
-        DTS:DataType="8">imonge@growthaccelerationpartners.com</DTS:VariableValue>
+        DTS:DataType="8">pZhao@dresourcesgroup.com</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -86,7 +86,7 @@
       DTS:refId="Package\DW Import Source Data (for larger set)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{05B395F4-E029-411D-89A5-A410118E041D}"
+      DTS:DTSID="{C25FFC57-E929-4F13-B75E-9C83AD346DDB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW Import Source Data (for larger set)">
@@ -96,7 +96,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\health_plan_county"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{385D7F2D-024E-40F1-A447-17A23A80ADDB}"
+          DTS:DTSID="{5ECE58F3-EB75-4F92-B7CB-7229E239E4B7}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plan_county"
@@ -105,7 +105,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+              SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.health_plan_county_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -113,7 +113,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\health_plan_county_lives"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4EF26D30-657C-48E9-879E-21E7C736476F}"
+          DTS:DTSID="{0BFED585-597E-4122-AD99-4D0C5E716BC6}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plan_county_lives"
@@ -122,7 +122,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+              SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.health_plan_county_lives_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -130,7 +130,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\hli_medical_benefit_lives"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3762D60C-D843-4511-8330-53114D182EB6}"
+          DTS:DTSID="{04F5E32F-8B12-4D5D-957E-BF8FE8DFDE13}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="hli_medical_benefit_lives"
@@ -139,7 +139,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+              SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.hli_medical_benefit_lives_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -147,7 +147,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\mv_active_formularies_stage"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2F1A0C5B-8C49-4CCF-9EEB-E8CD64F4E15B}"
+          DTS:DTSID="{46F69684-1E01-400E-A1A6-3141E5B89EDA}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="mv_active_formularies_stage"
@@ -156,7 +156,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+              SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.mv_active_formularies_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -164,7 +164,7 @@
           DTS:refId="Package\DW Import Source Data (for larger set)\specialty_pharmacy_drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5A472468-BE1E-4F33-A3D6-488BF47C5770}"
+          DTS:DTSID="{C65EFC6A-5886-42C8-BAC6-27B48C3525B7}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacy_drugs"
@@ -173,7 +173,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+              SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('ff.specialty_pharmacy_drugs_stage');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -183,7 +183,7 @@
       DTS:refId="Package\log ETL done"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="log ETL process_b done"
-      DTS:DTSID="{5EEC3C22-C66D-45E4-A3DE-D4253603C702}"
+      DTS:DTSID="{91202374-C626-4DB3-B823-EBF8524FA437}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="log ETL done"
@@ -192,7 +192,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+          SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
           SQLTask:SqlStatementSource="UPDATE log_etl_process_b SET process_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_process_b);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -200,7 +200,7 @@
       DTS:refId="Package\Log ETL Start"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Log ETL process_b Start"
-      DTS:DTSID="{04D20A36-C26D-46A3-BAD5-439EBCE9F946}"
+      DTS:DTSID="{D56AF40D-5141-4070-8E02-F22C03292E1B}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log ETL Start"
@@ -209,7 +209,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+          SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
           SQLTask:SqlStatementSource="INSERT INTO log_etl_process_b (process_started_at) VALUES (now());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -217,7 +217,7 @@
       DTS:refId="Package\Pre-ETL-Check"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Pre-ETL-Check for process_b"
-      DTS:DTSID="{E2B5E571-8280-44D2-9FD1-AF87FB4A2656}"
+      DTS:DTSID="{5C428C18-5549-4C3B-91E6-2350A1484D86}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Pre-ETL-Check"
@@ -226,7 +226,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{40B24490-5586-44D2-97E1-13687E3AB4FC}"
+          SQLTask:Connection="{3C2FA25E-44B1-45FC-B8AC-021182BAD665}"
           SQLTask:SqlStatementSource="select dw.pre_etl_checks('process_b');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -235,7 +235,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{3C19CA66-E59B-43D7-96A2-F6FEDC9AA828}"
+      DTS:DTSID="{41C2E9DD-F0E9-4E77-84FE-0276AFF0BE4E}"
       DTS:From="Package\Pre-ETL-Check"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -243,7 +243,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4D996FE7-E5E0-4921-A1D2-DA0FD3F365C1}"
+      DTS:DTSID="{220CAAEE-BCFB-49AE-B802-9AD594DF0B04}"
       DTS:From="Package\Log ETL Start"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -251,7 +251,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{42F901D9-76DA-40BD-8B05-8DBC8C8878EF}"
+      DTS:DTSID="{4FD0B950-9062-4322-BDD2-D0C4E55C45C4}"
       DTS:From="Package\DW Import Source Data (for larger set)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -261,7 +261,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{5183807B-CBEC-4678-99B9-5C34D9354325}"
+      DTS:DTSID="{3C02C9FE-5E79-4C94-B1E3-30ED7C3C2303}"
       DTS:EventID="6553705"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -269,7 +269,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{242EC22A-C990-4B62-AFFF-5AB2EA1FC0D3}"
+          DTS:DTSID="{1179BEEC-5211-41B8-8EE3-9155C0D5C80D}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -282,7 +282,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Send ETL status OnError Alert"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Script Task"
-          DTS:DTSID="{2E1AE044-FE00-40D3-AE0F-743C980B55F4}"
+          DTS:DTSID="{5A8D5EED-522B-4399-97DD-9B797961F3B0}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Send ETL status OnError Alert">
@@ -295,8 +295,35 @@
               Language="CSharp"
               ReadOnlyVariables="System::ContainerStartTime,System::TaskName,System::ErrorCode,System::ErrorDescription,System::SourceID,System::SourceName,User::db_prefix,User::db_server,User::email_recipients,System::MachineName,System::PackageID,System::PackageName,System::StartTime,System::UserName">
               <ProjectItem
-                Name="ST_f63d6fd7611c46f5868512fa153e46aa.csproj"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{9ac0d00b-1dc7-4572-a8da-46c3acc5de0e}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_a9f85b9bf10545d18fbe66ca2ef1956c</RootNamespace><AssemblyName>ST_f63d6fd7611c46f5868512fa153e46aa</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="#HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\10.0\InstallDir#\devenv.exe" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST110</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -417,34 +444,8 @@
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Settings.get_Default():ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Sett" +
-    "ings")]
-
-namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+                Name="ST_f63d6fd7611c46f5868512fa153e46aa.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{9ac0d00b-1dc7-4572-a8da-46c3acc5de0e}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_a9f85b9bf10545d18fbe66ca2ef1956c</RootNamespace><AssemblyName>ST_f63d6fd7611c46f5868512fa153e46aa</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="#HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\10.0\InstallDir#\devenv.exe" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST110</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -697,35 +698,34 @@ namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Settings.get_Default():ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
