@@ -11,6 +11,8 @@ DECLARE
   provider_6_id INTEGER DEFAULT NULL;
   provider_7_id INTEGER DEFAULT NULL;
   provider_8_id INTEGER DEFAULT NULL;
+  provider_9_id INTEGER DEFAULT NULL;
+  provider_10_id INTEGER DEFAULT NULL;
 
  valueExists BOOLEAN;
 
@@ -25,6 +27,8 @@ SELECT p.id INTO provider_5_id FROM ff.providers p WHERE p.is_active IS TRUE and
 SELECT p.id INTO provider_6_id FROM ff.providers p WHERE p.is_active IS TRUE and p.name='restrictions_provider_6';
 SELECT p.id INTO provider_7_id FROM ff.providers p WHERE p.is_active IS TRUE and p.name='restrictions_provider_7';
 SELECT p.id INTO provider_8_id FROM ff.providers p WHERE p.is_active IS TRUE and p.name='restrictions_provider_8';
+SELECT p.id INTO provider_9_id FROM ff.providers p WHERE p.is_active IS TRUE and p.name='restrictions_provider_9';
+SELECT p.id INTO provider_10_id FROM ff.providers p WHERE p.is_active IS TRUE and p.name='restrictions_provider_10';
 
 
 --VALIDATE PROVIDERS#1
@@ -149,6 +153,15 @@ ELSE
   END IF;
 END IF;
 
+--VALIDATE PROVIDERS#9
+IF provider_9_id IS NOT NULL THEN
+   SELECT throw_error('PROVIDER#9 SHOULD NOT EXISTS');
+END IF;
+
+--VALIDATE PROVIDERS#10
+IF provider_10_id IS NOT NULL THEN
+   SELECT throw_error('PROVIDER#10 SHOULD NOT EXISTS');
+END IF;
 
 success:=true;
 RETURN success;
