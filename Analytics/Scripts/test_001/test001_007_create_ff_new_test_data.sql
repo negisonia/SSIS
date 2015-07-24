@@ -86,6 +86,13 @@ PERFORM common_create_health_plan_county_lives(health_plan_004_id, state_001_id,
 PERFORM common_create_health_plan_county_lives(health_plan_005_id, state_001_id, NULL, NULL, 100);
 PERFORM common_create_health_plan_county_lives(health_plan_006_id, state_001_id, NULL, NULL, 50);
 
+PERFORM common_create_health_plan_state(health_plan_001_id, state_001_id);
+PERFORM common_create_health_plan_state(health_plan_002_id, state_001_id);
+PERFORM common_create_health_plan_state(health_plan_003_id, state_001_id);
+PERFORM common_create_health_plan_state(health_plan_004_id, state_001_id);
+PERFORM common_create_health_plan_state(health_plan_005_id, state_001_id);
+PERFORM common_create_health_plan_state(health_plan_006_id, state_001_id);
+
 success=true;
 return success;
 END

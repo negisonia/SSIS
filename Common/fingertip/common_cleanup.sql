@@ -24,6 +24,7 @@ BEGIN
   TRUNCATE TABLE healthplan_countylives CASCADE;
   TRUNCATE TABLE qualifier CASCADE;
   TRUNCATE TABLE reasoncode CASCADE;
+  TRUNCATE TABLE healthplanstate CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
@@ -48,6 +49,7 @@ BEGIN
   ALTER SEQUENCE drugs_jcodes_id_seq RESTART;
   ALTER SEQUENCE qualifier_id_seq RESTART;
   ALTER SEQUENCE reasoncode_id_seq RESTART;
+  ALTER SEQUENCE healthplanstate_id_seq RESTART;
 
 success:=true;
 RETURN success;
