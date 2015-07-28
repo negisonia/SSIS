@@ -17,7 +17,7 @@ SELECT test_001_007_create_fe_test_data() INTO criteria_report_id;
 -- Get Drug 001 id
 SELECT id from drugs where name = 'DRUG_001' limit 1 INTO drug_001_id;
 -- Get Tier id
-SELECT id from dim_tier where name = 'TIER_001' limit 1 INTO tier_001_id;
+SELECT id from dim_tier where name = 'Tier 1' limit 1 INTO tier_001_id;
 --Query the actual value
 SELECT SUM(lives) from rpt_coverage_tier_drug(criteria_report_id,current_month_int) where drug_id = drug_001_id and dim_tier_id=tier_001_id and is_tier_preferred IS TRUE INTO actual_value;
 
