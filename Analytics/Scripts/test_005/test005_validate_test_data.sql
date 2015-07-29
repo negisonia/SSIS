@@ -2,7 +2,7 @@ CREATE OR REPLACE FUNCTION test_005_validate_test_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
-  expected_value INTEGER := 150;
+  expected_value INTEGER := 2;
   actual_value INTEGER;
   criteria_report_id INTEGER;
   current_month_int INTEGER;
@@ -21,7 +21,7 @@ SELECT id from drugs where name = 'DRUG_001' limit 1 INTO drug_001_id;
 SELECT id from dim_tier where name = 'Tier 1' limit 1 INTO tier_001_id;
 SELECT id from dim_tier where name = 'Tier 2' limit 1 INTO tier_002_id;
 --Query the actual value
-SELECT SUM(health_plan_count) from rpt_coverage_tier_drug(criteria_report_id,current_month_int) where drug_id = drug_001_id and (dim_tier_id = tier_001_id or dim_tier_id = tier_002_id) INTO actual_value;
+SELECT SUM(health_plan_count) from rpt_coverage_tier_drug(criteria_report_id,current_month_int) where drug_id = drug_001_id and (dim_tier_id = tier_001_id or dim_tier_id = tier_002_id) AND is_tier_preferred IS FALSE INTO actual_value;
 
 
 IF actual_value IS NULL OR actual_value != expected_value THEN
