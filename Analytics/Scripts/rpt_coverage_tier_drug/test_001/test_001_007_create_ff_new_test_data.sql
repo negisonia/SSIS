@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION analytics_test_001_007_create_ff_new_test_data() --FF NEW DB
+CREATE OR REPLACE FUNCTION ana_rpt_coverage_tier_drug_test_001_007_create_ff_new_data() --FF NEW DB
 RETURNS boolean AS $$
 DECLARE
 parent_001_id INTEGER;
