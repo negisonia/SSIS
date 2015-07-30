@@ -2,7 +2,7 @@ CREATE OR REPLACE FUNCTION test_002_validate_test_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
-  expected_value INTEGER := 4;
+  expected_value INTEGER := 5;
   actual_value INTEGER;
   criteria_report_id INTEGER;
   current_month_int INTEGER;
