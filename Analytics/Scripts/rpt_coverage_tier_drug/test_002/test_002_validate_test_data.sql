@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION test_002_validate_test_data() --FRONT END
+CREATE OR REPLACE FUNCTION ana_rpt_coverage_tier_drug_test_002_validate_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
@@ -11,7 +11,7 @@ BEGIN
 -- Current Month
 SELECT extract(month from date_trunc('month', current_date)) INTO current_month_int;
 -- Create Criteria Report Id
-SELECT test_001_007_create_fe_test_data() INTO criteria_report_id;
+SELECT ana_rpt_coverage_tier_drug_test_001_007_create_fe_data() INTO criteria_report_id;
 --Query the actual value
 SELECT total_health_plan_count from rpt_coverage_tier_drug(criteria_report_id,current_month_int) limit 1 INTO actual_value;
 

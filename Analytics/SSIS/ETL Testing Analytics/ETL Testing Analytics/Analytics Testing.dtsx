@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Analytics Testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{FAB106C2-AA36-4D2B-93D2-A24AC99BE9C4}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{14E123EF-64D7-4EA9-8FF5-D5617C78367A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9qHmJCXGRuFcXCx7PbxY1kiL281dkmagHOaSl/uaFxAAAAAAOgAAAAAIAACAAAADa1ZPFyvUUkit2kf52Uz/YpHtBWVEniQTA8xqHJQ1tcTAAAABPSyUeDqf0wp5hlqIBkPhSr5nlTYTv1m9oGae0Qx4UJJ/4KggMY7QLrnoBMzdrcslAAAAAFQ+4x9yXll3PiyPGb8yDfiWQdjuffOgyCXPLkpAAvb7SabH8I3QyGP2dEH8dpXu2cR37t1+YOo6IfcwwJEztrA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAaeUtH/jdXrpd7P3UFvqk4A1tKixzj0k/5OcMCr3f/kQAAAAAOgAAAAAIAACAAAACXUQj2OcZCC6uWVtn8spRJYMKSmo+eDvSRIPxyRuYBRzAAAACQ4WXiXa0Tyzuf7EuPr6Mu/pu14r0jGuOszZpT5wNRi9x4GX1opLKe7QfIZx1+XS1AAAAAbRZ77msTFT93jvLOqpx1JKI6fuTyMTS22Sm+GuSAWsjmduIskGMSX4o0At3X1IcokoL6Q+8zWt8vbyrzcHfO9Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB5BlbPqFt/t9GTj8u3gUPB5PoP1gaN8FuIQmVTXCbduQAAAAAOgAAAAAIAACAAAACQw+WeNmNe8FVbRDc0u1FdOuTL/icij8/gkf5xRfA9djAAAACogU8N0YXHjGwt885pZLyTlD2zo69ahgj30dmwRXrjUL4HU6W7QW/wuDpr2NEK2HJAAAAA0XWAoGQ/MVio+a5GM4+vxqlmIlObh3pQ85JuSKjTqjEMGpBO07DAcZw63kHZEopncNKDqMqzi3e5897Y9OwrXQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACYOOwFkvWR6ROEeZAlvWRQaSiW4AvgZhw+xo1f6FtgZQAAAAAOgAAAAAIAACAAAABAviPUDQefBg4wggQcIr27ngdRQYriLDoDCv0/pHDnTzAAAACpitpnOGliMRfjsQxZ+pu19E2nXARSGlp4B7eY+i8+LvsRsGm0BLw2U6q4/cyKOd5AAAAAXsoywOCaPLd0MdsdFDE7oyXSwzLu05STAByrjUJ9ihBoN85qFyD/Y62ytW6rNykwIti1GvX2+mSXkOCEkSleQw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -234,7 +234,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{04615ABA-7F2A-42B4-AE29-7D34F3FCAEB0}"
-              SQLTask:SqlStatementSource="select test_001_007_create_ff_new_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_001_007_create_ff_new_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -263,7 +263,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_001_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_001_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -280,7 +280,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_002_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_002_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -297,7 +297,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_003_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_003_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -314,7 +314,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_004_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_004_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -331,7 +331,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_005_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_005_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -348,7 +348,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_006_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_006_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -365,7 +365,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{86787070-0E1A-451B-9CBE-1B085AED0A21}"
-              SQLTask:SqlStatementSource="select test_007_validate_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_007_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
