@@ -40,10 +40,10 @@ BEGIN
 
 --RETRIEVE INDICATIONS IDS
 SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_1' and abbreviation = 'Ind1';
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_2' and abbreviation = 'Ind2';
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_3' and abbreviation = 'Ind3';
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_4' and abbreviation = 'Ind4';
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_5' and abbreviation = 'Ind5';
+SELECT i.id INTO indication_2_id FROM indications i WHERE i.name='restrictions_indication_2' and abbreviation = 'Ind2';
+SELECT i.id INTO indication_3_id FROM indications i WHERE i.name='restrictions_indication_3' and abbreviation = 'Ind3';
+SELECT i.id INTO indication_4_id FROM indications i WHERE i.name='restrictions_indication_4' and abbreviation = 'Ind4';
+SELECT i.id INTO indication_5_id FROM indications i WHERE i.name='restrictions_indication_5' and abbreviation = 'Ind5';
 
 --CREATE CRITERIAS
 SELECT common_create_criteria('restrictions_criteria_diagnosis_1',FALSE,TRUE) INTO criteria_1_id;
@@ -96,6 +96,30 @@ PERFORM common_create_criteria_restriction(criteria_11_id,restriction_10_id);
 PERFORM common_create_criteria_restriction(criteria_12_id,restriction_11_id);
 PERFORM common_create_criteria_restriction(criteria_12_id,restriction_12_id);
 PERFORM common_create_criteria_restriction(criteria_13_id,restriction_13_id);
+
+--CREATE CRITERIA INDICATIONS
+PERFORM common_create_criteria_indication(criteria_1_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_1_id,indication_3_id);
+PERFORM common_create_criteria_indication(criteria_2_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_2_id,indication_3_id);
+PERFORM common_create_criteria_indication(criteria_3_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_4_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_4_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_5_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_6_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_7_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_8_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_8_id,indication_3_id);
+PERFORM common_create_criteria_indication(criteria_9_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_10_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_10_id,indication_3_id);
+PERFORM common_create_criteria_indication(criteria_11_id,indication_3_id);
+PERFORM common_create_criteria_indication(criteria_12_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_12_id,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_13_id,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_13_id,indication_2_id);
+
+--CREATE DATA ENTRIES
 
 success=true;
 return success;
