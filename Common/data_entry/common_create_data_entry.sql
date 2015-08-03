@@ -2,14 +2,8 @@ CREATE OR REPLACE FUNCTION common_create_data_entry(new_indication_id INTEGER, n
 RETURNS INTEGER AS $$
 DECLARE
 data_entry_id INTEGER DEFAULT NULL;
-valueExists BOOLEAN DEFAULT  FALSE;
+valueExists BOOLEAN DEFAULT FALSE;
 BEGIN
-
-SELECT de.id INTO data_entry_id FROM data_entries de WHERE de.indication_id=new_indication_id AND de.provider_id=new_provider_id AND de.healthplantype_id=new_health_plan_type_id AND de.drug_id=new_drug_id LIMIT 1;
-
---VALIDATE IF THE DATA ENTRY ALREADY EXISTS
-IF data_entry_id IS NULL THEN
-  --INSERT DATA ENTRY RECORD
 
   --VALIDATE IF INDICATION EXISTS
   SELECT EXISTS(SELECT 1 FROM indications i WHERE i.id=new_indication_id) INTO valueExists;
@@ -47,9 +41,6 @@ IF data_entry_id IS NULL THEN
                NULL, current_timestamp, current_timestamp, NULL,
                NULL, NULL) RETURNING id INTO data_entry_id;
   RETURN data_entry_id;
-ELSE
-  RETURN data_entry_id;
-END IF;
 
 END
 $$ LANGUAGE plpgsql;
