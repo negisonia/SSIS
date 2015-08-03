@@ -122,18 +122,17 @@ SELECT common_create_metro_stat_area('MSA_001','MSA_001') INTO metro_stat_area_0
 SELECT common_create_county('COUNTY_001',0,state_001_id,metro_stat_area_001_id) INTO county_001_id;
 SELECT common_create_county('COUNTY_002',0,state_001_id,metro_stat_area_001_id) INTO county_002_id;
 SELECT common_create_county('COUNTY_003',0,state_002_id,NULL) INTO county_003_id;
-SELECT common_create_county('COUNTY_004',0,state_002_id,NULL) INTO county_004_id;
+SELECT common_create_county('COUNTY_004',0,state_002_id,metro_stat_area_001_id) INTO county_004_id;
 
 PERFORM common_create_health_plan_county_lives(health_plan_008_id, state_001_id, NULL, NULL, 125.25);
-PERFORM common_create_health_plan_county_lives(health_plan_009_id, state_001_id, county_001_id, NULL, 85.25);
-PERFORM common_create_health_plan_county_lives(health_plan_010_id, state_001_id, county_001_id, metro_stat_area_001_id, 127.75);
-PERFORM common_create_health_plan_county_lives(health_plan_010_id, state_001_id, county_002_id, metro_stat_area_001_id, 127.75);
+PERFORM common_create_health_plan_county_lives(health_plan_009_id, state_001_id, county_001_id, metro_stat_area_001_id, 85.25);
+PERFORM common_create_health_plan_county_lives(health_plan_010_id, state_001_id, county_001_id,  NULL, 127.75);
 PERFORM common_create_health_plan_county_lives(health_plan_011_id, state_002_id, NULL, NULL, 175.5);
-PERFORM common_create_health_plan_county_lives(health_plan_012_id, state_001_id, county_001_id, NULL, 85.25);
+PERFORM common_create_health_plan_county_lives(health_plan_012_id, state_001_id, county_001_id, metro_stat_area_001_id, 85.25);
 PERFORM common_create_health_plan_county_lives(health_plan_013_id, state_001_id, county_002_id, NULL, 40);
 PERFORM common_create_health_plan_county_lives(health_plan_014_id, state_002_id, NULL, NULL, 100);
 PERFORM common_create_health_plan_county_lives(health_plan_015_id, state_002_id, county_003_id, NULL, 50);
-PERFORM common_create_health_plan_county_lives(health_plan_016_id, state_002_id, county_004_id, NULL, 175.5);
+PERFORM common_create_health_plan_county_lives(health_plan_016_id, state_002_id, county_004_id, metro_stat_area_001_id, 175.5);
 PERFORM common_create_health_plan_county_lives(health_plan_017_id, state_001_id, county_002_id, NULL, 40);
 
 PERFORM common_create_health_plan_state(health_plan_008_id, state_001_id);
@@ -149,7 +148,7 @@ PERFORM common_create_health_plan_state(health_plan_017_id, state_001_id);
 
 PERFORM common_create_health_plan_county(health_plan_009_id, county_001_id);
 PERFORM common_create_health_plan_county(health_plan_010_id, county_001_id);
-PERFORM common_create_health_plan_county(health_plan_010_id, county_004_id);
+
 PERFORM common_create_health_plan_county(health_plan_012_id, county_001_id);
 PERFORM common_create_health_plan_county(health_plan_013_id, county_002_id);
 PERFORM common_create_health_plan_county(health_plan_015_id, county_003_id);

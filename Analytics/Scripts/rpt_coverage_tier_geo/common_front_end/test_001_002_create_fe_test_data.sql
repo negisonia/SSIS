@@ -7,7 +7,7 @@ health_plan_type_002_id INTEGER;
 drug_003_id INTEGER;
 drug_004_id INTEGER;
 state_001_id INTEGER;
-state_001_id INTEGER;
+state_002_id INTEGER;
 criteria_report_id INTEGER;
 
 BEGIN
