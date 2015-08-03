@@ -1,19 +1,24 @@
-CREATE OR REPLACE FUNCTION common_create_prior_authorization(new_data-entry_id INTEGER, active BOOLEAN) --DATA ENTRY
+CREATE OR REPLACE FUNCTION common_create_prior_authorization(new_data_entry_id INTEGER, active BOOLEAN) --DATA ENTRY
 RETURNS INTEGER AS $$
 DECLARE
-criteria_id INTEGER DEFAULT NULL;
+prior_authorization_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT c.id INTO criteria_id FROM criteria c WHERE c.name=criteria_name AND c.value_range=criteria_value_name AND c.active=criteria_active  LIMIT 1;
+SELECT pai.id INTO prior_authorization_id FROM prior_authorizations pai WHERE pai.data_entry_id=new_data_entry_id AND c.is_active=active LIMIT 1;
 
---VALIDATE IF THE CRITERIA ALREADY EXISTS
-IF criteria_id IS NULL THEN
-  --INSERT CRITERIA RECORD
-  INSERT INTO criteria(name, value_range, active, notes, created_at, updated_at, description, name_no_punc, created_by, updated_by)
-  VALUES ( criteria_name, criteria_value_name, criteria_active, NULL, current_timestamp, current_timestamp,NULL, NULL, 1, 1) RETURNING id INTO criteria_id;
-  RETURN criteria_id;
+--VALIDATE IF THE PRIOR AUTHORIZATION ALREADY EXISTS
+IF prior_authorization_id IS NULL THEN
+  --INSERT PRIOR AUTHORIZATION RECORD
+  INSERT INTO prior_authorizations(
+            date_of_policy, pa_duration, drug_id, data_entry_id, created_at, 
+            updated_at, indication_id, provider_id, healthplantype_id, boolean_expression_tree, 
+            duration_unit, active, is_active, copiedfromid, atomic_step_id)
+    VALUES (NULL, NULL, NULL,new_data_entry_id, current_timestamp,
+            current_timestamp, NULL, NULL, NULL, FALSE,
+            NULL, active, active, NULL, NULL) RETURNING id INTO prior_authorization_id;
+  RETURN prior_authorization_id;
 ELSE
-  RETURN criteria_id;
+  RETURN prior_authorization_id;
 END IF;
 
 END
