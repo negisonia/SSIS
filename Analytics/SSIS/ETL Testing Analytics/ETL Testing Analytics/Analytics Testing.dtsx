@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Analytics Testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{14E123EF-64D7-4EA9-8FF5-D5617C78367A}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{082F3B1E-581A-49CA-99C7-48323ECFA798}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAaeUtH/jdXrpd7P3UFvqk4A1tKixzj0k/5OcMCr3f/kQAAAAAOgAAAAAIAACAAAACXUQj2OcZCC6uWVtn8spRJYMKSmo+eDvSRIPxyRuYBRzAAAACQ4WXiXa0Tyzuf7EuPr6Mu/pu14r0jGuOszZpT5wNRi9x4GX1opLKe7QfIZx1+XS1AAAAAbRZ77msTFT93jvLOqpx1JKI6fuTyMTS22Sm+GuSAWsjmduIskGMSX4o0At3X1IcokoL6Q+8zWt8vbyrzcHfO9Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAClQRVSZWKMB3ixQU+6j/HNeftrImpPFmgyvCSB58+fBAAAAAAOgAAAAAIAACAAAACQqxuu4grFTfLEjKB0XyGFr1MSDG/yU49aaotqX56aUDAAAABJaC4eMruvC5ms9iHNiw+GVJ/bo9PoqtLB7mcfY+itzxdcXoKGiC/T7/w72UYY3JpAAAAADezqZ9kuYpFn58NmdB8a3KVF29SMIvqSYYjLb+dphWK8TYXU5R7l+rsWy5Bf47draXwJ4y0P3yqqJ1xZU+IgHg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACYOOwFkvWR6ROEeZAlvWRQaSiW4AvgZhw+xo1f6FtgZQAAAAAOgAAAAAIAACAAAABAviPUDQefBg4wggQcIr27ngdRQYriLDoDCv0/pHDnTzAAAACpitpnOGliMRfjsQxZ+pu19E2nXARSGlp4B7eY+i8+LvsRsGm0BLw2U6q4/cyKOd5AAAAAXsoywOCaPLd0MdsdFDE7oyXSwzLu05STAByrjUJ9ihBoN85qFyD/Y62ytW6rNykwIti1GvX2+mSXkOCEkSleQw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWWam6Ag4ABUkJidaRCH8ZPXySrF0ZaHBSyW6jtuDH8gAAAAAOgAAAAAIAACAAAACvspLvAOysHGrx/AOSuLKETFU2QEfzSMfspc+DTme8wzAAAABZ3G9CZVt780GFw4NXCCT3+yNOWOu+jXillBzfTEcXzeSisUn7nTp0tyIzhbTt59NAAAAA/rjo382sJBoaHxkmHB12RYaM7XfghNQJhMgdENJ+nIY/ZDZaR8oXpKJ1vVND9dsbbg9VH3oZOOEDeAEppVD1zg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -211,46 +211,17 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Test Data Creation"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{7AC2AB93-F5D4-48EA-AA4E-80F6020789E2}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Test Data Creation">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Test Data Creation\Execute Test 001 007 create ff new test data"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute Test 001 007 create ff new test data"
-          DTS:DTSID="{B56F33A8-D510-488E-AD59-5138CA82AAF1}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Execute Test 001 007 create ff new test data"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{04615ABA-7F2A-42B4-AE29-7D34F3FCAEB0}"
-              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_001_007_create_ff_new_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Validation"
+      DTS:refId="Package\Rpt Coveraga Tier Drug Validation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{095BFE25-3E36-464E-B025-9EB3B350F324}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Validation">
+      DTS:ObjectName="Rpt Coveraga Tier Drug Validation">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 001 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 001 Validate Test Data"
           DTS:DTSID="{883A799A-3226-4FA2-A6CA-A5C38FF63FDD}"
@@ -267,7 +238,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 002 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 002 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 002 Validate Test Data"
           DTS:DTSID="{79D1720B-DAE0-41AE-967B-6A85A51B55DB}"
@@ -284,7 +255,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 003 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 003 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 003 Validate Test Data"
           DTS:DTSID="{7497FE96-4BF6-4A43-84AC-3EB9FA217C61}"
@@ -301,7 +272,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 004 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 004 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 004 Validate Test Data"
           DTS:DTSID="{97119C34-DFCB-408C-9C09-A8EE16C2AAA1}"
@@ -318,7 +289,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 005 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 005 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 005 Validate Test Data"
           DTS:DTSID="{6FB2B1D9-CB8E-4803-8D07-3BCD9DB89B99}"
@@ -335,7 +306,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 006 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 006 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 006 Validate Test Data"
           DTS:DTSID="{00C27B83-0CBF-49CB-9C8D-1F8408DF007E}"
@@ -352,7 +323,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Execute Test 007 Validate Test Data"
+          DTS:refId="Package\Rpt Coveraga Tier Drug Validation\Execute Test 007 Validate Test Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Test 007 Validate Test Data"
           DTS:DTSID="{6040E516-EE6D-4D89-BBFD-B6B9F06EB237}"
@@ -369,6 +340,62 @@
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Test Data Creation"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7AC2AB93-F5D4-48EA-AA4E-80F6020789E2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test Data Creation">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Test Data Creation\Execute rpt coverage tier drug test 001 007 create ff new data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute rpt coverage tier drug test 001 007 create ff new data"
+          DTS:DTSID="{B56F33A8-D510-488E-AD59-5138CA82AAF1}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute rpt coverage tier drug test 001 007 create ff new data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{04615ABA-7F2A-42B4-AE29-7D34F3FCAEB0}"
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_001_007_create_ff_new_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Test Data Creation\Execute rpt coverage tier geo test  001 016 create ff new data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute rpt coverage tier geo test  001 016 create ff new data"
+          DTS:DTSID="{5619D39A-3D22-4612-BB59-553BC193C822}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute rpt coverage tier geo test  001 016 create ff new data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{04615ABA-7F2A-42B4-AE29-7D34F3FCAEB0}"
+              SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_001_016_create_ff_new_data() " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Test Data Creation.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{93945BA1-1AFC-4D86-A82F-490FA3CB2E02}"
+          DTS:From="Package\Test Data Creation\Execute rpt coverage tier drug test 001 007 create ff new data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Test Data Creation\Execute rpt coverage tier geo test  001 016 create ff new data" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -395,7 +422,7 @@
       DTS:From="Package\ETL Process"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Validation" />
+      DTS:To="Package\Rpt Coveraga Tier Drug Validation" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -462,54 +489,80 @@
           Id="Package\ETL Process"
           TopLeft="701.666666666667,458.111111111111" />
         <NodeLayout
-          Size="293,42"
-          Id="Package\Test Data Creation\Execute Test 001 007 create ff new test data"
-          TopLeft="34.0000000000002,13.3333333333333" />
+          Size="376,42"
+          Id="Package\Test Data Creation\Execute rpt coverage tier drug test 001 007 create ff new data"
+          TopLeft="35.2500000000002,19.5833333333333" />
+        <NodeLayout
+          Size="375,42"
+          Id="Package\Test Data Creation\Execute rpt coverage tier geo test  001 016 create ff new data"
+          TopLeft="469,24.75" />
+        <EdgeLayout
+          Id="Package\Test Data Creation.PrecedenceConstraints[Constraint]"
+          TopLeft="411.25,43.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.7499999999998,0"
+              Start="0,0"
+              End="50.2499999999998,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.2499999999998,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="345,86"
-          Size="345,129"
+          PanelSize="914,122"
+          Size="914,165"
           Id="Package\Test Data Creation"
-          TopLeft="738.666666666667,245.5" />
+          TopLeft="461.166666666667,245.5" />
         <NodeLayout
           Size="186,42"
-          Id="Package\Validation\Execute Test 001 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data"
           TopLeft="24.6666666666666,27.3333333333334" />
         <NodeLayout
           Size="179,42"
-          Id="Package\Validation\Execute Test 002 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 002 Validate Test Data"
           TopLeft="282.583333333333,31.25" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Execute Test 003 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 003 Validate Test Data"
           TopLeft="529.083333333333,30.0833333333333" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Execute Test 004 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 004 Validate Test Data"
           TopLeft="756.25,35.25" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Execute Test 005 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 005 Validate Test Data"
           TopLeft="988.333333333333,32.1666666666666" />
         <NodeLayout
           Size="194,42"
-          Id="Package\Validation\Execute Test 006 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 006 Validate Test Data"
           TopLeft="1220.91666666667,34.9166666666667" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Execute Test 007 Validate Test Data"
+          Id="Package\Rpt Coveraga Tier Drug Validation\Execute Test 007 Validate Test Data"
           TopLeft="1471.33333333333,38.3333333333334" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="1693,127"
           Size="1693,170"
-          Id="Package\Validation"
+          Id="Package\Rpt Coveraga Tier Drug Validation"
           TopLeft="69.0000000000001,761" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="914,160.666666666667">
+          TopLeft="917.5,160.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -531,18 +584,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="912.916666666667,374.5">
+          TopLeft="916.416666666667,410.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,83.6111111111114"
+              EndConnector="0,47.611111111111"
               Start="0,0"
-              End="0,76.1111111111114">
+              End="0,40.111111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.1111111111114" />
+                    End="0,40.111111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -559,12 +612,12 @@
               StartConnector="{assembly:Null}"
               EndConnector="0,100.888888888889"
               Start="0,0"
-              End="0,93.3888888888888">
+              End="0,93.388888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,93.3888888888888" />
+                    End="0,93.388888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
