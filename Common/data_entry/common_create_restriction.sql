@@ -4,7 +4,7 @@ DECLARE
 restriction_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT r.id INTO restriction_id FROM restrictions r WHERE r.name=restriction_name AND c.category=restriction_category LIMIT 1;
+SELECT r.id INTO restriction_id FROM restrictions r WHERE r.name=restriction_name AND r.category=restriction_category LIMIT 1;
 
 --VALIDATE IF THE RESTRICTION ALREADY EXISTS
 IF restriction_id IS NULL THEN
