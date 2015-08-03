@@ -10,7 +10,7 @@ SELECT c.id INTO county_id FROM county c WHERE c.name=county_name AND c.statefid
 IF county_id IS NULL THEN
   --INSERT COUNTY RECORD
   INSERT INTO county(name, fipsid, statefid, msafid, population, fusionmapsid)
-  VALUES (county_name, fips_id, state_id, msa_id, 0, NULL);
+  VALUES (county_name, fips_id, state_id, msa_id, 0, NULL) RETURNING id INTO county_id;
 
   RETURN county_id;
 ELSE
