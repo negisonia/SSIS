@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION restrictions_test_009_create_test_data() --FF NEW DB
+CREATE OR REPLACE FUNCTION restrictions_test_009_create_test_data() --DATA ENTRY
 RETURNS boolean AS $$
 DECLARE
 indication_1_id INTEGER;
