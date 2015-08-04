@@ -1,10 +1,10 @@
-CREATE OR REPLACE FUNCTION common_create_medical(new_data_entry_id INTEGER, active BOOLEAN) --DATA ENTRY
+CREATE OR REPLACE FUNCTION common_create_medical(new_data_entry_id INTEGER, new_active BOOLEAN) --DATA ENTRY
 RETURNS INTEGER AS $$
 DECLARE
 medical_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT m.id INTO medical_id FROM medicals m WHERE m.data_entry_id=new_data_entry_id AND m.is_active=active  LIMIT 1;
+SELECT m.id INTO medical_id FROM medicals m WHERE m.data_entry_id=new_data_entry_id AND m.is_active=new_active  LIMIT 1;
 
 --VALIDATE IF THE CRITERIA ALREADY EXISTS
 IF medical_id IS NULL THEN
@@ -16,7 +16,7 @@ IF medical_id IS NULL THEN
               atomic_step_id)
       VALUES ( null, null, null, new_data_entry_id,
               current_timestamp, current_timestamp, null, null, null,
-              null, null, active, active,null,
+              null, null, new_active, new_active,null,
               null) RETURNING id INTO medical_id;
   RETURN medical_id;
 ELSE

@@ -27,7 +27,7 @@ BEGIN
   --VALIDATE IF DRUG EXISTS
   SELECT EXISTS (SELECT 1 FROM ff.drugs_import di WHERE di.id=new_drug_id) INTO valueExists;
   IF valueExists IS FALSE THEN
-     select throw_error('DRUG WITH ID '|| new_drug_id || ' DOES NOT EXISTS');
+     select throw_error('DRUG WITH ID '|| new_drug_id ||' DOES NOT EXISTS');
   END IF;
 
 
