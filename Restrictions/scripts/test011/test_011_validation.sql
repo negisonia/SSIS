@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION restrictions_test_011_validation()--ADMIN DB
+RETURNS BOOLEAN AS $$
+DECLARE
+BEGIN
+END
+$$ LANGUAGE plpgsql;

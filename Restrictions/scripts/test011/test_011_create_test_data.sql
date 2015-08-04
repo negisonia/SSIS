@@ -58,22 +58,12 @@ data_entry_6_id INTEGER;
 data_entry_7_id INTEGER;
 data_entry_8_id INTEGER;
 data_entry_9_id INTEGER;
-data_entry_10_id INTEGER;
-data_entry_11_id INTEGER;
-data_entry_12_id INTEGER;
-data_entry_13_id INTEGER;
-data_entry_14_id INTEGER;
-data_entry_15_id INTEGER;
 
 prior_authorization_1_id INTEGER;
 prior_authorization_2_id INTEGER;
 prior_authorization_3_id INTEGER;
 prior_authorization_4_id INTEGER;
 prior_authorization_5_id INTEGER;
-prior_authorization_6_id INTEGER;
-prior_authorization_7_id INTEGER;
-prior_authorization_8_id INTEGER;
-prior_authorization_9_id INTEGER;
 
 medical_1_id INTEGER;
 medical_2_id INTEGER;
@@ -143,6 +133,7 @@ PERFORM common_create_criteria_restriction(criteria_1_id,restriction_1_id);
 PERFORM common_create_criteria_restriction(criteria_2_id,restriction_2_id);
 PERFORM common_create_criteria_restriction(criteria_2_id,restriction_1_id);
 PERFORM common_create_criteria_restriction(criteria_3_id,criteria_1_id);
+PERFORM common_create_criteria_restriction(criteria_3_id,criteria_2_id);
 PERFORM common_create_criteria_restriction(criteria_4_id,restriction_3_id);
 PERFORM common_create_criteria_restriction(criteria_4_id,restriction_4_id);
 PERFORM common_create_criteria_restriction(criteria_5_id,restriction_5_id);
@@ -183,48 +174,22 @@ PERFORM common_create_criteria_indication(criteria_13_id,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_13_id,indication_2_id);
 
 --CREATE DATA ENTRIES
---SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_1_id;
---SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_2_id) INTO data_entry_2_id;
-----SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_2_id) INTO data_entry_3_id;
---SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_2_id) INTO data_entry_4_id;
---SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_5_id) INTO data_entry_5_id;
---SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_6_id) INTO data_entry_6_id;
---SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_7_id) INTO data_entry_7_id;
-----SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_6_id) INTO data_entry_8_id;
---SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_1_id) INTO data_entry_9_id;
---SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_3_id) INTO data_entry_10_id;
---SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_4_id) INTO data_entry_11_id;
-----SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_12_id;
-----SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_13_id;
-----SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_14_id;
-----SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_2_id) INTO data_entry_15_id;
-
 SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_1_id;
 SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_2_id) INTO data_entry_2_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_5_id) INTO data_entry_3_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_2_id) INTO data_entry_4_id;
-SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_5_id) INTO data_entry_5_id;
-SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_6_id) INTO data_entry_6_id;
-SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_7_id) INTO data_entry_7_id;
-SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_8_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_1_id) INTO data_entry_9_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_3_id) INTO data_entry_10_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_4_id) INTO data_entry_11_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_3_id) INTO data_entry_12_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_4_id) INTO data_entry_13_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_5_id) INTO data_entry_14_id;
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_7_id) INTO data_entry_15_id;
+SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_2_id) INTO data_entry_3_id;
+SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_5_id) INTO data_entry_4_id;
+SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_6_id) INTO data_entry_5_id;
+SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_7_id) INTO data_entry_6_id;
+SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_1_id) INTO data_entry_7_id;
+SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_3_id) INTO data_entry_8_id;
+SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_4_id) INTO data_entry_9_id;
 
 --CREATE PRIOR AUTHORIZATIONS
 SELECT common_create_prior_authorization(data_entry_1_id, TRUE) INTO prior_authorization_1_id;
 SELECT common_create_prior_authorization(data_entry_2_id, FALSE) INTO prior_authorization_2_id;
-SELECT common_create_prior_authorization(data_entry_6_id, TRUE) INTO prior_authorization_3_id;
-SELECT common_create_prior_authorization(data_entry_9_id, TRUE) INTO prior_authorization_4_id;
-SELECT common_create_prior_authorization(data_entry_11_id, TRUE) INTO prior_authorization_5_id;
-SELECT common_create_prior_authorization(data_entry_12_id, TRUE) INTO prior_authorization_6_id;
-SELECT common_create_prior_authorization(data_entry_13_id, TRUE) INTO prior_authorization_7_id;
-SELECT common_create_prior_authorization(data_entry_14_id, TRUE) INTO prior_authorization_8_id;
-SELECT common_create_prior_authorization(data_entry_15_id, TRUE) INTO prior_authorization_9_id;
+SELECT common_create_prior_authorization(data_entry_5_id, TRUE) INTO prior_authorization_3_id;
+SELECT common_create_prior_authorization(data_entry_7_id, TRUE) INTO prior_authorization_4_id;
+SELECT common_create_prior_authorization(data_entry_9_id, TRUE) INTO prior_authorization_5_id;
 
 --CREATE PRIOR AUTHORIZATION CRITERIA
 PERFORM common_create_prior_authorization_criteria(prior_authorization_1_id,criteria_1_id,TRUE);
@@ -232,24 +197,24 @@ PERFORM common_create_prior_authorization_criteria(prior_authorization_2_id,crit
 PERFORM common_create_prior_authorization_criteria(prior_authorization_3_id,criteria_12_id,TRUE);
 PERFORM common_create_prior_authorization_criteria(prior_authorization_4_id,criteria_4_id,TRUE);
 PERFORM common_create_prior_authorization_criteria(prior_authorization_5_id,criteria_12_id,TRUE);
-PERFORM common_create_prior_authorization_criteria(prior_authorization_6_id,criteria_6_id,TRUE);
-PERFORM common_create_prior_authorization_criteria(prior_authorization_7_id,criteria_12_id,TRUE);
-PERFORM common_create_prior_authorization_criteria(prior_authorization_8_id,criteria_3_id,TRUE);
-PERFORM common_create_prior_authorization_criteria(prior_authorization_9_id,criteria_1_id,TRUE);
+PERFORM common_create_prior_authorization_criteria(prior_authorization_1_id,criteria_6_id,TRUE);
+PERFORM common_create_prior_authorization_criteria(prior_authorization_1_id,criteria_12_id,TRUE);
+PERFORM common_create_prior_authorization_criteria(prior_authorization_1_id,criteria_3_id,TRUE);
+PERFORM common_create_prior_authorization_criteria(prior_authorization_2_id,criteria_1_id,TRUE);
 
 --CREATE MEDICALS
-SELECT common_create_medical(data_entry_3_id,TRUE) INTO medical_1_id;
-SELECT common_create_medical(data_entry_4_id,TRUE) INTO medical_2_id;
-SELECT common_create_medical(data_entry_5_id,TRUE) INTO medical_3_id;
+SELECT common_create_medical(data_entry_2_id,TRUE) INTO medical_1_id;
+SELECT common_create_medical(data_entry_3_id,TRUE) INTO medical_2_id;
+SELECT common_create_medical(data_entry_4_id,TRUE) INTO medical_3_id;
 
 --CREATE MEDICALS CRITERIA
 PERFORM common_create_medical_criteria(medical_1_id,criteria_3_id,TRUE);
 PERFORM common_create_medical_criteria(medical_2_id,criteria_4_id,TRUE);
-PERFORM common_create_medical_criteria(medical_3_id,criteria_1_id,TRUE);
+PERFORM common_create_medical_criteria(medical_3_id,criteria_12_id,TRUE);
 
 --CREATE QUANTITY LIMITS
-SELECT common_create_quantity_limits(data_entry_8_id,TRUE) INTO  quantity_limit_1_id;
-SELECT common_create_quantity_limits(data_entry_10_id,TRUE) INTO  quantity_limit_2_id;
+SELECT common_create_quantity_limits(data_entry_5_id,TRUE) INTO  quantity_limit_1_id;
+SELECT common_create_quantity_limits(data_entry_8_id,TRUE) INTO  quantity_limit_2_id;
 
 --CREATE QUANTITY LIMITS CRITERIA
 PERFORM common_create_quantity_limit_criteria(quantity_limit_1_id,criteria_13_id,TRUE,2,10,'tabs','week');
