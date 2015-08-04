@@ -11,7 +11,7 @@ IF msa_id IS NULL THEN
   --INSERT METRO STAT AREA RECORD
   INSERT INTO metrostatarea(
             name, cbsa, population, ff_name, image_file_name)
-    VALUES (msa_name, NULL, NULL, msa_ff_name, NULL);
+    VALUES (msa_name, NULL, NULL, msa_ff_name, NULL) RETURNING id INTO msa_id;
 
   RETURN msa_id;
 ELSE
