@@ -108,7 +108,7 @@ SELECT common_create_criteria('restrictions_criteria_clinical_1',FALSE,TRUE) INT
 SELECT common_create_criteria('restrictions_criteria_clinical_2',FALSE,TRUE) INTO criteria_7_id;
 SELECT common_create_criteria('restrictions_criteria_clinical_3',FALSE,TRUE) INTO criteria_8_id;
 SELECT common_create_criteria('restrictions_criteria_lab_1',FALSE,TRUE) INTO criteria_9_id;
-SELECT common_create_criteria('restrictions_criteria_lab_2',TRUE,TRUE) INTO criteria_10_id;
+SELECT common_create_criteria('restrictions_criteria_lab_2',TRUE,FALSE) INTO criteria_10_id;
 SELECT common_create_criteria('restrictions_criteria_lab_3',FALSE,TRUE) INTO criteria_11_id;
 SELECT common_create_criteria('restrictions_criteria_age_1',TRUE,TRUE) INTO criteria_12_id;
 SELECT common_create_criteria('restrictions_criteria_ql_1',TRUE,TRUE) INTO criteria_13_id;
@@ -129,27 +129,27 @@ SELECT common_create_restriction('Age','Medical') INTO restriction_12_id;
 SELECT common_create_restriction('QL','QL') INTO restriction_13_id;
 
 --CREATE CRITERIA RESTRICTIONS
-PERFORM common_create_criteria_restriction(criteria_1_id,restriction_1_id);
-PERFORM common_create_criteria_restriction(criteria_2_id,restriction_2_id);
-PERFORM common_create_criteria_restriction(criteria_2_id,restriction_1_id);
-PERFORM common_create_criteria_restriction(criteria_3_id,criteria_1_id);
-PERFORM common_create_criteria_restriction(criteria_3_id,criteria_2_id);
-PERFORM common_create_criteria_restriction(criteria_4_id,restriction_3_id);
-PERFORM common_create_criteria_restriction(criteria_4_id,restriction_4_id);
-PERFORM common_create_criteria_restriction(criteria_5_id,restriction_5_id);
-PERFORM common_create_criteria_restriction(criteria_5_id,restriction_6_id);
-PERFORM common_create_criteria_restriction(criteria_6_id,restriction_7_id);
-PERFORM common_create_criteria_restriction(criteria_7_id,restriction_8_id);
-PERFORM common_create_criteria_restriction(criteria_8_id,restriction_8_id);
-PERFORM common_create_criteria_restriction(criteria_8_id,restriction_7_id);
-PERFORM common_create_criteria_restriction(criteria_9_id,restriction_9_id);
-PERFORM common_create_criteria_restriction(criteria_9_id,restriction_10_id);
-PERFORM common_create_criteria_restriction(criteria_10_id,restriction_9_id);
-PERFORM common_create_criteria_restriction(criteria_10_id,restriction_10_id);
-PERFORM common_create_criteria_restriction(criteria_11_id,restriction_10_id);
-PERFORM common_create_criteria_restriction(criteria_12_id,restriction_11_id);
-PERFORM common_create_criteria_restriction(criteria_12_id,restriction_12_id);
-PERFORM common_create_criteria_restriction(criteria_13_id,restriction_13_id);
+PERFORM common_create_criteria_restriction(criteria_1_id,restriction_1_id);--restrictions_criteria_diagnosis_1  - pa diagnosis
+PERFORM common_create_criteria_restriction(criteria_2_id,restriction_2_id);--restrictions_criteria_diagnosis_2 - medical diagnosis
+PERFORM common_create_criteria_restriction(criteria_2_id,restriction_1_id);--restrictions_criteria_diagnosis_2 - pa diagnosis
+PERFORM common_create_criteria_restriction(criteria_3_id,restriction_1_id);--restrictions_criteria_diagnosis_3 - pa diagnosis
+PERFORM common_create_criteria_restriction(criteria_3_id,restriction_2_id);--restrictions_criteria_diagnosis_3 - medical diagnosis
+PERFORM common_create_criteria_restriction(criteria_4_id,restriction_3_id);--restrictions_criteria_unspecified - pa unspecified
+PERFORM common_create_criteria_restriction(criteria_4_id,restriction_4_id);--restrictions_criteria_unspecified - medical unspecified
+PERFORM common_create_criteria_restriction(criteria_5_id,restriction_5_id);--restrictions_criteria_exclusion_1 - pa exclusion
+PERFORM common_create_criteria_restriction(criteria_5_id,restriction_6_id);--restrictions_criteria_exclusion_1 - medical exclusion
+PERFORM common_create_criteria_restriction(criteria_6_id,restriction_7_id);--restrictions_criteria_clinical_1 - pa clinical
+PERFORM common_create_criteria_restriction(criteria_7_id,restriction_8_id);--restrictions_criteria_clinical_2 - medical clinical
+PERFORM common_create_criteria_restriction(criteria_8_id,restriction_8_id);--restrictions_criteria_clinical_3 - medical clinical
+PERFORM common_create_criteria_restriction(criteria_8_id,restriction_7_id);--restrictions_criteria_clinical_3 - pa clinical
+PERFORM common_create_criteria_restriction(criteria_9_id,restriction_9_id);--restrictions_criteria_lab_1 - pa labs
+PERFORM common_create_criteria_restriction(criteria_9_id,restriction_10_id);--restrictions_criteria_lab_1 - medical labs
+PERFORM common_create_criteria_restriction(criteria_10_id,restriction_9_id);--restrictions_criteria_lab_2 - pa labs
+PERFORM common_create_criteria_restriction(criteria_10_id,restriction_10_id);--restrictions_criteria_lab_2 - medical labs
+PERFORM common_create_criteria_restriction(criteria_11_id,restriction_10_id);--restrictions_criteria_lab_3 - medical labs
+PERFORM common_create_criteria_restriction(criteria_12_id,restriction_11_id);--restrictions_criteria_age_1 - pa age
+PERFORM common_create_criteria_restriction(criteria_12_id,restriction_12_id);--restrictions_criteria_age_1 - medical age
+PERFORM common_create_criteria_restriction(criteria_13_id,restriction_13_id);--restrictions_criteria_ql_1 - ql ql
 
 --CREATE CRITERIA INDICATIONS
 PERFORM common_create_criteria_indication(criteria_1_id,indication_1_id);
