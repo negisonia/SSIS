@@ -2,7 +2,7 @@ CREATE OR REPLACE FUNCTION ana_rpt_coverage_tier_geo_test_003_validate_data() --
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
-  expected_value double precision := 105.25;
+  expected_value double precision := 105;
   actual_value INTEGER;
   criteria_report_id INTEGER;
   current_month_int INTEGER;
