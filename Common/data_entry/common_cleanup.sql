@@ -23,6 +23,9 @@ BEGIN
   TRUNCATE TABLE quantity_limit_criteria CASCADE;
   TRUNCATE TABLE quantity_limits CASCADE;
   TRUNCATE TABLE step_custom_options CASCADE;
+  TRUNCATE TABLE atomic_steps CASCADE;
+  TRUNCATE TABLE atomic_steps_notes CASCADE;
+  TRUNCATE TABLE step_therapies CASCADE;
 
 
 	--CLEAR SEQUENCES
@@ -40,6 +43,9 @@ BEGIN
   ALTER SEQUENCE quantity_limit_criteria_id_seq RESTART;
   ALTER SEQUENCE quantity_limits_id_seq RESTART;
   ALTER SEQUENCE step_custom_options_id_seq RESTART;
+  ALTER SEQUENCE atomic_steps_id_seq RESTART;
+  ALTER SEQUENCE step_custom_options_id_seq RESTART;
+  ALTER SEQUENCE step_therapies_id_seq RESTART;
 
 success:=true;
 RETURN success;
