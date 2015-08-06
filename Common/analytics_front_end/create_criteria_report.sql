@@ -20,7 +20,7 @@ IF criteria_report_id IS null THEN
 ELSE
 
   --INSERT MARKET DATA
-  add_criteria_report_markets(criteria_report_id, market_type, market_ids);
+  PERFORM add_criteria_report_markets(criteria_report_id, market_type, market_ids);
 
   --INSERT HEALTH PLAN TYPES DATA
   FOREACH intvalue IN ARRAY health_plan_type_ids
