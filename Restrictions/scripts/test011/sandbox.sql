@@ -262,8 +262,8 @@ SELECT common_create_step_custom_option(drug_4_id,'Drug') INTO  step_custom_opti
 --SELECT common_create_step_custom_option(custom_option_6_id,'DrugClass') INTO  step_custom_option_id_6;
 --SELECT common_create_step_custom_option(custom_option_7_id,'DrugClass') INTO  step_custom_option_id_7;
 
---CREATE ATOMIC STEPS
-SELECT common_create_atomic_steps('restrictions_drug_4','1', 2, 'ST', 'restrictions_drug_4^1') INTO atomic_step_id_1;
+--CREATE ATOMIC STEPS (new key = step_custom_option_id_1 ) confirmar
+SELECT common_create_atomic_steps('restrictions_drug_4','1', 1, 'ST', 'restrictions_drug_4^1') INTO atomic_step_id_1;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 2, 'ST', NULL) INTO atomic_step_id_2;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'PA/Medical', NULL) INTO atomic_step_id_3;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'ST', NULL) INTO atomic_step_id_4;
