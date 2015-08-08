@@ -245,7 +245,7 @@ SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_ty
 
 
 --CREATE CUSTOM OPTIONS
-SELECT common_create_custom_option('restriction_custom_option_1') INTO custom_option_1_id;
+--SELECT common_create_custom_option('restriction_custom_option_1') INTO custom_option_1_id;
 --SELECT common_create_custom_option('restriction_custom_option_2') INTO custom_option_2_id;
 --SELECT common_create_custom_option('restriction_custom_option_3') INTO custom_option_3_id;
 --SELECT common_create_custom_option('restriction_custom_option_4') INTO custom_option_4_id;
@@ -254,7 +254,7 @@ SELECT common_create_custom_option('restriction_custom_option_1') INTO custom_op
 --SELECT common_create_custom_option('restriction_custom_option_drug_class_5') INTO custom_option_7_id;
 
 --CREATE STEP CUSTOM OPTIONS
-SELECT common_create_step_custom_option(custom_option_1_id,'CustomOption') INTO  step_custom_option_id_1;
+SELECT common_create_step_custom_option(drug_4_id,'Drug') INTO  step_custom_option_id_1;
 --SELECT common_create_step_custom_option(custom_option_2_id,'CustomOption') INTO  step_custom_option_id_2;
 --SELECT common_create_step_custom_option(custom_option_3_id,'CustomOption') INTO  step_custom_option_id_3;
 --SELECT common_create_step_custom_option(custom_option_4_id,'CustomOption') INTO  step_custom_option_id_4;
@@ -263,7 +263,7 @@ SELECT common_create_step_custom_option(custom_option_1_id,'CustomOption') INTO 
 --SELECT common_create_step_custom_option(custom_option_7_id,'DrugClass') INTO  step_custom_option_id_7;
 
 --CREATE ATOMIC STEPS
-SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'ST', NULL) INTO atomic_step_id_1;
+SELECT common_create_atomic_steps('restrictions_drug_4','1', 2, 'ST', 'restrictions_drug_4^1') INTO atomic_step_id_1;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 2, 'ST', NULL) INTO atomic_step_id_2;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'PA/Medical', NULL) INTO atomic_step_id_3;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'ST', NULL) INTO atomic_step_id_4;
@@ -271,20 +271,20 @@ SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'ST', NULL) INTO a
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'PA/Medical', NULL) INTO atomic_step_id_6;
 
 --CREATE STEP THERAPIES
-PERFORM  common_create_step_therapies(data_entry_1_id,NULL,TRUE,atomic_step_id_1);
+--PERFORM  common_create_step_therapies(data_entry_1_id,NULL,TRUE,atomic_step_id_1);
 --PERFORM common_create_step_therapies(data_entry_2_id,NULL,TRUE,atomic_step_id_2);
 --PERFORM common_create_step_therapies(data_entry_2_id,NULL,TRUE,atomic_step_id_3);
 --PERFORM common_create_step_therapies(data_entry_9_id,NULL,TRUE,atomic_step_id_4);
 
  --- ---PERFORM common_create_step_therapies(data_entry_1_id,NULL,TRUE,atomic_step_id_1);
 --PERFORM common_create_step_therapies(data_entry_9_id,NULL,TRUE,atomic_step_id_6);
---INSERT INTO step_therapies(
---            indication_id, drug_id, health_plan_id, data_entry_id, provider_id,
---            healthplantype_id, created_at, updated_at, boolean_expression_tree,
---            is_active, copiedfromid, atomic_step_id)
---    VALUES (1, 1, 1, data_entry_1_id, 1,
---            1, NULL, NULL,'{"nodes":{"N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3":{"type":"Step","id":"N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3","stepType":1,"adjudicationType":1},"D60G70L3WVC6ZRKXHOPN6BZTA3VTZFHTLCL":{"type":"ExpressionGroup","id":"D60G70L3WVC6ZRKXHOPN6BZTA3VTZFHTLCL","logical_expression":"OR","failNum":5,"isInner":false,"failActive":true},"2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE":{"type":"Step","id":"2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE","stepType":1,"adjudicationType":1},"K6N6D2T0EPXO8MIEBYQOFOVPOWIETKHQGRN":{"type":"ExpressionGroup","id":"K6N6D2T0EPXO8MIEBYQOFOVPOWIETKHQGRN","logical_expression":"OR","failNum":1,"isInner":false,"failActive":true},"186KNWN1ZORKYYJRA8RMM4EXSQDFV0TANSR":{"type":"Expression","id":"186KNWN1ZORKYYJRA8RMM4EXSQDFV0TANSR","notes":"Atomic step notes vicente","selected_option":1,"amount":"100","amountType":"","amountDuration":"","durationUnit":"","delivery_methods":"Tabs","duration":"100","duration_unit":"Days"},"2S80JEOV3LNC9HC7CS0AN42FW5M4MJRCT46":{"type":"Expression","id":"2S80JEOV3LNC9HC7CS0AN42FW5M4MJRCT46","notes":"Custom group 2 Vicente","selected_option":1,"amount":"100","amountType":"","amountDuration":"","durationUnit":"","delivery_methods":"Tabs","duration":"100","duration_unit":"Days"},"W4I7GO3ZJA07O61STYODQ29HM0CZRJN44GP":{"type":"DrugNode","id":"W4I7GO3ZJA07O61STYODQ29HM0CZRJN44GP","drugId":1,"drugName":"restrictions_drug_1","step_therapy":{"stepTherapyId":1,"drug":{"drugId":1,"drugName":"restrictions_drug_1"},"indication":{"indicationName":"restrictions_indication_1","indicationAbbreviation":"Ind1","indicationID":1,"indicationUpdatedAt":"2015-04-30 10:35:07 UTC","drugClasses":[{"drugClassID":1,"drugClassName":"restrictions_drug_class_1"}]},"healthPlanType":{"healthPlanTypeID":1,"healthPlanTypeName":"restrictions_test_commercial"},"provider":{"providerId":1,"providerName":"restrictions_provider_1","healthPlanIDs":[1,2,3,9]}},"nodeID":"ER1ZDIN0116DLBR7EDO9V0UC7T7PE9471JS","open":true,"step_therapy_id":1,"tab":"st","order_known":"1","tree":{"number_of_steps":{"number":2,"description":"Double Step"}},"children":[{"type":"Step","id":"N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3","stepType":1,"adjudicationType":1},{"type":"Step","id":"2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE","stepType":1,"adjudicationType":1}]}},"relations":{"E0GBRU0IP8GL5ZCXZPANT87210SFZOY4QS7":{"from":"N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3","to":"W4I7GO3ZJA07O61STYODQ29HM0CZRJN44GP","name":"child","id":"E0GBRU0IP8GL5ZCXZPANT87210SFZOY4QS7"},"WG9U7XL8RLBS5Q35KGMKTB60DGKFSFZUGDD":{"from":"D60G70L3WVC6ZRKXHOPN6BZTA3VTZFHTLCL","to":"N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3","name":"child","id":"WG9U7XL8RLBS5Q35KGMKTB60DGKFSFZUGDD"},"KTWBJRXMU7G6F0YSKKCGQUKQ5NUGNIJHYCZ":{"from":"2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE","to":"W4I7GO3ZJA07O61STYODQ29HM0CZRJN44GP","name":"child","id":"KTWBJRXMU7G6F0YSKKCGQUKQ5NUGNIJHYCZ"},"D0UMAYXVJQAFSFAJ6LDTW9V8XIC65FW9IKV":{"from":"K6N6D2T0EPXO8MIEBYQOFOVPOWIETKHQGRN","to":"2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE","name":"child","id":"D0UMAYXVJQAFSFAJ6LDTW9V8XIC65FW9IKV"},"B5531NX4TKNOCX0JHEKI8S45BSYJBFZIDFA":{"from":"186KNWN1ZORKYYJRA8RMM4EXSQDFV0TANSR","to":"K6N6D2T0EPXO8MIEBYQOFOVPOWIETKHQGRN","name":"child","id":"B5531NX4TKNOCX0JHEKI8S45BSYJBFZIDFA"},"3MZNTZ3ETDZ38ANM3755W5WUQV02RMFG4GS":{"from":"2S80JEOV3LNC9HC7CS0AN42FW5M4MJRCT46","to":"D60G70L3WVC6ZRKXHOPN6BZTA3VTZFHTLCL","name":"child","id":"3MZNTZ3ETDZ38ANM3755W5WUQV02RMFG4GS"}},"nodeTypes":{"Step":["N27YMTG8HUCB735I9YK9FXORA0V2T8G28F3","2T9ERF2Z6X6YSDNPJ5KRIM7C8J6LWQJGHYE"],"ExpressionGroup":["D60G70L3WVC6ZRKXHOPN6BZTA3VTZFHTLCL","K6N6D2T0EPXO8MIEBYQOFOVPOWIETKHQGRN"],"Expression":["186KNWN1ZORKYYJRA8RMM4EXSQDFV0TANSR","2S80JEOV3LNC9HC7CS0AN42FW5M4MJRCT46"],"DrugNode":["W4I7GO3ZJA07O61STYODQ29HM0CZRJN44GP"]},"relationsTypes":{"child":["E0GBRU0IP8GL5ZCXZPANT87210SFZOY4QS7","WG9U7XL8RLBS5Q35KGMKTB60DGKFSFZUGDD","KTWBJRXMU7G6F0YSKKCGQUKQ5NUGNIJHYCZ","D0UMAYXVJQAFSFAJ6LDTW9V8XIC65FW9IKV","B5531NX4TKNOCX0JHEKI8S45BSYJBFZIDFA","3MZNTZ3ETDZ38ANM3755W5WUQV02RMFG4GS"]}}',
---            true, NULL, atomic_step_id_1);
+INSERT INTO step_therapies(
+            indication_id, drug_id, health_plan_id, data_entry_id, provider_id,
+            healthplantype_id, created_at, updated_at, boolean_expression_tree,
+            is_active, copiedfromid, atomic_step_id)
+    VALUES (1, drug_4_id, 3, data_entry_1_id, 1,
+            hix_health_plan_type_id, current_timestamp, current_timestamp,'{"nodes":{"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5":{"type":"Step","id":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","stepType":1,"adjudicationType":null},"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1":{"type":"ExpressionGroup","id":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","logical_expression":"OR","failNum":null,"isInner":false},"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ":{"type":"Expression","id":"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ","notes":"Prior prescription for Pegasys","amount":"","amountType":"","amountDuration":"","durationUnit":"","selected_option":1},"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC":{"type":"DrugNode","id":"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC","drugId":4,"drugName":"restrictions_drug_4","step_therapy":{"stepTherapyId":1,"drug":{"drugId":4,"drugName":"restrictions_drug_4"},"indication":{"indicationName":"restrictions_indication_1","indicationID":1,"indicationUpdatedAt":"2015-02-26 22:16:19 UTC","drugClasses":[{"drugClassID":1,"drugClassName":"restrictions_drug_class_1"}]},"healthPlanType":{"healthPlanTypeID":4,"healthPlanTypeName":"restrictions_test_hix"},"provider":{"providerId":1,"providerName":"restrictions_provider_1","healthPlanIDs":[2],"notes":[]}},"nodeID":"G205T2XAFTYZD11NGM5IM9W0ZZNXTTIPN21","open":true,"order_known":"1","tree":{"number_of_steps":{"number":1,"description":"Single Step"}},"step_therapy_id":1,"tab":"st","children":[{"type":"Step","id":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","stepType":1,"adjudicationType":null}]}},"relations":{"5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF":{"from":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","to":"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC","name":"child","id":"5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF"},"ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0":{"from":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","to":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","name":"child","id":"ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0"},"MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU":{"from":"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ","to":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","name":"child","id":"MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU"}},"nodeTypes":{"Step":["E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5"],"ExpressionGroup":["09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1"],"Expression":["Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ"],"DrugNode":["A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC"]},"relationsTypes":{"child":["5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF","ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0","MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU"]}}',
+            true, NULL, atomic_step_id_1);
 
 
 
