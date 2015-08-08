@@ -5,11 +5,11 @@ success BOOLEAN DEFAULT FALSE;
 valueExists BOOLEAN DEFAULT FALSE;
 
 BEGIN
-SELECT EXISTS (SELECT FROM drug_class_indications dci WHERE dci.drug_class_id=new_drug_class_id AND dci.indication_id=new_indication_id  LIMIT 1) INTO valueExists;
+SELECT EXISTS (SELECT FROM drugclass_indications dci WHERE dci.drug_class_id=new_drug_class_id AND dci.indication_id=new_indication_id  LIMIT 1) INTO valueExists;
 --VALIDATE IF THE DRUG CLASS INDICATION ALREADY EXISTS
 IF valueExists IS FALSE THEN
   --INSERT DRUG CLASS INDICATION RECORD
- INSERT INTO drug_class_indications(drug_class_id, indication_id)
+ INSERT INTO drugclass_indications(drug_class_id, indication_id)
  VALUES (new_drug_class_id, new_indication_id);
 END IF;
 
