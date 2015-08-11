@@ -29,29 +29,29 @@ success BOOLEAN DEFAULT FALSE;
 BEGIN
 
 --RETRIEVE DRUG IDS
-SELECT d.id INTO drug_1 FROM ff.drugs_import d WHERE d.name='restrictions_drug_1';
-SELECT d.id INTO drug_2 FROM ff.drugs_import d WHERE d.name='restrictions_drug_2';
-SELECT d.id INTO drug_3 FROM ff.drugs_import d WHERE d.name='restrictions_drug_3';
-SELECT d.id INTO drug_4 FROM ff.drugs_import d WHERE d.name='restrictions_drug_4';
-SELECT d.id INTO drug_5 FROM ff.drugs_import d WHERE d.name='restrictions_drug_5';
-SELECT d.id INTO drug_6 FROM ff.drugs_import d WHERE d.name='restrictions_drug_6';
-SELECT d.id INTO drug_7 FROM ff.drugs_import d WHERE d.name='restrictions_drug_7';
-SELECT d.id INTO drug_8 FROM ff.drugs_import d WHERE d.name='restrictions_drug_8';
-SELECT d.id INTO drug_9 FROM ff.drugs_import d WHERE d.name='restrictions_drug_9';
-SELECT d.id INTO drug_10 FROM ff.drugs_import d WHERE d.name='restrictions_drug_10';
-SELECT d.id INTO drug_11 FROM ff.drugs_import d WHERE d.name='restrictions_drug_11';
+SELECT d.id INTO drug_1 FROM ff.drugs_import d WHERE d.name='drug_1';
+SELECT d.id INTO drug_2 FROM ff.drugs_import d WHERE d.name='drug_2';
+SELECT d.id INTO drug_3 FROM ff.drugs_import d WHERE d.name='drug_3';
+SELECT d.id INTO drug_4 FROM ff.drugs_import d WHERE d.name='drug_4';
+SELECT d.id INTO drug_5 FROM ff.drugs_import d WHERE d.name='drug_5';
+SELECT d.id INTO drug_6 FROM ff.drugs_import d WHERE d.name='drug_6';
+SELECT d.id INTO drug_7 FROM ff.drugs_import d WHERE d.name='drug_7';
+SELECT d.id INTO drug_8 FROM ff.drugs_import d WHERE d.name='drug_8';
+SELECT d.id INTO drug_9 FROM ff.drugs_import d WHERE d.name='drug_9';
+SELECT d.id INTO drug_10 FROM ff.drugs_import d WHERE d.name='drug_10';
+SELECT d.id INTO drug_11 FROM ff.drugs_import d WHERE d.name='drug_11';
 
 --RETRIEVE DRUG CLASSES
-SELECT dc.id INTO drug_class_1 FROM ff.drug_classes_import dc WHERE dc.name = 'restrictions_drug_class_1';
-SELECT dc.id INTO drug_class_2 FROM ff.drug_classes_import dc WHERE dc.name = 'restrictions_drug_class_2';
-SELECT dc.id INTO drug_class_3 FROM ff.drug_classes_import dc WHERE dc.name = 'restrictions_drug_class_3';
+SELECT dc.id INTO drug_class_1 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_1';
+SELECT dc.id INTO drug_class_2 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_2';
+SELECT dc.id INTO drug_class_3 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_3';
 
 --CREATE INDICATION 1
-SELECT common_create_indication('restrictions_indication_1', 'Ind1') INTO indication_1_id;
-SELECT common_create_indication('restrictions_indication_2', 'Ind2') INTO indication_2_id;
-SELECT common_create_indication('restrictions_indication_3', 'Ind3') INTO indication_3_id;
-SELECT common_create_indication('restrictions_indication_4', 'Ind4') INTO indication_4_id;
-SELECT common_create_indication('restrictions_indication_5', 'Ind5') INTO indication_5_id;
+SELECT common_create_indication('indication_1', 'Ind1') INTO indication_1_id;
+SELECT common_create_indication('indication_2', 'Ind2') INTO indication_2_id;
+SELECT common_create_indication('indication_3', 'Ind3') INTO indication_3_id;
+SELECT common_create_indication('indication_4', 'Ind4') INTO indication_4_id;
+SELECT common_create_indication('indication_5', 'Ind5') INTO indication_5_id;
 
 --CREATE DRUG INDICATIONS
 --indication # 1

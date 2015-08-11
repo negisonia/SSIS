@@ -5,7 +5,7 @@ DECLARE
   booleanValue BOOLEAN DEFAULT FALSE;
   intValue INTEGER;
   textValue VARCHAR;
-  health_plans VARCHAR[] := ARRAY['restrictions_test_hp_commercial_1','restrictions_test_hp_hix_1','restrictions_test_hp_bcbs_1','restrictions_test_hp_employeer_1','restrictions_test_hp_na_1','restrictions_test_hp_sn_1','restrictions_test_hp_pdp_1','restrictions_test_hp_state_1','restrictions_test_hp_dpp_1','restrictions_test_hp_commercial_medicaid_1','restrictions_test_hp_union_1','restrictions_test_hp_municipal_plan_1','restrictions_test_hp_pbm_1','restrictions_test_hp_commercial_2','restrictions_test_hp_commercial_3']; 
+  health_plans VARCHAR[] := ARRAY['test_hp_commercial_1','test_hp_hix_1','test_hp_bcbs_1','test_hp_employeer_1','test_hp_na_1','test_hp_sn_1','test_hp_pdp_1','test_hp_state_1','test_hp_dpp_1','test_hp_commercial_medicaid_1','test_hp_union_1','test_hp_municipal_plan_1','test_hp_pbm_1','test_hp_commercial_2','test_hp_commercial_3'];
 BEGIN
 
 --ITERATE HEALTHPLAN TYPES
@@ -14,142 +14,142 @@ LOOP
 
 --INSERT HEALTHPLAN TYPES
 CASE textValue 
-	WHEN 'restrictions_test_hp_commercial_1' THEN
+	WHEN 'test_hp_commercial_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_commercial') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;			
 		
-	WHEN 'restrictions_test_hp_hix_1' THEN
+	WHEN 'test_hp_hix_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_hix') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_bcbs_1' THEN	
+	WHEN 'test_hp_bcbs_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_commercial_bcbs') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
 	
-	WHEN 'restrictions_test_hp_employeer_1' THEN	
+	WHEN 'test_hp_employeer_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_employer') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_na_1' THEN	
+	WHEN 'test_hp_na_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_medicare_ma') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_sn_1' THEN
+	WHEN 'test_hp_sn_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_medicare_sn') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_pdp_1' THEN
+	WHEN 'test_hp_pdp_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_medicare_pdp') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_state_1' THEN
+	WHEN 'test_hp_state_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_state_medicare') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_dpp_1' THEN
+	WHEN 'test_hp_dpp_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_dpp') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_commercial_medicaid_1' THEN
+	WHEN 'test_hp_commercial_medicaid_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
@@ -159,53 +159,53 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_union_1' THEN
+	WHEN 'test_hp_union_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_union') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_municipal_plan_1' THEN
+	WHEN 'test_hp_municipal_plan_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_municipal_plan') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_pbm_1' THEN
+	WHEN 'test_hp_pbm_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' DOES NOT EXISTS OR IS INACTIVE');
 
 		ELSE
 			--VALIDATE HEALTH PLAN TYPE EXISTS
 			SELECT h.health_plan_type_id INTO intValue FROM ff.health_plans h WHERE h.name=textValue;
 			SELECT EXISTS (SELECT 1 FROM ff.health_plan_types hpt WHERE hpt.id=intValue and hpt.is_active IS TRUE and hpt.name='restrictions_test_pbm') INTO booleanValue;
 			IF booleanValue IS FALSE THEN
-				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
+				select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_commercial_2' THEN	
+	WHEN 'test_hp_commercial_2' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM ff.health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS TRUE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');		
+			select throw_error('test_002_validate_test_data-error: EXPECTED HEALTH PLAN ' || textValue || ' SHOULD NOT EXISTS');
 		END IF;	
 	
 	ELSE 
