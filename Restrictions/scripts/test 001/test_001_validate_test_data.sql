@@ -5,7 +5,7 @@ DECLARE
   booleanValue BOOLEAN DEFAULT FALSE;
   intValue INTEGER;
   textValue VARCHAR;
-  health_plans VARCHAR[] := ARRAY['restrictions_test_hp_commercial_1','restrictions_test_hp_hix_1','restrictions_test_hp_bcbs_1','restrictions_test_hp_employeer_1','restrictions_test_hp_na_1','restrictions_test_hp_sn_1','restrictions_test_hp_pdp_1','restrictions_test_hp_state_1','restrictions_test_hp_dpp_1','restrictions_test_hp_commercial_medicaid_1','restrictions_test_hp_union_1','restrictions_test_hp_municipal_plan_1','restrictions_test_hp_pbm_1','restrictions_test_hp_commercial_2','restrictions_test_hp_commercial_3']; 
+  health_plans VARCHAR[] := ARRAY['test_hp_commercial_1','test_hp_hix_1','test_hp_bcbs_1','test_hp_employeer_1','test_hp_na_1','test_hp_sn_1','test_hp_pdp_1','test_hp_state_1','test_hp_dpp_1','test_hp_commercial_medicaid_1','test_hp_union_1','test_hp_municipal_plan_1','test_hp_pbm_1','test_hp_commercial_2','test_hp_commercial_3'];
 BEGIN
 
 --ITERATE HEALTHPLAN TYPES
@@ -14,7 +14,7 @@ LOOP
 
 --INSERT HEALTHPLAN TYPES
 CASE textValue 
-	WHEN 'restrictions_test_hp_commercial_1' THEN
+	WHEN 'test_hp_commercial_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -29,7 +29,7 @@ CASE textValue
 			END IF;
 		END IF;			
 		
-	WHEN 'restrictions_test_hp_hix_1' THEN
+	WHEN 'test_hp_hix_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -44,7 +44,7 @@ CASE textValue
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_bcbs_1' THEN	
+	WHEN 'test_hp_bcbs_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -59,7 +59,7 @@ CASE textValue
 			END IF;
 		END IF;	
 	
-	WHEN 'restrictions_test_hp_employeer_1' THEN	
+	WHEN 'test_hp_employeer_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -74,7 +74,7 @@ CASE textValue
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_na_1' THEN	
+	WHEN 'test_hp_na_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -89,7 +89,7 @@ CASE textValue
 			END IF;
 		END IF;	
 		
-	WHEN 'restrictions_test_hp_sn_1' THEN
+	WHEN 'test_hp_sn_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -103,7 +103,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_pdp_1' THEN
+	WHEN 'test_hp_pdp_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -117,7 +117,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_state_1' THEN
+	WHEN 'test_hp_state_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -131,7 +131,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_dpp_1' THEN
+	WHEN 'test_hp_dpp_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -145,7 +145,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_commercial_medicaid_1' THEN
+	WHEN 'test_hp_commercial_medicaid_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -159,7 +159,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_union_1' THEN
+	WHEN 'test_hp_union_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -173,7 +173,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_municipal_plan_1' THEN
+	WHEN 'test_hp_municipal_plan_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -187,7 +187,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_pbm_1' THEN
+	WHEN 'test_hp_pbm_1' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS FALSE THEN
@@ -201,7 +201,7 @@ CASE textValue
 				select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN TYPE '|| intValue ||' DOES NOT EXISTS ');
 			END IF;
 		END IF;	
-	WHEN 'restrictions_test_hp_commercial_2' THEN	
+	WHEN 'test_hp_commercial_2' THEN
 		--VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
 		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name=textValue and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS TRUE THEN

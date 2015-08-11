@@ -75,43 +75,43 @@ quantity_limit_2_id INTEGER;
 BEGIN
 
 --RETRIEVE INDICATIONS IDS
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='restrictions_indication_1' and abbreviation = 'Ind1';
-SELECT i.id INTO indication_2_id FROM indications i WHERE i.name='restrictions_indication_2' and abbreviation = 'Ind2';
-SELECT i.id INTO indication_3_id FROM indications i WHERE i.name='restrictions_indication_3' and abbreviation = 'Ind3';
-SELECT i.id INTO indication_4_id FROM indications i WHERE i.name='restrictions_indication_4' and abbreviation = 'Ind4';
-SELECT i.id INTO indication_5_id FROM indications i WHERE i.name='restrictions_indication_5' and abbreviation = 'Ind5';
+SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='indication_1' and abbreviation = 'Ind1';
+SELECT i.id INTO indication_2_id FROM indications i WHERE i.name='indication_2' and abbreviation = 'Ind2';
+SELECT i.id INTO indication_3_id FROM indications i WHERE i.name='indication_3' and abbreviation = 'Ind3';
+SELECT i.id INTO indication_4_id FROM indications i WHERE i.name='indication_4' and abbreviation = 'Ind4';
+SELECT i.id INTO indication_5_id FROM indications i WHERE i.name='indication_5' and abbreviation = 'Ind5';
 
 
 --RETRIEVE PROVIDER IDS
-SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='restrictions_provider_1';
+SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1';
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='restrictions_test_commercial';
-SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='restrictions_test_hix';
+SELECT hpt.id INTO commercial_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='test_commercial';
+SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='test_hix';
 
 --RETRIEVE DRUG IDS
-SELECT d.id INTO drug_1_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_1';
-SELECT d.id INTO drug_2_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_2';
-SELECT d.id INTO drug_3_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_3';
-SELECT d.id INTO drug_4_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_4';
-SELECT d.id INTO drug_5_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_5';
-SELECT d.id INTO drug_6_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_6';
-SELECT d.id INTO drug_7_id FROM ff.drugs_import d WHERE d.name='restrictions_drug_7';
+SELECT d.id INTO drug_1_id FROM ff.drugs_import d WHERE d.name='drug_1';
+SELECT d.id INTO drug_2_id FROM ff.drugs_import d WHERE d.name='drug_2';
+SELECT d.id INTO drug_3_id FROM ff.drugs_import d WHERE d.name='drug_3';
+SELECT d.id INTO drug_4_id FROM ff.drugs_import d WHERE d.name='drug_4';
+SELECT d.id INTO drug_5_id FROM ff.drugs_import d WHERE d.name='drug_5';
+SELECT d.id INTO drug_6_id FROM ff.drugs_import d WHERE d.name='drug_6';
+SELECT d.id INTO drug_7_id FROM ff.drugs_import d WHERE d.name='drug_7';
 
 --CREATE CRITERIAS
-SELECT common_create_criteria('restrictions_criteria_diagnosis_1',FALSE,TRUE) INTO criteria_1_id;
-SELECT common_create_criteria('restrictions_criteria_diagnosis_2',FALSE,TRUE) INTO criteria_2_id;
-SELECT common_create_criteria('restrictions_criteria_diagnosis_3',FALSE,TRUE) INTO criteria_3_id;
-SELECT common_create_criteria('restrictions_criteria_unspecified',FALSE,TRUE) INTO criteria_4_id;
-SELECT common_create_criteria('restrictions_criteria_exclusion_1',TRUE,TRUE) INTO criteria_5_id;
-SELECT common_create_criteria('restrictions_criteria_clinical_1',FALSE,TRUE) INTO criteria_6_id;
-SELECT common_create_criteria('restrictions_criteria_clinical_2',FALSE,TRUE) INTO criteria_7_id;
-SELECT common_create_criteria('restrictions_criteria_clinical_3',FALSE,TRUE) INTO criteria_8_id;
-SELECT common_create_criteria('restrictions_criteria_lab_1',FALSE,TRUE) INTO criteria_9_id;
-SELECT common_create_criteria('restrictions_criteria_lab_2',TRUE,FALSE) INTO criteria_10_id;
-SELECT common_create_criteria('restrictions_criteria_lab_3',FALSE,TRUE) INTO criteria_11_id;
-SELECT common_create_criteria('restrictions_criteria_age_1',TRUE,TRUE) INTO criteria_12_id;
-SELECT common_create_criteria('restrictions_criteria_ql_1',TRUE,TRUE) INTO criteria_13_id;
+SELECT common_create_criteria('criteria_diagnosis_1',FALSE,TRUE) INTO criteria_1_id;
+SELECT common_create_criteria('criteria_diagnosis_2',FALSE,TRUE) INTO criteria_2_id;
+SELECT common_create_criteria('criteria_diagnosis_3',FALSE,TRUE) INTO criteria_3_id;
+SELECT common_create_criteria('criteria_unspecified',FALSE,TRUE) INTO criteria_4_id;
+SELECT common_create_criteria('criteria_exclusion_1',TRUE,TRUE) INTO criteria_5_id;
+SELECT common_create_criteria('criteria_clinical_1',FALSE,TRUE) INTO criteria_6_id;
+SELECT common_create_criteria('criteria_clinical_2',FALSE,TRUE) INTO criteria_7_id;
+SELECT common_create_criteria('criteria_clinical_3',FALSE,TRUE) INTO criteria_8_id;
+SELECT common_create_criteria('criteria_lab_1',FALSE,TRUE) INTO criteria_9_id;
+SELECT common_create_criteria('criteria_lab_2',TRUE,FALSE) INTO criteria_10_id;
+SELECT common_create_criteria('criteria_lab_3',FALSE,TRUE) INTO criteria_11_id;
+SELECT common_create_criteria('criteria_age_1',TRUE,TRUE) INTO criteria_12_id;
+SELECT common_create_criteria('criteria_ql_1',TRUE,TRUE) INTO criteria_13_id;
 
 --CREATE RESTRICTIONS
 SELECT common_create_restriction('Diagnosis','PA') INTO restriction_1_id;
