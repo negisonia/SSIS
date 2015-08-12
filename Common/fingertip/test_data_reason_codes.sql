@@ -10,10 +10,10 @@ success BOOLEAN:=FALSE;
 BEGIN
 
 --RETRIEVE QUALIFIERS
-SELECT q.id INTO ql_qualifier FROM qualifier q WHERE d.name='Quantity Limits';
-SELECT q.id INTO pa_qualifier FROM qualifier q WHERE d.name='Prior Authorization';
-SELECT q.id INTO st_qualifier FROM qualifier q WHERE d.name='Step Therapy';
-SELECT q.id INTO or_qualifier FROM qualifier q WHERE d.name='Other Restrictions';
+SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
+SELECT q.id INTO pa_qualifier FROM qualifier q WHERE q.name='Prior Authorization';
+SELECT q.id INTO st_qualifier FROM qualifier q WHERE q.name='Step Therapy';
+SELECT q.id INTO or_qualifier FROM qualifier q WHERE q.name='Other Restrictions';
 
 
 

@@ -36,9 +36,11 @@ reason_code_5 INTEGER;
 reason_code_6 INTEGER;
 
 formularyId INTEGER;
+formularyEntryId INTEGER;
 success BOOLEAN:=FALSE;
 
 BEGIN
+
 
 --RETRIEVE DRUGS
 SELECT d.id into drug_1 FROM drug d WHERE d.name='drug_1';
@@ -54,10 +56,15 @@ SELECT d.id into drug_10_inactive FROM drug d WHERE d.name='drug_10_inactive';
 SELECT d.id into drug_11_inactive FROM drug d WHERE d.name='drug_11_inactive';
 
 --RETRIEVE QUALIFIERS
-SELECT q.id INTO ql_qualifier FROM qualifier q WHERE d.name='Quantity Limits';
-SELECT q.id INTO pa_qualifier FROM qualifier q WHERE d.name='Prior Authorization';
-SELECT q.id INTO st_qualifier FROM qualifier q WHERE d.name='Step Therapy';
-SELECT q.id INTO or_qualifier FROM qualifier q WHERE d.name='Other Restrictions';
+SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
+SELECT q.id INTO pa_qualifier FROM qualifier q WHERE q.name='Prior Authorization';
+SELECT q.id INTO st_qualifier FROM qualifier q WHERE q.name='Step Therapy';
+SELECT q.id INTO or_qualifier FROM qualifier q WHERE q.name='Other Restrictions';
+
+raise notice ''+ql_qualifier;
+raise notice ''+pa_qualifier;
+raise notice ''+st_qualifier;
+raise notice ''+or_qualifier;
 
 --RETRIEVE REASON CODES
 SELECT r.id INTO reason_code_1 FROM  reasoncode r WHERE r.code='92';
@@ -68,6 +75,12 @@ SELECT r.id INTO reason_code_5 FROM  reasoncode r WHERE r.code='41';
 SELECT r.id INTO reason_code_6 FROM  reasoncode r WHERE r.code='60';
 
 --RETRIEVE TIERS
+SELECT t.id INTO tier_1 FROM tier t WHERE t.name='tier_1' ;
+SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
+SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
+SELECT t.id INTO tier_3p FROM tier t WHERE t.name='tier_3p' ;
+SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
+
 
 --CREATE FORMULARIES
 --FORMULARY 1
@@ -108,6 +121,10 @@ SELECT r.id INTO reason_code_6 FROM  reasoncode r WHERE r.code='60';
 
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_3p,reason_code_4,NULL) INTO formularyEntryId;
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
+// rename this file to formulary_entry
+// SELECT formularyfid del healthplan del nombre xxx
+// inser formularyenttry
+// inser formularyentryqualifer
 
     SELECT common_create_formulary_entry(formularyId,drug_3,tier_4,reason_code_5,NULL) INTO formularyEntryId;
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);

@@ -78,6 +78,11 @@ BEGIN
     PERFORM common_create_healthplan(commercial_inactive_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id);
 
 
+//@TODO  insertar el formularyfid
+// insert formulary
+// inser plan with formularyfid previously created
+
+
 success=true;
 return success;
 END
