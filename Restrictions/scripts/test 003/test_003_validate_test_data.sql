@@ -7,7 +7,7 @@ DECLARE
   
   
   textValue VARCHAR;
-  drug_names VARCHAR[] := ARRAY['drug_1','drug_2','drug_3','drug_4','drug_5','drug_6','drug_7','drug_8','drug_9','drug_10','drug_11'];
+  drug_names VARCHAR[] := ARRAY['drug_1','drug_2','drug_3','drug_4','drug_5','drug_6','drug_7','drug_8','drug_9','drug_10_inactive','drug_11_inactive'];
   intValue INTEGER DEFAULT NULL;
   intValue2 INTEGER DEFAULT NULL;
 BEGIN
@@ -57,12 +57,12 @@ LOOP
 			END IF;
 		--VALIDATE DRUG
 		ELSE
-			IF textValue = 'drug_10' THEN
+			IF textValue = 'drug_10_inactive' THEN
 				SELECT d.id INTO intValue FROM drugs d where d.name=textValue and d.is_active IS TRUE;				
 				IF intValue IS NOT NULL THEN
 					SELECT throw_error('restrictions_test_003_validate_test_data ERROR: DRUG  SHOULD NOT EXISTS'|| textValue);	
 				END IF;
-			ELSIF textValue = 'drug_11' THEN
+			ELSIF textValue = 'drug_11_inactive' THEN
 				SELECT d.id INTO intValue FROM drugs d where d.name=textValue and d.is_active IS TRUE;				
 				IF intValue IS NOT NULL THEN
 					SELECT throw_error('restrictions_test_003_validate_test_data ERROR: DRUG  SHOULD NOT EXISTS'|| textValue);	
