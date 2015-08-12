@@ -197,7 +197,8 @@ SELECT d.id INTO drug_7_id FROM ff.drugs_import d WHERE d.name='restrictions_dru
 --PERFORM common_create_criteria_indication(criteria_13_id,indication_2_id);
 
 --CREATE DATA ENTRIES
-SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_4_id) INTO data_entry_1_id;
+SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_1_id;
+
 --SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_type_id,drug_2_id) INTO data_entry_2_id;
 --SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_2_id) INTO data_entry_3_id;
 --SELECT common_create_data_entry(indication_2_id,provider_1_id,commercial_health_plan_type_id,drug_5_id) INTO data_entry_4_id;
@@ -254,7 +255,7 @@ SELECT common_create_data_entry(indication_1_id,provider_1_id,hix_health_plan_ty
 --SELECT common_create_custom_option('restriction_custom_option_drug_class_5') INTO custom_option_7_id;
 
 --CREATE STEP CUSTOM OPTIONS
-SELECT common_create_step_custom_option(drug_4_id,'Drug') INTO  step_custom_option_id_1;
+SELECT common_create_step_custom_option(drug_1_id,'Drug') INTO  step_custom_option_id_1;
 --SELECT common_create_step_custom_option(custom_option_2_id,'CustomOption') INTO  step_custom_option_id_2;
 --SELECT common_create_step_custom_option(custom_option_3_id,'CustomOption') INTO  step_custom_option_id_3;
 --SELECT common_create_step_custom_option(custom_option_4_id,'CustomOption') INTO  step_custom_option_id_4;
@@ -263,7 +264,7 @@ SELECT common_create_step_custom_option(drug_4_id,'Drug') INTO  step_custom_opti
 --SELECT common_create_step_custom_option(custom_option_7_id,'DrugClass') INTO  step_custom_option_id_7;
 
 --CREATE ATOMIC STEPS (new key = step_custom_option_id_1 ) confirmar
-SELECT common_create_atomic_steps('restrictions_drug_4','1', 1, 'ST', 'restrictions_drug_4^1') INTO atomic_step_id_1;
+SELECT common_create_atomic_steps(NULL,NULL, 0, 'ST', NULL) INTO atomic_step_id_1;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 2, 'ST', NULL) INTO atomic_step_id_2;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'PA/Medical', NULL) INTO atomic_step_id_3;
 --SELECT common_create_atomic_steps('Test Label','Test Key', 1, 'ST', NULL) INTO atomic_step_id_4;
@@ -282,14 +283,14 @@ INSERT INTO step_therapies(
             indication_id, drug_id, health_plan_id, data_entry_id, provider_id,
             healthplantype_id, created_at, updated_at, boolean_expression_tree,
             is_active, copiedfromid, atomic_step_id)
-    VALUES (1, drug_4_id, 3, data_entry_1_id, 1,
-            hix_health_plan_type_id, current_timestamp, current_timestamp,'{"nodes":{"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5":{"type":"Step","id":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","stepType":1,"adjudicationType":null},"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1":{"type":"ExpressionGroup","id":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","logical_expression":"OR","failNum":null,"isInner":false},"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ":{"type":"Expression","id":"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ","notes":"Prior prescription for Pegasys","amount":"","amountType":"","amountDuration":"","durationUnit":"","selected_option":1},"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC":{"type":"DrugNode","id":"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC","drugId":4,"drugName":"restrictions_drug_4","step_therapy":{"stepTherapyId":1,"drug":{"drugId":4,"drugName":"restrictions_drug_4"},"indication":{"indicationName":"restrictions_indication_1","indicationID":1,"indicationUpdatedAt":"2015-02-26 22:16:19 UTC","drugClasses":[{"drugClassID":1,"drugClassName":"restrictions_drug_class_1"}]},"healthPlanType":{"healthPlanTypeID":4,"healthPlanTypeName":"restrictions_test_hix"},"provider":{"providerId":1,"providerName":"restrictions_provider_1","healthPlanIDs":[2],"notes":[]}},"nodeID":"G205T2XAFTYZD11NGM5IM9W0ZZNXTTIPN21","open":true,"order_known":"1","tree":{"number_of_steps":{"number":1,"description":"Single Step"}},"step_therapy_id":1,"tab":"st","children":[{"type":"Step","id":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","stepType":1,"adjudicationType":null}]}},"relations":{"5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF":{"from":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","to":"A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC","name":"child","id":"5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF"},"ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0":{"from":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","to":"E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5","name":"child","id":"ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0"},"MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU":{"from":"Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ","to":"09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1","name":"child","id":"MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU"}},"nodeTypes":{"Step":["E5EIQ29LF6TJ9KPIF5TIJVTZ8OEZ5WX27G5"],"ExpressionGroup":["09UUZ4C3NHPALMA07MXMW6UG7QXCMKMZ9G1"],"Expression":["Q2H5Z8BMGDSVO2EO3MH9LCIX7QZO8ROY0AJ"],"DrugNode":["A8JVQKNKC4EDTJDUD3Z9G0FYPXI6CLJMBWC"]},"relationsTypes":{"child":["5HD6D28J0ZRVDWOLIYP8M0WHBCPRLQDWLCF","ES113RP6H49SMVICVKLY7LVL9J6AAK0HTD0","MNX32CMOU0UZ9F4FBV0QRFW8KJ6O05TN5QU"]}}',
+    VALUES (1, drug_1_id, 1, data_entry_1_id, 1,
+            commercial_health_plan_type_id, current_timestamp, current_timestamp,'{"nodes":{"SXM5HQ7GJ8A64ML5WPAZCKRIC9XP95J1XYX":{"type":"DrugNode","id":"SXM5HQ7GJ8A64ML5WPAZCKRIC9XP95J1XYX","drugId":1,"drugName":"restrictions_drug_1","step_therapy":null,"open":true,"step_therapy_id":1,"tab":"st","nodeID":"KJFKWFP1L80TOO5N3COFRZSTHT4GAZFFJHI","order_known":"1","tree":{"number_of_steps":{"number":0,"description":"Unspecified"}}}},"relations":{},"nodeTypes":{"DrugNode":["SXM5HQ7GJ8A64ML5WPAZCKRIC9XP95J1XYX"]},"relationsTypes":{},"step_therapy_id":1}',
             true, NULL, atomic_step_id_1);
 
 
 
 --CREATE STEP NOTES
-PERFORM common_create_atomic_step_notes(data_entry_1_id,'ST','restrictions_drug_4',1,step_custom_option_id_1,  'Drug4 notes: notes for drug 4');
+--PERFORM common_create_atomic_step_notes(data_entry_1_id,'ST','restrictions_drug_4',1,step_custom_option_id_1,  'Drug4 notes: notes for drug 4');
 --PERFORM common_create_atomic_step_notes(data_entry_2_id,'ST',step_custom_option_id_5,  'Drug1 notes: notes for drug 1 Drug notes: notes for drug 2');
 --PERFORM common_create_atomic_step_notes(data_entry_2_id,'ST',step_custom_option_id_2,  'Drug1 notes: notes for drug 1 Drug notes: notes for drug 2');
 --PERFORM common_create_atomic_step_notes(data_entry_2_id,'Medical',step_custom_option_id_2,  NULL);

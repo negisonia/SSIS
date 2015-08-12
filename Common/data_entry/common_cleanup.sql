@@ -6,11 +6,13 @@ BEGIN
 
 	--CLEAR TABLES
   TRUNCATE TABLE indications CASCADE;
+  TRUNCATE TABLE indications_step_custom_options CASCADE;
   TRUNCATE TABLE drug_indications CASCADE;
   TRUNCATE TABLE drugclass_indications CASCADE;
   TRUNCATE TABLE restrictions CASCADE;
   TRUNCATE TABLE criteria CASCADE;
   TRUNCATE TABLE criteria_indications CASCADE;
+  TRUNCATE TABLE criteria_other_restrictions CASCADE;
   TRUNCATE TABLE criteria_restrictions CASCADE;
   TRUNCATE TABLE custom_options CASCADE;
   TRUNCATE TABLE data_entries CASCADE;
@@ -31,6 +33,7 @@ BEGIN
   ALTER SEQUENCE indications_id_seq RESTART;
   ALTER SEQUENCE restrictions_id_seq RESTART;
   ALTER SEQUENCE criteria_id_seq RESTART;
+  ALTER SEQUENCE criteria_other_restrictions_id_seq RESTART;
   ALTER SEQUENCE custom_options_id_seq RESTART;
   ALTER SEQUENCE data_entries_id_seq RESTART;
   ALTER SEQUENCE medical_criteria_id_seq RESTART;
