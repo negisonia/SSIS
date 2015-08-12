@@ -42,6 +42,7 @@ BEGIN
 	SELECT p.id FROM provider p WHERE p.name='provider_9' INTO provider_9_id;
 	SELECT p.id FROM provider p WHERE p.name='provider_10' INTO provider_10_id;
 
+
 	--RETRIEVE HEALTH PLAN TYPES
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial' INTO commercial_hpt_id;
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='hix' INTO hix_hpt_id;

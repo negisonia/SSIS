@@ -7,10 +7,10 @@ tier_3 INTEGER;
 tier_3p INTEGER;
 tier_4 INTEGER;
 
-qualifier_1 INTEGER;
-qualifier_2 INTEGER;
-qualifier_3 INTEGER;
-qualifier_4 INTEGER;
+ql_qualifier INTEGER;
+pa_qualifier INTEGER;
+st_qualifier INTEGER;
+or_qualifier INTEGER;
 
 reason_code_1 INTEGER;
 reason_code_2 INTEGER;
@@ -93,17 +93,17 @@ SELECT common_create_tier(TRUE,'tier_3p','tier_3p') INTO tier_3p;
 SELECT common_create_tier(TRUE,'tier_4','tier_4') INTO tier_4;
 
 --CREATE QUALIFIERS
-SELECT common_create_qualifier(TRUE,'Quantity Limits','QL') INTO qualifier_1;
-SELECT common_create_qualifier(TRUE,'Prior Authorization','PA') INTO qualifier_2;
-SELECT common_create_qualifier(TRUE,'Step Therapy','ST') INTO qualifier_3;
-SELECT common_create_qualifier(TRUE,'Other Restrictions','OR') INTO qualifier_4;
+SELECT common_create_qualifier(TRUE,'Quantity Limits','QL') INTO ql_qualifier;
+SELECT common_create_qualifier(TRUE,'Prior Authorization','PA') INTO pa_qualifier;
+SELECT common_create_qualifier(TRUE,'Step Therapy','ST') INTO st_qualifier;
+SELECT common_create_qualifier(TRUE,'Other Restrictions','OR') INTO or_qualifier;
 
 
 --CREATE REASON CODES
-SELECT common_create_reason_codes(1,'92','PA required if recommended dose duration exceeded.',qualifier_2) INTO reason_code_1;
+SELECT common_create_reason_codes(1,'92','PA required if recommended dose duration exceeded.',pa_qualifier) INTO reason_code_1;
 SELECT common_create_reason_codes(1,'40','Covered under medical benefit.',NULL) INTO reason_code_2;
 SELECT common_create_reason_codes(1,'42','Non-preferred under medical benefit.',NULL) INTO reason_code_3;
-SELECT common_create_reason_codes(1,'90','PA not required on initial fill.',qualifier_2) INTO reason_code_4;
+SELECT common_create_reason_codes(1,'90','PA not required on initial fill.',pa_qualifier) INTO reason_code_4;
 SELECT common_create_reason_codes(1,'41','Preferred under medical benefit',NULL) INTO reason_code_5;
 SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',NULL) INTO reason_code_6;
 
@@ -118,8 +118,8 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'test_05_commercial_1',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_1);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
 
 --FORMULARY 2
     --FORMULARY ENTRY
@@ -130,8 +130,8 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'test_05_hix_1',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_3);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
 
 --FORMULARY 3
     --FORMULARY ENTRY
@@ -150,7 +150,7 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'test_05_hix_2',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
 
 --FORMULARY 5
     --FORMULARY ENTRY
@@ -161,7 +161,7 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'test_05_hix_3',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_1);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
 
 --FORMULARY 6
     --FORMULARY ENTRY
@@ -172,8 +172,8 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_hix,TRUE,'test_05_hix_4',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_3);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_4);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,or_qualifier);
 
 --FORMULARY 7
     --FORMULARY ENTRY
@@ -192,8 +192,8 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'test_05_commercial_4',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_1);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
 
 
 --FORMULARY 9
@@ -221,7 +221,7 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_commercial,FALSE,'test_05_commercial_7',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
 
 --FORMULARY 12
     --FORMULARY ENTRY
@@ -241,7 +241,7 @@ SELECT common_create_reason_codes(1,'60','Age restriction, PA may be required.',
     PERFORM common_create_healthplan(health_plan_type_commercial,TRUE,'test_05_commercial_8',formularyId,provider_id);
 
     --FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,qualifier_2);
+    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
 
 success=true;
 return success;
