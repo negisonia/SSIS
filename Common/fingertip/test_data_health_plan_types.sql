@@ -19,6 +19,9 @@ BEGIN
 		PERFORM common_create_health_plan_type(TRUE,'municipal_plan', TRUE, TRUE);
 		PERFORM common_create_health_plan_type(TRUE,'pbm', TRUE, TRUE);
 		PERFORM common_create_health_plan_type(FALSE,'commercial_inactive', TRUE, TRUE);
+		PERFORM common_create_health_plan_type(TRUE, 'HEALTH_PLAN_TYPE_001', TRUE, FALSE);
+		PERFORM common_create_health_plan_type(TRUE, 'HEALTH_PLAN_TYPE_002', FALSE, TRUE);
+		PERFORM common_create_health_plan_type(TRUE, 'HEALTH_PLAN_TYPE_003', TRUE, FALSE);
 
 success=true;
 return success;
