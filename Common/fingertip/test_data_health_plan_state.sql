@@ -4,6 +4,8 @@ DECLARE
 
 state_001_id INTEGER;
 state_002_id INTEGER;
+state_ma_id INTEGER;
+state_ct_id INTEGER;
 
 health_plan_001_id INTEGER;
 health_plan_002_id INTEGER;
@@ -23,6 +25,8 @@ health_plan_015_id INTEGER;
 health_plan_016_id INTEGER;
 health_plan_017_id INTEGER;
 
+health_plan VARCHAR:='healthplan';
+
 success BOOLEAN:=FALSE;
 
 BEGIN
@@ -31,6 +35,8 @@ BEGIN
     SELECT s.id into state_001_id FROM state s WHERE s.name='STATE_001';
     SELECT s.id into state_002_id FROM state s WHERE s.name='STATE_002';
     SELECT s.id into state_003_id FROM state s WHERE s.name='STATE_003';
+    SELECT common_get_table_id_by_name('state', 'Massachusetts') INTO state_ma_id;
+    SELECT common_get_table_id_by_name('state', 'Connecticut') INTO state_ct_id;
 
 --RETRIVE HEALTH PLANS
     SELECT h.id into health_plan_001_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_001';
@@ -68,6 +74,22 @@ BEGIN
   PERFORM common_create_health_plan_state(health_plan_015_id, state_003_id);
   PERFORM common_create_health_plan_state(health_plan_016_id, state_003_id);
   PERFORM common_create_health_plan_state(health_plan_017_id, state_002_id);
+
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_comm'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_hix'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_bcbs'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_empl'), state_ct_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_ma'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_sn'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_pdp'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_state'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_dpp'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_com_med'), state_ct_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_union'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_mun'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), state_ma_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_comm_1'), state_ct_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), state_ma_id);
 
 success=true;
 return success;
