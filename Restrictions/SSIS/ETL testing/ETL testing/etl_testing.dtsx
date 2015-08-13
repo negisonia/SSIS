@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{71606899-DBA8-4855-8100-40DCB9FBFDFF}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{0A025EA1-8568-4EC6-9114-D169F17F7059}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC0+BRO49fK5JtBsKpeUxMXWH/a515RFUcXyxh+DkBxZgAAAAAOgAAAAAIAACAAAAAyM8mWIirtr3JR7OlrEANXUtVyF/4WoWDvukH0IoaCBzAAAAB3jPY8Pk9/cov3MOkjda6pnMfI8ualawWrgW0LdX8MK52lFlQNwKjG1j6eNCmGfUVAAAAA9ObwedwYs86B9L2Q9wAgQ5nubBCewbL8bEsgpiI99fx+wT2AqXVq3fl7vFbil6ityPvO9h2Ltxrmx1sH4yFXMA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACcteUYXYBf1Igj48Z0kQVsDKwxdgL/lNIc/mshGgB6tAAAAAAOgAAAAAIAACAAAAC1v2cVX7unofWXz1CT7Mm2NleSqjqPfmvQaiZH1rBOSzAAAAA2nrNTDyBZioN0heHUw0FDT/Zt8YE9cRyeo28xOAxW4s1NtnUPRXVaf+kBOzielqFAAAAACkQBOa2uprDQlKcteGlbljJqsrCKacvEsr+0wM1yx4vwgrMEOPcHGrHWwzMaXIqwS9iOEQASrt5OQ+ulnXRlNg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADOmjOhIYh8XNZ9i6cIAN+TG4UYreCKs4AdbGBtqVBEvgAAAAAOgAAAAAIAACAAAAC3/3F6Xsy+6ficEinTXVtW4MxXFRr6M28YmJC3H6w/KjAAAADh9zfs9fGuWrftIfyBjXhoIAmIsu3+nUhFt4uQt3H3jbaTGqC1/NQmKFuOmiEyE9BAAAAAuq3WPn6bL1OT1n8Wsl4ZV8H7sNgLSnGKaddHfekr8aMO/MaPc8FVITsxOIStSGqUKNUpWLJux+P5k5X2hyKc8g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAABTcNusVhlWwBixo8s1+jYY8P1IhfNnHCQfrUtEsIzxwAAAAAOgAAAAAIAACAAAAAWeEHYX6md/Mg+JeHFELUTc8PcjI9p9/6iz0eHjQs6pjAAAABwcrl8kQD9Slm81TrM4BEcaKLSa4h59T8IghrHv8Mq/xms+3iAZCpqF7FNVORPaLtAAAAA8+j2KoK4+uc4Rdi1F49+RZiA6tXytl5aU6Kakmqop1W8c4ti0S5fBh3YzD0PpYiq3c95FwyUAdnGCbt9+6LIow</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNZPDRWej/2zP/vlAzeXAqWeU2mT/U0MHqhpaOnUJCsgAAAAAOgAAAAAIAACAAAADWTedQQyIcz5bLDn+ItTaGRoPyQ5PW62OSpZ6WD3GyLDAAAAAwYroivrrn/dVybMgwBb1erkhYWs6ZXsrqbashL5+73IocbRlBxQP95kV8BWAwELZAAAAAiec3Ey2C3ibDTJPnAt0NolfhTRpTfCvnRpJyKuE8/hmlkdnyS/+hMtMULguYsUlOegzVRjAhIROLZu07qj9glg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADglJ+PLXto7DszAf6UfG/b0djd4972t3TsXYA/sUxLFwAAAAAOgAAAAAIAACAAAACXkX4AQHBHcomGgIIU+MjNwFeRH7Ol+edibb2E+YNzqjAAAACeBP+R9iaQ3ZutljDBBo4GHD4Af9/BX1v80PzEon+PkwJp0PD12d1VltZN6UD9r6JAAAAAU5Ine7Mt6GZuDeY7c4mXIbLIJKFCE/gUQT777c0AwOXwm/JIL/0sQw3S6glmR0w3YcApiEF39gk88Nv9/gXMLw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABslBjUxsszx6Eypr5iqYh6keBu59yc9tV/qZSwEiyVmAAAAAAOgAAAAAIAACAAAADPAqCZbqEw36IXPhJUdVe+W+bsrEvZ6NG+MwLc4n5tHjAAAACeFxKfpf0vRbEb7GG4RAlVCY76sVOt7U3wgIlPhT3LuNGfUhXMPTgPDxzIej1AlxFAAAAAYOZUnEkMJKolLyiMatgydRK0ypFo1f5cZqbG65EtOX3wRKeKq8s2NRPJw3eFbe2iNxUwC+Prw8TWj1vpsKKkMQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAOsemvoco+7RU+WrDBtAI09mpgCbfWDmpF67flBU+3tAAAAAAOgAAAAAIAACAAAACvUYPtui0MNGWBVBBCYnY7Ew9DKs2uF56EC1gppZ4QqDAAAAD/GvXBAH9m2XbD8fVrcb3et42cILdAS5oXdUCl4AWyzJMG5yVD/WS6+yOqdvMjuy9AAAAA5UcbUoPQcMSFi0Y0hCQn9+ZGSgkq4EkWTqq9r/YId/lj5zfTc5DrllihDOnD1pHc8Q+3u0E9oDu+kIHZAzxsIw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -97,7 +97,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABp80sZxQmOhOw9QxKMJ9XT8DOwoRjvXdWtXMB98z9lDQAAAAAOgAAAAAIAACAAAACc6ZIavS8Vd8n5KvqePy17XSqw+4FtchlhgheRKTPFkTAAAACSctFTewqUVwF1C26ytPpezDSXw7E85QXQKGAAzItu+TkFcVaVU/qjG6qcUlnYHWZAAAAAiOz/zqA2bJy0/NNSpl3tCSGSWaAKe13wB1Z7oxMfk1gOJ1dOCuikux9GoQDlambdD/I/fF9G+QLShJhSzUAG4g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADJ5BxDbfmziBh9Y6M2x4ptcV4yWoZFdDUCVfJst8CVNwAAAAAOgAAAAAIAACAAAABbwwT3bQ46Z9JAuiVQRCttDep3QlQCwlSKe2xWlwxEEjAAAABUje8lCvNsyevul+zgdEoSvQ1NufEb3dPzlHl7h0D6yPuC+zRD65PxJ+XNZiOOrwZAAAAAzSpOUUKsC4qX8jbYkaI0Sw6Jke1ZFl7yHadazC4F7w4MeqPB2IaccbN71z5HivsXTrO2xZiwgFODBlpD9Eip9Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -348,21 +348,54 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Create Data  Data_Entry\Test 009 create test data"
+          DTS:refId="Package\Create Data  Data_Entry\create drug class indications"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{D8800433-27B4-45A5-BE60-EC85DF22FA19}"
+          DTS:DTSID="{649493E0-ECBA-4C21-8AE0-57FB7AB84D7E}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Test 009 create test data"
+          DTS:ObjectName="create drug class indications"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
-              SQLTask:SqlStatementSource="SELECT  restrictions_test_009_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select test_data_drug_class_indication()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create Data  Data_Entry\create drug indications"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{64D7D0C8-4D6A-410B-87C3-6BB87B793DF5}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create drug indications"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
+              SQLTask:SqlStatementSource="select test_data_drug_indications()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Create Data  Data_Entry\create indications"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E870DE07-6BA3-44D3-8766-2C9701793C70}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create indications"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
+              SQLTask:SqlStatementSource="Select test_data_indications()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -388,11 +421,19 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{FD9572AF-071E-461A-9802-CBE3A6A141D7}"
-          DTS:From="Package\Create Data  Data_Entry\Test 009 create test data"
+          DTS:DTSID="{0224240A-985A-4F47-A8FA-EA395FE05771}"
+          DTS:From="Package\Create Data  Data_Entry\create indications"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Create Data  Data_Entry\Test 011 create test data" />
+          DTS:To="Package\Create Data  Data_Entry\create drug indications" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1F5C81B1-98DE-45BB-8EAC-F793AA7ECAB1}"
+          DTS:From="Package\Create Data  Data_Entry\create indications"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Create Data  Data_Entry\create drug class indications" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -414,7 +455,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create drug classes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -431,7 +472,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -457,23 +498,6 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create formularies"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{53E29927-AA70-4C4A-8D2D-D4069D1798F3}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create formularies"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_formularies()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Create Data ff_new\create jcodes"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
@@ -482,7 +506,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create jcodes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -516,7 +540,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create reason codes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -533,7 +557,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create tiers"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -550,7 +574,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create_drug_drug_classes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -567,7 +591,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="create_health_plans"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -614,7 +638,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{844042B3-FCCA-4CFB-9893-008E52E1120C}"
+          DTS:DTSID="{40E98EED-73BE-4F44-A400-79AFE3E2C717}"
           DTS:From="Package\Create Data ff_new\create_providers"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -630,23 +654,15 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
-          DTS:DTSID="{249F49AC-A16A-44F2-BB83-8430FE3C325C}"
-          DTS:From="Package\Create Data ff_new\create_health_plans"
+          DTS:DTSID="{DEBD3C45-6FB4-49B2-9091-F17FB88A28A7}"
+          DTS:From="Package\Create Data ff_new\create reason codes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 10"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 11]"
-          DTS:CreationName=""
-          DTS:DTSID="{26628406-822F-4E4A-B255-5FFA7287621B}"
-          DTS:From="Package\Create Data ff_new\create qualifiers"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 11"
-          DTS:To="Package\Create Data ff_new\create formularies" />
+          DTS:To="Package\Create Data ff_new\create_health_plans" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{E7767648-9266-44CB-849E-B9039CE47769}"
+          DTS:DTSID="{D1B7E873-E45B-4688-BFA7-F74B1FE33FC8}"
           DTS:From="Package\Create Data ff_new\create_health_plan_types"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -686,27 +702,27 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
-          DTS:DTSID="{DD2D9140-71DB-4A93-B0FE-3A18D840BBB2}"
-          DTS:From="Package\Create Data ff_new\create reason codes"
+          DTS:DTSID="{1E4AA995-E826-4CD4-8B7E-2DBC08CE2510}"
+          DTS:From="Package\Create Data ff_new\create drug_jcodes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
-          DTS:To="Package\Create Data ff_new\create formularies" />
+          DTS:To="Package\Create Data ff_new\create_health_plans" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 8]"
           DTS:CreationName=""
-          DTS:DTSID="{347BAF56-0016-43F1-A9BA-0E75CBFFADBB}"
-          DTS:From="Package\Create Data ff_new\create drug_jcodes"
+          DTS:DTSID="{41147DD9-2CD4-4DAF-B5E7-6562F3C07931}"
+          DTS:From="Package\Create Data ff_new\create_drug_drug_classes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 8"
-          DTS:To="Package\Create Data ff_new\create formularies" />
+          DTS:To="Package\Create Data ff_new\create_health_plans" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{D3CE8008-F08A-4DB6-85A6-6AD4B26E0222}"
-          DTS:From="Package\Create Data ff_new\create_drug_drug_classes"
+          DTS:DTSID="{FF59E744-C007-4B6E-B9A3-CF3E3621CB2A}"
+          DTS:From="Package\Create Data ff_new\create qualifiers"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 9"
-          DTS:To="Package\Create Data ff_new\create formularies" />
+          DTS:To="Package\Create Data ff_new\create_health_plans" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -825,7 +841,6 @@
           DTS:refId="Package\Validation\Test 005 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{B56ABADC-21C0-4169-93D2-727DFD4E7022}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -843,7 +858,6 @@
           DTS:refId="Package\Validation\Test 006 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{B4203454-E519-461A-8C3A-1938BB2C4BCC}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -861,7 +875,6 @@
           DTS:refId="Package\Validation\Test 009 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{2172417B-F33C-43EA-9F54-41ED903FAE58}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -879,7 +892,6 @@
           DTS:refId="Package\Validation\Test 010 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{FCC8CD8B-F01C-4009-9728-CF68D5454E0A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -897,7 +909,6 @@
           DTS:refId="Package\Validation\Test 07 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{F6AF1817-33FC-49E9-8B6D-73D38AA2C5DD}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -915,7 +926,6 @@
           DTS:refId="Package\Validation\Test 08 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{66C93D58-CAFD-4BB1-A713-F896F74C8E0B}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
@@ -1143,26 +1153,80 @@
           TopLeft="1858,100.777777777778" />
         <NodeLayout
           Size="199,42"
-          Id="Package\Create Data  Data_Entry\Test 009 create test data"
-          TopLeft="62,37.5454545454545" />
-        <NodeLayout
-          Size="199,42"
           Id="Package\Create Data  Data_Entry\Test 011 create test data"
-          TopLeft="61.181818181818,125" />
+          TopLeft="703,67.7272727272725" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Create Data  Data_Entry\create indications"
+          TopLeft="191.909090909091,34.272727272727" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Create Data  Data_Entry\create drug indications"
+          TopLeft="51.8636363636363,137.909090909091" />
         <EdgeLayout
           Id="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint]"
-          TopLeft="161.090909090909,79.5454545454545">
+          TopLeft="247.575757575757,76.272727272727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.4545454545453"
+              EndConnector="-101.712121212121,61.6363636363635"
               Start="0,0"
-              End="0,37.9545454545453">
+              End="-101.712121212121,54.1363636363635">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.9545454545453" />
+                    End="0,21.0140284988401" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0140284988401"
+                    Point2="0,25.0140284988401"
+                    Point3="-4,25.0140284988401" />
+                  <mssgle:LineSegment
+                    End="-97.7121212121212,25.0140284988401" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.7121212121212,25.0140284988401"
+                    Point2="-101.712121212121,25.0140284988401"
+                    Point3="-101.712121212121,29.0140284988401" />
+                  <mssgle:LineSegment
+                    End="-101.712121212121,54.1363636363635" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Create Data  Data_Entry\create drug class indications"
+          TopLeft="271.90909090909,137.909090909091" />
+        <EdgeLayout
+          Id="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint 1]"
+          TopLeft="299.242424242424,76.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.6666666666662,61.6363636363637"
+              Start="0,0"
+              End="79.6666666666662,54.1363636363637">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0140284988402" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0140284988402"
+                    Point2="0,25.0140284988402"
+                    Point3="4,25.0140284988402" />
+                  <mssgle:LineSegment
+                    End="75.6666666666662,25.0140284988402" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.6666666666662,25.0140284988402"
+                    Point2="79.6666666666662,25.0140284988402"
+                    Point3="79.6666666666662,29.0140284988402" />
+                  <mssgle:LineSegment
+                    End="79.6666666666662,54.1363636363637" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1174,14 +1238,42 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="705,224"
-          Size="705,267"
+          PanelSize="953,265"
+          Size="953,308"
           Id="Package\Create Data  Data_Entry"
-          TopLeft="1796,961.5" />
+          TopLeft="1488.42424242424,1691.65151515152" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Create Data ff_new\create_providers"
-          TopLeft="54,25" />
+          Size="171,42"
+          Id="Package\Create Data ff_new\create drug classes"
+          TopLeft="791,30" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Create Data ff_new\create drug_jcodes"
+          TopLeft="509,125" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Create Data ff_new\create drugs"
+          TopLeft="465,30" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Create Data ff_new\create jcodes"
+          TopLeft="630,30" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Create Data ff_new\create qualifiers"
+          TopLeft="992,31" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Create Data ff_new\create reason codes"
+          TopLeft="1171,102" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Create Data ff_new\create tiers"
+          TopLeft="1180,34.5" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Create Data ff_new\create_drug_drug_classes"
+          TopLeft="785,125" />
         <NodeLayout
           Size="202,42"
           Id="Package\Create Data ff_new\create_health_plan_types"
@@ -1189,33 +1281,37 @@
         <NodeLayout
           Size="176,42"
           Id="Package\Create Data ff_new\create_health_plans"
-          TopLeft="122,92" />
+          TopLeft="590,334" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Create Data ff_new\create_providers"
+          TopLeft="54,25" />
         <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint]"
-          TopLeft="133.5,67">
+          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1247,76.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="48.5,25"
+              EndConnector="11.5,25.5"
               Start="0,0"
-              End="48.5,17.5">
+              End="11.5,18">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8648648648649" />
+                    End="0,8.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.8648648648649"
-                    Point2="0,14.8648648648649"
-                    Point3="4,14.8648648648649" />
+                    Point1="0,8.75"
+                    Point2="0,12.75"
+                    Point3="4,12.75" />
                   <mssgle:LineSegment
-                    End="44.5,14.8648648648649" />
+                    End="7.5,12.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="44.5,14.8648648648649"
-                    Point2="48.5,14.8648648648649"
-                    Point3="48.5,18.8648648648649" />
+                    Point1="7.5,12.75"
+                    Point2="11.5,12.75"
+                    Point3="11.5,16.75" />
                   <mssgle:LineSegment
-                    End="48.5,17.5" />
+                    End="11.5,18" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1224,56 +1320,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 2]"
-          TopLeft="325,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,25"
-              Start="0,0"
-              End="-87,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.8648648648649"
-                    Point2="0,14.8648648648649"
-                    Point3="-4,14.8648648648649" />
-                  <mssgle:LineSegment
-                    End="-83,14.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83,14.8648648648649"
-                    Point2="-87,14.8648648648649"
-                    Point3="-87,18.8648648648649" />
-                  <mssgle:LineSegment
-                    End="-87,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Create Data ff_new\create drugs"
-          TopLeft="465,30" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Create Data ff_new\create drug classes"
-          TopLeft="791,30" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Create Data ff_new\create jcodes"
-          TopLeft="630,30" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Create Data ff_new\create drug_jcodes"
-          TopLeft="509,125" />
         <EdgeLayout
           Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 3]"
           TopLeft="513,72">
@@ -1342,10 +1388,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="204,42"
-          Id="Package\Create Data ff_new\create_drug_drug_classes"
-          TopLeft="785,125" />
         <EdgeLayout
           Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 5]"
           TopLeft="557,72">
@@ -1414,40 +1456,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="134,42"
-          Id="Package\Create Data ff_new\create tiers"
-          TopLeft="1180,34.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Create Data ff_new\create reason codes"
-          TopLeft="1171,102" />
         <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1247,76.5">
+          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint]"
+          TopLeft="133.5,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.5,25.5"
+              EndConnector="484.5,267"
               Start="0,0"
-              End="11.5,18">
+              End="484.5,259.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.75" />
+                    End="0,198.551724137931" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.75"
-                    Point2="0,12.75"
-                    Point3="4,12.75" />
+                    Point1="0,198.551724137931"
+                    Point2="0,202.551724137931"
+                    Point3="4,202.551724137931" />
                   <mssgle:LineSegment
-                    End="7.5,12.75" />
+                    End="480.5,202.551724137931" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.5,12.75"
-                    Point2="11.5,12.75"
-                    Point3="11.5,16.75" />
+                    Point1="480.5,202.551724137931"
+                    Point2="484.5,202.551724137931"
+                    Point3="484.5,206.551724137931" />
                   <mssgle:LineSegment
-                    End="11.5,18" />
+                    End="484.5,259.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1456,36 +1490,66 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Create Data ff_new\create formularies"
-          TopLeft="562,251" />
         <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 7]"
-          TopLeft="1258.5,144">
+          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 2]"
+          TopLeft="325,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-566.9,107"
+              EndConnector="317,267"
               Start="0,0"
-              End="-566.9,99.5">
+              End="317,259.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.8727735368957" />
+                    End="0,163.828571428571" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,70.8727735368957"
-                    Point2="0,74.8727735368957"
-                    Point3="-4,74.8727735368957" />
+                    Point1="0,163.828571428571"
+                    Point2="0,167.828571428571"
+                    Point3="4,167.828571428571" />
                   <mssgle:LineSegment
-                    End="-562.9,74.8727735368957" />
+                    End="313,167.828571428571" />
                   <mssgle:CubicBezierSegment
-                    Point1="-562.9,74.8727735368957"
-                    Point2="-566.9,74.8727735368957"
-                    Point3="-566.9,78.8727735368957" />
+                    Point1="313,167.828571428571"
+                    Point2="317,167.828571428571"
+                    Point3="317,171.828571428571" />
                   <mssgle:LineSegment
-                    End="-566.9,99.5" />
+                    End="317,259.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 7]"
+          TopLeft="594.5,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.5,167"
+              Start="0,0"
+              End="71.5,159.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.609756097561" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,85.609756097561"
+                    Point2="0,89.609756097561"
+                    Point3="4,89.609756097561" />
+                  <mssgle:LineSegment
+                    End="67.5,89.609756097561" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,89.609756097561"
+                    Point2="71.5,89.609756097561"
+                    Point3="71.5,93.609756097561" />
+                  <mssgle:LineSegment
+                    End="71.5,159.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1496,30 +1560,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 8]"
-          TopLeft="594.5,167">
+          TopLeft="887,167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34.3,84"
+              EndConnector="-197,167"
               Start="0,0"
-              End="34.3,76.5">
+              End="-197,159.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.4166108506363" />
+                    End="0,85.609756097561" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.4166108506363"
-                    Point2="0,46.4166108506363"
-                    Point3="4,46.4166108506363" />
+                    Point1="0,85.609756097561"
+                    Point2="0,89.609756097561"
+                    Point3="-4,89.609756097561" />
                   <mssgle:LineSegment
-                    End="30.3,46.4166108506363" />
+                    End="-193,89.609756097561" />
                   <mssgle:CubicBezierSegment
-                    Point1="30.3,46.4166108506363"
-                    Point2="34.3,46.4166108506363"
-                    Point3="34.3,50.4166108506363" />
+                    Point1="-193,89.609756097561"
+                    Point2="-197,89.609756097561"
+                    Point3="-197,93.609756097561" />
                   <mssgle:LineSegment
-                    End="34.3,76.5" />
+                    End="-197,159.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1530,30 +1594,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 9]"
-          TopLeft="887,167">
+          TopLeft="1070,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-226.8,84"
+              EndConnector="-356,261"
               Start="0,0"
-              End="-226.8,76.5">
+              End="-356,253.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.4166108506363" />
+                    End="0,160.057142857143" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.4166108506363"
-                    Point2="0,46.4166108506363"
-                    Point3="-4,46.4166108506363" />
+                    Point1="0,160.057142857143"
+                    Point2="0,164.057142857143"
+                    Point3="-4,164.057142857143" />
                   <mssgle:LineSegment
-                    End="-222.8,46.4166108506363" />
+                    End="-352,164.057142857143" />
                   <mssgle:CubicBezierSegment
-                    Point1="-222.8,46.4166108506363"
-                    Point2="-226.8,46.4166108506363"
-                    Point3="-226.8,50.4166108506363" />
+                    Point1="-352,164.057142857143"
+                    Point2="-356,164.057142857143"
+                    Point3="-356,168.057142857143" />
                   <mssgle:LineSegment
-                    End="-226.8,76.5" />
+                    End="-356,253.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1564,68 +1628,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 10]"
-          TopLeft="210,134">
+          TopLeft="1258.5,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="387.4,117"
+              EndConnector="-520.5,190"
               Start="0,0"
-              End="387.4,109.5">
+              End="-520.5,182.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.8702290076336" />
+                    End="0,140.137931034483" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,77.8702290076336"
-                    Point2="0,81.8702290076336"
-                    Point3="4,81.8702290076336" />
+                    Point1="0,140.137931034483"
+                    Point2="0,144.137931034483"
+                    Point3="-4,144.137931034483" />
                   <mssgle:LineSegment
-                    End="383.4,81.8702290076336" />
+                    End="-516.5,144.137931034483" />
                   <mssgle:CubicBezierSegment
-                    Point1="383.4,81.8702290076336"
-                    Point2="387.4,81.8702290076336"
-                    Point3="387.4,85.8702290076336" />
+                    Point1="-516.5,144.137931034483"
+                    Point2="-520.5,144.137931034483"
+                    Point3="-520.5,148.137931034483" />
                   <mssgle:LineSegment
-                    End="387.4,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Create Data ff_new\create qualifiers"
-          TopLeft="992,31" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 11]"
-          TopLeft="1070,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-399.333333333333,178"
-              Start="0,0"
-              End="-399.333333333333,170.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,101.77430972389" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,101.77430972389"
-                    Point2="0,105.77430972389"
-                    Point3="-4,105.77430972389" />
-                  <mssgle:LineSegment
-                    End="-395.333333333333,105.77430972389" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-395.333333333333,105.77430972389"
-                    Point2="-399.333333333333,105.77430972389"
-                    Point3="-399.333333333333,109.77430972389" />
-                  <mssgle:LineSegment
-                    End="-399.333333333333,170.5" />
+                    End="-520.5,182.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1637,18 +1663,18 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1499,348"
-          Size="1499,391"
+          PanelSize="1499,431"
+          Size="1499,474"
           Id="Package\Create Data ff_new"
-          TopLeft="1245.80555555556,533.25" />
+          TopLeft="1402.47222222223,619.916666666667" />
         <NodeLayout
           Size="156,42"
           Id="Package\ETL PROCESS A"
-          TopLeft="2085.66666666667,1360.33333333333" />
+          TopLeft="2059,2168.66666666666" />
         <NodeLayout
           Size="156,42"
           Id="Package\ETL PROCESS B"
-          TopLeft="2081,1258.66666666667" />
+          TopLeft="2054.33333333333,2067" />
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 001 validation"
@@ -1805,33 +1831,33 @@
           PanelSize="1533,202"
           Size="1533,245"
           Id="Package\Validation"
-          TopLeft="1403.0018037518,1522.20490620491" />
+          TopLeft="1376.33513708513,2330.53823953824" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1995.30555555556,924.25">
+          TopLeft="2151.97222222223,1093.91666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="153.19444444444,37.25"
+              EndConnector="-187.047979797984,597.734848484849"
               Start="0,0"
-              End="153.19444444444,29.75">
+              End="-187.047979797984,590.234848484849">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.625" />
+                    End="0,294.867424242424" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.625"
-                    Point2="0,18.625"
-                    Point3="4,18.625" />
+                    Point1="0,294.867424242424"
+                    Point2="0,298.867424242424"
+                    Point3="-4,298.867424242424" />
                   <mssgle:LineSegment
-                    End="149.19444444444,18.625" />
+                    End="-183.047979797984,298.867424242424" />
                   <mssgle:CubicBezierSegment
-                    Point1="149.19444444444,18.625"
-                    Point2="153.19444444444,18.625"
-                    Point3="153.19444444444,22.625" />
+                    Point1="-183.047979797984,298.867424242424"
+                    Point2="-187.047979797984,298.867424242424"
+                    Point3="-187.047979797984,302.867424242424" />
                   <mssgle:LineSegment
-                    End="153.19444444444,29.75" />
+                    End="-187.047979797984,590.234848484849" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1842,18 +1868,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="2161.33333333333,1300.66666666667">
+          TopLeft="2134.66666666666,2109">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.6666666666667"
+              EndConnector="0,59.6666666666665"
               Start="0,0"
-              End="0,52.1666666666667">
+              End="0,52.1666666666665">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.1666666666667" />
+                    End="0,52.1666666666665" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1864,7 +1890,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="2166.58423520923,1402.33333333333">
+          TopLeft="2139.91756854256,2210.66666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1890,26 +1916,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-167.69444444444,83.472222222222"
+              EndConnector="-11.0277777777737,170.138888888889"
               Start="0,0"
-              End="-167.69444444444,75.972222222222">
+              End="-11.0277777777737,162.638888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.736111111111" />
+                    End="0,81.0694444444443" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.736111111111"
-                    Point2="0,41.736111111111"
-                    Point3="-4,41.736111111111" />
+                    Point1="0,81.0694444444443"
+                    Point2="0,85.0694444444443"
+                    Point3="-4,85.0694444444443" />
                   <mssgle:LineSegment
-                    End="-163.69444444444,41.736111111111" />
+                    End="-7.02777777777374,85.0694444444443" />
                   <mssgle:CubicBezierSegment
-                    Point1="-163.69444444444,41.736111111111"
-                    Point2="-167.69444444444,41.736111111111"
-                    Point3="-167.69444444444,45.736111111111" />
+                    Point1="-7.02777777777374,85.0694444444443"
+                    Point2="-11.0277777777737,85.0694444444443"
+                    Point3="-11.0277777777737,89.0694444444443" />
                   <mssgle:LineSegment
-                    End="-167.69444444444,75.972222222222" />
+                    End="-11.0277777777737,162.638888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1920,30 +1946,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="2148.5,1228.5">
+          TopLeft="1964.92424242424,1999.65151515152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,30.1666666666699"
+              EndConnector="167.409090909091,67.3484848484882"
               Start="0,0"
-              End="10.5,22.6666666666699">
+              End="167.409090909091,59.8484848484882">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.083333333335" />
+                    End="0,29.6742424242441" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.083333333335"
-                    Point2="0,15.083333333335"
-                    Point3="4,15.083333333335" />
+                    Point1="0,29.6742424242441"
+                    Point2="0,33.6742424242441"
+                    Point3="4,33.6742424242441" />
                   <mssgle:LineSegment
-                    End="6.5,15.083333333335" />
+                    End="163.409090909091,33.6742424242441" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.5,15.083333333335"
-                    Point2="10.5,15.083333333335"
-                    Point3="10.5,19.083333333335" />
+                    Point1="163.409090909091,33.6742424242441"
+                    Point2="167.409090909091,33.6742424242441"
+                    Point3="167.409090909091,37.6742424242441" />
                   <mssgle:LineSegment
-                    End="10.5,22.6666666666699" />
+                    End="167.409090909091,59.8484848484882" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
