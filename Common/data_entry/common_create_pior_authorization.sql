@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION common_create_prior_authorization(new_data_entry_id INTEGER, new_active BOOLEAN) --DATA ENTRY
+CREATE OR REPLACE FUNCTION common_create_prior_authorization(new_data_entry_id INTEGER, new_active BOOLEAN, new_atomic_step_id INTEGER) --DATA ENTRY
 RETURNS INTEGER AS $$
 DECLARE
 prior_authorization_id INTEGER DEFAULT NULL;
@@ -15,7 +15,7 @@ IF prior_authorization_id IS NULL THEN
             duration_unit, active, is_active, copiedfromid, atomic_step_id)
     VALUES (NULL, NULL, NULL,new_data_entry_id, current_timestamp,
             current_timestamp, NULL, NULL, NULL, NULL,
-            NULL, new_active, new_active, NULL, NULL) RETURNING id INTO prior_authorization_id;
+            NULL, new_active, new_active, NULL, new_atomic_step_id) RETURNING id INTO prior_authorization_id;
   RETURN prior_authorization_id;
 ELSE
   RETURN prior_authorization_id;
