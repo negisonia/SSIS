@@ -30,17 +30,21 @@ BEGIN
      select throw_error('DRUG WITH ID '|| new_drug_id ||' DOES NOT EXISTS');
   END IF;
 
+  --VALIDATE IF DATA ENTRY EXISTS
+  SELECT d.id INTO data_entry_id FROM data_entries d WHERE d.indication_id=new_indication_id and d.provider_id=new_provider_id and d.healthplantype_id= new_health_plan_type_id and d.drug_id = new_drug_id;
+  IF data_entry_id IS NULL THEN
+  INSERT INTO data_entries(
+                 indication_id, provider_id, healthplantype_id, coverage_id,
+                 drug_id, coverage_limit_id, prior_authorization_id, quantity_limit_id,
+                 other_restriction_id, created_at, updated_at, step_therapy_id,
+                 medical_id, copiedfromid)
+         VALUES (new_indication_id, new_provider_id, new_health_plan_type_id, NULL,
+                 new_drug_id, NULL, NULL, NULL,
+                 NULL, current_timestamp, current_timestamp, NULL,
+                 NULL, NULL) RETURNING id INTO data_entry_id;
+  END IF;
 
-   INSERT INTO data_entries(
-               indication_id, provider_id, healthplantype_id, coverage_id,
-               drug_id, coverage_limit_id, prior_authorization_id, quantity_limit_id,
-               other_restriction_id, created_at, updated_at, step_therapy_id,
-               medical_id, copiedfromid)
-       VALUES (new_indication_id, new_provider_id, new_health_plan_type_id, NULL,
-               new_drug_id, NULL, NULL, NULL,
-               NULL, current_timestamp, current_timestamp, NULL,
-               NULL, NULL) RETURNING id INTO data_entry_id;
-  RETURN data_entry_id;
 
+RETURN data_entry_id;
 END
 $$ LANGUAGE plpgsql;

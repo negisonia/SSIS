@@ -1,6 +1,7 @@
-CREATE OR REPLACE FUNCTION restrictions_test_009_create_test_data() --DATA ENTRY
+CREATE OR REPLACE FUNCTION test_data_drug_indications() --DATA ENTRY
 RETURNS boolean AS $$
 DECLARE
+success BOOLEAN:=FALSE;
 indication_1_id INTEGER;
 indication_2_id INTEGER;
 indication_3_id INTEGER;
@@ -19,14 +20,15 @@ drug_9 INTEGER;
 drug_10 INTEGER;
 drug_11 INTEGER;
 
-drug_class_1 INTEGER;
-drug_class_2 INTEGER;
-drug_class_3 INTEGER;
-drug_class_4 INTEGER;
-drug_class_5 INTEGER;
-
-success BOOLEAN DEFAULT FALSE;
 BEGIN
+
+--RETRIEVE INDICATIONS
+SELECT i.id from indications i WHERE i.name='indication_1' INTO indication_1_id;
+SELECT i.id from indications i WHERE i.name='indication_2' INTO indication_2_id;
+SELECT i.id from indications i WHERE i.name='indication_3' INTO indication_3_id;
+SELECT i.id from indications i WHERE i.name='indication_4' INTO indication_4_id;
+SELECT i.id from indications i WHERE i.name='indication_5' INTO indication_5_id;
+
 
 --RETRIEVE DRUG IDS
 SELECT d.id INTO drug_1 FROM ff.drugs_import d WHERE d.name='drug_1';
@@ -38,22 +40,9 @@ SELECT d.id INTO drug_6 FROM ff.drugs_import d WHERE d.name='drug_6';
 SELECT d.id INTO drug_7 FROM ff.drugs_import d WHERE d.name='drug_7';
 SELECT d.id INTO drug_8 FROM ff.drugs_import d WHERE d.name='drug_8';
 SELECT d.id INTO drug_9 FROM ff.drugs_import d WHERE d.name='drug_9';
-SELECT d.id INTO drug_10 FROM ff.drugs_import d WHERE d.name='drug_10';
-SELECT d.id INTO drug_11 FROM ff.drugs_import d WHERE d.name='drug_11';
+SELECT d.id INTO drug_10 FROM ff.drugs_import d WHERE d.name='drug_10_inactive';
+SELECT d.id INTO drug_11 FROM ff.drugs_import d WHERE d.name='drug_11_inactive';
 
---RETRIEVE DRUG CLASSES
-SELECT dc.id INTO drug_class_1 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_1';
-SELECT dc.id INTO drug_class_2 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_2';
-SELECT dc.id INTO drug_class_3 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_3';
-
---CREATE INDICATION 1
-SELECT common_create_indication('indication_1', 'Ind1') INTO indication_1_id;
-SELECT common_create_indication('indication_2', 'Ind2') INTO indication_2_id;
-SELECT common_create_indication('indication_3', 'Ind3') INTO indication_3_id;
-SELECT common_create_indication('indication_4', 'Ind4') INTO indication_4_id;
-SELECT common_create_indication('indication_5', 'Ind5') INTO indication_5_id;
-
---CREATE DRUG INDICATIONS
 --indication # 1
 PERFORM common_create_drug_indication(indication_1_id,drug_1);
 PERFORM common_create_drug_indication(indication_1_id,drug_2);
@@ -69,13 +58,6 @@ PERFORM common_create_drug_indication(indication_2_id,drug_7);
 PERFORM common_create_drug_indication(indication_3_id,drug_1);
 PERFORM common_create_drug_indication(indication_3_id,drug_2);
 PERFORM common_create_drug_indication(indication_3_id,drug_9);
-
---CREATE DRUG CLASS INDICATIONS
-PERFORM common_create_drug_class_indication(indication_1_id,drug_class_1);
-PERFORM common_create_drug_class_indication(indication_2_id,drug_class_2);
-PERFORM common_create_drug_class_indication(indication_3_id,drug_class_1);
-PERFORM common_create_drug_class_indication(indication_3_id,drug_class_3);
-PERFORM common_create_drug_class_indication(indication_4_id,drug_class_1);
 
 success=true;
 return success;

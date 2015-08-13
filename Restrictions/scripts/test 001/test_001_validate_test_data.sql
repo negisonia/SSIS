@@ -211,9 +211,9 @@ BEGIN
 		END IF;
 
 --VALIDATE HEALTH PLAN EXISTS AND IS ACTIVE
-		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name='health_plan_comm_2' and h.is_active IS TRUE) INTO booleanValue;
+		SELECT EXISTS (SELECT 1 FROM health_plans h WHERE h.name='health_plan_com_inactive' and h.is_active IS TRUE) INTO booleanValue;
 		IF booleanValue IS TRUE THEN
-			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN health_plan_comm_2 SHOULD NOT EXISTS');
+			select throw_error('test_001_validate_test_data-error: EXPECTED HEALTH PLAN health_plan_com_inactive SHOULD NOT EXISTS');
 		END IF;
 
 

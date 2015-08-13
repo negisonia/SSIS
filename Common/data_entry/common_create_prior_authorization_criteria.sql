@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION common_create_prior_authorization_criteria(new_prior_authorization_id INTEGER, new_criteria_id INTEGER, new_active BOOLEAN) --DATA ENTRY
+CREATE OR REPLACE FUNCTION common_create_prior_authorization_criteria(new_prior_authorization_id INTEGER, new_criteria_id INTEGER, new_active BOOLEAN, new_criterium_applicable INTEGER, new_value_lower INTEGER, new_value_upper INTEGER) --DATA ENTRY
 RETURNS BOOLEAN AS $$
 DECLARE
 success BOOLEAN DEFAULT FALSE;
@@ -14,8 +14,8 @@ INSERT INTO prior_authorization_criteria(
             value_upper, value_lower, non_fda_approved, created_at, updated_at,
             prior_authorization_id, criterium_id, criterium_applicable, active,
             is_active, copiedfromid)
-    VALUES (NULL, NULL, NULL, current_timestamp, current_timestamp,
-            new_prior_authorization_id, new_criteria_id, NULL, new_active,new_active,
+    VALUES (new_value_upper, new_value_lower, NULL, current_timestamp, current_timestamp,
+            new_prior_authorization_id, new_criteria_id, new_criterium_applicable, new_active,new_active,
             NULL);
 END IF;
 

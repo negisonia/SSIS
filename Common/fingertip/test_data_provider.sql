@@ -12,8 +12,8 @@ PERFORM common_create_provider(TRUE,'provider_5',NULL);
 PERFORM common_create_provider(TRUE,'provider_6',NULL);
 PERFORM common_create_provider(TRUE,'provider_7',NULL);
 PERFORM common_create_provider(TRUE,'provider_8',NULL);
-PERFORM common_create_provider(FALSE,'provider_9',NULL);
-PERFORM common_create_provider(FALSE,'provider_10',NULL);
+PERFORM common_create_provider(TRUE,'provider_9',NULL);
+PERFORM common_create_provider(TRUE,'provider_10',NULL);
 
 success=true;
 return success;
