@@ -150,8 +150,8 @@ BEGIN
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
 
     --INSERT HEALTH PLAN
-    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm',formularyId,provider_1_id);
 
+    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm',formularyId,provider_1_id);
 
 
     ------INSERT FORMULARY 2------
