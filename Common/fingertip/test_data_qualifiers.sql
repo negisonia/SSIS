@@ -5,10 +5,10 @@ success BOOLEAN:=FALSE;
 BEGIN
 
 --CREATE QUALIFIERS
-SELECT common_create_qualifier(TRUE,'Quantity Limits','QL');
-SELECT common_create_qualifier(TRUE,'Prior Authorization','PA');
-SELECT common_create_qualifier(TRUE,'Step Therapy','ST');
-SELECT common_create_qualifier(TRUE,'Other Restrictions','OR');
+PERFORM common_create_qualifier(TRUE,'Quantity Limits','QL');
+PERFORM common_create_qualifier(TRUE,'Prior Authorization','PA');
+PERFORM common_create_qualifier(TRUE,'Step Therapy','ST');
+PERFORM common_create_qualifier(TRUE,'Other Restrictions','OR');
 
 success=true;
 return success;
