@@ -20,10 +20,7 @@ IF criteria_report_id IS null THEN
 ELSE
 
   --INSERT MARKET DATA
-  FOREACH intvalue IN ARRAY market_ids
-  LOOP  
-    INSERT INTO criteria_reports_markets(market_id,market_type,criteria_report_id) VALUES(intvalue,market_type,criteria_report_id); 
-  END LOOP;
+  PERFORM add_criteria_report_markets(criteria_report_id, market_type, market_ids);
 
   --INSERT HEALTH PLAN TYPES DATA
   FOREACH intvalue IN ARRAY health_plan_type_ids
