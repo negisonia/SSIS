@@ -23,13 +23,21 @@ health_plan_017_id INTEGER;
 state_001_id INTEGER;
 state_002_id INTEGER;
 state_003_id INTEGER;
+state_ma_id INTEGER;
+state_ct_id INTEGER;
 
 county_001_id INTEGER;
 county_002_id INTEGER;
 county_003_id INTEGER;
 county_004_id INTEGER;
+county_middlesex_ma_id INTEGER;
+county_bristol_ma_id INTEGER;
+county_new_london_ct_id INTEGER;
+county_franklin_ma_id INTEGER;
+county_middlesex_ct_id INTEGER;
 
 metro_stat_area_001_id INTEGER;
+health_plan VARCHAR:='healthplan';
 
 success BOOLEAN:=FALSE;
 
@@ -58,12 +66,19 @@ BEGIN
     SELECT s.id into state_001_id FROM state s WHERE s.name='STATE_001';
     SELECT s.id into state_002_id FROM state s WHERE s.name='STATE_002';
     SELECT s.id into state_003_id FROM state s WHERE s.name='STATE_003';
+    SELECT common_get_table_id_by_name('state', 'Massachusetts') INTO state_ma_id;
+    SELECT common_get_table_id_by_name('state', 'Connecticut') INTO state_ct_id;
 
 --RETRIEVE COUNTIES
     SELECT c.id into county_001_id FROM county c WHERE c.name='COUNTY_001';
     SELECT c.id into county_002_id FROM county c WHERE c.name='COUNTY_002';
     SELECT c.id into county_003_id FROM county c WHERE c.name='COUNTY_003';
     SELECT c.id into county_004_id FROM county c WHERE c.name='COUNTY_004';
+    SELECT common_get_county_id_by_name_and_state('Middlesex','Massachusetts') INTO county_middlesex_ma_id;
+    SELECT common_get_county_id_by_name_and_state('Bristol','Massachusetts') INTO county_bristol_ma_id;
+    SELECT common_get_county_id_by_name_and_state('New London','Connecticut') INTO county_new_london_ct_id;
+    SELECT common_get_county_id_by_name_and_state('Franklin','Massachusetts') INTO county_franklin_ma_id;
+    SELECT common_get_county_id_by_name_and_state('Middlesex','Connecticut') INTO county_middlesex_ct_id;
 
 --RETRIEVE MSAS
     SELECT m.id into metro_stat_area_001_id FROM metrostatarea m WHERE m.name='MSA_001';
@@ -85,6 +100,21 @@ BEGIN
     PERFORM common_create_health_plan_county_lives(health_plan_015_id, state_003_id, county_003_id, NULL, 25);
     PERFORM common_create_health_plan_county_lives(health_plan_016_id, state_003_id, county_004_id, metro_stat_area_001_id, 100);
     PERFORM common_create_health_plan_county_lives(health_plan_017_id, state_002_id, county_002_id, NULL, 40);    
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm'), state_ma_id, county_middlesex_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_hix'), state_ma_id, county_middlesex_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_bcbs'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_empl'), state_ct_id, county_new_london_ct_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_ma'), state_ma_id, county_middlesex_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_sn'), state_ma_id, county_middlesex_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pdp'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_state'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_dpp'), state_ma_id, county_middlesex_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_com_med'), state_ct_id, county_new_london_ct_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_union'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_mun'), state_ma_id, county_franklin_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), state_ma_id, county_franklin_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm_1'), state_ct_id, county_middlesex_ct_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), state_ma_id, county_bristol_ma_id, NULL, 100);
 
 success=true;
 return success;
