@@ -89,11 +89,11 @@ SELECT c.id INTO criteria_age_1 FROM criteria c WHERE c.name='criteria_age_1';
 SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE PROVIDERS
-SELECT p.id FROM provider p WHERE p.name='provider_1' INTO provider_1_id;
+SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1' ;
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_comm';
-SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_hix';
+SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
+SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 
 --RETRIEVE CUSTOM OPTIONS
 SELECT co.id INTO custom_option_1 FROM custom_options co WHERE co.name='custom_option_1';
@@ -105,59 +105,59 @@ SELECT co.id INTO custom_option_4 FROM custom_options co WHERE co.name='custom_o
 
 -----INSERTS-----
 --RETRIEVE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
 	--RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_1 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, 'Drug1 notes: notes for drug 1');
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, 'Drug1 notes: notes for drug 1');
 
 --RETRIEVE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
 	--RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_1 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_1','ST', 1, step_custom_option_id, 'Drug1 notes: notes for drug 1');
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_1','ST', 1, step_custom_option_id, 'Drug1 notes: notes for drug 1');
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_2 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_2','ST', 1, step_custom_option_id, 'Drug2 notes: notes for drug 1');
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_2','ST', 1, step_custom_option_id, 'Drug2 notes: notes for drug 1');
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_2 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_2','PA/Medical', 1, step_custom_option_id, null);
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_2','PA/Medical', 1, step_custom_option_id, null);
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_1 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_1','ST', 1, step_custom_option_id, null);
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_1','ST', 1, step_custom_option_id, null);
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, commercial_health_plan_type, drug_1) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_1 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, 'Drug1 notes: long message 500 characters');
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, 'Drug1 notes: long message 500 characters');
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_1 and sco.customizable_type='CustomOption';
 
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, NULL);
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_1','PA/Medical', 1, step_custom_option_id, NULL);
 
 --RETRIEVE DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
+    SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id; -- already exists returns existing id
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_2 and sco.customizable_type='CustomOption';
-    SELECT common_create_atomic_step_notes(data_entry_id, 'custom_option_2','PA/Medical', 1, step_custom_option_id, NULL);
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'custom_option_2','PA/Medical', 1, step_custom_option_id, NULL);
 
 success=true;
 return success;
