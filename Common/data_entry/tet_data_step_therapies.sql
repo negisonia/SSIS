@@ -41,7 +41,7 @@ hix_health_plan_type INTEGER;
 data_entry_id INTEGER;
 st_id INTEGER;
 atomic_step_id INTEGER;
-
+provider_1_id INTEGER;
 
 BEGIN
 
@@ -83,25 +83,25 @@ SELECT c.id INTO criteria_age_1 FROM criteria c WHERE c.name='criteria_age_1';
 SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE PROVIDERS
-SELECT p.id FROM provider p WHERE p.name='provider_1' INTO provider_1_id;
+SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1' ;
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_comm';
-SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_hix';
+SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
+SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 
 -----INSERTS-----
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_1) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_1) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    PERFORM common_create_atomic_steps('Custom_Option_1 AND  Custom_Option_2', '1 AND 2', 2, 'ST', 'Custom_Option_1^1 AND CustomOption2^2') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Custom_Option_1 AND  Custom_Option_2', '1 AND 2', 2, 'ST', 'Custom_Option_1^1 AND CustomOption2^2') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	PERFORM common_create_step_therapies(data_entry_id, NULL,TRUE, atomic_step_id );
 
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_4) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    PERFORM common_create_atomic_steps('Custom_Option_1', '1', 1, 'ST', 'Custom_Option_1^1 ') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Custom_Option_1', '1', 1, 'ST', 'Custom_Option_1^1 ') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	PERFORM common_create_step_therapies(data_entry_id, NULL,TRUE, atomic_step_id );
 

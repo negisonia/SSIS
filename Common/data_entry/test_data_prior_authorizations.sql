@@ -43,6 +43,7 @@ pa_id INTEGER;
 medical_id INTEGER;
 quantity_limit_id INTEGER;
 atomic_step_id INTEGER;
+provider_1_id INTEGER;
 
 BEGIN
 
@@ -83,84 +84,84 @@ SELECT c.id INTO criteria_age_1 FROM criteria c WHERE c.name='criteria_age_1';
 SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE PROVIDERS
-SELECT p.id FROM provider p WHERE p.name='provider_1' INTO provider_1_id;
+SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1';
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_comm';
-SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_hix';
+SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
+SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 
 
 -----INSERTS-----
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, commercial_health_plan_type_id, drug_1) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    PERFORM common_create_atomic_steps('Custom_Option_1', 1, 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Custom_Option_1', '1', 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE, atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, null, null);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, null, null);
 
 
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    PERFORM common_create_atomic_steps('Custom_Option_1', '1', 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Custom_Option_1', '1', 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 2, null, null);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 2, null, null);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_2, provider_1, commercial_health_plan_type, drug_6) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_2, provider_1_id, commercial_health_plan_type, drug_6) INTO data_entry_id;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 18, null);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 18, null);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_1) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_1) INTO data_entry_id;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_unspecified, TRUE, NULL, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_unspecified, TRUE, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_4) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    PERFORM common_create_atomic_steps('Fail any one: Custom_Option_1, Custom_Option_2', 'Fail any one: 1, 2', 1, 'PA/Medical', 'Fail any one: Custom_Option_1^1, Custom_Option_2^2') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Fail any one: Custom_Option_1, Custom_Option_2', 'Fail any one: 1, 2', 1, 'PA/Medical', 'Fail any one: Custom_Option_1^1, Custom_Option_2^2') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, NULL, NULL);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_clinical_1, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1, TRUE, 1, NULL, NULL);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 10, 30);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 10, 30);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 1, NULL, NULL);
 
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_2) INTO data_entry_id;--already exists returns existing id
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id;--already exists returns existing id
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	SELECT common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, NULL, NULL);
 
 success=true;
 return success;

@@ -30,10 +30,10 @@ SELECT i.id from indications i WHERE i.name='indication_3' INTO indication_3_id;
 SELECT i.id from indications i WHERE i.name='indication_4' INTO indication_4_id;
 SELECT i.id from indications i WHERE i.name='indication_5' INTO indication_5_id;
 
-SELECT co.id INTO custom_option_1 FROM custom_options co WHERE co.name='custom_option_1');
-SELECT co.id INTO custom_option_2 FROM custom_options co WHERE co.name='custom_option_2');
-SELECT co.id INTO custom_option_3 FROM custom_options co WHERE co.name='custom_option_3');
-SELECT co.id INTO custom_option_4 FROM custom_options co WHERE co.name='custom_option_4');
+SELECT co.id INTO custom_option_1 FROM custom_options co WHERE co.name='custom_option_1';
+SELECT co.id INTO custom_option_2 FROM custom_options co WHERE co.name='custom_option_2';
+SELECT co.id INTO custom_option_3 FROM custom_options co WHERE co.name='custom_option_3';
+SELECT co.id INTO custom_option_4 FROM custom_options co WHERE co.name='custom_option_4';
 
 --RETRIEVE DRUG IDS
 SELECT d.id INTO drug_8 FROM ff.drugs_import d WHERE d.name='drug_8';

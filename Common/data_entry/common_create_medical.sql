@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION common_create_medical(new_data_entry_id INTEGER, new_active BOOLEAN, new atomic_step_id INTEGER) --DATA ENTRY
+CREATE OR REPLACE FUNCTION common_create_medical(new_data_entry_id INTEGER, new_active BOOLEAN, new_atomic_step_id INTEGER) --DATA ENTRY
 RETURNS INTEGER AS $$
 DECLARE
 medical_id INTEGER DEFAULT NULL;
@@ -17,7 +17,7 @@ IF medical_id IS NULL THEN
       VALUES ( null, null, null, new_data_entry_id,
               current_timestamp, current_timestamp, null, null, null,
               null, null, new_active, new_active,null,
-              atomic_step_id) RETURNING id INTO medical_id;
+              new_atomic_step_id) RETURNING id INTO medical_id;
   RETURN medical_id;
 ELSE
   RETURN medical_id;

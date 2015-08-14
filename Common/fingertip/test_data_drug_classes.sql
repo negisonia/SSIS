@@ -8,6 +8,8 @@ BEGIN
 PERFORM common_create_drugclass(TRUE,'drug_class_1');
 PERFORM common_create_drugclass(TRUE,'drug_class_2');
 PERFORM common_create_drugclass(TRUE,'drug_class_3');
+PERFORM common_create_drugclass(TRUE,'drug_class_4');
+PERFORM common_create_drugclass(TRUE,'drug_class_5');
 
 success=true;
 return success;

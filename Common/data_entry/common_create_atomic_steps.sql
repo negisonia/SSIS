@@ -4,7 +4,7 @@ DECLARE
 atomic_step_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT a.id INTO atomic_step_id FROM atomic_steps a WHERE a.label=new_label and a.key = new_key and a.number_of_steps=new_number_steps and a.data_entry_type=new_data_entry_type and a.new_label_with_sequence=new_label_with_sequence;
+SELECT a.id INTO atomic_step_id FROM atomic_steps a WHERE a.label=new_label and a.key = new_key and a.number_of_steps=new_number_steps and a.data_entry_type=new_data_entry_type and a.label_with_seq=new_label_with_sequence;
 
 IF atomic_step_id IS NULL THEN
     INSERT INTO public.atomic_steps(label, key, number_of_steps, data_entry_type, label_with_seq)

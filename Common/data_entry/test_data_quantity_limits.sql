@@ -41,6 +41,8 @@ hix_health_plan_type INTEGER;
 data_entry_id INTEGER;
 quantity_limit_id INTEGER;
 
+provider_1_id INTEGER;
+
 BEGIN
 
 --RETRIEVE INDICATIONS
@@ -80,20 +82,20 @@ SELECT c.id INTO criteria_age_1 FROM criteria c WHERE c.name='criteria_age_1';
 SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE PROVIDERS
-SELECT p.id FROM provider p WHERE p.name='provider_1' INTO provider_1_id;
+SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1' ;
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_comm';
-SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_hix';
+SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
+SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 
 --INSERT QUANTITY LIMITS
-SELECT common_create_data_entry(indication_2, provider_1, commercial_health_plan_type, drug_6) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_data_entry(indication_2, provider_1_id, commercial_health_plan_type, drug_6) INTO data_entry_id;--already exists returns existing id
 SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
 PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 2,10,'tabs','week');
 
 
 --INSERT QUANTITY LIMITS
-SELECT common_create_data_entry(indication_1, provider_1, hix_health_plan_type, drug_3) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_3) INTO data_entry_id;--already exists returns existing id
 SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
 PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 1,10,'tabs','day');
 
