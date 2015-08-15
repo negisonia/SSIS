@@ -57,9 +57,6 @@ tier_2 INTEGER;
 tier_3 INTEGER;
 tier_3p INTEGER;
 tier_4 INTEGER;
-tier_001_id INTEGER;
-tier_002_id INTEGER;
-tier_003_id INTEGER;
 
 ql_qualifier INTEGER;
 pa_qualifier INTEGER;
@@ -119,9 +116,6 @@ BEGIN
     SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
     SELECT t.id INTO tier_3p FROM tier t WHERE t.name='tier_3p' ;
     SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
-    SELECT t.id INTO tier_001_id FROM tier t WHERE t.name='TIER_001';
-    SELECT t.id INTO tier_002_id FROM tier t WHERE t.name='TIER_002';
-    SELECT t.id INTO tier_003_id FROM tier t WHERE t.name='TIER_003';
 
     --RETRIEVE QUALIFIERS
     SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
@@ -152,23 +146,23 @@ BEGIN
     SELECT h.formularyfid INTO formulary_017_id FROM healthplan h WHERE h.name='TEST_PLAN_017';
 
     --INSERT FORMULARY ENTRIES
-    PERFORM common_create_formulary_entry(formulary_001_id, drug_001_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_002_id, drug_002_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_003_id, drug_001_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_004_id, drug_002_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_005_id, drug_001_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_006_id, drug_002_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_007_id, drug_001_id, tier_003_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_008_id, drug_003_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_009_id, drug_003_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_010_id, drug_003_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_011_id, drug_003_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_012_id, drug_003_id, tier_001_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_013_id, drug_003_id, tier_003_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_014_id, drug_003_id, tier_002_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_015_id, drug_003_id, tier_003_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_016_id, drug_003_id, tier_003_id, 0, FALSE);
-    PERFORM common_create_formulary_entry(formulary_017_id, drug_003_id, tier_003_id, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_001_id, drug_001_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_002_id, drug_002_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_003_id, drug_001_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_004_id, drug_002_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_005_id, drug_001_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_006_id, drug_002_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_007_id, drug_001_id, tier_3, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_008_id, drug_003_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_009_id, drug_003_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_010_id, drug_003_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_011_id, drug_003_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_012_id, drug_003_id, tier_1, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_013_id, drug_003_id, tier_3, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_014_id, drug_003_id, tier_2, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_015_id, drug_003_id, tier_3, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_016_id, drug_003_id, tier_3, 0, FALSE);
+    PERFORM common_create_formulary_entry(formulary_017_id, drug_003_id, tier_3, 0, FALSE);
 
     SELECT common_create_formulary_entry(formulary_comm_id, drug_1, tier_1, reason_code_92, NULL) INTO formulary_entry_id;--formulary entry 1
     --INSERT FORMULARY ENTRY QUALIFIERS

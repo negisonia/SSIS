@@ -23,9 +23,7 @@ PERFORM common_create_provider(TRUE,'provider_10',NULL);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_001', parent_001_id);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_002', parent_001_id);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_003', parent_001_id);
-PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_001', parent_001_id);
-PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_002', parent_001_id);
-PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_003', parent_001_id);
+PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_004', parent_001_id);
 
 success=true;
 return success;
