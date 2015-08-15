@@ -12,7 +12,7 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2015-06-08T22:05:12.8921885Z</Value>
+            <Value xsi:type="xsd:dateTime">2015-08-15T18:32:05.3031792Z</Value>
           </ConfigurationSetting>
         </ParameterConfigurationSensitiveValues>
       </Options>

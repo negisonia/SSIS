@@ -1,103 +1,52 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/8/2015 3:34:02 PM"
+  DTS:CreationDate="7/20/2015 11:29:52 AM"
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="GAPUSER-PC"
   DTS:CreatorName="gapuser-PC\gapuser"
-  DTS:DTSID="{F4AF2448-8874-427C-B59F-DA74ADA99263}"
+  DTS:DTSID="{8C27F94F-8E52-4997-98C5-AFF7D2BB3781}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{71606899-DBA8-4855-8100-40DCB9FBFDFF}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{963C06D2-6F9D-49A1-8C73-77CD3B5DC521}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[admin]"
+      DTS:refId="Package.ConnectionManagers[FF New]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{d07ad3d3-48c5-4af2-9634-da25a66cc4f3}"
-      DTS:ObjectName="admin">
+      DTS:DTSID="{947C3878-3BAF-440E-8B44-0EBC128EF1C5}"
+      DTS:ObjectName="FF New">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[dw_db_host] + ";uid=" + @[dw_db_username] + ";password=" + @[dw_db_password] + ";Database=" + @[admin_db] + ";port=5432;"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
-          <DTS:Password
-            DTS:Name="password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACVO4z1hswI2DopK9c0VUUKDgH/Q+4WX0S4nQW8MjT3qQAAAAAOgAAAAAIAACAAAAASycKklL2APo/kwrjzi/0sWBcgwXaD4GVuauQT64CqPTAAAAChSziGXPFxdpnTIDNymL738QhNtE3bXjdNGXzjqi3bWQHX6TvfohstzFbdRLZbBrtAAAAAE9R/pZVjRfsR/9sEOREgfhZ9m7ILmuQqcOy3rWMNluQoasEQDBbHtzYuR1F0BONlZjMQpii/DsI4kevEu78V3w</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[data_entry]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
-      DTS:ObjectName="data_entry">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[de_host] + ";uid=" + @[de_username] + ";password=" + @[de_password] + ";Database=" + @[de_db] + ";port=5432;"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_entry;port=5432;">
-          <DTS:Password
-            DTS:Name="password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADecXbz4K5NgENHA4NmAiQ7jtHhJE/n7g56KcahRXtqkgAAAAAOgAAAAAIAACAAAACEtjSlA24x2X8RZhd2YC5qydSrL2P3ykOgKLAtZFdH7zAAAADcW0MuRMbKJziwwJYFt0xkcmOEvw+F6i4wSKQKMd/MSGxHb/LlhNTXdCIZ68my1VVAAAAAjV1dWSfpKLD1I9UjqU1AgZzMbMriPEMVMsI8hY+LKhB+XzAeb0NGnLpwKiE4PfuR/cCD21nHLTRd7MpU/dRzUA</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[data_warehouse]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-      DTS:ObjectName="data_warehouse">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[dw_db_host] + ";uid=" + @[dw_db_username] + ";password=" + @[dw_db_password] + ";Database=" + @[dw_db] + ";port=5432;"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
-          <DTS:Password
-            DTS:Name="password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFxifBKAIz7FvxlK7L10Hr5vGgZhnCj4UnwC3a7b4eSAAAAAAOgAAAAAIAACAAAACymgNHt45mg17U1AlH2WDg1GzVE0GijXsVzNyZcYO/5DAAAABAq4kjUimXvSwxyt47dJjoQiI1ZVk8E3SvP8nNDLXH25NSjlsRM+HPio3MMoTgDXZAAAAAu5zYgUvSzOticbA6AQ6Dl1yDAxMyVWZl1xaxRXoiQM2XTiFx1PuI/dsdCuR/3sdITa+XbJ3MNzil6DsfVzdGQA</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ff_new]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-      DTS:ObjectName="ff_new">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[ff_db_host] + ";uid=" + @[ff_db_username] + ";password=" + @[ff_db_password] + ";Database=" + @[ff_db] + ";port=5432;"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_ff_new;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_ff_new;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACgVVK+I5mtRKS4W0LSvZUTQIovMLugnoAjACKU5musowAAAAAOgAAAAAIAACAAAAD0zFE2BVYMgCcPbqCMUL/q9un+7puKZbKSduvvldlL1DAAAADRxwmsdhND61RcaE1iI8WztN7QzfR6Vi7nmWyiXR2oIQ4tMB7iZAHZpwDWUQun8IVAAAAARdAHtf2D5ySU87sz+f5offKRpDgqhRaWkRJ3znHe2H2v/g7MybRRI9Ot+DATb+gbrGamdyJZgTv1CuVXaShRBg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB+uh/ju7EDKy/dqS2H9rQG1zs4jMzx7JhIn47Lzy1DjgAAAAAOgAAAAAIAACAAAAB2csOWED0npkkWOq50gmOBCzUSuabw//SPSK/2yU0WcjAAAADkQi+i3m1U16VFRoAoWXyrN0DG3nGU7wfnzMA4q/eWH7prB68eC2w/KwBjEzEp8pFAAAAAVJMDuaHALshx7KsLDFdiz6Lt25A4yZF5WaecKjNuFN41OKRvTbMSarqkWHAQV+GLiv5MYeY9g1tXGfRCVe5Ebg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[frontend]"
+      DTS:refId="Package.ConnectionManagers[Front End Analytics]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-      DTS:ObjectName="frontend">
+      DTS:DTSID="{E52AB5ED-B6E2-46D9-89A0-4E387CE577B3}"
+      DTS:ObjectName="Front End Analytics">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[dw_db_host] + ";uid=" + @[dw_db_username] + ";password=" + @[dw_db_password] + ";Database=" + @[fe_db] + ";port=5432;"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_front_end;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_front_end;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACnSlqHmgQoX2nUjxMW5VFLgOsqF79S4y3uzH/MhHe4NQAAAAAOgAAAAAIAACAAAAArZKopF6ULEruuKWZgylwjzd12T5wHEbiD780I8913cTAAAAC4MKW2pBGsomkDiuZeLukYMdeTiD1/TPSX/YpDGBPawsmz4lhBrqE9XzWM0W3ggUtAAAAAbNn0y4vF2s7K/QYYHtp6sKPJta6OGxASL3GFFfV9bG1oROPcbQVnknz88wMyepjisktRz8eVwDVrSuDvzUJhhw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADKsyLgU5L6/MJzAiVAjO62PjxX1osA3iJ4Fqtx+NugHgAAAAAOgAAAAAIAACAAAAAzKVbmKlVbc4e7vY35QqB3J8RZwnjc4HdvgnbtjwrIDDAAAABiG1n1GNIisK8okZ4jpdCoHulQ4egQkBhgBXNKfod2bL298qekM1iwjQDmXXZ/p95AAAAAB/oQBnMdRO+6KVmBRN2XMGGBG5GzQ6lBLlVSZ6x8sz4So32gknoeLmU27E8CLDGpEk9+5Gmgut8KhK7AEMp2zg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,916 +54,209 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DD464ACB-2761-4DB6-9F8A-DB42A0D36018}"
+      DTS:DTSID="{D3C56650-30CF-419C-B10F-AE54750EFEB1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="admin_db">
-      <DTS:VariableValue
-        DTS:DataType="8">sandbox_admin</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{6E14985C-FF85-4275-A538-4B216D98AD0D}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="de_db">
-      <DTS:VariableValue
-        DTS:DataType="8">sandbox_data_entry</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{010A349A-39B0-493D-A7AD-1ED3284E21F3}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="de_host">
-      <DTS:VariableValue
-        DTS:DataType="8">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{D7CD47AD-F746-4232-8C53-C72A70055074}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="de_password">
+      DTS:ObjectName="db_password">
       <DTS:VariableValue
         DTS:DataType="8">VsOCWIozIelwQcRgR4w3</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{59D4F1E0-FFA9-4E73-B568-EC6984297F5B}"
+      DTS:DTSID="{BFAAC75D-9BC2-4DAE-8BA0-52800737704B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="de_username">
+      DTS:ObjectName="db_prefix">
       <DTS:VariableValue
-        DTS:DataType="8">postgres</DTS:VariableValue>
+        DTS:DataType="8">sandbox</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{419BB28B-76D2-42AF-AAE6-58D7082A698F}"
+      DTS:DTSID="{2DD3CAEC-0DE8-4F63-B7DD-92E32E8BE555}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="dw_db">
-      <DTS:VariableValue
-        DTS:DataType="8">sandbox_data_warehouse</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{94308E4D-803C-4644-9E7B-D7B205036D47}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="dw_db_host">
+      DTS:ObjectName="db_server">
       <DTS:VariableValue
         DTS:DataType="8">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{044286A2-C9D6-43C1-82A6-0C5272C62E59}"
+      DTS:DTSID="{78C051A3-F96A-4301-9ACF-2E9D01CC9954}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="dw_db_password">
-      <DTS:VariableValue
-        DTS:DataType="8">VsOCWIozIelwQcRgR4w3</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{7D78E021-C949-4704-8307-A19869B2B9A6}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="dw_db_username">
+      DTS:ObjectName="db_username">
       <DTS:VariableValue
         DTS:DataType="8">postgres</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{879DB835-A717-46C7-8B71-53712B6F5E69}"
+      DTS:DTSID="{7B57D84D-2B6E-481B-8586-388150CEADFA}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="fe_db">
+      DTS:ObjectName="email_recipients">
       <DTS:VariableValue
-        DTS:DataType="8">sandbox_front_end</DTS:VariableValue>
+        DTS:DataType="8">imonge@growthaccelerationpartners.com</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B05B5A9E-B6A5-4036-A359-C98A1427BD16}"
-      DTS:IncludeInDebugDump="2345"
+      DTS:DTSID="{511A1490-53CC-4BD5-81CA-EDA7A219EF76}"
+      DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="ff_db">
+      DTS:ObjectName="Variable">
       <DTS:VariableValue
-        DTS:DataType="8">sandbox_ff_new</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{3DBE4708-A9D2-47A2-83DA-A19AEAA4EE75}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="ff_db_host">
-      <DTS:VariableValue
-        DTS:DataType="8">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{834A17BF-6F82-47C9-B89E-7F4771F72370}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="ff_db_password">
-      <DTS:VariableValue
-        DTS:DataType="8">VsOCWIozIelwQcRgR4w3</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{FD55E045-2EF8-45EF-9F60-63F03EBEB6C0}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="ff_db_username">
-      <DTS:VariableValue
-        DTS:DataType="8">postgres</DTS:VariableValue>
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Clear Data"
+      DTS:refId="Package\ETL Process"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{7259AFBC-FC55-463C-AC4F-CA559D2D7096}"
+      DTS:DTSID="{2BF86860-5BD0-492F-8499-31ABC773DEF9}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Clear Data">
+      DTS:ObjectName="ETL Process">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Clear Data\Clear Data Data_Entry"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{35F4D55A-55B0-44B8-919E-406D29C9A5E4}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package\ETL Process\Execute ETL Proccess A"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute ETL Process A"
+          DTS:DTSID="{680C05C3-A1C6-464A-8E96-3382FD53F1C2}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Clear Data Data_Entry"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Execute ETL Proccess A"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
-              SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>process_a_ssis.dtsx</PackageName>
+            </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Clear Data\Clear Data ff_new"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{102E9246-FBD5-450C-9197-99C8CFCD1999}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package\ETL Process\Execute ETL Process B"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute ETL Process B"
+          DTS:DTSID="{60E2BA48-290F-4758-8B24-E532771D31EC}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Clear Data ff_new"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Execute ETL Process B"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Clear Data\Clear log a"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{453386C2-62EB-41B0-96F3-E04E24B06305}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Clear log a"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE  log_etl_process" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Clear Data\Clear log b"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2F6D380D-39E5-422B-91B5-DD71C6D6CA09}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Clear log b"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE log_etl_process_b" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>process_b_ssis.dtsx</PackageName>
+            </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Clear Data.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\ETL Process.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{A2F4B24E-76DF-49B7-B54A-C5D5CE587E1E}"
-          DTS:From="Package\Clear Data\Clear log b"
+          DTS:DTSID="{5FAA3A36-4926-4E93-8CE2-29450ACDE320}"
+          DTS:From="Package\ETL Process\Execute ETL Process B"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Clear Data\Clear Data ff_new" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Clear Data.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{58310118-501E-45C0-97EC-27C04BB84CB8}"
-          DTS:From="Package\Clear Data\Clear log a"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Clear Data\Clear Data ff_new" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Clear Data.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{74AD2F6D-1B9A-4531-B073-E368449FA724}"
-          DTS:From="Package\Clear Data\Clear Data ff_new"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Clear Data\Clear Data Data_Entry" />
+          DTS:To="Package\ETL Process\Execute ETL Proccess A" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Create Data  Data_Entry"
+      DTS:refId="Package\Test Data Creation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{F16BE5D3-694E-4B33-AC8D-4397CB4418B3}"
+      DTS:DTSID="{21DAC454-48B9-48C2-ABF7-3E1C6D2C79FB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create Data  Data_Entry">
+      DTS:ObjectName="Test Data Creation">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Create Data  Data_Entry\Test 009 create test data"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{D8800433-27B4-45A5-BE60-EC85DF22FA19}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package\Test Data Creation\Insert Data"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Insert Data"
+          DTS:DTSID="{E691D73B-2AA9-42EE-B3AB-EE73331290E8}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Test 009 create test data"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Insert Data"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
-              SQLTask:SqlStatementSource="SELECT  restrictions_test_009_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data  Data_Entry\Test 011 create test data"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{8ABE6589-72C8-4FB0-B3D3-D9EBEC752AF4}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 011 create test data"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{94be7997-7cf2-4a60-9667-83ef65a722ac}"
-              SQLTask:SqlStatementSource="Select restrictions_test_011_create_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>insert_data.dtsx</PackageName>
+            </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{FD9572AF-071E-461A-9802-CBE3A6A141D7}"
-          DTS:From="Package\Create Data  Data_Entry\Test 009 create test data"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Create Data  Data_Entry\Test 011 create test data" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Create Data ff_new"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{B7F722FA-D111-464A-B16B-6CBFFED14FC1}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Create Data ff_new">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create drug classes"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B3B780D6-367A-4B47-852F-338DEFACD9F5}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create drug classes"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_drug_classes()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create drugs"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5D8932E2-20AD-48D5-8FF3-86EE72BF0EF5}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create drugs"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_drugs()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create drug_jcodes"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4ED18900-CA7E-4449-8AAB-B39D9D39F2D0}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create drug_jcodes"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_drug_jcodes()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create formularies"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{53E29927-AA70-4C4A-8D2D-D4069D1798F3}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create formularies"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_formularies()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create jcodes"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C9689240-4CF5-49AC-A755-E03945989C00}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create jcodes"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_jcodes()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create qualifiers"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DE712C82-F445-416C-8D9E-9A1A07F2D094}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create qualifiers"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_qualifiers()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create reason codes"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5A646964-092E-4031-AED4-D507D780DBD7}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create reason codes"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_reason_codes()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create tiers"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D6BC0D41-8B7F-4515-9F55-4D31CE96BEAE}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create tiers"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_tiers()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create_drug_drug_classes"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6746845F-308E-45ED-834F-E1953BEFCCA7}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create_drug_drug_classes"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_drug_drug_classes()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create_health_plans"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{BE9B8B42-D0E6-4C00-9173-2EA20C8C300C}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create_health_plans"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_health_plans()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create_health_plan_types"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0992215C-32A6-425A-99CE-CB6724BF7AB4}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create_health_plan_types"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_health_plan_types()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Create Data ff_new\create_providers"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{18175B20-996D-407B-8BE7-EC8CC1D5DC43}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="create_providers"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{daf5da46-2a7c-4cd1-92eb-86a2e3ede258}"
-              SQLTask:SqlStatementSource="select test_data_provider()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{844042B3-FCCA-4CFB-9893-008E52E1120C}"
-          DTS:From="Package\Create Data ff_new\create_providers"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Create Data ff_new\create_health_plans" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{2E9B891A-EFB5-4A5F-90D5-76DF93ECE138}"
-          DTS:From="Package\Create Data ff_new\create tiers"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Create Data ff_new\create reason codes" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 10]"
-          DTS:CreationName=""
-          DTS:DTSID="{249F49AC-A16A-44F2-BB83-8430FE3C325C}"
-          DTS:From="Package\Create Data ff_new\create_health_plans"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 10"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 11]"
-          DTS:CreationName=""
-          DTS:DTSID="{26628406-822F-4E4A-B255-5FFA7287621B}"
-          DTS:From="Package\Create Data ff_new\create qualifiers"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 11"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{E7767648-9266-44CB-849E-B9039CE47769}"
-          DTS:From="Package\Create Data ff_new\create_health_plan_types"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Create Data ff_new\create_health_plans" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{95EDAC80-1C3E-497C-8D9F-2D87BE223652}"
-          DTS:From="Package\Create Data ff_new\create drugs"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Create Data ff_new\create drug_jcodes" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 4]"
-          DTS:CreationName=""
-          DTS:DTSID="{E763B3EF-AE05-4CA8-B295-1841E36577D8}"
-          DTS:From="Package\Create Data ff_new\create jcodes"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 4"
-          DTS:To="Package\Create Data ff_new\create drug_jcodes" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 5]"
-          DTS:CreationName=""
-          DTS:DTSID="{4F9E0ED7-2FAB-4C3C-BFB9-CC328067CF28}"
-          DTS:From="Package\Create Data ff_new\create drugs"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 5"
-          DTS:To="Package\Create Data ff_new\create_drug_drug_classes" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 6]"
-          DTS:CreationName=""
-          DTS:DTSID="{3CA89284-EB61-4B77-A7BB-8A52517A077B}"
-          DTS:From="Package\Create Data ff_new\create drug classes"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 6"
-          DTS:To="Package\Create Data ff_new\create_drug_drug_classes" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 7]"
-          DTS:CreationName=""
-          DTS:DTSID="{DD2D9140-71DB-4A93-B0FE-3A18D840BBB2}"
-          DTS:From="Package\Create Data ff_new\create reason codes"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 7"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 8]"
-          DTS:CreationName=""
-          DTS:DTSID="{347BAF56-0016-43F1-A9BA-0E75CBFFADBB}"
-          DTS:From="Package\Create Data ff_new\create drug_jcodes"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 8"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Create Data ff_new.PrecedenceConstraints[Constraint 9]"
-          DTS:CreationName=""
-          DTS:DTSID="{D3CE8008-F08A-4DB6-85A6-6AD4B26E0222}"
-          DTS:From="Package\Create Data ff_new\create_drug_drug_classes"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 9"
-          DTS:To="Package\Create Data ff_new\create formularies" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\ETL PROCESS A"
-      DTS:CreationName="SSIS.ExecutePackageTask.3"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{EC849AC4-C2EF-4DD0-A1FF-71113467A16B}"
-      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="ETL PROCESS A"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>process_a_ssis.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\ETL PROCESS B"
-      DTS:CreationName="SSIS.ExecutePackageTask.3"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{3647F8E4-852E-4D5B-A457-1AC66433EDE8}"
-      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="ETL PROCESS B"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>process_b_ssis.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Validation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{4499C984-65EA-4449-B3A9-0B82687FB964}"
+      DTS:DTSID="{8412DB36-C5E2-4EEB-8380-22989A7B2992}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Validation\Test 001 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DC47D56C-A4AD-41C0-A4A4-DD542B838B4C}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package\Validation\Validate analytics"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Validate analytics"
+          DTS:DTSID="{9EB8D021-6E46-4522-891B-66546EF27251}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Test 001 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Validate analytics"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-              SQLTask:SqlStatementSource="select restrictions_test_001_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>validate_analytics.dtsx</PackageName>
+            </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Test 002 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{67409AA6-B097-494C-AE07-0AFB04D7D40E}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:refId="Package\Validation\Validate Restrictions"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Validate Restrictions"
+          DTS:DTSID="{E01935D9-A870-4C44-843E-DE27020573D0}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Test 002 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Validate Restrictions"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="select restrictions_test_002_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 003 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0DF440F6-CB37-4B78-A45C-D0BEB0D07191}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 003 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-              SQLTask:SqlStatementSource="SELECT restrictions_test_003_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 004 Validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{532F22E5-9B59-48B2-BBDD-A197EB10A9CA}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 004 Validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="select restrictions_test_004_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 005 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{B56ABADC-21C0-4169-93D2-727DFD4E7022}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 005 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-              SQLTask:SqlStatementSource="select restrictions_test_005_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 006 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{B4203454-E519-461A-8C3A-1938BB2C4BCC}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 006 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="SELECT  restrictions_test_006_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 009 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{2172417B-F33C-43EA-9F54-41ED903FAE58}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 009 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{d07ad3d3-48c5-4af2-9634-da25a66cc4f3}"
-              SQLTask:SqlStatementSource="SELECT  restrictions_test_009_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 010 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{FCC8CD8B-F01C-4009-9728-CF68D5454E0A}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 010 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="SELECT restrictions_test_010_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 07 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{F6AF1817-33FC-49E9-8B6D-73D38AA2C5DD}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 07 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{e2f3aa16-f624-4800-83b4-23a4b156dac4}"
-              SQLTask:SqlStatementSource="SELECT  restrictions_test_007_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Validation\Test 08 validation"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{66C93D58-CAFD-4BB1-A713-F896F74C8E0B}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Test 08 validation"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4232F93A-4E00-4106-B688-CB1C5BF7568B}"
-              SQLTask:SqlStatementSource="select restrictions_test_008_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>validate_restrictions.dtsx</PackageName>
+            </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{7D7E4EB0-B6C2-4BD1-B142-F8C0D5858DA2}"
-          DTS:From="Package\Validation\Test 001 validation"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Validation\Test 002 validation" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{8C46A936-58D8-470F-9FE6-4B90FB520C1E}"
-          DTS:From="Package\Validation\Test 003 validation"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Validation\Test 004 Validation" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{3BB66278-AA3C-493F-8228-75F473AB10D7}"
-          DTS:From="Package\Validation\Test 005 validation"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Validation\Test 006 validation" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{987FB559-2CB5-4CB7-B5BC-BA602E221E90}"
-          DTS:From="Package\Validation\Test 07 validation"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Validation\Test 08 validation" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 4]"
-          DTS:CreationName=""
-          DTS:DTSID="{0ED27697-52E4-4BF2-939D-8B2DC84C8FD8}"
-          DTS:From="Package\Validation\Test 009 validation"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 4"
-          DTS:To="Package\Validation\Test 010 validation" />
-      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{1110EB33-1D21-416A-955E-6E4742495A64}"
-      DTS:From="Package\Create Data ff_new"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Create Data  Data_Entry" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{AD255BBD-1A73-4F7D-9665-645DCB12FA33}"
-      DTS:From="Package\ETL PROCESS B"
+      DTS:DTSID="{20D05001-D63C-427A-8203-3BCB8D3DFDE9}"
+      DTS:From="Package\Test Data Creation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\ETL PROCESS A" />
+      DTS:To="Package\ETL Process" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E9FC1F4C-016A-404A-A18D-CA0FD553CBE3}"
-      DTS:From="Package\ETL PROCESS A"
+      DTS:DTSID="{6538B07F-F36D-4272-B497-2AC073DBBB86}"
+      DTS:From="Package\ETL Process"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Validation" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{AE1A93EA-0914-41EE-AB15-C8D6684A9E2F}"
-      DTS:From="Package\Clear Data"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Create Data ff_new" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{F5D2473C-B548-4AD2-B186-9861CCBBDC33}"
-      DTS:From="Package\Create Data  Data_Entry"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\ETL PROCESS B" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1027,105 +269,29 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186,42"
-          Id="Package\Clear Data\Clear Data Data_Entry"
-          TopLeft="159.777777777778,180.444444444444" />
+          Size="192,42"
+          Id="Package\ETL Process\Execute ETL Proccess A"
+          TopLeft="104.222222222222,89.3888888888888" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Clear Data\Clear Data ff_new"
-          TopLeft="166.888888888889,102.666666666667" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Clear Data\Clear log a"
-          TopLeft="83.7777777777778,21.7777777777778" />
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Clear Data\Clear log b"
-          TopLeft="272,22.8888888888889" />
+          Size="187,42"
+          Id="Package\ETL Process\Execute ETL Process B"
+          TopLeft="103.222222222222,8.55555555555571" />
         <EdgeLayout
-          Id="Package\Clear Data.PrecedenceConstraints[Constraint]"
-          TopLeft="338,64.8888888888889">
+          Id="Package\ETL Process.PrecedenceConstraints[Constraint]"
+          TopLeft="198.472222222222,50.5555555555557">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-61.777777777778,37.7777777777778"
+              EndConnector="0,38.8333333333331"
               Start="0,0"
-              End="-61.777777777778,30.2777777777778">
+              End="0,31.3333333333331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4502784407319" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.4502784407319"
-                    Point2="0,22.4502784407319"
-                    Point3="-4,22.4502784407319" />
-                  <mssgle:LineSegment
-                    End="-57.777777777778,22.4502784407319" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-57.777777777778,22.4502784407319"
-                    Point2="-61.777777777778,22.4502784407319"
-                    Point3="-61.777777777778,26.4502784407319" />
-                  <mssgle:LineSegment
-                    End="-61.777777777778,30.2777777777778" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clear Data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="149.277777777778,63.7777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74.2777777777775,38.8888888888889"
-              Start="0,0"
-              End="74.2777777777775,31.3888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.1105807478123" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.1105807478123"
-                    Point2="0,23.1105807478123"
-                    Point3="4,23.1105807478123" />
-                  <mssgle:LineSegment
-                    End="70.2777777777775,23.1105807478123" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.2777777777775,23.1105807478123"
-                    Point2="74.2777777777775,23.1105807478123"
-                    Point3="74.2777777777775,27.1105807478123" />
-                  <mssgle:LineSegment
-                    End="74.2777777777775,31.3888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Clear Data.PrecedenceConstraints[Constraint 2]"
-          TopLeft="251.333333333333,144.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.7777777777777"
-              Start="0,0"
-              End="0,28.2777777777777">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.2777777777777" />
+                    End="0,31.3333333333331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1137,723 +303,50 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="610,306"
-          Size="610,349"
-          Id="Package\Clear Data"
-          TopLeft="1858,100.777777777778" />
+          PanelSize="426,159"
+          Size="426,202"
+          Id="Package\ETL Process"
+          TopLeft="679.333333333333,389.777777777778" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\Create Data  Data_Entry\Test 009 create test data"
-          TopLeft="62,37.5454545454545" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Create Data  Data_Entry\Test 011 create test data"
-          TopLeft="61.181818181818,125" />
-        <EdgeLayout
-          Id="Package\Create Data  Data_Entry.PrecedenceConstraints[Constraint]"
-          TopLeft="161.090909090909,79.5454545454545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.4545454545453"
-              Start="0,0"
-              End="0,37.9545454545453">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.9545454545453" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="185,42"
+          Id="Package\Test Data Creation\Insert Data"
+          TopLeft="114,28.3333333333335" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="705,224"
-          Size="705,267"
-          Id="Package\Create Data  Data_Entry"
-          TopLeft="1796,961.5" />
+          PanelSize="412,125"
+          Size="412,168"
+          Id="Package\Test Data Creation"
+          TopLeft="683.833333333334,155.5" />
         <NodeLayout
-          Size="159,42"
-          Id="Package\Create Data ff_new\create_providers"
-          TopLeft="54,25" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\Create Data ff_new\create_health_plan_types"
-          TopLeft="224,25" />
+          Size="162,42"
+          Id="Package\Validation\Validate analytics"
+          TopLeft="46.666666666667,33.6666666666667" />
         <NodeLayout
           Size="176,42"
-          Id="Package\Create Data ff_new\create_health_plans"
-          TopLeft="122,92" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint]"
-          TopLeft="133.5,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="48.5,25"
-              Start="0,0"
-              End="48.5,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.8648648648649"
-                    Point2="0,14.8648648648649"
-                    Point3="4,14.8648648648649" />
-                  <mssgle:LineSegment
-                    End="44.5,14.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="44.5,14.8648648648649"
-                    Point2="48.5,14.8648648648649"
-                    Point3="48.5,18.8648648648649" />
-                  <mssgle:LineSegment
-                    End="48.5,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 2]"
-          TopLeft="325,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,25"
-              Start="0,0"
-              End="-87,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.8648648648649"
-                    Point2="0,14.8648648648649"
-                    Point3="-4,14.8648648648649" />
-                  <mssgle:LineSegment
-                    End="-83,14.8648648648649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83,14.8648648648649"
-                    Point2="-87,14.8648648648649"
-                    Point3="-87,18.8648648648649" />
-                  <mssgle:LineSegment
-                    End="-87,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Create Data ff_new\create drugs"
-          TopLeft="465,30" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Create Data ff_new\create drug classes"
-          TopLeft="791,30" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Create Data ff_new\create jcodes"
-          TopLeft="630,30" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Create Data ff_new\create drug_jcodes"
-          TopLeft="509,125" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 3]"
-          TopLeft="513,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.3333333333334,53"
-              Start="0,0"
-              End="54.3333333333334,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5668919469098" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5668919469098"
-                    Point2="0,26.5668919469098"
-                    Point3="4,26.5668919469098" />
-                  <mssgle:LineSegment
-                    End="50.3333333333334,26.5668919469098" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.3333333333334,26.5668919469098"
-                    Point2="54.3333333333334,26.5668919469098"
-                    Point3="54.3333333333334,30.5668919469098" />
-                  <mssgle:LineSegment
-                    End="54.3333333333334,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 4]"
-          TopLeft="701.5,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79.8333333333334,53"
-              Start="0,0"
-              End="-79.8333333333334,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.505214368482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.505214368482"
-                    Point2="0,31.505214368482"
-                    Point3="-4,31.505214368482" />
-                  <mssgle:LineSegment
-                    End="-75.8333333333334,31.505214368482" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.8333333333334,31.505214368482"
-                    Point2="-79.8333333333334,31.505214368482"
-                    Point3="-79.8333333333334,35.505214368482" />
-                  <mssgle:LineSegment
-                    End="-79.8333333333334,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="204,42"
-          Id="Package\Create Data ff_new\create_drug_drug_classes"
-          TopLeft="785,125" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 5]"
-          TopLeft="557,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="297.333333333333,53"
-              Start="0,0"
-              End="297.333333333333,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.6159737417943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.6159737417943"
-                    Point2="0,26.6159737417943"
-                    Point3="4,26.6159737417943" />
-                  <mssgle:LineSegment
-                    End="293.333333333333,26.6159737417943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="293.333333333333,26.6159737417943"
-                    Point2="297.333333333333,26.6159737417943"
-                    Point3="297.333333333333,30.6159737417943" />
-                  <mssgle:LineSegment
-                    End="297.333333333333,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 6]"
-          TopLeft="876.5,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="43.1666666666666,53"
-              Start="0,0"
-              End="43.1666666666666,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5525291828794" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5525291828794"
-                    Point2="0,31.5525291828794"
-                    Point3="4,31.5525291828794" />
-                  <mssgle:LineSegment
-                    End="39.1666666666666,31.5525291828794" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.1666666666666,31.5525291828794"
-                    Point2="43.1666666666666,31.5525291828794"
-                    Point3="43.1666666666666,35.5525291828794" />
-                  <mssgle:LineSegment
-                    End="43.1666666666666,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="134,42"
-          Id="Package\Create Data ff_new\create tiers"
-          TopLeft="1180,34.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Create Data ff_new\create reason codes"
-          TopLeft="1171,102" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1247,76.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.5,25.5"
-              Start="0,0"
-              End="11.5,18">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.75"
-                    Point2="0,12.75"
-                    Point3="4,12.75" />
-                  <mssgle:LineSegment
-                    End="7.5,12.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.5,12.75"
-                    Point2="11.5,12.75"
-                    Point3="11.5,16.75" />
-                  <mssgle:LineSegment
-                    End="11.5,18" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Create Data ff_new\create formularies"
-          TopLeft="562,251" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 7]"
-          TopLeft="1258.5,144">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-566.9,107"
-              Start="0,0"
-              End="-566.9,99.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.8727735368957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,70.8727735368957"
-                    Point2="0,74.8727735368957"
-                    Point3="-4,74.8727735368957" />
-                  <mssgle:LineSegment
-                    End="-562.9,74.8727735368957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-562.9,74.8727735368957"
-                    Point2="-566.9,74.8727735368957"
-                    Point3="-566.9,78.8727735368957" />
-                  <mssgle:LineSegment
-                    End="-566.9,99.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 8]"
-          TopLeft="594.5,167">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="34.3,84"
-              Start="0,0"
-              End="34.3,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.4166108506363" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.4166108506363"
-                    Point2="0,46.4166108506363"
-                    Point3="4,46.4166108506363" />
-                  <mssgle:LineSegment
-                    End="30.3,46.4166108506363" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30.3,46.4166108506363"
-                    Point2="34.3,46.4166108506363"
-                    Point3="34.3,50.4166108506363" />
-                  <mssgle:LineSegment
-                    End="34.3,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 9]"
-          TopLeft="887,167">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-226.8,84"
-              Start="0,0"
-              End="-226.8,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.4166108506363" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.4166108506363"
-                    Point2="0,46.4166108506363"
-                    Point3="-4,46.4166108506363" />
-                  <mssgle:LineSegment
-                    End="-222.8,46.4166108506363" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-222.8,46.4166108506363"
-                    Point2="-226.8,46.4166108506363"
-                    Point3="-226.8,50.4166108506363" />
-                  <mssgle:LineSegment
-                    End="-226.8,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 10]"
-          TopLeft="210,134">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="387.4,117"
-              Start="0,0"
-              End="387.4,109.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,77.8702290076336" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,77.8702290076336"
-                    Point2="0,81.8702290076336"
-                    Point3="4,81.8702290076336" />
-                  <mssgle:LineSegment
-                    End="383.4,81.8702290076336" />
-                  <mssgle:CubicBezierSegment
-                    Point1="383.4,81.8702290076336"
-                    Point2="387.4,81.8702290076336"
-                    Point3="387.4,85.8702290076336" />
-                  <mssgle:LineSegment
-                    End="387.4,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Create Data ff_new\create qualifiers"
-          TopLeft="992,31" />
-        <EdgeLayout
-          Id="Package\Create Data ff_new.PrecedenceConstraints[Constraint 11]"
-          TopLeft="1070,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-399.333333333333,178"
-              Start="0,0"
-              End="-399.333333333333,170.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,101.77430972389" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,101.77430972389"
-                    Point2="0,105.77430972389"
-                    Point3="-4,105.77430972389" />
-                  <mssgle:LineSegment
-                    End="-395.333333333333,105.77430972389" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-395.333333333333,105.77430972389"
-                    Point2="-399.333333333333,105.77430972389"
-                    Point3="-399.333333333333,109.77430972389" />
-                  <mssgle:LineSegment
-                    End="-399.333333333333,170.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Validation\Validate Restrictions"
+          TopLeft="236.666666666667,35.3333333333335" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1499,348"
-          Size="1499,391"
-          Id="Package\Create Data ff_new"
-          TopLeft="1245.80555555556,533.25" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\ETL PROCESS A"
-          TopLeft="2085.66666666667,1360.33333333333" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\ETL PROCESS B"
-          TopLeft="2081,1258.66666666667" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 001 validation"
-          TopLeft="70.7142857142862,24.5714285714287" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 002 validation"
-          TopLeft="69,96" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 003 validation"
-          TopLeft="281,26" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Validation\Test 004 Validation"
-          TopLeft="282,98" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 005 validation"
-          TopLeft="491,28" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 006 validation"
-          TopLeft="487,100" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 009 validation"
-          TopLeft="912.714285714285,30.9740259740261" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Validation\Test 010 validation"
-          TopLeft="915,98" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Validation\Test 07 validation"
-          TopLeft="695,31" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Validation\Test 08 validation"
-          TopLeft="698,100" />
-        <EdgeLayout
-          Id="Package\Validation.PrecedenceConstraints[Constraint]"
-          TopLeft="154.857142857143,66.5714285714287">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.4285714285713"
-              Start="0,0"
-              End="0,21.9285714285713">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.9285714285713" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Validation.PrecedenceConstraints[Constraint 1]"
-          TopLeft="366.75,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Validation.PrecedenceConstraints[Constraint 2]"
-          TopLeft="574,70">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Validation.PrecedenceConstraints[Constraint 3]"
-          TopLeft="779,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27"
-              Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Validation.PrecedenceConstraints[Constraint 4]"
-          TopLeft="998.857142857142,72.9740259740261">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25.0259740259739"
-              Start="0,0"
-              End="0,17.5259740259739">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5259740259739" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="1533,202"
-          Size="1533,245"
+          PanelSize="450,123"
+          Size="450,166"
           Id="Package\Validation"
-          TopLeft="1403.0018037518,1522.20490620491" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1995.30555555556,924.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.19444444444,37.25"
-              Start="0,0"
-              End="153.19444444444,29.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.625"
-                    Point2="0,18.625"
-                    Point3="4,18.625" />
-                  <mssgle:LineSegment
-                    End="149.19444444444,18.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.19444444444,18.625"
-                    Point2="153.19444444444,18.625"
-                    Point3="153.19444444444,22.625" />
-                  <mssgle:LineSegment
-                    End="153.19444444444,29.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="667.444444444445,695.277777777778" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="2161.33333333333,1300.66666666667">
+          TopLeft="891.083333333334,323.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.6666666666667"
+              EndConnector="0,66.2777777777776"
               Start="0,0"
-              End="0,52.1666666666667">
+              End="0,58.7777777777776">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.1666666666667" />
+                    End="0,58.7777777777776" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1864,86 +357,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="2166.58423520923,1402.33333333333">
+          TopLeft="892.388888888889,591.777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,119.871572871577"
+              EndConnector="0,103.5"
               Start="0,0"
-              End="0,112.371572871577">
+              End="0,96">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,112.371572871577" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="2163,449.777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-167.69444444444,83.472222222222"
-              Start="0,0"
-              End="-167.69444444444,75.972222222222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.736111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.736111111111"
-                    Point2="0,41.736111111111"
-                    Point3="-4,41.736111111111" />
-                  <mssgle:LineSegment
-                    End="-163.69444444444,41.736111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-163.69444444444,41.736111111111"
-                    Point2="-167.69444444444,41.736111111111"
-                    Point3="-167.69444444444,45.736111111111" />
-                  <mssgle:LineSegment
-                    End="-167.69444444444,75.972222222222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="2148.5,1228.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5,30.1666666666699"
-              Start="0,0"
-              End="10.5,22.6666666666699">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.083333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.083333333335"
-                    Point2="0,15.083333333335"
-                    Point3="4,15.083333333335" />
-                  <mssgle:LineSegment
-                    End="6.5,15.083333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,15.083333333335"
-                    Point2="10.5,15.083333333335"
-                    Point3="10.5,19.083333333335" />
-                  <mssgle:LineSegment
-                    End="10.5,22.6666666666699" />
+                    End="0,96" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
