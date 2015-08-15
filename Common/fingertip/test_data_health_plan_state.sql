@@ -4,6 +4,7 @@ DECLARE
 
 state_001_id INTEGER;
 state_002_id INTEGER;
+state_003_id INTEGER;
 state_ma_id INTEGER;
 state_ct_id INTEGER;
 
@@ -39,23 +40,23 @@ BEGIN
     SELECT common_get_table_id_by_name('state', 'Connecticut') INTO state_ct_id;
 
 --RETRIVE HEALTH PLANS
-    SELECT h.id into health_plan_001_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_001';
-    SELECT h.id into health_plan_002_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_002';
-    SELECT h.id into health_plan_003_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_003';
-    SELECT h.id into health_plan_004_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_004';
-    SELECT h.id into health_plan_005_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_005';
-    SELECT h.id into health_plan_006_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_006';
-    SELECT h.id into health_plan_007_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_007';
-    SELECT h.id into health_plan_008_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_008';
-    SELECT h.id into health_plan_009_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_009';
-    SELECT h.id into health_plan_010_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_010';
-    SELECT h.id into health_plan_011_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_011';
-    SELECT h.id into health_plan_012_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_012';
-    SELECT h.id into health_plan_013_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_013';
-    SELECT h.id into health_plan_014_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_014';
-    SELECT h.id into health_plan_015_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_015';
-    SELECT h.id into health_plan_016_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_016';
-    SELECT h.id into health_plan_017_id FROM healthplan h WHERE h.name='HEALTH_PLAN_TYPE_017';
+    SELECT h.id into health_plan_001_id FROM healthplan h WHERE h.name='TEST_PLAN_001';
+    SELECT h.id into health_plan_002_id FROM healthplan h WHERE h.name='TEST_PLAN_002';
+    SELECT h.id into health_plan_003_id FROM healthplan h WHERE h.name='TEST_PLAN_003';
+    SELECT h.id into health_plan_004_id FROM healthplan h WHERE h.name='TEST_PLAN_004';
+    SELECT h.id into health_plan_005_id FROM healthplan h WHERE h.name='TEST_PLAN_005';
+    SELECT h.id into health_plan_006_id FROM healthplan h WHERE h.name='TEST_PLAN_006';
+    SELECT h.id into health_plan_007_id FROM healthplan h WHERE h.name='TEST_PLAN_007';
+    SELECT h.id into health_plan_008_id FROM healthplan h WHERE h.name='TEST_PLAN_008';
+    SELECT h.id into health_plan_009_id FROM healthplan h WHERE h.name='TEST_PLAN_009';
+    SELECT h.id into health_plan_010_id FROM healthplan h WHERE h.name='TEST_PLAN_010';
+    SELECT h.id into health_plan_011_id FROM healthplan h WHERE h.name='TEST_PLAN_011';
+    SELECT h.id into health_plan_012_id FROM healthplan h WHERE h.name='TEST_PLAN_012';
+    SELECT h.id into health_plan_013_id FROM healthplan h WHERE h.name='TEST_PLAN_013';
+    SELECT h.id into health_plan_014_id FROM healthplan h WHERE h.name='TEST_PLAN_014';
+    SELECT h.id into health_plan_015_id FROM healthplan h WHERE h.name='TEST_PLAN_015';
+    SELECT h.id into health_plan_016_id FROM healthplan h WHERE h.name='TEST_PLAN_016';
+    SELECT h.id into health_plan_017_id FROM healthplan h WHERE h.name='TEST_PLAN_017';
 
   PERFORM common_create_health_plan_state(health_plan_001_id, state_001_id);
   PERFORM common_create_health_plan_state(health_plan_002_id, state_001_id);

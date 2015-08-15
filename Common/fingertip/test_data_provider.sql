@@ -8,7 +8,7 @@ success BOOLEAN:=FALSE;
 BEGIN
 
 --RETRIEVE PARENTS
-    SELECT p.id into parent_001_id FROM parent p WHERE p.name='PARENT_001';
+    SELECT p.id into parent_001_id FROM parents p WHERE p.name='PARENT_001';
 
 PERFORM common_create_provider(TRUE,'provider_1',NULL);
 PERFORM common_create_provider(TRUE,'provider_2',NULL);

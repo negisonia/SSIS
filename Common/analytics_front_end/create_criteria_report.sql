@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION create_criteria_report(report_id INTEGER, user_id INTEGER, client_id INTEGER, drug_class_id INTEGER, market_type_id INTEGER, selected_all_markets BOOLEAN, selected_all_drugs BOOLEAN, selected_all_plan_types BOOLEAN, drug_ids INTEGER[], health_plan_type_ids INTEGER[], market_type TEXT, market_ids INTEGER [])--FRONT END
+CREATE OR REPLACE FUNCTION create_criteria_report(report_id INTEGER, user_id INTEGER, view_type_id INTEGER, drug_class_id INTEGER, market_type_id INTEGER, selected_all_markets BOOLEAN, selected_all_drugs BOOLEAN, selected_all_plan_types BOOLEAN, drug_ids INTEGER[], health_plan_type_ids INTEGER[], market_type TEXT, market_ids INTEGER [], custom_account_id INTEGER, geography TEXT)--FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 criteria_report_id integer DEFAULT NULL;
@@ -11,8 +11,8 @@ IF ((market_type = 'State') or (market_type = 'County') or (market_type = 'Metro
 END IF;
 
 --INSERT RECORD INTO CRITERIA REPORTS
-INSERT INTO criteria_reports(report_id, user_id, client_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types) 
-                      VALUES(report_id, user_id, client_id, drug_class_id, now(), now(), market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types) RETURNING id INTO criteria_report_id;
+INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id, geography) 
+                      VALUES(report_id, user_id, view_type_id, drug_class_id, now(), now(), market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id, geography) RETURNING id INTO criteria_report_id;
 
 --VALIDATE REPORT ID IS NOT NULL
 IF criteria_report_id IS null THEN

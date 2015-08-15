@@ -37,6 +37,7 @@ provider_10_id INTEGER;
 provider_001_id INTEGER;
 provider_002_id INTEGER;
 provider_003_id INTEGER;
+provider_004_id INTEGER;
 
 commercial_hpt_id INTEGER;
 hix_hpt_id INTEGER;
@@ -72,6 +73,7 @@ BEGIN
     SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_001' INTO provider_001_id;
     SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_002' INTO provider_002_id;
     SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_003' INTO provider_003_id;
+    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_004' INTO provider_004_id;
 
 	--RETRIEVE HEALTH PLAN TYPES
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial' INTO commercial_hpt_id;
@@ -88,9 +90,9 @@ BEGIN
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='municipal_plan' INTO municipal_plan_hpt_id;
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='pbm' INTO pbm_hpt_id;
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial_inactive' INTO commercial_inactive_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_001', TRUE, FALSE) INTO health_plan_type_001_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_002', FALSE, TRUE) INTO health_plan_type_002_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_003', TRUE, FALSE) INTO health_plan_type_003_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_001' INTO health_plan_type_001_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_002' INTO health_plan_type_002_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_003' INTO health_plan_type_003_id;
 
     --FORMULARIES AND HEALTH PLANS
     SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_comm_id;--formulary 1
@@ -129,6 +131,7 @@ BEGIN
     PERFORM common_create_healthplan(municipal_plan_hpt_id,TRUE,'health_plan_mun',NULL,provider_4_id);
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',NULL,provider_10_id);
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',NULL,provider_1_id);
+    PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', formulary_001_id, provider_001_id);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', formulary_002_id, provider_001_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_003', formulary_003_id, provider_002_id);

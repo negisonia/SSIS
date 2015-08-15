@@ -41,6 +41,9 @@ drug_8 INTEGER;
 drug_9 INTEGER;
 drug_10_inactive INTEGER;
 drug_11_inactive INTEGER;
+drug_001_id INTEGER;
+drug_002_id INTEGER;
+drug_003_id INTEGER;
 
 reason_code_92 INTEGER;
 reason_code_40 INTEGER;
@@ -54,11 +57,35 @@ tier_2 INTEGER;
 tier_3 INTEGER;
 tier_3p INTEGER;
 tier_4 INTEGER;
+tier_001_id INTEGER;
+tier_002_id INTEGER;
+tier_003_id INTEGER;
 
 ql_qualifier INTEGER;
 pa_qualifier INTEGER;
 st_qualifier INTEGER;
 or_qualifier INTEGER;
+
+formulary_comm_id INTEGER;
+formulary_hix_id INTEGER;
+formulary_com_inactive_id INTEGER;
+formulary_001_id INTEGER;
+formulary_002_id INTEGER;
+formulary_003_id INTEGER;
+formulary_004_id INTEGER;
+formulary_005_id INTEGER;
+formulary_006_id INTEGER;
+formulary_007_id INTEGER;
+formulary_008_id INTEGER;
+formulary_009_id INTEGER;
+formulary_010_id INTEGER;
+formulary_011_id INTEGER;
+formulary_012_id INTEGER;
+formulary_013_id INTEGER;
+formulary_014_id INTEGER;
+formulary_015_id INTEGER;
+formulary_016_id INTEGER;
+formulary_017_id INTEGER;
 
 BEGIN
 
@@ -150,7 +177,7 @@ BEGIN
 
     PERFORM common_create_formulary_entry(formulary_comm_id, drug_2, tier_3, reason_code_42, NULL);--formulary entry 3
     PERFORM common_create_formulary_entry(formulary_comm_id, drug_5, tier_4, reason_code_42, NULL);--formulary entry 7
-    PERFORM common_create_formulary_entry(formulary_comm_id, drug_6, tier_4, NULL, NULL) INTO formulary_entry_id;--formulary entry 8
+    SELECT common_create_formulary_entry(formulary_comm_id, drug_6, tier_4, NULL, NULL) INTO formulary_entry_id;--formulary entry 8
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, ql_qualifier);
