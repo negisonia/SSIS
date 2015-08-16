@@ -136,6 +136,8 @@ BEGIN
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId , drug_1 , tier_1 , TRUE, TRUE, FALSE,FALSE, NULL);
+
 
     SELECT common_create_formulary_entry(formularyId,drug_2,tier_3,reason_code_42,NULL) INTO formularyEntryId;--formulary entry 2
     SELECT common_create_formulary_entry(formularyId,drug_5,tier_4,reason_code_42,NULL) INTO formularyEntryId;--formulary entry 3
@@ -143,11 +145,13 @@ BEGIN
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_6, tier_4, TRUE, TRUE, FALSE,FALSE, NULL);
 
     SELECT common_create_formulary_entry(formularyId,drug_7,tier_4,NULL,NULL) INTO formularyEntryId;--formulary entry 5
     SELECT common_create_formulary_entry(formularyId,drug_11_inactive,tier_4,NULL,NULL) INTO formularyEntryId;--formulary entry 6
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_11_inactive, tier_4, FALSE, TRUE, FALSE,FALSE, NULL);
 
     --INSERT HEALTH PLAN
 
@@ -161,19 +165,24 @@ BEGIN
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_2, tier_2, FALSE, TRUE, TRUE,FALSE, NULL);
 
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_3p,reason_code_90,NULL) INTO formularyEntryId;--formulary entry 8
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_1, tier_3p, FALSE, TRUE, FALSE,FALSE, NULL);
+
 
     SELECT common_create_formulary_entry(formularyId,drug_3,tier_4,reason_code_41,NULL) INTO formularyEntryId;--formulary entry 9
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_3, tier_4, TRUE, FALSE, FALSE,FALSE, NULL);
 
     SELECT common_create_formulary_entry(formularyId,drug_4,tier_4,reason_code_60,NULL) INTO formularyEntryId;--formulary entry 10
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,or_qualifier);
+    PERFORM common_create_mv_active_formularies(formularyId, drug_4, tier_4, FALSE, FALSE, TRUE,TRUE, NULL);
 
     SELECT common_create_formulary_entry(formularyId,drug_11_inactive,tier_2,NULL,NULL) INTO formularyEntryId;--formulary entry 11
 
@@ -198,6 +207,7 @@ BEGIN
     SELECT common_create_formulary_entry(formularyId,drug_1,tier_1,reason_code_90,NULL) INTO formularyEntryId;--formulary entry 12
      --INSERT FORMULARY ENTRY QUALIFIERS
      PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
+     PERFORM common_create_mv_active_formularies(formularyId, drug_1, tier_1, FALSE,TRUE, FALSE,FALSE, NULL);
 
     SELECT common_create_formulary_entry(formularyId,drug_2,tier_3p,NULL,NULL) INTO formularyEntryId;
 

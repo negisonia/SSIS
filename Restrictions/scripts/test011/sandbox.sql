@@ -100,18 +100,7 @@ drug_class_1 integer;
 BEGIN
 
 --CREATE CRITERIAS
-PERFORM common_create_restriction('Diagnosis','PA');
-PERFORM common_create_restriction('Diagnosis','Medical');
-PERFORM common_create_restriction('Unspecified','PA');
-PERFORM common_create_restriction('Unspecified','Medical');
-PERFORM common_create_restriction('Exclusion','PA');
-PERFORM common_create_restriction('Exclusion','Medical');
-PERFORM common_create_restriction('Clinical','PA');
-PERFORM common_create_restriction('Clinical','Medical');
-PERFORM common_create_restriction('Labs','PA');
-PERFORM common_create_restriction('Labs','Medical');
-PERFORM common_create_restriction('Age','PA');
-PERFORM common_create_restriction('Age','Medical');
+
 PERFORM common_create_restriction('QL','QL');
 PERFORM common_create_restriction('PA','PA');
 PERFORM common_create_restriction('Medical','Medical');
@@ -146,22 +135,21 @@ PERFORM common_create_drug_class_indication(indication_1_id,drug_class_1);
 
 SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_1_id;
 
---SELECT common_create_custom_option('custom_option_1') INTO custom_option_1_id;
+SELECT common_create_custom_option('custom_option_1') INTO custom_option_1_id;
 
-SELECT common_create_step_custom_option(drug_1_id,'Drug') INTO step_custom_option_id_1;
+SELECT common_create_step_custom_option(custom_option_1_id,'CustomOption') INTO step_custom_option_id_1;
 
 --CREATE ATOMIC STEPS (new key = step_custom_option_id_1 ) confirmar
-SELECT common_create_atomic_steps('drug_1','1', 1, 'PA/Medical', 'drug_1^1') INTO atomic_step_id_1;
+SELECT common_create_atomic_steps('custom_option_1','1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id_1;
 
 --CREATE STEP NOTES
-PERFORM common_create_atomic_step_notes(data_entry_1_id,'PA/Medical','drug_1',1,step_custom_option_id_1,  'notes');
+PERFORM common_create_atomic_step_notes(data_entry_1_id,'PA/Medical','custom_option_1',1,step_custom_option_id_1,  'notes');
 
 PERFORM common_create_indications_step_custom_options(indication_1_id,step_custom_option_id_1);
 
 
 --CREATE PRIOR AUTHORIZATIONS
 SELECT common_create_prior_authorization(data_entry_1_id, TRUE,atomic_step_id_1) INTO prior_authorization_1_id;
-
 
 
 success=true;

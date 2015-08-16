@@ -92,7 +92,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     --INSERT DATA ENTRY
     SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id;--already exists returns existing id
     --INSERT ATOMIC STEPS
-    SELECT common_create_atomic_steps('Custom_Option_2', '2', 1, 'PA/Medical', 'Custom_Option_2^1 ') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('custom_option_2', '2', 1, 'PA/Medical', 'custom_option_2^1 ') INTO atomic_step_id ;
     --INSERT MEDICAL
     SELECT  common_create_medical(data_entry_id,TRUE,atomic_step_id) INTO medical_id;
     --INSERT MEDICAL CRITERIA

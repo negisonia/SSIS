@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION clear_test_data()--ADMIN
+﻿CREATE OR REPLACE FUNCTION clear_test_data() --FFNEW
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
@@ -25,6 +25,7 @@ BEGIN
   TRUNCATE TABLE qualifier CASCADE;
   TRUNCATE TABLE reasoncode CASCADE;
   TRUNCATE TABLE healthplanstate CASCADE;
+  TRUNCATE TABLE mv_active_formularies CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
