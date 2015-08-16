@@ -100,7 +100,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE, atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
 	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, null, null);
-
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 
 --CREATE DATA ENTRY
@@ -111,6 +111,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
 	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 2, null, null);
+	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_2, provider_1_id, commercial_health_plan_type, drug_6) INTO data_entry_id;
@@ -118,6 +119,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
 	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 18, null);
+
 
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_1) INTO data_entry_id;
@@ -134,6 +136,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
 	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, NULL, NULL);
+	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;--already exists returns existing id

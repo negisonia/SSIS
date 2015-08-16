@@ -28,6 +28,7 @@ BEGIN
   TRUNCATE TABLE metrostatarea CASCADE;
   TRUNCATE TABLE county CASCADE;
   TRUNCATE TABLE healthplancounty CASCADE;
+  TRUNCATE TABLE mv_active_formularies CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
