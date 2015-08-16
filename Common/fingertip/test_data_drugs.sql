@@ -16,7 +16,9 @@ PERFORM common_create_drug(TRUE,TRUE,'drug_8');
 PERFORM common_create_drug(TRUE,TRUE,'drug_9');
 PERFORM common_create_drug(FALSE,TRUE,'drug_10_inactive');
 PERFORM common_create_drug(FALSE,TRUE,'drug_11_inactive');
-
+PERFORM common_create_drug(TRUE, FALSE, 'DRUG_001');
+PERFORM common_create_drug(TRUE, FALSE, 'DRUG_002');
+PERFORM common_create_drug(TRUE, FALSE, 'DRUG_003');
 
 success=true;
 return success;

@@ -2,8 +2,27 @@ CREATE OR REPLACE FUNCTION test_data_health_plans() --FF NEW
 RETURNS boolean AS $$
 DECLARE
 success BOOLEAN:=FALSE;
-formularyEntryId INTEGER;
-formularyId INTEGER;
+
+formulary_comm_id INTEGER;
+formulary_hix_id INTEGER;
+formulary_com_inactive_id INTEGER;
+formulary_001_id INTEGER;
+formulary_002_id INTEGER;
+formulary_003_id INTEGER;
+formulary_004_id INTEGER;
+formulary_005_id INTEGER;
+formulary_006_id INTEGER;
+formulary_007_id INTEGER;
+formulary_008_id INTEGER;
+formulary_009_id INTEGER;
+formulary_010_id INTEGER;
+formulary_011_id INTEGER;
+formulary_012_id INTEGER;
+formulary_013_id INTEGER;
+formulary_014_id INTEGER;
+formulary_015_id INTEGER;
+formulary_016_id INTEGER;
+formulary_017_id INTEGER;
 
 provider_1_id INTEGER;
 provider_2_id INTEGER;
@@ -15,6 +34,10 @@ provider_7_id INTEGER;
 provider_8_id INTEGER;
 provider_9_id INTEGER;
 provider_10_id INTEGER;
+provider_001_id INTEGER;
+provider_002_id INTEGER;
+provider_003_id INTEGER;
+provider_004_id INTEGER;
 
 commercial_hpt_id INTEGER;
 hix_hpt_id INTEGER;
@@ -30,36 +53,9 @@ union_hpt_id INTEGER;
 municipal_plan_hpt_id INTEGER;
 pbm_hpt_id INTEGER;
 commercial_inactive_hpt_id INTEGER;
-
-drug_1 INTEGER;
-drug_2 INTEGER;
-drug_3 INTEGER;
-drug_4 INTEGER;
-drug_5 INTEGER;
-drug_6 INTEGER;
-drug_7 INTEGER;
-drug_8 INTEGER;
-drug_9 INTEGER;
-drug_10_inactive INTEGER;
-drug_11_inactive INTEGER;
-
-reason_code_92 INTEGER;
-reason_code_40 INTEGER;
-reason_code_42 INTEGER;
-reason_code_90 INTEGER;
-reason_code_41 INTEGER;
-reason_code_60 INTEGER;
-
-tier_1 INTEGER;
-tier_2 INTEGER;
-tier_3 INTEGER;
-tier_3p INTEGER;
-tier_4 INTEGER;
-
-ql_qualifier INTEGER;
-pa_qualifier INTEGER;
-st_qualifier INTEGER;
-or_qualifier INTEGER;
+health_plan_type_001_id INTEGER;
+health_plan_type_002_id INTEGER;
+health_plan_type_003_id INTEGER;
 
 BEGIN
 
@@ -74,7 +70,10 @@ BEGIN
 	SELECT p.id FROM provider p WHERE p.name='provider_8' INTO provider_8_id;
 	SELECT p.id FROM provider p WHERE p.name='provider_9' INTO provider_9_id;
 	SELECT p.id FROM provider p WHERE p.name='provider_10' INTO provider_10_id;
-
+    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_001' INTO provider_001_id;
+    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_002' INTO provider_002_id;
+    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_003' INTO provider_003_id;
+    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_004' INTO provider_004_id;
 
 	--RETRIEVE HEALTH PLAN TYPES
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial' INTO commercial_hpt_id;
@@ -91,103 +90,35 @@ BEGIN
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='municipal_plan' INTO municipal_plan_hpt_id;
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='pbm' INTO pbm_hpt_id;
     SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial_inactive' INTO commercial_inactive_hpt_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_001' INTO health_plan_type_001_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_002' INTO health_plan_type_002_id;
+    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_003' INTO health_plan_type_003_id;
 
-    --RETRIEVE REASON CODES
-    SELECT r.id INTO reason_code_92 FROM  reasoncode r WHERE r.code='92';
-    SELECT r.id INTO reason_code_40 FROM  reasoncode r WHERE r.code='40';
-    SELECT r.id INTO reason_code_42 FROM  reasoncode r WHERE r.code='42';
-    SELECT r.id INTO reason_code_90 FROM  reasoncode r WHERE r.code='90';
-    SELECT r.id INTO reason_code_41 FROM  reasoncode r WHERE r.code='41';
-    SELECT r.id INTO reason_code_60 FROM  reasoncode r WHERE r.code='60';
+    --FORMULARIES AND HEALTH PLANS
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_comm_id;--formulary 1
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_hix_id;--formulary 2
+    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formulary_com_inactive_id;--formulary 3
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_001_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_002_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_003_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_004_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_005_id;
+    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formulary_006_id;
+    SELECT common_create_formulary(TRUE,FALSE,3) INTO formulary_007_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_008_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_009_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_010_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_011_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_012_id;
+    SELECT common_create_formulary(TRUE,FALSE,3)      INTO formulary_013_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_014_id;
+    SELECT common_create_formulary(FALSE,FALSE,NULL)  INTO formulary_015_id;
+    SELECT common_create_formulary(TRUE,FALSE,NULL)   INTO formulary_016_id;
+    SELECT common_create_formulary(TRUE,FALSE,3)      INTO formulary_017_id;
 
-
-    --RETRIEVE DRUGS
-    SELECT d.id into drug_1 FROM drug d WHERE d.name='drug_1';
-    SELECT d.id into drug_2 FROM drug d WHERE d.name='drug_2';
-    SELECT d.id into drug_3 FROM drug d WHERE d.name='drug_3';
-    SELECT d.id into drug_4 FROM drug d WHERE d.name='drug_4';
-    SELECT d.id into drug_5 FROM drug d WHERE d.name='drug_5';
-    SELECT d.id into drug_6 FROM drug d WHERE d.name='drug_6';
-    SELECT d.id into drug_7 FROM drug d WHERE d.name='drug_7';
-    SELECT d.id into drug_8 FROM drug d WHERE d.name='drug_8';
-    SELECT d.id into drug_9 FROM drug d WHERE d.name='drug_9';
-    SELECT d.id into drug_10_inactive FROM drug d WHERE d.name='drug_10_inactive';
-    SELECT d.id into drug_11_inactive FROM drug d WHERE d.name='drug_11_inactive';
-
-    --RETRIEVE TIERS
-    SELECT t.id INTO tier_1 FROM tier t WHERE t.name='tier_1' ;
-    SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
-    SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
-    SELECT t.id INTO tier_3p FROM tier t WHERE t.name='tier_3p' ;
-    SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
-
-    --RETRIEVE QUALIFIERS
-    SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
-    SELECT q.id INTO pa_qualifier FROM qualifier q WHERE q.name='Prior Authorization';
-    SELECT q.id INTO st_qualifier FROM qualifier q WHERE q.name='Step Therapy';
-    SELECT q.id INTO or_qualifier FROM qualifier q WHERE q.name='Other Restrictions';
-
-    --INSERT HEALTH PLANS
-
-    ------INSERT FORMULARY 1------
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;--formulary 1
-    --INSERT FORMULARY ENTRIES
-    SELECT common_create_formulary_entry(formularyId,drug_1,tier_1,reason_code_92,NULL) INTO formularyEntryId;--formulary entry 1
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId , drug_1 , tier_1 , TRUE, TRUE, FALSE,FALSE, NULL);
-
-
-    SELECT common_create_formulary_entry(formularyId,drug_2,tier_3,reason_code_42,NULL) INTO formularyEntryId;--formulary entry 2
-    SELECT common_create_formulary_entry(formularyId,drug_5,tier_4,reason_code_42,NULL) INTO formularyEntryId;--formulary entry 3
-    SELECT common_create_formulary_entry(formularyId,drug_6,tier_4,NULL,NULL) INTO formularyEntryId;--formulary entry 4
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_6, tier_4, TRUE, TRUE, FALSE,FALSE, NULL);
-
-    SELECT common_create_formulary_entry(formularyId,drug_7,tier_4,NULL,NULL) INTO formularyEntryId;--formulary entry 5
-    SELECT common_create_formulary_entry(formularyId,drug_11_inactive,tier_4,NULL,NULL) INTO formularyEntryId;--formulary entry 6
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_11_inactive, tier_4, FALSE, TRUE, FALSE,FALSE, NULL);
-
-    --INSERT HEALTH PLAN
-
-    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm',formularyId,provider_1_id);
-
-
-    ------INSERT FORMULARY 2------
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formularyId;--formulary 2
-    --INSERT FORMULARY ENTRIES
-    SELECT common_create_formulary_entry(formularyId,drug_2,tier_2,reason_code_40,NULL) INTO formularyEntryId;--formulary entry 7
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_2, tier_2, FALSE, TRUE, TRUE,FALSE, NULL);
-
-    SELECT common_create_formulary_entry(formularyId,drug_1,tier_3p,reason_code_90,NULL) INTO formularyEntryId;--formulary entry 8
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_1, tier_3p, FALSE, TRUE, FALSE,FALSE, NULL);
-
-
-    SELECT common_create_formulary_entry(formularyId,drug_3,tier_4,reason_code_41,NULL) INTO formularyEntryId;--formulary entry 9
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,ql_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_3, tier_4, TRUE, FALSE, FALSE,FALSE, NULL);
-
-    SELECT common_create_formulary_entry(formularyId,drug_4,tier_4,reason_code_60,NULL) INTO formularyEntryId;--formulary entry 10
-    --INSERT FORMULARY ENTRY QUALIFIERS
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,st_qualifier);
-    PERFORM common_create_formulary_entry_qualifier(formularyEntryId,or_qualifier);
-    PERFORM common_create_mv_active_formularies(formularyId, drug_4, tier_4, FALSE, FALSE, TRUE,TRUE, NULL);
-
-    SELECT common_create_formulary_entry(formularyId,drug_11_inactive,tier_2,NULL,NULL) INTO formularyEntryId;--formulary entry 11
-
-    PERFORM common_create_healthplan(hix_hpt_id,TRUE,'health_plan_hix',formularyId,provider_1_id);
-
+    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm',formulary_comm_id,provider_1_id);
+    PERFORM common_create_healthplan(hix_hpt_id,TRUE,'health_plan_hix',formulary_hix_id,provider_1_id);
+    PERFORM common_create_healthplan(commercial_inactive_hpt_id,FALSE,'health_plan_com_inactive',formulary_com_inactive_id,provider_1_id);
     PERFORM common_create_healthplan(commercial_bcbs_hpt_id,TRUE,'health_plan_bcbs',NULL,provider_7_id);
     PERFORM common_create_healthplan(employer_hpt_id,TRUE,'health_plan_empl',NULL,provider_3_id);
     PERFORM common_create_healthplan(medicare_ma_hpt_id,TRUE,'health_plan_ma',NULL,provider_7_id);
@@ -200,18 +131,24 @@ BEGIN
     PERFORM common_create_healthplan(municipal_plan_hpt_id,TRUE,'health_plan_mun',NULL,provider_4_id);
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',NULL,provider_10_id);
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',NULL,provider_1_id);
-
-    --INSERT FORMULARY 3
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formularyId;--formulary 3
-    --INSERT FORMULARY ENTRY
-    SELECT common_create_formulary_entry(formularyId,drug_1,tier_1,reason_code_90,NULL) INTO formularyEntryId;--formulary entry 12
-     --INSERT FORMULARY ENTRY QUALIFIERS
-     PERFORM common_create_formulary_entry_qualifier(formularyEntryId,pa_qualifier);
-     PERFORM common_create_mv_active_formularies(formularyId, drug_1, tier_1, FALSE,TRUE, FALSE,FALSE, NULL);
-
-    SELECT common_create_formulary_entry(formularyId,drug_2,tier_3p,NULL,NULL) INTO formularyEntryId;
-
-    PERFORM common_create_healthplan(commercial_inactive_hpt_id,FALSE,'health_plan_com_inactive',formularyId,provider_1_id);
+    PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', formulary_001_id, provider_001_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', formulary_002_id, provider_001_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_003', formulary_003_id, provider_002_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_004', formulary_004_id, provider_002_id);
+    PERFORM common_create_healthplan(health_plan_type_003_id, TRUE, 'TEST_PLAN_005', formulary_005_id, provider_003_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, FALSE, 'TEST_PLAN_006', formulary_006_id, provider_003_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_007', formulary_007_id, provider_003_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_008', formulary_008_id, provider_002_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_009', formulary_009_id, provider_001_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_010', formulary_010_id, provider_002_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_011', formulary_011_id, provider_002_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_012', formulary_012_id, provider_003_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_013', formulary_013_id, provider_003_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_014', formulary_014_id, provider_004_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, FALSE,'TEST_PLAN_015', formulary_015_id, provider_004_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_016', formulary_016_id, provider_004_id);
+    PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_017', formulary_017_id, provider_004_id);
 
 success=true;
 return success;
