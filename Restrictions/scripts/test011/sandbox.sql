@@ -95,22 +95,40 @@ atomic_step_id_4 INTEGER;
 atomic_step_id_5 INTEGER;
 atomic_step_id_6 INTEGER;
 
+drug_class_1 integer;
+
 BEGIN
 
---RETRIEVE INDICATIONS IDS
-SELECT i.id INTO indication_1_id FROM indications i WHERE i.name='indication_1' and abbreviation = 'Ind1';
-SELECT i.id INTO indication_2_id FROM indications i WHERE i.name='indication_2' and abbreviation = 'Ind2';
-SELECT i.id INTO indication_3_id FROM indications i WHERE i.name='indication_3' and abbreviation = 'Ind3';
-SELECT i.id INTO indication_4_id FROM indications i WHERE i.name='indication_4' and abbreviation = 'Ind4';
-SELECT i.id INTO indication_5_id FROM indications i WHERE i.name='indication_5' and abbreviation = 'Ind5';
+--CREATE CRITERIAS
+PERFORM common_create_restriction('Diagnosis','PA');
+PERFORM common_create_restriction('Diagnosis','Medical');
+PERFORM common_create_restriction('Unspecified','PA');
+PERFORM common_create_restriction('Unspecified','Medical');
+PERFORM common_create_restriction('Exclusion','PA');
+PERFORM common_create_restriction('Exclusion','Medical');
+PERFORM common_create_restriction('Clinical','PA');
+PERFORM common_create_restriction('Clinical','Medical');
+PERFORM common_create_restriction('Labs','PA');
+PERFORM common_create_restriction('Labs','Medical');
+PERFORM common_create_restriction('Age','PA');
+PERFORM common_create_restriction('Age','Medical');
+PERFORM common_create_restriction('QL','QL');
+PERFORM common_create_restriction('PA','PA');
+PERFORM common_create_restriction('Medical','Medical');
+
+select common_create_indication('indication_1', 'Ind1') INTO indication_1_id;
+select common_create_indication('indication_2', 'Ind2')INTO indication_2_id;
+select common_create_indication('indication_3', 'Ind3') INTO indication_3_id;
+select common_create_indication('indication_4', 'Ind4') INTO indication_4_id;
+select common_create_indication('indication_5', 'Ind5') INTO indication_5_id;
 
 
 --RETRIEVE PROVIDER IDS
 SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1';
 
 --RETRIEVE HEALTH PLAN TYPE ID
-SELECT hpt.id INTO commercial_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_comm';
-SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='health_plan_hix';
+SELECT hpt.id INTO commercial_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
+SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 
 --RETRIEVE DRUG IDS
 SELECT d.id INTO drug_1_id FROM ff.drugs_import d WHERE d.name='drug_1';
@@ -121,55 +139,28 @@ SELECT d.id INTO drug_5_id FROM ff.drugs_import d WHERE d.name='drug_5';
 SELECT d.id INTO drug_6_id FROM ff.drugs_import d WHERE d.name='drug_6';
 SELECT d.id INTO drug_7_id FROM ff.drugs_import d WHERE d.name='drug_7';
 
---CREATE CRITERIAS
---SELECT common_create_criteria('criteria_diagnosis_1',FALSE,TRUE) INTO criteria_1_id;
+SELECT dc.id INTO drug_class_1 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_1';
 
---CREATE RESTRICTIONS
---SELECT common_create_restriction('Diagnosis','PA') INTO restriction_1_id;
+PERFORM common_create_drug_indication(indication_1_id,drug_1_id);
+PERFORM common_create_drug_class_indication(indication_1_id,drug_class_1);
 
---CREATE CRITERIA RESTRICTIONS
---PERFORM common_create_criteria_restriction(criteria_1_id,restriction_1_id);--criteria_diagnosis_1  - pa diagnosis
-
---CREATE CRITERIA INDICATIONS
---PERFORM common_create_criteria_indication(criteria_1_id,indication_1_id);
-
---CREATE DATA ENTRIES
 SELECT common_create_data_entry(indication_1_id,provider_1_id,commercial_health_plan_type_id,drug_1_id) INTO data_entry_1_id;
 
---CREATE PRIOR AUTHORIZATIONS
---SELECT common_create_prior_authorization(data_entry_1_id, TRUE) INTO prior_authorization_1_id;
+--SELECT common_create_custom_option('custom_option_1') INTO custom_option_1_id;
 
---CREATE PRIOR AUTHORIZATION CRITERIA
---PERFORM common_create_prior_authorization_criteria(prior_authorization_1_id,criteria_1_id,TRUE);
-
---CREATE MEDICALS
---SELECT common_create_medical(data_entry_2_id,TRUE) INTO medical_1_id;
-
---CREATE MEDICALS CRITERIA
---PERFORM common_create_medical_criteria(medical_1_id,criteria_3_id,TRUE);
-
---CREATE QUANTITY LIMITS
---SELECT common_create_quantity_limits(data_entry_5_id,TRUE) INTO  quantity_limit_1_id;
-
---CREATE QUANTITY LIMITS CRITERIA
---PERFORM common_create_quantity_limit_criteria(quantity_limit_1_id,criteria_13_id,TRUE,2,10,'tabs','week');
-
-
---CREATE CUSTOM OPTIONS
---SELECT common_create_custom_option('restriction_custom_option_1') INTO custom_option_1_id;
-
---CREATE STEP CUSTOM OPTIONS
-SELECT common_create_step_custom_option(drug_1_id,'Drug') INTO  step_custom_option_id_1;
+SELECT common_create_step_custom_option(drug_1_id,'Drug') INTO step_custom_option_id_1;
 
 --CREATE ATOMIC STEPS (new key = step_custom_option_id_1 ) confirmar
-SELECT common_create_atomic_steps(NULL,NULL, 0, 'ST', NULL) INTO atomic_step_id_1;
-
---CREATE STEP THERAPIES
---PERFORM  common_create_step_therapies(data_entry_1_id,NULL,TRUE,atomic_step_id_1);
-
+SELECT common_create_atomic_steps('drug_1','1', 1, 'PA/Medical', 'drug_1^1') INTO atomic_step_id_1;
 
 --CREATE STEP NOTES
---PERFORM common_create_atomic_step_notes(data_entry_1_id,'ST','drug_4',1,step_custom_option_id_1,  'Drug4 notes: notes for drug 4');
+PERFORM common_create_atomic_step_notes(data_entry_1_id,'PA/Medical','drug_1',1,step_custom_option_id_1,  'notes');
+
+PERFORM common_create_indications_step_custom_options(indication_1_id,step_custom_option_id_1);
+
+
+--CREATE PRIOR AUTHORIZATIONS
+SELECT common_create_prior_authorization(data_entry_1_id, TRUE,atomic_step_id_1) INTO prior_authorization_1_id;
 
 
 

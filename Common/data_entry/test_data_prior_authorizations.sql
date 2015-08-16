@@ -95,7 +95,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    SELECT common_create_atomic_steps('Custom_Option_1', '1', 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE, atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
@@ -106,7 +106,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    SELECT common_create_atomic_steps('Custom_Option_1', '1', 1, 'PA/Medical', 'Custom_Option_1^1') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
@@ -129,7 +129,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_4) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    SELECT common_create_atomic_steps('Fail any one: Custom_Option_1, Custom_Option_2', 'Fail any one: 1, 2', 1, 'PA/Medical', 'Fail any one: Custom_Option_1^1, Custom_Option_2^2') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('Fail any one: custom_option_1, custom_option_2', 'Fail any one: 1, 2', 1, 'PA/Medical', 'Fail any one: custom_option_1^1, custom_option_2^2') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
