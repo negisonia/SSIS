@@ -1,1 +1,0 @@
-# data-warehouse-storeprocedures-tests
