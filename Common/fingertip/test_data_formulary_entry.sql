@@ -172,6 +172,7 @@ BEGIN
     PERFORM common_create_formulary_entry(formulary_comm_id, drug_2, tier_3, reason_code_42, NULL);--formulary entry 3
     PERFORM common_create_formulary_entry(formulary_comm_id, drug_5, tier_4, reason_code_42, NULL);--formulary entry 7
     SELECT common_create_formulary_entry(formulary_comm_id, drug_6, tier_4, NULL, NULL) INTO formulary_entry_id;--formulary entry 8
+
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, ql_qualifier);
@@ -189,10 +190,10 @@ BEGIN
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, st_qualifier);
     PERFORM common_create_mv_active_formularies(formulary_hix_id, drug_2, tier_2, FALSE, TRUE, TRUE,FALSE, NULL);
 
-    SELECT common_create_formulary_entry(formulary_hix_id, drug_1, tier_3p, reason_code_90, NULL) INTO formulary_entry_id;--formulary entry 4
+    SELECT common_create_formulary_entry(formulary_hix_id, drug_1, tier_3, reason_code_90, NULL) INTO formulary_entry_id;--formulary entry 4
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
-    PERFORM common_create_mv_active_formularies(formulary_hix_id, drug_1, tier_3p, FALSE, TRUE, FALSE,FALSE, NULL);
+    PERFORM common_create_mv_active_formularies(formulary_hix_id, drug_1, tier_3, FALSE, TRUE, FALSE,FALSE, NULL);
 
     SELECT common_create_formulary_entry(formulary_hix_id, drug_3, tier_4, reason_code_41, NULL) INTO formulary_entry_id;--formulary entry 5
     --INSERT FORMULARY ENTRY QUALIFIERS
@@ -212,7 +213,7 @@ BEGIN
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     PERFORM common_create_mv_active_formularies(formulary_com_inactive_id, drug_1, tier_1, FALSE,TRUE, FALSE,FALSE, NULL);
 
-    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3p, NULL, NULL);
+    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
 
 success=true;
 return success;
