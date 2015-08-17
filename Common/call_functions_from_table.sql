@@ -1,3 +1,5 @@
+-- Dinamically calls the functions found in the table from the passed argument
+-- For FF New and Data Entry dbs
 CREATE OR REPLACE FUNCTION call_functions_from_table(functions_table VARCHAR)--ADMIN
 RETURNS boolean AS $$
 DECLARE

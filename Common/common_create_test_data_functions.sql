@@ -1,3 +1,5 @@
+-- Inserts function names into the test data functions table
+-- For Data Entry and FF New dbs
 CREATE OR REPLACE FUNCTION common_create_test_data_functions(function_name VARCHAR, function_order INTEGER) --FF_NEW DB
 RETURNS INTEGER AS $$
 DECLARE
@@ -18,4 +20,3 @@ END IF;
 
 END
 $$ LANGUAGE plpgsql;
-
