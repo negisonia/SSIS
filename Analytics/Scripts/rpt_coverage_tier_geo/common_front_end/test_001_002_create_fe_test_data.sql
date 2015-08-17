@@ -18,7 +18,7 @@ SELECT id from health_plan_types where name = 'HEALTH_PLAN_TYPE_002' limit 1 INT
 SELECT id from states where name = 'STATE_002' limit 1 INTO state_002_id;
 SELECT id from states where name = 'STATE_003' limit 1 INTO state_003_id;
 
-SELECT create_criteria_report(0,0,0,0,2,FALSE,FALSE,FALSE,ARRAY[drug_003_id],ARRAY[health_plan_type_001_id,health_plan_type_002_id],'State',ARRAY[state_002_id,state_003_id]) INTO criteria_report_id;
+SELECT create_criteria_report(0,0,0,0,2,FALSE,FALSE,FALSE,ARRAY[drug_003_id],ARRAY[health_plan_type_001_id,health_plan_type_002_id],'State',ARRAY[state_002_id,state_003_id],NULL,NULL) INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END
