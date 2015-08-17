@@ -38,7 +38,6 @@ health_plan_com_inactive INTEGER;
 tier_1 INTEGER;
 tier_2 INTEGER;
 tier_3 INTEGER;
-tier_3p INTEGER;
 tier_4 INTEGER;
 
 existsValue BOOLEAN;
@@ -84,7 +83,6 @@ SELECT hp.id INTO health_plan_com_inactive FROM ff.health_plans hp where hp.name
 SELECT t.id INTO tier_1 FROM ff.tier t WHERE t.name='tier_1';
 SELECT t.id INTO tier_2 FROM ff.tier t WHERE t.name='tier_2';
 SELECT t.id INTO tier_3 FROM ff.tier t WHERE t.name='tier_3';
-SELECT t.id INTO tier_3p FROM ff.tier t WHERE t.name='tier_3p';
 SELECT t.id INTO tier_4 FROM ff.tier t WHERE t.name='tier_4';
 
 --FORMULARY 1
@@ -121,8 +119,8 @@ END IF;
 
 --FORMULARY 4
 SELECT EXISTS(SELECT 1 FROM dw.formulary_detail fd WHERE fd.health_plan_id=health_plan_hix and fd.health_plan_name='health_plan_hix'
-              and fd.drug_id=drug_1 and fd.drug_name='drug_1' and fd.health_plan_type_id=hix_hpt_id and fd.health_plan_type_name='hix'
-              and fd.tier_id=tier_3P and fd.has_quantity_limit IS FALSE and fd.has_prior_authorization IS TRUE and fd.has_step_therapy IS FALSE and fd.has_other_restriction IS FALSE
+              and fd.drug_id=drug_1 and fd.drug_name='drug_1' and fd.health_plan_type_id=hix_hpt_id and fd.health_plan_type_name='hix' and fd.preferred_brand_tier_id=3
+              and fd.tier_id=tier_3 and fd.has_quantity_limit IS FALSE and fd.has_prior_authorization IS TRUE and fd.has_step_therapy IS FALSE and fd.has_other_restriction IS FALSE
               and fd.reason_code_code='90' and fd.reason_code_desc='PA not required on initial fill.') INTO existsValue;
 
 IF existsValue IS FALSE THEN
@@ -182,7 +180,7 @@ IF existsValue IS FALSE THEN
 END IF;
 
 --FORMULARY 10
-SELECT EXISTS(SELECT 1 FROM dw.formulary_detail fd WHERE fd.health_plan_id=health_plan_com_inactive and fd.health_plan_name='health_plan_com_inactive' and fd.drug_id=drug_2 and fd.tier_id=tier_3p) INTO existsValue;
+SELECT EXISTS(SELECT 1 FROM dw.formulary_detail fd WHERE fd.health_plan_id=health_plan_com_inactive and fd.health_plan_name='health_plan_com_inactive' and fd.drug_id=drug_2 and fd.tier_id=tier_3 and fd.preferred_brand_tier_id=3) INTO existsValue;
 
 IF existsValue IS TRUE THEN
     select throw_error('FORMULARY#10 SHOULD NOT EXISTS');

@@ -55,7 +55,6 @@ reason_code_60 INTEGER;
 tier_1 INTEGER;
 tier_2 INTEGER;
 tier_3 INTEGER;
-tier_3p INTEGER;
 tier_4 INTEGER;
 
 ql_qualifier INTEGER;
@@ -114,7 +113,6 @@ BEGIN
     SELECT t.id INTO tier_1 FROM tier t WHERE t.name='tier_1' ;
     SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
     SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
-    SELECT t.id INTO tier_3p FROM tier t WHERE t.name='tier_3p' ;
     SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
 
     --RETRIEVE QUALIFIERS
@@ -164,7 +162,6 @@ BEGIN
     PERFORM common_create_formulary_entry(formulary_016_id, drug_003_id, tier_3, 0, FALSE);
     PERFORM common_create_formulary_entry(formulary_017_id, drug_003_id, tier_3, 0, FALSE);
 
-    --------------
     SELECT common_create_formulary_entry(formulary_comm_id, drug_1, tier_1, reason_code_92, NULL) INTO formulary_entry_id;--formulary entry 1
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id,pa_qualifier);

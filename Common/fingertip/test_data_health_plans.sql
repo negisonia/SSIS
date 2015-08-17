@@ -96,8 +96,8 @@ BEGIN
 
     --FORMULARIES AND HEALTH PLANS
     SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_comm_id;--formulary 1
-    SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_hix_id;--formulary 2
-    SELECT common_create_formulary(FALSE,FALSE,NULL) INTO formulary_com_inactive_id;--formulary 3
+    SELECT common_create_formulary(TRUE,FALSE,3) INTO formulary_hix_id;--formulary 2
+    SELECT common_create_formulary(FALSE,FALSE,3) INTO formulary_com_inactive_id;--formulary 3
     SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_001_id;
     SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_002_id;
     SELECT common_create_formulary(TRUE,FALSE,NULL) INTO formulary_003_id;
