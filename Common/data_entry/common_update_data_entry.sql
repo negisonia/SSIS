@@ -10,12 +10,14 @@ BEGIN
   SELECT EXISTS ( SELECT 1 FROM data_entries d WHERE d.id=data_entry_id) INTO valueExists;
   IF valueExists IS TRUE THEN
       UPDATE data_entries
-       SET prior_authorization_id=new_prior_authorization_id, quantity_limit_id=new_quantity_limit_id,
-           other_restriction_id=new_other_restriction_id, step_therapy_id=new_step_therapy_id,
-           medical_id=new_medical_id
+       SET prior_authorization_id= CASE WHEN new_prior_authorization_id IS NOT NULL THEN new_prior_authorization_id ELSE prior_authorization_id END,
+           quantity_limit_id=CASE WHEN new_quantity_limit_id IS NOT NULL THEN new_quantity_limit_id ELSE quantity_limit_id END,
+           other_restriction_id= CASE WHEN new_other_restriction_id IS NOT NULL THEN new_other_restriction_id ELSE other_restriction_id END,
+           step_therapy_id=CASE WHEN new_step_therapy_id IS NOT NULL THEN new_step_therapy_id ELSE step_therapy_id END,
+           medical_id= CASE WHEN new_medical_id IS NOT NULL THEN new_medical_id ELSE medical_id END;
      WHERE id=data_entry_id;
   ELSE
-     select throw_error('data entry does not exists');
+     select throw_error('data entry does not exists')
   END IF;
 
 success:=TRUE;
