@@ -36,21 +36,21 @@ criteria_ql_1 INTEGER;
 BEGIN
 
 --RETRIEVE RESTRICTIONS
-SELECT r.id INTO pa_diagnosis_id  WHERE r.name='Diagnosis' and r.category ='PA';
-SELECT r.id INTO medical_diagnosis_id  WHERE r.name='Diagnosis' and r.category ='Medical';
-SELECT r.id INTO pa_unspecified_id  WHERE r.name='Unspecified' and r.category ='PA';
-SELECT r.id INTO medical_unspecified_id  WHERE r.name='Unspecified' and r.category ='Medical';
-SELECT r.id INTO pa_exclusion_id  WHERE r.name='Exclusion' and r.category ='PA';
-SELECT r.id INTO medical_exclusion_id  WHERE r.name='Exclusion' and r.category ='Medical';
-SELECT r.id INTO pa_clinical_id  WHERE r.name='Clinical' and r.category ='PA';
-SELECT r.id INTO medical_clinical_id  WHERE r.name='Clinical' and r.category ='Medical';
-SELECT r.id INTO pa_labs_id  WHERE r.name='Labs' and r.category ='PA';
-SELECT r.id INTO medical_labs_id  WHERE r.name='Labs' and r.category ='Medical';
-SELECT r.id INTO pa_age_id  WHERE r.name='Age' and r.category ='PA';
-SELECT r.id INTO medical_age_id  WHERE r.name='Age' and r.category ='Medical';
-SELECT r.id INTO ql_ql_id  WHERE r.name='QL' and r.category ='QL';
-SELECT r.id INTO pa_pa_id  WHERE r.name='PA' and r.category ='PA';
-SELECT r.id INTO medical_medical_id  WHERE r.name='Medical' and r.category ='Medical';
+SELECT r.id INTO pa_diagnosis_id FROM restrictions r WHERE r.name='Diagnosis' and r.category ='PA';
+SELECT r.id INTO medical_diagnosis_id FROM restrictions r WHERE r.name='Diagnosis' and r.category ='Medical';
+SELECT r.id INTO pa_unspecified_id FROM restrictions r  WHERE r.name='Unspecified' and r.category ='PA';
+SELECT r.id INTO medical_unspecified_id  FROM restrictions r WHERE r.name='Unspecified' and r.category ='Medical';
+SELECT r.id INTO pa_exclusion_id  FROM restrictions r WHERE r.name='Exclusion' and r.category ='PA';
+SELECT r.id INTO medical_exclusion_id FROM restrictions r  WHERE r.name='Exclusion' and r.category ='Medical';
+SELECT r.id INTO pa_clinical_id FROM restrictions r  WHERE r.name='Clinical' and r.category ='PA';
+SELECT r.id INTO medical_clinical_id FROM restrictions r WHERE r.name='Clinical' and r.category ='Medical';
+SELECT r.id INTO pa_labs_id  FROM restrictions r WHERE r.name='Labs' and r.category ='PA';
+SELECT r.id INTO medical_labs_id FROM restrictions r  WHERE r.name='Labs' and r.category ='Medical';
+SELECT r.id INTO pa_age_id  FROM restrictions r WHERE r.name='Age' and r.category ='PA';
+SELECT r.id INTO medical_age_id  FROM restrictions r WHERE r.name='Age' and r.category ='Medical';
+SELECT r.id INTO ql_ql_id FROM restrictions r WHERE r.name='QL' and r.category ='QL';
+SELECT r.id INTO pa_pa_id  FROM restrictions r WHERE r.name='PA' and r.category ='PA';
+SELECT r.id INTO medical_medical_id FROM restrictions r WHERE r.name='Medical' and r.category ='Medical';
 
 --RETRIEVE CRITERIAS
 SELECT c.id INTO criteria_diagnosis_1 FROM criteria c WHERE c.name='criteria_diagnosis_1';
