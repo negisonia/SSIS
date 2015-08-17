@@ -55,7 +55,6 @@ reason_code_60 INTEGER;
 tier_1 INTEGER;
 tier_2 INTEGER;
 tier_3 INTEGER;
-tier_3p INTEGER;
 tier_4 INTEGER;
 
 ql_qualifier INTEGER;
@@ -114,7 +113,6 @@ BEGIN
     SELECT t.id INTO tier_1 FROM tier t WHERE t.name='tier_1' ;
     SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
     SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
-    SELECT t.id INTO tier_3p FROM tier t WHERE t.name='tier_3p' ;
     SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
 
     --RETRIEVE QUALIFIERS
@@ -185,7 +183,7 @@ BEGIN
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, st_qualifier);
-    SELECT common_create_formulary_entry(formulary_hix_id, drug_1, tier_3p, reason_code_90, NULL) INTO formulary_entry_id;--formulary entry 4
+    SELECT common_create_formulary_entry(formulary_hix_id, drug_1, tier_3, reason_code_90, NULL) INTO formulary_entry_id;--formulary entry 4
     --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     SELECT common_create_formulary_entry(formulary_hix_id, drug_3, tier_4, reason_code_41, NULL) INTO formulary_entry_id;--formulary entry 5
@@ -202,7 +200,7 @@ BEGIN
      --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
 
-    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3p, NULL, NULL);
+    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
 
 success=true;
 return success;
