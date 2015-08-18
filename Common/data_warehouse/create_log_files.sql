@@ -14,7 +14,7 @@ CREATE TABLE log_etl_validation_process_errors
   (
     id serial NOT NULL,
     log_etl_validation_process_id integer NOT NULL,
-    error_log character text,
+    error_log text,
     created_at timestamp without time zone
   );
 
