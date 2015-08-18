@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION common_insert_test_data_functions_table()--ADMIN
+CREATE OR REPLACE FUNCTION common_insert_test_data_functions_table()--DATA ENTRY
 RETURNS boolean AS $$
 DECLARE
 success boolean DEFAULT false;
