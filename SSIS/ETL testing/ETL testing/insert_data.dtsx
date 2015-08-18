@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/20/2015 11:29:52 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{2FE82FC3-8DD7-4AEF-90CC-6CF1878D414E}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{13D9A87E-C60F-46AE-AFC0-B381BCF33AB0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAS/xO8yv0rfW7BdSCscCZrtkMOgWfMiWt7naIDqLwmVgAAAAAOgAAAAAIAACAAAADiZkCEnegrBrSUxXh9UgNy02UIgB4ZgNOkU9ijwJnnoDAAAAAeKIIyCvt1a8Gcdi1rgKze7GPsyQ42WJB7VZvx/gx4qMw8ZUUftPuV98zD84ue/iFAAAAA2+qmp9rbAp3UVMMOXalppw5Lrtnq4QtXPpiPX9lI4IpCmV6nZMLPsV8OsykP6qszKTrhO6/PbbvPhucc8UfYBg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB+2eVdbHvd8Y2RwYWdKrg1jwL66wBlNiMfKVhcKIOP/QAAAAAOgAAAAAIAACAAAAA6cB7GfxjPKXwVDOdAu26+m5U5UV0ZvETSyIoc34QojTAAAACWUoRgS/Ddee27jkx15Oc54hzbUdM/PBE2TuDFjmATR3+UQqfJs6bz+LwjoYqgDnhAAAAA/hZdGaiZRCa/foadp0Pd38dQ7Eaek0HWpPTj9XSij9D4naNgxb6SI2li7HvVtUSJXa8N3MAWzcCSPRuF7SvgbQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbC+3THMvbGP/itiIQ4KD91CGW7QBiczctBC/zeHQ27gAAAAAOgAAAAAIAACAAAABms0pnWz+XiLWTOt90EpryRtzSKyTgosbZ8rL6JEq0eDAAAABV5PXuEgrCuQU9ByM16k9pz9L7aHtftzf4qSt0sn+CKXZVuM4gQ8pRlDtozn2QluFAAAAANanhOBHkLDjPfowjiCgC6q1LSeBMnQIf2li0fQ5LRuVG9kwc+3UpikjIXSIjkddcmpxAmPrROM8+BA1RV8PjVw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADOCSYBe1luSl4u3rE/RlSAT5KMSvdO++7Nnw5abRWWBgAAAAAOgAAAAAIAACAAAAA+0vF7vE1kt+RvbpuZQGaT2UD3FpgyH8PRapKOV9fCQjAAAACu63EO/xGgPv6GoDnBOXLi9oZZLx4YKRhYQgsxerEMe8ZWvbJG4JkLZ7Tk9fppC2pAAAAAr2lUBcwmraf32tZZupacaz7Nfu+sbBua6wUNaoEH2KKO0G2/PDOW0Q8W7JwzZEr80vC85xOlO7oV+NW8DVaJlA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAqMFQEc+sjpeV28hE1XFQXwdS0e1jksbzZvehCzQEhkwAAAAAOgAAAAAIAACAAAADMnquVvgH5CUnyS91FKKSN1SyPvFQvvq1K1pbJ+6eZOTAAAAArQsQ7n+kw8m70MAC5fB23TFUO86sH+6xCbu/o1/WccN7a48DfIceLGWUnm+KpvsRAAAAA2xSLSVLspPcHHYQuvnE9pltxGKui1uA96Fdfi76iWY+b4gnPF6VychpcUTIRrvBL+W/5fJTnk1gRcoBb0JkGPw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCZNeQGZ6aC17rldY9rngqfjh2NHpYwkxBaaxGuQAyMAAAAAAOgAAAAAIAACAAAACEmYZ60/kZxW3F6XvSaB0aYUTbbA6TeRtpqclLMWCCTTAAAABB7cEDtgOG7aX7pqPtXiLrPccTp5+khggi4vLhuCfOk2gsJSylZ7PiIPkhVH6jUaFAAAAAX7n7yEFzdiAbZIKQdKVPZKrFPP/7rPaR6cAUKtYAnQE7oqmEa7f/647mABU762M3PFlU1npoRSzo+b+sFrIrNA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbD5gmOlcaUFXJwSzyCWM2PNM3f6kUY7iQtjCDiwhU2AAAAAAOgAAAAAIAACAAAAB2GLayY0SdYmHGt6kxPZa91wRneGx5xYyEX6H7Jp87BTAAAADApk6URgY67pLbHX0ZwH0sMnECaUc4oK4TPJrA8SDe0Np3mgvA6d2AQPG2gN2GkX5AAAAAmaX1oFmu4C7zZRyUUwIPdI9AI51k0AMKFYiAEU9L17Q7NN8fZwdkvBzBKWoTcOCpux/fxJCHlpyiQKV7SG4Mrg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADhImNlHqGLJPHEXEGBfgesuWIO8o6urH4Ng31dv/Y2WwAAAAAOgAAAAAIAACAAAACRhZDdcacxBrRteocc6BtdtGankiv/72E3kRjpAq/iXjAAAAB05D2WTvaxZX0uzGsKSNQxE5njIYC15L7ou9LeqLGUEPppk2XYIWh4d5SJd2OafDpAAAAAD81U3rO/AV06MoDPVzQIAQqhuIZIpbiu6Z97MS18Z9QLKfu8ca5PLqri9SEu0Mdj6FF1fbKk4bw/Nc6mxZafHA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -196,7 +196,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear FF New"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log a"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -230,7 +230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log b"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -307,6 +307,53 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Insert Data" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{5AA1AE5A-34E5-4EC1-8930-A094746E55D2}"
+      DTS:EventID="587699904"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{D1540471-1A30-47D9-908D-33E47E431EFD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fa62c5a2-fe90-48e7-82b2-e74fc4ec29e9}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Validate Insert Data Log Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7696EEE6-4591-4272-A1DD-818D13CFDD91}"
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) VALUES ( (SELECT MAX(id) FROM log_etl_validation_process), ? , now());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -348,12 +395,12 @@
           TopLeft="358.000000000003,42.3333333333333" />
         <NodeLayout
           Size="175,42"
-          Id="Package\Insert Data\Insert FF NEW Data"
-          TopLeft="43.6666666666666,27.6666666666667" />
-        <NodeLayout
-          Size="175,42"
           Id="Package\Insert Data\Insert Data entry"
           TopLeft="349,25" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Insert Data\Insert FF NEW Data"
+          TopLeft="43.6666666666666,27.6666666666667" />
         <EdgeLayout
           Id="Package\Insert Data.PrecedenceConstraints[Constraint]"
           TopLeft="218.666666666667,47.3333333333334">
@@ -408,5 +455,17 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
+          TopLeft="460,50" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
