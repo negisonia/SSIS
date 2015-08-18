@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{2FE82FC3-8DD7-4AEF-90CC-6CF1878D414E}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{48413E72-A8B3-4014-9889-D73608DB69A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAu0P6VyDERXqAvSsfgyaRCqHVPL+IU2SfU046bMw2QVgAAAAAOgAAAAAIAACAAAACj6DjIi1MYWhlH6FBySHUYuMmxCGlEa1y8orE0fxn1jzAAAAAG46CL/7/t0zHPE7k/YUc44D1ppNljmDo97HsqmS8kTWUuaVkw8/buzswiQfLXjrRAAAAAuuhjp4mS9+l+0QO98gYfs8Ah7UtLvIgFfaPZzItNo09DNSrhY4Upn0FotPhSdhZ6R4nZveZSSpUw73FHnVBkCA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUqBQq+UW6uD5kNAdOY+7l4D6FxvJSSjW32FiWs8fqYgAAAAAOgAAAAAIAACAAAADqvr9DZZcktWnVcZVtVmvq/42E0/pZFnpEpy7sCDbfkjAAAAAGahO3eooIFleL2b8nl2eFUC57be20MDCN570nRhjMF7oVSzZAZsISpT1iEinr2FhAAAAAPRA2IVmJ9nQbjwBB/DJV85fqIyM5QiQsKEkvOuv38qOqWjKoGgTvYs0y1cPQduqFxb2u7JDwRsZcIOVz/dqzfg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACThmaa0k9wyMcurTjX3RXTzTZh9IovMyF/WTXkhmeMYAAAAAAOgAAAAAIAACAAAAAg4jiMlV/UypXTjDl5fkIgHOtpvcTa9ikPfCFO3NuTgTAAAABi0woW5ycFgVkyxSvZLPc2BtzxTj1I+aO7f/QBPOIkhx9XQexzQO8vXCRjE8cjVE5AAAAA+O708D6imCtQ0hNmacRfMYjpR6n+MeFBTwukf/mH9smn766WdbP255CimNTVCO8z9VA6q376lCqX1TohZ2uUdg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNWnGy/ODZMZ/SExkdwd1zv0ycn6r7ysme5XGFunUxgAAAAAAOgAAAAAIAACAAAACCAvX1yvjSF+B2WOuEeYm9UrXe1KKq/2Tbnjl3usOYLDAAAAAyIo/FxnfaLIiXCMgcBDiqpUJMNS8TmLsTiN73OTQu4r8jKliL5Z9qZmA+vX4DANVAAAAADpuAJkh+p0HZz0tz6IK71BrLkRoKHtd/+qIX+/+9h52NxD19x/OB9XkAOXVVNvQbt8Oekh7+4SrwW8r6K99CZQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADPh5R5X9H4cwOjdBuncZJkLTG6jNipRwkUL8687X/2hwAAAAAOgAAAAAIAACAAAAATipfh7+rG/4Nym5Yi62H/EgvnktnW3zRvNMBzPK/QmDAAAAB+IFxoKD8n9iuggJCk8D7DMO3RO6bdUEMepDNv76mGlTdoFTgpZ7h2nnvNeFZIENlAAAAAZfqxvKIQDUBiJjnvR3p+Ly9zXb8yH37b9/DEyX2HQofiX40wnuLRBRQObLBC6y2cp3xOsVdP2oVLtIR2wIGOuA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABGXJibYn+RUS2QgS3WW6zoclhllEPL4s3cay153tONkAAAAAAOgAAAAAIAACAAAAC7ePu051e8wemKZOuxduLQWhNCwUDx39/r5JUWrW55HjAAAADZof4tJ9E4FCLy7E9Glu0U9kJlOxPXINTMPPSQaP75EuuW5oba39r1N30I6Tvf15dAAAAAUMCv2UyEQEy7ikBrU1oWH9T+lEdanYX2VVA2YlGpEHRxRc8pRmcHws0E1INsrrpdZOhS9I4RsefuhRrzFH+InQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6VT1+nJgmwTeOhrU3TgnEov+XrxJGQ1ZgVTSy5U+IzwAAAAAOgAAAAAIAACAAAADvqrA53GFHLk+4T4nHzlxry7mHju1inN+WLCgZFTsw2jAAAAD9W39s52m4Jw6S0fqqkanrw0pRNCU29yJYGFNb+mfninHVNRUi568u129xGYJQs+NAAAAAlzYROA1fgMYnDesKntc9RIrDRg+o9Qg3SP/7MKrzgPaG8+qXbE75d2uU88tEsyQ37/v3tsa1N94h8wDIbrgfQQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACT/prqyBjn6bTZeumbCrTatQVlnzDYMVJPaxjhrxCkXwAAAAAOgAAAAAIAACAAAABoMS88k0R1mBIeawqQPTbJJdBpRMvcayLGLQB5in0lADAAAAByiH1SYyAsiRON/X52IJ/7XRveu65r4WQX2MShKM3GSsRGe8wwPXzvFwOn4jJuCe1AAAAAcDcZlKvySAwfkER3zy0e66TYwMm7KW8Hpzmd8cM3kaZ1GM+uT2qLEzmYsjxGTsi4JSHo15P4DZJEscxVUhItCQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -307,6 +307,59 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Insert Data" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{5AA1AE5A-34E5-4EC1-8930-A094746E55D2}"
+      DTS:EventID="587699904"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{D1540471-1A30-47D9-908D-33E47E431EFD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fa62c5a2-fe90-48e7-82b2-e74fc4ec29e9}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Validate Insert Data Log Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7696EEE6-4591-4272-A1DD-818D13CFDD91}"
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -348,12 +401,12 @@
           TopLeft="358.000000000003,42.3333333333333" />
         <NodeLayout
           Size="175,42"
-          Id="Package\Insert Data\Insert FF NEW Data"
-          TopLeft="43.6666666666666,27.6666666666667" />
-        <NodeLayout
-          Size="175,42"
           Id="Package\Insert Data\Insert Data entry"
           TopLeft="349,25" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Insert Data\Insert FF NEW Data"
+          TopLeft="43.6666666666666,27.6666666666667" />
         <EdgeLayout
           Id="Package\Insert Data.PrecedenceConstraints[Constraint]"
           TopLeft="218.666666666667,47.3333333333334">
@@ -408,5 +461,17 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
+          TopLeft="460,50" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
