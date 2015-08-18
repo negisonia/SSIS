@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{50E64C57-C8EC-4357-A9A1-F56FDA4E3208}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{7668B6E3-4EE5-4469-A07E-CAC5D85E13C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD5axyMKJBDGHZT8mMct9CAYNc/RHbwmr/RZehPSN5VJAAAAAAOgAAAAAIAACAAAAAGFZ0C9fn0RhjYjdh4VaqoVVTnUqIqSQf88mPqphw37TAAAABCDw46qAH0Kb/Ym9f85DnIvvShA8Esc72SIDV/wIrlkISAPmrOjcARx4LfFR2kSpNAAAAAk+xUvqEoGs1i4HALT0jvSqfJ2qi4cyVBVbE8Ly/Nd0kS72BoPy3ECg9/o2MHQJRVkGM2vHzQv2lH+zM6qx3qQg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACI7piPF8mN6rgMqB9OhwhAN4Y6iutnoxnUNZekpT5YyAAAAAAOgAAAAAIAACAAAAADoZqD8uco4vdWJjzVdFL69SwlUR9IJ7U25Zn/6SDqITAAAABBLnlrDfMoVOSGTy1HHsW9/g18BFG5xm2XeRgnay6reEfL98tIjtvbiDhIiQkr4xpAAAAAztZn8/+uY4nwBypYo6sOFbg43+VeXvoTse4TJMCT7VfEyzpHMqOnvpPHUff4zrXrtDwCcxVPSJ3Ur2G6MjhY8A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAfKQNORIKkM1DjuEc4n9qoGfxaTXDaSjJkvkwWg7LiPwAAAAAOgAAAAAIAACAAAABh7f+ZlK7dS2rq8PfVkpMsnEagkOdYV/X6cf3j6JqcJjAAAACT1Z2lMCZ7tpyFYz7ZbBhXqf1/iqV0B/3vFIKKbTyQxFhkzLzX8V9dT+m/rD7GdbVAAAAAndSHZQ5baqhG2zCnVhXLWEIyU6WS+HRg6YeeIVFUumrLEw0Rhz+eTE1Pg2DLRjlMdUfpMihIIFl1g5rmnlRExA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBDi8Hk3Y44q91vPUDpmESiwLBKd3a97tA5PypYBo4KQAAAAAOgAAAAAIAACAAAABDJryTYAwbXqKZq35EcipRFF7TzD16ixBkT2SDvVOmwzAAAACWmZSYEA5VP21wcV5xrOwI0RYvDTmdsrU3j4mIgS1nuaPplNhZJJNWwu99Fc7SGXJAAAAAtAqzcxW/LEEeeff3wCEUlWZD/1QGXfoR2e1z29Zj4G6vL7m4NHbu+gIXKoKq942RkE/6gnQ2aeUnxbXj6qqPOA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1ByKHK1KfhAiXsF4iMCI+yPXpf2AZe3PdfxSGQ56wAgAAAAAOgAAAAAIAACAAAAAnN+gJVTh+b5cdYHVs6WD2hlENs1dtI/BLrtvXItFvITAAAABsS1FAkCPFHKorL4zlF7yUPc+1rxfKrHvKMv5m8fDtxJDAkEXdtCb4PzhnFAechIpAAAAA+9TuFGI52t1BKWMiWzj5a3mfV+hMp5b4KH1ow7e1WXOqpKkO/mfYGL21rYcEc2GR9QpTjIfaXQUF9Tvo9ddNnw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAl81+gckUyJk4WhFkIxJi7vDWNzTM0eItBYux+AMpzsQAAAAAOgAAAAAIAACAAAACAnWXnQbVY9UDslWWE90636i3GDyQHIs7DKuGVdQn7YDAAAAA11iptz2lL9e2Ep9LBqyhj8Y/KEonzNJxNsoB4MAcGy8/JjwYUln/d8ADWbFNSMitAAAAAOjOk9Xv8Anshy89lHo9K4Mos6OVm4/7mUXIXTPujt+fkjhqxEAg0K6cFwgAdC3NQBGL4d0NvBmxskTkxEm7zMg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -472,37 +472,7 @@
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
       </DTS:Variables>
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\Validate ETL Log Error"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{039102a8-4e7b-4161-a940-b99e12d53fc0}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Validate ETL Log Error"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{CB5E71F0-CE93-4341-8A9E-0448D61FC2B1}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='ETL Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="-9"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="-9"
-                SQLTask:ParameterSize="0" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
+      <DTS:Executables />
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -816,7 +786,7 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="210,42"
-          Id="Package.EventHandlers[OnError]\Validate ETL Log Error"
+          Id="{039102a8-4e7b-4161-a940-b99e12d53fc0}"
           TopLeft="621,53" />
       </GraphLayout>
     </LayoutInfo>
