@@ -114,6 +114,7 @@ BEGIN
     SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
     SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
     SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
+    SELECT t.id INTO tier_nc FROM tier t WHERE t.name='Not Covered'; 
 
     --RETRIEVE QUALIFIERS
     SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
@@ -212,6 +213,8 @@ BEGIN
      --INSERT FORMULARY ENTRY QUALIFIERS
     PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
     PERFORM common_create_mv_active_formularies(formulary_com_inactive_id, drug_1, tier_1, FALSE,TRUE, FALSE,FALSE, NULL);
+
+    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
 
     PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
 
