@@ -8,7 +8,7 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>insert_data.dtsx</Name>
-      <LastWriteTime>2015-08-17T23:49:25.943066Z</LastWriteTime>
+      <LastWriteTime>2015-08-18T15:39:56.9053365Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -23,17 +23,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>validate_analytics.dtsx</Name>
-      <LastWriteTime>2015-08-17T23:38:13.7682613Z</LastWriteTime>
+      <LastWriteTime>2015-08-18T15:40:24.7822896Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>validate_restrictions.dtsx</Name>
-      <LastWriteTime>2015-08-17T23:48:25.1891598Z</LastWriteTime>
+      <LastWriteTime>2015-08-18T15:40:21.7334615Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>etl_testing.dtsx</Name>
-      <LastWriteTime>2015-08-17T23:50:21.0438949Z</LastWriteTime>
+      <LastWriteTime>2015-08-18T15:40:06.0928365Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

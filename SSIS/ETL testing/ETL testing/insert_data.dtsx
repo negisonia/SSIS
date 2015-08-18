@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{13D9A87E-C60F-46AE-AFC0-B381BCF33AB0}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{48413E72-A8B3-4014-9889-D73608DB69A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB+2eVdbHvd8Y2RwYWdKrg1jwL66wBlNiMfKVhcKIOP/QAAAAAOgAAAAAIAACAAAAA6cB7GfxjPKXwVDOdAu26+m5U5UV0ZvETSyIoc34QojTAAAACWUoRgS/Ddee27jkx15Oc54hzbUdM/PBE2TuDFjmATR3+UQqfJs6bz+LwjoYqgDnhAAAAA/hZdGaiZRCa/foadp0Pd38dQ7Eaek0HWpPTj9XSij9D4naNgxb6SI2li7HvVtUSJXa8N3MAWzcCSPRuF7SvgbQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABVMV8aKw1fsqkKNo/DwImy8irNUjk16a4eF3sHAsAvbwAAAAAOgAAAAAIAACAAAACAPY3mcXLEFzYrL0scQISqhac4H6ATxuSfRZgqM3tdcjAAAADsUVOiJYqVTy9zcqcyOJbBXE8ARYTsBe9XA6S8cwkd096UP1cOB+pHGMVOdI4PrDlAAAAA2MwWK+LD8OjmhG9+CjBj3sd+b2iesHybRODkrbdpGdjpMfZtOSgejQLechZnqW5zSXVhLy2xydzxe4NgVOb5xA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADOCSYBe1luSl4u3rE/RlSAT5KMSvdO++7Nnw5abRWWBgAAAAAOgAAAAAIAACAAAAA+0vF7vE1kt+RvbpuZQGaT2UD3FpgyH8PRapKOV9fCQjAAAACu63EO/xGgPv6GoDnBOXLi9oZZLx4YKRhYQgsxerEMe8ZWvbJG4JkLZ7Tk9fppC2pAAAAAr2lUBcwmraf32tZZupacaz7Nfu+sbBua6wUNaoEH2KKO0G2/PDOW0Q8W7JwzZEr80vC85xOlO7oV+NW8DVaJlA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABW6nLSwC/aA9+nGCI0GvOlTVxbm4DDcHC5mIBdW3+TlQAAAAAOgAAAAAIAACAAAAD7uDogQoFyjcK7bFcMLntzrYkqZabhMJCFIp6/g17wPjAAAABdlYaqbFyQHH/ueMlhmFS7OB693g4FaSZNP75Vc7FkrtGHJwC42oWy0zaj+bqAwKJAAAAA4/83FBTcQla5MpO11KViqvHLB2ioR+JtlQNVKcrcqY5pQJtkCWfy9LE4+ng1VZChNIjAHqNemSEbwvo6ky1CRg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCZNeQGZ6aC17rldY9rngqfjh2NHpYwkxBaaxGuQAyMAAAAAAOgAAAAAIAACAAAACEmYZ60/kZxW3F6XvSaB0aYUTbbA6TeRtpqclLMWCCTTAAAABB7cEDtgOG7aX7pqPtXiLrPccTp5+khggi4vLhuCfOk2gsJSylZ7PiIPkhVH6jUaFAAAAAX7n7yEFzdiAbZIKQdKVPZKrFPP/7rPaR6cAUKtYAnQE7oqmEa7f/647mABU762M3PFlU1npoRSzo+b+sFrIrNA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNbmwzmPVi49X1e+vEeJxpZBvdJ/vF4Te3KJOYdM9OQwAAAAAOgAAAAAIAACAAAABtnyK6QoTC8LZk71xnFheNUndmHfY6U9IO+hG/kNBE+TAAAADegL6FKiqdEI1YK2dRJ2J7/wHIW1zyMAcB/v12dPNINghRhV79VkMEUeCVtIWAWPBAAAAANflvvjDLjl/fNTt0FsIjP69sDJewW9UrOuGBcG69qmBqbUZuSGi2rZZOs0G2BF+YMjsqp4SkT+tlpEqE7Hq0yw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADhImNlHqGLJPHEXEGBfgesuWIO8o6urH4Ng31dv/Y2WwAAAAAOgAAAAAIAACAAAACRhZDdcacxBrRteocc6BtdtGankiv/72E3kRjpAq/iXjAAAAB05D2WTvaxZX0uzGsKSNQxE5njIYC15L7ou9LeqLGUEPppk2XYIWh4d5SJd2OafDpAAAAAD81U3rO/AV06MoDPVzQIAQqhuIZIpbiu6Z97MS18Z9QLKfu8ca5PLqri9SEu0Mdj6FF1fbKk4bw/Nc6mxZafHA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC45etrBzxoGtHpxXr6197/naodqVZp+XlqCLD3m27+3AAAAAAOgAAAAAIAACAAAACyonPdN982lOr2SKbXbGkDLW3evEzh2tLE51u7wHgcWjAAAAD5ENKE3Q793fqbNyM1noEiIl5mUaWywLsi2lHEKxiVz95Et72usZOi2vvW9aMA53xAAAAAHIjJVGTcd4h8pxj4vHdljVPHlCptmE5X2iS6tNTqs/5qB0zDprZfiAUd1c6wnoksVkIlV9d2/LTrQcUfrgxQzw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -196,7 +196,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear FF New"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log a"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -230,7 +230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log b"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -341,9 +341,15 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{7696EEE6-4591-4272-A1DD-818D13CFDD91}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) VALUES ( (SELECT MAX(id) FROM log_etl_validation_process), ? , now());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="System::ErrorDescription"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="-9"

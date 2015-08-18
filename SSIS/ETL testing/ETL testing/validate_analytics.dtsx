@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="validate_analytics"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{9F3A87CA-F26F-4CD7-9B1E-9B36E460BB30}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{5B52EB54-A9EE-4146-875F-1C5DC11AE5D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA0ITkFRTaUxFx+Fcg6nTEADWxBbCK4Fx9l3GCauRTnpAAAAAAOgAAAAAIAACAAAABtTJZ1xXimZUHMcDsWGVcHVtHMx9Cf9nwiePC8Mw9jhzAAAACvDcZ+kCA8lMBzY+Wg52EtkW5X0ZEAn+XKDTGrwssgJjaRQENcHn4qLiuMByKG0UpAAAAAbpCxCb2C25rCPTqYCNybpjpw08bYbQZCB7BLMbDUUxc+JRbvKlCuu6illkRH6dlbIVSW0kRCy2jG9RA4ckGcQw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/wY7qgQ546glO6O1dfix6lTLnLbjYsMiChxpqLXhNTwAAAAAOgAAAAAIAACAAAADAV/OdXBh3j7y/14O5l/KLHHA1ywtXIkNDmo8J8VH+VzAAAAA0IwN/sXCSLurN4FJBhgKmD6JRh1B1OUjlJh1FD8Y70KDeYIoJeZvZtvEnPQWrCFpAAAAAzIR06O+NgedqqJu8Zssr6eqxmMnH0csmF4a3KyonJ1RGiDsh2n4r+VngtxtuXIUs8/0hrp0hylaozjuED8knaw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAoN0yePnd3PtgXeVJgy/Ikymlv1tcFwgrWxxA5ky+/iAAAAAAOgAAAAAIAACAAAADhadh1Mo5zt1Q8CNV6J7i+s0a+cbN5u5bqHjLvhmSzETAAAAAdWWCRMojuEaYzfLVMyqJmJWv6ApkVVOxs2mLknPINhmfX0yMtlFf4abUwHRmqQbFAAAAAuePpdOyQ/hNs/pitDbNQt5lOJnUpP1ENZTVVswqJnpPPW+gYwBcN3NV5LpSztvWWN1GFybQDKCVIjChTQROWhQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB2gYfonM6lWZ4pAAYnbmLj0aV0GEUbJHtwNX+QGPRmJQAAAAAOgAAAAAIAACAAAABhjMn34Eh4WDtYQ15WK4SWqbTZMjwr28tIPVilr3l69zAAAAAs1/iTwhbnOd0js6Z4d1IW0m/JLsnL/mQM4Hxm7BtEYx/NbnrhgtU2aPYOE4Wjw1NAAAAAg4g1uADnusTiF7ePEqiRd377HC1yRNAxf5sumSZw+hm+g6yViFcJNcn0jMGuKTH34/X8nUzg+J/XFdCVRrWaVQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -617,9 +617,15 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{CB5E71F0-CE93-4341-8A9E-0448D61FC2B1}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) VALUES ( (SELECT MAX(id) FROM log_etl_validation_process), ? , now());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="System::ErrorDescription"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="-9"
