@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{48413E72-A8B3-4014-9889-D73608DB69A4}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{75BAD8E8-ACC0-4FCE-B1CF-9E856C9754B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUqBQq+UW6uD5kNAdOY+7l4D6FxvJSSjW32FiWs8fqYgAAAAAOgAAAAAIAACAAAADqvr9DZZcktWnVcZVtVmvq/42E0/pZFnpEpy7sCDbfkjAAAAAGahO3eooIFleL2b8nl2eFUC57be20MDCN570nRhjMF7oVSzZAZsISpT1iEinr2FhAAAAAPRA2IVmJ9nQbjwBB/DJV85fqIyM5QiQsKEkvOuv38qOqWjKoGgTvYs0y1cPQduqFxb2u7JDwRsZcIOVz/dqzfg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqt1o1EoqGesiP9hTY5O+aDc0Vp9v5BFq1LQegv3YfJAAAAAAOgAAAAAIAACAAAADbSmN/MHktWefzZ2ZwKbYnZT2SBw97a3+Ymtx8VNBCITAAAADY8+lPnpdEHcmtxUt8JHC6fO56ZbDpcyu6cvUzUODh3BmdAHvM2XL0ujvWsXpvHDVAAAAAkoJ1azvMblDY9sbO/zxGirK0pbO0CtFzCVsNiS0wU2AZQ6RxGHduff8xzJduUg9PbiH2xr31GdszGSj+4ufcsg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNWnGy/ODZMZ/SExkdwd1zv0ycn6r7ysme5XGFunUxgAAAAAAOgAAAAAIAACAAAACCAvX1yvjSF+B2WOuEeYm9UrXe1KKq/2Tbnjl3usOYLDAAAAAyIo/FxnfaLIiXCMgcBDiqpUJMNS8TmLsTiN73OTQu4r8jKliL5Z9qZmA+vX4DANVAAAAADpuAJkh+p0HZz0tz6IK71BrLkRoKHtd/+qIX+/+9h52NxD19x/OB9XkAOXVVNvQbt8Oekh7+4SrwW8r6K99CZQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC8/GM+U14cAHRR3kg6G9LG2+Wxmx9Si0L6zSC3uyyiOgAAAAAOgAAAAAIAACAAAADrOkHk4dvb7C3PjAzwZzaKfGUqEPJDFJuELZZ1TcW7xTAAAACmB2FtWpIVeCe6Yo/sxCszsfFE0Mew2nGVfEch/E4yX6KPim25EcRcRP6x/LXbVdBAAAAA+lYB4nTdgzQYeW1f4MfUXgEjBGxVhntBAmfQsGvBA4uf59l5RjqxbVRzEnCZtp9xHt1WqSRMkAZGnnrpRAMI7Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABGXJibYn+RUS2QgS3WW6zoclhllEPL4s3cay153tONkAAAAAAOgAAAAAIAACAAAAC7ePu051e8wemKZOuxduLQWhNCwUDx39/r5JUWrW55HjAAAADZof4tJ9E4FCLy7E9Glu0U9kJlOxPXINTMPPSQaP75EuuW5oba39r1N30I6Tvf15dAAAAAUMCv2UyEQEy7ikBrU1oWH9T+lEdanYX2VVA2YlGpEHRxRc8pRmcHws0E1INsrrpdZOhS9I4RsefuhRrzFH+InQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACsFz7q5jrVzwA2XqNVf4s1r9btYQv9k+Zglxrti654EgAAAAAOgAAAAAIAACAAAACyhhFxa5jMV0EMaueLM3p3ViQ6ogTwsouJ01pOculevTAAAAAtXgmHU+E4jPis50KbwuwtF9vk6CYurxIbpa8NLrRqIc/rWBUlF6ZdTJ7cY4YX2eZAAAAADTTFXsL0qFfsALcGifhOkF5KQ8iS6CUlnQ1mBLvrKiAR052z+O9czzYHJXLJwlxysMbU21hRX+L6/WYjZJrk2g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACT/prqyBjn6bTZeumbCrTatQVlnzDYMVJPaxjhrxCkXwAAAAAOgAAAAAIAACAAAABoMS88k0R1mBIeawqQPTbJJdBpRMvcayLGLQB5in0lADAAAAByiH1SYyAsiRON/X52IJ/7XRveu65r4WQX2MShKM3GSsRGe8wwPXzvFwOn4jJuCe1AAAAAcDcZlKvySAwfkER3zy0e66TYwMm7KW8Hpzmd8cM3kaZ1GM+uT2qLEzmYsjxGTsi4JSHo15P4DZJEscxVUhItCQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWP5QjuhMyq3ryh2wypOTRjliPApWg6QvMyClftXN0jgAAAAAOgAAAAAIAACAAAAAIz2VNmpROBTLnNrXEM15acUD5R0aqaoGpXVNvcomQyzAAAAAwpBpybBKbQ0swm8JZkZF3F644gKB1U5b0m46k/i+ErUdHk4bzeMBDM+SjUeghJhpAAAAAJHDqAtqYSmLfQ5D4g6uTsiSrxgTX2x69wzx+NXIxQrHBGZDqkfqML1aJVEl4cPKIQa7FGUOU2gkV925p0k2mJw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -162,7 +162,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Analytics Front End"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -179,7 +179,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Data Data_Entry"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log a"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -230,7 +230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log b"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
