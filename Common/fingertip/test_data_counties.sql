@@ -31,6 +31,7 @@ BEGIN
   PERFORM common_create_county('New London',0,state_005_id,NULL);
   PERFORM common_create_county('Bristol',0,state_004_id,NULL);
   PERFORM common_create_county('Franklin',0,state_004_id,NULL);
+  PERFORM common_create_county('COUNTY_005',0,state_001_id,NULL);
 
 success=true;
 return success;
