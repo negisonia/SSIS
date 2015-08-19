@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{422A1F13-965E-4432-ABED-F8EE6F0B6DE1}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{754F3CC6-3D3E-4A75-B200-4505F636052F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAcHm7pbVN3uhZ0VPOpfZzZgwgFEUT74HEsJxAH5kTJ5wAAAAAOgAAAAAIAACAAAAAGg6btHzH2Z06sDIsVuGVjO5i317cpFu6mSaGkT8LaQzAAAAAK/d4djklvqn5j+yFXKVyCqhdf3D7VuuQJkFbEEim8XNlVjHeBN9UPcHFyOhkOwbpAAAAA0wFap3bhZnP4LI9OBNLhhk/l5behjwGXnXQDY+9o4LBEwAlS7pRy8nL0rHffBSg00NIPWI8vdP2Nq6zIUwbAiA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABELUJ6gbH0YZ1OIgzO9TLzEHMkhfvAQ27pObuxpBwMBwAAAAAOgAAAAAIAACAAAADTQZO8PJEs7lZwZz5vATvnUUJnVyJZ+pxJX9XjMZJ9BjAAAAAXNrq/a3wOmKFp1ilR7diEosziEFixatVWAMJtnupkoX5XM/uaYB1sUJpYLGJF449AAAAAH5Y8AZNvDqGyeT20MfZ2Mv8LZLl4jHlcnGb8FUYVuB9Kklwxd1mpAmTL+xoqV1cZzJK5cELIA/kfYrcXxcrF+Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACsHS4hwQCF2rqej9N34xXy4U8LQ2jHxeMqbYEe2p1s3gAAAAAOgAAAAAIAACAAAACVA3WY/xR+jFqF4TrjQBqWvM1St0n5ifKL9KWg3vTprTAAAAAZO4N4HjkimnI8R9ZBH6itgVtsgzquSrYDzCJoUzO5dnIwhI7LoKkvM3KkAQG3l5lAAAAA7gp2flwtWF4w4jj4T+Ju4YyxZZOBCxfcWOr6vOO5u5lWBxlayb08Cg/eBzZ5TiQY9hikMNcfe4SxqGGkpX72pA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADboyljtlqBESvL8eZ+J5VhwxdDhImvcPYpwytjXzS5BwAAAAAOgAAAAAIAACAAAAAIPiLfN/QNJapw9/SRqbBregtFDaTCKA14rJ2tYm6LbzAAAACGrCfb9M/tRUPiDaNkNoSbcVWmEmCGZ78ch3h8Kx+6PntC586To93EM0L1Osa1k6dAAAAAp8yf8NXCBsIqvXcakhgOzDmRGY70d0xUp3bg7aw5bNASl9WyN0TGe9Els8SPm5cmVrzArhYm2tHE9j7TNEnNOw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAQtWb8+ADCC1syZ4m5eFTrGuhs/1Gse0NZubXTlmScvwAAAAAOgAAAAAIAACAAAAAOS9SHqHoK/1CjnBTN2Lf/fJCnnuJ8kXPlnOwJi2eN+DAAAADaeanaBK6qPAkhj/WkU9ldhg4sinpdJR8lpYIsbMJLtpQ6N9Qbe0bEaFB+MKHYrjtAAAAAGtv6WanEanRm8jsCjgNlW/qCQh20JBwonzn6cCv7RYrryOdZxnSG2ddos+iNZ0n3h+aV4aptHTq5+c+Qr2GAng</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfJwlNmvME0u/o+1Npmm+pwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAuh0cTKf4IeI2ZI/9dZWJlhdnSFICClcAs/Vnfy85fNgAAAAAOgAAAAAIAACAAAACcPqnYZLxIP2u8vknKbrp0EWEckr6fwo9Q5quqzcvSMTAAAAAYWyOCTGf3BRDETTQ8+jaT8830WiQHQxBFfN901680PDQ6uXVsiENXgbDIa7lphx1AAAAAK4lYJfSg4u5ZGUeHNo5SWd0IF7qN4jx4lZGqqksfcpkSJO+AJKzavCj+L/PA4+YOSZ3AGTu0l7sFmcBL6CX10g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -216,7 +216,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 001 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -233,7 +233,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 002 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -250,7 +250,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 003 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -267,7 +267,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 004 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -284,7 +284,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 005 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -301,7 +301,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 006 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -318,7 +318,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 009 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -335,12 +335,29 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 010 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{B43C349C-E848-4D28-9E22-936E42A2C806}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_010_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Validation\Test 011 validation"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{95164132-A6E4-40D2-8B33-04B85DF4DD48}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test 011 validation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4333FF9C-C270-44B2-80AB-2CAD0F73A361}"
+              SQLTask:SqlStatementSource="select restrictions_test_011_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -352,7 +369,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 07 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -369,7 +386,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 08 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -486,7 +503,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 001 validation"
@@ -637,6 +654,10 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Validation\Test 011 validation"
+          TopLeft="1136,33" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
