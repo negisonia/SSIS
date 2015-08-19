@@ -41,11 +41,11 @@ SELECT c.id INTO criteria_age_1 FROM criteria c WHERE c.name='criteria_age_1';
 SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE INDICATIONS
-SELECT i.id from indications i WHERE i.name='indication_1' INTO indication_1_id;
-SELECT i.id from indications i WHERE i.name='indication_2' INTO indication_2_id;
-SELECT i.id from indications i WHERE i.name='indication_3' INTO indication_3_id;
-SELECT i.id from indications i WHERE i.name='indication_4' INTO indication_4_id;
-SELECT i.id from indications i WHERE i.name='indication_5' INTO indication_5_id;
+SELECT i.id INTO indication_1_id from indications i WHERE i.name='indication_1';
+SELECT i.id INTO indication_2_id from indications i WHERE i.name='indication_2';
+SELECT i.id INTO indication_3_id from indications i WHERE i.name='indication_3';
+SELECT i.id INTO indication_4_id from indications i WHERE i.name='indication_4' ;
+SELECT i.id INTO indication_5_id from indications i WHERE i.name='indication_5';
 
 PERFORM common_create_criteria_indication(criteria_diagnosis_1,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_diagnosis_1,indication_3_id);
