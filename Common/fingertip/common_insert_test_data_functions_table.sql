@@ -32,7 +32,7 @@ PERFORM common_create_test_data_functions('test_data_counties',17);
 PERFORM common_create_test_data_functions('test_data_health_plan_state',18);
 PERFORM common_create_test_data_functions('test_data_health_plan_counties',19);
 PERFORM common_create_test_data_functions('test_data_health_plan_county_lives',20);
-
+PERFORM common_create_test_data_functions('test_data_health_plan_copay',21);
 
 success:=true;
 RETURN success;
