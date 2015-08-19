@@ -4,32 +4,6 @@ DECLARE
 success BOOLEAN:=FALSE;
 formulary_entry_id INTEGER;
 
-provider_1_id INTEGER;
-provider_2_id INTEGER;
-provider_3_id INTEGER;
-provider_4_id INTEGER;
-provider_5_id INTEGER;
-provider_6_id INTEGER;
-provider_7_id INTEGER;
-provider_8_id INTEGER;
-provider_9_id INTEGER;
-provider_10_id INTEGER;
-
-commercial_hpt_id INTEGER;
-hix_hpt_id INTEGER;
-commercial_bcbs_hpt_id INTEGER;
-employer_hpt_id INTEGER;
-medicare_ma_hpt_id INTEGER;
-medicare_sn_hpt_id INTEGER;
-medicare_pdp_hpt_id INTEGER;
-state_medicare_hpt_id INTEGER;
-dpp_hpt_id INTEGER;
-commercial_medicaid_hpt_id INTEGER;
-union_hpt_id INTEGER;
-municipal_plan_hpt_id INTEGER;
-pbm_hpt_id INTEGER;
-commercial_inactive_hpt_id INTEGER;
-
 drug_1 INTEGER;
 drug_2 INTEGER;
 drug_3 INTEGER;
@@ -56,6 +30,8 @@ tier_1 INTEGER;
 tier_2 INTEGER;
 tier_3 INTEGER;
 tier_4 INTEGER;
+tier_nc INTEGER;
+tier_na INTEGER;
 
 ql_qualifier INTEGER;
 pa_qualifier INTEGER;
@@ -83,66 +59,72 @@ formulary_015_id INTEGER;
 formulary_016_id INTEGER;
 formulary_017_id INTEGER;
 
+drug VARCHAR:='drug';
+tier VARCHAR:='tier';
+qualifier VARCHAR:='qualifier';
+reason_code VARCHAR:='reasoncode';
+
 BEGIN
 
     --RETRIEVE REASON CODES
-    SELECT r.id INTO reason_code_92 FROM  reasoncode r WHERE r.code='92';
-    SELECT r.id INTO reason_code_40 FROM  reasoncode r WHERE r.code='40';
-    SELECT r.id INTO reason_code_42 FROM  reasoncode r WHERE r.code='42';
-    SELECT r.id INTO reason_code_90 FROM  reasoncode r WHERE r.code='90';
-    SELECT r.id INTO reason_code_41 FROM  reasoncode r WHERE r.code='41';
-    SELECT r.id INTO reason_code_60 FROM  reasoncode r WHERE r.code='60';
+    SELECT common_get_reason_code_id_by_code(reason_code, '92') INTO reason_code_92;
+    SELECT common_get_reason_code_id_by_code(reason_code, '40') INTO reason_code_40;
+    SELECT common_get_reason_code_id_by_code(reason_code, '42') INTO reason_code_42;
+    SELECT common_get_reason_code_id_by_code(reason_code, '90') INTO reason_code_90;
+    SELECT common_get_reason_code_id_by_code(reason_code, '41') INTO reason_code_41;
+    SELECT common_get_reason_code_id_by_code(reason_code, '60') INTO reason_code_60;
 
     --RETRIEVE DRUGS
-    SELECT d.id into drug_1 FROM drug d WHERE d.name='drug_1';
-    SELECT d.id into drug_2 FROM drug d WHERE d.name='drug_2';
-    SELECT d.id into drug_3 FROM drug d WHERE d.name='drug_3';
-    SELECT d.id into drug_4 FROM drug d WHERE d.name='drug_4';
-    SELECT d.id into drug_5 FROM drug d WHERE d.name='drug_5';
-    SELECT d.id into drug_6 FROM drug d WHERE d.name='drug_6';
-    SELECT d.id into drug_7 FROM drug d WHERE d.name='drug_7';
-    SELECT d.id into drug_8 FROM drug d WHERE d.name='drug_8';
-    SELECT d.id into drug_9 FROM drug d WHERE d.name='drug_9';
-    SELECT d.id into drug_10_inactive FROM drug d WHERE d.name='drug_10_inactive';
-    SELECT d.id into drug_11_inactive FROM drug d WHERE d.name='drug_11_inactive';
-    SELECT d.id into drug_001_id FROM drug d WHERE d.name='DRUG_001';
-    SELECT d.id into drug_002_id FROM drug d WHERE d.name='DRUG_002';
-    SELECT d.id into drug_003_id FROM drug d WHERE d.name='DRUG_003';
+    SELECT common_get_table_id_by_name(drug, 'drug_1') INTO drug_1;
+    SELECT common_get_table_id_by_name(drug, 'drug_2') INTO drug_2;
+    SELECT common_get_table_id_by_name(drug, 'drug_3') INTO drug_3;
+    SELECT common_get_table_id_by_name(drug, 'drug_4') INTO drug_4;
+    SELECT common_get_table_id_by_name(drug, 'drug_5') INTO drug_5;
+    SELECT common_get_table_id_by_name(drug, 'drug_6') INTO drug_6;
+    SELECT common_get_table_id_by_name(drug, 'drug_7') INTO drug_7;
+    SELECT common_get_table_id_by_name(drug, 'drug_8') INTO drug_8;
+    SELECT common_get_table_id_by_name(drug, 'drug_9') INTO drug_9;
+    SELECT common_get_table_id_by_name(drug, 'drug_10_inactive') INTO drug_10_inactive;
+    SELECT common_get_table_id_by_name(drug, 'drug_11_inactive') INTO drug_11_inactive;
+    SELECT common_get_table_id_by_name(drug, 'DRUG_001') INTO drug_001_id;
+    SELECT common_get_table_id_by_name(drug, 'DRUG_002') INTO drug_002_id;
+    SELECT common_get_table_id_by_name(drug, 'DRUG_003') INTO drug_003_id;
 
     --RETRIEVE TIERS
-    SELECT t.id INTO tier_1 FROM tier t WHERE t.name='tier_1' ;
-    SELECT t.id INTO tier_2 FROM tier t WHERE t.name='tier_2' ;
-    SELECT t.id INTO tier_3 FROM tier t WHERE t.name='tier_3' ;
-    SELECT t.id INTO tier_4 FROM tier t WHERE t.name='tier_4' ;
-    SELECT t.id INTO tier_nc FROM tier t WHERE t.name='Not Covered'; 
+    SELECT common_get_table_id_by_name(tier, 'tier_1') INTO tier_1;
+    SELECT common_get_table_id_by_name(tier, 'tier_2') INTO tier_2;
+    SELECT common_get_table_id_by_name(tier, 'tier_3') INTO tier_3;
+    SELECT common_get_table_id_by_name(tier, 'tier_4') INTO tier_4;
+    SELECT common_get_table_id_by_name(tier, 'Not Covered') INTO tier_nc;
+    SELECT common_get_table_id_by_name(tier, 'N/A') INTO tier_na;
 
     --RETRIEVE QUALIFIERS
-    SELECT q.id INTO ql_qualifier FROM qualifier q WHERE q.name='Quantity Limits';
-    SELECT q.id INTO pa_qualifier FROM qualifier q WHERE q.name='Prior Authorization';
-    SELECT q.id INTO st_qualifier FROM qualifier q WHERE q.name='Step Therapy';
-    SELECT q.id INTO or_qualifier FROM qualifier q WHERE q.name='Other Restrictions';
+    SELECT common_get_table_id_by_name(qualifier, 'Quantity Limits') INTO ql_qualifier;
+    SELECT common_get_table_id_by_name(qualifier, 'Prior Authorization') INTO pa_qualifier;
+    SELECT common_get_table_id_by_name(qualifier, 'Step Therapy') INTO st_qualifier;
+    SELECT common_get_table_id_by_name(qualifier, 'Other Restrictions') INTO or_qualifier;
 
     --RETRIEVE FORMULARIES
-    SELECT h.formularyfid INTO formulary_comm_id FROM healthplan h WHERE h.name='health_plan_comm';
-    SELECT h.formularyfid INTO formulary_hix_id FROM healthplan h WHERE h.name='health_plan_hix';
-    SELECT h.formularyfid INTO formulary_com_inactive_id FROM healthplan h WHERE h.name='health_plan_com_inactive';
-    SELECT h.formularyfid INTO formulary_001_id FROM healthplan h WHERE h.name='TEST_PLAN_001';
-    SELECT h.formularyfid INTO formulary_002_id FROM healthplan h WHERE h.name='TEST_PLAN_002';
-    SELECT h.formularyfid INTO formulary_003_id FROM healthplan h WHERE h.name='TEST_PLAN_003';
-    SELECT h.formularyfid INTO formulary_004_id FROM healthplan h WHERE h.name='TEST_PLAN_004';
-    SELECT h.formularyfid INTO formulary_005_id FROM healthplan h WHERE h.name='TEST_PLAN_005';
-    SELECT h.formularyfid INTO formulary_006_id FROM healthplan h WHERE h.name='TEST_PLAN_006';
-    SELECT h.formularyfid INTO formulary_007_id FROM healthplan h WHERE h.name='TEST_PLAN_007';
-    SELECT h.formularyfid INTO formulary_008_id FROM healthplan h WHERE h.name='TEST_PLAN_008';
-    SELECT h.formularyfid INTO formulary_009_id FROM healthplan h WHERE h.name='TEST_PLAN_009';
-    SELECT h.formularyfid INTO formulary_010_id FROM healthplan h WHERE h.name='TEST_PLAN_010';
-    SELECT h.formularyfid INTO formulary_011_id FROM healthplan h WHERE h.name='TEST_PLAN_011';
-    SELECT h.formularyfid INTO formulary_012_id FROM healthplan h WHERE h.name='TEST_PLAN_012';
-    SELECT h.formularyfid INTO formulary_013_id FROM healthplan h WHERE h.name='TEST_PLAN_013';
-    SELECT h.formularyfid INTO formulary_014_id FROM healthplan h WHERE h.name='TEST_PLAN_014';
-    SELECT h.formularyfid INTO formulary_015_id FROM healthplan h WHERE h.name='TEST_PLAN_015';
-    SELECT h.formularyfid INTO formulary_016_id FROM healthplan h WHERE h.name='TEST_PLAN_016';
-    SELECT h.formularyfid INTO formulary_017_id FROM healthplan h WHERE h.name='TEST_PLAN_017';
+    SELECT common_get_formulary_id_by_plan_name('health_plan_comm') INTO formulary_comm_id;
+    SELECT common_get_formulary_id_by_plan_name('health_plan_hix') INTO formulary_hix_id;
+    SELECT common_get_formulary_id_by_plan_name('health_plan_com_inactive') INTO formulary_com_inactive_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_001') INTO formulary_001_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_002') INTO formulary_002_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_003') INTO formulary_003_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_004') INTO formulary_004_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_005') INTO formulary_005_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_006') INTO formulary_006_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_007') INTO formulary_007_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_008') INTO formulary_008_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_009') INTO formulary_009_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_010') INTO formulary_010_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_011') INTO formulary_011_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_012') INTO formulary_012_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_013') INTO formulary_013_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_014') INTO formulary_014_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_015') INTO formulary_015_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_016') INTO formulary_016_id;
+    SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_017') INTO formulary_017_id;
 
     --INSERT FORMULARY ENTRIES
     PERFORM common_create_formulary_entry(formulary_001_id, drug_001_id, tier_1, 0, FALSE);
@@ -216,7 +198,9 @@ BEGIN
 
     PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
 
-    PERFORM common_create_formulary_entry(formulary_com_inactive_id, drug_2, tier_3, NULL, NULL);
+    PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_018'), drug_003_id, tier_na, NULL, NULL);
+    PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_019'), drug_003_id, tier_nc, NULL, NULL);
+    PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_020'), drug_002_id, tier_2, NULL, NULL);
 
 success=true;
 return success;
