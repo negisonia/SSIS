@@ -9,7 +9,7 @@ state_ma_id INTEGER;
 state_ct_id INTEGER;
 
 health_plan VARCHAR:='healthplan';
-health_plan VARCHAR:='state';
+state VARCHAR:='state';
 
 success BOOLEAN:=FALSE;
 
