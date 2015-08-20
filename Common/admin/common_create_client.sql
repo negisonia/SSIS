@@ -7,7 +7,7 @@ BEGIN
 SELECT c.id INTO clientId FROM clients c WHERE c.name=clientName LIMIT 1;
 
 IF clientId IS NULL THEN
-	INSERT INTO clients (name) VALUES (clientName) RETURNING id INTO clientId;;
+	INSERT INTO clients (name) VALUES (clientName) RETURNING id INTO clientId;
 END IF;
 
 RETURN clientId;

@@ -13,6 +13,6 @@ IF valueExists IS FALSE THEN
 END IF;
 
 success :=TRUE;
-RETURNS success;
+RETURN success;
 END
 $$ LANGUAGE plpgsql;

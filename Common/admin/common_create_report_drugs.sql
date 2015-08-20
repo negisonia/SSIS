@@ -12,7 +12,7 @@ BEGIN
         success:=false;
         RETURN success;
       ELSE
-        SELECT EXISTS ( SELECT 1 FROM report_drugs rd WHERE rd.report_id= new_report_id and rd.indication_id= new_indication_id and rd.drug_id = new drug_id ) INTO valueExists;
+        SELECT EXISTS ( SELECT 1 FROM report_drugs rd WHERE rd.report_id= new_report_id and rd.indication_id= new_indication_id and rd.drug_id = new_drug_id ) INTO valueExists;
 
         IF valueExists IS FALSE THEN
             INSERT INTO report_drugs(report_id, indication_id, drug_id)
@@ -20,7 +20,7 @@ BEGIN
         END IF;
 
         success :=TRUE;
-        RETURNS success;
+        RETURN success;
       END IF;
 END
 $$ LANGUAGE plpgsql;

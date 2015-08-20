@@ -21,6 +21,6 @@ BEGIN
         END IF;
       END IF;
 
-      RETURNS report_client_id;
+      RETURN report_client_id;
 END
 $$ LANGUAGE plpgsql;
