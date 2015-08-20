@@ -2,38 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL Testing</Name>
-    <LastWriteTime>2015-08-18T20:50:27.0057837Z</LastWriteTime>
+    <LastWriteTime>2015-08-20T02:45:20.2906571Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>insert_data.dtsx</Name>
-      <LastWriteTime>2015-08-18T20:50:27.0087134Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:45:20.2906571Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>process_b_ssis.dtsx</Name>
-      <LastWriteTime>2015-08-18T20:50:27.0272681Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:45:20.3076726Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>validate_analytics.dtsx</Name>
-      <LastWriteTime>2015-08-18T20:50:27.0282446Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:45:20.3076726Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>validate_restrictions.dtsx</Name>
-      <LastWriteTime>2015-08-19T01:24:10.2366271Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:52:51.6832169Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>etl_testing.dtsx</Name>
-      <LastWriteTime>2015-08-18T20:50:27.0077368Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:47:07.6142938Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>process_a_ssis.dtsx</Name>
-      <LastWriteTime>2015-08-18T20:50:27.0262915Z</LastWriteTime>
+      <LastWriteTime>2015-08-20T02:45:20.3076726Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
