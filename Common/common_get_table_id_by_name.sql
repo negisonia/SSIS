@@ -1,3 +1,5 @@
+-- Gets the table id from the name field
+-- For Data Entry and FF New dbs
 CREATE OR REPLACE FUNCTION common_get_table_id_by_name(model_name VARCHAR, name_value VARCHAR) --FF_NEW DB
 RETURNS INTEGER AS $$
 DECLARE
