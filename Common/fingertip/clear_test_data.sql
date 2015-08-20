@@ -29,6 +29,10 @@ BEGIN
   TRUNCATE TABLE county CASCADE;
   TRUNCATE TABLE healthplancounty CASCADE;
   TRUNCATE TABLE mv_active_formularies CASCADE;
+  TRUNCATE TABLE benefitstructure CASCADE;
+  TRUNCATE TABLE benefitstructurecopay CASCADE;
+  TRUNCATE TABLE benefitstructurecopayvalue CASCADE;
+  TRUNCATE TABLE benefitstructurestate CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
@@ -57,6 +61,10 @@ BEGIN
   ALTER SEQUENCE metrostatarea_id_seq RESTART;
   ALTER SEQUENCE county_id_seq RESTART;
   ALTER SEQUENCE healthplancounty_id_seq RESTART;
+  ALTER SEQUENCE benefitstructure_id_seq RESTART;
+  ALTER SEQUENCE benefitstructurecopay_id_seq RESTART;
+  ALTER SEQUENCE benefitstructurecopayvalue_id_seq RESTART;
+  ALTER SEQUENCE benefitstructurestate_id_seq RESTART;
 
 success:=true;
 RETURN success;

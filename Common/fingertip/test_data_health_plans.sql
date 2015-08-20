@@ -97,7 +97,7 @@ BEGIN
     PERFORM common_create_healthplan(health_plan_type_001_id, FALSE, 'TEST_PLAN_006', common_create_formulary(FALSE,FALSE,NULL), provider_003_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_007', common_create_formulary(TRUE,FALSE,3), provider_003_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_008', common_create_formulary(TRUE,FALSE,NULL), provider_002_id);
-    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_009', common_create_formulary(TRUE,FALSE,NULL), provider_001_id);
+    PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_009', common_create_formulary(TRUE,FALSE,NULL), provider_002_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_010', common_create_formulary(TRUE,FALSE,NULL), provider_002_id);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_011', common_create_formulary(TRUE,FALSE,NULL), provider_002_id);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_012', common_create_formulary(TRUE,FALSE,NULL), provider_003_id);
