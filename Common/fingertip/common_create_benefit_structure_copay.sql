@@ -4,7 +4,7 @@ DECLARE
 benefit_structure_copay_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT bsc.id INTO benefit_structure_copay_id FROM benefitstructurecopay bsc WHERE bsc.benefitstructurefid= benefit_structure_id LIMIT 1;
+SELECT bsc.id INTO benefit_structure_copay_id FROM benefitstructurecopay bsc WHERE bsc.benefitstructurefid=benefit_structure_id LIMIT 1;
 
 --VALIDATE IF THE HEALTH PLAN DOESNT EXISTS
 IF benefit_structure_copay_id IS NULL THEN   
@@ -14,7 +14,7 @@ IF benefit_structure_copay_id IS NULL THEN
             benefitstructurefid, pharmacytypefid, copaytypefid, dayssupply, 
             createtimestamp, modifytimestamp, active, source)
     VALUES (benefit_structure_id, 1, 2, NULL, 
-            current_timestamp, current_timestamp, (CASE WHEN is_active THEN 1 ELSE 0 END), 'ff');
+            current_timestamp, current_timestamp, (CASE WHEN is_active THEN 1 ELSE 0 END), 'ff') RETURNING id INTO benefit_structure_copay_id;
 
   RETURN benefit_structure_copay_id;
 ELSE

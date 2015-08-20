@@ -29,7 +29,7 @@ BEGIN
   SELECT common_get_table_id_by_name(tier, 'tier_1') INTO tier_1_id;
   SELECT common_get_table_id_by_name(tier, 'tier_2') INTO tier_2_id;
   SELECT common_get_table_id_by_name(tier, 'N/A') INTO tier_na_id;
-  SELECT common_get_table_id_by_name(tier, 'Not Covered') INTO tier_na_id;  
+  SELECT common_get_table_id_by_name(tier, 'Not Covered') INTO tier_nc_id;  
 
   -- TEST_PLAN_003
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_003'),TRUE) INTO benefit_structure_id;
@@ -38,7 +38,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_2_id, 5.00, 15.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_2_id, 5.00, 15.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_004
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_004'),TRUE) INTO benefit_structure_id;
@@ -47,7 +47,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_1_id, 10.00, 30.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_1_id, 10.00, 30.00, NULL, NULL, TRUE);
     
   -- TEST_PLAN_008
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_008'),TRUE) INTO benefit_structure_id;
@@ -56,7 +56,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_1_id, 40.00, 80.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_1_id, 40.00, 80.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_009
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_009'),TRUE) INTO benefit_structure_id;
@@ -65,7 +65,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_1_id, 5.00, 15.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_1_id, 5.00, 15.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_010
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_010'),TRUE) INTO benefit_structure_id;
@@ -74,7 +74,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_1_id, 15.00, 45.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_1_id, 15.00, 45.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_018
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_018'),TRUE) INTO benefit_structure_id;
@@ -83,7 +83,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_na_id, 5.00, 25.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_na_id, 5.00, 25.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_019
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_019'),TRUE) INTO benefit_structure_id;
@@ -92,7 +92,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_nc_id, 30.00, 90.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_nc_id, 30.00, 90.00, NULL, NULL, TRUE);
 
   -- TEST_PLAN_020
   SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_020'),TRUE) INTO benefit_structure_id;
@@ -101,7 +101,7 @@ BEGIN
     -- Insert Benefit Structure Copay
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
-    PERFORM common_create_benefit_structure_copay(benefit_structure_copay_id, tier_2_id, 15.00, 25.00, NULL, NULL, TRUE);
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_2_id, 15.00, 25.00, NULL, NULL, TRUE);
 
 success=true;
 return success;

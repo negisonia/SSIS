@@ -62,17 +62,16 @@ formulary_017_id INTEGER;
 drug VARCHAR:='drug';
 tier VARCHAR:='tier';
 qualifier VARCHAR:='qualifier';
-reason_code VARCHAR:='reasoncode';
 
 BEGIN
 
     --RETRIEVE REASON CODES
-    SELECT common_get_reason_code_id_by_code(reason_code, '92') INTO reason_code_92;
-    SELECT common_get_reason_code_id_by_code(reason_code, '40') INTO reason_code_40;
-    SELECT common_get_reason_code_id_by_code(reason_code, '42') INTO reason_code_42;
-    SELECT common_get_reason_code_id_by_code(reason_code, '90') INTO reason_code_90;
-    SELECT common_get_reason_code_id_by_code(reason_code, '41') INTO reason_code_41;
-    SELECT common_get_reason_code_id_by_code(reason_code, '60') INTO reason_code_60;
+    SELECT common_get_reason_code_id_by_code('92') INTO reason_code_92;
+    SELECT common_get_reason_code_id_by_code('40') INTO reason_code_40;
+    SELECT common_get_reason_code_id_by_code('42') INTO reason_code_42;
+    SELECT common_get_reason_code_id_by_code('90') INTO reason_code_90;
+    SELECT common_get_reason_code_id_by_code('41') INTO reason_code_41;
+    SELECT common_get_reason_code_id_by_code('60') INTO reason_code_60;
 
     --RETRIEVE DRUGS
     SELECT common_get_table_id_by_name(drug, 'drug_1') INTO drug_1;

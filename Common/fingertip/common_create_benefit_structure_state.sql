@@ -4,7 +4,7 @@ DECLARE
 benefit_structure_state_id INTEGER DEFAULT NULL;
 BEGIN
 
-SELECT bss.id INTO benefit_structure_state_id FROM benefitstructurecopay bss WHERE bss.benefitstructurefid= benefit_structure_id AND bss.statefid=state_id LIMIT 1;
+SELECT bss.id INTO benefit_structure_state_id FROM benefitstructurestate bss WHERE bss.benefitstructurefid= benefit_structure_id AND bss.statefid=state_id LIMIT 1;
 
 --VALIDATE IF THE RECORD DOESNT EXISTS
 IF benefit_structure_state_id IS NULL THEN
@@ -12,7 +12,7 @@ IF benefit_structure_state_id IS NULL THEN
   --INSERT RECORD
   INSERT INTO benefitstructurestate(
               benefitstructurefid, statefid)
-      VALUES (benefit_structure_id, state_id);
+      VALUES (benefit_structure_id, state_id) RETURNING id INTO benefit_structure_state_id;
     
   RETURN benefit_structure_state_id;
 ELSE

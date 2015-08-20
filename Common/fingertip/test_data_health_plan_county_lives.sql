@@ -12,6 +12,7 @@ county_001_id INTEGER;
 county_002_id INTEGER;
 county_003_id INTEGER;
 county_004_id INTEGER;
+county_005_id INTEGER;
 county_middlesex_ma_id INTEGER;
 county_bristol_ma_id INTEGER;
 county_new_london_ct_id INTEGER;
@@ -38,6 +39,7 @@ BEGIN
     SELECT common_get_county_id_by_name_and_state('COUNTY_002','STATE_002') INTO county_002_id;
     SELECT common_get_county_id_by_name_and_state('COUNTY_003','STATE_003') INTO county_003_id;
     SELECT common_get_county_id_by_name_and_state('COUNTY_004','STATE_003') INTO county_004_id;
+    SELECT common_get_county_id_by_name_and_state('COUNTY_005','STATE_001') INTO county_005_id;
     SELECT common_get_county_id_by_name_and_state('Middlesex','Massachusetts') INTO county_middlesex_ma_id;
     SELECT common_get_county_id_by_name_and_state('Bristol','Massachusetts') INTO county_bristol_ma_id;
     SELECT common_get_county_id_by_name_and_state('New London','Connecticut') INTO county_new_london_ct_id;

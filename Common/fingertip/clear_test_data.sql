@@ -1,7 +1,7 @@
-﻿﻿CREATE OR REPLACE FUNCTION clear_test_data()--ADMIN
+﻿CREATE OR REPLACE FUNCTION clear_test_data()
 RETURNS boolean AS $$
 DECLARE
-success boolean DEFAULT false;
+success boolean:= false;
 BEGIN
 
 	--CLEAR TABLES

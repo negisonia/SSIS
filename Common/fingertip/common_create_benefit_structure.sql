@@ -24,7 +24,7 @@ IF benefit_structure_id IS NULL THEN
             current_timestamp, NULL, NULL, (CASE WHEN is_active THEN 1 ELSE 0 END), NULL, 'ff', 
             NULL, NULL, NULL, NULL, 
             NULL, NULL, NULL, 
-            NULL, NULL);
+            NULL, NULL) RETURNING id INTO benefit_structure_id;
     
   RETURN benefit_structure_id;
 ELSE
