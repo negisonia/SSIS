@@ -3,6 +3,8 @@
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common
+\i 'Common/call_functions_from_table.sql'
+\i 'Common/common_create_test_data_functions.sql'
 \i 'Common/common_get_table_id_by_name.sql'
 
 -- Common Admin
@@ -15,3 +17,4 @@
 \i 'Common/admin/create_report_restrictions_admin.sql'
 \i 'Common/admin/test_data_client.sql'
 \i 'Common/admin/test_data_custom_accounts.sql'
+\i 'Common/admin/create_foreign_tables.sql'
