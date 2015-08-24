@@ -11,10 +11,10 @@ BEGIN
 -- Current Month
 SELECT get_current_month() INTO current_month_int;
 -- Create Criteria Report Id
-SELECT ana_rpt_coverage_tier_provider_test_001_008_create_fe_data() INTO criteria_report_id;
+SELECT ana_rpt_coverage_tier_provider_test_009_016_create_fe_data() INTO criteria_report_id;
 --Query the actual value
 SELECT calculate_report_value('primary_health_plan_count', get_report_name_call('rpt_coverage_tier_provider', ARRAY[criteria_report_id,current_month_int]),'drug_name=''DRUG_002'' AND provider_name=''TEST_PROVIDER_002''') INTO actual_value;
-expected_value = 1;
+expected_value = 2;
 
 PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_provider_test_015_validate_data-error: EXPECTED primary_health_plan_count FOR DRUG_002 AND TEST_PROVIDER_002 TO BE ');
 

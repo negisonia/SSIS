@@ -11,7 +11,7 @@ BEGIN
 -- Current Month
 SELECT get_current_month() INTO current_month_int;
 -- Create Criteria Report Id
-SELECT ana_rpt_coverage_tier_provider_test_001_008_create_fe_data() INTO criteria_report_id;
+SELECT ana_rpt_coverage_tier_provider_test_009_016_create_fe_data() INTO criteria_report_id;
 --Query the actual value
 SELECT calculate_report_value('total_lives', get_report_name_call('rpt_coverage_tier_provider', ARRAY[criteria_report_id,current_month_int]),'drug_name=''DRUG_002'' AND provider_name=''TEST_PROVIDER_002''') INTO actual_value;
 expected_value = 150;
