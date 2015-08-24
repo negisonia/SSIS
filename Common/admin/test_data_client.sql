@@ -1,15 +1,19 @@
-CREATE OR REPLACE FUNCTION test_data_client() --FF NEW
-RETURNS boolean AS $$
-DECLARE
 
-success BOOLEAN:=FALSE;
+CREATE OR REPLACE FUNCTION  test_data_client()--ADMIN DB
+RETURNS BOOLEAN AS $$
+DECLARE
+success BOOLEAN DEFAULT FALSE;
 BEGIN
 
---CREATE REASON CODES
-PERFORM create_client('Client_1');
-PERFORM create_client('Client_2');
+PERFORM common_create_client('client_1');
+PERFORM common_create_client('client_2');
+PERFORM common_create_client('client_3');
+PERFORM common_create_client('client_4');
 
-success=true;
-return success;
+success:= TRUE;
+RETURN success;
+
 END
 $$ LANGUAGE plpgsql;
+
+

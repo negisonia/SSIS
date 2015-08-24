@@ -15,7 +15,7 @@ INSERT INTO medical_criteria(
             medical_id, criterium_id, criterium_applicable, active, is_active,
             copiedfromid)
     VALUES (NULL, NULL, NULL, current_timestamp, current_timestamp,
-            new_medical_id, new_criteria_id, NULL, active,active,
+            new_medical_id, new_criteria_id, 2, active,active,
             NULL);
 END IF;
 
