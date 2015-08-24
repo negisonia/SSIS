@@ -1,8 +1,7 @@
 CREATE OR REPLACE FUNCTION common_create_client_custom_criteria_group(new_report_client_id INTEGER, new_custom_criteria_group_id INTEGER, new_display_order_id INTEGER, new_active BOOLEAN) --ADMIN DB
-RETURNS INTEGER AS $$
+RETURNS BOOLEAN AS $$
 DECLARE
   success BOOLEAN DEFAULT false;
-  client_custom_criteria_group_id INTEGER DEFAULT NULL;
   valueExists BOOLEAN;
 BEGIN
 

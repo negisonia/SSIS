@@ -14,6 +14,9 @@ CREATE TABLE test_data_functions
 
 PERFORM common_create_test_data_functions('test_data_client',1);
 PERFORM common_create_test_data_functions('test_data_custom_accounts',2);
+PERFORM common_create_test_data_functions('test_data_custom_criteria_groups',3);
+PERFORM common_create_test_data_functions('test_data_reports',4);
+PERFORM common_create_test_data_functions('test_data_client_custom_criteria_groups',5);
 
 success:=true;
 RETURN success;

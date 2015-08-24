@@ -45,7 +45,7 @@ SELECT ccg.id INTO rep_1_group_3 FROM custom_criteria_groups ccg  WHERE ccg.name
 SELECT ccg.id INTO rep_1_group_single FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_single' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_1_group_all FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_all' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_1_group_both FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_both' and ccg.indication_field_name='indication_1';
-SELECT ccg.id INTO rep_1_group_steps FROM custom_criteria_groups ccg  WHERE ccg.name='rep_group_steps' and ccg.indication_field_name='indication_1';
+SELECT ccg.id INTO rep_1_group_steps FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_steps' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_3_group_1 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_3_group_1' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_4_group_1 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_4_group_1' and ccg.indication_field_name='indication_1';
 

@@ -12,13 +12,19 @@ BEGIN
   TRUNCATE TABLE clients CASCADE;
   TRUNCATE TABLE reports CASCADE;
   TRUNCATE TABLE report_clients CASCADE;
+  TRUNCATE TABLE report_criterias CASCADE;
+  TRUNCATE TABLE report_drugs CASCADE;
   TRUNCATE TABLE custom_criteria_groups CASCADE;
+  TRUNCATE TABLE custom_criteria_group_criterias CASCADE;
+  TRUNCATE TABLE client_custom_criteria_groups CASCADE;
 
   --CLEAR SEQUENCES
   ALTER SEQUENCE custom_accounts_id_seq RESTART;
   ALTER SEQUENCE clients_id_seq RESTART;
   ALTER SEQUENCE report_clients_id_seq RESTART;
   ALTER SEQUENCE custom_criteria_groups_id_seq RESTART;
+  ALTER SEQUENCE report_business_id_seq RESTART;
+  ALTER SEQUENCE reports_id_seq RESTART;
 
   
 success:=true;
