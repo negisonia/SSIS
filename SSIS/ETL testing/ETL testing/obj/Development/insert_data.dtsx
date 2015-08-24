@@ -11,11 +11,28 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{75BAD8E8-ACC0-4FCE-B1CF-9E856C9754B2}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{FABE6223-09BF-49EE-8AE0-EBA814467339}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[admin]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{B51283DB-698E-476C-BDAD-230657B284D8}"
+      DTS:ObjectName="admin">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=sandbox_admin;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAk+cJbMDLbaCzaLprwnso8AuU7ITIAyRkHI6lawZB+rwAAAAAOgAAAAAIAACAAAADcqsKwqHzpud6H+S3IpylH7O794kTg1gT/XLiXbx39tDAAAADWn98HYxzPNqRPH7qixIuDDHA4E8RgSmZqZ4UVz7+yf+vLKX7b42cRp+UkxrQ1nMBAAAAAf+RFIyFfUOfqlHFg5BDHNR1IxzJZxWWOHSiYxsxWjJayo4xV3r054mR0hMPj7tH1qu3zECVM6H5g4r4YsgHlJA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_entry]"
       DTS:CreationName="ODBC"
@@ -29,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqt1o1EoqGesiP9hTY5O+aDc0Vp9v5BFq1LQegv3YfJAAAAAAOgAAAAAIAACAAAADbSmN/MHktWefzZ2ZwKbYnZT2SBw97a3+Ymtx8VNBCITAAAADY8+lPnpdEHcmtxUt8JHC6fO56ZbDpcyu6cvUzUODh3BmdAHvM2XL0ujvWsXpvHDVAAAAAkoJ1azvMblDY9sbO/zxGirK0pbO0CtFzCVsNiS0wU2AZQ6RxGHduff8xzJduUg9PbiH2xr31GdszGSj+4ufcsg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB28mTdH3JmfovMsDb8kKiNoawn/9IKyNLm7AKydPwD/AAAAAAOgAAAAAIAACAAAABxG6RBt/4GP2uOKMOtanQbwA6A/taMtOrnAiPIBfpGATAAAACFeygivz9z1mPYg7HWP5OADmtHGwdqnHXmhT88tyESgEgbofu5dk9oHTLaZY2NpINAAAAAAd43A5PF2M+cOeGoSU4/21JQ+oFDtXnmEWOHlanAwskts7x80oq4m+41ERcp6pCxqFNf15Dl/8S8gVEVMqRLoA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC8/GM+U14cAHRR3kg6G9LG2+Wxmx9Si0L6zSC3uyyiOgAAAAAOgAAAAAIAACAAAADrOkHk4dvb7C3PjAzwZzaKfGUqEPJDFJuELZZ1TcW7xTAAAACmB2FtWpIVeCe6Yo/sxCszsfFE0Mew2nGVfEch/E4yX6KPim25EcRcRP6x/LXbVdBAAAAA+lYB4nTdgzQYeW1f4MfUXgEjBGxVhntBAmfQsGvBA4uf59l5RjqxbVRzEnCZtp9xHt1WqSRMkAZGnnrpRAMI7Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbh6TQprmxGRiIzKJGp41W/6bQhjUyIIAKbofm0Ru/JwAAAAAOgAAAAAIAACAAAABXAC/VaombEFrpIT1mUL9XPcKAW4uPK0s1caLV2cRdDzAAAAA/7/LqovG3L9PVhZtnddXCPf5VjvBVvQocRosFsU7RrwagxPSqlJxAjTjFqVWYpCZAAAAAKE70GutF0asw6Pps7g2JOxIs3ilUmS1My2vYzCrgZUYik5VJju10srWTz0zHoxhvRb6qnEn04g5989iO+zrnVQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACsFz7q5jrVzwA2XqNVf4s1r9btYQv9k+Zglxrti654EgAAAAAOgAAAAAIAACAAAACyhhFxa5jMV0EMaueLM3p3ViQ6ogTwsouJ01pOculevTAAAAAtXgmHU+E4jPis50KbwuwtF9vk6CYurxIbpa8NLrRqIc/rWBUlF6ZdTJ7cY4YX2eZAAAAADTTFXsL0qFfsALcGifhOkF5KQ8iS6CUlnQ1mBLvrKiAR052z+O9czzYHJXLJwlxysMbU21hRX+L6/WYjZJrk2g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABttUrr5Ku4KvmQuXMCZCQNQLAVlH7Pbfor9QAn/WpwGwAAAAAOgAAAAAIAACAAAAC5V9UlLB7w2cvT7gFYas/EjMl9AcZvH+2iXWjPh5vzfjAAAAB2Acwa36uDwPx7iMLOlLNUV+ZHyfgAWi9lAYpjxbwqCRSBhF/0mra39A1faSVK8xtAAAAAGy3MpCBhK+TNCwojZzNnNkyDLwCpnOdbfLqjBa7EQidkIjkWeRp2xNJDePVyA64JGfC6ER7ye9jp9qcas2zwWw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +97,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWP5QjuhMyq3ryh2wypOTRjliPApWg6QvMyClftXN0jgAAAAAOgAAAAAIAACAAAAAIz2VNmpROBTLnNrXEM15acUD5R0aqaoGpXVNvcomQyzAAAAAwpBpybBKbQ0swm8JZkZF3F644gKB1U5b0m46k/i+ErUdHk4bzeMBDM+SjUeghJhpAAAAAJHDqAtqYSmLfQ5D4g6uTsiSrxgTX2x69wzx+NXIxQrHBGZDqkfqML1aJVEl4cPKIQa7FGUOU2gkV925p0k2mJw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACLwryvN1c+ry+nI3LNb8Q/Uc3Yf2WULyb/w+TSReb6PwAAAAAOgAAAAAIAACAAAAAR4ZsnvVtYPWvlxiWIdfwlz3wjanzH6pfrwCY4nnBItTAAAACAyMvG343XpFpM5J9m7zL4NiNlt8I6GZ+x+GYVTny+h9RRsz/3DxniCIW74Vk5ItBAAAAAbi/pT3gEDUa1+j16Un8LwaUs2gS74A63gzR4eB5xEgSvr/p3z8DJr8quOR9911miTdhr7PiCb8g0PPbBGRFa2A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -154,6 +171,23 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear Admin"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Clear Admin"
+          DTS:DTSID="{7471B1DF-88F0-4003-A2D5-F9C52B794F47}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Admin"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B51283DB-698E-476C-BDAD-230657B284D8}"
+              SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Clean Up Data\Clear Analytics Front End"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Clear Analytics Front End"
@@ -162,7 +196,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Analytics Front End"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -179,7 +213,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Data Data_Entry"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -196,7 +230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear FF New"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -213,7 +247,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log a"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -230,7 +264,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log b"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -251,6 +285,23 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Insert Data\Insert Admin Data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{39A08D9A-7C39-4285-BC2F-D9A1D23F70DD}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert Admin Data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B51283DB-698E-476C-BDAD-230657B284D8}"
+              SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Insert Data\Insert Data entry"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Insert Data entry"
@@ -259,7 +310,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert Data entry"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -294,6 +345,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Insert Data\Insert Data entry" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Insert Data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{10A9E936-5FB3-437D-9AA1-8AD9DCC98C23}"
+          DTS:From="Package\Insert Data\Insert FF NEW Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Insert Data\Insert Admin Data" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -375,7 +434,7 @@
         <NodeLayout
           Size="200,44"
           Id="Package\Clean Up Data\Clear Analytics Front End"
-          TopLeft="211.666666666667,237.333333333333" />
+          TopLeft="61.666666666667,240.333333333333" />
         <NodeLayout
           Size="186,42"
           Id="Package\Clean Up Data\Clear Data Data_Entry"
@@ -392,11 +451,15 @@
           Size="132,42"
           Id="Package\Clean Up Data\Clear log b"
           TopLeft="394,12.1666666666667" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Clean Up Data\Clear Admin"
+          TopLeft="389,238" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="653,335"
-          Size="653,378"
+          PanelSize="653,351"
+          Size="653,394"
           Id="Package\Clean Up Data"
           TopLeft="358.000000000003,42.3333333333333" />
         <NodeLayout
@@ -429,27 +492,53 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="593,140"
-          Size="593,183"
-          Id="Package\Insert Data"
-          TopLeft="388.333333333333,512.666666666667" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Insert Data\Insert Admin Data"
+          TopLeft="47,125" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="684.666666666668,420.333333333333">
+          Id="Package\Insert Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="130.833333333333,69.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,92.3333333333337"
+              EndConnector="0,55.3333333333333"
               Start="0,0"
-              End="0,84.8333333333337">
+              End="0,47.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,84.8333333333337" />
+                    End="0,47.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="593,219"
+          Size="593,262"
+          Id="Package\Insert Data"
+          TopLeft="388.333333333333,512.666666666667" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="684.666666666668,436.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.3333333333337"
+              Start="0,0"
+              End="0,68.8333333333337">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.8333333333337" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
