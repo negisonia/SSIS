@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE OR REPLACE FUNCTION  test_data_client()--ADMIN DB
 RETURNS BOOLEAN AS $$
 DECLARE
@@ -14,4 +15,5 @@ RETURN success;
 
 END
 $$ LANGUAGE plpgsql;
+
 
