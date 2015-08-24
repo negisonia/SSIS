@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/20/2015 11:29:52 AM"
+  DTS:CreationDate="8/24/2015 10:40:00 AM"
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="GAPUSER-PC"
   DTS:CreatorName="gapuser-PC\gapuser"
-  DTS:DTSID="{C1E092AE-43D2-44E4-AA1D-22EF09D918B4}"
+  DTS:DTSID="{C14C4AEC-B943-40E5-8142-6885DE908A97}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="insert_data"
+  DTS:ObjectName="cleanup"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{22044D7F-35B8-4234-8D74-4FAC6BB2CA93}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{25D702D2-36B6-4913-BDA9-873EAE27ABED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgBBTE10w6vvEth0BuIcvUMHToC2E5zsV9t9iHDgXBEAAAAAAOgAAAAAIAACAAAABbuYriDHmzaxrlWycSYdB8KZYK6WsHG9cmsW4KUJtGnTAAAACTxG7FKoNMTZ5NuAfkAbh5WICOoMY2JWHAvUbGY1n1mvJKYuR4Pcb7B+HOe0fCLdtAAAAA/bx10P7mxnNuJIRWknpBRqhozhB+JYQWAXvNVrJG/F4+J2xEpBUjf0J2nKb5HC0o8GBDLTOJQLZiJfekLf5I6Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACRf8cJ1VsSKyviVYhZ6sLEPkHcQ8zjoFqJo2T2Xl6toQAAAAAOgAAAAAIAACAAAAC3kLroTGYgqMbyqeHR/6o/Ldt29UEiEB3K30R6YCwvxjAAAABBYFDXak4UB2fJHT6LIEiWJDn+Uhdn/WztYF4Do+hZjDjsKjAW1TrzY2jx65FCcXVAAAAAcCC23So8aY3S67ERN27nY4biLDpVGEt70u8XuBuZdh33UiEcj4nQ0TSW58mLjD72DNaXsP539Rva7/fZG3VWsQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADB2/0C0y5B6SSASGjvUzGOSFGIIeuFpS8xG9ZzryAawAAAAAAOgAAAAAIAACAAAADylCCKLDpN9ujJp65vsDMKl9EUAR5K44ndJ/2M4bMmJTAAAADQ1SqxSbxQoXU+I+Wx4LO/knoK4A5WsIdu/yPVqyQbN5xHQ4Jl/dUM/JOfvZ0C+OtAAAAAWsSGrAVV2wUfNDG3FFkhVf0RXXcdXrlf3AWd29MJmZmJ/9icnxlXOYp4CfMVfXScD/rlrfrwFglaZ9b+LXAAzw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB5VSSNSZ6/E2LbAl6+hoeSQ/+EKjm842jDfHc6iLYt+wAAAAAOgAAAAAIAACAAAADZpr1V+f+omW5sVcVnHzX9bvyInT92XxSMwAs4Yo/O5DAAAADatZrwZrKWb7itlHfwinZ80NcunO4+UAcQLCGSM6Ple9SscZ/HjKaXuPktsClHQFRAAAAAyEUufc0I8qHCaItulDG/UqxuODWr8ZSeb6lE5G8YFXJHykfPg3c/XnWpaVwgZbbfo5A3ESm90fGsUYOK4s7kqA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACHBgaQlH6Wr4ZOr+FpgFN1ftJr9vYfw1GrWiPfRRp04wAAAAAOgAAAAAIAACAAAACCqWPZ4MXZ/37ERJmzPQtHPaTtSGqwUeJP0facS95JWDAAAADBd//EXg93vvOFT+IXdGS8SYt3673LpQw9L8tuEQ+SRtRy7r3yvU/5QSBuS5W0gMZAAAAAvODqaWeQZeTVaYsbrt1Jup7HFRecsjY5HJo+tWyicL2W3e1ERbG4P+LUx3jYEJpNQ8cXCWHPIYYvPFQj69zzEw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA5v9g5SzjYbIYtsIZE2c1G6B50ur6ZxA9QiPIwh2vOhAAAAAAOgAAAAAIAACAAAABP5PYgUigoOQgPrqOvLkwFZBSka3OIBoy2U+yUmJSInDAAAAD0aaZ2jaCVhbk741FSAlJD/u0UK8rdCtA3j2rVtyv7PbA14P6f/FGTLftx0f/rk6xAAAAALpaUOLaik0L71hFCMikHJQ3Yssn9+R/Uxx7+jeU4Zh+UyqebFMgdXRBQJBv0avcHX9V16RI0YR/isaf+mTwTcA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADwO4PdKbEWtMJrhw83xGoocp54t28+aQDmcOxVOb/U8wAAAAAOgAAAAAIAACAAAAAMIzr+z02Q2Qo3DJp0IT8GoF55/6M9Avsx3U0KDDOAATAAAACUvIfg480IRKfhYrCyKcJ74A9VmHQH3lnalHh34KfujOdoqT8RcHxt5HS8rQjvmXNAAAAAK97NZewrk2Us9LfYXsT3xVR9Y8VOhnOA3t0vCE2tqwWfnE/aDMNV6K/xwmQbdWXmwpxWCLTn+rq9ON1UMhfDTw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABhiKgMLHDctC5Cy7KcARJ5bJScZ5rWwQMeJsyijWBQjwAAAAAOgAAAAAIAACAAAAB6ZcoLcGHlFsIR3cFnzj/EurC0YJhmYnI9EX4FkAFbljAAAAB4bwlsmPdIfchUXb653pGZPBc5IbrZPOrzUi7uVJB3Lc/6hf0u89EmAa+h0ivLSrtAAAAAOYW2Gz1zRBVbJ+eyNA4Neu+7t7sGfFu+kZQnTzKprOKJJjuxOsdxV0Ux3zEyx3hfEmaXz5aBwzbJJVoF7bGZPw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -97,7 +97,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADRkFNNZkK4aMmuYPZfeo0ycK8zM1IcrnN1uxnzwvPsRgAAAAAOgAAAAAIAACAAAAB09TByu9XGoqm1+sMpUc6om2skFFTLVizbFRf+W6B3wTAAAABaIPidlaMkdZvCJGdgvPVVKBgfgi9i+h8pkaowOVmz8lsr+1sCW7qhHtbuY+VzWJhAAAAAkOsR5O5nH/hN5vm593Kc6MeYevxrRZezaMzYhp+dbZJ9e388tkFTlIgnmky5B3qxF1v/3y5K+HQyDPUQw7y0Wg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB2n8k3nHQngYA4znLwD6Wg6lflahteaSp0rjiH7I35CgAAAAAOgAAAAAIAACAAAADIMFXbmKr0gX99u13zI6zWJUhjGIhubtPSHUi19ULavjAAAAASMrAZxqbhaS+hhBI9uy3iq+4IyIavWqBXevVjx1nniX/yLgE14CKDz4ndDXa79CRAAAAArJ37IiRq8zRE7u4EsD1vx6noL1fvbGGxxstzEG84vEAX1T5MlRWPa3oNWPHbreocF79JCX+o7gRfVLZ1RIbjdQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{47009E62-CC33-4E92-B019-C49B43BD8321}"
+      DTS:DTSID="{BD9A3811-B18D-43D8-89B4-968602532B17}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
@@ -114,7 +114,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7B55852C-9030-4A94-A92F-4772D5E39F6F}"
+      DTS:DTSID="{30B8E62E-2624-4D85-9AFD-B855936A8D4F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_prefix">
@@ -123,7 +123,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F2E40C25-32A9-4611-99AD-33B909FB31E2}"
+      DTS:DTSID="{41A8F787-A81E-42A9-932C-15B4A63A1739}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
@@ -132,144 +132,130 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{99D5DE6F-4C6A-4969-88C0-90522C4DDBB7}"
+      DTS:DTSID="{A0E06253-B0C0-4E85-9860-E3E7D766B623}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_username">
       <DTS:VariableValue
         DTS:DataType="8">postgres</DTS:VariableValue>
     </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{898D9C71-71BD-459A-BDE7-85095C05A1C0}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="email_recipients">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{7DB8B5E5-DD54-4342-82B1-FD0375A6DEE8}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Variable">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Insert Data"
+      DTS:refId="Package\Clean Up Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{FF8AF81F-10FD-42A1-AF12-CE3B333F674B}"
+      DTS:DTSID="{973ba5c1-cd66-482f-95c5-add3ffde7af0}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Insert Data">
+      DTS:ObjectName="Clean Up Data">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Insert Data\Insert Data entry"
+          DTS:refId="Package\Clean Up Data\Clear Admin"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Insert Data entry"
-          DTS:DTSID="{1F4565A5-23F3-41B3-91AF-E063C2D805E3}"
+          DTS:Description="Clear Admin"
+          DTS:DTSID="{de63d655-1d05-4c13-9f9c-2d2005f359eb}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Insert Data entry"
+          DTS:ObjectName="Clear Admin"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B51283DB-698E-476C-BDAD-230657B284D8}"
+              SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear Analytics Front End"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Clear Analytics Front End"
+          DTS:DTSID="{db7b6219-2079-4c5b-b559-e884e7ed448b}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Analytics Front End"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{598662EC-C39B-4B2D-8BFC-75276C5B27DA}"
+              SQLTask:SqlStatementSource="select clear_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear Data Data_Entry"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{74dd6f49-e33d-4c82-abd4-6facc09b4f0c}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Data Data_Entry"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{B14E3B38-9C6F-455D-B35F-06DA6E7DEA27}"
-              SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Insert Data\Insert FF NEW Data"
+          DTS:refId="Package\Clean Up Data\Clear FF New"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-          DTS:Description="Insert FF NEW Data"
-          DTS:DTSID="{61961D98-8440-497B-ABAA-A1BECBA7C6A4}"
+          DTS:Description="Clear FF New"
+          DTS:DTSID="{f8d57978-7bbf-4f1c-bbaa-51afbb2f99be}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Insert FF NEW Data"
+          DTS:ObjectName="Clear FF New"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{85CFBB3E-66E9-4B89-88BB-ACD1E4F87D34}"
-              SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="select clear_test_data() " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Insert Data.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{87186455-59AD-4651-9C87-3D0BCE09CC5E}"
-          DTS:From="Package\Insert Data\Insert FF NEW Data"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Insert Data\Insert Data entry" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-  </DTS:Executables>
-  <DTS:EventHandlers>
-    <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnError]"
-      DTS:CreationName="OnError"
-      DTS:DTSID="{5AA1AE5A-34E5-4EC1-8930-A094746E55D2}"
-      DTS:EventID="587699904"
-      DTS:EventName="OnError"
-      DTS:LocaleID="-1">
-      <DTS:Variables>
-        <DTS:Variable
-          DTS:CreationName=""
-          DTS:Description="The propagate property of the event"
-          DTS:DTSID="{D1540471-1A30-47D9-908D-33E47E431EFD}"
-          DTS:IncludeInDebugDump="6789"
-          DTS:Namespace="System"
-          DTS:ObjectName="Propagate">
-          <DTS:VariableValue
-            DTS:DataType="11">-1</DTS:VariableValue>
-        </DTS:Variable>
-      </DTS:Variables>
-      <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
+          DTS:refId="Package\Clean Up Data\Clear log a"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{fa62c5a2-fe90-48e7-82b2-e74fc4ec29e9}"
+          DTS:DTSID="{8d7d50c8-46f5-4435-9d43-4662e87eeafb}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Validate Insert Data Log Error"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          DTS:ObjectName="Clear log a"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{7696EEE6-4591-4272-A1DD-818D13CFDD91}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="-9"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="-9"
-                SQLTask:ParameterSize="0" />
-            </SQLTask:SqlTaskData>
+              SQLTask:SqlStatementSource="TRUNCATE TABLE  log_etl_process" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear log b"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{264121a3-5705-48b2-bbcd-8759b9469632}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear log b"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7696EEE6-4591-4272-A1DD-818D13CFDD91}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE log_etl_process_b" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-    </DTS:EventHandler>
-  </DTS:EventHandlers>
+    </DTS:Executable>
+  </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -281,58 +267,40 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="175,42"
-          Id="Package\Insert Data\Insert Data entry"
-          TopLeft="349,25" />
+          Size="165,42"
+          Id="Package\Clean Up Data\Clear Admin"
+          TopLeft="389,238" />
         <NodeLayout
-          Size="175,42"
-          Id="Package\Insert Data\Insert FF NEW Data"
-          TopLeft="43.6666666666666,27.6666666666667" />
-        <EdgeLayout
-          Id="Package\Insert Data.PrecedenceConstraints[Constraint]"
-          TopLeft="218.666666666667,47.3333333333334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="130.333333333333,0"
-              Start="0,0"
-              End="122.833333333333,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="122.833333333333,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="200,44"
+          Id="Package\Clean Up Data\Clear Analytics Front End"
+          TopLeft="61.666666666667,240.333333333333" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Clean Up Data\Clear Data Data_Entry"
+          TopLeft="62.1111111111113,134.777777777777" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Clean Up Data\Clear FF New"
+          TopLeft="365.5,138.222222222222" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Clean Up Data\Clear log a"
+          TopLeft="98.1111111111111,9.77777777777794" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Clean Up Data\Clear log b"
+          TopLeft="394,12.1666666666667" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="593,119"
-          Size="593,162"
-          Id="Package\Insert Data"
-          TopLeft="432.619047619047,235.52380952381" />
+          PanelSize="653,351"
+          Size="653,394"
+          Id="Package\Clean Up Data"
+          TopLeft="143,95" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="210,42"
-          Id="Package.EventHandlers[OnError]\Validate Insert Data Log Error"
-          TopLeft="460,50" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
