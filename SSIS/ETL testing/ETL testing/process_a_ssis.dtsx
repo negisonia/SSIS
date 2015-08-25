@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="process_a_ssis"
   DTS:PackageType="2"
-  DTS:VersionBuild="168"
-  DTS:VersionGUID="{D7B8A529-F4D3-4B1F-A9CA-B257F81C51C5}">
+  DTS:VersionBuild="169"
+  DTS:VersionGUID="{2FED6A63-B72F-48CD-A81F-4E746B77500C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABAPYEs7j7bdPCzUDVztVzTn1g0IDZVKNyOKiZHZpBmwAAAAAAOgAAAAAIAACAAAAB594ejKnKw08+NXe0WpafIyXDlkCqTCrnM6yMPc74BGzAAAACRNV80HbXyDvjZfpJ8H7n3tP1E26QTiZ2aXY9P01m011TLg7k02azbNcjPKgEC7ttAAAAA7x+PW23PvmWxP7rRDsqTFzwDX67gKFoIpDk+lZDpHPnlTymOYVRN03Ufkzh20Z9J5ajYwI+s+xrDLM5G0dp3SA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACWFkSOQ91gr8lWHyJlDLnL23pGR3tF5G172IOB6MBmnQAAAAAOgAAAAAIAACAAAACzTvUK0az3BG+MogTzaBBq5KZ7vS+Gm1RLfo8jHJgAgjAAAACEp+v2ERHPka6VJDLaWY+tIywAzlpzIqppJUuKT+06LcFZ7cG1cTLIRJ4y2iSWShNAAAAASJpA34htlKGldh4xGJAK9GfdHIGSfctxnjOosHfpYxMMIZ2pobDQ2vUfG/GXzt2TD8aV8SQqYFsxjEq0pVhKjg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZVHrW27BI5GbIOS+Ccs9tJp6zW9hG/pNcnusGKxPX7gAAAAAOgAAAAAIAACAAAABmuJAIjSiYLNiLWl/Rp/oqCxAKmbIzi0+S04CBz4KNJDAAAADhqJJJgVIeFRBUl62GsG4XR9zgaxcZw6zhUGUq7+dcEMTh5oCxukp0ua8MhYgVA9RAAAAA72wXgXPniprH2ynY6udU2guTvoTAyDHjWXvD/M4fhERkgnLPl4CG0elhHhLKFFLxZJq4UHLdUZ9o0+WSKZjbOw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABGQArniOxgd1KWQGKr2My/kqPW1wlKm1S3bdEX6VSEXAAAAAAOgAAAAAIAACAAAACU4ne8eEzzXN0G+oZhr1iaj5pwlmtE95LeiS4LBmfZSDAAAAAHDjqTs0xZK1gfFbEtRtaMSFGxumDkjxOb5Xl7BvrVjE93UDoHTG06xU5VbG9//V5AAAAAVzs9GC3I/ouipkZCq9qvypXxt6KIzMBthYClpSQz2puqKX57SThxO6h1ZLDEEWuBCDU2DreFTw1kIIJwVd8upg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb1QVqcbDIEOFPOR7/VsA4QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACFEOKvB9MIeSeQpj1FCezum5nznKPwzs140yp+mC+ttwAAAAAOgAAAAAIAACAAAABq6seJvQfPpp6asIpOFICYFZJdNp1udS1adIE2PIEWmjAAAAC13lsQiZDy8KyAvr85skmy6Vlmeu6eOmINaOIoCpPBSqvDDtg8JVzMA+SqGVbfTHRAAAAAJrsvQ2HwB7IFi2X+HmO8amgI+O0aN3Lb8bFEv1xaUT2i88Yr4rghfL4HaohVTsMZz+477oqBh5VgdegtWNbQ2Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABmz5kcZGfybDFEdQbxQtG7A++9uFgINtZ3o1VsLFxc5QAAAAAOgAAAAAIAACAAAAC0MOLcB4SzuEaNY99PkXWCAF4PmknUtJglvX3lDiCrvjAAAAAltpYKP9El7bgeZL3hIGNIlvmUlH2l16hhc2PvOy0eIhISDCnVvLqzUr+eyTXVrwBAAAAAnF9jyUJWmonZq9CH/i8ru2tTYeurrFb61gSS5XYjZGDrxC5h9TeMdEtGIacHCKxdfBvwDWJT7SEBvLxXgio6mA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2149,6 +2149,7 @@
       DTS:refId="Package\Pre-ETL Check"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{B4133C4A-80F5-47DB-9DEF-4ADBECFC7759}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
@@ -5071,36 +5072,6 @@
               Language="CSharp"
               ReadOnlyVariables="System::ContainerStartTime,System::TaskName,System::ErrorCode,System::ErrorDescription,System::SourceID,System::SourceName,User::db_prefix,User::db_server,User::email_recipients,System::MachineName,System::PackageID,System::PackageName,System::StartTime,System::UserName">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
-[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -5319,6 +5290,35 @@ using System.Runtime.CompilerServices;
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Settings.get_Default():ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Sett" +
+    "ings")]
+
+namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -5571,34 +5571,35 @@ namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ST_a9f85b9bf10545d18fbe66ca2ef1956c")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Settings.get_Default():ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties.Sett" +
-    "ings")]
-
-namespace ST_a9f85b9bf10545d18fbe66ca2ef1956c.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
