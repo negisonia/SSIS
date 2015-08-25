@@ -4,6 +4,8 @@ CREATE TABLE log_etl_validation_process
     process_started_at timestamp without time zone,
     data_insertion_ended_at timestamp without time zone,
     etl_execution_ended_at timestamp without time zone,
+    second_etl_execution_ended_at timestamp without time zone,
+    second_data_insertion_ended_at timestamp without time zone,
     analytics_validation_ended_at timestamp without time zone,
     restrictions_validation_ended_at timestamp without time zone,
     process_ended_at timestamp without time zone,
