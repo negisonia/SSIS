@@ -16,7 +16,7 @@ SELECT ana_rpt_coverage_tier_geo_test_001_002_create_fe_data() INTO criteria_rep
 --Query the actual value
 SELECT calculate_report_value('total_health_plan_count', get_report_name_call('rpt_coverage_tier_geo', ARRAY[criteria_report_id,current_month_int]),'market_name=''STATE_002''') INTO actual_value;
 --Compare actual and expected values
-expected_value = 6;
+expected_value = 8;
 PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_geo_test_002_validate_data-error: EXPECTED TOTAL PLAN COUNT FOR STATE_001 TO BE ');
 
 --Query the actual value

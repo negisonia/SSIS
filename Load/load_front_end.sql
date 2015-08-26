@@ -1,5 +1,5 @@
 -- Run from root of project
--- psql -d sandbox_front_end_tmp -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W --echo-all < Load/load_front_end.sql
+-- psql -d sandbox_front_end_tmp -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common
@@ -9,7 +9,9 @@
 \i 'Common/analytics_front_end/clear_test_data.sql'
 \i 'Common/analytics_front_end/get_current_month.sql'
 \i 'Common/analytics_front_end/validate_comparison_values.sql'
+\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
 \i 'Common/analytics_front_end/calculate_report_value.sql'
+\i 'Common/analytics_front_end/calculate_report_value_varchar.sql'
 \i 'Common/analytics_front_end/create_criteria_report.sql'
 \i 'Common/analytics_front_end/get_report_name_call.sql'
 \i 'Common/analytics_front_end/validate_test_data.sql'
@@ -56,6 +58,22 @@
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_014/test_014_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_015/test_015_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_016/test_016_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_001_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_002_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_003_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_004_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_005_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_006_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_007_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_008_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_009_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_010_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_011_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_012_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_013_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_014_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_015_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/test_016_validate_test_data.sql'
 
 -- Restrictions
 \i 'Restrictions/scripts/test 001/test_001_validate_test_data.sql'
