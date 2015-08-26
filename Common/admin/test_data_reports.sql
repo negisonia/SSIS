@@ -183,6 +183,7 @@ PERFORM common_create_report_criteria(report_3, ind1_pa_age_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_diagnosis_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_clinical_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_ql);
+PERFORM common_create_report_criteria(report_4, ind1_pa_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_age_1);
 
