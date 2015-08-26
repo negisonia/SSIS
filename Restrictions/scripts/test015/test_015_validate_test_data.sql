@@ -85,22 +85,22 @@ END IF;
 
 
 ---------------------VALIDATE EXPECTED REPORTS
-SELECT r.id INTO report_1 FROM criteria_restriction_reports cr WHERE cr.report_name='report_1' AND cr.business_id='report_1';
+SELECT cr.report_id INTO report_1 FROM criteria_restriction_reports cr WHERE cr.report_name='report_1' AND cr.business_id='report_1';
 IF report_1 IS NULL THEN
     SELECT throw_error('REPORT 1 DOES NOT EXISTS');
 END IF;
 
-SELECT r.id INTO report_2 FROM criteria_restriction_reports cr WHERE cr.report_name='report_2' AND cr.business_id='report_2';
-IF report_2 IS NULL THEN
-    SELECT throw_error('REPORT 2 DOES NOT EXISTS');
+SELECT cr.report_id INTO report_2 FROM criteria_restriction_reports cr WHERE cr.report_name='report_2' AND cr.business_id='report_2';
+IF report_2 IS NOT NULL THEN
+    SELECT throw_error('REPORT 2 SHOULD NOT EXISTS');
 END IF;
 
-SELECT r.id INTO report_3 FROM criteria_restriction_reports cr WHERE cr.report_name='report_3' AND cr.business_id='report_3';
+SELECT cr.report_id INTO report_3 FROM criteria_restriction_reports cr WHERE cr.report_name='report_3' AND cr.business_id='report_3';
 IF report_3 IS NULL THEN
     SELECT throw_error('REPORT 3 DOES NOT EXISTS');
 END IF;
 
-SELECT r.id INTO report_4 FROM criteria_restriction_reports cr WHERE cr.report_name='report_4' AND cr.business_id='report_4';
+SELECT cr.report_id INTO report_4 FROM criteria_restriction_reports cr WHERE cr.report_name='report_4' AND cr.business_id='report_4';
 IF report_4 IS NULL THEN
     SELECT throw_error('REPORT 4 DOES NOT EXISTS');
 END IF;
@@ -134,52 +134,53 @@ END IF;
 
 
 
---REPORT#2
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_5 AND RD.drug_class_id=drug_class_2) INTO valueExists;
-IF valueExists IS FALSE THEN
-    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_5||' drug class:'||drug_class_2||' does not exists');
-END IF;
-
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_6 AND RD.drug_class_id=drug_class_2) INTO valueExists;
-IF valueExists IS FALSE THEN
-    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_6||' drug class:'||drug_class_2||' does not exists');
-END IF;
-
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_7 AND RD.drug_class_id=drug_class_2) INTO valueExists;
-IF valueExists IS FALSE THEN
-    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_7||' drug class:'||drug_class_2||' does not exists');
-END IF;
+--REPORT#2 --REPORT 2 DOES NOT EXISTS SO WE CAN'T KNOW THE REPORT ID EVEN IF THE DRUGS ARE ASSOCIATED THE REPORT ID IS UNKNOWN
+--SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_5 AND rd.drug_class_id=drug_class_2) INTO valueExists;
+--RAISE NOTICE 'report:% , indication:% , drug: %, drug_class:%',report_2,indication_2,drug_5,drug_class_2;
+--IF valueExists IS FALSE THEN
+--    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_5||' drug class:'||drug_class_2||' does not exists');
+--END IF;
+--
+--SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_6 AND rd.drug_class_id=drug_class_2) INTO valueExists;
+--IF valueExists IS FALSE THEN
+--    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_6||' drug class:'||drug_class_2||' does not exists');
+--END IF;
+--
+--SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_2 AND rd.indication_id=indication_2 AND rd.drug_id=drug_7 AND rd.drug_class_id=drug_class_2) INTO valueExists;
+--IF valueExists IS FALSE THEN
+--    SELECT throw_error('report:'||report_2||' indication:'||indication_2||' drug:'||drug_7||' drug class:'||drug_class_2||' does not exists');
+--END IF;
 
 
 
 
 --REPORT#3
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_1 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_1 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_1||' drug:'||drug_1||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_1 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_1 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_3||' drug:'||drug_1||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_2 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_2 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_3||' drug:'||drug_2||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_2 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_2 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_1||' drug:'||drug_2||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_3 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_1 AND rd.drug_id=drug_3 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_1||' drug:'||drug_3||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_9 AND RD.drug_class_id=drug_class_3) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_3 AND rd.indication_id=indication_3 AND rd.drug_id=drug_9 AND rd.drug_class_id=drug_class_3) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_3||' indication:'||indication_3||' drug:'||drug_9||' drug class:'||drug_class_3||' does not exists');
 END IF;
@@ -188,12 +189,12 @@ END IF;
 
 
 --REPORT#4
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_4 AND rd.indication_id=indication_1 AND rd.drug_id=drug_1 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_4 AND rd.indication_id=indication_1 AND rd.drug_id=drug_1 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_4||' indication:'||indication_1||' drug:'||drug_1||' drug class:'||drug_class_1||' does not exists');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_4 AND rd.indication_id=indication_1 AND rd.drug_id=drug_2 AND RD.drug_class_id=drug_class_1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM report_drug rd WHERE rd.report_id=report_4 AND rd.indication_id=indication_1 AND rd.drug_id=drug_2 AND rd.drug_class_id=drug_class_1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('report:'||report_4||' indication:'||indication_1||' drug:'||drug_2||' drug class:'||drug_class_1||' does not exists');
 END IF;
@@ -205,105 +206,106 @@ END IF;
 
 --------------------- VALIDATE REPORT CRITERIAS
 --REPORT#1
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
 --STEPS CRITERIAS
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=6 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=6 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='Double' AND crs.criteria_restriction_name='Double' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='Double' AND crs.criteria_restriction_name='Double' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=6 AND crs.restriction_name='Double' AND crs.criteria_restriction_name='Double' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=6 AND crs.restriction_name='Double' AND crs.criteria_restriction_name='Double' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Single' AND crs.criteria_restriction_name='Single' AND crs.dim_criterion_type_id=4 AND crs.view_type_id=2) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 -- ATOMIC CRITERIAS
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='ST - Double' AND crs.criteria_restriction_name='custom_option_1 AND  custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='ST - Double' AND crs.criteria_restriction_name='custom_option_1 AND  custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='ST - Single' AND crs.criteria_restriction_name='custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='ST - Single' AND crs.criteria_restriction_name='custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA/ST - Single' AND crs.criteria_restriction_name='custom_option_1' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA/ST - Single' AND crs.criteria_restriction_name='custom_option_1' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='ST - Single' AND crs.criteria_restriction_name='custom_option_1' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=3 AND crs.restriction_name='ST - Single' AND crs.criteria_restriction_name='custom_option_1' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA/ST - Single' AND crs.criteria_restriction_name='Fail any one: custom_option_1, custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA/ST - Single' AND crs.criteria_restriction_name='Fail any one: custom_option_1, custom_option_2' AND crs.dim_criterion_type_id=2 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
---SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+--SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_1 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 --IF valueExists IS FALSE THEN
 --    SELECT throw_error('MISSING REPORT CRITERIA');
 --END IF;
 
 --REPORT#2 SHOULD NOT CONTAINS ANY RESTRICTION
 SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_2) INTO valueExists;
-IF valueExists IS FALSE THEN
+IF valueExists IS TRUE THEN
     SELECT throw_error('REPORT 2 SHOULD NOT CONTAINS CRITERIAS');
 END IF;
 
@@ -311,32 +313,32 @@ END IF;
 
 
 --REPORT#3
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Age' AND crs.criteria_restriction_name='criteria_age_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
---SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_3 AND crs.indication_name='indication_3' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Labs' AND crs.criteria_restriction_name='criteria_lab_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+--SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_3 AND crs.indication_name='Ind3' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Labs' AND crs.criteria_restriction_name='criteria_lab_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 --IF valueExists IS FALSE THEN
 --    SELECT throw_error('MISSING REPORT CRITERIA');
 --END IF;
 
---SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_3 AND crs.indication_name='indication_3' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+--SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_3 AND crs.indication_id=indication_3 AND crs.indication_name='Ind3' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_3' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 --IF valueExists IS FALSE THEN
 --    SELECT throw_error('MISSING REPORT CRITERIA');
 --END IF;
@@ -345,27 +347,27 @@ END IF;
 
 
 --REPORT#4
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Medical' AND crs.dim_restriction_type_id=2 AND crs.restriction_name='Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Diagnosis' AND crs.criteria_restriction_name='criteria_diagnosis_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=4 AND crs.restriction_name='QL' AND crs.criteria_restriction_name='criteria_ql_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Unspecified' AND crs.criteria_restriction_name='Criteria Unspecified' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
 
-SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='indication_1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
+SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report_id = report_4 AND crs.indication_id=indication_1 AND crs.indication_name='Ind1' AND crs.benefit_name='Pharmacy' AND crs.dim_restriction_type_id=1 AND crs.restriction_name='PA - Clinical' AND crs.criteria_restriction_name='criteria_clinical_1' AND crs.dim_criterion_type_id=1 AND crs.view_type_id=1) INTO valueExists;
 IF valueExists IS FALSE THEN
     SELECT throw_error('MISSING REPORT CRITERIA');
 END IF;
