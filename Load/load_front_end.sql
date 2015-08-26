@@ -81,3 +81,5 @@
 \i 'Restrictions/scripts/test 005/test_005_validate.sql'
 \i 'Restrictions/scripts/test 007/test_007_validate.sql'
 \i 'Restrictions/scripts/test 009/test_009_validation.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_test_2.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'

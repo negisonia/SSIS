@@ -11,4 +11,7 @@
 \i 'Restrictions/scripts/test 006/test_006_validate.sql'
 \i 'Restrictions/scripts/test 008/test_008_validate.sql'
 \i 'Restrictions/scripts/test 010/test_010_validation.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_test_1.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account_criteria.sql'
 
