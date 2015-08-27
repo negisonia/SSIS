@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="106"
-  DTS:VersionGUID="{67DA88D3-A75B-4CAA-958D-E1BE9FD9C48A}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{C2AFC0E2-8092-4179-9BEA-982BD7F1F6EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB8D0ptXMSpE4V60Op37jraS+TIOdIH0JP6w/pAhLkhJgAAAAAOgAAAAAIAACAAAACsaBTmqxZaZovjPj0l+uZMn3CvTPXwv6yqNt05DoLBjTAAAAARw4/6p17VlAwp6+WiurwvVqR7meQHHBTWrwpruqkPb2NhsNzkiXbVBHaQDARlVqlAAAAAu0u+Bu52J5arJm/TOoiFKyq5W3deyZaKjs2dgdp+dTa2vScsYngaLSK7QKBE0wqM1kaT1hc4k8LJa9h1BA8iRg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAs0ARchrw4/6S8sp6FILlAJ6YkTVsx2tzF3oP4WOyH8gAAAAAOgAAAAAIAACAAAACjgJEK3FVGL4MqoEJ3LukeNbXb3I/tI2T74vFrvb7ygjAAAACN+OdDK4kMf0TJro00ZSxDlwfOtJ4NYZpCK/NH71SaLbtA3AvXOQeW3zdK4oNKfKVAAAAAGbf6UtnoH5LfsI8m5EXnSU93x7ZOSK7MvN936N874F36BJEDonDxTYG0JW+Znj26RAwALPyt+eNHUAbkrYe7QQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADpBLKeOF5PrNi+LsV9aebGDiChEt68KYwlt3kDx1BGYQAAAAAOgAAAAAIAACAAAACZmWx9SOCTnpEky2iZhkR6Rp+JQ4dv7LQvT03uJF14+TAAAADB7ji04ogsXk76ZS9ntKmSDTTvXO8OQuYeNZh0QqP5l4m/bviMi7kwGNs8p+qEXwBAAAAANj23LWZMCnUrTG/deTS1SgkNXRMGiZNzCLRz6UdPrUAOcgF4IDJo1dq7NY7xI51VWfISFnEyvNh9aJMVkGy+RA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACHNBgUrKOKlQg3b0x/hz3OZzIAq2sB9mWyEqzNMnCTCQAAAAAOgAAAAAIAACAAAAC6Fw7ZTVFSUH2LMvR5S4s+Z+OYc81a7min0H9rBnzbSjAAAAB3MRY0T2+nDBBkN7dZZyrEznwu7qZmH0wyP6n4rHusdZzJ+f54h1p170tDBC+Fp1tAAAAAh39j7qcux7iFsb2FsXP7t+kOPGhsWRohnINbNrlqRcsdKn8R3M645UDQqSnDAoBQwmDf0+8O97N4c/2IY3bVJQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA6FkhnPMS7OWdgjazpwrmPNqv/A+WiUFct3nPrjN/XNQAAAAAOgAAAAAIAACAAAABprW7Cbt2ejkBbqw6RnS8I9DEecZ15vTWEOB/SFkwMszAAAADAsetgHKSPGnMJW4s44ixmbouKArJPvZ3k5HW9POsOHCWXmta+riy08gfPAHOj4jxAAAAAT3Yhax73A7BaOhq0kKj9YLFaSnZLacwPoCHLj2d6sPOV/lSQv3hm7MPPtgAtlMafVgtD90UwuBb7+nFvn8QkpA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADtmhR5Nn/1UTkm3dAhmF9/uW3ZpJZRlLYZYxMUQSYzOQAAAAAOgAAAAAIAACAAAACtRXkgl5n2Yn4saJjAXEPCKYo7SH+TpGdzMhGRpBR0AjAAAAC18FZnVJP7hJDzBLiBxG6vxLXNZj8ZWRv14o6DtoWUf3Au6jbW8D9v7ThBgAGXyt5AAAAAsuuY7B6OJjUYYEhUzQ0FDKVaH4rjNv3mBp8mmc0JSjZ8OWVVVjAJ9wr2l0iYEbLKdUOopWgOiURxHv1xaxvyTw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -216,7 +216,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="CA ETL Test 1"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -233,7 +233,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="CA ETL Test 2"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -407,6 +407,23 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Validation\Test 015 Validation"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2D246B13-B0DE-452B-BBA0-456FF8320512}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test 015 Validation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="8">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{63554163-618B-450B-8806-F07B7EE917A6}"
+              SQLTask:SqlStatementSource="SELECT restrictions_test_015_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Validation\Test 07 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
@@ -550,6 +567,21 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Custom Accounts Validation\CA ETL Test 1"
+          TopLeft="86,45.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Custom Accounts Validation\CA ETL Test 2"
+          TopLeft="291,46.75" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="1224,218"
+          Size="1224,261"
+          Id="Package\Custom Accounts Validation"
+          TopLeft="1126.25,428.75" />
         <NodeLayout
           Size="170,42"
           Id="Package\Validation\Test 001 validation"
@@ -704,28 +736,17 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Validation\Test 015 Validation"
+          TopLeft="1383,28" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1533,210"
-          Size="1533,253"
+          PanelSize="1557,210"
+          Size="1557,253"
           Id="Package\Validation"
           TopLeft="1125.5018037518,97.20490620491" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Custom Accounts Validation\CA ETL Test 1"
-          TopLeft="86,45.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Custom Accounts Validation\CA ETL Test 2"
-          TopLeft="291,46.75" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="1224,218"
-          Size="1224,261"
-          Id="Package\Custom Accounts Validation"
-          TopLeft="1126.25,428.75" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
