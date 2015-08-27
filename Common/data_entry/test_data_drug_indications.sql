@@ -57,6 +57,7 @@ PERFORM common_create_drug_indication(indication_2_id,drug_7);
 --indication # 3
 PERFORM common_create_drug_indication(indication_3_id,drug_1);
 PERFORM common_create_drug_indication(indication_3_id,drug_2);
+PERFORM common_create_drug_indication(indication_3_id,drug_3);
 PERFORM common_create_drug_indication(indication_3_id,drug_9);
 
 success=true;

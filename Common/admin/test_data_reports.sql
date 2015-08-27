@@ -129,12 +129,13 @@ PERFORM common_create_report_drug(report_2, indication_2, drug_7);
 --DRUGS REPORT #3
 PERFORM common_create_report_drug(report_3, indication_1, drug_1);
 PERFORM common_create_report_drug(report_3, indication_1, drug_2);
-PERFORM common_create_report_drug(report_3, indication_3, drug_9);
 PERFORM common_create_report_drug(report_3, indication_1, drug_3);
+PERFORM common_create_report_drug(report_3, indication_1, drug_3);
+PERFORM common_create_report_drug(report_3, indication_3, drug_9);
 PERFORM common_create_report_drug(report_3, indication_3, drug_1);
 PERFORM common_create_report_drug(report_3, indication_3, drug_2);
-PERFORM common_create_report_drug(report_3, indication_3, drug_9);
-PERFORM common_create_report_drug(report_3, indication_1, drug_3);
+PERFORM common_create_report_drug(report_3, indication_3, drug_3);
+
 
 --DRUGS REPORT #4
 PERFORM common_create_report_drug(report_4, indication_1, drug_1);
@@ -183,6 +184,7 @@ PERFORM common_create_report_criteria(report_3, ind1_pa_age_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_diagnosis_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_clinical_1);
 PERFORM common_create_report_criteria(report_4, ind1_pa_ql);
+PERFORM common_create_report_criteria(report_4, ind1_pa_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_age_1);
 
