@@ -21,7 +21,7 @@ SELECT ana_rpt_coverage_tier_plan_test_001_010_create_fe_data() INTO criteria_re
 
 health_plan_names := ARRAY['TEST_PLAN_013','TEST_PLAN_013'];
 
--- Validate that is Tier 3 Preferred for each plan in the array
+-- Validate Preferrred Health Plans
 FOREACH plan_name IN ARRAY health_plan_names
   LOOP
 
