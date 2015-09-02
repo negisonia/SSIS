@@ -15,7 +15,7 @@ SELECT ana_rpt_coverage_tier_plan_test_001_010_create_fe_data() INTO criteria_re
 SELECT calculate_report_value('lives', get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'health_plan_name=''' || health_plan_name || '''') INTO actual_value;
 expected_value = lives;
 
-PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_plan_test_009_validate_data-error: EXPECTED lives TO BE ');
+PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_plan_test_009_validate_data-error: EXPECTED lives FOR PLAN ' || health_plan_name || ' TO BE ');
 
 success:=true;
 RETURN success;

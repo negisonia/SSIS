@@ -26,7 +26,7 @@ FOREACH plan_name IN ARRAY health_plan_names
     SELECT calculate_report_value_varchar('dim_tier_name', get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'health_plan_name=''' || plan_name || '''') INTO actual_value_varchar;
     --expected_value_varchar = dim_tier_name;
 
-    PERFORM validate_comparison_values_varchar(actual_value_varchar, dim_tier_name,'ana_rpt_coverage_tier_plan_test_002_validate_data-error: EXPECTED dim_tier_name TO BE ');
+    PERFORM validate_comparison_values_varchar(actual_value_varchar, dim_tier_name,'ana_rpt_coverage_tier_plan_test_002_validate_data-error: EXPECTED dim_tier_name FOR PLAN ' || plan_name || 'TO BE ');
 END LOOP;
 
 success:=true;
