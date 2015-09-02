@@ -22,10 +22,10 @@ health_plan_names := ARRAY['TEST_PLAN_008','TEST_PLAN_009','TEST_PLAN_010','TEST
 FOREACH plan_name IN ARRAY health_plan_names
   LOOP
 
-    SELECT calculate_report_value_boolean('XXX', get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'health_plan_name=''' || plan_name || '''') INTO actual_value;
+    SELECT calculate_report_value_boolean('has_pharmacy', get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'health_plan_name=''' || plan_name || '''') INTO actual_value;
     expected_value = TRUE;
 
-    PERFORM validate_comparison_values_boolean(actual_value, expected_value,'ana_rpt_coverage_tier_plan_test_008_validate_data-error: EXPECTED XXX TO BE ');
+    PERFORM validate_comparison_values_boolean(actual_value, expected_value,'ana_rpt_coverage_tier_plan_test_008_validate_data-error: EXPECTED has_pharmacy TO BE ');
 
 END LOOP;
 
