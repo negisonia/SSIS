@@ -96,7 +96,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     --INSERT MEDICAL
     SELECT  common_create_medical(data_entry_id,TRUE,atomic_step_id) INTO medical_id;
     --INSERT MEDICAL CRITERIA
-    PERFORM common_create_medical_criteria(medical_id, criteria_diagnosis_3, TRUE);
+    PERFORM common_create_medical_criteria(medical_id, criteria_diagnosis_3, TRUE,NULL);
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
     --INSERT DATA ENTRY
@@ -104,7 +104,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     --INSERT MEDICAL
     SELECT common_create_medical(data_entry_id,TRUE,NULL) INTO medical_id;
     --INSERT MEDICAL CRITERIA
-    PERFORM common_create_medical_criteria(medical_id, criteria_unspecified, TRUE);
+    PERFORM common_create_medical_criteria(medical_id, criteria_unspecified, TRUE,'additional notes');
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
      --INSERT DATA ENTRY
@@ -112,7 +112,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     --INSERT MEDICAL
     SELECT common_create_medical(data_entry_id,TRUE,NULL) INTO medical_id;
     --INSERT MEDICAL CRITERIA
-    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE);
+    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE,'additional notes');
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
      --INSERT DATA ENTRY
@@ -120,7 +120,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     --INSERT MEDICAL
     SELECT common_create_medical(data_entry_id,TRUE,NULL) INTO medical_id;
     --INSERT MEDICAL CRITERIA
-    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE);
+    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE, NULL);
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
 success=true;
