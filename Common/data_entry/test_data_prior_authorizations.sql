@@ -99,10 +99,10 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE, atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, null, null);
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1, TRUE, 1, NULL, NULL);
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 10, 30);
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, null, null, null);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1, TRUE, 1, NULL, NULL, 'long message 500 characters');
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 10, 30, 'age restriction');
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 1, NULL, NULL, 'long message 100 characters');
     PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 
@@ -113,8 +113,8 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 2, null, null);
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3, TRUE, 2, null, null, 'notes');
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1, TRUE, 1, NULL, NULL, 'message');
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
@@ -122,7 +122,7 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 18, null);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, 18, null, 'Notes');
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
@@ -130,7 +130,7 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_unspecified, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_unspecified, TRUE, 1, NULL, NULL, 'Notes');
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 --CREATE DATA ENTRY
@@ -140,7 +140,7 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1, TRUE, 1, NULL, NULL,'age restrictions: 18 and older');
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 
@@ -149,7 +149,7 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_lab_3, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_lab_3, TRUE, 1, NULL, NULL,NULL);
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 	--CREATE DATA ENTRY
@@ -157,7 +157,7 @@ SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt 
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
 	--CREATE Prior Authorization Criterias
-	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_3, TRUE, 1, NULL, NULL);
+	PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_3, TRUE, 1, NULL, NULL, NULL);
 	PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
 
