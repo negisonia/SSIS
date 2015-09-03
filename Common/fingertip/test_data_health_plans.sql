@@ -87,7 +87,7 @@ BEGIN
     PERFORM common_create_healthplan(union_hpt_id,TRUE,'health_plan_union',NULL,provider_2_id);
     PERFORM common_create_healthplan(municipal_plan_hpt_id,TRUE,'health_plan_mun',NULL,provider_4_id);
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',NULL,provider_10_id);
-    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',NULL,provider_1_id);
+    PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',common_create_formulary(TRUE,FALSE,NULL),provider_1_id);
     PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', common_create_formulary(TRUE,FALSE,NULL), provider_001_id);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', common_create_formulary(TRUE,FALSE,NULL), provider_001_id);

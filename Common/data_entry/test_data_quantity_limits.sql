@@ -106,6 +106,12 @@ SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id
 PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 2,10,'tabs','week', NULL);
 PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
 
+--INSERT QUANTITY LIMITS
+SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_2) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
+PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 1,10,'tabs','days', 'ql message');
+PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
+
 success=true;
 return success;
 END
