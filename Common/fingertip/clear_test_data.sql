@@ -33,6 +33,7 @@ BEGIN
   TRUNCATE TABLE benefitstructurecopay CASCADE;
   TRUNCATE TABLE benefitstructurecopayvalue CASCADE;
   TRUNCATE TABLE benefitstructurestate CASCADE;
+  TRUNCATE TABLE hli_medical_benefit_lives CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
@@ -65,6 +66,7 @@ BEGIN
   ALTER SEQUENCE benefitstructurecopay_id_seq RESTART;
   ALTER SEQUENCE benefitstructurecopayvalue_id_seq RESTART;
   ALTER SEQUENCE benefitstructurestate_id_seq RESTART;
+  ALTER SEQUENCE hli_medical_benefit_lives_id_seq RESTART;
 
 success:=true;
 RETURN success;
