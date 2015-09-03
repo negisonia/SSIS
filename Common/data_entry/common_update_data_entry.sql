@@ -5,7 +5,6 @@ valueExists BOOLEAN DEFAULT FALSE;
 success BOOLEAN DEFAULT FALSE;
 BEGIN
 
-
   --VALIDATE IF DATA ENTRY EXISTS
   SELECT EXISTS ( SELECT 1 FROM data_entries d WHERE d.id=data_entry_id) INTO valueExists;
   IF valueExists IS TRUE THEN
@@ -14,10 +13,10 @@ BEGIN
            quantity_limit_id=CASE WHEN new_quantity_limit_id IS NOT NULL THEN new_quantity_limit_id ELSE quantity_limit_id END,
            other_restriction_id= CASE WHEN new_other_restriction_id IS NOT NULL THEN new_other_restriction_id ELSE other_restriction_id END,
            step_therapy_id=CASE WHEN new_step_therapy_id IS NOT NULL THEN new_step_therapy_id ELSE step_therapy_id END,
-           medical_id= CASE WHEN new_medical_id IS NOT NULL THEN new_medical_id ELSE medical_id END;
+           medical_id= CASE WHEN new_medical_id IS NOT NULL THEN new_medical_id ELSE medical_id END
      WHERE id=data_entry_id;
   ELSE
-     select throw_error('data entry does not exists')
+     select throw_error('data entry does not exists');
   END IF;
 
 success:=TRUE;

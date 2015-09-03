@@ -1,5 +1,5 @@
 -- Run from root of project
--- psql -d sandbox_front_end_tmp -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
+-- psql -d sandbox_front_end -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common

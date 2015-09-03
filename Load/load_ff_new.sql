@@ -1,10 +1,12 @@
 -- Run from root of project
--- psql -d sandbox_ff_new -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W --echo-all < Load/load_ff_new.sql
+-- psql -d sandbox_ff_new -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_ff_new.sql
+
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common
 \i 'Common/call_functions_from_table.sql'
 \i 'Common/common_create_test_data_functions.sql'
+\i 'Common/common_get_table_id_by_name.sql'
 
 -- Fingertip Common
 \i 'Common/fingertip/create_sequences.sql'
@@ -41,7 +43,7 @@
 \i 'Common/fingertip/common_get_county_id_by_name_and_state.sql'
 \i 'Common/fingertip/common_get_formulary_id_by_plan_name.sql'
 \i 'Common/fingertip/common_get_reason_code_id_by_code.sql'
-\i 'Common/fingertip/common_get_table_id_by_name.sql'
+
 \i 'Common/fingertip/common_insert_test_data_functions_table.sql'
 \i 'Common/fingertip/test_data_counties.sql'
 \i 'Common/fingertip/test_data_country.sql'
