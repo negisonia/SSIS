@@ -27,6 +27,7 @@ PERFORM common_create_test_data_functions('test_data_prior_authorizations',12);
 PERFORM common_create_test_data_functions('test_data_quantity_limits',13);
 PERFORM common_create_test_data_functions('test_data_step_therapies',14);
 PERFORM common_create_test_data_functions('test_data_atomic_step_notes',15);
+PERFORM common_create_test_data_functions('test_data_entry_details',16);
 
 
 success:=true;
