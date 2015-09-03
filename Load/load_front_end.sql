@@ -5,24 +5,24 @@
 -- Common
 -- Analytics
 \i 'Common/analytics_front_end/add_criteria_report_markets.sql'
-\i 'Common/analytics_front_end/add_criteria_report_markets.sql'
-\i 'Common/analytics_front_end/clear_test_data.sql'
-\i 'Common/analytics_front_end/get_current_month.sql'
-\i 'Common/analytics_front_end/validate_comparison_values.sql'
-\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
 \i 'Common/analytics_front_end/calculate_report_value.sql'
 \i 'Common/analytics_front_end/calculate_report_value_varchar.sql'
+\i 'Common/analytics_front_end/clear_test_data.sql'
 \i 'Common/analytics_front_end/create_criteria_report.sql'
+\i 'Common/analytics_front_end/get_current_month.sql'
 \i 'Common/analytics_front_end/get_report_name_call.sql'
+\i 'Common/analytics_front_end/validate_comparison_values.sql'
+\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
 \i 'Common/analytics_front_end/validate_test_data.sql'
 
 -- Common
 -- Restrictions
 \i 'Common/restrictions_front end/create_report_fe.sql'
-\i 'Common/restrictions_front end/get_report_active_restrictions.sql'
-\i 'Common/restrictions_front end/get_total_health_plan_count_fe.sql'
 \i 'Common/restrictions_front end/get_health_plan_count.sql'
+\i 'Common/restrictions_front end/get_report_active_restrictions.sql'
 \i 'Common/restrictions_front end/get_report_restrictioned_drugs_fe.sql'
+\i 'Common/restrictions_front end/get_total_health_plan_count_fe.sql'
+
 
 -- Analytics
 -- Rpt Coverage Tier Drug
@@ -81,5 +81,6 @@
 \i 'Restrictions/scripts/test 005/test_005_validate.sql'
 \i 'Restrictions/scripts/test 007/test_007_validate.sql'
 \i 'Restrictions/scripts/test 009/test_009_validation.sql'
+\i 'Restrictions/scripts/test 016/test_016_validate_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_2.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'
