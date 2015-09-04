@@ -12,6 +12,6 @@
 \i 'Restrictions/scripts/test 002/test_002_validate_test_data.sql'
 \i 'Restrictions/scripts/test 004/test_004_validate_test_data.sql'
 \i 'Restrictions/scripts/test 006/test_006_validate.sql'
-\i 'Restrictions/scripts/test 006/test_008_validate.sql'
+\i 'Restrictions/scripts/test 008/test_008_validate.sql'
 \i 'Restrictions/scripts/test 010/test_010_validation.sql'
 \i 'Restrictions/scripts/test 015/test_015_validate_test_data.sql'
