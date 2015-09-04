@@ -164,13 +164,18 @@ build_temp_etl(){
 
   create_and_load_etl_dbs
 
+  cd ../
+  cd data-warehouse-storeprocedures-tests/Load
+
   alter_temp_foreign_servers
+
 }
 
 build_temp_non_etl(){
   cd ../
   mkdir dump
   create_and_load_ff_new_data_entry
+  cd Load/
 }
 
 kill_session(){
