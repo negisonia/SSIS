@@ -24,7 +24,7 @@
 \i 'Common/data_entry/common_create_medical.sql'
 \i 'Common/data_entry/common_create_medical_criteria.sql'
 \i 'Common/data_entry/common_create_note.sql'
-\i 'Common/data_entry/common_create_pior_authorization.sql'
+\i 'Common/data_entry/common_create_prior_authorization.sql'
 \i 'Common/data_entry/common_create_prior_authorization_criteria.sql'
 \i 'Common/data_entry/common_create_quantity_limit.sql'
 \i 'Common/data_entry/common_create_quantity_limit_criteria.sql'
