@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="validate_analytics"
   DTS:PackageType="5"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{706AC58E-9290-4870-B49C-4B4FADD20E2D}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{4CCFAE69-76EF-497B-935C-7E74B77B85D6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVP8+yzfsWb7O6Wvf8CLF+sMlACEy7o19FF+c40u6SuwAAAAAOgAAAAAIAACAAAABOJJ7wgkjwBi1Vrfi6j/NDBbKz2fdFmgHZpwHI/cnE/zAAAAAMotiK3aMJ/LECZcHGWGDDa70mnNxDLqGGD4EKxpoq+QbWEJHNczHyIjdhRGqup5ZAAAAAIpN1EjpSuh0g8D66eGPw2gsIvuUtmb8SrhQFHA0bSpiBZjA0xCj8HunMSFk3lCb/lDaFBSInmWaki3mOJX+aDQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABtg0Q1QfiPXvyNmyQVvsEFHma+EzLtE78iJDxtKeXvLAAAAAAOgAAAAAIAACAAAAAZxImgwYYzKiUz5yBsFimb1LFGT7usx+CvrZ8wHBZKADAAAABEe8vaVXD5D+uqSO0+qR7iRFfLY6tCiiD8xZpChvwNPdvXnfh43IhIvuQwjO68ebJAAAAA+a3ACSFic5j0jCQ/H6iz5DNAlJWDyjiXK4cHc0sfMjCu3HZYeenV6sOVc6tN6w9xD51HoA5mjhgyavwDHJ8yyg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAhpfzSe/o+Ct+nKBHxVpfkx01nlaZgGL4Wr1KAEvBEYAAAAAAOgAAAAAIAACAAAAAeZdlXZcc1mO5/L3DypSq8t1yJ67xogHNLttFdn8BDvjAAAAB0fbq89uby220syk66jOUw7oncSOtClMcqstO1zJfK69v3TvZK5X9qkYtD8FU7eUZAAAAAjAlfYzOnj9ant+nLfNqhmXT/cbafoAcbwjrl33eA7eCYOFDHHF0DdXmCMemHSAfbVYov8VAXVLHV79MKfD0QHQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD7OFTBMqgZ4B+oyEzcvZaGzeetDS7ROMSN+e7zjqdQ8AAAAAAOgAAAAAIAACAAAAAWqGheahgPxDZQSKZSa7MV31srjFuXMme5oKkCZUqXXjAAAACIC41zf41chfp0skNvNUiH6dM+xhHb9hcToX/KYmtapXqYLgop1d0FbP1VUq8Jr+xAAAAA5I/q5HojuWDjVj8flQhKspw3Qg8WZ1zYaw9Y0Jep0ZLPxHPuT5YdJXPmQLp+k7rdTWIxVWflm14F9Ibw6t8bpw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -109,27 +109,27 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Validation"
+      DTS:refId="Package\Rpt Coverage by Tier"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{EAE3FC9E-A9E0-43C4-B673-37AD3FBD1A71}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Validation">
+      DTS:ObjectName="Rpt Coverage by Tier">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation"
+          DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
           DTS:DTSID="{C412A94B-158B-475C-B183-26FC117411A0}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Rpt Coveraga Tier Drug Validation">
+          DTS:ObjectName="Drug Validation (Summary)">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 001 Validate Test Data"
               DTS:DTSID="{70A697D6-F0E3-4307-A351-EFFFACF88BA0}"
@@ -137,11 +137,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 001 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="32">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
-                  DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data.EventHandlers[OnError]"
+                  DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data.EventHandlers[OnError]"
                   DTS:CreationName="OnError"
                   DTS:DTSID="{5109931C-D911-4FDD-BB00-AB65029919EB}"
                   DTS:EventID="184868200"
@@ -161,7 +161,7 @@
                   </DTS:Variables>
                   <DTS:Executables>
                     <DTS:Executable
-                      DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data.EventHandlers[OnError]\Validate Analytics Log Error"
+                      DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data.EventHandlers[OnError]\Validate Analytics Log Error"
                       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
                       DTS:Description="Execute SQL Task"
                       DTS:DTSID="{2A6BA654-DB08-471B-885F-16ECBD52ACDF}"
@@ -193,7 +193,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 002 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 002 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 002 Validate Test Data"
               DTS:DTSID="{F458AFDF-DFC5-4B77-B48A-5EC56B01F1D4}"
@@ -201,7 +201,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 002 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="33">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -210,7 +210,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 003 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 003 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 003 Validate Test Data"
               DTS:DTSID="{E4D33F00-6F0E-437F-82A1-83E99F1BE09F}"
@@ -218,7 +218,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 003 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="34">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -227,7 +227,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 004 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 004 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 004 Validate Test Data"
               DTS:DTSID="{70993A65-B8F8-4946-B375-29C3F76BF2C0}"
@@ -235,7 +235,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 004 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="35">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -244,7 +244,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 005 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 005 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 005 Validate Test Data"
               DTS:DTSID="{82FE4C82-7C8E-4DBD-B62A-960F2029E20B}"
@@ -252,7 +252,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 005 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="36">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -261,7 +261,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 006 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 006 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 006 Validate Test Data"
               DTS:DTSID="{1D10682A-8605-4295-A8C7-0A7CEC04B351}"
@@ -269,7 +269,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 006 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="37">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -278,7 +278,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 007 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 007 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 007 Validate Test Data"
               DTS:DTSID="{4A669B2C-6D07-4077-BF2B-BB984CB543E2}"
@@ -286,7 +286,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 007 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="38">
+              DTS:ThreadHint="16">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -297,17 +297,17 @@
           </DTS:Executables>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation"
+          DTS:refId="Package\Rpt Coverage by Tier\Geography Validation"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
           DTS:DTSID="{DD5092B1-8479-454D-A3FA-64F4F55FAC73}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Rpt Coveraga Tier Geo Validation">
+          DTS:ObjectName="Geography Validation">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 001 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 001 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{C59AFDEB-2C56-40AD-BA0F-A7CB6ED1DAF3}"
@@ -315,7 +315,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 001 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="17">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -324,7 +324,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 002 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 002 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 002 Validate Test Data"
               DTS:DTSID="{F8A6A7DF-6D2E-474A-82F2-EC2BFA76689B}"
@@ -332,7 +332,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 002 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="18">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -341,7 +341,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 003 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 003 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{576E5758-DD80-4B35-A70D-E1153A249372}"
@@ -349,7 +349,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 003 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="19">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -358,7 +358,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 004 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 004 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{5BCA2729-9D92-4085-AFC1-FEFA0FD94A1A}"
@@ -366,7 +366,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 004 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="20">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -375,7 +375,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 005 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 005 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{0AB5858E-7A13-4B12-8749-880A34DD656D}"
@@ -383,7 +383,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 005 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="21">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -392,7 +392,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 006 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 006 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{3177F27E-6C9C-484F-8F82-5E8A3441BEA8}"
@@ -400,7 +400,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 006 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="22">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -409,7 +409,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 007 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 007 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{B640E634-4F25-4264-AB91-171EBCEB2303}"
@@ -417,7 +417,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 007 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="23">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -426,7 +426,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 008 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 008 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 008 Validate Test Data"
               DTS:DTSID="{1513859F-C7AD-4AA1-B81D-81AB112A6D36}"
@@ -434,7 +434,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 008 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="24">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -443,7 +443,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 009 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 009 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 009 Validate Test Data"
               DTS:DTSID="{CD3F20E7-222F-4A75-B59C-3EA19FB7A018}"
@@ -451,7 +451,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 009 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="25">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -460,7 +460,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 010 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 010 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{BCD685DD-4C1E-4468-B232-ECEAA41D64EC}"
@@ -468,7 +468,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 010 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="26">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -477,7 +477,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 011 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 011 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{DE3F5750-11EC-44FB-8FA7-21ED7BEAB709}"
@@ -485,7 +485,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 011 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="27">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -494,7 +494,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 012 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 012 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{9B66BB72-C5E8-4082-B643-B3E231B80BFB}"
@@ -502,7 +502,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 012 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="28">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -511,7 +511,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 013 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 013 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{EB8CECF9-99C6-4A99-9AE0-6445444881DC}"
@@ -519,7 +519,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 013 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="29">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -528,7 +528,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 014 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 014 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{E37BFFAF-54D1-4A33-BDD9-71D0B6BB8622}"
@@ -536,7 +536,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 014 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="15">
+              DTS:ThreadHint="30">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -545,7 +545,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 015 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 015 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{6107AD29-382B-4854-81E6-99DD09409D3F}"
@@ -553,7 +553,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 015 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="31">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -562,7 +562,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 016 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 016 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{CE9F06D9-2C6B-4750-B1FA-64B623D68DA6}"
@@ -570,7 +570,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 016 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="32">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -581,17 +581,199 @@
           </DTS:Executables>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation"
+          DTS:refId="Package\Rpt Coverage by Tier\Plan Validation"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{04390D88-6D23-4497-8C78-1E1170577076}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Plan Validation">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 001 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{ABAB4E37-F8FA-4898-A72D-36C02AC53FFA}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 001 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_001_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 002 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{dff469ee-ed76-4b53-a599-31eb389c9491}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 002 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="9">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_002_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 003 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{eb0cbcbb-663c-45d1-a454-9d175aa1d8c2}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 003 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_003_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 004 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{bc234eb3-7109-4e54-80e0-143e538bde7c}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 004 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="8">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_004_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 007 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{9e24dc25-e0dc-4c45-a244-f026072035df}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 007 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_007_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 008 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{15a91074-6371-4a97-aaad-5833ed8157f7}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 008 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_008_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 009 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1604541e-95e3-4454-b309-094ec6ddedd9}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 009 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_009_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 010 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{0c0e6a0e-93c1-4c96-b32e-4aa303927280}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute Test 010 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="6">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_010_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\TC Coverage by Tier Plan Details Test 006"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{fff5964d-dab5-441f-a167-8a0119b036f9}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TC Coverage by Tier Plan Details Test 006"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="5">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_006_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Rpt Coverage by Tier\Plan Validation\TC Execute Test 005 Validate Test Data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{b3759c51-b1df-471c-9361-73c3cc3eeeb5}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TC Execute Test 005 Validate Test Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="7">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{F9FAB140-31B8-4101-9A39-0BFA0C81B2AA}"
+                  SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_005_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Rpt Coverage by Tier\Provider Validation"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
           DTS:DTSID="{FF51CFAA-CC69-4A3F-8E82-60384CB9725C}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Rpt Tier Coverage Provider Validation">
+          DTS:ObjectName="Provider Validation">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 001 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 001 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{EFC60050-5DF1-4E4A-A110-BD5AC992B9E3}"
@@ -599,7 +781,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 001 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="16">
+              DTS:ThreadHint="33">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -608,7 +790,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 002  Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 002  Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{34C46ED4-7E60-41A7-9975-FEE5C86BF015}"
@@ -616,7 +798,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 002  Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="17">
+              DTS:ThreadHint="34">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -625,7 +807,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 003 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 003 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{B9020DA2-1002-4928-953F-1725E75680F8}"
@@ -633,7 +815,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 003 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="18">
+              DTS:ThreadHint="35">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -642,7 +824,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 004 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 004 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{5C83AF25-21A6-4C49-B697-9FC4A18AE927}"
@@ -650,7 +832,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 004 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="19">
+              DTS:ThreadHint="36">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -659,7 +841,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 005 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 005 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{9D3C0DB8-CEB9-4AF3-8BCB-EEECD8061785}"
@@ -667,7 +849,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 005 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="20">
+              DTS:ThreadHint="37">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -676,7 +858,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 006 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 006 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{4516CAEF-6D7F-492D-B521-35B582A96660}"
@@ -684,7 +866,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 006 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="21">
+              DTS:ThreadHint="38">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -693,7 +875,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 007 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 007 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{3F6AC9D5-A4D2-4D0A-8EAB-77C621750D1D}"
@@ -701,7 +883,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 007 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="22">
+              DTS:ThreadHint="39">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -710,7 +892,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 008 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 008 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 008 Validate Test Data"
               DTS:DTSID="{224D412D-F8F0-4D8C-B505-E6843DB6E95F}"
@@ -718,7 +900,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 008 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="23">
+              DTS:ThreadHint="40">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -727,7 +909,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 009 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 009 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute Test 009 Validate Test Data"
               DTS:DTSID="{F01B5033-05E0-4424-B5DF-C0D2E2CF0D41}"
@@ -735,7 +917,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 009 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="24">
+              DTS:ThreadHint="41">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -744,7 +926,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 010 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 010 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{BB682BF7-6F49-4E84-9C7C-CCDB7F6257AF}"
@@ -752,7 +934,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 010 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="25">
+              DTS:ThreadHint="42">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -761,7 +943,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 011 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 011 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{9482138C-DBC4-4D76-8147-9EB4626005EA}"
@@ -769,7 +951,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 011 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="26">
+              DTS:ThreadHint="43">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -778,7 +960,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 012 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 012 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{023C3121-512D-4198-8EB6-D686D3BA7C47}"
@@ -786,7 +968,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 012 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="27">
+              DTS:ThreadHint="44">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -795,7 +977,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 013 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 013 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{200416E5-4626-4948-8DE8-B7BB655ADC1E}"
@@ -803,7 +985,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 013 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="28">
+              DTS:ThreadHint="45">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -812,7 +994,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 014 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 014 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{A05AB5FC-2107-4707-B1DF-39CDA08D35AB}"
@@ -820,7 +1002,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 014 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="29">
+              DTS:ThreadHint="46">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -829,7 +1011,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 015 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 015 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{B8126EC8-1D22-4041-9191-D7395008194D}"
@@ -837,7 +1019,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 015 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="30">
+              DTS:ThreadHint="47">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -846,7 +1028,7 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 016 Validate Test Data"
+              DTS:refId="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 016 Validate Test Data"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{233BD7AB-4D0E-417E-897C-4CAA37800350}"
@@ -854,7 +1036,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Execute Test 016 Validate Test Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="31">
+              DTS:ThreadHint="48">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -901,16 +1083,85 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{E499A66F-B938-48CC-A511-C530D5A9AEBC}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ?, ?, 'Failed', ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
+                SQLTask:ParameterName="3"
                 SQLTask:DtsVariableName="System::ErrorDescription"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="-9"
                 SQLTask:ParameterSize="0" />
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
+                SQLTask:ParameterName="4"
                 SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{05CA335F-16DA-4545-A941-2646C4265F30}"
+      DTS:EventID="428994160"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{A7BE3B45-F49B-4F5F-9CBE-B50D51180F03}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Log Task Success"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fa79f8f3-6864-4b24-9451-d7e152d208c0}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E499A66F-B938-48CC-A511-C530D5A9AEBC}"
+              SQLTask:SqlStatementSource="INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select (SELECT MAX(id) FROM log_etl_validation_process),?,?,'Success', '', now()&#xA;where not exists (select 1 from log_etl_validation_process_test_execution where status='Failed' and test_case_name = ?);&#xA;Delete from log_etl_validation_process_test_execution where test_case_name NOT ILIKE 'TC%';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::SourceName"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="-9"
                 SQLTask:ParameterSize="0" />
@@ -934,187 +1185,234 @@
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="186,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data"
           TopLeft="24.6666666666666,27.3333333333334" />
         <NodeLayout
           Size="179,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 002 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 002 Validate Test Data"
           TopLeft="24.583333333333,89.25" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 003 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 003 Validate Test Data"
           TopLeft="27.083333333333,156.083333333333" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 004 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 004 Validate Test Data"
           TopLeft="30.25,223.25" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 005 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 005 Validate Test Data"
           TopLeft="322.333333333333,32.1666666666666" />
         <NodeLayout
           Size="194,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 006 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 006 Validate Test Data"
           TopLeft="316.91666666667,108.916666666667" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 007 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 007 Validate Test Data"
           TopLeft="319.33333333333,206.333333333333" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="692,297"
-          Size="692,340"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation"
+          PanelSize="592,297"
+          Size="592,340"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)"
           TopLeft="47.3333333333335,35.8333333333337" />
         <NodeLayout
           Size="171,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 001 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 001 Validate Test Data"
           TopLeft="28,22" />
         <NodeLayout
           Size="176,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 002 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 002 Validate Test Data"
           TopLeft="28,97" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 003 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 003 Validate Test Data"
           TopLeft="30.5,174.5" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 004 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 004 Validate Test Data"
           TopLeft="30.5,247" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 005 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 005 Validate Test Data"
           TopLeft="30.5,319.5" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 006 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 006 Validate Test Data"
           TopLeft="30.5,397" />
         <NodeLayout
           Size="182,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 007 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 007 Validate Test Data"
           TopLeft="27.2857142857147,472" />
         <NodeLayout
           Size="184,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 008 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 008 Validate Test Data"
           TopLeft="28.7142857142853,542.714285714286" />
         <NodeLayout
           Size="194,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 009 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 009 Validate Test Data"
           TopLeft="321.214285714286,24.5" />
         <NodeLayout
           Size="188,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 010 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 010 Validate Test Data"
           TopLeft="324.071428571428,99.8571428571428" />
         <NodeLayout
           Size="191,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 011 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 011 Validate Test Data"
           TopLeft="321.214285714285,172.357142857143" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 012 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 012 Validate Test Data"
           TopLeft="321.214285714285,252.714285714286" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 013 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 013 Validate Test Data"
           TopLeft="322.285714285715,329.142857142857" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 014 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 014 Validate Test Data"
           TopLeft="323.714285714285,403.428571428572" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 015 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 015 Validate Test Data"
           TopLeft="325.142857142857,477.714285714286" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation\Execute Test 016 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Geography Validation\Execute Test 016 Validate Test Data"
           TopLeft="327.999999999999,546.285714285714" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="567,624"
           Size="567,667"
-          Id="Package\Validation\Rpt Coveraga Tier Geo Validation"
-          TopLeft="839.166666666667,38.0000000000005" />
+          Id="Package\Rpt Coverage by Tier\Geography Validation"
+          TopLeft="719.166666666667,38.0000000000005" />
         <NodeLayout
           Size="169,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 001 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 001 Validate Test Data"
           TopLeft="27,27" />
         <NodeLayout
           Size="173,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 002  Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 002  Validate Test Data"
           TopLeft="24,102.5" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 003 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 003 Validate Test Data"
           TopLeft="26.8809523809523,177" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 004 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 004 Validate Test Data"
           TopLeft="26.8809523809523,249.5" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 005 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 005 Validate Test Data"
           TopLeft="26.8809523809523,322" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 006 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 006 Validate Test Data"
           TopLeft="26.8809523809523,399.5" />
         <NodeLayout
           Size="182,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 007 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 007 Validate Test Data"
           TopLeft="23.666666666667,474.5" />
         <NodeLayout
           Size="184,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 008 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 008 Validate Test Data"
           TopLeft="25.0952380952376,545.214285714286" />
         <NodeLayout
           Size="194,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 009 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 009 Validate Test Data"
           TopLeft="317.595238095238,27" />
         <NodeLayout
           Size="188,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 010 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 010 Validate Test Data"
           TopLeft="320.45238095238,102.357142857143" />
         <NodeLayout
           Size="191,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 011 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 011 Validate Test Data"
           TopLeft="317.595238095237,174.857142857143" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 012 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 012 Validate Test Data"
           TopLeft="317.595238095237,255.214285714286" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 013 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 013 Validate Test Data"
           TopLeft="318.666666666667,331.642857142857" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 014 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 014 Validate Test Data"
           TopLeft="320.095238095237,405.928571428572" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 015 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 015 Validate Test Data"
           TopLeft="321.523809523809,480.214285714286" />
         <NodeLayout
           Size="193,42"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation\Execute Test 016 Validate Test Data"
+          Id="Package\Rpt Coverage by Tier\Provider Validation\Execute Test 016 Validate Test Data"
           TopLeft="324.380952380951,548.785714285714" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="578,646"
           Size="578,689"
-          Id="Package\Validation\Rpt Tier Coverage Provider Validation"
-          TopLeft="1535.5,37" />
+          Id="Package\Rpt Coverage by Tier\Provider Validation"
+          TopLeft="1388,39.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 001 Validate Test Data"
+          TopLeft="40.75,28.25" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 002 Validate Test Data"
+          TopLeft="38,99.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 003 Validate Test Data"
+          TopLeft="39.25,172" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 004 Validate Test Data"
+          TopLeft="40.5,244.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\TC Execute Test 005 Validate Test Data"
+          TopLeft="43,318.25" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\TC Coverage by Tier Plan Details Test 006"
+          TopLeft="47.5,390.75" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 007 Validate Test Data"
+          TopLeft="48,460.75" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 008 Validate Test Data"
+          TopLeft="44.25,528.25" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 009 Validate Test Data"
+          TopLeft="289.25,25.75" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Execute Test 010 Validate Test Data"
+          TopLeft="288,105.75" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="2161,781"
-          Size="2161,824"
-          Id="Package\Validation"
+          PanelSize="510,630"
+          Size="510,673"
+          Id="Package\Rpt Coverage by Tier\Plan Validation"
+          TopLeft="2058,52" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="2609,781"
+          Size="2609,824"
+          Id="Package\Rpt Coverage by Tier"
           TopLeft="212.277777777778,185.277777777778" />
       </GraphLayout>
     </LayoutInfo>
@@ -1132,14 +1430,26 @@
     </LayoutInfo>
   </DtsEventHandler>
   <DtsEventHandler
-    design-time-name="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data.EventHandlers[OnError]">
+    design-time-name="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="210,42"
-          Id="Package\Validation\Rpt Coveraga Tier Drug Validation\Execute Test 001 Validate Test Data.EventHandlers[OnError]\Validate Analytics Log Error"
+          Id="Package\Rpt Coverage by Tier\Drug Validation (Summary)\Execute Test 001 Validate Test Data.EventHandlers[OnError]\Validate Analytics Log Error"
           TopLeft="242,131" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package.EventHandlers[OnPostExecute]\Log Task Success"
+          TopLeft="540,55" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
