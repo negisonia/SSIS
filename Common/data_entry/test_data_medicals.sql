@@ -115,13 +115,24 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE,'additional notes');
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
-     --INSERT DATA ENTRY
-    SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_1) INTO data_entry_id;
+
+  ---
+  --INSERT DATA ENTRY
+    SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_2) INTO data_entry_id;
     --INSERT MEDICAL
     SELECT common_create_medical(data_entry_id,TRUE,NULL) INTO medical_id;
     --INSERT MEDICAL CRITERIA
     PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE, NULL);
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
+
+  --INSERT DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_1_id, commercial_health_plan_type, drug_2) INTO data_entry_id;
+    --INSERT MEDICAL
+    SELECT common_create_medical(data_entry_id,TRUE,NULL) INTO medical_id;
+    --INSERT MEDICAL CRITERIA
+    PERFORM common_create_medical_criteria(medical_id, criteria_lab_3, TRUE, NULL);
+    PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
+
 
 success=true;
 return success;

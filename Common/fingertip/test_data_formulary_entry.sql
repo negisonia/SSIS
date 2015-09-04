@@ -41,6 +41,8 @@ or_qualifier INTEGER;
 formulary_comm_id INTEGER;
 formulary_hix_id INTEGER;
 formulary_com_inactive_id INTEGER;
+formulary_comm_1_id INTEGER;
+
 formulary_001_id INTEGER;
 formulary_002_id INTEGER;
 formulary_003_id INTEGER;
@@ -107,6 +109,7 @@ BEGIN
     SELECT common_get_formulary_id_by_plan_name('health_plan_comm') INTO formulary_comm_id;
     SELECT common_get_formulary_id_by_plan_name('health_plan_hix') INTO formulary_hix_id;
     SELECT common_get_formulary_id_by_plan_name('health_plan_com_inactive') INTO formulary_com_inactive_id;
+    SELECT common_get_formulary_id_by_plan_name('health_plan_comm_1') INTO formulary_comm_1_id;
     SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_001') INTO formulary_001_id;
     SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_002') INTO formulary_002_id;
     SELECT common_get_formulary_id_by_plan_name('TEST_PLAN_003') INTO formulary_003_id;
@@ -200,6 +203,14 @@ BEGIN
     PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_018'), drug_003_id, tier_na, NULL, NULL);
     PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_019'), drug_003_id, tier_nc, NULL, NULL);
     PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_020'), drug_002_id, tier_2, NULL, NULL);
+
+
+    SELECT common_create_formulary_entry(formulary_comm_1_id, drug_1, tier_1, NULL, NULL) INTO formulary_entry_id;--formulary entry 14
+    SELECT common_create_formulary_entry(formulary_comm_1_id, drug_2, tier_2, NULL, NULL) INTO formulary_entry_id;--formulary entry 15
+
+    PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, st_qualifier);
+    PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, ql_qualifier);
 
 success=true;
 return success;
