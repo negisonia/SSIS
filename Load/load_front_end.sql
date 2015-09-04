@@ -14,6 +14,9 @@
 \i 'Common/analytics_front_end/validate_comparison_values.sql'
 \i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
 \i 'Common/analytics_front_end/validate_test_data.sql'
+\i 'Common/analytics_front_end/calculate_report_value_boolean.sql'
+\i 'Common/analytics_front_end/validate_comparison_values_boolean.sql'
+\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
 
 -- Common
 -- Restrictions
@@ -74,6 +77,23 @@
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_014_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_015_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_016_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/test_001_010_create_fe_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_copay.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_dim_tier_id_and_name.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_has_restriction.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_has_restriction_set.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_lives.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/common_front_end/validate_plan_type.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_001_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_002_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_003_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_004_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_005_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_006_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_007_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_008_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_009_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_plan/test_010_validate_test_data.sql'
 
 -- Restrictions
 \i 'Restrictions/scripts/test 001/test_001_validate_test_data.sql'

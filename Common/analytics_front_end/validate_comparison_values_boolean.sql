@@ -1,5 +1,5 @@
-CREATE OR REPLACE FUNCTION validate_comparison_values_varchar(actual_value varchar, expected_value varchar, error_msg_expected_value VARCHAR)--ANALYTICS FRONT END
-RETURNS varchar AS $$
+CREATE OR REPLACE FUNCTION validate_comparison_values_boolean(actual_value boolean, expected_value boolean, error_msg_expected_value VARCHAR)--ANALYTICS FRONT END
+RETURNS boolean AS $$
 DECLARE
 
 success BOOLEAN:=FALSE;

@@ -12,10 +12,13 @@ CREATE TABLE log_etl_validation_process
     status character varying(255)
   );
 
-CREATE TABLE log_etl_validation_process_errors
+CREATE TABLE log_etl_validation_process_test_execution
   (
     id serial NOT NULL,
     log_etl_validation_process_id integer NOT NULL,
+    test_case_name varchar NOT NULL,
+    project_name varchar NOT NULL,
+    status varchar NOT NULL,
     error_log text,
     created_at timestamp without time zone
   );
