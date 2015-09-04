@@ -4,27 +4,20 @@
 
 -- Common
 -- Analytics
-\i 'Common/analytics_front_end/add_criteria_report_markets.sql'
-\i 'Common/analytics_front_end/calculate_report_value.sql'
-\i 'Common/analytics_front_end/calculate_report_value_varchar.sql'
-\i 'Common/analytics_front_end/clear_test_data.sql'
-\i 'Common/analytics_front_end/create_criteria_report.sql'
-\i 'Common/analytics_front_end/get_current_month.sql'
-\i 'Common/analytics_front_end/get_report_name_call.sql'
-\i 'Common/analytics_front_end/validate_comparison_values.sql'
-\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
-\i 'Common/analytics_front_end/validate_test_data.sql'
-\i 'Common/analytics_front_end/calculate_report_value_boolean.sql'
-\i 'Common/analytics_front_end/validate_comparison_values_boolean.sql'
-\i 'Common/analytics_front_end/validate_comparison_values_varchar.sql'
-
--- Common
--- Restrictions
-\i 'Common/restrictions_front end/create_report_fe.sql'
-\i 'Common/restrictions_front end/get_health_plan_count.sql'
-\i 'Common/restrictions_front end/get_report_active_restrictions.sql'
-\i 'Common/restrictions_front end/get_report_restrictioned_drugs_fe.sql'
-\i 'Common/restrictions_front end/get_total_health_plan_count_fe.sql'
+\i 'Common/front_end/add_criteria_report_markets.sql'
+\i 'Common/front_end/calculate_report_value.sql'
+\i 'Common/front_end/calculate_report_value_varchar.sql'
+\i 'Common/front_end/clear_test_data.sql'
+\i 'Common/front_end/create_criteria_report.sql'
+\i 'Common/front_end/get_current_month.sql'
+\i 'Common/front_end/get_report_name_call.sql'
+\i 'Common/front_end/validate_comparison_values.sql'
+\i 'Common/front_end/validate_comparison_values_varchar.sql'
+\i 'Common/front_end/validate_test_data.sql'
+\i 'Common/front_end/calculate_report_value_boolean.sql'
+\i 'Common/front_end/validate_comparison_values_boolean.sql'
+\i 'Common/front_end/validate_comparison_values_varchar.sql'
+\i 'Common/front_end/validate_summary_table.sql'
 
 
 -- Analytics
