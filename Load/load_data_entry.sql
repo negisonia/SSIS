@@ -17,6 +17,7 @@
 \i 'Common/data_entry/common_create_criteria_restriction.sql'
 \i 'Common/data_entry/common_create_custom_option.sql'
 \i 'Common/data_entry/common_create_data_entry.sql'
+\i 'Common/data_entry/common_create_data_entry_details.sql'
 \i 'Common/data_entry/common_create_drug_class_indication.sql'
 \i 'Common/data_entry/common_create_drug_indication.sql'
 \i 'Common/data_entry/common_create_indication.sql'
