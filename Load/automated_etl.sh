@@ -1,17 +1,15 @@
 # How to use
 # ----------
-# Run bash file with this command: create_pg_pass ONLY ONCE to save the db connection strings and avoid being prompted every time
-# Run the bash file without any argument to see each of the options available
+# Run bash file as: ./automated_etl to get a list of available commands
+# Bash file must be run inside of /Load folder
+# Run bash file with this command: create_pg_pass ONLY ONCE to save the db connection strings
 
 # Assumptions
 # -----------
 # Data-warehouse-storeprocedures git repository lives next to this project (under the same parent directory)
-# Bash file must be run inside of /Load folder
 
-# CONFIGURABLE OPTIONS
+# NON CONFIGURABLE OPTIONS
 # ---------------------
-HOST=localhost
-
 # Temp Database Names
 TEMP_DATAWAREHOUSE_DB_NAME=tmp_sandbox_datawarehouse
 TEMP_FRONT_END_DB_NAME=tmp_sandbox_front_end
@@ -28,17 +26,15 @@ ADMIN_DB_NAME=sandbox_admin
 DATA_ENTRY_DB_NAME=sandbox_data_entry
 FF_NEW_DB_NAME=sandbox_ff_new
 
-# Server Postgres Password
-SERVER_POSTGRES_PASSWORD=gap2012
-
-# NON CONFIGURABLE OPTIONS
-# ---------------------
+# Script paths
 DATAWAREHOUSE_SCRIPT_PATH=data_warehouse/r20_data_warehouse.sql
 FRONT_END_SCRIPT_PATH=front_end/front_end_db.sql
 REPORT_DATA_SCRIPT_PATH=report_data/report_data_db.sql
 ADMIN_SCRIPT_PATH=admin/r20_admin.sql
 DATA_ENTRY_SCRIPT_PATH=dump/data_entry.sql
 FF_NEW_SCRIPT_PATH=dump/ff_new.sql
+
+# Host Names
 DATA_ENTRY_DB_HOST=rdwo3djw14v9sq.cayadjd1xwwj.us-east-1.rds.amazonaws.com
 DATA_ENTRY_DB_USER=r2de
 SOURCE_DATA_ENTRY_DB_NAME=restrictions20_data_entry
@@ -64,9 +60,19 @@ delete_db()
   dropdb -h $HOST -U postgres $1
 }
 
-delete_temp()
+delete_temp_dbs()
 {
   echo "  - REBUILD_ENV: Deleting existing temporary databases if already created"
+
+  delete_db $TEMP_DATAWAREHOUSE_DB_NAME
+  delete_db $TEMP_FRONT_END_DB_NAME
+  delete_db $TEMP_REPORT_DATA_DB_NAME
+  delete_db $TEMP_ADMIN_DB_NAME
+}
+
+delete_final_dbs()
+{
+  echo "  - REBUILD_ENV: Deleting final databases if already created"
 
   delete_db $DATAWAREHOUSE_DB_NAME
   delete_db $FRONT_END_DB_NAME
@@ -98,7 +104,7 @@ create_and_load_ff_new_data_entry(){
   create_and_load_db $TEMP_FF_NEW_DB_NAME $FF_NEW_SCRIPT_PATH
 }
 
-load_scripts(){
+load_scripts_on_temp(){
   cd ../
 
   echo "  - REBUILD_ENV: Loading Admin scripts"
@@ -112,6 +118,9 @@ load_scripts(){
 
   echo "  - REBUILD_ENV: Loading Front End scripts"
   psql -d $TEMP_FRONT_END_DB_NAME -h $HOST -U postgres < Load/load_front_end.sql  
+
+  echo "  - REBUILD_ENV: Loading Data Entry scripts"
+  psql -d $TEMP_DATA_ENTRY_DB_NAME -h $HOST -U postgres < Load/load_data_entry.sql    
 }
 
 alter_temp_foreign_servers(){
@@ -138,6 +147,12 @@ alter_final_foreign_servers(){
   alter_foreign_servers $FF_NEW_DB_NAME $DATA_ENTRY_DB_NAME $ADMIN_DB_NAME $DATAWAREHOUSE_DB_NAME $FRONT_END_DB_NAME $REPORT_DATA_DB_NAME $SERVER_POSTGRES_PASSWORD $HOST
 }
 
+rebuild_temp_test_enviroment(){
+  build_temp_etl  
+  build_temp_non_etl
+  load_scripts_on_temp
+}
+
 build_temp_etl(){
 
   echo "  - REBUILD_ENV: Downloading latest changes from data-warehouse-storeprocedures repository"
@@ -145,7 +160,7 @@ build_temp_etl(){
   cd data-warehouse-storeprocedures/
   git pull origin master
 
-  delete_temp
+  delete_temp_dbs
 
   create_and_load_etl_dbs
 
@@ -167,9 +182,10 @@ rename_db(){
 }
 
 switch_db(){
+  # Deletes the current final dbs to be replaced by the temporary ones
+  delete_final_dbs
 
-  delete_temp
-
+  # Rname the temp db names to the final db names
   echo "  - REBUILD_ENV: Renaming datawarehouse"
   kill_session $TEMP_DATAWAREHOUSE_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $DATAWAREHOUSE_DB_NAME
@@ -197,37 +213,57 @@ switch_db(){
   alter_final_foreign_servers
 }
 
+get_params(){
+  # First set of params
+  get_param_option $2 $3
+  # Second set of params
+  get_param_option $4 $5
+}
+
+get_param_option(){
+  case ${1} in
+       -h) HOST="${2}" 
+          echo "Host is $HOST"
+          ;; 
+       -p) SERVER_POSTGRES_PASSWORD="${2}" 
+          echo "Postgres password is $SERVER_POSTGRES_PASSWORD"
+          ;; 
+       *)
+        echo "  - REBUILD_ENV: ERROR Missing parameters or wrong parameter names "
+        usage_msg
+        ;;
+  esac
+}
+
+usage_msg(){
+  echo -e "\nUsage: \n"
+  echo -e "  `basename ${0}` [create_pg_pass] | {[rebuild_temp_test_enviroment] | [switch] | [delete_temp_dbs] -h host -p postgres_password} \n"
+  echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection string and avoid being prompted for passwords"
+  echo "  [rebuild_temp_test_enviroment] -h host -p postgres_password : Build all ETL and non ETL scripts in temporary dbs, alters foreign servers and loads testing scripts"
+  echo "  [switch] -h host -p postgres_password : Deletes currents dbs and makes temporary dbs the new dbs, alters foreign servers"
+  echo -e "  [delete_temp_dbs] -h host -p postgres_password : Deletes temporary dbs \n"
+  exit 1 # Command to come out of the program with status 1
+}
 
   case "$1" in
-     "build_temp_etl")  echo "  - REBUILD_ENV: Rebuilding temporary enviroments of ETL dbs "
-                    build_temp_etl
+    "create_pg_pass") echo "  - REBUILD_ENV: Creating pg pass file "
+        create_pg_pass
      ;;
-     "build_temp_non_etl")  echo "  - REBUILD_ENV: Rebuilding temporary enviroments of Non ETL dbs "
-                    build_temp_non_etl
+    "rebuild_temp_test_enviroment") echo "  - REBUILD_ENV: Rebuilding temporary enviroments of ETL dbs "
+        get_params $1 $2 $3 $4 $5
+        rebuild_temp_test_enviroment
      ;;
      "switch")  echo "  - REBUILD_ENV: Deleting existing db enviroments and renaming temporary dbs "
-                switch_db
+        get_params $1 $2 $3 $4 $5
+        switch_db
      ;;
-     "delete_temp") echo "  - REBUILD_ENV: Deleting temporary dbs "
-                    delete_temp
-     ;;
-     "load_scripts") echo "  - REBUILD_ENV: Loading scripts for ETL Testing "
-                    load_scripts
-     ;;
-     "create_pg_pass") echo "  - REBUILD_ENV: Creating pg pass file "
-                    create_pg_pass
+     "delete_temp_dbs") echo "  - REBUILD_ENV: Deleting temporary dbs "
+        get_params $1 $2 $3 $4 $5
+        delete_temp_dbs
      ;;
     *)
-      echo -e "\nUsage: \n"
-      echo -e "  `basename ${0}` [create_pg_pass] | [build_temp_etl] | [build_temp_non_etl] | [switch] | [delete_temp] | [load_scripts] \n"
-      echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection string and avoid being prompted for passwords"
-      echo "  [build_temp_etl] : Builds temporary ETL dbs from master repository, alters foreign servers"
-      echo "  [build_temp_non_etl] : Builds temporary non ETL dbs (data entry and ff new)"
-      echo "  [switch] : Deletes currents dbs and makes temporary dbs the new dbs, alters foreign servers"
-      echo "  [delete_temp] : Deletes temporary dbs"
-      echo -e "  [load_scripts] : Loads ETL Testing scripts on all dbs \n"
-      exit 1 # Command to come out of the program with status 1
-      ;; 
+      usage_msg
+      ;;
   esac
 
 exit 0
