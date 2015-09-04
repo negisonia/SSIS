@@ -1,5 +1,5 @@
 -- Run from root of project
--- psql -d sandbox_data_warehouse_tmp -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W --echo-all < Load/load_data_warehouse.sql
+-- psql -d sandbox_data_warehouse -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_data_warehouse.sql
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common

@@ -9,7 +9,7 @@
 
 -- Common Admin
 \i 'Common/admin/common_cleanup.sql'
-\i 'Common/admin/create_client.sql'
+\i 'Common/admin/common_create_client.sql'
 \i 'Common/admin/common_create_client_custom_criteria_group.sql'
 \i 'Common/admin/common_create_custom_criteria_group.sql'
 \i 'Common/admin/common_create_custom_criteria_group_criteria.sql'
