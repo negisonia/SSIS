@@ -62,7 +62,7 @@ delete_db()
 
 delete_temp_dbs()
 {
-  echo "  - REBUILD_ENV: Deleting existing temporary databases if already created"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing temporary databases if already created"
 
   delete_db $TEMP_DATAWAREHOUSE_DB_NAME
   delete_db $TEMP_FRONT_END_DB_NAME
@@ -72,7 +72,7 @@ delete_temp_dbs()
 
 delete_final_dbs()
 {
-  echo "  - REBUILD_ENV: Deleting final databases if already created"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting final databases if already created"
 
   delete_db $DATAWAREHOUSE_DB_NAME
   delete_db $FRONT_END_DB_NAME
@@ -81,45 +81,45 @@ delete_final_dbs()
 }
 
 create_and_load_etl_dbs(){
-  echo "  - REBUILD_ENV: Creating temp database for datawarehouse"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for datawarehouse"
   create_and_load_db $TEMP_DATAWAREHOUSE_DB_NAME $DATAWAREHOUSE_SCRIPT_PATH
-  echo "  - REBUILD_ENV: Creating temp database for front end"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for front end"
   create_and_load_db $TEMP_FRONT_END_DB_NAME $FRONT_END_SCRIPT_PATH
-  echo "  - REBUILD_ENV: Creating temp database for report data"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for report data"
   create_and_load_db $TEMP_REPORT_DATA_DB_NAME $REPORT_DATA_SCRIPT_PATH
-  echo "  - REBUILD_ENV: Creating temp database for admin"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for admin"
   create_and_load_db $TEMP_ADMIN_DB_NAME $ADMIN_SCRIPT_PATH  
 }
 
 create_and_load_ff_new_data_entry(){
-  echo "  - REBUILD_ENV: Dumping data entry"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping data entry"
   pg_dump -s $SOURCE_DATA_ENTRY_DB_NAME -h $DATA_ENTRY_DB_HOST -n public -U $DATA_ENTRY_DB_USER -p 5432 > $DATA_ENTRY_SCRIPT_PATH
-  echo "  - REBUILD_ENV: Creating temp database for data entry and loading script"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for data entry and loading script"
   create_and_load_db $TEMP_DATA_ENTRY_DB_NAME $DATA_ENTRY_SCRIPT_PATH
 
   
-  echo "  - REBUILD_ENV: Dumping ff new"
-  pg_dump --exclude-table "DELETE*" -s ff_new -h $FF_NEW_DB_HOST -n public -U $FF_NEW_DB_USER -p 5432 > $FF_NEW_SCRIPT_PATH
-  echo "  - REBUILD_ENV: Creating temp database for ff new and loading script"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping ff new"
+  pg_dump --exclude-table "DELETE*" -s ff_new -h $FF_NEW_DB_HOST -n public -U $FF_NEW_DB_USER -p 5432 -x > $FF_NEW_SCRIPT_PATH
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for ff new and loading script"
   create_and_load_db $TEMP_FF_NEW_DB_NAME $FF_NEW_SCRIPT_PATH
 }
 
 load_scripts_on_temp(){
   cd ../
 
-  echo "  - REBUILD_ENV: Loading Admin scripts"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Admin scripts"
   psql -d $TEMP_ADMIN_DB_NAME -h $HOST -U postgres < Load/load_admin.sql
 
-  echo "  - REBUILD_ENV: Loading Data Warehouse scripts"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Data Warehouse scripts"
   psql -d $TEMP_DATAWAREHOUSE_DB_NAME -h $HOST -U postgres < Load/load_data_warehouse.sql
 
-  echo "  - REBUILD_ENV: Loading FF New scripts"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading FF New scripts"
   psql -d $TEMP_FF_NEW_DB_NAME -h $HOST -U postgres < Load/load_ff_new.sql
 
-  echo "  - REBUILD_ENV: Loading Front End scripts"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Front End scripts"
   psql -d $TEMP_FRONT_END_DB_NAME -h $HOST -U postgres < Load/load_front_end.sql  
 
-  echo "  - REBUILD_ENV: Loading Data Entry scripts"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Data Entry scripts"
   psql -d $TEMP_DATA_ENTRY_DB_NAME -h $HOST -U postgres < Load/load_data_entry.sql    
 }
 
@@ -128,17 +128,17 @@ alter_temp_foreign_servers(){
 }
 
 alter_foreign_servers(){
-  echo "  - REBUILD_ENV: Alter foreign servers"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter foreign servers"
 
-  echo "  - REBUILD_ENV: Alter Data-warehouse foreign servers"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data-warehouse foreign servers"
   psql -d $4 -h $8 -U postgres < alter_data_warehouse_foreign_servers.sql
   psql -d $4 -h $8 -U postgres -c "Select alter_datawarehouse_foreign_servers('$8', '$1', '$2', '$3', '$7');"
 
-  echo "  - REBUILD_ENV: Alter Report Data foreign servers"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Report Data foreign servers"
   psql -d $6 -h $8 -U postgres < alter_report_data_foreign_servers.sql
   psql -d $6 -h $8 -U postgres -c "Select alter_report_data_foreign_servers('$8', '$4', '$5', '$7');"
 
-  echo "  - REBUILD_ENV: Alter Admin foreign servers"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Admin foreign servers"
   psql -d $3 -h $8 -U postgres < alter_admin_foreign_servers.sql
   psql -d $3 -h $8 -U postgres -c "Select alter_admin_foreign_servers('$8', '$4', '$7');"
 }
@@ -155,7 +155,7 @@ rebuild_temp_test_enviroment(){
 
 build_temp_etl(){
 
-  echo "  - REBUILD_ENV: Downloading latest changes from data-warehouse-storeprocedures repository"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Downloading latest changes from data-warehouse-storeprocedures repository"
   cd ../../
   cd data-warehouse-storeprocedures/
   git pull origin master
@@ -191,27 +191,27 @@ switch_db(){
   delete_final_dbs
 
   # Rname the temp db names to the final db names
-  echo "  - REBUILD_ENV: Renaming datawarehouse"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming datawarehouse"
   kill_session $TEMP_DATAWAREHOUSE_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $DATAWAREHOUSE_DB_NAME
   
-  echo "  - REBUILD_ENV: Renaming front end"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming front end"
   kill_session $TEMP_FRONT_END_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $FRONT_END_DB_NAME
 
-  echo "  - REBUILD_ENV: Renaming report data"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming report data"
   kill_session $TEMP_REPORT_DATA_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $REPORT_DATA_DB_NAME
 
-  echo "  - REBUILD_ENV: Renaming admin"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming admin"
   kill_session $TEMP_ADMIN_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $ADMIN_DB_NAME
 
-  echo "  - REBUILD_ENV: Renaming data entry"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming data entry"
   kill_session $TEMP_DATA_ENTRY_DB_NAME
   rename_db $TEMP_FF_NEW_DB_NAME $DATA_ENTRY_DB_NAME
 
-  echo "  - REBUILD_ENV: Renaming ff new"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming ff new"
   kill_session $TEMP_FF_NEW_DB_NAME
   rename_db $DATAWAREHOUSE_DB_NAME $FF_NEW_DB_NAME
 
@@ -228,16 +228,18 @@ get_params(){
 get_param_option(){
   case ${1} in
        -h) HOST="${2}" 
-          echo "Host is $HOST"
           ;; 
        -p) SERVER_POSTGRES_PASSWORD="${2}" 
-          echo "Postgres password is $SERVER_POSTGRES_PASSWORD"
           ;; 
        *)
-        echo "  - REBUILD_ENV: ERROR Missing parameters or wrong parameter names "
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: ERROR Missing parameters or wrong parameter names "
         usage_msg
         ;;
   esac
+}
+
+echo_msg_with_timestamp() {
+  date +"%R $*"
 }
 
 usage_msg(){
@@ -251,20 +253,24 @@ usage_msg(){
 }
 
   case "$1" in
-    "create_pg_pass") echo "  - REBUILD_ENV: Creating pg pass file "
+    "create_pg_pass") echo "  - AUTOMATED_ETL: Creating pg pass file "
         create_pg_pass
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: PG Pass file created "
      ;;
-    "rebuild_temp_test_enviroment") echo "  - REBUILD_ENV: Rebuilding temporary enviroments of ETL dbs "
+    "rebuild_temp_test_enviroment") echo_msg_with_timestamp "  - AUTOMATED_ETL: Rebuilding temporary enviroments of ETL dbs "
         get_params $1 $2 $3 $4 $5
         rebuild_temp_test_enviroment
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Temporary dbs rebuild completed "
      ;;
-     "switch")  echo "  - REBUILD_ENV: Deleting existing db enviroments and renaming temporary dbs "
+     "switch")  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing db enviroments and renaming temporary dbs "
         get_params $1 $2 $3 $4 $5
         switch_db
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Switch process completed "
      ;;
-     "delete_temp_dbs") echo "  - REBUILD_ENV: Deleting temporary dbs "
+     "delete_temp_dbs") echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting temporary dbs "
         get_params $1 $2 $3 $4 $5
         delete_temp_dbs
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all temporary dbs "
      ;;
     *)
       usage_msg
