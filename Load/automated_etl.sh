@@ -33,6 +33,7 @@ REPORT_DATA_SCRIPT_PATH=report_data/report_data_db.sql
 ADMIN_SCRIPT_PATH=admin/r20_admin.sql
 DATA_ENTRY_SCRIPT_PATH=dump/data_entry.sql
 FF_NEW_SCRIPT_PATH=dump/ff_new.sql
+DUMP_FOLDER_PATH=dump
 
 # Host Names
 DATA_ENTRY_DB_HOST=rdwo3djw14v9sq.cayadjd1xwwj.us-east-1.rds.amazonaws.com
@@ -40,6 +41,13 @@ DATA_ENTRY_DB_USER=r2de
 SOURCE_DATA_ENTRY_DB_NAME=restrictions20_data_entry
 FF_NEW_DB_HOST=proddb01.fingertipformulary.com
 FF_NEW_DB_USER=postgres
+QA_DB_HOST=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com
+QA_DB_PREFIX=sandbox
+
+# CLONE OPTIONS
+# DB NAMES
+db_names="admin" #data_entry data_warehouse ff_new front_end report_data
+DEFAULT_PREFIX=sandbox
 
 create_pg_pass(){
   echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
@@ -218,19 +226,38 @@ switch_db(){
   alter_final_foreign_servers
 }
 
+clone_from_qa(){
+  cd ..
+  mkdir $DUMP_FOLDER_PATH
+
+  for db_name in $db_names
+  do
+    PREFIX_DB_NAME="${PREFIX}_${db_name}"
+    echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping script for: $PREFIX_DB_NAME"
+    SCRIPT_PATH="${DUMP_FOLDER_PATH}/${PREFIX_DB_NAME}.sql"
+    pg_dump "${QA_DB_PREFIX}_${db_name}" -h $QA_DB_HOST -n public -U postgres -p 5432 > $SCRIPT_PATH
+    echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating database from script for ${PREFIX_DB_NAME}"
+    create_and_load_db $PREFIX_DB_NAME $SCRIPT_PATH
+  done
+}
+
 get_params(){
   # First set of params
   get_param_option $2 $3
   # Second set of params
   get_param_option $4 $5
+  # Third set of params
+  get_param_option $6 $7
 }
 
 get_param_option(){
   case ${1} in
-       -h) HOST="${2}" 
+       -h) HOST="${2}"
           ;; 
-       -p) SERVER_POSTGRES_PASSWORD="${2}" 
-          ;; 
+       -p) SERVER_POSTGRES_PASSWORD="${2}"
+          ;;
+       -x) PREFIX="${2}"
+          ;;
        *)
         echo_msg_with_timestamp "  - AUTOMATED_ETL: ERROR Missing parameters or wrong parameter names "
         usage_msg
@@ -244,16 +271,19 @@ echo_msg_with_timestamp() {
 
 usage_msg(){
   echo -e "\nUsage: \n"
-  echo -e "  `basename ${0}` [create_pg_pass] | {[rebuild_temp_test_enviroment] | [switch] | [delete_temp_dbs] -h host -p postgres_password} \n"
+  echo -e "  `basename ${0}` create_pg_pass"
+  echo -e "  `basename ${0}` [rebuild_temp_test_enviroment] | [switch] | [delete_temp_dbs] -h host -p postgres_password"
+  echo -e "  `basename ${0}` clone_from_qa -h host -p postgres_password -x prefix_db_name \n"
   echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection string and avoid being prompted for passwords"
   echo "  [rebuild_temp_test_enviroment] -h host -p postgres_password : Build all ETL and non ETL scripts in temporary dbs, alters foreign servers and loads testing scripts"
   echo "  [switch] -h host -p postgres_password : Deletes currents dbs and makes temporary dbs the new dbs, alters foreign servers"
-  echo -e "  [delete_temp_dbs] -h host -p postgres_password : Deletes temporary dbs \n"
+  echo "  [delete_temp_dbs] -h host -p postgres_password : Deletes temporary dbs"
+  echo -e "  [clone_from_qa] -h host -p postgres_password -x prefix_db_name : Clones dbs from QA Enviroment into the passed argumets, prefix defaults to sandbox \n"
   exit 1 # Command to come out of the program with status 1
 }
 
   case "$1" in
-    "create_pg_pass") echo "  - AUTOMATED_ETL: Creating pg pass file "
+    "create_pg_pass") echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating pg pass file "
         create_pg_pass
         echo_msg_with_timestamp "  - AUTOMATED_ETL: PG Pass file created "
      ;;
@@ -271,6 +301,11 @@ usage_msg(){
         get_params $1 $2 $3 $4 $5
         delete_temp_dbs
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all temporary dbs "
+     ;;
+     "clone_from_qa") echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloning QA dbs "
+        get_params $1 $2 $3 $4 $5 ${6:-"-x"} ${7:-$DEFAULT_PREFIX}
+        clone_from_qa
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloned all dbs "
      ;;
     *)
       usage_msg
