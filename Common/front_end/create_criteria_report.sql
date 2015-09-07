@@ -18,7 +18,7 @@ IF ((geography = 'national') or (geography = 'state') or (geography = 'msa') or 
 END IF;
 
 --VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
-IF ((view_type_id = 1) or (view_type_id = 2)) =false THEN
+IF ((view_type_id = 1) or (view_type_id = 2) or view_type_id IS NULL) =false THEN
 	SELECT throw_error('INVALID VIEW TYPE VALUE');
 END IF;
 
