@@ -18,6 +18,7 @@ IF ((geography = 'national') or (geography = 'state') or (geography = 'msa') or 
 END IF;
 
 --VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
+IF ((view_type_id = 1) or (view_type_id = 2) or view_type_id IS NULL) =false THEN
 IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id = NULL)) = false THEN
 	SELECT throw_error('INVALID VIEW TYPE VALUE');
 END IF;
@@ -33,6 +34,7 @@ IF drug_ids !=NULL THEN
 		END IF;
 	END LOOP;
 END IF;
+
 
 	--VALIDATE THAT HEALTH PLANS PASSED AS PARAMETER ARE VALID  FOR THE REPORT
 IF health_plan_type_ids !=NULL THEN
