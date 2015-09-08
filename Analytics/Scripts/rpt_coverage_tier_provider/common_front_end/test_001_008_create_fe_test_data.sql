@@ -19,7 +19,7 @@ SELECT id from states where name = 'STATE_001' limit 1 INTO state_001_id;
 SELECT id from states where name = 'STATE_002' limit 1 INTO state_002_id;
 
 
-SELECT create_criteria_report(NULL,0,0,0,2,FALSE,FALSE,FALSE,ARRAY[drug_001_id,drug_003_id],ARRAY[health_plan_type_001_id],'State',ARRAY[state_001_id,state_002_id],NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
+SELECT create_criteria_report(NULL,0,NULL,0,2,FALSE,FALSE,FALSE,ARRAY[drug_001_id,drug_003_id],ARRAY[health_plan_type_001_id],'State',ARRAY[state_001_id,state_002_id],NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END
