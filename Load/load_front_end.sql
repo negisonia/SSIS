@@ -17,7 +17,7 @@
 \i 'Common/front_end/calculate_report_value_boolean.sql'
 \i 'Common/front_end/validate_comparison_values_boolean.sql'
 \i 'Common/front_end/validate_comparison_values_varchar.sql'
-\i 'Common/front_end/validate_summary_table.sql'
+\i 'Common/front_end/res_rpt_summary_table_validate_data.sql'
 \i 'Common/front_end/common_get_dim_criteria.sql'
 \i 'Common/front_end/get_report_id_by_criteria_report_id.sql'
 
