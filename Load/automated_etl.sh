@@ -46,14 +46,20 @@ QA_DB_PREFIX=sandbox
 
 # CLONE OPTIONS
 # DB NAMES
-db_names="admin" #data_entry data_warehouse ff_new front_end report_data
+ADMIN=admin
+DATAWAREHOUSE=datawarehouse
+DATA_ENTRY=data_entry
+FF_NEW=ff_new
+FRONT_END=front_end
+REPORT_DATA=report_data
+db_names="$ADMIN $DATAWAREHOUSE $FRONT_END $REPORT_DATA $DATA_ENTRY $FF_NEW"
 DEFAULT_PREFIX=sandbox
 
 create_pg_pass(){
   echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
-  echo "proddb01.fingertipformulary.com:5432:postgres:" >> $HOME/.pgpass
-  echo "rdwo3djw14v9sq.cayadjd1xwwj.us-east-1.rds.amazonaws.com:5432:r2de:eod9Phouch1ued7sahho" >> $HOME/.pgpass
-  echo "restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com:5432:postgres:VsOCWIozIelwQcRgR4w3" >> $HOME/.pgpass
+  echo "$FF_NEW_DB_HOST:5432:postgres:" >> $HOME/.pgpass
+  echo "$DATA_ENTRY_DB_HOST:5432:$DATA_ENTRY_DB_USER:eod9Phouch1ued7sahho" >> $HOME/.pgpass
+  echo "$QA_DB_HOST:5432:postgres:VsOCWIozIelwQcRgR4w3" >> $HOME/.pgpass
   chmod 0600 $HOME/.pgpass
 }
 
@@ -76,6 +82,8 @@ delete_temp_dbs()
   delete_db $TEMP_FRONT_END_DB_NAME
   delete_db $TEMP_REPORT_DATA_DB_NAME
   delete_db $TEMP_ADMIN_DB_NAME
+  delete_db $TEMP_DATA_ENTRY_DB_NAME
+  delete_db $TEMP_FF_NEW_DB_NAME
 }
 
 delete_final_dbs()
@@ -86,6 +94,21 @@ delete_final_dbs()
   delete_db $FRONT_END_DB_NAME
   delete_db $REPORT_DATA_DB_NAME
   delete_db $ADMIN_DB_NAME
+  delete_db $DATA_ENTRY_DB_NAME
+  delete_db $FF_NEW_DB_NAME
+}
+
+delete_clone_dbs()
+{
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting clone databases if already created"
+
+  for db_name in $db_names
+  do
+    PREFIX_DB_NAME="${PREFIX}_${db_name}"
+
+    kill_session $PREFIX_DB_NAME
+    delete_db $PREFIX_DB_NAME
+  done
 }
 
 create_and_load_etl_dbs(){
@@ -148,11 +171,19 @@ alter_foreign_servers(){
 
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Admin foreign servers"
   psql -d $3 -h $8 -U postgres < alter_admin_foreign_servers.sql
-  psql -d $3 -h $8 -U postgres -c "Select alter_admin_foreign_servers('$8', '$4', '$7');"
+  psql -d $3 -h $8 -U postgres -c "Select alter_admin_foreign_servers('$8', '$4', '$1', '$7');"
+
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data Entry foreign servers"
+  psql -d $2 -h $8 -U postgres < alter_data_entry_foreign_servers.sql
+  psql -d $2 -h $8 -U postgres -c "Select alter_data_entry_foreign_servers('$8', '$1', '$7');"
 }
 
 alter_final_foreign_servers(){
   alter_foreign_servers $FF_NEW_DB_NAME $DATA_ENTRY_DB_NAME $ADMIN_DB_NAME $DATAWAREHOUSE_DB_NAME $FRONT_END_DB_NAME $REPORT_DATA_DB_NAME $SERVER_POSTGRES_PASSWORD $HOST
+}
+
+alter_clone_foreign_servers(){
+  alter_foreign_servers "${PREFIX}_${FF_NEW}" "${PREFIX}_${DATA_ENTRY}" "${PREFIX}_${ADMIN}" "${PREFIX}_${DATAWAREHOUSE}" "${PREFIX}_${FRONT_END}" "${PREFIX}_${REPORT_DATA}" $SERVER_POSTGRES_PASSWORD $HOST
 }
 
 rebuild_temp_test_enviroment(){
@@ -227,6 +258,8 @@ switch_db(){
 }
 
 clone_from_qa(){
+  delete_clone_dbs
+
   cd ..
   mkdir $DUMP_FOLDER_PATH
 
@@ -235,10 +268,15 @@ clone_from_qa(){
     PREFIX_DB_NAME="${PREFIX}_${db_name}"
     echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping script for: $PREFIX_DB_NAME"
     SCRIPT_PATH="${DUMP_FOLDER_PATH}/${PREFIX_DB_NAME}.sql"
-    pg_dump "${QA_DB_PREFIX}_${db_name}" -h $QA_DB_HOST -n public -U postgres -p 5432 > $SCRIPT_PATH
+    pg_dump "${QA_DB_PREFIX}_${db_name}" -h $QA_DB_HOST -U postgres -p 5432 > $SCRIPT_PATH
+    
     echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating database from script for ${PREFIX_DB_NAME}"
     create_and_load_db $PREFIX_DB_NAME $SCRIPT_PATH
   done
+
+  cd Load/
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Altering foreign servers for cloned dbs"
+  alter_clone_foreign_servers
 }
 
 get_params(){

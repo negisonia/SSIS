@@ -8,7 +8,7 @@
 \i 'Common/common_get_table_id_by_name.sql'
 
 -- Common Data Entry
---\i 'Common/data_entry/common.sql'
+\i 'Common/data_entry/common.sql'
 \i 'Common/data_entry/common_cleanup.sql'
 \i 'Common/data_entry/common_create_atomic_step_notes.sql'
 \i 'Common/data_entry/common_create_atomic_steps.sql'
