@@ -19,10 +19,11 @@ IF ((geography = 'national') or (geography = 'state') or (geography = 'msa') or 
 END IF;
 
 --VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
-IF ((view_type_id = 1) or (view_type_id = 2) or view_type_id IS NULL) =false THEN
+IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id IS NULL)) =false THEN
 	SELECT throw_error('INVALID VIEW TYPE VALUE');
 END IF;
 
+IF new_report_id IS NOT NULL THEN
 	--VALIDATE THAT DRUGS PASSED AS PARAMETER ARE VALID DRUGS FOR THE REPORT
 	IF drug_ids IS NOT NULL THEN
         FOREACH intvalue IN ARRAY drug_ids
@@ -98,7 +99,7 @@ END IF;
     	 END IF;
     	 ELSE
     END CASE;
-
+END IF;
 
 --INSERT RECORD INTO CRITERIA REPORTS
 INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id, geography)
