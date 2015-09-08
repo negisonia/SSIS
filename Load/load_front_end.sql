@@ -56,6 +56,8 @@
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_014/test_014_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_015/test_015_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_016/test_016_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/common_front_end/test_001_008_create_fe_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/common_front_end/test_009_016_create_fe_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_001_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_002_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_003_validate_test_data.sql'
