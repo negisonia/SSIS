@@ -43,6 +43,8 @@
 \i 'Common/fingertip/common_get_county_id_by_name_and_state.sql'
 \i 'Common/fingertip/common_get_formulary_id_by_plan_name.sql'
 \i 'Common/fingertip/common_get_reason_code_id_by_code.sql'
+\i 'Common/fingertip/common_create_hli_medical_benefit_designs.sql'
+
 
 \i 'Common/fingertip/common_insert_test_data_functions_table.sql'
 \i 'Common/fingertip/test_data_counties.sql'
@@ -67,5 +69,6 @@
 \i 'Common/fingertip/test_data_reason_codes.sql'
 \i 'Common/fingertip/test_data_states.sql'
 \i 'Common/fingertip/test_data_tiers.sql'
+\i 'Common/fingertip/test_data_hli_medical_benefit_designs.sql'
 \i 'Common/fingertip/throw_error.sql'
 
