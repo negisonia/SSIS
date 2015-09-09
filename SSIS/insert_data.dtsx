@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/20/2015 11:29:52 AM"
@@ -11,28 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="insert_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{7844E2F7-0C3E-4888-BE20-531C91E7AB76}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{784DF58D-E7A1-4FA6-8B9B-CCCD9C030021}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[admin]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{B7F929E6-1AD1-4235-BBD2-64A45CEBA261}"
-      DTS:ObjectName="admin">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=sandbox_admin;port=5432;"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
-          <DTS:Password
-            DTS:Name="password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAzecjBDh2+01AanllNm+aixrchqUwzbDfzS0PWWqljowAAAAAOgAAAAAIAACAAAADcviOHVhc7zq8LtDsSqDEbB55lz7SS6Fx5ZuQoB70mzzAAAAB0LR2iEDD+LyLpKHGkuGRrmi2b5/5zjaFXD+1z3pOwKGzBVhBUIujcklXzkM14VGlAAAAADW/WL0iLIiJJoYLU4dACy7MJvFd9ZngF5wBz4latbHhm4BteRSmp++e1Zs5OI5N2fricSisEqU90f7PHiakJPw</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_entry]"
       DTS:CreationName="ODBC"
@@ -46,24 +29,24 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADbO5ts0HtBWHdDyiu/h/P3g8ebl+HII2Jz/HE+aq0ipQAAAAAOgAAAAAIAACAAAACumb2XZFKCx/sguBkNo0eyHe35Y2WekHwIu179ZMC7AzAAAADSaz9aVGUyoEU8uJ9lBEn5WFUZP6rYHlYAH8NQ+tg2FdOt34cLGsDuWIHGYamOw4RAAAAAISyEIi9mMOunOxxAJgxABzBgKtHENqavOMqecXwWSqVDF1TIrmPafJL3ouJE8PKmUv1441FfA84uKxqmvfz89w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACW4PvGYTFmNVBSPvtfOPVOJgrDzs/BIB1qC0xG5k9jzgAAAAAOgAAAAAIAACAAAADtzHp2LqmWAveiGthEvHnPTBGik2aLVTsC4WNhL19d/jAAAABO4a2fm8UQbG6mtaCIij0lQP97AqSC7l4eFbDWCpBEsVJayu6fgBDCNPRQTQmXIVlAAAAAqsT6zvgF1B1uRM79DIh5jayqyB04KHR2Qlxcd5q1z1EbE1LRdlOKeRLEzF9WUvkf4p9jtrt1HFupeS2tb2oZ1A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_warehouse]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{FEC6E3F5-DCF6-44C3-92AD-888B9253F9BB}"
+      DTS:DTSID="{323EBFFD-F211-42A3-BF9B-1D8E252B8633}"
       DTS:ObjectName="data_warehouse">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_warehouse;port=5432;"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"_data_warehouse;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADFtiyLbKnDyHgO4vk+JuZ7e7k8QmJqj0jevG39l4/D2QAAAAAOgAAAAAIAACAAAAA0lE5Rfv5IdILChplpaNEyaXWT8AEHYn7/E4aQxCknoDAAAACA3wrcS8PMMvvLrKGwiCBsxuKLk56u1rwWGbknFGe92QoH03XldWDWb6cdWl9+1P1AAAAAnaKaVbZW7XfFBgdtvLf5u0Qc0CBqIo2VOwvqp6gzg7cto/tCqVNF55zJ9WOMIPAE531WYIUS4WiOyR2OaCoZWw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADyaxHuNUiy7WmXJ0037WHMrL3u3stgvnohdg7U6isTXQAAAAAOgAAAAAIAACAAAABdnZWYsX42h92nIB2bXkkTeBdwir8MGUVBP4wHq8TPKDAAAAAbu88YrCVkfQiofBmZk4XqOjn1OwiunAmBPqABReetLOWX+OdM2Wv8ULQErjG9bqRAAAAAHbdhtnrO1yeppLD5iXWCUdEpbQ81vl/NP20JOwUl7PdpHkC5KeY5oRITk5koG+hTs7xtH1nhuCaWv/I5cfuQ1w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,24 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADBs2WTjykkJSRpzwuV+l+wCrHOySQxn1eTVYtC24j4eQAAAAAOgAAAAAIAACAAAAAFmm+g/aA0KSgbFfnYsDM9SYYWcIL25Z096vY7qz87gzAAAAAXJbX1yzEAaVEg1b5TWAtu3bo4i7yUG+lzjiYJ6N2OpoKgCKDXnGSINHn4FK18JIJAAAAAEPlz88mlY7JpYNpMaCyxmvPuyyPIlIIwDnKb2mhkOCpB2d1ytQ7YsRUfOHwh05zlZBltbBP+1ak1ZzdFGXrd9g</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Front End]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{80B3359B-A982-47DD-AFC8-CA5742A469A1}"
-      DTS:ObjectName="Front End">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_front_end;port=5432;"</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_front_end;port=5432;">
-          <DTS:Password
-            DTS:Name="password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAjHOWg4myZDWStsLu/K2Gx6HRwYRYQUpasMz6b2mYXOwAAAAAOgAAAAAIAACAAAAD/EB5FHL5t6U9dHVEm5JmwTZVp0/PLwd4is7Sz83bijTAAAACUfl0Pnut5e9EPvC/hlix+t73v4Y/uQMWFYNxEOEgHZhN93NCOVFPckY4pAYDbFuxAAAAAFT9s6VuXs2EY2qz4PPdslpZobpvxK6xMP0wqEG73NSXJFNSJ11N76CnCi9SttQQLTw/K9iyTmshjglsWESP+6A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADwukkR+5GVLMCRuH87feczVLabqhSHM0S+CbaeAHQbygAAAAAOgAAAAAIAACAAAABbxIG4ZDMLsmlLRjnPo05OurUPXSxlGNRUtYpPxWsqdDAAAABlzgCFNIFS6n3T85tIzM+0gSE3GVUvdED9LDagGqXt3nXLNsAUUcGRPwVnsIwo5vNAAAAAkm3qWYUo/52209f8iyUKB/mHxTvjpd9YbAfqVDw3QlRAvvmYqaXnd7BQzy3LO2ZhPI6/7oeHJLGXp0Kzk5oLYA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -250,7 +216,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{FEC6E3F5-DCF6-44C3-92AD-888B9253F9BB}"
+              SQLTask:Connection="{323EBFFD-F211-42A3-BF9B-1D8E252B8633}"
               SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Insert Data Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
