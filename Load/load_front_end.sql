@@ -1,6 +1,9 @@
 -- Run from root of project
--- psql -d sandbox_front_end -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
+-- psql -d sandbox_report_data -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
 -- VsOCWIozIelwQcRgR4w3
+
+-- Common
+\i 'Common/common_get_table_id_by_name.sql'
 
 -- Common
 -- Analytics
@@ -20,7 +23,9 @@
 \i 'Common/front_end/res_rpt_summary_table_validate_data.sql'
 \i 'Common/front_end/common_get_dim_criteria.sql'
 \i 'Common/front_end/get_report_id_by_criteria_report_id.sql'
-
+\i 'Common/front_end/res_validate_report_drug.sql'
+\i 'Common/front_end/res_validate_criteria_restriction.sql'
+\i 'Common/front_end/res_validate_custom_criteria_restriction.sql'
 
 -- Analytics
 -- Rpt Coverage Tier Drug

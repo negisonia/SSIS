@@ -16,12 +16,12 @@ SELECT EXISTS( SELECT 1 FROM custom_accounts c WHERE c.name=account_name) INTO a
 
   IF accountExists = false THEN
     INSERT INTO custom_accounts(
-                name, client_id, custom_account_type_id, created_by_aeuser_id, 
+                name, client_id, created_by_aeuser_id, 
                 updated_by_aeuser_id, created_at, updated_at, in_progress_started_at, 
-                in_progress_by_aeuser_id)
-        VALUES (account_name, input_client_id, 0, 0, 
+                in_progress_by_aeuser_id, selected_tree)
+        VALUES (account_name, input_client_id, 0, 
                 0, current_timestamp, current_timestamp, current_timestamp, 
-                NULL);
+                NULL, '');
   END IF;
 
   SELECT c.id INTO new_custom_account_id FROM custom_accounts c WHERE c.name=account_name;

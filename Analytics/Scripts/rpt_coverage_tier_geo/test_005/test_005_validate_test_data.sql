@@ -14,9 +14,9 @@ SELECT get_current_month() INTO current_month_int;
 SELECT ana_rpt_coverage_tier_geo_test_003_006_create_fe_data() INTO criteria_report_id;
 
 --Query the actual value
-SELECT calculate_report_value('health_plan_count', get_report_name_call('rpt_coverage_tier_geo', ARRAY[criteria_report_id,current_month_int]),'dim_tier_name=''Tier 1''') INTO actual_value;
+SELECT calculate_report_value('SUM(health_plan_count)', get_report_name_call('rpt_coverage_tier_geo', ARRAY[criteria_report_id,current_month_int]),'dim_tier_name=''Tier 1''') INTO actual_value;
 --Compare actual and expected values
-PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_geo_test_004_validate_data-error: EXPECTED PLAN COUNT FOR TIER 001 TO BE ');
+PERFORM validate_comparison_values(actual_value, expected_value,'ana_rpt_coverage_tier_geo_test_005_validate_data-error: EXPECTED PLAN COUNT FOR TIER 001 TO BE ');
 
 success:=true;
 RETURN success;

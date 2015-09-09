@@ -49,4 +49,5 @@
 \i 'Common/data_entry/test_data_restrictions.sql'
 \i 'Common/data_entry/test_data_step_custom_options.sql'
 \i 'Common/data_entry/test_data_step_therapies.sql'
+\i 'Common/data_entry/test_data_entry_details.sql'
 \i 'Common/data_entry/throw_error.sql'

@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_validate_criteria_restriction(expected_report_id INTEGER, expected_indication_id INTEGER, expected_indication_name VARCHAR, expected_benefit_name VARCHAR, expected_restriction_type INTEGER, expected_restriction_name VARCHAR, expected_criteria_restriction_name VARCHAR, expected_criterion_type INTEGER, expected_view_type INTEGER) --ADMIN DB
+CREATE OR REPLACE FUNCTION res_validate_criteria_restriction(expected_report_id INTEGER, expected_indication_id INTEGER, expected_indication_name VARCHAR, expected_benefit_name VARCHAR, expected_restriction_type INTEGER, expected_restriction_name VARCHAR, expected_criteria_restriction_name VARCHAR, expected_criterion_type INTEGER, expected_view_type INTEGER) --FRONT END
 RETURNS BOOLEAN AS $$
 DECLARE
 valueExists BOOLEAN DEFAULT FALSE;
