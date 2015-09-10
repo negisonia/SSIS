@@ -18,8 +18,8 @@
 \i 'Common/front_end/validate_comparison_values_boolean.sql'
 \i 'Common/front_end/validate_comparison_values_varchar.sql'
 \i 'Common/front_end/res_rpt_summary_table_validate_data.sql'
-\i 'Common/front_end/res_rpt_drug_validate_data.sql'
 \i 'Common/front_end/common_get_dim_criteria.sql'
+\i 'Common/front_end/get_report_id_by_criteria_report_id.sql'
 
 
 -- Analytics
@@ -56,6 +56,8 @@
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_014/test_014_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_015/test_015_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_geo/test_016/test_016_validate_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/common_front_end/test_001_008_create_fe_test_data.sql'
+\i 'Analytics/Scripts/rpt_coverage_tier_provider/common_front_end/test_009_016_create_fe_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_001_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_002_validate_test_data.sql'
 \i 'Analytics/Scripts/rpt_coverage_tier_provider/test_003_validate_test_data.sql'
@@ -97,5 +99,9 @@
 \i 'Restrictions/scripts/test 007/test_007_validate.sql'
 \i 'Restrictions/scripts/test 009/test_009_validation.sql'
 \i 'Restrictions/scripts/test 016/test_016_validate_test_data.sql'
+\i 'Restrictions/scripts/test 017/test_017_validate_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_2.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_create_fe_test_data.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_test_3.sql'
+

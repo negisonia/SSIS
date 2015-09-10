@@ -4,6 +4,7 @@ DECLARE
 criteria_report_id integer DEFAULT NULL;
 intvalue integer;
 recordExist BOOLEAN DEFAULT FALSE;
+recordExist2 BOOLEAN DEFAULT FALSE;
 BEGIN
 
 ------------VALIDATE PARAMETERS
@@ -18,39 +19,41 @@ IF ((geography = 'national') or (geography = 'state') or (geography = 'msa') or 
 END IF;
 
 --VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
-IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id = NULL)) = false THEN
+IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id IS NULL)) =false THEN
 	SELECT throw_error('INVALID VIEW TYPE VALUE');
 END IF;
 
+IF new_report_id IS NOT NULL THEN
+	--VALIDATE THAT DRUGS PASSED AS PARAMETER ARE VALID DRUGS FOR THE REPORT
+	IF drug_ids IS NOT NULL THEN
+        FOREACH intvalue IN ARRAY drug_ids
+        LOOP
+        SELECT EXISTS(SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=new_report_id AND crd.drug_id=intvalue) INTO recordExist;
+            IF recordExist = FALSE THEN
+                SELECT throw_error(format('DRUG: %s IS NOT A VALID DRUG FOR THE REPORT %s',intvalue, new_report_id));
+            END IF;
+        END LOOP;
+	END IF;
 
---VALIDATE THAT DRUGS PASSED AS PARAMETER ARE VALID DRUGS FOR THE REPORT
-IF drug_ids !=NULL THEN
-	FOREACH intvalue IN ARRAY drug_ids
-	LOOP
-	SELECT EXISTS(SELECT 1 FROM criteria_restriction_drugs crd WHERE crd.report_id=new_report_id AND crd.drug_id=intvalue) INTO recordExist;
-		IF recordExist = FALSE THEN
-			SELECT throw_error(format('DRUG: %s IS NOT A VALID DRUG FOR THE REPORT %s',intvalue, new_report_id));
-		END IF;
-	END LOOP;
-END IF;
 
 	--VALIDATE THAT HEALTH PLANS PASSED AS PARAMETER ARE VALID  FOR THE REPORT
-IF health_plan_type_ids !=NULL THEN
-	FOREACH intvalue IN ARRAY health_plan_type_ids
-	LOOP
-	SELECT EXISTS(select 1 from criteria_restriction_health_plan_types crh where crh.report_id=new_report_id and crh.health_plan_type_id = intvalue) INTO recordExist;
-		IF recordExist = FALSE THEN
-			SELECT throw_error(format('HEALTH PLAN %s IS NOT A VALID HEALTH PLAN FOR THE REPORT %s',intvalue, new_report_id));
-		END IF;
-	END LOOP;
-END IF;
+	IF health_plan_type_ids IS NOT NULL THEN
+        FOREACH intvalue IN ARRAY health_plan_type_ids
+        LOOP
+        SELECT EXISTS(select 1 from criteria_restriction_health_plan_types crh where crh.report_id=new_report_id and crh.health_plan_type_id = intvalue) INTO recordExist;
+            IF recordExist = FALSE THEN
+                SELECT throw_error(format('HEALTH PLAN %s IS NOT A VALID HEALTH PLAN FOR THE REPORT %s',intvalue, new_report_id));
+            END IF;
+        END LOOP;
+	END IF;
 
 	--VALIDATE THAT RESTRICTIONS PASSED AS PARAMETER ARE VALID  FOR THE REPORT
-	IF restriction_ids !=NULL THEN
+	IF restriction_ids IS NOT NULL THEN
 		FOREACH intvalue IN ARRAY restriction_ids
 		LOOP
 			SELECT EXISTS(select 1 from criteria_restriction_selection crs where crs.report_id=new_report_id and crs.dim_criteria_restriction_id=intvalue) INTO recordExist;
-			IF recordExist = FALSE THEN
+			SELECT EXISTS(select 1 from custom_criteron_selection ccs where ccs.report_id=new_report_id and ccs.dim_criteria_restriction_id=intvalue) INTO recordExist2;
+			IF (recordExist OR recordExist2)  IS FALSE THEN
 				SELECT throw_error(format('RESTRICTION %s IS NOT A VALID RESTRICTION FOR THE REPORT %s',intvalue,new_report_id));
 			END IF;
 		END LOOP;
@@ -96,7 +99,7 @@ END IF;
     	 END IF;
     	 ELSE
     END CASE;
-
+END IF;
 
 --INSERT RECORD INTO CRITERIA REPORTS
 INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id, geography)
@@ -111,27 +114,27 @@ ELSE
     PERFORM add_criteria_report_markets(criteria_report_id, market_type, market_ids);
 
     --INSERT HEALTH PLAN TYPES DATA
-    IF health_plan_type_ids != NULL THEN
-		FOREACH intvalue IN ARRAY health_plan_type_ids
-		LOOP
-		INSERT INTO criteria_reports_health_plan_types(health_plan_type_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
-		END LOOP;
+    IF health_plan_type_ids IS NOT NULL THEN
+        FOREACH intvalue IN ARRAY health_plan_type_ids
+        LOOP
+        INSERT INTO criteria_reports_health_plan_types(health_plan_type_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
+        END LOOP;
     END IF;
      
     --INSERT DRUGS DATA
-    IF drug_ids != NULL THEN
-		FOREACH intvalue IN ARRAY drug_ids
-		LOOP
-		INSERT INTO criteria_reports_drugs(drug_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
-		END LOOP;
+    IF drug_ids IS NOT NULL THEN
+        FOREACH intvalue IN ARRAY drug_ids
+        LOOP
+        INSERT INTO criteria_reports_drugs(drug_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
+        END LOOP;
     END IF;
 
     --INSERT RESTRICTIONS DATA
-    IF restriction_ids != NULL THEN
-		FOREACH intvalue IN ARRAY restriction_ids
-		LOOP
-			INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
-		END LOOP;
+    IF restriction_ids IS NOT NULL THEN
+        FOREACH intvalue IN ARRAY restriction_ids
+        LOOP
+            INSERT INTO criteria_reports_dim_criteria_restriction(dim_criteria_restriction_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
+        END LOOP;
 	END IF;
 
     --INSERT GEOGRAPHY DATA

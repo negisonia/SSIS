@@ -138,6 +138,7 @@ SELECT common_get_table_id_by_name('drug_classes','drug_class_5') INTO drug_clas
 
 
 --RETRIEVE RESTRICTIONS
+SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_1') INTO ind1_pa_diagnosis_1;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_3') INTO ind1_pa_diagnosis_3;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Clinical','criteria_clinical_1') INTO ind1_pa_clinical_1;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Unspecified','Criteria Unspecified') INTO ind1_pa_unspecified;
@@ -163,26 +164,25 @@ SELECT common_get_dim_criteria_restriction(indication_3,'Pharmacy','PA - Clinica
 --REPORT#1
 drugs_array:= ARRAY[drug_1,drug_2];
 health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
-restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2,ind1_rep_1_group_steps];
+restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2];
 empty_array:= ARRAY[]::integer[];
 
 SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
 
 --VALIDATE SUMMARY TABLE
 expected_summary_table_output= format('['||
-'{"criteria_report_id":%1$s,"drug_id":%2$s,"lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"QL","benefit_name":"Pharmacy","drug_name":"drug_1"},'||
-'{"criteria_report_id":%1$s,"drug_id":%2$s,"lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"PA/ST","benefit_name":"Pharmacy","drug_name":"drug_1"},'||
-'{"criteria_report_id":%1$s,"drug_id":%2$s,"lives":200,"health_plan_count":2,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"PA","benefit_name":"Pharmacy","drug_name":"drug_1"},'||
-'{"criteria_report_id":%1$s,"drug_id":%2$s,"lives":300,"health_plan_count":3,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","drug_name":"drug_1"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"QL","benefit_name":"Pharmacy","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":200,"health_plan_count":2,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"ST","benefit_name":"Pharmacy","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"PA/ST","benefit_name":"Pharmacy","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":200,"health_plan_count":2,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"PA","benefit_name":"Pharmacy","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":300,"health_plan_count":3,"provider_count":0,"total_pharmacy_lives":300,"total_medical_lives":0,"total_health_plan_count":3,"total_provider_count":0,"benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":null,"lives":null,"health_plan_count":null,"provider_count":null,"total_pharmacy_lives":300,"total_medical_lives":null,"total_health_plan_count":3,"total_provider_count":null,"benefit_restriction_name":null,"benefit_name":"Pharmacy","drug_name":null},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":100,"health_plan_count":0,"provider_count":1,"total_pharmacy_lives":0,"total_medical_lives":100,"total_health_plan_count":0,"total_provider_count":2,"benefit_restriction_name":"ST","benefit_name":"Medical","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":%3$s,"lives":100,"health_plan_count":0,"provider_count":2,"total_pharmacy_lives":0,"total_medical_lives":100,"total_health_plan_count":0,"total_provider_count":2,"benefit_restriction_name":"Medical","benefit_name":"Medical","drug_name":"drug_2"},'||
-'{"criteria_report_id":%1$s,"drug_id":null,"lives":null,"health_plan_count":null,"provider_count":null,"total_pharmacy_lives":null,"total_medical_lives":100,"total_health_plan_count":null,"total_provider_count":2,"benefit_restriction_name":null,"benefit_name":"Medical","drug_name":null}]',fe_report_1, drug_1,drug_2);
+'{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"QL","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"PA/ST","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"PA","benefit_name":"Pharmacy","lives":200,"total_pharmacy_lives":300,"health_plan_count":2,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","lives":300,"total_pharmacy_lives":300,"health_plan_count":3,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"QL","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"ST","benefit_name":"Pharmacy","lives":200,"total_pharmacy_lives":300,"health_plan_count":2,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"PA/ST","benefit_name":"Pharmacy","lives":200,"total_pharmacy_lives":300,"health_plan_count":2,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"PA","benefit_name":"Pharmacy","lives":200,"total_pharmacy_lives":300,"health_plan_count":2,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","lives":300,"total_pharmacy_lives":300,"health_plan_count":3,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"ST","benefit_name":"Medical","lives":100,"total_pharmacy_lives":0,"health_plan_count":0,"total_health_plan_count":0,"total_medical_lives":100,"provider_count":1,"total_provider_count":2},'||
+'{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"Medical","benefit_name":"Medical","lives":100,"total_pharmacy_lives":0,"health_plan_count":0,"total_health_plan_count":0,"total_medical_lives":100,"provider_count":2,"total_provider_count":2}]',fe_report_1);
+
 PERFORM res_rpt_summary_table_validate_data(fe_report_1,expected_summary_table_output);
 
 --REPORT#2
