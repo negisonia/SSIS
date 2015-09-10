@@ -11,7 +11,7 @@
 # NON CONFIGURABLE OPTIONS
 # ---------------------
 # Temp Database Names
-TEMP_DATAWAREHOUSE_DB_NAME=tmp_sandbox_datawarehouse
+TEMP_DATAWAREHOUSE_DB_NAME=tmp_sandbox_data_warehouse
 TEMP_FRONT_END_DB_NAME=tmp_sandbox_front_end
 TEMP_REPORT_DATA_DB_NAME=tmp_sandbox_report_data
 TEMP_ADMIN_DB_NAME=tmp_sandbox_admin
@@ -19,7 +19,7 @@ TEMP_DATA_ENTRY_DB_NAME=tmp_sandbox_data_entry
 TEMP_FF_NEW_DB_NAME=tmp_sandbox_ff_new
 
 # Final Database Names
-DATAWAREHOUSE_DB_NAME=sandbox_datawarehouse
+DATAWAREHOUSE_DB_NAME=sandbox_data_warehouse
 FRONT_END_DB_NAME=sandbox_front_end
 REPORT_DATA_DB_NAME=sandbox_report_data
 ADMIN_DB_NAME=sandbox_admin
@@ -47,7 +47,7 @@ QA_DB_PREFIX=sandbox
 # CLONE OPTIONS
 # DB NAMES
 ADMIN=admin
-DATAWAREHOUSE=datawarehouse
+DATAWAREHOUSE=data_warehouse
 DATA_ENTRY=data_entry
 FF_NEW=ff_new
 FRONT_END=front_end
