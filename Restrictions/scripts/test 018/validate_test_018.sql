@@ -186,8 +186,6 @@ expected_rpt_drug_output= format('['||
 '{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0}'||
 ']',fe_report_1);
 
- RAISE NOTICE 'REPORT: %s', fe_report_1;
-
 PERFORM res_rpt_drug_validate_data(fe_report_1, 3 ,expected_rpt_drug_output);
 --
 ----REPORT#2
