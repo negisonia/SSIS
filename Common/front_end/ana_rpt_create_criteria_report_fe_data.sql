@@ -6,7 +6,7 @@ criteria_report_id INTEGER;
 name varchar;
 health_plan_type_ids INTEGER[];
 drug_ids INTEGER[];
-region_ids INTEGER[];
+region_ids INTEGER[] := ARRAY[]::INTEGER[];
 region_type_id INTEGER;
 
 BEGIN
@@ -38,6 +38,8 @@ BEGIN
     region_type_id = 3;
   ELSIF region_type = 'MetroStatArea' THEN 
     region_type_id = 4;
+  ELSE
+    region_type_id = 1;
   END IF;
 
   SELECT create_criteria_report(NULL,0,NULL,0,region_type_id,FALSE,FALSE,FALSE,drug_ids,health_plan_type_ids,region_type,region_ids,NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
