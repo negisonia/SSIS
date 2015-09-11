@@ -78,11 +78,17 @@ delete_temp_dbs()
 {
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing temporary databases if already created"
 
+  kill_session $TEMP_DATAWAREHOUSE_DB_NAME
   delete_db $TEMP_DATAWAREHOUSE_DB_NAME
+  kill_session $TEMP_FRONT_END_DB_NAME
   delete_db $TEMP_FRONT_END_DB_NAME
+  kill_session $TEMP_REPORT_DATA_DB_NAME
   delete_db $TEMP_REPORT_DATA_DB_NAME
+  kill_session $TEMP_ADMIN_DB_NAME
   delete_db $TEMP_ADMIN_DB_NAME
+  kill_session $TEMP_DATA_ENTRY_DB_NAME
   delete_db $TEMP_DATA_ENTRY_DB_NAME
+  kill_session $TEMP_FF_NEW_DB_NAME
   delete_db $TEMP_FF_NEW_DB_NAME
 }
 
@@ -152,6 +158,8 @@ load_scripts_on_temp(){
 
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Data Entry scripts"
   psql -d $TEMP_DATA_ENTRY_DB_NAME -h $HOST -U postgres < Load/load_data_entry.sql    
+
+  cd Load/
 }
 
 alter_temp_foreign_servers(){
@@ -187,9 +195,13 @@ alter_clone_foreign_servers(){
 }
 
 rebuild_temp_test_enviroment(){
+  delete_temp_dbs
+
   build_temp_etl  
   build_temp_non_etl
   load_scripts_on_temp
+
+  alter_temp_foreign_servers
 }
 
 build_temp_etl(){
@@ -199,15 +211,10 @@ build_temp_etl(){
   cd data-warehouse-storeprocedures/
   git pull origin master
 
-  delete_temp_dbs
-
   create_and_load_etl_dbs
 
   cd ../
   cd data-warehouse-storeprocedures-tests/Load
-
-  alter_temp_foreign_servers
-
 }
 
 build_temp_non_etl(){
@@ -285,7 +292,7 @@ get_params(){
   # Second set of params
   get_param_option $4 $5
   # Third set of params
-  get_param_option $6 $7
+  get_param_option ${6:-"-x"} ${7:-$DEFAULT_PREFIX}
 }
 
 get_param_option(){
@@ -341,7 +348,7 @@ usage_msg(){
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all temporary dbs "
      ;;
      "clone_from_qa") echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloning QA dbs "
-        get_params $1 $2 $3 $4 $5 ${6:-"-x"} ${7:-$DEFAULT_PREFIX}
+        get_params $1 $2 $3 $4 $5 $6 $7
         clone_from_qa
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloned all dbs "
      ;;
