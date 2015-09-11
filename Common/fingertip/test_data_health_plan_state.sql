@@ -55,10 +55,12 @@ BEGIN
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), state_ma_id);
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_comm_1'), state_ct_id);
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), state_ma_id);
-
+  
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'TEST_PLAN_018'), state_002_id);
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'TEST_PLAN_019'), state_002_id);
   PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'TEST_PLAN_020'), state_001_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'TEST_PLAN_021'), state_001_id);
+  PERFORM common_create_health_plan_state(common_get_table_id_by_name(health_plan, 'TEST_PLAN_022'), state_001_id);
 
 success=true;
 return success;

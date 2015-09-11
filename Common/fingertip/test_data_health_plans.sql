@@ -35,43 +35,44 @@ commercial_inactive_hpt_id INTEGER;
 health_plan_type_001_id INTEGER;
 health_plan_type_002_id INTEGER;
 health_plan_type_003_id INTEGER;
-
+provider VARCHAR:='provider';
+healthplantype VARCHAR:='healthplantype';
 BEGIN
 
     --RETRIEVE PROVIDERS
-	SELECT p.id FROM provider p WHERE p.name='provider_1' INTO provider_1_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_2' INTO provider_2_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_3' INTO provider_3_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_4' INTO provider_4_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_5' INTO provider_5_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_6' INTO provider_6_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_7' INTO provider_7_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_8' INTO provider_8_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_9' INTO provider_9_id;
-	SELECT p.id FROM provider p WHERE p.name='provider_10' INTO provider_10_id;
-    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_001' INTO provider_001_id;
-    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_002' INTO provider_002_id;
-    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_003' INTO provider_003_id;
-    SELECT p.id FROM provider p WHERE p.name='TEST_PROVIDER_004' INTO provider_004_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_1') INTO provider_1_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_2') INTO provider_2_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_3') INTO provider_3_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_4') INTO provider_4_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_5') INTO provider_5_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_6') INTO provider_6_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_7') INTO provider_7_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_8') INTO provider_8_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_9') INTO provider_9_id;
+	SELECT common_get_table_id_by_name(provider, 'provider_10') INTO provider_10_id;
+    SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_001') INTO provider_001_id;
+    SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_002') INTO provider_002_id;
+    SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_003') INTO provider_003_id;
+    SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_004') INTO provider_004_id;
 
 	--RETRIEVE HEALTH PLAN TYPES
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial' INTO commercial_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='hix' INTO hix_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial_bcbs' INTO commercial_bcbs_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='employer' INTO employer_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='medicare_ma' INTO medicare_ma_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='medicare_sn' INTO medicare_sn_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='medicare_pdp' INTO medicare_pdp_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='state_medicare' INTO state_medicare_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='dpp' INTO dpp_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial_medicaid' INTO commercial_medicaid_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='union' INTO union_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='municipal_plan' INTO municipal_plan_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='pbm' INTO pbm_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='commercial_inactive' INTO commercial_inactive_hpt_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_001' INTO health_plan_type_001_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_002' INTO health_plan_type_002_id;
-    SELECT hpt.id FROM healthplantype hpt WHERE hpt.name='HEALTH_PLAN_TYPE_003' INTO health_plan_type_003_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'commercial') INTO commercial_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'hix') INTO hix_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'commercial_bcbs') INTO commercial_bcbs_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'employer') INTO employer_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'medicare_ma') INTO medicare_ma_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'medicare_sn') INTO medicare_sn_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'medicare_pdp') INTO medicare_pdp_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'state_medicare') INTO state_medicare_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'dpp') INTO dpp_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'commercial_medicaid') INTO commercial_medicaid_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'union') INTO union_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'municipal_plan') INTO municipal_plan_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'pbm') INTO pbm_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'commercial_inactive') INTO commercial_inactive_hpt_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'HEALTH_PLAN_TYPE_001') INTO health_plan_type_001_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'HEALTH_PLAN_TYPE_002') INTO health_plan_type_002_id;
+    SELECT common_get_table_id_by_name(healthplantype, 'HEALTH_PLAN_TYPE_003') INTO health_plan_type_003_id;
 
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm',common_create_formulary(TRUE,FALSE,NULL), provider_1_id,'https://health_plan_comm/test.pdf');
     PERFORM common_create_healthplan(hix_hpt_id,TRUE,'health_plan_hix',common_create_formulary(TRUE,FALSE,3), provider_1_id,'https://health_plan_hix/test.pdf');
@@ -89,6 +90,7 @@ BEGIN
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',NULL,provider_10_id,null);
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',common_create_formulary(TRUE,FALSE,NULL),provider_1_id,'https://health_plan_comm_1/test.pdf');
     PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id, null);
+    
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_003', common_create_formulary(TRUE,FALSE,NULL), provider_002_id , null);
@@ -109,6 +111,8 @@ BEGIN
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_018', common_create_formulary(TRUE,FALSE,NULL), provider_002_id, null);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_019', common_create_formulary(TRUE,FALSE,NULL), provider_002_id, null);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_020', common_create_formulary(TRUE,FALSE,NULL), provider_002_id, null);
+    PERFORM common_create_healthplan(health_plan_type_003_id, TRUE, 'TEST_PLAN_021', common_create_formulary(TRUE,FALSE,NULL), provider_001_id, null);
+    PERFORM common_create_healthplan(health_plan_type_003_id, TRUE, 'TEST_PLAN_022', common_create_formulary(TRUE,FALSE,NULL), provider_001_id, null);
 
 success=true;
 return success;
