@@ -40,9 +40,9 @@ ind1_m_st_custom_option_2 INTEGER;
 ind1_rep_1_group_single INTEGER;
 ind1_rep_1_group_all INTEGER;
 ind1_rep_1_group_both INTEGER;
-ind1_m_criteria_lab_3 INTEGER;
 ind3_m_criteria_lab_3 INTEGER;
 ind3_pa_criteria_clinical_3 INTEGER;
+ind1_rep_1_group_steps INTEGER;
 
 drugs_array INTEGER[];
 health_plan_types_array INTEGER[];
@@ -80,13 +80,13 @@ fe_report_2 INTEGER;
 fe_report_3 INTEGER;
 fe_report_4 INTEGER;
 summary_table_output VARCHAR;
-expected_summary_table_output VARCHAR;
+expected_rpt_drug_output VARCHAR;
+report_type INTEGER;
 
 BEGIN
 
 
 
---RETRIEVE HEALTH PLAN TYPES
 --RETRIEVE HEALTH PLAN TYPES
 SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_hpt;
 SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_hpt;
@@ -104,6 +104,7 @@ SELECT common_get_table_id_by_name('health_plan_types','pbm') INTO pbm_hpt;
 SELECT common_get_table_id_by_name('health_plan_types','HEALTH_PLAN_TYPE_001') INTO health_plan_type_001;
 SELECT common_get_table_id_by_name('health_plan_types','HEALTH_PLAN_TYPE_002') INTO health_plan_type_002;
 SELECT common_get_table_id_by_name('health_plan_types','HEALTH_PLAN_TYPE_003') INTO health_plan_type_003;
+
 
 --RETRIEVE REPORTS
 SELECT ccr.report_id INTO report1 FROM criteria_restriction_reports ccr WHERE ccr.report_name='report_1';
@@ -128,6 +129,7 @@ SELECT common_get_table_id_by_name('drugs','drug_7') INTO drug_7;
 SELECT common_get_table_id_by_name('drugs','drug_8') INTO drug_8;
 SELECT common_get_table_id_by_name('drugs','drug_9') INTO drug_9;
 
+
 --RETRIEVE DRUG CLASSES
 SELECT common_get_table_id_by_name('drug_classes','drug_class_1') INTO drug_class_1;
 SELECT common_get_table_id_by_name('drug_classes','drug_class_2') INTO drug_class_2;
@@ -135,7 +137,9 @@ SELECT common_get_table_id_by_name('drug_classes','drug_class_3') INTO drug_clas
 SELECT common_get_table_id_by_name('drug_classes','drug_class_4') INTO drug_class_4;
 SELECT common_get_table_id_by_name('drug_classes','drug_class_5') INTO drug_class_5;
 
+
 --RETRIEVE RESTRICTIONS
+SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_1') INTO ind1_pa_diagnosis_1;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_3') INTO ind1_pa_diagnosis_3;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Clinical','criteria_clinical_1') INTO ind1_pa_clinical_1;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Unspecified','Criteria Unspecified') INTO ind1_pa_unspecified;
@@ -155,6 +159,9 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_
 SELECT common_get_dim_criteria_restriction(indication_3,'Medical','Labs','criteria_lab_3') INTO ind3_m_criteria_lab_3;
 SELECT common_get_dim_criteria_restriction(indication_3,'Pharmacy','PA - Clinical','criteria_clinical_3') INTO ind3_pa_criteria_clinical_3;
 
+
+
+
 --REPORT#1
 drugs_array:= ARRAY[drug_1,drug_2];
 health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
@@ -164,23 +171,37 @@ empty_array:= ARRAY[]::integer[];
 SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
 
 --VALIDATE RPT_DRUG
-expected_summary_table_output= format('');
-PERFORM validate_summary_table(fe_report_1,expected_summary_table_output);
+expected_rpt_drug_output= format('['||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"PA/ST - Single - custom_option_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA/ST - Single - custom_option_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"ST - Double - custom_option_1 AND  custom_option_2","dim_restriction_type_id":3,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Age - criteria_age_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Clinical - criteria_clinical_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"QL - criteria_ql_1","dim_restriction_type_id":4,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"QL - criteria_ql_1","dim_restriction_type_id":4,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
+'{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0}'||
+']',fe_report_1);
 
---REPORT#2
-health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt,commercial_bcbs_hpt,employer_hpt,medicare_ma_hpt,medicare_sn_hpt,medicare_pdp_hpt,state_medicare_hpt,dpp_hpt,commercial_medicaid_hpt,union_hpt,municipal_plan_hpt,pbm_hpt,health_plan_type_001,health_plan_type_002,health_plan_type_003];
-restrictions_array:= ARRAY[ind1_pa_diagnosis_1,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_m_unspecified, ind1_m_age_1];
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_2;
-
---REPORT#3 --
-restrictions_array:= ARRAY[ind1_rep_1_group_single,ind1_rep_1_group_all,ind1_rep_1_group_both];
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array,NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_3;
-
---REPORT#4
-drugs_array:= ARRAY[drug_1,drug_2,drug_9,drug_3];
-health_plan_types_array:= ARRAY[commercial_hpt,commercial_bcbs_hpt, commercial_medicaid_hpt];
-restrictions_array:= ARRAY[ind3_pa_criteria_clinical_3,ind3_m_criteria_lab_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql,ind1_pa_age_1];
-SELECT create_criteria_report( report3, user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_4;
+PERFORM res_rpt_drug_validate_data(fe_report_1, 3 ,expected_rpt_drug_output);
+--
+----REPORT#2
+--health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt,commercial_bcbs_hpt,employer_hpt,medicare_ma_hpt,medicare_sn_hpt,medicare_pdp_hpt,state_medicare_hpt,dpp_hpt,commercial_medicaid_hpt,union_hpt,municipal_plan_hpt,pbm_hpt,health_plan_type_001,health_plan_type_002,health_plan_type_003];
+--restrictions_array:= ARRAY[ind1_pa_diagnosis_1,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_m_unspecified, ind1_m_age_1];
+--SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_2;
+--
+----REPORT#3 --
+--restrictions_array:= ARRAY[ind1_rep_1_group_single,ind1_rep_1_group_all,ind1_rep_1_group_both];
+--SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array,NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_3;
+--
+----REPORT#4
+--drugs_array:= ARRAY[drug_1,drug_2,drug_9,drug_3];
+--health_plan_types_array:= ARRAY[commercial_hpt,commercial_bcbs_hpt, commercial_medicaid_hpt];
+--restrictions_array:= ARRAY[ind3_pa_criteria_clinical_3,ind3_m_criteria_lab_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql,ind1_pa_age_1];
+--SELECT create_criteria_report( report3, user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_4;
 
 
 success=true;
