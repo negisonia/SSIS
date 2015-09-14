@@ -107,7 +107,7 @@
 \i 'Restrictions/scripts/test 017/test_017_validate_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_2.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'
-\i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account_criteria'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account_criteria.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_create_fe_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_3.sql'
 
