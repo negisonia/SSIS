@@ -10,21 +10,6 @@
 
 # NON CONFIGURABLE OPTIONS
 # ---------------------
-# Temp Database Names
-TEMP_DATAWAREHOUSE_DB_NAME=tmp_sandbox_data_warehouse
-TEMP_FRONT_END_DB_NAME=tmp_sandbox_front_end
-TEMP_REPORT_DATA_DB_NAME=tmp_sandbox_report_data
-TEMP_ADMIN_DB_NAME=tmp_sandbox_admin
-TEMP_DATA_ENTRY_DB_NAME=tmp_sandbox_data_entry
-TEMP_FF_NEW_DB_NAME=tmp_sandbox_ff_new
-
-# Final Database Names
-DATAWAREHOUSE_DB_NAME=sandbox_data_warehouse
-FRONT_END_DB_NAME=sandbox_front_end
-REPORT_DATA_DB_NAME=sandbox_report_data
-ADMIN_DB_NAME=sandbox_admin
-DATA_ENTRY_DB_NAME=sandbox_data_entry
-FF_NEW_DB_NAME=sandbox_ff_new
 
 # Script paths
 DATAWAREHOUSE_SCRIPT_PATH=data_warehouse/r20_data_warehouse.sql
@@ -34,6 +19,7 @@ ADMIN_SCRIPT_PATH=admin/r20_admin.sql
 DATA_ENTRY_SCRIPT_PATH=dump/data_entry.sql
 FF_NEW_SCRIPT_PATH=dump/ff_new.sql
 DUMP_FOLDER_PATH=dump
+LOAD_FOLDER_PATH=load
 
 # Host Names
 DATA_ENTRY_DB_HOST=rdwo3djw14v9sq.cayadjd1xwwj.us-east-1.rds.amazonaws.com
@@ -52,8 +38,10 @@ DATA_ENTRY=data_entry
 FF_NEW=ff_new
 FRONT_END=front_end
 REPORT_DATA=report_data
-db_names="$ADMIN $DATAWAREHOUSE $FRONT_END $REPORT_DATA $DATA_ENTRY $FF_NEW"
+DB_NAMES="$ADMIN $DATAWAREHOUSE $FRONT_END $REPORT_DATA $DATA_ENTRY $FF_NEW"
 DEFAULT_PREFIX=sandbox
+TMP_PREFIX=tmp
+OLD_PREFIX=old
 
 create_pg_pass(){
   echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
@@ -78,37 +66,31 @@ delete_temp_dbs()
 {
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing temporary databases if already created"
 
-  kill_session $TEMP_DATAWAREHOUSE_DB_NAME
-  delete_db $TEMP_DATAWAREHOUSE_DB_NAME
-  kill_session $TEMP_FRONT_END_DB_NAME
-  delete_db $TEMP_FRONT_END_DB_NAME
-  kill_session $TEMP_REPORT_DATA_DB_NAME
-  delete_db $TEMP_REPORT_DATA_DB_NAME
-  kill_session $TEMP_ADMIN_DB_NAME
-  delete_db $TEMP_ADMIN_DB_NAME
-  kill_session $TEMP_DATA_ENTRY_DB_NAME
-  delete_db $TEMP_DATA_ENTRY_DB_NAME
-  kill_session $TEMP_FF_NEW_DB_NAME
-  delete_db $TEMP_FF_NEW_DB_NAME
+  for db_name in $DB_NAMES
+  do
+    PREFIX_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
+
+    echo_msg_with_timestamp "  - AUTOMATED_ETL: Killing open sessions and deleting: $PREFIX_DB_NAME"
+    kill_session $PREFIX_DB_NAME
+    delete_db $PREFIX_DB_NAME
+  done
 }
 
-delete_final_dbs()
+delete_old_final_dbs()
 {
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting final databases if already created"
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting old final databases"
 
-  delete_db $DATAWAREHOUSE_DB_NAME
-  delete_db $FRONT_END_DB_NAME
-  delete_db $REPORT_DATA_DB_NAME
-  delete_db $ADMIN_DB_NAME
-  delete_db $DATA_ENTRY_DB_NAME
-  delete_db $FF_NEW_DB_NAME
+  for db_name in $DB_NAMES
+  do
+    delete_db "${OLD_PREFIX}_${PREFIX}_${db_name}"
+  done
 }
 
 delete_clone_dbs()
 {
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting clone databases if already created"
 
-  for db_name in $db_names
+  for db_name in $DB_NAMES
   do
     PREFIX_DB_NAME="${PREFIX}_${db_name}"
 
@@ -118,110 +100,134 @@ delete_clone_dbs()
 }
 
 create_and_load_etl_dbs(){
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for datawarehouse"
-  create_and_load_db $TEMP_DATAWAREHOUSE_DB_NAME $DATAWAREHOUSE_SCRIPT_PATH
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for front end"
-  create_and_load_db $TEMP_FRONT_END_DB_NAME $FRONT_END_SCRIPT_PATH
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for report data"
-  create_and_load_db $TEMP_REPORT_DATA_DB_NAME $REPORT_DATA_SCRIPT_PATH
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for admin"
-  create_and_load_db $TEMP_ADMIN_DB_NAME $ADMIN_SCRIPT_PATH  
+  for db_name in $DB_NAMES
+  do
+    PREFIX_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
+
+    if [ "$db_name" == "$DATAWAREHOUSE" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for datawarehouse"
+      create_and_load_db $PREFIX_DB_NAME $DATAWAREHOUSE_SCRIPT_PATH
+    elif [ "$db_name" == "$FRONT_END" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for front end"
+      create_and_load_db $PREFIX_DB_NAME $FRONT_END_SCRIPT_PATH
+    elif [ "$db_name" == "$REPORT_DATA" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for report data"
+      create_and_load_db $PREFIX_DB_NAME $REPORT_DATA_SCRIPT_PATH
+    elif [ "$db_name" = "$ADMIN" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for admin"
+      create_and_load_db $PREFIX_DB_NAME $ADMIN_SCRIPT_PATH  
+    fi
+  done
 }
 
 create_and_load_ff_new_data_entry(){
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping data entry"
-  pg_dump -s $SOURCE_DATA_ENTRY_DB_NAME -h $DATA_ENTRY_DB_HOST -n public -U $DATA_ENTRY_DB_USER -p 5432 > $DATA_ENTRY_SCRIPT_PATH
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for data entry and loading script"
-  create_and_load_db $TEMP_DATA_ENTRY_DB_NAME $DATA_ENTRY_SCRIPT_PATH
+  for db_name in $DB_NAMES
+    do
+    PREFIX_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
 
-  
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping ff new"
-  pg_dump --exclude-table "DELETE*" -s ff_new -h $FF_NEW_DB_HOST -n public -U $FF_NEW_DB_USER -p 5432 -x > $FF_NEW_SCRIPT_PATH
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for ff new and loading script"
-  create_and_load_db $TEMP_FF_NEW_DB_NAME $FF_NEW_SCRIPT_PATH
+    if [ "$db_name" == "$DATA_ENTRY" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping data entry"
+      pg_dump -s $SOURCE_DATA_ENTRY_DB_NAME -h $DATA_ENTRY_DB_HOST -n public -U $DATA_ENTRY_DB_USER -p 5432 > $DATA_ENTRY_SCRIPT_PATH
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for data entry and loading script"
+      create_and_load_db $PREFIX_DB_NAME $DATA_ENTRY_SCRIPT_PATH
+    elif [ "$db_name" == "$FF_NEW" ]
+      then
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping ff new"
+      pg_dump --exclude-table "DELETE*" -s ff_new -h $FF_NEW_DB_HOST -n public -U $FF_NEW_DB_USER -p 5432 -x > $FF_NEW_SCRIPT_PATH
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for ff new and loading script"
+      create_and_load_db $PREFIX_DB_NAME $FF_NEW_SCRIPT_PATH
+    fi
+  done
 }
 
 load_scripts_on_temp(){
+
   cd ../
+  for db_name in $DB_NAMES
+    do
+      # FRONT_END does not have scripts to be loaded
+      if [ "$db_name" != "$FRONT_END" ]
+        then
+        PREFIX_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
 
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Admin scripts"
-  psql -d $TEMP_ADMIN_DB_NAME -h $HOST -U postgres < Load/load_admin.sql
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Data Warehouse scripts"
-  psql -d $TEMP_DATAWAREHOUSE_DB_NAME -h $HOST -U postgres < Load/load_data_warehouse.sql
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading FF New scripts"
-  psql -d $TEMP_FF_NEW_DB_NAME -h $HOST -U postgres < Load/load_ff_new.sql
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Front End scripts"
-  psql -d $TEMP_FRONT_END_DB_NAME -h $HOST -U postgres < Load/load_front_end.sql  
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Data Entry scripts"
-  psql -d $TEMP_DATA_ENTRY_DB_NAME -h $HOST -U postgres < Load/load_data_entry.sql    
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading ${db_name} scripts"
+        SCRIPT_PATH="${LOAD_FOLDER_PATH}/load_${db_name}.sql"
+        psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $SCRIPT_PATH
+      fi
+  done
 
   cd Load/
 }
 
 alter_temp_foreign_servers(){
-  alter_foreign_servers $TEMP_FF_NEW_DB_NAME $TEMP_DATA_ENTRY_DB_NAME $TEMP_ADMIN_DB_NAME $TEMP_DATAWAREHOUSE_DB_NAME $TEMP_FRONT_END_DB_NAME $TEMP_REPORT_DATA_DB_NAME $SERVER_POSTGRES_PASSWORD $HOST
+  alter_foreign_servers "${TMP_PREFIX}_${PREFIX}_${FF_NEW}" "${TMP_PREFIX}_${PREFIX}_${DATA_ENTRY}" "${TMP_PREFIX}_${PREFIX}_${ADMIN}" "${TMP_PREFIX}_${PREFIX}_${DATAWAREHOUSE}" "${TMP_PREFIX}_${PREFIX}_${FRONT_END}" "${TMP_PREFIX}_${PREFIX}_${REPORT_DATA}"
 }
 
 alter_foreign_servers(){
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter foreign servers"
 
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data-warehouse foreign servers"
-  psql -d $4 -h $8 -U postgres < alter_data_warehouse_foreign_servers.sql
-  psql -d $4 -h $8 -U postgres -c "Select alter_datawarehouse_foreign_servers('$8', '$1', '$2', '$3', '$7');"
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Report Data foreign servers"
-  psql -d $6 -h $8 -U postgres < alter_report_data_foreign_servers.sql
-  psql -d $6 -h $8 -U postgres -c "Select alter_report_data_foreign_servers('$8', '$4', '$5', '$7');"
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Admin foreign servers"
-  psql -d $3 -h $8 -U postgres < alter_admin_foreign_servers.sql
-  psql -d $3 -h $8 -U postgres -c "Select alter_admin_foreign_servers('$8', '$4', '$1', '$7');"
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data Entry foreign servers"
-  psql -d $2 -h $8 -U postgres < alter_data_entry_foreign_servers.sql
-  psql -d $2 -h $8 -U postgres -c "Select alter_data_entry_foreign_servers('$8', '$1', '$7');"
+  for db_name in $DB_NAMES
+    do
+      if [ "$db_name" == "$DATAWAREHOUSE" ]
+        then
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data-warehouse foreign servers"
+        psql -d $4 -h $HOST -U postgres < alter_data_warehouse_foreign_servers.sql
+        psql -d $4 -h $HOST -U postgres -c "Select alter_datawarehouse_foreign_servers('$HOST', '$1', '$2', '$3', '$SERVER_POSTGRES_PASSWORD');"
+      elif [ "$db_name" == "$REPORT_DATA" ]
+        then
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Report Data foreign servers"
+        psql -d $6 -h $HOST -U postgres < alter_report_data_foreign_servers.sql
+        psql -d $6 -h $HOST -U postgres -c "Select alter_report_data_foreign_servers('$HOST', '$4', '$5', '$SERVER_POSTGRES_PASSWORD');"
+      elif [ "$db_name" == "$ADMIN" ]
+        then
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Admin foreign servers"
+        psql -d $3 -h $HOST -U postgres < alter_admin_foreign_servers.sql
+        psql -d $3 -h $HOST -U postgres -c "Select alter_admin_foreign_servers('$HOST', '$4', '$1', '$SERVER_POSTGRES_PASSWORD');"
+      elif [ "$db_name" == "$DATA_ENTRY" ]
+        then
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Alter Data Entry foreign servers"
+        psql -d $2 -h $HOST -U postgres < alter_data_entry_foreign_servers.sql
+        psql -d $2 -h $HOST -U postgres -c "Select alter_data_entry_foreign_servers('$HOST', '$1', '$SERVER_POSTGRES_PASSWORD');"
+      fi
+    done
 }
 
 alter_final_foreign_servers(){
-  alter_foreign_servers $FF_NEW_DB_NAME $DATA_ENTRY_DB_NAME $ADMIN_DB_NAME $DATAWAREHOUSE_DB_NAME $FRONT_END_DB_NAME $REPORT_DATA_DB_NAME $SERVER_POSTGRES_PASSWORD $HOST
+  alter_foreign_servers "${PREFIX}_${FF_NEW}" "${PREFIX}_${DATA_ENTRY}" "${PREFIX}_${ADMIN}" "${PREFIX}_${DATAWAREHOUSE}" "${PREFIX}_${FRONT_END}" "${PREFIX}_${REPORT_DATA}"
 }
 
 alter_clone_foreign_servers(){
-  alter_foreign_servers "${PREFIX}_${FF_NEW}" "${PREFIX}_${DATA_ENTRY}" "${PREFIX}_${ADMIN}" "${PREFIX}_${DATAWAREHOUSE}" "${PREFIX}_${FRONT_END}" "${PREFIX}_${REPORT_DATA}" $SERVER_POSTGRES_PASSWORD $HOST
+  alter_foreign_servers "${PREFIX}_${FF_NEW}" "${PREFIX}_${DATA_ENTRY}" "${PREFIX}_${ADMIN}" "${PREFIX}_${DATAWAREHOUSE}" "${PREFIX}_${FRONT_END}" "${PREFIX}_${REPORT_DATA}"
 }
 
 rebuild_temp_test_enviroment(){
   delete_temp_dbs
-
-  build_temp_etl  
-  build_temp_non_etl
+  build_temp_etl
   load_scripts_on_temp
-
   alter_temp_foreign_servers
 }
 
 build_temp_etl(){
 
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Downloading latest changes from data-warehouse-storeprocedures repository"
   cd ../../
   cd data-warehouse-storeprocedures/
+  echo_msg_with_timestamp "  - AUTOMATED_ETL: Downloading latest changes from data-warehouse-storeprocedures repository"
   git pull origin master
 
   create_and_load_etl_dbs
 
   cd ../
-  cd data-warehouse-storeprocedures-tests/Load
-}
+  cd data-warehouse-storeprocedures-tests/
 
-build_temp_non_etl(){
-  cd ../
   mkdir dump
   create_and_load_ff_new_data_entry
-  cd Load/
+
+  cd Load
 }
 
 kill_session(){
@@ -229,37 +235,31 @@ kill_session(){
 }
 
 rename_db(){
-  psql -d $1 -h $HOST -U postgres -c "ALTER DATABASE tmp_$2 RENAME TO $2"
+  psql -d $1 -h $HOST -U postgres -c "ALTER DATABASE $2 RENAME TO $3"
 }
 
 switch_db(){
-  # Deletes the current final dbs to be replaced by the temporary ones
-  delete_final_dbs
+  BASE_CONECTION="postgres"
 
-  # Rname the temp db names to the final db names
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming datawarehouse"
-  kill_session $TEMP_DATAWAREHOUSE_DB_NAME
-  rename_db $TEMP_FF_NEW_DB_NAME $DATAWAREHOUSE_DB_NAME
-  
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming front end"
-  kill_session $TEMP_FRONT_END_DB_NAME
-  rename_db $TEMP_FF_NEW_DB_NAME $FRONT_END_DB_NAME
+  # Rename current final dbs to be replaced by the temporary ones
+  for db_name in $DB_NAMES
+  do
+    FINAL_DB_NAME="${PREFIX}_${db_name}"
+    # Rename the temp db names to the final db names
+    echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming ${FINAL_DB_NAME} TO ${OLD_PREFIX}_${FINAL_DB_NAME}"
+    kill_session $FINAL_DB_NAME
+    rename_db $BASE_CONECTION $FINAL_DB_NAME "${OLD_PREFIX}_${FINAL_DB_NAME}"
+  done
 
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming report data"
-  kill_session $TEMP_REPORT_DATA_DB_NAME
-  rename_db $TEMP_FF_NEW_DB_NAME $REPORT_DATA_DB_NAME
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming admin"
-  kill_session $TEMP_ADMIN_DB_NAME
-  rename_db $TEMP_FF_NEW_DB_NAME $ADMIN_DB_NAME
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming data entry"
-  kill_session $TEMP_DATA_ENTRY_DB_NAME
-  rename_db $TEMP_FF_NEW_DB_NAME $DATA_ENTRY_DB_NAME
-
-  echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming ff new"
-  kill_session $TEMP_FF_NEW_DB_NAME
-  rename_db $DATAWAREHOUSE_DB_NAME $FF_NEW_DB_NAME
+  for db_name in $DB_NAMES
+  do
+    TMP_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
+    FINAL_DB_NAME="${PREFIX}_${db_name}"
+    # Rename the temp db names to the final db names
+    echo_msg_with_timestamp "  - AUTOMATED_ETL: Renaming ${TMP_DB_NAME} to ${FINAL_DB_NAME}"
+    kill_session $TMP_DB_NAME
+    rename_db $BASE_CONECTION $TMP_DB_NAME $FINAL_DB_NAME
+  done
 
   alter_final_foreign_servers
 }
@@ -270,7 +270,7 @@ clone_from_qa(){
   cd ..
   mkdir $DUMP_FOLDER_PATH
 
-  for db_name in $db_names
+  for db_name in $DB_NAMES
   do
     PREFIX_DB_NAME="${PREFIX}_${db_name}"
     echo_msg_with_timestamp "  - AUTOMATED_ETL: Dumping script for: $PREFIX_DB_NAME"
@@ -292,7 +292,15 @@ get_params(){
   # Second set of params
   get_param_option $4 $5
   # Third set of params
-  get_param_option ${6:-"-x"} ${7:-$DEFAULT_PREFIX}
+  get_param_option $6 $7
+  # Fourth set of params
+  get_param_option ${8:-"-l"} "${9:-$DB_NAMES}"
+}
+
+containsElement () {
+  local e
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
+  return 1
 }
 
 get_param_option(){
@@ -303,6 +311,17 @@ get_param_option(){
           ;;
        -x) PREFIX="${2}"
           ;;
+       -l)
+        # Validata param db names exist
+        for db_name in $2
+        do
+            if ! [[ " ${DB_NAMES[@]} " =~ " ${db_name} " ]]; then
+              echo_msg_with_timestamp "  - AUTOMATED_ETL: ERROR Wrong database name: ${db_name}"
+              exit 1
+            fi
+        done
+        DB_NAMES="${2}"
+        ;;
        *)
         echo_msg_with_timestamp "  - AUTOMATED_ETL: ERROR Missing parameters or wrong parameter names "
         usage_msg
@@ -316,14 +335,18 @@ echo_msg_with_timestamp() {
 
 usage_msg(){
   echo -e "\nUsage: \n"
-  echo -e "  `basename ${0}` create_pg_pass"
-  echo -e "  `basename ${0}` [rebuild_temp_test_enviroment] | [switch] | [delete_temp_dbs] -h host -p postgres_password"
-  echo -e "  `basename ${0}` clone_from_qa -h host -p postgres_password -x prefix_db_name \n"
-  echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection string and avoid being prompted for passwords"
-  echo "  [rebuild_temp_test_enviroment] -h host -p postgres_password : Build all ETL and non ETL scripts in temporary dbs, alters foreign servers and loads testing scripts"
-  echo "  [switch] -h host -p postgres_password : Deletes currents dbs and makes temporary dbs the new dbs, alters foreign servers"
-  echo "  [delete_temp_dbs] -h host -p postgres_password : Deletes temporary dbs"
-  echo -e "  [clone_from_qa] -h host -p postgres_password -x prefix_db_name : Clones dbs from QA Enviroment into the passed argumets, prefix defaults to sandbox \n"
+  echo -e "  ./`basename ${0}` create_pg_pass"
+  echo -e "  ./`basename ${0}` [reconstruct] | [switch] | [delete_old] | [clone_from_qa] -h host -p postgres_password -x prefix_db_name -l db_names_list \n"
+  echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection strings and avoid being prompted for passwords"
+  echo "  [reconstruct] : Builds the temporary dbs, alters foreign servers and loads testing scripts"
+  echo "  [switch] : Renames current final dbs to old_db_name and makes temporary dbs the new final dbs, alters foreign servers"
+  echo "  [delete_old] : Deletes old dbs from switch command"
+  echo -e "  [clone_from_qa] : Clones dbs from QA Enviroment \n"
+  echo "  -h The db host name, ie: localhost"
+  echo "  -p The db password for the postgres user of the passed host"
+  echo "  -x A string with the prefix to be appended to the ETL db, ie: 'sandbox', will create a 'sandbox_data_warehouse' db"
+  echo -e "  -l A list of space separated db names, defaults to: 'admin data_warehouse front_end report_data data_entry ff_new' \n"
+  echo -e "  Note: Make sure 'Data-warehouse-storeprocedures' git repository lives next to this project (under the same parent directory) for this script to work \n"
   exit 1 # Command to come out of the program with status 1
 }
 
@@ -332,25 +355,25 @@ usage_msg(){
         create_pg_pass
         echo_msg_with_timestamp "  - AUTOMATED_ETL: PG Pass file created "
      ;;
-    "rebuild_temp_test_enviroment") echo_msg_with_timestamp "  - AUTOMATED_ETL: Rebuilding temporary enviroments of ETL dbs "
-        get_params $1 $2 $3 $4 $5
+    "reconstruct") echo_msg_with_timestamp "  - AUTOMATED_ETL: Reconstructing temporary enviroments of ETL dbs "
+        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
         rebuild_temp_test_enviroment
-        echo_msg_with_timestamp "  - AUTOMATED_ETL: Temporary dbs rebuild completed "
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Temporary dbs reconstruct completed "
      ;;
      "switch")  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing db enviroments and renaming temporary dbs "
-        get_params $1 $2 $3 $4 $5
+        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
         switch_db
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Switch process completed "
      ;;
-     "delete_temp_dbs") echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting temporary dbs "
-        get_params $1 $2 $3 $4 $5
-        delete_temp_dbs
-        echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all temporary dbs "
-     ;;
      "clone_from_qa") echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloning QA dbs "
-        get_params $1 $2 $3 $4 $5 $6 $7
+        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
         clone_from_qa
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloned all dbs "
+     ;;
+     "delete_old") echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting old final dbs "
+        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
+        delete_old_final_dbs
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all final dbs "
      ;;
     *)
       usage_msg
