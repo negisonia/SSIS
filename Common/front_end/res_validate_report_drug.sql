@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_validate_report_drug(expected_report_id INTEGER, expected_indication_id INTEGER, expected_drug_id INTEGER, expected_drug_class_id INTEGER) --ADMIN DB
+CREATE OR REPLACE FUNCTION res_validate_report_drug(expected_report_id INTEGER, expected_indication_id INTEGER, expected_drug_id INTEGER, expected_drug_class_id INTEGER) --FRONT END DB
 RETURNS BOOLEAN AS $$
 DECLARE
 valueExists BOOLEAN DEFAULT FALSE;

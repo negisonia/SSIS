@@ -16,12 +16,12 @@ SELECT EXISTS( SELECT 1 FROM custom_accounts c WHERE c.name=account_name) INTO a
 
   IF accountExists = false THEN
     INSERT INTO custom_accounts(
-                name, client_id, custom_account_type_id, created_by_aeuser_id, 
+                name, client_id, created_by_aeuser_id, 
                 updated_by_aeuser_id, created_at, updated_at, in_progress_started_at, 
-                in_progress_by_aeuser_id)
-        VALUES (account_name, input_client_id, 0, 0, 
+                in_progress_by_aeuser_id, selected_tree)
+        VALUES (account_name, input_client_id, 0, 
                 0, current_timestamp, current_timestamp, current_timestamp, 
-                NULL);
+                NULL, '');
   END IF;
 
   SELECT c.id INTO new_custom_account_id FROM custom_accounts c WHERE c.name=account_name;
@@ -41,7 +41,7 @@ SELECT EXISTS( SELECT 1 FROM custom_accounts c WHERE c.name=account_name) INTO a
     SELECT health_plan_type_id from health_plan_import where id = intvalue INTO plan_type_id;
     IF insert_plan_type_level IS TRUE THEN
       IF (SELECT 1 FROM custom_account_provider_plant_types where custom_account_id=new_custom_account_id AND provider_id=plan_provider_id AND health_plan_type_id=plan_type_id) IS NULL THEN
-        INSERT INTO custom_account_provider_plant_types(custom_account_id, provider_id, health_plan_type_id) VALUES (new_custom_account_id, plan_provider_id, plan_type_id);
+        INSERT INTO custom_account_provider_plan_types(custom_account_id, provider_id, health_plan_type_id) VALUES (new_custom_account_id, plan_provider_id, plan_type_id);
       END IF;
     ELSE
       IF (SELECT 1 FROM custom_account_health_plans where custom_account_id=new_custom_account_id AND health_plan_id=intvalue) IS NULL THEN

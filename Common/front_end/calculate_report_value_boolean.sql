@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION calculate_report_value_boolean(selection_query boolean, from_query VARCHAR, where_query VARCHAR)--ANALYTICS FRONT END
+CREATE OR REPLACE FUNCTION calculate_report_value_boolean(selection_query VARCHAR, from_query VARCHAR, where_query VARCHAR)--ANALYTICS FRONT END
 RETURNS boolean AS $$
 DECLARE
 
