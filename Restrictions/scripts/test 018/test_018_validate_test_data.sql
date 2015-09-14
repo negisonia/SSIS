@@ -188,13 +188,6 @@ expected_rpt_drug_output= format('['||
 
 PERFORM res_rpt_drug_validate_data(fe_report_1, 1 ,expected_rpt_drug_output);
 
---VALIDATE RPT_DRUG medical
-expected_rpt_drug_output= format('['||
-'{"criteria_report_id":%s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Medical","criteria_restriction_name":"ST - Single - custom_option_2","dim_restriction_type_id":2,"lives":100,"total_pharmacy_lives":0,"health_plan_count":0,"total_health_plan_count":0,"total_medical_lives":200,"provider_count":1,"total_provider_count":2}'||
-']',fe_report_1);
-
-PERFORM res_rpt_drug_validate_data(fe_report_1, 2 ,expected_rpt_drug_output);
-
 success=true;
 return success;
 END
