@@ -7,7 +7,7 @@ BEGIN
   --CLEAR TABLES
   TRUNCATE TABLE custom_accounts CASCADE;
   TRUNCATE TABLE custom_account_providers CASCADE;
-  TRUNCATE TABLE custom_account_provider_plant_types CASCADE;
+  TRUNCATE TABLE custom_account_provider_plan_types CASCADE;
   TRUNCATE TABLE custom_account_health_plans CASCADE;
   TRUNCATE TABLE clients CASCADE;
   TRUNCATE TABLE reports CASCADE;

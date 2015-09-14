@@ -22,7 +22,7 @@ expected_value = TRUE;
 FOREACH provider_name IN ARRAY provider_names
   LOOP
 
-    SELECT calculate_report_value_boolean(TRUE, get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'provider_name=''' || provider_name || '''') INTO value_exists;
+    SELECT calculate_report_value_boolean('TRUE', get_report_name_call('rpt_coverage_tier_plan', ARRAY[criteria_report_id,current_month_int]),'provider_name=''' || provider_name || '''') INTO value_exists;
     PERFORM validate_comparison_values_boolean(value_exists, expected_value,'ana_rpt_coverage_tier_plan_test_005_validate_data-error: EXPECTED ' || provider_name || ' TO EXIST ');
 
 END LOOP;
