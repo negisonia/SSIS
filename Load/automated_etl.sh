@@ -335,7 +335,7 @@ echo_msg_with_timestamp() {
 
 usage_msg(){
   echo -e "\nUsage: \n"
-  echo -e "  ./`basename ${0}` create_pg_pass"
+  echo -e "  ./`basename ${0}` create_pg_pass -h host -p postgres_password"
   echo -e "  ./`basename ${0}` [reconstruct] | [switch] | [delete_old] | [clone_from_qa] -h host -p postgres_password -x prefix_db_name -l db_names_list \n"
   echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection strings and avoid being prompted for passwords"
   echo "  [reconstruct] : Builds the temporary dbs, alters foreign servers and loads testing scripts"
@@ -352,26 +352,30 @@ usage_msg(){
 
   case "$1" in
     "create_pg_pass") echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating pg pass file "
+        # Get host
+        get_param_option $2 $3
+        # Get password
+        get_param_option $4 "$5"
         create_pg_pass
         echo_msg_with_timestamp "  - AUTOMATED_ETL: PG Pass file created "
      ;;
     "reconstruct") echo_msg_with_timestamp "  - AUTOMATED_ETL: Reconstructing temporary enviroments of ETL dbs "
-        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
+        get_params $1 $2 $3 $4 "$5" $6 $7 $8 "$9"
         rebuild_temp_test_enviroment
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Temporary dbs reconstruct completed "
      ;;
      "switch")  echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting existing db enviroments and renaming temporary dbs "
-        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
+        get_params $1 $2 $3 $4 "$5" $6 $7 $8 "$9"
         switch_db
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Switch process completed "
      ;;
      "clone_from_qa") echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloning QA dbs "
-        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
+        get_params $1 $2 $3 $4 "$5" $6 $7 $8 "$9"
         clone_from_qa
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Cloned all dbs "
      ;;
      "delete_old") echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleting old final dbs "
-        get_params $1 $2 $3 $4 $5 $6 $7 $8 "$9"
+        get_params $1 $2 $3 $4 "$5" $6 $7 $8 "$9"
         delete_old_final_dbs
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all final dbs "
      ;;
