@@ -3,6 +3,9 @@
 -- VsOCWIozIelwQcRgR4w3
 
 -- Common
+\i 'Common/common_get_table_id_by_name.sql'
+
+-- Common
 -- Analytics
 \i 'Common/front_end/add_criteria_report_markets.sql'
 \i 'Common/front_end/calculate_report_value.sql'
@@ -20,7 +23,9 @@
 \i 'Common/front_end/res_rpt_summary_table_validate_data.sql'
 \i 'Common/front_end/common_get_dim_criteria.sql'
 \i 'Common/front_end/get_report_id_by_criteria_report_id.sql'
-
+\i 'Common/front_end/res_validate_report_drug.sql'
+\i 'Common/front_end/res_validate_criteria_restriction.sql'
+\i 'Common/front_end/res_validate_custom_criteria_restriction.sql'
 
 -- Analytics
 -- Rpt Coverage Tier Drug
