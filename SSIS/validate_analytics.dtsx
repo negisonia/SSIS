@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="validate_analytics"
   DTS:PackageType="5"
-  DTS:VersionBuild="128"
-  DTS:VersionGUID="{10489C55-23AB-42A7-A07B-BDD21FD4A65D}">
+  DTS:VersionBuild="144"
+  DTS:VersionGUID="{86CA6FE7-3D82-4B38-8F1A-FAB391367DD1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABoCtN2kTg0kZXcXrNzaM4BNGA+RhxQ2HGoEbyZ5xnAaQAAAAAOgAAAAAIAACAAAAC+cigCKYZI6oWiYB6VuxndrHQEAHyUhpuHjZ/RrHFFTzAAAABgUkw+7NbmsMG4wd8/MYq+u/OqDKezc1Aoi9jcDyiMPwAUNSFQoRW+Jq2PKs+yJ/5AAAAAHVjvSewSS5MMBynxmhW7DFVYSGXqrwFJUkWb7B5+6oDyIEe7QCAUsRBCaJ1ua+8zXawFev62TpkdzM2wEy3xSA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA7Jk0JJWlM8XqHcAKXON5v3/YrAfOHWOeFClnb8khb7AAAAAAOgAAAAAIAACAAAADQw06lyheicRIC8wyyhXwcMExTqI5ZUJSaayWXZiyZgjAAAADJhjOo2d/AqdlTAxwL5HL5qvYsk6tiMq6fDqnlVfyWyBUlpdNLmOCnZ5PIMzrQ5ThAAAAA2u/Id191P5+OW2G9Jm8Yovzypl/PjV/MMfSxHX/gKESNrQUt0SSIbdLyDj1g3bjyTjqfRpAq0023fJzfloo+Kw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -47,7 +47,24 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACguzmUEHMGwdt8s3kq9+vq+pfgaJ2TyBaDxWymCl3ULgAAAAAOgAAAAAIAACAAAAA+TLWiByeK8j/HcoQLFEhwN7RXCHXjOVqG/dXB/PdpbjAAAABnV5yPyWofvenLwS4WRPIbQaS3uaxCO62B5vFabrLJb3ITivkfHlbbBiVsvBzQmAhAAAAAdwryEHemB21tx3c2qoNgXUhOR9QtUbIbc4r6LludVlgr6OLQ6eNUxMaD6eWqu0pWKh81vOz6gU/wJEsLBre/Aw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABUw2HosS9eXOTH5CQKfiGoLJX/oxAMs8OK+GOcBNjNgQAAAAAOgAAAAAIAACAAAAA/1Inkq3kTderBEc0fvNUotnARBJI4+bW6GxY9sxwbPDAAAACfF0kFOPCOPMEdsJ8/fVIzBvzBxaFdlWaVf/bmJJtRCG9Myb/QMO1Ot/wtpnHeK8VAAAAAJiNx0uc+o1ABtTnRo6UPM8i8Op0lkN8rzi8ebDOYbxKGJxFKyGL/WjsrP+YEsxXxQSuIe1t/SILxC5DlLpBQyw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[report_data]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
+      DTS:ObjectName="report_data">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_report_data;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_report_data;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAm6jHz05cE6C5VfqAxA2+vJ/YKplNxXNpekVBW1h8hcwAAAAAOgAAAAAIAACAAAAAdLtZMaj3rpd1fIQtng7bJ2XfG7dqXSb7+OiJoFbs0JjAAAABJucFf2KMHb5Y9Mcg7FxREx5yxi7nzpVFLe9fXyIrtZZH/8uBuZ7NQYz07TlDdNrNAAAAADLt/gwTH/Kp64+S5JcJk1vk1ysEi8PgP0Iec1BMHBugWTUVegN9wE1nuw2ruLSp+s6H0exOWLRyV4/Q4BnR7xg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -96,16 +113,8 @@
       DTS:Namespace="User"
       DTS:ObjectName="email_recipients">
       <DTS:VariableValue
-        DTS:DataType="8">imonge@growthaccelerationpartners.com</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{499531CD-F48B-450A-AFCA-10663E36CC47}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Variable">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -138,7 +147,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 001 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="42">
+              DTS:ThreadHint="44">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -189,7 +198,7 @@
               </DTS:EventHandlers>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_001_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -202,11 +211,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 002 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="43">
+              DTS:ThreadHint="48">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_002_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -219,11 +228,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 003 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="44">
+              DTS:ThreadHint="45">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_003_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -236,11 +245,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 004 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="45">
+              DTS:ThreadHint="47">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_004_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -253,11 +262,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 005 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="46">
+              DTS:ThreadHint="42">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_005_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -270,11 +279,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 006 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="47">
+              DTS:ThreadHint="43">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_006_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -287,11 +296,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 007 Coverage by Tier Drug Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="48">
+              DTS:ThreadHint="46">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_drug_test_007_validate_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -316,11 +325,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 001 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="31">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_001_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -333,11 +342,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 002 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="28">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_002_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -350,11 +359,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 003 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="27">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_003_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -367,11 +376,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 004 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="16">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_004_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -384,11 +393,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 005 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="26">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_005_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -401,11 +410,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 006 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="25">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_006_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -418,11 +427,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 007 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="20">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_007_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -435,11 +444,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 008 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="18">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_008_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -452,11 +461,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 009 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="24">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_009_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -469,11 +478,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 010 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="30">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_010_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -486,11 +495,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 011 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="14">
+              DTS:ThreadHint="29">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_011_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -503,11 +512,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 012 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="15">
+              DTS:ThreadHint="17">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_012_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -520,11 +529,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 013 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="21">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_013_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -537,11 +546,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 014 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="19">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_014_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -554,11 +563,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 015 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="23">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_015_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -571,11 +580,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 016 Coverage by Tier Geography Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="22">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_geo_test_016_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -600,11 +609,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 001 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="16">
+              DTS:ThreadHint="34">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_001_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -617,11 +626,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 002 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="17">
+              DTS:ThreadHint="41">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_002_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -634,11 +643,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 003 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="18">
+              DTS:ThreadHint="38">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_003_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -651,11 +660,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 004 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="19">
+              DTS:ThreadHint="39">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_004_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -668,11 +677,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 005 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="25">
+              DTS:ThreadHint="36">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_005_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -685,11 +694,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 006 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="24">
+              DTS:ThreadHint="35">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_006_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -702,11 +711,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 007 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="20">
+              DTS:ThreadHint="40">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_007_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -719,11 +728,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 008 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="21">
+              DTS:ThreadHint="32">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_008_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -736,11 +745,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 009 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="22">
+              DTS:ThreadHint="37">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_009_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -753,11 +762,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 010 Coverage by Tier Plan Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="23">
+              DTS:ThreadHint="33">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_plan_test_010_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -782,11 +791,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 001 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="26">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_001_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -799,11 +808,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 002  Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="27">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_002_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -816,11 +825,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 003 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="28">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_003_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -833,11 +842,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 004 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="29">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_004_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -850,11 +859,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 005 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="30">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_005_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -867,11 +876,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 006 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="31">
+              DTS:ThreadHint="14">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_006_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -884,11 +893,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 007 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="32">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_007_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -901,11 +910,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 008 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="33">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_008_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -918,11 +927,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 009 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="34">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_009_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -935,11 +944,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 010 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="35">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_010_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -952,11 +961,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 011 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="36">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_011_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -969,11 +978,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 012 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="37">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_012_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -986,11 +995,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 013 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="38">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_013_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1003,11 +1012,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 014 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="39">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_014_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1020,11 +1029,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 015 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="40">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_015_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1037,11 +1046,11 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Test 016 Coverage by Tier Provider Details"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="41">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{2BE08EFA-A889-42DA-9982-7AF4E5F32C79}"
+                  SQLTask:Connection="{5D2127F3-60F5-4688-95DA-93FB6845EABF}"
                   SQLTask:SqlStatementSource="select ana_rpt_coverage_tier_provider_test_016_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1084,7 +1093,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{F8EC9721-E0B3-47D3-AFCA-13D398B46DE4}"
-              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ?, ?, 'Failed', ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));&#xA;UPDATE log_etl_validation_process SET  total_succeded_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log=''), total_failed_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log !='') WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Analytics Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ?, ?, 'Failed', ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_test_execution where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));&#xA;UPDATE log_etl_validation_process SET  total_succeded_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log=''), total_failed_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log !='') WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="3"
                 SQLTask:DtsVariableName="System::ErrorDescription"
@@ -1307,6 +1316,14 @@
           Id="Package\Rpt Coverage by Tier\Plan Validation\Test 004 Coverage by Tier Plan Details"
           TopLeft="40.5,244.5" />
         <NodeLayout
+          Size="184,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Test 005 Coverage by Tier Plan Details"
+          TopLeft="43,318.25" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Rpt Coverage by Tier\Plan Validation\Test 006 Coverage by Tier Plan Details"
+          TopLeft="43.0555555555552,390.75" />
+        <NodeLayout
           Size="178,42"
           Id="Package\Rpt Coverage by Tier\Plan Validation\Test 007 Coverage by Tier Plan Details"
           TopLeft="48,460.75" />
@@ -1322,14 +1339,6 @@
           Size="186,42"
           Id="Package\Rpt Coverage by Tier\Plan Validation\Test 010 Coverage by Tier Plan Details"
           TopLeft="288,105.75" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Rpt Coverage by Tier\Plan Validation\Test 006 Coverage by Tier Plan Details"
-          TopLeft="43.0555555555552,390.75" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Rpt Coverage by Tier\Plan Validation\Test 005 Coverage by Tier Plan Details"
-          TopLeft="43,318.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
