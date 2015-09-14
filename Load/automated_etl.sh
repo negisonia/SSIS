@@ -210,6 +210,11 @@ rebuild_temp_test_enviroment(){
   build_temp_etl
   load_scripts_on_temp
   alter_temp_foreign_servers
+  add_roles
+}
+
+add_roles(){
+  psql -h $HOST -U postgres -c 'CREATE ROLE restrictions20 LOGIN;'
 }
 
 build_temp_etl(){
