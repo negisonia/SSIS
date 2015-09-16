@@ -91,7 +91,7 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
 
 -----INSERTS-----
 --CREATE DATA ENTRY
-	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_1) INTO data_entry_id;
+	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
     SELECT common_create_atomic_steps('custom_option_1 AND  custom_option_2', '1 AND 2', 2, 'ST', 'custom_option_1^1 AND custom_option_2^2') INTO atomic_step_id ;
 	--CREATE Prior Authorization

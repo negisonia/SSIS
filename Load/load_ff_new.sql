@@ -1,7 +1,8 @@
 -- Run from root of project
 -- psql -d sandbox_ff_new -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_ff_new.sql
-
 -- VsOCWIozIelwQcRgR4w3
+
+--psql -d sandbox_ff_new -h localhost -U postgres -W < Load/load_ff_new.sql
 
 -- Common
 \i 'Common/call_functions_from_table.sql'

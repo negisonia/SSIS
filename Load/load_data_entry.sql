@@ -2,6 +2,9 @@
 -- psql -d sandbox_data_entry -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_data_entry.sql
 -- VsOCWIozIelwQcRgR4w3
 
+--psql -d sandbox_data_entry -h localhost -U postgres -W < Load/load_data_entry.sql
+
+
 -- Common
 \i 'Common/call_functions_from_table.sql'
 \i 'Common/common_create_test_data_functions.sql'

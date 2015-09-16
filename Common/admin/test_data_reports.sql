@@ -31,6 +31,7 @@ ind1_m_criteria_unspecified INTEGER;
 ind1_m_criteria_age_1 INTEGER;
 ind1_m_st_single_c2 INTEGER;
 ind3_m_criteria_lab_3 INTEGER;
+ind1_m_criteria_criteria_diagnosis_3 INTEGER;
 ind3_pa_criteria_clinical_3 INTEGER;
 
 drug_1 INTEGER;
@@ -105,6 +106,7 @@ SELECT cr.id INTO ind1_m_criteria_unspecified FROM criteria_restriction cr WHERE
 SELECT cr.id INTO ind1_m_criteria_age_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_age_1';
 SELECT cr.id INTO ind1_m_st_single_c2 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Medical' AND  cr.criteria_restriction_short_name='custom_option_2' AND cr.criteria_restriction_name='ST - Single - custom_option_2' and cr.restriction_name='ST - Single';
 SELECT cr.id INTO ind3_m_criteria_lab_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_lab_3';
+SELECT cr.id INTO ind1_m_criteria_criteria_diagnosis_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_diagnosis_3';
 SELECT cr.id INTO ind3_pa_criteria_clinical_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_clinical_3';
 
 
@@ -171,6 +173,7 @@ PERFORM common_create_report_criteria(report_1, ind1_pa_st_double_c1_c2);
 PERFORM common_create_report_criteria(report_1, ind1_m_criteria_unspecified);
 PERFORM common_create_report_criteria(report_1, ind1_m_criteria_age_1);
 PERFORM common_create_report_criteria(report_1, ind1_m_st_single_c2);
+PERFORM common_create_report_criteria(report_1, ind1_m_criteria_criteria_diagnosis_3);
 
 --CRITERIAS REPORT #3
 PERFORM common_create_report_criteria(report_3, ind3_m_criteria_lab_3);

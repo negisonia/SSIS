@@ -37,6 +37,7 @@ ind1_pa_past_co_1_co_2 INTEGER;
 ind1_m_unspecified INTEGER;
 ind1_m_age_1 INTEGER;
 ind1_m_st_custom_option_2 INTEGER;
+ind1_m_criteria_diagnosis_3 INTEGER;
 ind1_rep_1_group_single INTEGER;
 ind1_rep_1_group_all INTEGER;
 ind1_rep_1_group_both INTEGER;
@@ -156,15 +157,14 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_both','rep_1_group_both') INTO ind1_rep_1_group_both;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_steps','rep_1_group_steps') INTO ind1_rep_1_group_steps;
 SELECT common_get_dim_criteria_restriction(indication_3,'Medical','Labs','criteria_lab_3') INTO ind3_m_criteria_lab_3;
+SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_m_criteria_diagnosis_3;
 SELECT common_get_dim_criteria_restriction(indication_3,'Pharmacy','PA - Clinical','criteria_clinical_3') INTO ind3_pa_criteria_clinical_3;
-
-
 
 
 --REPORT#1
 drugs_array:= ARRAY[drug_1,drug_2];
 health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
-restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2];
+restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2,ind1_m_criteria_diagnosis_3];
 empty_array:= ARRAY[]::integer[];
 
 SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
