@@ -40,7 +40,7 @@ BEGIN
         EXECUTE 'SELECT provider_id from ' || health_plan_table_name || ' where id = ''' || plan_id || ''' LIMIT 1' INTO prov_id;
         EXECUTE 'SELECT health_plan_type_id from ' || health_plan_table_name || ' where id = ''' || plan_id || ''' LIMIT 1' INTO plan_type_id;
 
-        SELECT EXISTS (SELECT 1 FROM admin.custom_account_provider_plant_types cappt WHERE cappt.custom_account_id = ca_id AND cappt.health_plan_type_id = plan_type_id AND cappt.provider_id = prov_id) INTO booleanValue;
+        SELECT EXISTS (SELECT 1 FROM admin.custom_account_provider_plan_types cappt WHERE cappt.custom_account_id = ca_id AND cappt.health_plan_type_id = plan_type_id AND cappt.provider_id = prov_id) INTO booleanValue;
         IF booleanValue IS FALSE THEN
           select throw_error('ca_etl_test-error: WRONG PLAN TYPE AND PROVIDER ASSOCIATION FOR CUSTOM ACCOUNT ' || ca_id || ' PLAN TYPE ' || plan_type_id ||' PROVIDER ' || prov_id);
         END IF;
