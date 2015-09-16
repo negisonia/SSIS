@@ -29,7 +29,7 @@ BEGIN
 --RETRIEVE TIER
   SELECT common_get_table_id_by_name(tier, 'tier_1') INTO tier_1_id;
   SELECT common_get_table_id_by_name(tier, 'tier_2') INTO tier_2_id;
-  SELECT common_get_table_id_by_name(tier, 'tier_4') INTO tier_2_id;
+  SELECT common_get_table_id_by_name(tier, 'tier_4') INTO tier_4_id;
   SELECT common_get_table_id_by_name(tier, 'N/A') INTO tier_na_id;
   SELECT common_get_table_id_by_name(tier, 'Not Covered') INTO tier_nc_id;  
 

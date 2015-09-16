@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION calculate_report_value_json(selection_query boolean, from_query VARCHAR, where_query VARCHAR)--ANALYTICS FRONT END
+CREATE OR REPLACE FUNCTION calculate_report_value_json(selection_query varchar, from_query VARCHAR, where_query VARCHAR)--ANALYTICS FRONT END
 RETURNS varchar AS $$
 DECLARE
 

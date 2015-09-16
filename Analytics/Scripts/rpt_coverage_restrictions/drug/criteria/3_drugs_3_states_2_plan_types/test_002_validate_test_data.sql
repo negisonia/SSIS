@@ -5,9 +5,9 @@ DECLARE
   expected_value varchar;
 BEGIN
 
-expected_value = '';
+expected_value = '[{"drug_name":"DRUG_001","qualifier_name":"PA or ST","avg_copay":30.00,"lis_lives":0,"total_lis_lives":0,"lives":150,"total_lives":1140,"health_plan_count":1,"total_health_plan_count":13}]';
 
-PERFORM ana_rpt_coverage_restrictions_drug_calculate_report_row(expected_value,'002', 'DRUG_001', 'PA OR ST');
+PERFORM ana_rpt_coverage_restrictions_drug_calculate_report_row(expected_value,'002', 'DRUG_001', 'PA OR ST','ana_rpt_coverage_restrictions_drug_test_001_017_create_fe_data');
 
 success:=true;
 RETURN success;

@@ -18,6 +18,7 @@ drug_11_inactive INTEGER;
 drug_001_id INTEGER;
 drug_002_id INTEGER;
 drug_003_id INTEGER;
+drug_004_id INTEGER;
 
 reason_code_92 INTEGER;
 reason_code_40 INTEGER;

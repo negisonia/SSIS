@@ -35,11 +35,11 @@ BEGIN
   IF region_type = 'State' THEN 
     region_type_id = 2;
   ELSIF region_type = 'County' THEN 
-    region_type_id = 3;
-  ELSIF region_type = 'MetroStatArea' THEN 
-    region_type_id = 4;
-  ELSE
     region_type_id = 1;
+  ELSIF region_type = 'MetroStatArea' THEN 
+    region_type_id = 3;
+  ELSE
+    region_type_id = 4;
   END IF;
 
   SELECT create_criteria_report(NULL,0,NULL,0,region_type_id,FALSE,FALSE,FALSE,drug_ids,health_plan_type_ids,region_type,region_ids,NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
