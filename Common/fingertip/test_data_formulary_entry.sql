@@ -235,6 +235,7 @@ BEGIN
     SELECT common_create_formulary_entry(formulary_comm_1_id, drug_1, tier_1, NULL, NULL) INTO formulary_entry_id;--formulary entry 14
     -- formulary_comm_1_id
     SELECT common_create_formulary_entry(formulary_comm_1_id, drug_2, tier_2, NULL, NULL) INTO formulary_entry_id;--formulary entry 15
+        --INSERT FORMULARY ENTRY QUALIFIERS
         PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, pa_qualifier);
         PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, st_qualifier);
         PERFORM common_create_formulary_entry_qualifier(formulary_entry_id, ql_qualifier);
