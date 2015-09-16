@@ -99,7 +99,9 @@ BEGIN
     -- TEST_PLAN_001
     PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_001'), drug_001_id, tier_1, 0, FALSE);
     -- TEST_PLAN_002
-    PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_002'), drug_002_id, tier_1, 0, FALSE);
+    SELECT common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_002'), drug_002_id, tier_1, 0, FALSE) INTO formulary_entry_id;
+        --INSERT FORMULARY ENTRY QUALIFIERS
+        PERFORM common_create_formulary_entry_qualifier(formulary_entry_id,pa_qualifier);
     -- TEST_PLAN_003
     PERFORM common_create_formulary_entry(common_get_formulary_id_by_plan_name('TEST_PLAN_003'), drug_001_id, tier_2, 0, FALSE);
     -- TEST_PLAN_004
