@@ -289,6 +289,7 @@ clone_from_qa(){
   cd Load/
   echo_msg_with_timestamp "  - AUTOMATED_ETL: Altering foreign servers for cloned dbs"
   alter_clone_foreign_servers
+  add_roles
 }
 
 get_params(){
