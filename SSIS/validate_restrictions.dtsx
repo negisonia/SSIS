@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="157"
-  DTS:VersionGUID="{26C07572-CEC4-405A-80D3-7126AA30BB52}">
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{AC73DEDA-7419-427C-8222-E0C67FFE36E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,11 +26,11 @@
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_admin;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="server=10.0.2.2;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA5UG6F3EsWdwPD6zX6iJru+FCC3ew5F+A+ejqtX64NCQAAAAAOgAAAAAIAACAAAADfx4uwv/sJc75Z77DrEZEXZhGRLvrSDfBEIdFRvKDUghAAAACzbFlyLRIMaykMDXJrBQvNQAAAAETixwZyr8bU5LmtRszK4UQ7tMmMYf50qbhluGUoYT32pWAEoAbfFji1GjM1c94BGy2n4VqSz/qewSm8IEUQmvE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqYe/oJIF27LdBb4u1FO0Yw+YaVJCb0rdOyNJxX9LqeAAAAAAOgAAAAAIAACAAAAC8IFrlpEatmm4pkN82u4N6Q/6HZtFsV4oVrLN4ltIlETAAAACiribAXml9x4im1CFdziNbAKFJyf+xIyi3EF3zOUM9pYQGWofB5pqf/fqg7K4CwlRAAAAAB3q3d/s5ueeoLGoigQVd0V/xzM/KUyV7est/rvMQYr7pr3A+MahHQT8Tr/jdgPpTILGstnSve+4rNA1ER6gVJw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -43,11 +43,11 @@
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_warehouse;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="server=10.0.2.2;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAg0gwmLutyXOzoW0b0KmUnJExbhwsMRBK24hft9KhZQwAAAAAOgAAAAAIAACAAAADMLQCF+oSNxY5EhSpzd2Ru5sqEp8emJs/00fjv85PnlBAAAAC2oiNvEaD7gHqRrYDEfTthQAAAAE1jkXLjKQDLx0eQuUlXpC/pgDOCltb36J3v5aORQhnFZmxL5mSBcyWV7QAnyxmRmLwfcSGyPx24gcFn/a/j6WM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAh7MROwnoo1THOFA9BCVvUU4pEr/f2gMwc/r1duJcptgAAAAAOgAAAAAIAACAAAAAWi4kGH5GcwDgqZl7IR3pdAPKBY1WTUdPpVsrT5+dD1TAAAADwGmSX0raWMNwgsLefqhM6wCb4M45QIuzDqMeaLj8JUURUxfwXWSi/KKKLpGRxzTFAAAAA/LGd7GvxGrYKiLoB/bExWGLCVLwqhp3DrdnKECoPmhaUk3tX0jBXYrshjEUSHFOS8geOmh00/EFA2EvcdJVxtA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -60,11 +60,11 @@
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"_front_end;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="server=10.0.2.2;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_front_end;port=5432;">
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_front_end;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZN2wFsivuK/pC68ZfZwDLsUInlqmZ3EGn4SIqtKlVwgAAAAAOgAAAAAIAACAAAABjiMdJfQg8WX8O7ktOGn+V0nvdXKlVxE+BjCYUgub9QRAAAABpimHTxC6BvUCQblc0kN5JQAAAAPoZqZwghwAsS3Ac4nEqYW0ZYkb3oPor4y22SutFWOE0g31vrH1QywZQhL0apNydEQts4gKSjOcaHxzcSARLIZE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABm99GwDA+QDZc3yCQBFwA+NhKIVbINSh3+hLO3gR1hRAAAAAAOgAAAAAIAACAAAADS2nUnjlW+n7ZFjL+2JZQKwRvcumKdUAysIkwKr8s7MDAAAAB6u0qiHMcVu85goPM9SGKzvwFlcLMF/GGHEs3JTKD01BN+h7LIYj0tLJWkH4AeTJ5AAAAAgUs9mMv4ZYE0xZ18632Yl5lXkDj9pxOTs4PE7fiC2TqJiZULAqOqEJGSGcNCt6Toj0xoYTiEMv6/gC/Wnaizig</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -77,11 +77,11 @@
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_report_data;port=5432;"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="server=10.0.2.2;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_report_data;port=5432;">
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_report_data;port=5432;">
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAClTZNRad3Ld/65TiGzWvRb8SPC+EVH6Y/ap9dKJXvzcQAAAAAOgAAAAAIAACAAAACpmUuwXIuDc32zgZEi6dkQ1aH0PZ4eNRxTQoHxabjg/hAAAAAkUi0wGlVuqABwJAk0OHWKQAAAAKXe0zgA64mgmaOKHyu3ydqYOgovKHfWK45KaXefxO03BoBP2f/es0bThqVKwZUVIdiHmnG/0vbLtqnrQ9HnB6g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACqqVfggbZZ1S7WWEKh2WCK2NigdNUudlNM50+Z22/aqAAAAAAOgAAAAAIAACAAAAAEH93Vq3xQ156RY/Q071m/uytemB0Jum+7Kyi2DhYIXTAAAACedl9/jtN6ZmQwO20s66TBlyofVJ05ihW9y+I5Cy2fdZLKjXcWPDDFEGBSt/M2WwNAAAAAQkkBlAkoFzACnEpub0KdIK3cRPrGUqG3Lm1OqlIMx6/iQNSKqJtSGYmDm8SnEaUd1NQsSeGjpoMFyyLzRXlNrg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -94,8 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
       <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataType="8">VsOCWIozIelwQcRgR4w3</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -113,7 +112,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
       <DTS:VariableValue
-        DTS:DataType="8">10.0.2.2</DTS:VariableValue>
+        DTS:DataType="8">restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
