@@ -1,6 +1,8 @@
 -- Run from root of project
--- psql -d sandbox_report_data -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_front_end.sql
+-- psql -d sandbox_report_data -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_report_data.sql
 -- VsOCWIozIelwQcRgR4w3
+
+--psql -d sandbox_report_data -h localhost -U postgres -W < Load/load_report_data.sql
 
 -- Common
 \i 'Common/common_get_table_id_by_name.sql'
