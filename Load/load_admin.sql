@@ -1,7 +1,6 @@
 -- Run from root of project
 -- psql -d sandbox_admin -h restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com -U postgres -W < Load/load_admin.sql
 -- VsOCWIozIelwQcRgR4w3
-
 -- psql -d sandbox_admin -h localhost -U postgres -W < Load/load_admin.sql
 
 -- Common

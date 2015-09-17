@@ -28,6 +28,7 @@
 \i 'Common/front_end/res_validate_report_drug.sql'
 \i 'Common/front_end/res_validate_criteria_restriction.sql'
 \i 'Common/front_end/res_validate_custom_criteria_restriction.sql'
+\i 'Common/front_end/res_rpt_drug_validate_data.sql'
 
 -- Analytics
 -- Rpt Coverage Tier Drug
@@ -112,4 +113,6 @@
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account_criteria.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_create_fe_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_3.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_test_4.sql'
+\i 'Restrictions/scripts/custom_accounts/ca_etl_test_5.sql'
 
