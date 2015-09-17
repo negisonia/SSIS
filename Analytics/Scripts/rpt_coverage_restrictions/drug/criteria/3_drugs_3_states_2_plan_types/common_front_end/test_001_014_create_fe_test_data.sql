@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ana_rpt_coverage_restrictions_drug_test_001_017_create_fe_data()
+CREATE OR REPLACE FUNCTION ana_rpt_coverage_restrictions_drug_test_001_014_create_fe_data()
 RETURNS INTEGER AS $$
 DECLARE
 
