@@ -4,6 +4,8 @@ DECLARE
   success boolean DEFAULT FALSE;
   criteria_report_id INTEGER;
   expected_drug_output varchar;
+
+  pharmacy_view CONSTANT integer:=1;
 BEGIN
 
 -- Create Criteria Report Id
@@ -24,7 +26,7 @@ expected_drug_output= format('['||
 '{"criteria_report_id":%1$s,"indication_name":"Ind1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1","restriction_name":"PA - Diagnosis","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0}' ||
 ']',criteria_report_id);
 
-  PERFORM res_rpt_drug_validate_data(criteria_report_id, 1, expected_drug_output);
+  PERFORM res_rpt_drug_validate_data(criteria_report_id, pharmacy_view, expected_drug_output);
 
 success:=true;
 RETURN success;
