@@ -108,6 +108,7 @@
 \i 'Restrictions/scripts/test 009/test_009_validation.sql'
 \i 'Restrictions/scripts/test 016/test_016_validate_test_data.sql'
 \i 'Restrictions/scripts/test 017/test_017_validate_test_data.sql'
+\i 'Restrictions/scripts/test 020/test_020_validate_test_data.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_test_2.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account.sql'
 \i 'Restrictions/scripts/custom_accounts/ca_etl_validate_custom_account_criteria.sql'
