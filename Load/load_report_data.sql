@@ -29,6 +29,7 @@
 \i 'Common/front_end/res_validate_criteria_restriction.sql'
 \i 'Common/front_end/res_validate_custom_criteria_restriction.sql'
 \i 'Common/front_end/res_rpt_drug_validate_data.sql'
+\i 'Common/front_end/util_report_1_generate.sql'
 
 -- Analytics
 -- Rpt Coverage Tier Drug
