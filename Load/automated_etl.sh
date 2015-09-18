@@ -1,10 +1,9 @@
 # How to use
 # ----------
 # Run bash file as: ./automated_etl to get a list of available commands
-# Bash file must be run inside of /Load folder
 # Run bash file with this command: create_pg_pass ONLY ONCE to save the db connection strings
 
-# Assumptions
+# Requirements
 # -----------
 # Data-warehouse-storeprocedures git repository lives next to this project (under the same parent directory)
 
@@ -42,6 +41,13 @@ DB_NAMES="$ADMIN $DATAWAREHOUSE $FRONT_END $REPORT_DATA $DATA_ENTRY $FF_NEW"
 DEFAULT_PREFIX=sandbox
 TMP_PREFIX=tmp
 OLD_PREFIX=old
+
+#Load scripts directories
+REPORT_DATA_VALIDATION_SCRIPT_PATHS=(../Restrictions/Scripts/report_data ../Analytics/Scripts ../Common/front_end ../Common/utils/common_get_table_id_by_name.sql)
+FF_NEW_VALIDATION_SCRIPT_PATHS=(../Common/fingertip ../Common/utils)
+DATA_WAREHOUSE_VALIDATION_SCRIPT_PATHS=(../Common/data_warehouse ../Common/utils/common_get_table_id_by_name.sql ../Restrictions/Scripts/data_warehouse)
+DATA_ENTRY_VALIDATION_SCRIPT_PATHS=(../Common/data_entry ../Common/utils)
+ADMIN_VALIDATION_SCRIPT_PATHS=(../Common/admin/ ../Common/utils ../Restrictions/Scripts/admin)
 
 create_pg_pass(){
   echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
@@ -145,23 +151,31 @@ create_and_load_ff_new_data_entry(){
   done
 }
 
-load_scripts_on_temp(){
+load_validation_scripts(){
 
-  cd ../
   for db_name in $DB_NAMES
     do
-      # FRONT_END does not have scripts to be loaded
-      if [ "$db_name" != "$FRONT_END" ]
+      PREFIX_DB_NAME="${1}_${db_name}"
+      echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading scripts for ${PREFIX_DB_NAME} "
+      IFS=$'\n'
+      if [ "$db_name" == "$REPORT_DATA" ]
         then
-        PREFIX_DB_NAME="${TMP_PREFIX}_${PREFIX}_${db_name}"
-
-        echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading ${db_name} scripts"
-        SCRIPT_PATH="${LOAD_FOLDER_PATH}/load_${db_name}.sql"
-        psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $SCRIPT_PATH
+          for f in $(find "${REPORT_DATA_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
+      elif [ "$db_name" == "$FF_NEW" ]
+        then
+        for f in $(find "${FF_NEW_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
+      elif [ "$db_name" == "$ADMIN" ]
+        then
+        for f in $(find "${ADMIN_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
+      elif [ "$db_name" == "$DATAWAREHOUSE" ]
+        then
+        for f in $(find "${DATA_WAREHOUSE_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
+      elif [ "$db_name" == "$DATA_ENTRY" ]
+        then
+        for f in $(find "${DATA_ENTRY_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
       fi
   done
 
-  cd Load/
 }
 
 alter_temp_foreign_servers(){
@@ -208,7 +222,7 @@ alter_clone_foreign_servers(){
 rebuild_temp_test_enviroment(){
   delete_temp_dbs
   build_temp_etl
-  load_scripts_on_temp
+  load_validation_scripts "${TMP_PREFIX}_${PREFIX}"
   alter_temp_foreign_servers
   add_roles
 }
@@ -342,11 +356,13 @@ echo_msg_with_timestamp() {
 usage_msg(){
   echo -e "\nUsage: \n"
   echo -e "  ./`basename ${0}` create_pg_pass -h host -p postgres_password"
-  echo -e "  ./`basename ${0}` [reconstruct] | [switch] | [delete_old] | [clone_from_qa] -h host -p postgres_password -x prefix_db_name -l db_names_list \n"
+  echo -e "  ./`basename ${0}` (reconstruct | switch | delete_old | clone_from_qa) -h host -p postgres_password -x prefix_db_name [-l db_names_list]"
+  echo -e "  ./`basename ${0}` load_scripts -h host -x prefix_db_name [-l db_names_list] \n"
   echo "  [create_pg_pass] : Run ONLY ONCE to setup the conection strings and avoid being prompted for passwords"
   echo "  [reconstruct] : Builds the temporary dbs, alters foreign servers and loads testing scripts"
   echo "  [switch] : Renames current final dbs to old_db_name and makes temporary dbs the new final dbs, alters foreign servers"
   echo "  [delete_old] : Deletes old dbs from switch command"
+  echo "  [load_scripts] : Loads validation scripts"
   echo -e "  [clone_from_qa] : Clones dbs from QA Enviroment \n"
   echo "  -h The db host name, ie: localhost"
   echo "  -p The db password for the postgres user of the passed host"
@@ -355,6 +371,11 @@ usage_msg(){
   echo -e "  Note: Make sure 'Data-warehouse-storeprocedures' git repository lives next to this project (under the same parent directory) for this script to work \n"
   exit 1 # Command to come out of the program with status 1
 }
+
+# Move to Load folder when running from root
+  if [ ${PWD##*/} != Load ]; then
+    cd Load
+  fi
 
   case "$1" in
     "create_pg_pass") echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating pg pass file "
@@ -385,6 +406,17 @@ usage_msg(){
         delete_old_final_dbs
         echo_msg_with_timestamp "  - AUTOMATED_ETL: Deleted all final dbs "
      ;;
+    "load_scripts") echo_msg_with_timestamp "  - AUTOMATED_ETL: Loading Validation Scripts "
+        # Get host
+        get_param_option $2 $3
+        # Get prefix
+        get_param_option $4 $5
+        # List of dbs
+        get_param_option ${6:-"-l"} "${7:-$DB_NAMES}"
+
+        load_validation_scripts "$PREFIX"
+        echo_msg_with_timestamp "  - AUTOMATED_ETL: Validation scripts loaded "
+     ;; 
     *)
       usage_msg
       ;;
