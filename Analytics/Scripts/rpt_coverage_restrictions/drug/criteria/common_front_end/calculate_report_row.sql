@@ -13,7 +13,7 @@ SELECT get_current_month() INTO current_month_int;
 -- Create Criteria Report Id
 EXECUTE 'SELECT ' || fe_data_function || '()' INTO criteria_report_id;
 
-report_select_columns  = 'drug_id, drug_name, qualifier_name, avg_copay, lis_lives, total_lis_lives, lives, total_lives, health_plan_count, total_health_plan_count';
+report_select_columns  = 'drug_name, qualifier_name, avg_copay, lis_lives, total_lis_lives, lives, total_lives, health_plan_count, total_health_plan_count';
 --Query the actual value
 SELECT calculate_report_value_json(report_select_columns, get_report_name_call('rpt_coverage_restrictions_drug', ARRAY[criteria_report_id,current_month_int]), 'drug_name=''' || drug_name || ''' AND qualifier_name=''' || qualifier_name ||'''') INTO actual_value;
 
