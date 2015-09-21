@@ -43,7 +43,7 @@ TMP_PREFIX=tmp
 OLD_PREFIX=old
 
 #Load scripts directories
-REPORT_DATA_VALIDATION_SCRIPT_PATHS=(../Restrictions/Scripts/report_data ../Analytics/Scripts ../Common/front_end ../Common/utils/common_get_table_id_by_name.sql)
+REPORT_DATA_VALIDATION_SCRIPT_PATHS=(../Restrictions/Scripts/report_data ../Analytics/Scripts ../Common/report_data ../Common/utils/common_get_table_id_by_name.sql)
 FF_NEW_VALIDATION_SCRIPT_PATHS=(../Common/fingertip ../Common/utils)
 DATA_WAREHOUSE_VALIDATION_SCRIPT_PATHS=(../Common/data_warehouse ../Common/utils/common_get_table_id_by_name.sql ../Restrictions/Scripts/data_warehouse)
 DATA_ENTRY_VALIDATION_SCRIPT_PATHS=(../Common/data_entry ../Common/utils)
