@@ -40,57 +40,62 @@ expected_health_plan_notes_output= '['||
     '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction"},'||
     '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_clinical_1","note_position":1,"notes":"long message 500 characters"},'||
     '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":""},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"long message 100 characters"}'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"custom_option_1","note_position":1,"notes":"long message 500 characters"}'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"long message 100 characters"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: long message 500 characters"}'||
     ']';
-
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
+
 
 --VALIDATE NOTES (DRUG 1, PA, hix)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"notes"}'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"Notes"}'||
     ']';
-
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
 
 
 --VALIDATE NOTES (DRUG 2, PA, hix)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"notes"},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"custom_option_2","note_position":1,"notes":"notes for drug 1"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":"message"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: notes for drug 1"}'||
     ']';
-
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, pa_dim_criterion_type, expected_health_plan_notes_output);
 
 
 --VALIDATE NOTES (DRUG 2, MEDICAL, commercial)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"notes"},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"additional notes"},'||
-    ']';
-
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":""},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"additional notes"}'
+    ||']';
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_2, m_dim_criterion_type, expected_health_plan_notes_output);
+
 
 --VALIDATE NOTES (DRUG 2, MEDICAL, hix)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":""criteria_diagnosis_3"","note_position":1,"notes":"notes"},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"custom_option_2","note_position":1,"notes":""},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"notes"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"ST - Single - custom_option_2^1 ","note_position":1,"notes":""}'||
     ']';
-
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, m_dim_criterion_type, expected_health_plan_notes_output);
 
 
 --VALIDATE NOTES (DRUG 2, ST, hix)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":""custom_option_1 and custom_option_2"","note_position":1,"notes":"notes for drug 1"},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":1,"criterion_name":""custom_option_1 and custom_option_2"","note_position":2,"notes":"notes for drug 2"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"ST - Double - custom_option_1^1 AND custom_option_2^2","note_position":1,"notes":"Drug1 notes: notes for drug 1"},'||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"ST - Double - custom_option_1^1 AND custom_option_2^2","note_position":2,"notes":"Drug2 notes: notes for drug 1"}'||
     ']';
-
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, st_dim_criterion_type, expected_health_plan_notes_output);
 
---VALIDATE NOTES (DRUG 2, QL, hix)
-expected_health_plan_notes_output= '';
 
+--VALIDATE NOTES (DRUG 2, QL, hix)
+expected_health_plan_notes_output= '['||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"criteria_ql_1","note_position":1,"notes":"1 tabs per 10 days\n\nql message"}'||
+    ']';
+PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, ql_dim_criterion_type, expected_health_plan_notes_output);
+
+
+--VALIDATE NOTES (DRUG 1, QL, commercial)
+expected_health_plan_notes_output= '['||
+    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}'||
+    ']';
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, ql_dim_criterion_type, expected_health_plan_notes_output);
 
 success:=true;
