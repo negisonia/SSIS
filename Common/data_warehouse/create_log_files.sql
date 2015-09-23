@@ -9,6 +9,8 @@ CREATE TABLE log_etl_validation_process
     analytics_validation_ended_at timestamp without time zone,
     restrictions_validation_ended_at timestamp without time zone,
     process_ended_at timestamp without time zone,
+    total_succeded_test_cases integer,
+    total_failed_test_cases integer,
     status character varying(255)
   );
 
@@ -23,13 +25,10 @@ CREATE TABLE log_etl_validation_process_test_execution
     created_at timestamp without time zone
   );
 
-CREATE OR REPLACE FUNCTION pre_etl_validation_checks()
-  RETURNS void AS $$
-  BEGIN
-      IF EXISTS (SELECT * FROM log_etl_validation_process WHERE process_ended_at IS NULL AND id in (SELECT MAX(id) FROM log_etl_validation_process)) THEN
-        PERFORM throw_error('Error: Another etl validation process is still running. ');
-      ELSE
-        PERFORM ' Passed Pre-ETL Check';
-      END IF;
-  END;
-  $$ LANGUAGE plpgsql;
+CREATE TABLE log_etl_validation_process_errors
+(
+   id serial NOT NULL,
+   log_etl_validation_process_id integer NOT NULL,
+   error_log text,
+   created_at timestamp without time zone
+);

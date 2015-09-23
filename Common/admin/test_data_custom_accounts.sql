@@ -9,9 +9,9 @@ success BOOLEAN:=FALSE;
 BEGIN
 
 --CREATE CUSTOM ACCOUNTS
-PERFORM create_custom_account('Custom_Account_1', common_get_table_id_by_name(client, 'client_1'), ARRAY[common_get_table_id_by_name(provider, 'provider_1')], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_comm_1')]);
-PERFORM create_custom_account('Custom_Account_2', common_get_table_id_by_name(client, 'client_2'), ARRAY[common_get_table_id_by_name(provider, 'provider_1')], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_hix')]);
-PERFORM create_custom_account('Custom_Account_3', common_get_table_id_by_name(client, 'client_1'), ARRAY[common_get_table_id_by_name(provider, 'provider_1'),common_get_table_id_by_name(provider, 'provider_7')], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_bcbs')]);
+PERFORM create_custom_account('Custom_Account_1', common_get_table_id_by_name(client, 'client_1'), ARRAY[]::integer[], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_comm_1')],false);
+PERFORM create_custom_account('Custom_Account_2', common_get_table_id_by_name(client, 'client_2'), ARRAY[]::integer[], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_hix'),common_get_table_id_by_name(health_plan, 'health_plan_comm_1')],false);
+PERFORM create_custom_account('Custom_Account_3', common_get_table_id_by_name(client, 'client_1'), ARRAY[]::integer[], ARRAY[common_get_table_id_by_name(health_plan, 'health_plan_comm'),common_get_table_id_by_name(health_plan, 'health_plan_bcbs')],false);
 
 success=true;
 return success;

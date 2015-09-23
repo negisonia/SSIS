@@ -15,7 +15,7 @@ INSERT INTO public.medical_criteria(
         medical_id, criterium_id, criterium_applicable, active, is_active,
         copiedfromid, notes)
 VALUES (NULL, NULL, NULL, current_timestamp, current_timestamp,
-        new_medical_id, new_criteria_id, 2, new_active,new_active,
+        new_medical_id, new_criteria_id, 1, new_active,new_active,
         NULL,new_notes);
 END IF;
 
