@@ -7,6 +7,7 @@ state_002_id INTEGER;
 
 tier_1_id INTEGER;
 tier_2_id INTEGER;
+tier_4_id INTEGER;
 tier_na_id INTEGER;
 tier_nc_id INTEGER;
 
@@ -28,6 +29,7 @@ BEGIN
 --RETRIEVE TIER
   SELECT common_get_table_id_by_name(tier, 'tier_1') INTO tier_1_id;
   SELECT common_get_table_id_by_name(tier, 'tier_2') INTO tier_2_id;
+  SELECT common_get_table_id_by_name(tier, 'tier_4') INTO tier_4_id;
   SELECT common_get_table_id_by_name(tier, 'N/A') INTO tier_na_id;
   SELECT common_get_table_id_by_name(tier, 'Not Covered') INTO tier_nc_id;  
 
@@ -84,6 +86,24 @@ BEGIN
     SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
     -- Insert Benefit Structure Copay Value
     PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_2_id, 15.00, 25.00, NULL, NULL, TRUE);
+
+-- TEST_PLAN_021
+  SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_021'),TRUE) INTO benefit_structure_id;
+    -- Insert Benefit Structure State
+    PERFORM common_create_benefit_structure_state(benefit_structure_id, state_001_id);
+    -- Insert Benefit Structure Copay
+    SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
+    -- Insert Benefit Structure Copay Value
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_4_id, 25.00, 35.00, NULL, NULL, TRUE);
+
+-- TEST_PLAN_022
+  SELECT common_create_benefit_structure(common_get_table_id_by_name(health_plan, 'TEST_PLAN_022'),TRUE) INTO benefit_structure_id;
+    -- Insert Benefit Structure State
+    PERFORM common_create_benefit_structure_state(benefit_structure_id, state_001_id);
+    -- Insert Benefit Structure Copay
+    SELECT common_create_benefit_structure_copay(benefit_structure_id,TRUE) INTO benefit_structure_copay_id;
+    -- Insert Benefit Structure Copay Value
+    PERFORM common_create_benefit_structure_copay_value(benefit_structure_copay_id, tier_2_id, 25.00, 85.00, NULL, NULL, TRUE);
 
 success=true;
 return success;

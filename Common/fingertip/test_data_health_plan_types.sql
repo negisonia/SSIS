@@ -19,6 +19,7 @@ BEGIN
 		PERFORM common_create_health_plan_type(12, TRUE,'dpp', TRUE, TRUE);
 		PERFORM common_create_health_plan_type(13, TRUE,'hix', TRUE, TRUE);
 		PERFORM common_create_health_plan_type(14, FALSE,'commercial_inactive', TRUE, TRUE);
+		
 		PERFORM common_create_health_plan_type(15, TRUE, 'HEALTH_PLAN_TYPE_001', TRUE, FALSE);
 		PERFORM common_create_health_plan_type(16, TRUE, 'HEALTH_PLAN_TYPE_002', FALSE, TRUE);
 		PERFORM common_create_health_plan_type(17, TRUE, 'HEALTH_PLAN_TYPE_003', TRUE, FALSE);
