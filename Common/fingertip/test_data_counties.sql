@@ -29,10 +29,11 @@ BEGIN
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_001') INTO metro_stat_area_001_id;
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_002') INTO metro_stat_area_002_id;
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_003') INTO metro_stat_area_003_id;
+  SELECT common_get_table_id_by_name(metrostatarea,'MSA_004') INTO metro_stat_area_004_id;
 
   PERFORM common_create_county('COUNTY_001',0,state_002_id,metro_stat_area_001_id);
-  PERFORM common_create_county('COUNTY_002',0,state_002_id,NULL);
-  PERFORM common_create_county('COUNTY_003',0,state_003_id,NULL);
+  PERFORM common_create_county('COUNTY_002',0,state_002_id,metro_stat_area_004_id);
+  PERFORM common_create_county('COUNTY_003',0,state_003_id,metro_stat_area_004_id);
   PERFORM common_create_county('COUNTY_004',0,state_003_id,metro_stat_area_001_id);
 
   PERFORM common_create_county('Middlesex',0,state_004_id,NULL);

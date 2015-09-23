@@ -9,6 +9,7 @@ BEGIN
   PERFORM common_create_metro_stat_area('MSA_001','MSA_001');
   PERFORM common_create_metro_stat_area('MSA_002','MSA_002');
   PERFORM common_create_metro_stat_area('MSA_003','MSA_003');
+  PERFORM common_create_metro_stat_area('MSA_004','MSA_004');
 
 success=true;
 return success;
