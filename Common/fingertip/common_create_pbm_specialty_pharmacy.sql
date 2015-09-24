@@ -14,7 +14,7 @@ IF pbm_specialty_pharmacy_id IS NULL THEN
             active, name, corp_owner, address1, address2, city, state_fk, 
             zip, phone1, fax, email, url_main, creatorid_fk, create_stamp, 
             modbyid_fk, mod_stamp)
-    VALUES (is_active, new_name, NULL, NULL, NULL, NULL, NULL, 
+    VALUES (CASE when is_active IS TRUE THEN 1 ELSE 0 END, new_name, NULL, NULL, NULL, NULL, NULL, 
             NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
             NULL, NULL) RETURNING id INTO pbm_specialty_pharmacy_id;
     

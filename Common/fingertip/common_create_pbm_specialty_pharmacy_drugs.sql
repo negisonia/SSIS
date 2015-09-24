@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION common_create_pbm_specialty_pharmacy_drugs(new_health_plan_id INTEGER, new_pbm_specialty_pharmacy_id INTEGER, new_drug_id INTEGER) --FF_NEW DB
+CREATE OR REPLACE FUNCTION common_create_pbm_specialty_pharmacy_drugs(new_pbm_specialty_pharmacy_id INTEGER, new_health_plan_id INTEGER, new_drug_id INTEGER) --FF_NEW DB
 RETURNS INTEGER AS $$
 DECLARE
 pbm_specialty_pharmacy_drugs_id INTEGER DEFAULT NULL;

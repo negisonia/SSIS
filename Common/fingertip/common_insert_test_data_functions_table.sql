@@ -36,6 +36,7 @@ PERFORM common_create_test_data_functions('test_data_health_plan_copay',21);
 PERFORM common_create_test_data_functions('test_data_hli_medical_benefit_designs',22);
 PERFORM common_create_test_data_functions('test_data_hli_medical_benefit_lives',23);
 PERFORM common_create_test_data_functions('test_data_forms',24);
+PERFORM common_create_test_data_functions('test_data_specialty_pharmacies.sql',25);
 
 success:=true;
 RETURN success;
