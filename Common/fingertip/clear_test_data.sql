@@ -35,6 +35,8 @@ BEGIN
   TRUNCATE TABLE benefitstructurestate CASCADE;
   TRUNCATE TABLE hli_medical_benefit_lives CASCADE;
   TRUNCATE TABLE hli_medical_benefit_designs CASCADE;
+  TRUNCATE TABLE qualifier_form_landing_pages_drug CASCADE;
+  TRUNCATE TABLE qualifier_form_landing_pages_drug_class CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
@@ -69,6 +71,8 @@ BEGIN
   ALTER SEQUENCE benefitstructurestate_id_seq RESTART;
   ALTER SEQUENCE hli_medical_benefit_lives_id_seq RESTART;
   ALTER SEQUENCE hli_medical_benefit_designs_id_seq RESTART;
+  ALTER SEQUENCE qualifier_form_landing_pages_drug_id_seq RESTART;
+  ALTER SEQUENCE qualifier_form_landing_pages_drug_class_id_seq RESTART;
 
 success:=true;
 RETURN success;
