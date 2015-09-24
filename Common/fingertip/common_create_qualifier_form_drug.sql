@@ -13,7 +13,7 @@ BEGIN
         VALUES (new_provider_id, new_health_plan_type_id, null, new_drug_class_id,
                 new_drug_id, new_pa_form_link, CASE WHEN new_pa_form_link IS NOT NULL THEN TRUE ELSE FALSE END, new_specialty_enrollment_link,
                 CASE WHEN new_specialty_enrollment_link IS NOT NULL THEN TRUE ELSE FALSE END, new_pa_policy_link, CASE WHEN new_pa_policy_link IS NOT NULL THEN TRUE ELSE FALSE END,
-                new_med_policy_link, CASE new_med_policy_link IS NOT NULL THEN TRUE ELSE FALSE END, current_timestamp, 1,
+                new_med_policy_link, CASE WHEN new_med_policy_link IS NOT NULL THEN TRUE ELSE FALSE END, current_timestamp, 1,
                 'restriction_tester', current_timestamp, 'restriction_tester', new_is_active, current_timestamp,
                 null, null) RETURNING id INTO qualifier_form_id;
 
