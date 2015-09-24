@@ -23,12 +23,10 @@ BEGIN
   SELECT common_get_table_id_by_name(drug, 'drug_1') INTO drug_1_id;
   SELECT common_get_table_id_by_name(drug, 'drug_2') INTO drug_2_id;
 
+--RETRIEVE PLANS
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_comm') INTO health_plan_comm_id;
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_comm_1') INTO health_plan_comm_1_id;
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_union') INTO health_plan_union_id;
-
-
---RETRIEVE PLANS
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_hix') INTO health_plan_hix_id;
 
   -- special_pharmacy_1
