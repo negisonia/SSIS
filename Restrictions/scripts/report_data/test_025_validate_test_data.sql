@@ -2,40 +2,40 @@ CREATE OR REPLACE FUNCTION restrictions_test_025_validate_test_data() --REPORT F
 RETURNS boolean AS $$
 DECLARE
 success BOOLEAN DEFAULT FALSE;
-
-admin_report_1 INTEGER;
-health_plan_notes_output VARCHAR;
-expected_health_plan_notes_output VARCHAR;
-
-provider_1 INTEGER;
-commercial_hpt INTEGER;
-hix_hpt INTEGER;
-drug_1 INTEGER;
-drug_2 INTEGER;
-st_dim_criterion_type INTEGER := 3;
-
+fe_report_1 INTEGER;
+expected_provider_details_output VARCHAR;
+pa_benefit_type_id INTEGER :=1;
+medical_benefit_type_id INTEGER :=2;
 BEGIN
 
---RETRIEVE DRUG_ID
-SELECT common_get_table_id_by_name('drugs','drug_1') INTO drug_1;
-SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
 
---RETRIEVE PROVIDER ID
-SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1;
---RETRIEVE HEALTH PLAN TYPE
-SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_hpt;
-SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_hpt;
+--REPORT#1
+SELECT util_report_1_generate() INTO fe_report_1;
 
---RETRIVE REPORT ID
-SELECT  crr.report_id INTO admin_report_1 FROM criteria_restriction_reports crr WHERE crr.report_name='report_1';
-
---VALIDATE NOTES (DRUG 2, ST, hix)
-expected_health_plan_notes_output= '['||
-    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"ST - Double - custom_option_1^1 AND custom_option_2^2","note_position":1,"notes":"Drug1 notes: notes for drug 1"},'||
-    '{"indication_name":"Ind1","dim_criterion_type_id":2,"criterion_name":"ST - Double - custom_option_1^1 AND custom_option_2^2","note_position":2,"notes":"Drug2 notes: notes for drug 1"}'||
+--VALIDATE SUMMARY TABLE
+expected_provider_details_output= '['||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA - Age - criteria_age_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA - Clinical - criteria_clinical_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"QL - criteria_ql_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"QL - criteria_ql_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_1","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified"},'||
+    '{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"ST - Double - custom_option_1 AND  custom_option_2"}'||
     ']';
-PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, st_dim_criterion_type, expected_health_plan_notes_output);
+PERFORM res_rpt_provider_details_validate_data(fe_report_1, pa_benefit_type_id, expected_provider_details_output);
 
+expected_provider_details_output='['||
+    '{"provider_id":1,"benefit_name":"Medical","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"Age - criteria_age_1"},'||
+    '{"provider_id":1,"benefit_name":"Medical","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"Unspecified - Criteria Unspecified"},'||
+    '{"provider_id":1,"benefit_name":"Medical","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"Diagnosis - criteria_diagnosis_3"},'||
+    '{"provider_id":1,"benefit_name":"Medical","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"ST - Single - custom_option_2"}'||
+    ']';
+PERFORM res_rpt_provider_details_validate_data(fe_report_1, medical_benefit_type_id, expected_provider_details_output);
 
 success:=true;
 return success;
