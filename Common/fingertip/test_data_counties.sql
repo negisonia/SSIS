@@ -11,6 +11,7 @@ state_005_id INTEGER;
 metro_stat_area_001_id INTEGER;
 metro_stat_area_002_id INTEGER;
 metro_stat_area_003_id INTEGER;
+metro_stat_area_004_id INTEGER;
 state VARCHAR:='state';
 metrostatarea VARCHAR:='metrostatarea';
 

@@ -37,6 +37,11 @@ BEGIN
   TRUNCATE TABLE hli_medical_benefit_designs CASCADE;
   TRUNCATE TABLE qualifier_form_landing_pages_drug CASCADE;
   TRUNCATE TABLE qualifier_form_landing_pages_drug_class CASCADE;
+  TRUNCATE TABLE pbm_specialty_pharmacy CASCADE;
+  TRUNCATE TABLE pbm_specialty_pharmacy_drug_enrollment_urls CASCADE;
+  TRUNCATE TABLE pbm_specialty_pharmacy_drugs CASCADE;
+  TRUNCATE TABLE pbm_specialty_pharmacy_specialization CASCADE;
+  TRUNCATE TABLE pbm_healthplan_pharmacy CASCADE;
 
 	--CLEAR SEQUENCES
   ALTER SEQUENCE healthplan_id_seq RESTART;
@@ -73,6 +78,10 @@ BEGIN
   ALTER SEQUENCE hli_medical_benefit_designs_id_seq RESTART;
   ALTER SEQUENCE qualifier_form_landing_pages_drug_id_seq RESTART;
   ALTER SEQUENCE qualifier_form_landing_pages_drug_class_id_seq RESTART;
+  ALTER SEQUENCE pbm_specialty_pharmacy_id_seq RESTART;
+  ALTER SEQUENCE pbm_specialty_pharmacy_drug_enrollment_urls_id_seq RESTART;
+  ALTER SEQUENCE pbm_specialty_pharmacy_drugs_id_seq RESTART;
+  ALTER SEQUENCE pbm_specialty_pharmacy_specialization_id_seq RESTART;
 
 success:=true;
 RETURN success;
