@@ -10,7 +10,7 @@ criteria_report_id INTEGER;
 
 BEGIN
 
-SELECT ana_rpt_create_criteria_report_fe_data(ARRAY['COUNTY_002'],ARRAY['HEALTH_PLAN_TYPE_001'],ARRAY['DRUG_003'],'County') INTO criteria_report_id;
+SELECT ana_rpt_create_criteria_report_fe_data(ARRAY['COUNTY_002'],ARRAY['HEALTH_PLAN_TYPE_001'],ARRAY['DRUG_003'],'County','DRUG_CLASS_001') INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END
