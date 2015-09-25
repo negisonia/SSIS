@@ -48,8 +48,8 @@ PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'drug_11
 
 PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_001') , drug_class_001);
 PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_002') , drug_class_001);
-PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_003') , drug_class_002);
-PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_004') , drug_class_002);
+PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_003') , drug_class_001);
+PERFORM common_create_drug_drug_class(common_get_table_id_by_name(drug, 'DRUG_004') , drug_class_001);
 
 
 success=true;
