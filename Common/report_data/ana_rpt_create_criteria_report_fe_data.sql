@@ -42,7 +42,7 @@ BEGIN
     region_type_id = 4;
   END IF;
 
-  SELECT create_criteria_report(NULL,0,NULL,0,region_type_id,FALSE,FALSE,FALSE,drug_ids,health_plan_type_ids,region_type,region_ids,NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
+  SELECT create_criteria_report(NULL,0,NULL,0,region_type_id,FALSE,FALSE,FALSE,drug_ids,health_plan_type_ids,region_type,region_ids,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END
