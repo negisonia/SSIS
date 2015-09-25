@@ -7,7 +7,7 @@ BEGIN
 
 --VALIDATE SUMMARY TABLE
 SELECT  array_to_json(array_agg(row_to_json(t))) from (select criteria_report_id, drug_name, benefit_restriction_name, benefit_name, lives, total_pharmacy_lives, health_plan_count, total_health_plan_count, total_medical_lives, provider_count, total_provider_count from rpt_summary_table(report_id)) t INTO summary_table_output;
-IF summary_table_output DISTINCT FROM expected_json THEN
+IF summary_table_output IS DISTINCT FROM expected_json THEN
  RAISE NOTICE 'res_rpt_summary_table_validate_data  Actual output: %s', summary_table_output;
  RAISE NOTICE 'res_rpt_summary_table_validate_data  Expected output: %s', expected_json;
 

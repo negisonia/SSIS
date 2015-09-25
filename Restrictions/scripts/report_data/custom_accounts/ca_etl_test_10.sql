@@ -27,7 +27,7 @@ dim_restriction_type_id = 3;
     ']';  
   SELECT common_get_table_id_by_name(drugs,'drug_2') INTO drug_id;
   SELECT common_get_table_id_by_name(health_plan_types,'hix') INTO plan_type_id;
-  PERFORM validate_rpt_health_plan_notes(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
+  PERFORM rpt_health_plan_notes_validate_data(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
 
 success:=true;
 RETURN success;
