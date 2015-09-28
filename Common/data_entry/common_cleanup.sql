@@ -18,7 +18,6 @@ BEGIN
   TRUNCATE TABLE data_entries CASCADE;
   TRUNCATE TABLE medical_criteria CASCADE;
   TRUNCATE TABLE medicals CASCADE;
-  TRUNCATE TABLE notes CASCADE;
   TRUNCATE TABLE prior_authorization_criteria CASCADE;
   TRUNCATE TABLE prior_authorizations CASCADE;
   TRUNCATE TABLE quantity_limit_criteria CASCADE;
@@ -38,7 +37,6 @@ BEGIN
   ALTER SEQUENCE data_entries_id_seq RESTART;
   ALTER SEQUENCE medical_criteria_id_seq RESTART;
   ALTER SEQUENCE medicals_id_seq RESTART;
-  ALTER SEQUENCE notes_id_seq RESTART;
   ALTER SEQUENCE prior_authorization_criteria_id_seq RESTART;
   ALTER SEQUENCE prior_authorizations_id_seq RESTART;
   ALTER SEQUENCE quantity_limit_criteria_id_seq RESTART;

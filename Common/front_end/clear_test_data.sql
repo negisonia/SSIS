@@ -4,6 +4,12 @@ DECLARE
 success boolean DEFAULT false;
 BEGIN
 
+  --CLEAR TABLES
+  TRUNCATE TABLE criteria_reports_drugs CASCADE;
+  TRUNCATE TABLE criteria_reports_health_plan_types CASCADE;
+  TRUNCATE TABLE criteria_reports_markets CASCADE;
+  TRUNCATE TABLE criteria_reports CASCADE;
+  
   --CLEAR SEQUENCES
   ALTER SEQUENCE criteria_reports_id_seq RESTART;
   
