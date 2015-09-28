@@ -1,5 +1,5 @@
 "C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\dtexec.exe" /f "process_a_ssis.dtsx" ^
-/SET "\package.Variables[pkg_path].Value";"C:\Users\gapuser\Desktop\DRG\sln\qa_auto_etl_bat" ^
+/SET "\package.Variables[pkg_path].Value";"C:\Users\gapuser\Desktop\DRG\data-warehouse-storeprocedures-tests\SSIS\qa_auto_etl" ^
 /SET "\"\package.Variables[connection_admin].Value\"";"\"server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;password=VsOCWIozIelwQcRgR4w3;Database=qa_auto_etl_admin;\"" ^
 /SET "\"\package.Variables[connection_front_end].Value\"";"\"server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;password=VsOCWIozIelwQcRgR4w3;Database=qa_auto_etl_front_end;\"" ^
 /SET "\"\package.Variables[connection_dw].Value\"";"\"server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;password=VsOCWIozIelwQcRgR4w3;Database=qa_auto_etl_data_warehouse;\"" ^

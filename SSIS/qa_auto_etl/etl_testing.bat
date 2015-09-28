@@ -3,4 +3,4 @@
 /SET "\"\package.Variables[db_password].Value\"";"\"VsOCWIozIelwQcRgR4w3\"" ^
 /SET "\"\package.Variables[db_prefix].Value\"";"\"qa_auto_etl\"" ^
 /SET "\"\package.Variables[db_username].Value\"";"\"postgres\"" ^
-/SET "\"\package.Variables[pkg_path].Value\"";"\"C:\Users\gapuser\Desktop\DRG\sln\qa_auto_etl_bat\""
+/SET "\"\package.Variables[pkg_path].Value\"";"\"C:\Users\gapuser\Desktop\DRG\data-warehouse-storeprocedures-tests\SSIS\qa_auto_etl""

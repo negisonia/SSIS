@@ -5,21 +5,21 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="GAPUSER-PC"
   DTS:CreatorName="gapuser-PC\gapuser"
-  DTS:DTSID="{13C91936-40DE-4571-9027-B3B1B3786BD7}"
+  DTS:DTSID="{BF9D9D26-4C0A-4601-AFC8-FFC0FAC9E05C}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{070D36C7-DF5A-4866-9CA7-81774E7AEB53}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{0ACECE16-8B3F-4FEA-A8E6-16ED3498DD34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[admin]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{149168FF-7DFB-4C95-9A02-DF611B24F620}"
+      DTS:DTSID="{0DE32D80-5788-412A-904C-B661B012118C}"
       DTS:ObjectName="admin">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"_admin;port=5432;"</DTS:PropertyExpression>
@@ -29,14 +29,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAACOxDcSwHyeS2Y20Y+UfHSFUPNE72uIs9L5yHieSwjygAAAAAOgAAAAAIAACAAAADQX91m6IqeHbpYSrjREvI3jCf0YnXFCNDQVr96kqPanTAAAAA2WyIDTI5E109mISm4aCvybVZbO8WrGrhRshpg/ElOiVUopQHkcGJrVsTyS/SFI/FAAAAAMBK6v7A7QBO3ZtGTuq+VF1cW22eLeK/xIIM1qcV6zLUmPLlpz8he4CqKfBZMaqlwtmQJFC7lbhdcH/q8iY6sXw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACR01gajjb2QI9Ui0ozdrHqbGvj7dhlg++bV8KjnjtU3wAAAAAOgAAAAAIAACAAAACcFZc1axDdILQcuR9L+86zVK7fh+QPoqirT2ximMWNeTAAAADvjlllIGqnBeXP4Ro1BYErh4kCQeQulWE3YKDqPjF1EMUi6ZkUTrZdqDRz5Zub365AAAAA6GyyZTllxzP6ywi4IcghuAMIZx1o/koofUhZGO8cZt7Gos3r3wFQX58OCNSBHcwzuWMJ6rNf8v23vtgz/doFxw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_entry]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{EB6E4937-B07B-4893-B664-EF42D243A241}"
+      DTS:DTSID="{9029E1AB-E030-4A41-BDB3-7ED78A352873}"
       DTS:ObjectName="data_entry">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_entry;port=5432;"</DTS:PropertyExpression>
@@ -46,14 +46,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABtGfD/uOh7/HFOFAZFGp0aDLh5u4aoNJjwvdOSW8oK9gAAAAAOgAAAAAIAACAAAACUFLgaNaqVcit2j7PdET0CqS9SdLBxwcLNWm2hffmh6DAAAADLnHDObjNwHy3ssSnZR6N2jkGDRy6UW1pECUeZlyBaqBeZsl0iWr/yHrIFctCJMopAAAAA96xoH5LWa58QLk8sXRzBp6LZAEx86n7KBrCKkb2N9iGhv0vr6z4WoFtUGkysA9qozcM3oPziEsLizczzvWVOBg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7t1l0Ae7vOx5G4ExU32z1w5ysIF7ilF+8RzFdg+UxewAAAAAOgAAAAAIAACAAAADkQL1p0Fr6yM1OBFXLdV5SwhzcLfBmPuCJfzhiH2AAtjAAAABoH8VQpZ/Zxux5ZSRxXGuV41rpK20PTu60akKUakMhqYb5LTt8Vd8arysxly0M5oxAAAAAVthQvToijH2uTpprOqSQg4x6/Wyt0QQXxYVbL/ozRDFfDOmrgFCramhuKY2g80IGF2dutyGxnID7VXDwaq/yQA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_warehouse]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+      DTS:DTSID="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
       DTS:ObjectName="data_warehouse">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"_data_warehouse;port=5432;"</DTS:PropertyExpression>
@@ -63,14 +63,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1N75mp1lZEUkRrUHe3fl3yNnNyRWGqyGXoQxyzSKh2AAAAAAOgAAAAAIAACAAAAD1YxYpKnfQli8BjXh97IpPoh8mXU4HnaEq17Ud/+b0WTAAAADDOh51S45lKO4tA69EazTmTXoW4fXCj/lCfFwp4hUF/E3NrJY99Q/D5GM1zPmG+cVAAAAAtJXOU904y142q5UOqqtkeFlT305xCNTxZjXpSBPrMOrWLWJHavzbjvudjsozV1wI2BSl+amdQKH/ZnsyfBVr6Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1NYueKvgPfARWQZghhvlYvu/v2m3TmqgkR6MW3la7MQAAAAAOgAAAAAIAACAAAABkV182YpRZ5gXzLyjKeSy4tDnXpks2FhbyWah/JD2gfzAAAAAk8OgV/ClL6YlEZYL0gS6ZcjyfNemCT+zADozAQXevsn40XZ7xk9Cni81b04e+fmtAAAAA0HRhAcQe533WMfo2aZut0jQlKPSoIkzzeQzuGa9jQjQ+nU+G2XKiUNvfwCxFns03DkD398Gom5jQSCy23yLqVw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FF New]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{676DA179-72D7-4F8C-9D1C-C03922AEC7AD}"
+      DTS:DTSID="{ED03BC8A-715F-499E-95B7-0EF30A9C878B}"
       DTS:ObjectName="FF New">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_ff_new;port=5432;"</DTS:PropertyExpression>
@@ -80,14 +80,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABZBg/I/6pKJC2hVGxTeKdB8Zus4bVJjW6PFDU4xtxiUwAAAAAOgAAAAAIAACAAAABb0lmRX1SFybE0Pieqso3PSfgSBd0Q8z5tTILfdbJRhDAAAAA0oYT5BQfjccwol8LENbGxbkePcF6fWgQ6jq3CNt3vJr5sUvpC3od6nkLp4E4cFGJAAAAAnIISen7QW9o/emNzEBLZRLG2BVRr2iajU3NFZg+yW26g9zgGl1+8LwROZ3SC6VEWgUeh6kpDVL7hFN4w7Fs67Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbI334Sno98t/Ef2mzmWOL2Bb5dgbFdPE4hLHJiCPRPQAAAAAOgAAAAAIAACAAAAA6EP/pdpupxsy2lQW3xe0VsFRPD8UGFNHK0quWTrBmgDAAAAC1gYp1ffZpBrsHsGjoa3nQU4NvNMhx8jh765kYLWVwT7f3R/tXFxTGFp+2d0t4IEZAAAAAF/YKf8oNLXe7c8pNHhXDSjAabPouldUueLl6fSXo+8mLrcju9JdJcOk2ui8sWVGMSERFVDRsvsNNEeT/7655wA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Front End]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{5AA3383E-6829-4F09-A667-E22B7E9EA07A}"
+      DTS:DTSID="{66522EB9-CF69-4D19-922F-2BDB7EDA10AD}"
       DTS:ObjectName="Front End">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_front_end;port=5432;"</DTS:PropertyExpression>
@@ -97,7 +97,24 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABLxnKOJ94r8QtSgQrsYZ+sdLwqG78zgrUj0SME0bQrvQAAAAAOgAAAAAIAACAAAAAnV/4MU3Uy3/lQJFkRHC5soJLGXHkVgRVtl3foyq0fRTAAAAAFmSlKr9EEjUxeQftzlf34sp9m6VeM1XwXcgxGJkkPe/Fc68nF1VkjLXQkC3Vj/dtAAAAAqVwGKaN1XlDfwPRuA6XY5Ejhq4WSUlP1XakyjaoIk6fBvHMGJEbYv9NDcUnBifJcEd4ewWPtkTStbLaZuKolyw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABKA3pLAwCDTQ9NrnR4GOYwJTF30VyfWYS6PHrBnAO22gAAAAAOgAAAAAIAACAAAACCkjSghR1yAoJgI65C64AfigBgYqUM0LyBeAsa8DU0RDAAAACKMkdYq1s4GDygIExaK1x03QvErturKTEVJ59szxOC7+3wki8oo8+MAW0mWIkoBcZAAAAAWeXD3XBdmXe5wDz/jNpQIB3UMq3cK5GHiQrqwFtyungyaPnSXAL91pg4zc7k30t+oWBP17ltCSSyCzU5f5bvig</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[report_data]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{1832DCE0-E826-46DA-BE94-DF765D27B27B}"
+      DTS:ObjectName="report_data">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_report_data;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=qa_auto_etl_report_data;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACo7wzItQsnq55ee1Ueg0SHwZ+CNFyVh2VrrdtzUhWy1gAAAAAOgAAAAAIAACAAAADuMWjPUM8LEU7D7tGSg4kLbMHxX3aZBnReViUlo9X/TjAAAADpSR6vhh4im2IveRUepdE38dhV5U3e7onE+ft0qPgleE5y4dBGstBOQvMQwyUIVHtAAAAA3FAKy8mHv/7KrzojAfrnK2aMubhGG7wuEFuUZ1Api5ZyEtIr060G+hN4Czy+u927Uo2CckXJGO2ARlATRjYJXQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +122,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10DF781D-C3D2-4181-9EE4-9B46EBC270EB}"
+      DTS:DTSID="{3EC92EB2-6533-485B-907C-03944EEEA772}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
@@ -114,7 +131,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A4ADCB3D-1B2A-441F-9CA7-FAE94FEDDD25}"
+      DTS:DTSID="{7D9250BF-2CC3-4713-86CC-D8C2DB1BEACD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_prefix">
@@ -123,7 +140,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A7026023-4D8D-418A-A613-0A9B451FAA96}"
+      DTS:DTSID="{CEC6F81E-ECD6-4734-A87D-4F6E3BB90FEC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
@@ -132,7 +149,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FA7D73E7-DC3F-490C-9A41-CA1D25C44ECF}"
+      DTS:DTSID="{D9A44A4C-027E-41FB-987D-B6E6C0E45D93}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_username">
@@ -141,7 +158,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EEEDA20A-EEB4-4205-A9C1-04A2EA5A9A39}"
+      DTS:DTSID="{63CA854E-6E62-4AF1-B631-B4AF139E18C9}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="email_recipients">
@@ -151,7 +168,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{433FA6F9-3B3E-4028-A028-2383CA68772C}"
+      DTS:DTSID="{12D538D7-4F35-4612-ABBF-2F800ADCE947}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="pkg_path">
@@ -164,7 +181,7 @@
       DTS:refId="Package\Clean Up Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{BBAD79D4-37BE-483B-8502-6003629CF3E3}"
+      DTS:DTSID="{11B681BC-DB4F-40E3-B61F-AAF08E996F83}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clean Up Data">
@@ -174,16 +191,16 @@
           DTS:refId="Package\Clean Up Data\Clear Admin"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Clear Admin"
-          DTS:DTSID="{38C6CF92-6E1E-45D7-B15E-9EA512423E39}"
+          DTS:DTSID="{9CA3AC68-85DF-483A-A0F5-ACDE33355CEE}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Admin"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{149168FF-7DFB-4C95-9A02-DF611B24F620}"
+              SQLTask:Connection="{0DE32D80-5788-412A-904C-B661B012118C}"
               SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -191,16 +208,16 @@
           DTS:refId="Package\Clean Up Data\Clear Analytics Front End"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Clear Analytics Front End"
-          DTS:DTSID="{B71FF70F-8609-474E-B89F-E8A99AB0C0FE}"
+          DTS:DTSID="{E7F19D65-947D-4EEA-ACC0-70AA31E87A15}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Analytics Front End"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{5AA3383E-6829-4F09-A667-E22B7E9EA07A}"
+              SQLTask:Connection="{66522EB9-CF69-4D19-922F-2BDB7EDA10AD}"
               SQLTask:SqlStatementSource="select clear_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -208,7 +225,7 @@
           DTS:refId="Package\Clean Up Data\Clear Data Data_Entry"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8127037C-2C0E-4911-8BFF-0F65180C3F55}"
+          DTS:DTSID="{EE7E6011-D0EE-4152-BEAD-01CAFD9B8CE5}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Data Data_Entry"
@@ -217,7 +234,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EB6E4937-B07B-4893-B664-EF42D243A241}"
+              SQLTask:Connection="{9029E1AB-E030-4A41-BDB3-7ED78A352873}"
               SQLTask:SqlStatementSource="select clear_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -225,7 +242,7 @@
           DTS:refId="Package\Clean Up Data\Clear FF New"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Clear FF New"
-          DTS:DTSID="{0CECB6DB-4CD5-4B15-B215-67A933358B88}"
+          DTS:DTSID="{C09DF776-172C-4D79-B5BC-4BCCFC8AE854}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear FF New"
@@ -234,7 +251,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{676DA179-72D7-4F8C-9D1C-C03922AEC7AD}"
+              SQLTask:Connection="{ED03BC8A-715F-499E-95B7-0EF30A9C878B}"
               SQLTask:SqlStatementSource="select clear_test_data() " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -242,16 +259,16 @@
           DTS:refId="Package\Clean Up Data\Clear log a"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4E01198A-2AAF-4A3E-A4E9-5EC472C7C345}"
+          DTS:DTSID="{9CAC4F2F-9673-4622-A1A0-07E4923AEE5B}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log a"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+              SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE  log_etl_process" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -259,7 +276,7 @@
           DTS:refId="Package\Clean Up Data\Clear log b"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7E18FF09-590E-4843-A9EA-3A2E65369E3A}"
+          DTS:DTSID="{6532E85F-1B81-48C3-A9ED-0726C5849998}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear log b"
@@ -268,8 +285,25 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+              SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE log_etl_process_b" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear Report Data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Clear Analytics Front End"
+          DTS:DTSID="{fa0b19bc-d930-48b9-a681-af6c3368661f}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Report Data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1832DCE0-E826-46DA-BE94-DF765D27B27B}"
+              SQLTask:SqlStatementSource="select clear_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -278,7 +312,7 @@
       DTS:refId="Package\ETL Process"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{85663227-B1D8-48B3-904C-68A22159D93E}"
+      DTS:DTSID="{8CFD1E9E-2EAC-4FA5-B52B-5A84DD267811}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="ETL Process">
@@ -288,7 +322,7 @@
           DTS:refId="Package\ETL Process\Execute Process A"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{21772718-ab1a-4b20-b777-0af0c1e8b3f7}"
+          DTS:DTSID="{AD9DE7F5-061C-405F-A347-77859E081981}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute Process A"
@@ -310,7 +344,7 @@
           DTS:refId="Package\ETL Process\Execute Process B"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{789dc553-eeba-4352-b2b9-a9f9e27e9234}"
+          DTS:DTSID="{F43F50D7-1D14-4F99-B221-DC2277ACDEDA}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute Process B"
@@ -333,7 +367,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\ETL Process.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{459d9063-3e80-46dd-808f-19d615d702d2}"
+          DTS:DTSID="{CC2DE665-B95F-4702-BDAC-ADEA23C9F909}"
           DTS:From="Package\ETL Process\Execute Process B"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -344,7 +378,7 @@
       DTS:refId="Package\ETL Process 1"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{42E5135C-AB96-4C26-BFE6-ED9E837426FE}"
+      DTS:DTSID="{B05E52EB-3DCB-4359-B2E1-F9841B0060DE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="ETL Process 1">
@@ -354,7 +388,7 @@
           DTS:refId="Package\ETL Process 1\Execute Process A"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{63ec7b02-46fa-4681-9e37-b5afef22ea55}"
+          DTS:DTSID="{7B3B796F-A141-478A-A70F-6B489284AA68}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute Process A"
@@ -376,7 +410,7 @@
           DTS:refId="Package\ETL Process 1\Execute Process B"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{d6692939-849d-4cb7-88d7-ea53a5f718a0}"
+          DTS:DTSID="{4439E50E-58EF-4153-9102-6B297C859FC8}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute Process B"
@@ -399,7 +433,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\ETL Process 1.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{d5ac1488-4a0b-4d54-871a-2aaf1352b016}"
+          DTS:DTSID="{BE5ABF18-2145-42ED-8487-7128C5C80424}"
           DTS:From="Package\ETL Process 1\Execute Process B"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -410,7 +444,7 @@
       DTS:refId="Package\Insert Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{BBE93E8F-BB57-4FDC-BD21-B991210F8160}"
+      DTS:DTSID="{D804E4C3-3B06-42E3-9845-B4F13D96C9FE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert Data">
@@ -420,7 +454,7 @@
           DTS:refId="Package\Insert Data\Insert Data entry"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Insert Data entry"
-          DTS:DTSID="{6EBA65B4-23F5-4FBA-9321-7851383F1B06}"
+          DTS:DTSID="{4A51B58C-FD06-4F7B-A54F-C9102E482DE8}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert Data entry"
@@ -429,7 +463,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EB6E4937-B07B-4893-B664-EF42D243A241}"
+              SQLTask:Connection="{9029E1AB-E030-4A41-BDB3-7ED78A352873}"
               SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -437,7 +471,7 @@
           DTS:refId="Package\Insert Data\Insert FF NEW Data"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Insert FF NEW Data"
-          DTS:DTSID="{7B29E860-F6F4-4181-BBC7-22B54AA2F96A}"
+          DTS:DTSID="{2A4225E3-783E-4324-AF64-72A4C648F24C}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert FF NEW Data"
@@ -446,7 +480,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{676DA179-72D7-4F8C-9D1C-C03922AEC7AD}"
+              SQLTask:Connection="{ED03BC8A-715F-499E-95B7-0EF30A9C878B}"
               SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -455,7 +489,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Insert Data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{4A87B840-1AA6-448D-978B-55BAB0C390AA}"
+          DTS:DTSID="{7AF8C978-E590-406C-BFB8-A19A4A848ABD}"
           DTS:From="Package\Insert Data\Insert FF NEW Data"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -466,7 +500,7 @@
       DTS:refId="Package\Insert Test Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3C64113D-F6E8-4442-B1D5-BF2046BD4B66}"
+      DTS:DTSID="{E6A1132E-981A-4B6C-A49F-B04C537B5120}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert Test Data">
@@ -476,7 +510,7 @@
           DTS:refId="Package\Insert Test Data\Insert Data Admin"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C6EC672B-66D0-4D94-BD67-59E9B2E84C73}"
+          DTS:DTSID="{F171BD2D-3C77-431E-8E87-2D92214F2F3A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert Data Admin"
@@ -485,7 +519,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{149168FF-7DFB-4C95-9A02-DF611B24F620}"
+              SQLTask:Connection="{0DE32D80-5788-412A-904C-B661B012118C}"
               SQLTask:SqlStatementSource="Select common_insert_test_data_functions_table();&#xA;&#xA;Select call_functions_from_table('test_data_functions');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -495,7 +529,7 @@
       DTS:refId="Package\Log Data Creation done"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E584A375-D7FB-4FC8-A8E9-C319FDC21F9D}"
+      DTS:DTSID="{9AD9BDD1-0B04-4A8C-BD1E-FC306BFA5910}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log Data Creation done"
@@ -504,7 +538,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET data_insertion_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -512,7 +546,7 @@
       DTS:refId="Package\Log Data Creation done 2"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{2CCF4923-4AED-4DBB-9941-9961EFF98975}"
+      DTS:DTSID="{129F36EB-3884-49B1-A0E4-61503D1B026D}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log Data Creation done 2"
@@ -521,7 +555,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET second_data_insertion_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -529,7 +563,7 @@
       DTS:refId="Package\Log End"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Log End"
-      DTS:DTSID="{4DD70E0D-091E-413A-BBB9-CCC148588209}"
+      DTS:DTSID="{613F1FC7-0AAC-4083-BFE4-BD117B005AB1}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log End"
@@ -538,7 +572,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Finished', total_succeded_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log=''), total_failed_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log !='') WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -546,7 +580,7 @@
       DTS:refId="Package\Log ETL Executed Done"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AEF9CAB1-5FA8-41F9-910A-1C9D91E3A87C}"
+      DTS:DTSID="{47F39DAD-9AC8-4DBC-915E-6C6B39463C6F}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log ETL Executed Done"
@@ -555,7 +589,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET etl_execution_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -563,7 +597,7 @@
       DTS:refId="Package\Log ETL Executed Done 2"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{92683C70-2BC7-4E38-B563-ECA9DA6C9D73}"
+      DTS:DTSID="{6F1BAA02-E2E7-4CE9-AA7E-7E98C52EB93E}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log ETL Executed Done 2"
@@ -572,7 +606,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET second_etl_execution_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -580,7 +614,7 @@
       DTS:refId="Package\Log Start"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{35615CCE-F9EC-46C1-95DF-7E8A577869D8}"
+      DTS:DTSID="{3AD4A595-DE27-47CF-825C-2159FE264C95}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Log Start"
@@ -589,7 +623,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="INSERT INTO log_etl_validation_process (process_started_at, status) VALUES (now(), 'In Progress');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -597,7 +631,7 @@
       DTS:refId="Package\Truncate Log Tables"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A1CDB1BA-216C-48BC-A838-9B219BAAAB22}"
+      DTS:DTSID="{7F6558D9-2C48-416E-89D4-DF0F46B3E622}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Log Tables"
@@ -606,7 +640,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+          SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
           SQLTask:SqlStatementSource="Truncate log_etl_validation_process;&#xA;Truncate log_etl_validation_process_test_execution;&#xA;Truncate log_etl_validation_process_errors;&#xA;Alter sequence log_etl_validation_process_id_seq RESTART;&#xA;Alter sequence log_etl_validation_process_errors_id_seq RESTART;&#xA;Alter sequence log_etl_validation_process_test_execution_id_seq RESTART;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -614,7 +648,7 @@
       DTS:refId="Package\Validation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{0898764D-1A0B-4708-97F8-E928B4C71719}"
+      DTS:DTSID="{C0F75EA3-C9E0-4448-87DE-F80DFAA0A0E5}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation">
@@ -624,16 +658,16 @@
           DTS:refId="Package\Validation\Log Analytics Validation Done"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Log Analytics Validation Done"
-          DTS:DTSID="{A575E35D-C364-477D-9B70-8F1064CAF3B8}"
+          DTS:DTSID="{C4A88B2D-A9EE-4BF6-8FAA-3D99944E05CF}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Analytics Validation Done"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+              SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
               SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET analytics_validation_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -641,16 +675,16 @@
           DTS:refId="Package\Validation\Log Restrictions Validation Done"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Log Restrictions Validation Done"
-          DTS:DTSID="{CA84113B-12AC-4C62-82A5-B668FBF92E3E}"
+          DTS:DTSID="{1F6D03F8-8B09-4D59-A2AA-67DF0DFF0D50}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Restrictions Validation Done"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+              SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
               SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET restrictions_validation_ended_at = now() WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -658,12 +692,12 @@
           DTS:refId="Package\Validation\Validate Analytics"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{7acfc603-b21a-4f1d-8a6d-67ce4ec2707d}"
+          DTS:DTSID="{8D54C34A-9C41-4EA5-9681-05584F8C480D}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Analytics"
           DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Arguments">"/c " + @[pkg_path] + "\\validate_analytics.bat "</DTS:PropertyExpression>
@@ -680,12 +714,12 @@
           DTS:refId="Package\Validation\Validate Restrictions"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute Process Task"
-          DTS:DTSID="{48f338ca-ac54-4720-8579-35d5b614c302}"
+          DTS:DTSID="{51230D1B-F0E4-4CF0-BDDA-F2A17DCDC545}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Restrictions"
           DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Arguments">"/c " + @[pkg_path] + "\\validate_restrictions.bat "</DTS:PropertyExpression>
@@ -703,7 +737,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{7C08D730-00A2-4EF4-A141-CE89A96442D4}"
+          DTS:DTSID="{40DF41A4-D801-48A7-9210-6DDF1089C970}"
           DTS:From="Package\Validation\Validate Analytics"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -711,7 +745,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{43D64F0A-BE2C-4BE8-BA53-A8C07C6226AD}"
+          DTS:DTSID="{75DA1131-211F-40EC-BB88-7FD97B1A1613}"
           DTS:From="Package\Validation\Validate Restrictions"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -723,7 +757,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{9CD97922-48F9-48A0-9FD3-8DA6D3B5FD27}"
+      DTS:DTSID="{D88BBB43-B5D2-48EE-A2E5-F8AA39085CB1}"
       DTS:From="Package\Truncate Log Tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -731,7 +765,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{95F0CF27-EF68-44AC-9985-D92898230F27}"
+      DTS:DTSID="{1BAE0199-0F2B-44F9-8DAE-E7F7FABA76A3}"
       DTS:From="Package\Clean Up Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -739,7 +773,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{8B60F57F-85E6-4412-8056-C4ED0EFEC593}"
+      DTS:DTSID="{E24A498F-301D-4704-B889-A3E03FAFB11B}"
       DTS:From="Package\Insert Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
@@ -747,7 +781,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
       DTS:CreationName=""
-      DTS:DTSID="{5A9FAE25-D6C8-40F1-B551-F17C991E6685}"
+      DTS:DTSID="{C48BA8F9-CC47-4E33-A62A-C319BB90B8B9}"
       DTS:From="Package\Insert Test Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 11"
@@ -755,7 +789,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{EFB39EFE-75D3-412A-988D-0512ED4A8F2F}"
+      DTS:DTSID="{78C2D205-B822-4C66-A623-486A49DE5A88}"
       DTS:From="Package\ETL Process"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -763,7 +797,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{8E7C3DE3-8B2C-4CC4-AB2A-0CE8C7A05F94}"
+      DTS:DTSID="{BA7A93C5-3AB8-4200-8415-C47CC1A0AA18}"
       DTS:From="Package\Log Start"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -771,7 +805,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{A5E0EE2F-E855-4C17-B54C-21F66C6AB463}"
+      DTS:DTSID="{1CEC3691-DB99-436B-A8AA-BE10336B0EB8}"
       DTS:From="Package\Log ETL Executed Done"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -779,7 +813,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{53DF1D9B-0C0E-49D1-A653-8643DCD8DA93}"
+      DTS:DTSID="{E11A6955-F152-42C0-ADDB-F818DF6E29C7}"
       DTS:From="Package\Log Data Creation done"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -787,7 +821,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{601852C3-DE05-4E77-90FB-DC3AC0BF4104}"
+      DTS:DTSID="{2CA62A81-3F18-47B6-8D79-28007CBC6748}"
       DTS:From="Package\ETL Process 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -795,7 +829,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{F4B8CD18-2E7E-4A52-A0C6-1DA7CB7EBB15}"
+      DTS:DTSID="{CF9B5335-6122-4025-B5B6-63CD368DDA58}"
       DTS:From="Package\Log Data Creation done 2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -803,7 +837,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{9A1BB133-B969-49C2-8E05-2D4030E5A302}"
+      DTS:DTSID="{31BC57D1-58F9-4E7C-ABCB-BBC1DDDCE838}"
       DTS:From="Package\Validation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
@@ -811,7 +845,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{F3ED8F38-3090-465F-94D7-33C92C6AD281}"
+      DTS:DTSID="{608CDBBF-2087-4F59-ABAD-11ED27D82773}"
       DTS:From="Package\Log ETL Executed Done 2"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
@@ -821,7 +855,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{106686BE-2DAA-4308-AB8C-00E78CE5192B}"
+      DTS:DTSID="{4E1BA176-5A65-4A7B-9CE5-0C5807BD7DBB}"
       DTS:EventID="189448084"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -829,7 +863,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{165A1A8E-7ECE-4506-90B1-C2EF548502B8}"
+          DTS:DTSID="{383D8A8F-A73B-4676-AD7E-DFD1180C050A}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -842,7 +876,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Log Error"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{FB6E3855-9891-40F0-AC91-7C44B882F847}"
+          DTS:DTSID="{E656920F-72FE-4847-8F1D-FED3A1F07438}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Error"
@@ -850,7 +884,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{AD3D24C2-C5D1-4AFD-8FA6-36758EF1017F}"
+              SQLTask:Connection="{E051C0A9-717E-4B9D-B289-BAA441D8DE5B}"
               SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='ETL Validation Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;&#xA;INSERT INTO log_etl_validation_process_errors(log_etl_validation_process_id, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_errors where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
@@ -906,11 +940,15 @@
           Size="132,42"
           Id="Package\Clean Up Data\Clear log b"
           TopLeft="394,12.1666666666667" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Clean Up Data\Clear Report Data"
+          TopLeft="230,69" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="653,319"
-          Size="653,362"
+          PanelSize="653,339"
+          Size="653,382"
           Id="Package\Clean Up Data"
           TopLeft="547.666666666667,746" />
         <NodeLayout
@@ -1154,18 +1192,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="872,1108">
+          TopLeft="872,1128">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.3333333333335"
+              EndConnector="0,25.3333333333301"
               Start="0,0"
-              End="0,37.8333333333335">
+              End="0,17.8333333333301">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8333333333335" />
+                    End="0,17.8333333333301" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1246,14 +1284,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.6666666666666"
+              EndConnector="0,52.666666666667"
               Start="0,0"
-              End="0,45.1666666666666">
+              End="0,45.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.1666666666666" />
+                    End="0,45.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -5,21 +5,21 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="BURDEVSQL1"
   DTS:CreatorName="DRESOURCES\miLee"
-  DTS:DTSID="{58F4C940-D50C-4FD2-B30C-1945888829F1}"
+  DTS:DTSID="{648EB2D4-8D23-48AD-8BB4-775CEDF0D4E6}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="refresh_report_data"
   DTS:PackageType="2"
   DTS:VersionBuild="192"
-  DTS:VersionGUID="{17C46F3E-D4DE-4508-8515-4F03E491D652}">
+  DTS:VersionGUID="{A634BEA0-45B1-4A23-A99A-1CCE3388FA1E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[report_data]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+      DTS:DTSID="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
       DTS:ObjectName="report_data">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI}; " + @[connection_report_data] + "port=5432;"</DTS:PropertyExpression>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbN7FJkuhDUqyfCWbUnNVlQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACa51o9BZQ50GK9yMydkOOdmADm5yGluPyKiTe/4w1+CQAAAAAOgAAAAAIAACAAAABpyzQz18yA0UCseDN6UkuxZFvQXJNn3JvUFiWWmzEVhzAAAAC/9kj5HQ1Uabn6JDbtYhRVcjx9sgi2dUKvfHT9EGvQtGWI/Le+o0h4DvSai8SrYWdAAAAAZ64oXiMadBvAhboyMNknXkmXmYLB+Q6ox+aW0O6+xgZhI05qurzWVNTLEssQkwIb4ysSnRL+W/5rnXFH6dXpIw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABCQ6lMBS0kiqFQdhjfHEqgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA2umEWw8tOKJvwM/w8Rps/AAAAAASAAACgAAAAEAAAAAaFcevrw9CcQNWY2TyBZz0wAAAAhI8KVFiJ3v8ugZoh7Sv3ChCq/pvDcYEfjxE8ZjG8BTDAm7f/CStLFH3+gdpR6hWIFAAAAJGL3EgA7w+lABS7mijlxIM7Wt6w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -37,7 +37,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{56F8363C-826F-4F0A-B340-85ABDCF8D7E2}"
+      DTS:DTSID="{66089162-797A-4824-9926-C109D0768340}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="connection_report_data">
@@ -49,7 +49,7 @@
     <DTS:Executable
       DTS:refId="Package\large tables"
       DTS:CreationName="STOCK:SEQUENCE"
-      DTS:DTSID="{A019B196-D011-4360-93EC-07576238CB39}"
+      DTS:DTSID="{D049499B-0C7E-46D1-B126-7759DE3022C8}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="large tables">
@@ -59,7 +59,7 @@
           DTS:refId="Package\large tables\custom_notes"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{41D6FD8C-9BAE-4329-8571-03B191FBB887}"
+          DTS:DTSID="{1E3C6E8B-0767-4E95-B849-80E4263283F1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="custom_notes"
@@ -68,7 +68,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('custom_notes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -76,7 +76,7 @@
           DTS:refId="Package\large tables\fact_formulary_detail"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5FC643FF-3E9F-4A02-BB36-A7ACAEEA4A2B}"
+          DTS:DTSID="{839C0E4F-C27C-4FF6-8D00-DF10D2DB0E27}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="fact_formulary_detail"
@@ -85,7 +85,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('fact_formulary_detail');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -93,7 +93,7 @@
           DTS:refId="Package\large tables\formulary_detail"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E79E440D-5267-4763-BBFD-6C67BED42587}"
+          DTS:DTSID="{67D13B66-2DCE-47A6-BA16-17B0F3822CAD}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="formulary_detail"
@@ -102,7 +102,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('formulary_detail');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -110,7 +110,7 @@
           DTS:refId="Package\large tables\notes"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{25B79F55-7626-4FB9-B725-E173E708CA36}"
+          DTS:DTSID="{E75D67D9-122A-40E8-B38C-BC8C713DCE76}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="notes"
@@ -119,7 +119,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('notes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -127,7 +127,7 @@
           DTS:refId="Package\large tables\table rename implementation"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="table rename implementation"
-          DTS:DTSID="{945E398D-3B90-4D7A-8CEA-9C73F703836E}"
+          DTS:DTSID="{E3E4AC49-F311-487E-8B49-F164160D10E5}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="table rename implementation">
@@ -137,7 +137,7 @@
               DTS:refId="Package\large tables\table rename implementation\fact_health_plan"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E0108F52-C025-469C-94CD-0E25474BD44F}"
+              DTS:DTSID="{22BBFE8B-7400-41BE-A2DB-87B0EE7D6FF6}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="fact_health_plan"
@@ -146,7 +146,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view_large('fact_health_plan');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -154,7 +154,7 @@
               DTS:refId="Package\large tables\table rename implementation\fact_medical"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{55DAF1FF-6F29-4018-BDB6-3D7F8F71356C}"
+              DTS:DTSID="{5C02343A-00D9-445F-A23F-1132FC0EB828}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="fact_medical"
@@ -163,7 +163,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view_large('fact_medical');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -171,7 +171,7 @@
               DTS:refId="Package\large tables\table rename implementation\fact_medical_formulary"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{4B8906E1-8B04-40AB-8DCB-9BDA92131A91}"
+              DTS:DTSID="{2BE2D899-191A-4B69-8188-24CADB6C9F37}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="fact_medical_formulary"
@@ -180,7 +180,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view_large('fact_medical_formulary');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -188,7 +188,7 @@
               DTS:refId="Package\large tables\table rename implementation\fact_pharmacy"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{018121B6-83D3-491A-BFE7-197E07935820}"
+              DTS:DTSID="{01FD5258-7F59-4C5F-9601-D0895E051C63}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="fact_pharmacy"
@@ -197,7 +197,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view_large('fact_pharmacy');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -205,7 +205,7 @@
               DTS:refId="Package\large tables\table rename implementation\fact_pharmacy_formulary"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{8B47237D-9AA7-4880-936F-1D97DB115133}"
+              DTS:DTSID="{44DC0949-2BCC-4CE0-A199-45251227673F}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="fact_pharmacy_formulary"
@@ -214,7 +214,7 @@
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view_large('fact_pharmacy_formulary');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -226,7 +226,7 @@
       DTS:refId="Package\smaller tables"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{03115409-66F2-4F8F-9FF7-33E4AF97260D}"
+      DTS:DTSID="{92806512-BBDC-4CB4-B683-11A5CAA634B7}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="smaller tables">
@@ -236,7 +236,7 @@
           DTS:refId="Package\smaller tables\A20 only"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{BC512D1F-156D-422F-A7AE-9AA09E69EAEA}"
+          DTS:DTSID="{605EC956-1885-44C0-8EA2-E570DE81BF92}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="A20 only">
@@ -246,16 +246,16 @@
               DTS:refId="Package\smaller tables\A20 only\client_drug_classes"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{98BC8326-D870-4121-8D6A-E01B87B6832E}"
+              DTS:DTSID="{80EBB260-F075-4FE5-98BA-A17638448EDA}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="client_drug_classes"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="34">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('client_drug_classes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -263,16 +263,16 @@
               DTS:refId="Package\smaller tables\A20 only\client_drug_drug_classes"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{AD345E61-122A-482E-B6E5-2FE4727D897D}"
+              DTS:DTSID="{F0957BC6-7A5B-41D6-8AD0-BAE6335B1380}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="client_drug_drug_classes"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="35">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('client_drug_drug_classes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -280,16 +280,16 @@
               DTS:refId="Package\smaller tables\A20 only\dim_qualifier"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{3FB03F2F-7BAD-4B16-8E22-23994B86DD4F}"
+              DTS:DTSID="{4FB8393C-91C7-4F23-BCC9-3A0485FA1AE0}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="dim_qualifier"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="36">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('dim_qualifier');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -297,16 +297,16 @@
               DTS:refId="Package\smaller tables\A20 only\dim_tier"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{3B318310-3630-4AA2-8973-F5AFCC782C87}"
+              DTS:DTSID="{1AB7A4AA-CA77-4AC7-B5CA-9D2A16F5CA73}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="dim_tier"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="37">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('dim_tier');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -314,16 +314,16 @@
               DTS:refId="Package\smaller tables\A20 only\drug_classes"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{6D8A5EB8-4504-48E2-9C0C-896F0FC984D3}"
+              DTS:DTSID="{D011D56C-2533-47A1-89B9-B0811527D5CB}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="drug_classes"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="38">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('drug_classes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -331,16 +331,16 @@
               DTS:refId="Package\smaller tables\A20 only\health_plan_tier_copay"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{2B0DB53C-345A-4576-9818-2C486B811C65}"
+              DTS:DTSID="{D726B0FF-FA6B-4CB5-8964-0A35F9B4F82E}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="health_plan_tier_copay"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="39">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('health_plan_tier_copay');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -350,16 +350,16 @@
           DTS:refId="Package\smaller tables\clients"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0B7B246B-921A-4F70-96A5-8CEB1975D809}"
+          DTS:DTSID="{D3574571-9E31-46E5-83D5-4FCFE653A096}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="clients"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="40">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('clients');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -367,16 +367,16 @@
           DTS:refId="Package\smaller tables\criteria_restriction_drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{598D4F95-969D-439B-98E9-7539217DE966}"
+          DTS:DTSID="{BF48EDF2-90B3-405F-9C70-93F4D5E84B99}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="criteria_restriction_drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_drugs');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -384,16 +384,16 @@
           DTS:refId="Package\smaller tables\criteria_restriction_health_plan_types"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{611A7912-E69C-472F-8184-3DAAD5B71BA1}"
+          DTS:DTSID="{2C4056EC-A532-4D0E-987E-67AEF0858B9F}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="criteria_restriction_health_plan_types"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_health_plan_types');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -401,16 +401,16 @@
           DTS:refId="Package\smaller tables\criteria_restriction_selection"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{AD91062F-80A9-4108-BA5B-5F537E3222FB}"
+          DTS:DTSID="{7C33C4B3-5C83-421D-8130-6318BED9BFE7}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="criteria_restriction_selection"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_selection');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -418,16 +418,16 @@
           DTS:refId="Package\smaller tables\custom_accounts"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E1CFAEF8-7F90-493A-8BB3-14491ECA47DD}"
+          DTS:DTSID="{3C6B01A0-576F-45E4-9C4F-A90A10FB69AE}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="custom_accounts"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('custom_accounts');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -435,16 +435,16 @@
           DTS:refId="Package\smaller tables\custom_criteron_selection"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A18016B6-4026-4C76-B302-D4BE937A1DA2}"
+          DTS:DTSID="{B50DD3E5-BA4A-44C4-BC28-F146D2DDD645}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="custom_criteron_selection"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('custom_criteron_selection');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -452,16 +452,16 @@
           DTS:refId="Package\smaller tables\dim_criteria_restriction"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7364D997-03C6-4F92-B6E8-29F9CE6C87F5}"
+          DTS:DTSID="{CA3E08EF-77E4-4D1A-9B50-513E93DDCAAB}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="dim_criteria_restriction"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('dim_criteria_restriction');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -469,16 +469,16 @@
           DTS:refId="Package\smaller tables\dim_criteria_restrition_all"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C3881DB5-56C6-4C3C-9092-78048A56DFF7}"
+          DTS:DTSID="{D7D6C43B-3385-4002-8B4E-28BCC540CE32}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="dim_criteria_restrition_all"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('dim_criteria_restriction_all');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -486,16 +486,16 @@
           DTS:refId="Package\smaller tables\drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A9EAB283-E33D-46F7-B256-2B44D8D5E4EE}"
+          DTS:DTSID="{98D7FD2F-FF75-4D92-B15E-EC3CC8EB1111}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="11">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('drugs');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -503,16 +503,16 @@
           DTS:refId="Package\smaller tables\drugs_jcodes"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B9327368-E78B-4FBD-AFC6-1F11C39D711E}"
+          DTS:DTSID="{8CCDEDAD-CC36-476F-A509-FBC8F42A76F1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="drugs_jcodes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="12">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('drugs_jcodes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -520,16 +520,16 @@
           DTS:refId="Package\smaller tables\drug_classes_drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B78E43F8-9A5B-4635-99F8-67BDB3DF082D}"
+          DTS:DTSID="{1D151973-0E35-495E-9C0E-A5D2DC4FC241}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="drug_classes_drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="13">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('drug_classes_drugs');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -537,16 +537,16 @@
           DTS:refId="Package\smaller tables\drug_class_pa_forms"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{BDD93141-1200-4B26-A8E2-FA373EA89E4B}"
+          DTS:DTSID="{9E4403E8-F6DB-48AD-9364-4E68467236FF}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="drug_class_pa_forms"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="14">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('drug_class_pa_forms');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -554,16 +554,16 @@
           DTS:refId="Package\smaller tables\drug_pa_forms"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3DEB5F59-93F9-424B-9FC4-1111FFEE17A0}"
+          DTS:DTSID="{C8054B9E-2AC0-4B03-9A3A-8F194DB647B3}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="drug_pa_forms"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="15">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('drug_pa_forms');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -571,16 +571,16 @@
           DTS:refId="Package\smaller tables\health_plans"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{61215426-3D0E-4299-A0AB-20AFE8DEE4F0}"
+          DTS:DTSID="{63621201-EA6F-4A1B-B84C-DC8E9963B0C1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plans"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="16">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('health_plans');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -588,16 +588,16 @@
           DTS:refId="Package\smaller tables\health_plan_types"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3315484F-BADD-4C1A-A546-6D9FDB1CEE02}"
+          DTS:DTSID="{23B38589-D092-48F6-933C-B6DAA10C413A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="health_plan_types"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="17">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('health_plan_types');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -605,16 +605,16 @@
           DTS:refId="Package\smaller tables\indications"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{13C8714F-A14C-44D6-BD61-EAA1BB666153}"
+          DTS:DTSID="{C0100354-C4E3-4BDB-A1D1-D44AE0336DB6}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="indications"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="18">
+          DTS:ThreadHint="11">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('indications');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -622,16 +622,16 @@
           DTS:refId="Package\smaller tables\jcodes"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6CD68A37-B35E-4B96-BCD0-BE840133D8A9}"
+          DTS:DTSID="{49FCCE0D-3CDD-42C0-9EDB-72C0E805BA6F}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="jcodes"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="19">
+          DTS:ThreadHint="12">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('jcodes');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -639,16 +639,16 @@
           DTS:refId="Package\smaller tables\providers"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4C95DFA0-25DF-4BAA-ADB9-EACCB8C42444}"
+          DTS:DTSID="{D5F55926-B455-4B67-A14A-D01ADBD654AA}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="providers"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="20">
+          DTS:ThreadHint="13">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('providers');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -656,16 +656,16 @@
           DTS:refId="Package\smaller tables\reason code"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5F9E19BE-3C0F-4530-B807-0559868A5543}"
+          DTS:DTSID="{3A253F0F-5410-4519-AA8C-F21EB3BEA944}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="reason code"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="21">
+          DTS:ThreadHint="33">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('reason_code');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -673,16 +673,16 @@
           DTS:refId="Package\smaller tables\report_drug"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3D8FC1CC-A8A8-438B-A456-5E95C79CC925}"
+          DTS:DTSID="{0882F6C0-01F0-4430-945D-71F7337D98E4}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="report_drug"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="22">
+          DTS:ThreadHint="14">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('report_drug');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -690,7 +690,7 @@
           DTS:refId="Package\smaller tables\Sequence Container 1"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{E47C026D-498C-42FB-960D-811A5F21C9E5}"
+          DTS:DTSID="{19E33887-59F5-4F70-AA4E-B421990E0873}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Sequence Container 1">
@@ -700,16 +700,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_medical_lives_county"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{70509065-8332-49AA-B19B-71FF887FE45D}"
+              DTS:DTSID="{AA56A2F5-F302-4E7E-8D0D-5E7E07289299}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_medical_lives_county"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="23">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_medical_lives_county');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -717,16 +717,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_medical_lives_msa"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{09593729-8451-43EA-B359-3AA60C887AC9}"
+              DTS:DTSID="{385ED60B-1BEF-4AD9-BD7F-D45DE4B8DE25}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_medical_lives_msa"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="23">
+              DTS:ThreadHint="15">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_medical_lives_msa');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -734,16 +734,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_medical_lives_national"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{5067253F-AD2B-4012-8CC6-4C325371A2A1}"
+              DTS:DTSID="{E4B6A70F-B019-4501-ADDB-1F4DB2CC7F74}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_medical_lives_national"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="24">
+              DTS:ThreadHint="16">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_medical_lives_national');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -751,16 +751,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_medical_lives_state"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{785A9479-2CDB-4226-BD33-A45A36B2B052}"
+              DTS:DTSID="{D663D65E-A1EB-454D-8601-60E1A152DE9C}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_medical_lives_state"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="24">
+              DTS:ThreadHint="16">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_medical_lives_state');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -768,16 +768,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_county"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{09439DDB-0C09-4CDD-A8A6-F1A0E6781AF6}"
+              DTS:DTSID="{0ED3348A-36CD-48B4-8B73-3F857F8592D6}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_pharmacy_lives_county"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="25">
+              DTS:ThreadHint="17">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_pharmacy_lives_county');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -785,16 +785,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_msa"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{4796EB39-F7A8-4E8A-A948-232B4FF66871}"
+              DTS:DTSID="{D3E7C026-F956-4D2A-B53C-E853D0EBC961}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_pharmacy_lives_msa"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="25">
+              DTS:ThreadHint="17">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_pharmacy_lives_msa');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -802,16 +802,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_national"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{61BFD103-CF7B-4898-A510-1D9B02D40B1C}"
+              DTS:DTSID="{5827155F-A164-4DA6-940D-5261A4DC7078}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_pharmacy_lives_national"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="26">
+              DTS:ThreadHint="18">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_pharmacy_lives_national');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -819,16 +819,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_state"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{B7DC2095-B6C2-4C39-ADB2-66E79ADD7E41}"
+              DTS:DTSID="{14233D50-4B30-4E98-8238-859112301BD6}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="custom_pharmacy_lives_state"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="26">
+              DTS:ThreadHint="18">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('custom_pharmacy_lives_state');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -836,16 +836,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\medical_lives_county"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{4B121C5A-1AC6-40C1-97FE-9E89B7CC87D9}"
+              DTS:DTSID="{B1DD4934-2A67-466A-8968-569F426294F8}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="medical_lives_county"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="27">
+              DTS:ThreadHint="19">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('medical_lives_county');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -853,16 +853,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\medical_lives_msa"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{8F0F4C94-94E9-4AFE-B359-9C29D61EC3F7}"
+              DTS:DTSID="{8EF03BCE-4CFE-452E-A300-6DACBB274D06}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="medical_lives_msa"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="27">
+              DTS:ThreadHint="19">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('medical_lives_msa');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -870,16 +870,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\medical_lives_national"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{50B6C04E-E4E5-45FC-8E28-FD65CC2D2060}"
+              DTS:DTSID="{3F37B595-ACA8-41C7-A170-8D17D3DF4094}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="medical_lives_national"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="28">
+              DTS:ThreadHint="20">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('medical_lives_national');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -887,16 +887,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\medical_lives_state"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{02969AF4-7DCB-451D-8ED8-4E57A7CD80BC}"
+              DTS:DTSID="{D483317C-3C99-4564-9727-1CFF8E5BC8BA}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="medical_lives_state"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="28">
+              DTS:ThreadHint="20">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('medical_lives_state');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -904,16 +904,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\pharmacy_lives_county"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{217CD57E-66A3-4464-B718-8CEAB99E72F2}"
+              DTS:DTSID="{20EBE455-9BBB-4A34-9F1C-2ACC47D7B324}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="pharmacy_lives_county"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="29">
+              DTS:ThreadHint="21">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('pharmacy_lives_county');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -921,16 +921,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\pharmacy_lives_msa"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{C2153511-93C9-46DB-8606-2B9E20F17A6B}"
+              DTS:DTSID="{3485ED65-5956-4EB7-B03C-FF933FDDDC95}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="pharmacy_lives_msa"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="29">
+              DTS:ThreadHint="21">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('pharmacy_lives_msa');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -938,16 +938,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\pharmacy_lives_national"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{CBE7D2BE-5F76-4FB8-8C08-7D0ED2F859D0}"
+              DTS:DTSID="{ED266221-B6AF-4339-86E1-B9D4CB211F7D}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="pharmacy_lives_national"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="30">
+              DTS:ThreadHint="22">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('pharmacy_lives_national');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -955,16 +955,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 1\pharmacy_lives_state"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{D84A89C6-175A-4245-9AB6-2CD86DD6CB8D}"
+              DTS:DTSID="{7824781E-0066-4EE7-A907-15D43AE942F7}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="pharmacy_lives_state"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="30">
+              DTS:ThreadHint="22">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('pharmacy_lives_state');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -973,7 +973,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{17A3A951-827C-4F92-A538-95E397CAE19A}"
+              DTS:DTSID="{D901DCDE-A2CA-40D1-AFD3-87515F89C752}"
               DTS:From="Package\smaller tables\Sequence Container 1\pharmacy_lives_county"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -981,7 +981,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{7C20073B-237D-4DCA-AD20-D507C918F474}"
+              DTS:DTSID="{C8697840-498C-4FE6-8D88-E7CDD151CDF6}"
               DTS:From="Package\smaller tables\Sequence Container 1\pharmacy_lives_state"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -989,7 +989,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
-              DTS:DTSID="{8F046056-C4F6-4D8C-847C-7AC917C9F4D2}"
+              DTS:DTSID="{3ECAC7E0-4022-4CDC-871D-9DDEAF8EC1AE}"
               DTS:From="Package\smaller tables\Sequence Container 1\medical_lives_county"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
@@ -997,7 +997,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 3]"
               DTS:CreationName=""
-              DTS:DTSID="{951D8C25-7BA9-49CB-A50F-3CB26EF358AE}"
+              DTS:DTSID="{D82AB5D2-04B2-40F1-9C78-318B1E87E25D}"
               DTS:From="Package\smaller tables\Sequence Container 1\medical_lives_state"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
@@ -1005,7 +1005,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 4]"
               DTS:CreationName=""
-              DTS:DTSID="{C932D3DC-405A-4A7B-B2EF-BF9A69A56BC4}"
+              DTS:DTSID="{C1C92344-50A3-4E83-84BC-64E7D9741D85}"
               DTS:From="Package\smaller tables\Sequence Container 1\custom_medical_lives_county"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 4"
@@ -1013,7 +1013,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{5DD4FEDF-0A85-4A72-A0A4-624ECAB6DD34}"
+              DTS:DTSID="{DAA4C14D-73B4-4D76-BC14-C5D3D4403228}"
               DTS:From="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_county"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -1021,7 +1021,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 6]"
               DTS:CreationName=""
-              DTS:DTSID="{078849AC-24FC-463B-B6C3-05A1C8B37B87}"
+              DTS:DTSID="{E590FA97-4DF2-499B-B537-8A31E20BD926}"
               DTS:From="Package\smaller tables\Sequence Container 1\custom_pharmacy_lives_state"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 6"
@@ -1029,7 +1029,7 @@
             <DTS:PrecedenceConstraint
               DTS:refId="Package\smaller tables\Sequence Container 1.PrecedenceConstraints[Constraint 7]"
               DTS:CreationName=""
-              DTS:DTSID="{CEBE31E1-BC59-4C26-B2F4-787FDADE319F}"
+              DTS:DTSID="{CE352A92-3E76-44EC-BB15-F6C2EF1CCB21}"
               DTS:From="Package\smaller tables\Sequence Container 1\custom_medical_lives_state"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 7"
@@ -1040,7 +1040,7 @@
           DTS:refId="Package\smaller tables\Sequence Container 2"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{D7B48461-821C-4273-A8CA-AFBBE5D5A5AE}"
+          DTS:DTSID="{4C6F899D-7AD2-4454-B7E4-72613AE7F058}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Sequence Container 2">
@@ -1050,16 +1050,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 2\counties"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{44242A86-595C-4501-ADC0-E0BF2070CE75}"
+              DTS:DTSID="{C6F09AFC-D57B-4A7C-8371-DD43435B881B}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="counties"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="31">
+              DTS:ThreadHint="23">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('counties');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1067,16 +1067,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 2\criteria_restriction_reports"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{9D8D7392-C0B4-4E0F-8D96-7FEC756D2059}"
+              DTS:DTSID="{A7187E9D-E92E-46D9-916A-0DD88BA5AC40}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="criteria_restriction_reports"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="32">
+              DTS:ThreadHint="24">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_reports');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1084,16 +1084,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 2\metro_stat_areas"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{7F4BDC27-33F8-4466-A3C9-6E2DF34CD356}"
+              DTS:DTSID="{0DDAD83D-12B7-4A55-9512-FAD2E1B0E6D0}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="metro_stat_areas"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="33">
+              DTS:ThreadHint="25">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('metro_stat_areas');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1101,16 +1101,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 2\states"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{CC30D49F-DCD6-46AE-8E27-A07BEFDE4869}"
+              DTS:DTSID="{96CE107D-8CEA-459A-898F-CC164DDA4576}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="states"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="34">
+              DTS:ThreadHint="26">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('states');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1120,7 +1120,7 @@
           DTS:refId="Package\smaller tables\Sequence Container 3"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{CA760B9C-89F4-4FC0-811D-9592FCDDBBE9}"
+          DTS:DTSID="{9C19465C-EE3E-424F-A78D-B28450C6B2C8}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Sequence Container 3">
@@ -1130,16 +1130,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 3\criteria_restriction_counties"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{A71EEBC1-605C-40B4-82D0-B4C872CB004F}"
+              DTS:DTSID="{022B14F4-4B2A-4E50-8A63-6A9636439A27}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="criteria_restriction_counties"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="31">
+              DTS:ThreadHint="23">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_counties');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1147,16 +1147,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 3\criteria_restriction_msas"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{CE1D2EE3-8FD5-4299-B486-65C3BEE5BC03}"
+              DTS:DTSID="{9C8B00FE-6906-4394-9E67-51D914EF92E3}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="criteria_restriction_msas"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="32">
+              DTS:ThreadHint="24">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_msas');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1164,16 +1164,16 @@
               DTS:refId="Package\smaller tables\Sequence Container 3\criteria_restriction_states"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{E810AEBA-BBF4-4CC0-BBE1-14BFB55C0BAB}"
+              DTS:DTSID="{52C89F8A-4105-4A51-BF70-106752A9264C}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="criteria_restriction_states"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="33">
+              DTS:ThreadHint="25">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+                  SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
                   SQLTask:SqlStatementSource="select refresh_materialized_view('criteria_restriction_states');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1183,16 +1183,16 @@
           DTS:refId="Package\smaller tables\source_comments"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0E85A67D-E5BA-49F1-971D-FC8B77633823}"
+          DTS:DTSID="{7B12088A-D21C-42F5-A179-4EB233752E99}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="source_comments"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="35">
+          DTS:ThreadHint="27">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('source_comments');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1200,16 +1200,16 @@
           DTS:refId="Package\smaller tables\specialty_pharmacies"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{41E62A1B-475A-41DA-A16D-388E9F28137E}"
+          DTS:DTSID="{77266C47-1BDC-4184-8150-76D0D1D6258A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacies"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="36">
+          DTS:ThreadHint="28">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('specialty_pharmacies');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1217,16 +1217,16 @@
           DTS:refId="Package\smaller tables\specialty_pharmacy_drugs"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0D24E239-4780-4347-8D42-92998DE2960A}"
+          DTS:DTSID="{AE1E085E-52CB-4C32-8B06-0FE0E329350D}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacy_drugs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="37">
+          DTS:ThreadHint="29">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('specialty_pharmacy_drugs');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1234,16 +1234,16 @@
           DTS:refId="Package\smaller tables\specialty_pharmacy_forms"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F981BB10-9C0E-484B-A345-3756E296E194}"
+          DTS:DTSID="{9AB94D2F-ED20-48BB-9E48-06210DB5007C}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacy_forms"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="38">
+          DTS:ThreadHint="30">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('specialty_pharmacy_forms');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1251,16 +1251,16 @@
           DTS:refId="Package\smaller tables\specialty_pharmacy_health_plans"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6E4A48C9-454F-4ECD-B8D9-E502F0148BF6}"
+          DTS:DTSID="{DA38D97E-F2C6-4603-A06C-AB9E06097421}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="specialty_pharmacy_health_plans"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="39">
+          DTS:ThreadHint="31">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('specialty_pharmacy_health_plans');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1268,16 +1268,16 @@
           DTS:refId="Package\smaller tables\tiers"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E92AB325-4B8D-4AE8-87FE-ED41D7D3E3F0}"
+          DTS:DTSID="{9B0520CC-FA79-4CEC-9213-7139997C66DB}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="tiers"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012;  2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="40">
+          DTS:ThreadHint="32">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECAD3868-4B6B-40CD-AB86-1D694F9152D2}"
+              SQLTask:Connection="{926DDFB3-6705-42F7-B407-0450FC39F3F9}"
               SQLTask:SqlStatementSource="select refresh_materialized_view('tiers');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1286,7 +1286,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\smaller tables.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{15024279-6A80-42BD-B50C-3F2964A238E9}"
+          DTS:DTSID="{AEE69678-4AED-4F42-B51C-468538F9508A}"
           DTS:From="Package\smaller tables\criteria_restriction_drugs"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1294,7 +1294,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\smaller tables.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{20EBADE6-70B6-46FB-9407-D7C2E50D7C2F}"
+          DTS:DTSID="{CEE61E04-4B67-4748-BBE3-EE125DCF5E4A}"
           DTS:From="Package\smaller tables\criteria_restriction_health_plan_types"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1302,7 +1302,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\smaller tables.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{05D6C837-9434-4954-B080-8A4075C292E5}"
+          DTS:DTSID="{5A900208-A4A4-4693-863D-FCE4C4D30FC5}"
           DTS:From="Package\smaller tables\dim_criteria_restrition_all"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -1310,7 +1310,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\smaller tables.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{9C447BC3-8B3D-4861-865A-2F1F2B65F52E}"
+          DTS:DTSID="{B092CCCD-4E24-4932-A576-28A6CADE1541}"
           DTS:From="Package\smaller tables\Sequence Container 2"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -1322,7 +1322,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{57E389E4-FF6D-4BE4-B942-59FBC46B8A13}"
+      DTS:DTSID="{7F0119AA-0D11-4F3F-82B5-F8D28C33ADC2}"
       DTS:From="Package\large tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1332,7 +1332,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{3BC93F05-C5BD-4587-8178-65A54E72C84D}"
+      DTS:DTSID="{F8A46A21-C1B0-4347-B875-F9839F8406C1}"
       DTS:EventID="327847300"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -1340,7 +1340,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{D590C6E6-6C5F-4197-A77E-0A6CD4657EE6}"
+          DTS:DTSID="{100CF9EF-10FD-4D0F-981E-B0905BAFC9BB}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">

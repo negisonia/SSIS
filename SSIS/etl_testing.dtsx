@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="etl_testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{B53130A0-32FF-4BE5-B37F-407A3EBF2899}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{E8DCB6E0-D166-4510-837E-236887EB65BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD07gbcFm0XX764dczlSAi9I1k/WVfKPMYDAesHcm+JSAAAAAAOgAAAAAIAACAAAADLBxT7t8e2GiXXOO/m6dI9iL5ONzIXE7mvYGSl5E5sXDAAAAC3ivqF74P7fN7GO32mo7Lkk4UuyEcjouZTQzNayOTFS5zS6UK+ow+yQX+R+a7Ah/FAAAAAJMYWyCo3aoIU1PRX7uD7aHij3PXMg5lqD9R82qbXX6W+IGWCBzOQORwBVEBylToJsg8o4Vve2TgNQ9d3+7Ux0A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAMThhtjT7l+fthflSTZEft0JIT/FwnecHJ3Vt6BC3+TwAAAAAOgAAAAAIAACAAAABNCSO5so7DCbBqNCjROWUWXtZ+s1J9ZV3wYJbYETcLmzAAAABlcJV07ZiCcLW4+BRRfOfYy7BEbwd0Uk+MV0BK3/U7avcGnY9TyrPGwo0/EkAaGHJAAAAAVTootoeSgy0zmkIbdONnNoJlgfQHhuFTXbpml3wfU6kYQ6FGx7EFbQt8YIVMZfw9B+bP6WEMhJJhjRsqLknr5A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBu7o0AVCk3Zazy5jepWbiBpJx19hXGsR3/sUqfK1P8gAAAAAOgAAAAAIAACAAAAAyl2wmnC0X9LxkW7IWfBo/ddx88BI2MNk+uVCBED/KGDAAAADwAauQaztGQO8RmWdtbxFN5joPkB0RfzWoVvzp0YJKDm/0y2GvCeGJCiE3noM8nRZAAAAA09unNwzJfm7xoHy5B0s6J4yx7jxrmltitJCKk5co/u6MUH9CdNnNKer+kajncZxp0AsLbe9w/mZavVdVeZOVwA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA+fBJZUKYKtBw/urFqkt9r6crTSgoiAW5v1HBgPWM6lAAAAAAOgAAAAAIAACAAAAAsb12b0Fe1bT2Ngehyt4EWb2fTJDj5a1Hkkx0quX07gzAAAACnl0wp0sUA3D+U8oN0i4KFI7OsQvaUyFOYFvOPZmCaMuahy3TgJhGmUAm+xh7dmLFAAAAAHHka8Y2TXKs8P7fV9t2i/seR4t3i7+M6eftpFZGza4NnklYb0RctIQ1BtyhR0muNtx1BI9cBdHYCrJI5BKSbiw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAkHi/Pw8XPK/hfu3E+u2rdBA6ZtTJjlk1ghmNcmK49bwAAAAAOgAAAAAIAACAAAADgYg7MLFHfFV45OCxaVhTXY5xAjxOoHAVGMy0DmxS+QjAAAACiLV+6fIwKpj+AZANUjYHByA1T9BCCHhKHRymay8wiJaq91o547uyL5qnb4aa4PuJAAAAAMLxwDvfweLVgZFHCCrJwrH6cCXeF3FkX/KtIuNYMDTFUhUcA2RkrfgPVf/76teCSFYZtrAblZx5jcADVfUoFTA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAG4La0S7FKdZTeBbwxIRETn/V+vMpuYNTgE5Ntd0O06wAAAAAOgAAAAAIAACAAAACKU3nnprW3Xv+j/btRPbuMkQARwVZDZsIuxvXIGnSOITAAAABlTA8qf5fwsFpTr6szNSjAL2YOFzljKWuVQ1/kqgIw1d0Zr1AOtUdpK1sF3i4xIqNAAAAA8P4WmEPQw4doGnR2JbCsmvN86Nca5FAr4/C9IY1MTlnsc8vIlRGMlz5HC6aPkzy3LHJ1aGBU7054FCqSjEgOzg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -80,7 +80,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbg/etGTQWQH9NQOk6rrPvXQUajAsUYWRJGj91nta8NwAAAAAOgAAAAAIAACAAAACovVQnhN7ylR9Q+MDARTw83/X0VN+XBQUtA2wlFbaroDAAAADZrdv3Jq7aRyuwevY9SO7p10xhBDK9pHIyG+Ppf9xGGWH1NNeyzLoDcVtsSCClmCFAAAAA0OUMxgxBtpX3AlXYIeAz6VihSzODgm+dpRgBtgMbZi+Dj4uC2UgvsUmMYUiB0mpeDAVIyfiiBI7pM1Qi0dgZ0g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAnFqGfhbx5tfB+vSSlHNliEW7czwjcuzc6X21tnxj2XwAAAAAOgAAAAAIAACAAAABPJVTo2ixJA0S5rvW+SzoYQRcE2qqU1T7SI4RGD3hkezAAAAA1WQG1icHcBz58sYohMTzE202ePpHqq+9RJANznCoIl6a7Lrul1fE3s4f59+qRrNdAAAAAy8X1GpGkzSzMNuRQs4azHQ964q00LUWqjcgXI7tMfwaRVbqmDCnjKkKQylXDc7K+b2dOKGSARAKP/rcw5xNUNQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -97,7 +97,24 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLIYOoOgiBVYQ+egbo+IzFeuwg8YH1O2ItEcf2fYN9WAAAAAAOgAAAAAIAACAAAAC8hisE7WSEbDVYr7RG1VziH0KsnHrQTr8+LdzIoYjHHDAAAADMYGtwAbqa8afhor+pegynEf2YgHtqAQQCvmt4CGAqxiAMr1FYFKskZj8+9YiFegtAAAAAgbgVOWh0DE7J4xAysTAJ0DvC0BvDOhUcg8P7bxTEC87M2R7xidRFVDQ2bRy4WFe+8cfnN8WwGEmzackOKvJrbw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACnQWC8JLrLiFtSK5O+BCKVYWUMIzHnYuH4vUC/yQiZDwAAAAAOgAAAAAIAACAAAABgIlT3EXJpMiu+mHGyp4tzRKScjXpEhMNfhYDchCqDWDAAAAAsoQ3pZXUyo7Lr+ZXklWoBxw76rZffF8V5ZHa8MREs31Y1fhA23FUFnsKGM/Zn7k1AAAAAYNnLiClvmes/crg8XqmlUl5cK6XLR5G6fVaFNiQDOsHddVT9OMqvjCh9CcC+WXh0K2ZdIhCmVMymqKM+fCGyDQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[report_data]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{1832DCE0-E826-46DA-BE94-DF765D27B27B}"
+      DTS:ObjectName="report_data">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_report_data;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_report_data;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACwL3ZeUKPe9L3Z6FlT6MsV5Ubri/+mP/MX9Tljw24SnwAAAAAOgAAAAAIAACAAAAAr0JI1FR6/KDCpTexKb9cdKgMfAzUvprYruYL4hj93ODAAAAAWBROJlDcGzO8wxMHNZFipYd838B7m2T2jlQ8p0QPsYt4wiNjqj1vDqcy0ZrynxelAAAAA9j0LXDtZwMlR/FyE9fcgxhtnhm1ahX3QMwSzx2AwEpkngLeI1xAJTELv8zbgflU8gNlH4g4XLVw88LO2OkTuBA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -170,7 +187,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Admin"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -204,7 +221,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear Data Data_Entry"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -221,7 +238,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Clear FF New"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -261,6 +278,23 @@
             <SQLTask:SqlTaskData
               SQLTask:Connection="{323EBFFD-F211-42A3-BF9B-1D8E252B8633}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE log_etl_process_b" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clean Up Data\Clear Report Data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Clear Analytics Front End"
+          DTS:DTSID="{d15d0e04-cfc0-4510-bd1c-bf2b6e38b0a0}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Report Data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1832DCE0-E826-46DA-BE94-DF765D27B27B}"
+              SQLTask:SqlStatementSource="select clear_test_data();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -844,6 +878,41 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="165,42"
+          Id="Package\Clean Up Data\Clear Admin"
+          TopLeft="389,238" />
+        <NodeLayout
+          Size="200,44"
+          Id="Package\Clean Up Data\Clear Analytics Front End"
+          TopLeft="61.666666666667,240.333333333333" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Clean Up Data\Clear Data Data_Entry"
+          TopLeft="62.1111111111113,134.777777777777" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Clean Up Data\Clear FF New"
+          TopLeft="365.5,138.222222222222" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Clean Up Data\Clear log a"
+          TopLeft="98.1111111111111,9.77777777777794" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Clean Up Data\Clear log b"
+          TopLeft="394,12.1666666666667" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Clean Up Data\Clear Report Data"
+          TopLeft="221,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="653,339"
+          Size="653,382"
+          Id="Package\Clean Up Data"
+          TopLeft="547.666666666667,746" />
+        <NodeLayout
           Size="192,42"
           Id="Package\ETL Process\Execute ETL Proccess A"
           TopLeft="104.222222222222,89.3888888888888" />
@@ -917,6 +986,54 @@
           Size="426,196"
           Id="Package\ETL Process 1"
           TopLeft="662,2102.33333333334" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Insert Data\Insert Data entry"
+          TopLeft="349,25" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Insert Data\Insert FF NEW Data"
+          TopLeft="43.6666666666666,27.6666666666667" />
+        <EdgeLayout
+          Id="Package\Insert Data.PrecedenceConstraints[Constraint]"
+          TopLeft="218.666666666667,47.3333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.333333333333,0"
+              Start="0,0"
+              End="122.833333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="122.833333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="593,119"
+          Size="593,162"
+          Id="Package\Insert Data"
+          TopLeft="573.333333333333,1153.33333333333" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Insert Test Data\Insert Data Admin"
+          TopLeft="45,32" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="457,116"
+          Size="457,159"
+          Id="Package\Insert Test Data"
+          TopLeft="646.666666666667,1805" />
         <NodeLayout
           Size="192,42"
           Id="Package\Log Data Creation done"
@@ -1035,6 +1152,72 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="872,1128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.3333333333301"
+              Start="0,0"
+              End="0,17.8333333333301">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8333333333301" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="870.583333333333,1315.33333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.2857142857135"
+              Start="0,0"
+              End="0,53.7857142857135">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.7857142857135" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="877.25,1964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.666666666667"
+              Start="0,0"
+              End="0,50.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="878.31746031746,1658">
           <EdgeLayout.Curve>
@@ -1048,6 +1231,50 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,47.4999999999961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="877.75,693.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.666666666667"
+              Start="0,0"
+              End="0,45.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="878.123015873016,1755">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.000000000002"
+              Start="0,0"
+              End="0,42.500000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.500000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1158,195 +1385,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.3333333333308" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Clean Up Data\Clear Admin"
-          TopLeft="389,238" />
-        <NodeLayout
-          Size="200,44"
-          Id="Package\Clean Up Data\Clear Analytics Front End"
-          TopLeft="61.666666666667,240.333333333333" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Clean Up Data\Clear Data Data_Entry"
-          TopLeft="62.1111111111113,134.777777777777" />
-        <NodeLayout
-          Size="208,42"
-          Id="Package\Clean Up Data\Clear FF New"
-          TopLeft="365.5,138.222222222222" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Clean Up Data\Clear log a"
-          TopLeft="98.1111111111111,9.77777777777794" />
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Clean Up Data\Clear log b"
-          TopLeft="394,12.1666666666667" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="653,319"
-          Size="653,362"
-          Id="Package\Clean Up Data"
-          TopLeft="547.666666666667,746" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="877.75,693.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.6666666666666"
-              Start="0,0"
-              End="0,45.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Insert Data\Insert Data entry"
-          TopLeft="349,25" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Insert Data\Insert FF NEW Data"
-          TopLeft="43.6666666666666,27.6666666666667" />
-        <EdgeLayout
-          Id="Package\Insert Data.PrecedenceConstraints[Constraint]"
-          TopLeft="218.666666666667,47.3333333333334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="130.333333333333,0"
-              Start="0,0"
-              End="122.833333333333,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="122.833333333333,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="593,119"
-          Size="593,162"
-          Id="Package\Insert Data"
-          TopLeft="573.333333333333,1153.33333333333" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="872,1108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.3333333333335"
-              Start="0,0"
-              End="0,37.8333333333335">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.8333333333335" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="870.583333333333,1315.33333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.2857142857135"
-              Start="0,0"
-              End="0,53.7857142857135">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.7857142857135" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Insert Test Data\Insert Data Admin"
-          TopLeft="45,32" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="457,116"
-          Size="457,159"
-          Id="Package\Insert Test Data"
-          TopLeft="646.666666666667,1805" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="878.123015873016,1755">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.000000000002"
-              Start="0,0"
-              End="0,42.500000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.500000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="877.25,1964">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.666666666667"
-              Start="0,0"
-              End="0,50.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
