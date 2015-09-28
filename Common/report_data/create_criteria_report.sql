@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION create_criteria_report( new_report_id INTEGER, user_id INTEGER, view_type_id INTEGER, drug_class_id INTEGER, market_type_id INTEGER, selected_all_markets BOOLEAN, selected_all_drugs BOOLEAN, selected_all_plan_types BOOLEAN, drug_ids INTEGER[], health_plan_type_ids INTEGER[], market_type TEXT, market_ids INTEGER [], custom_account_id INTEGER, geography TEXT,restriction_ids INTEGER[],states_ids INTEGER [], msa_ids INTEGER [], countie_ids INTEGER [])--FRONT END
+CREATE OR REPLACE FUNCTION create_criteria_report( new_report_id INTEGER, user_id INTEGER, view_type_id INTEGER, drug_class_id INTEGER, market_type_id INTEGER, selected_all_markets BOOLEAN, selected_all_drugs BOOLEAN, selected_all_plan_types BOOLEAN, drug_ids INTEGER[], health_plan_type_ids INTEGER[], market_type TEXT, market_ids INTEGER [], custom_account_id INTEGER, restriction_ids INTEGER[],states_ids INTEGER [], msa_ids INTEGER [], countie_ids INTEGER [])--FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 criteria_report_id integer DEFAULT NULL;
@@ -10,12 +10,7 @@ BEGIN
 ------------VALIDATE PARAMETERS
 --VALIDATE MARKET TYPE PARAMETER CONTAINS A VALID VALUE
 IF ((market_type = 'State') or (market_type = 'County') or (market_type = 'MetroStatArea') or (market_type = 'National') )  = FALSE THEN  
-  SELECT throw_error('INVALID GEOGRAPHY VALUE');
-END IF;
-
---VALIDATE GEOGRAPHY PARAMETER CONTAINS A VALID VALUE
-IF ((geography = 'national') or (geography = 'state') or (geography = 'msa') or (geography = 'county') )  = FALSE THEN
-	SELECT throw_error('INVALID GEOGRAPHY VALUE');
+  SELECT throw_error('INVALID MARKET TYPE  VALUE');
 END IF;
 
 --VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
@@ -59,11 +54,10 @@ IF new_report_id IS NOT NULL THEN
 		END LOOP;
 	END IF;
 
-	--VALIDATE GEOGRAPHY DATA IS VALID
-    CASE geography
-         WHEN 'state' THEN
-    	 IF (states_ids = NULL) OR (array_length(states_ids, 0) <=0) THEN
-    		SELECT throw_error('STATE IDS ARE REQUIRED FOR STATE GEOGRAPHY');
+	--VALIDATE MARKET DATA IS VALID
+    CASE WHEN market_type = 'State' AND states_ids IS NOT NULL  THEN
+    	 IF array_length(states_ids, 0) <=0 THEN
+    		SELECT throw_error('STATE IDS ARE REQUIRED FOR STATE MARKET TYPE');
     	 ELSE
     		--VALIDATE STATES IDS ARE VALID
     		FOREACH intvalue IN ARRAY states_ids
@@ -73,9 +67,9 @@ IF new_report_id IS NOT NULL THEN
     			END IF;
     		END LOOP;
     	 END IF;
-         WHEN 'msa' THEN
-    	IF (msa_ids = NULL) OR (array_length(msa_ids, 0) <=0) THEN
-    		SELECT throw_error('MSA IDS ARE REQUIRED FOR MSA GEOGRAPHY');
+         WHEN market_type = 'MetroStatArea' AND msa_ids IS NOT NULL THEN
+    	IF array_length(msa_ids, 0) <=0 THEN
+    		SELECT throw_error('MSA IDS ARE REQUIRED FOR MSA MARKET TYPE');
     	 ELSE
     		--VALIDATE MSA IDS ARE VALID
     		FOREACH intvalue IN ARRAY msa_ids
@@ -85,9 +79,9 @@ IF new_report_id IS NOT NULL THEN
     			END IF;
     		END LOOP;
     	 END IF;
-         WHEN 'county' THEN
-    	IF (countie_ids = NULL) OR (array_length(countie_ids, 0) <=0) THEN
-    		SELECT throw_error('COUNTY IDS ARE REQUIRED FOR COUNTY GEOGRAPHY');
+         WHEN market_type = 'County' AND countie_ids IS NOT NULL THEN
+    	IF array_length(countie_ids, 0) <=0 THEN
+    		SELECT throw_error('COUNTY IDS ARE REQUIRED FOR COUNTY MARKET TYPE');
     	 ELSE
     		--VALIDATE COUNTY IDS ARE VALID
     		FOREACH intvalue IN ARRAY countie_ids
@@ -102,9 +96,9 @@ IF new_report_id IS NOT NULL THEN
 END IF;
 
 --INSERT RECORD INTO CRITERIA REPORTS
-INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id, geography)
-                      VALUES(CASE WHEN new_report_id IS NOT NULL THEN new_report_id ELSE 0 END, user_id, COALESCE(view_type_id,0), drug_class_id, current_timestamp, current_timestamp, market_type_id, COALESCE(selected_all_markets,false), COALESCE(selected_all_drugs,false), COALESCE(selected_all_plan_types,false), custom_account_id, geography) RETURNING id INTO criteria_report_id;
-
+INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id)
+                      VALUES(CASE WHEN new_report_id IS NOT NULL THEN new_report_id ELSE 0 END, user_id, COALESCE(view_type_id,0), drug_class_id, current_timestamp, current_timestamp, market_type_id, COALESCE(selected_all_markets,false), COALESCE(selected_all_drugs,false), COALESCE(selected_all_plan_types,false), custom_account_id) RETURNING id INTO criteria_report_id;
+(403, 1, 1, 1, null, null, null, f, f, f, null, 2015-09-28 18:42:13.577686, 2015-09-28 18:42:13.577686, null).
 --VALIDATE REPORT ID IS NOT NULL
 IF criteria_report_id IS NULL THEN
   SELECT throw_error('ERROR CREATING CRITERIA REPORT');
@@ -137,21 +131,20 @@ ELSE
         END LOOP;
 	END IF;
 
-    --INSERT GEOGRAPHY DATA
-    CASE geography
-         WHEN 'state' THEN
+    --INSERT MARKET DATA
+    CASE WHEN market_type = 'State' AND states_ids IS NOT NULL THEN
             --INSERT A RECORD IN TO CRITERIA_REPORTS_STATES FOR EACH STATE ID PASSED AS PARAMETER
         FOREACH intvalue IN ARRAY states_ids
         LOOP
             INSERT INTO criteria_reports_states(state_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
         END LOOP;
-         WHEN 'msa' THEN
-        --INSERT A RECORD IN TO CRITERIA_REPORTS_METRO_STAT_AREAS FOR EACH MSA ID PASSED AS PARAMETER
-        FOREACH intvalue IN ARRAY msa_ids
-        LOOP
-            INSERT INTO criteria_reports_metro_stat_areas(metro_stat_area_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
-        END LOOP;
-         WHEN 'county' THEN
+         WHEN market_type = 'MetroStatArea' AND msa_ids IS NOT NULL THEN
+            --INSERT A RECORD IN TO CRITERIA_REPORTS_METRO_STAT_AREAS FOR EACH MSA ID PASSED AS PARAMETER
+            FOREACH intvalue IN ARRAY msa_ids
+            LOOP
+                INSERT INTO criteria_reports_metro_stat_areas(metro_stat_area_id,criteria_report_id) VALUES(intvalue,criteria_report_id);
+            END LOOP;
+         WHEN market_type = 'County' AND countie_ids IS NOT NULL THEN
         --INSERT A RECORD IN TO CRITERIA_RESTRICTION_COUNTIES FOR EACH COUNTY ID PASSED AS PARAMETER
         FOREACH intvalue IN ARRAY countie_ids
         LOOP
