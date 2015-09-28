@@ -16,7 +16,7 @@ SELECT common_get_table_id_by_name('health_plan_types','HEALTH_PLAN_TYPE_001') I
 SELECT common_get_table_id_by_name('health_plan_types','HEALTH_PLAN_TYPE_002') INTO health_plan_type_002_id;
 SELECT common_get_table_id_by_name('states','STATE_002') INTO state_002_id;
 
-SELECT create_criteria_report(NULL,0,NULL,0,2,FALSE,FALSE,FALSE,ARRAY[drug_003_id],ARRAY[health_plan_type_001_id,health_plan_type_002_id],'State',ARRAY[state_002_id],NULL,NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
+SELECT create_criteria_report(NULL,0,NULL,0,2,FALSE,FALSE,FALSE,ARRAY[drug_003_id],ARRAY[health_plan_type_001_id,health_plan_type_002_id],'State',ARRAY[state_002_id],NULL,NULL,NULL,NULL,NULL) INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END
