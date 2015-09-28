@@ -168,7 +168,7 @@ health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2];
 empty_array:= ARRAY[]::integer[];
 
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
+SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'National', empty_array, NULL,restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
 
 --VALIDATE RPT_DRUG medical
 expected_rpt_drug_output= format('['||

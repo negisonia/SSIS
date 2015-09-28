@@ -167,7 +167,7 @@ health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2,ind1_m_criteria_diagnosis_3];
 empty_array:= ARRAY[]::integer[];
 
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
+SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'National', empty_array, NULL, restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
 
 --VALIDATE SUMMARY TABLE
 expected_summary_table_output= format('['||
@@ -193,17 +193,17 @@ PERFORM res_rpt_summary_table_validate_data(fe_report_1,expected_summary_table_o
 --REPORT#2
 health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt,commercial_bcbs_hpt,employer_hpt,medicare_ma_hpt,medicare_sn_hpt,medicare_pdp_hpt,state_medicare_hpt,dpp_hpt,commercial_medicaid_hpt,union_hpt,municipal_plan_hpt,pbm_hpt,health_plan_type_001,health_plan_type_002,health_plan_type_003];
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_m_unspecified, ind1_m_age_1];
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_2;
+SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'National', empty_array, NULL, restrictions_array, NULL, NULL, NULL) INTO fe_report_2;
 
 --REPORT#3 --
 restrictions_array:= ARRAY[ind1_rep_1_group_single,ind1_rep_1_group_all,ind1_rep_1_group_both];
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array,NULL, empty_array, NULL, 'national', restrictions_array, NULL, NULL, NULL) INTO fe_report_3;
+SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array,'National', empty_array, NULL, restrictions_array, NULL, NULL, NULL) INTO fe_report_3;
 
 --REPORT#4
 drugs_array:= ARRAY[drug_1,drug_2,drug_9,drug_3];
 health_plan_types_array:= ARRAY[commercial_hpt,commercial_bcbs_hpt, commercial_medicaid_hpt];
 restrictions_array:= ARRAY[ind3_pa_criteria_clinical_3,ind3_m_criteria_lab_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql,ind1_pa_age_1];
-SELECT create_criteria_report( report3, user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_4;
+SELECT create_criteria_report( report3, user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'National', empty_array, NULL,restrictions_array, NULL, NULL, NULL) INTO fe_report_4;
 
 
 success=true;

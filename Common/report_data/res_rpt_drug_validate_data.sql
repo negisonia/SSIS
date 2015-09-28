@@ -5,7 +5,7 @@ success BOOLEAN DEFAULT FALSE;
 rpt_drug_output VARCHAR DEFAULT FALSE;
 BEGIN
 
-IF (rpt_type != 1) AND (rpt_type != 2) THEN
+IF (rpt_type IS DISTINCT FROM 1) AND (rpt_type IS DISTINCT FROM 2) THEN
     SELECT throw_error(format('TYPE: %s PASSED AS ARGUMENT IS INVALID', rpt_type));
 END IF;
 
