@@ -13,8 +13,8 @@ IF ((market_type = 'State') or (market_type = 'County') or (market_type = 'Metro
   SELECT throw_error('INVALID MARKET TYPE  VALUE');
 END IF;
 
---VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA)
-IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id IS NULL)) =false THEN
+--VALIDATE VIEW TYPE CONTAINS VALID VALUE ( 1 CRITERIA, 2 STEP CRITERIA, 3 A20 coverage report)
+IF ((view_type_id = 1) or (view_type_id = 2) or (view_type_id = 3)) =false THEN
 	SELECT throw_error('INVALID VIEW TYPE VALUE');
 END IF;
 

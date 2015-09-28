@@ -48,6 +48,7 @@ FF_NEW_VALIDATION_SCRIPT_PATHS=(../Common/fingertip ../Common/utils)
 DATA_WAREHOUSE_VALIDATION_SCRIPT_PATHS=(../Common/data_warehouse ../Common/utils/common_get_table_id_by_name.sql ../Restrictions/Scripts/data_warehouse)
 DATA_ENTRY_VALIDATION_SCRIPT_PATHS=(../Common/data_entry ../Common/utils)
 ADMIN_VALIDATION_SCRIPT_PATHS=(../Common/admin/ ../Common/utils ../Restrictions/Scripts/admin)
+FRONT_END_VALIDATION_SCRIPT_PATHS=(../Common/front_end/)
 
 create_pg_pass(){
   echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
@@ -173,7 +174,10 @@ load_validation_scripts(){
       elif [ "$db_name" == "$DATA_ENTRY" ]
         then
         for f in $(find "${DATA_ENTRY_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
-      fi
+      elif [ "$db_name" == "$FRONT_END" ]
+        then
+        for f in $(find "${FRONT_END_VALIDATION_SCRIPT_PATHS[@]}" -name '*.sql'); do psql -d $PREFIX_DB_NAME -h $HOST -U postgres < $f; done
+      fi      
   done
 
 }
