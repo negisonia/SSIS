@@ -98,7 +98,7 @@ END IF;
 --INSERT RECORD INTO CRITERIA REPORTS
 INSERT INTO criteria_reports(report_id, user_id, view_type_id, drug_class_id, created_at, updated_at, market_type_id, selected_all_markets, selected_all_drugs, selected_all_plan_types, custom_account_id)
                       VALUES(CASE WHEN new_report_id IS NOT NULL THEN new_report_id ELSE 0 END, user_id, COALESCE(view_type_id,0), drug_class_id, current_timestamp, current_timestamp, market_type_id, COALESCE(selected_all_markets,false), COALESCE(selected_all_drugs,false), COALESCE(selected_all_plan_types,false), custom_account_id) RETURNING id INTO criteria_report_id;
-(403, 1, 1, 1, null, null, null, f, f, f, null, 2015-09-28 18:42:13.577686, 2015-09-28 18:42:13.577686, null).
+
 --VALIDATE REPORT ID IS NOT NULL
 IF criteria_report_id IS NULL THEN
   SELECT throw_error('ERROR CREATING CRITERIA REPORT');

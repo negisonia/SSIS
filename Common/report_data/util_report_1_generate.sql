@@ -55,6 +55,7 @@ report4 INTEGER;
 
 criteria_report_type CONSTANT INTEGER:=1;
 step_report_type CONSTANT INTEGER:=2;
+national_geo_type_id CONSTANT INTEGER:=4;
 
 user_id CONSTANT INTEGER:=1;
 
@@ -166,7 +167,7 @@ health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3,ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql, ind1_pa_age_1, ind1_pa_past_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2, ind1_m_unspecified, ind1_m_age_1,ind1_m_st_custom_option_2,ind1_m_criteria_diagnosis_3];
 empty_array:= ARRAY[]::integer[];
 
-SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, NULL, NULL, NULL, NULL,drugs_array, health_plan_types_array, NULL, empty_array, NULL, 'national',restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
+SELECT create_criteria_report( report1,user_id , criteria_report_type , NULL, national_geo_type_id, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'National', empty_array, NULL,restrictions_array, NULL, NULL, NULL) INTO fe_report_1;
 
 return fe_report_1;
 END
