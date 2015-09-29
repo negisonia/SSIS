@@ -14,7 +14,7 @@ report_select_columns  = 'drug_name, qualifier_name, avg_copay, lis_lives, total
 --Query the actual value
 SELECT calculate_report_value_json(report_select_columns, get_report_name_call('rpt_coverage_restrictions_drug', ARRAY[criteria_report_id,current_month_int]), 'drug_name=''' || drug_name || ''' AND qualifier_name=''' || qualifier_name ||'''') INTO actual_value;
 
-PERFORM validate_comparison_values_varchar(actual_value, expected_value,'ana_rpt_coverage_restrictions_drug_test_'|| test_number ||'_validate_data-error: EXPECTED ' || report_select_columns  || ' FOR drug_name ' || drug_name || ' and qualifier_name ' || qualifier_name ||' TO BE ');
+PERFORM validate_comparison_values_varchar(actual_value, expected_value,'ana_rpt_coverage_restrictions_drug_test_'|| test_number ||'_validate_data-error: EXPECTED FOR ROW RESULTS TO BE ');
 
 success:=true;
 RETURN success;
