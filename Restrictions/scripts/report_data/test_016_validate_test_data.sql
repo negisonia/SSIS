@@ -113,25 +113,11 @@ PERFORM  res_validate_report_drug(report_1, indication_1, drug_2, drug_class_1);
 PERFORM  res_validate_report_drug(report_1, indication_1, drug_3, drug_class_1);
 PERFORM  res_validate_report_drug(report_1, indication_1, drug_4, drug_class_1);
 
-
 --REPORT#2 --REPORT 2 DOES NOT EXISTS SO WE CAN'T KNOW THE REPORT ID EVEN IF THE DRUGS ARE ASSOCIATED THE REPORT ID IS UNKNOWN
-
-
---REPORT#3
-PERFORM  res_validate_report_drug(report_3, indication_1, drug_1, drug_class_1);
-PERFORM  res_validate_report_drug(report_3, indication_3, drug_1, drug_class_1);
-PERFORM  res_validate_report_drug(report_3, indication_3, drug_2, drug_class_1);
-PERFORM  res_validate_report_drug(report_3, indication_1, drug_2, drug_class_1);
-PERFORM  res_validate_report_drug(report_3, indication_1, drug_3, drug_class_1);
-PERFORM  res_validate_report_drug(report_3, indication_3, drug_9, drug_class_3);
-
 
 --REPORT#4
 PERFORM  res_validate_report_drug(report_4, indication_1, drug_1, drug_class_1);
 PERFORM  res_validate_report_drug(report_4, indication_1, drug_2, drug_class_1);
-
-
-
 
 --------------------- VALIDATE REPORT CRITERIAS
 --REPORT#1
@@ -165,17 +151,6 @@ SELECT EXISTS (SELECT 1 FROM criteria_restriction_selection crs WHERE crs.report
 IF valueExists IS TRUE THEN
     SELECT throw_error('REPORT 2 SHOULD NOT CONTAINS CRITERIAS');
 END IF;
-
-
---REPORT#3
-PERFORM res_validate_criteria_restriction(report_3, indication_1, 'indication_1', 'Pharmacy', 1, 'PA - Age', 'criteria_age_1', 1, 1);
-PERFORM res_validate_criteria_restriction(report_3, indication_1, 'indication_1', 'Pharmacy', 1, 'PA - Clinical', 'criteria_clinical_1', 1, 1);
-PERFORM res_validate_criteria_restriction(report_3, indication_1, 'indication_1', 'Pharmacy', 1, 'PA - Unspecified', 'Criteria Unspecified', 1, 1);
-PERFORM res_validate_criteria_restriction(report_3, indication_1, 'indication_1', 'Pharmacy', 4, 'QL', 'criteria_ql_1', 1, 1);
---PERFORM res_validate_criteria_restriction(report_3, indication_3, 'indication_3', 'Pharmacy', 1, 'PA - Labs', 'criteria_lab_3', 1, 1);
-PERFORM res_validate_criteria_restriction(report_3, indication_3, 'indication_3', 'Pharmacy', 1, 'PA - Clinical', 'criteria_clinical_3', 1, 1);
-
-
 
 --REPORT#4
 PERFORM res_validate_criteria_restriction(report_4, indication_1, 'indication_1', 'Medical', 2, 'Unspecified', 'Criteria Unspecified', 1, 1);
@@ -214,13 +189,6 @@ PERFORM res_validate_custom_criteria_restriction(report_1,client_1,indication_1,
 PERFORM res_validate_custom_criteria_restriction(report_1,client_1,indication_1,'indication_1','Pharmacy',6,'rep_1_group_steps - Single',5,'rep_1_group_steps');
 PERFORM res_validate_custom_criteria_restriction(report_1,client_1,indication_1,'indication_1','Medical',2,'rep_1_group_all',3,'rep_1_group_all');
 PERFORM res_validate_custom_criteria_restriction(report_1,client_1,indication_1,'indication_1','Medical',2,'rep_1_group_all - Single',5,'rep_1_group_all');
-
-
-
---REPORT #3
-PERFORM res_validate_custom_criteria_restriction(report_3,client_1,-1,'indication_1','Pharmacy',6,'rep_3_group_1',3,'rep_3_group_1');
-PERFORM res_validate_custom_criteria_restriction(report_3,client_3,-1,'indication_1','Pharmacy',6,'rep_3_group_1',3,'rep_3_group_1');
-
 
 --REPORT #4
 PERFORM res_validate_custom_criteria_restriction(report_4,client_4,indication_1,'indication_1','Pharmacy',6,'rep_4_group_1',3,'rep_4_group_1');
