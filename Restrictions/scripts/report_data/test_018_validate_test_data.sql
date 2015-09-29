@@ -4,7 +4,6 @@ DECLARE
 success BOOLEAN DEFAULT FALSE;
 fe_report_1 INTEGER;
 pharmacy_view CONSTANT integer:=1;
-medical_view CONSTANT integer:=2;
 expected_rpt_drug_output VARCHAR;
 BEGIN
 
@@ -27,7 +26,7 @@ expected_rpt_drug_output= format('['||
     '{"criteria_report_id":%1$s,"indication_name":"indication_1","drug_name":"drug_2","benefit_name":"Pharmacy","criteria_restriction_name":"ST - Double - custom_option_1 AND  custom_option_2","restriction_name":"ST - Double","dim_restriction_type_id":3,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0}'||
     ']',fe_report_1);
 
-PERFORM res_rpt_drug_validate_data(fe_report_1, 1 ,expected_rpt_drug_output);
+PERFORM res_rpt_drug_validate_data(fe_report_1, pharmacy_view ,expected_rpt_drug_output);
 
 success=true;
 return success;
