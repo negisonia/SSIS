@@ -7,9 +7,9 @@ DECLARE
   qualifier varchar := 'PA';
 BEGIN
 
-expected_value = format('[{"drug_name":"%s","qualifier_name":"%s","avg_copay":20.00,"lis_lives":0,"total_lis_lives":0,"lives":200,"total_lives":1341,"health_plan_count":2,"total_health_plan_count":20}]', drug, qualifier);
+expected_value = format('[{"drug_name":"%s","qualifier_name":"%s","avg_copay":20.00,"lis_lives":0,"total_lis_lives":0,"lives":200,"total_lives":730,"health_plan_count":2,"total_health_plan_count":9}]', drug, qualifier);
 
-PERFORM ana_rpt_cov_restr_drg_selection_8_test_01_09_validate_data(expected_value,'006', drug, qualifier);
+PERFORM ana_rpt_cov_restr_drg_selection_8_test_01_15_validate_data(expected_value,'006', drug, qualifier);
 
 success:=true;
 RETURN success;

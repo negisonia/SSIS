@@ -4,7 +4,7 @@ DECLARE
   success boolean DEFAULT FALSE;
   expected_value varchar;
   drug varchar := 'DRUG_001';
-  qualifier varchar := 'Any';
+  qualifier varchar := 'QL';
 BEGIN
 
 expected_value = format('[{"drug_name":"%s","qualifier_name":"%s","avg_copay":30.00,"lis_lives":0,"total_lis_lives":0,"lives":150,"total_lives":430,"health_plan_count":1,"total_health_plan_count":5}]', drug, qualifier);
