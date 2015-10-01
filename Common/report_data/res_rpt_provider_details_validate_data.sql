@@ -6,7 +6,7 @@ rpt_provider_detail_output VARCHAR;
 BEGIN
 
 --VALIDATE RPT PROVIDER DETAILS
-SELECT  array_to_json(array_agg(row_to_json(t))) from (select provider_id, benefit_name, health_plan_type_id, health_plan_type_name, lives, drug_name, criteria_restriction_name from rpt_provider_detail(report_id,benefit_type_id) order by provider_id , benefit_name, health_plan_type_id, health_plan_type_name , criteria_restriction_name ) t  INTO rpt_provider_detail_output;
+SELECT  array_to_json(array_agg(row_to_json(t))) from (select q.provider_id, q.benefit_name, q.health_plan_type_id, q.health_plan_type_name, q.lives, q.drug_name, q.criteria_restriction_name from ( select * from rpt_provider_detail(report_id,benefit_type_id) order by provider_id , dim_criteria_restriction_id , benefit_name, health_plan_type_id, health_plan_type_name , criteria_restriction_name ) q) t  INTO rpt_provider_detail_output;
 
 IF rpt_provider_detail_output IS DISTINCT FROM expected_json THEN
 RAISE NOTICE 'ACTUAL: %s' , rpt_provider_detail_output;
