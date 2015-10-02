@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="182"
-  DTS:VersionGUID="{62376104-BBCD-48F6-A7EE-9D90ED20379F}">
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{6AEBEC5A-8E0B-45EC-9D90-B3DD8AFEC278}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACwh1ZwGSPTT85e1d0t033Ov+R5VUiHSuDC4eatK9NdBgAAAAAOgAAAAAIAACAAAACFGU8nn4wISoICAuNkPnDLch8mZhiwSQOpQCAiOfE0khAAAABAwzDIGAkw7C3DJ7eUmsc7QAAAAAy6U6IFdZBqSzqF74/wMKnzF/RNkxqi4A+bD74cxFS6hQbUGliWYJP11oZlBbeVYJNiVtewprMA2nNmXiNKSH8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD8wM1ZCGONYcA6wHUFyav/+miGir2vzsvozzimKuk9iQAAAAAOgAAAAAIAACAAAAD3jkmSbFUZRT0iDu7KZClIN0/ntyE4Z0oe+TydC3RPHBAAAADo5Auzwtg+/WnPA936czqqQAAAAGgDsE0deKANke79Qsj1llsGYZB2RuwN1COqKtMhp1Q8OzA9ePSp4t4Sh/EQMDXN5ZIOiyn2T9gu5J88/oEwOUg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -47,7 +47,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD0cHegYTTopn/15uJ12BEB6Ixzt/+YFWFfsDpKBqFyawAAAAAOgAAAAAIAACAAAAAS3byGTFv6mPbbODRqRj8dYTBD6IOsbYH5QOcdJH/iShAAAABOe1J31DbXvzmAma+77a4pQAAAAHo6Pw54KpyuRXbovBoT6dpF2uIqgJsT6wKXZb+oNkT6kgjrAiEIIVOe1irrpA8LrDpVUahWG2rl1n/GJmA9v9s</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAyESBKnMU9/AWWQ9khbp7oBF5YJDNnen2EKTCnagXjaAAAAAAOgAAAAAIAACAAAAA/CIpTxWMSPdaB2OL08Io//jKSEAzFLBMN60vaEmNe5xAAAAACpv1k3eEH7xOlEWQKytdjQAAAAIG8XqBes3mbX3Q8lDBxlz/ENOaScTqCPsY6LDWw+nq0g/0zRh5sEt0j9tapeuvrHSxOGniJXrrA6jvCAtfMHf4</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -64,7 +64,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB7L6b2fwKxSf+JGZmanSnjbd4ydZ8H/QwZlfveDULn1QAAAAAOgAAAAAIAACAAAABGTV7sWlN6lJfEqKeICL90Z8eoxDuq2fCY+wFEUTy9NBAAAABIaSr+btqus2AJoHSNTftiQAAAAFMdr+7LXLhkiiyfMrgL+KITr2Qd0lR2+oodU/c9//RM7eokCIVAXz6TKGVy/oNY9sHCq1QjBlB1bOKfvK2SHA8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACPGPCyDZ/lxRYF+Nfasg6nVJexKJUahqRJW0HsXz7OGgAAAAAOgAAAAAIAACAAAABXfDEn4tKfq91I70Z2CJT3XNixiEKXCwEE2XXdZZngPBAAAAC14MaQcAMQYpRBzoXp4tD4QAAAAFQHtXrCOeymmzn4o4nmtxlOEuL/rTG8guWfXYPbP2BFEJ7TG2r94eVpOmJns/1Bpasp9VbRNfsWtVFDfd9gW08</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -81,7 +81,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABp/7qoXVWOX8in08FA+ZEwvysVjmRSD9mKli//r/sNCwAAAAAOgAAAAAIAACAAAAC7+3drNmnMomAfmynZ5b+7nK+oK4fcb7eCTqNz/gy0ABAAAACyXuiQqqKHHohNYyd+k4t0QAAAADTCIe4cAGI1jNviRUl3sHg0I/d5FvSWJvuJGGxv4RgQCoNhuYWv0cJCrcNa/RhXEwag3BgEVtpuPbCRvxSoU5o</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACtHOMU1muaz1JbeR64aYE6oXPE2uD7+wVc+inDlvDwZwAAAAAOgAAAAAIAACAAAACMMkjy9dzmL6nPrfsHmABY7uMddwSW1Rc+6Sq7fuvA0BAAAAAF8E3ZXLIbwQMmeQYNRDo1QAAAABE9N/6vA9BCzF/i7tMLdYnbK4inEjUco+SBVLl2EHNgFR55KWdhnoDn43cWsXg6/D6c/P/iIAZQOSxWmdV4BmY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -145,7 +145,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 1"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -162,7 +162,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 10"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -179,7 +179,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 11"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -196,7 +196,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 2"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 3"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -230,7 +230,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 4"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -247,7 +247,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 5"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -281,7 +281,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 7"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -298,7 +298,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 8"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -315,7 +315,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 9"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -709,6 +709,23 @@
               SQLTask:SqlStatementSource="SELECT restrictions_test_025_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Validation\Test 26 Validation"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9213568E-A161-4374-90F7-588482CBCEDD}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test 26 Validation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="27">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B6D07DB-9D92-4082-B5EC-73F1388D486E}"
+              SQLTask:SqlStatementSource="SELECT restrictions_test_026_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -1031,6 +1048,10 @@
           Size="166,42"
           Id="Package\Validation\Test 24 Validation"
           TopLeft="2017,97.25" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Validation\Test 25 Validation"
+          TopLeft="2020.75,162.25" />
         <EdgeLayout
           Id="Package\Validation.PrecedenceConstraints[Constraint]"
           TopLeft="154.857142857143,66.5714285714287">
@@ -1165,8 +1186,8 @@
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
-          Id="Package\Validation\Test 25 Validation"
-          TopLeft="2020.75,162.25" />
+          Id="Package\Validation\Test 26 Validation"
+          TopLeft="2202.35714285714,32.6666666666667" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
