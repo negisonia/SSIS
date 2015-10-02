@@ -9,6 +9,7 @@ BEGIN
   TRUNCATE TABLE criteria_reports_health_plan_types CASCADE;
   TRUNCATE TABLE criteria_reports_markets CASCADE;
   TRUNCATE TABLE criteria_reports CASCADE;
+  TRUNCATE TABLE criteria_reports_dim_criteria_restriction CASCADE;
   
   --CLEAR SEQUENCES
   ALTER SEQUENCE criteria_reports_id_seq RESTART;
