@@ -21,7 +21,6 @@ dim_restriction_type_id = 2;
 
 -- Drug 02, Medical, Plan Type comercial
   expected_output= '['||
-    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"additional notes"},'||
     '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":""}'||
     ']';
 
