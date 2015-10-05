@@ -33,7 +33,6 @@ SELECT  crr.report_id INTO admin_report_1 FROM criteria_restriction_reports crr 
 
 --VALIDATE NOTES (DRUG 2, MEDICAL, commercial)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"additional notes"},'||
     '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":""}'||
     ']';
 PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_2, m_dim_criterion_type, expected_health_plan_notes_output);
