@@ -72,9 +72,6 @@ PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, hix_hpt, d
 expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":""}]';
 PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, commercial_hpt, drug_2, ind1_m_age_1, expected_provider_notes);
 
-expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"additional notes"}]';
-PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, commercial_hpt, drug_2, ind1_m_unspecified, expected_provider_notes);
-
 expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"notes"}]';
 PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, hix_hpt, drug_2, ind1_m_criteria_diagnosis_3, expected_provider_notes);
 
