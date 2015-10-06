@@ -32,10 +32,11 @@ expected_source_comments_output = '['||
     ']';
 PERFORM res_rpt_pa_policy_form_url(fe_report_1, commercial_plan_type_id, provider_id, format(druglist,drug_1,drug_2), expected_source_comments_output);
 
-druglist := select array_to_string(array_agg(q.drug_id), ', ')  from (select distinct drug_id from specialty_pharmacy_drugs spd INNER JOIN (select hp.id as hp_id from health_plans hp inner join providers p on hp.provider_id=p.id inner join health_plan_types hpt on hp.health_plan_type_id=hpt.id
- and p.id=1 and (hpt.id=1 or hpt.id=13)) q on spd.health_plan_id=q.hp_id) q;
-
-
+expected_source_comments_output= '['||
+    '{"specialty_pharmacy_id":1,"name":"special_pharmacy_1,special_pharmacy_2","drug_id":1,"url":"http://www.special_pharmacy_1.com/drug_1SPEForm.pdf"},'||
+    '{"specialty_pharmacy_id":2,"name":"special_pharmacy_1,special_pharmacy_2","drug_id":2,"url":"http://www.special_pharmacy_2.com/drug_2SPEForm.pdf"}'||
+    ']';
+PERFORM res_rpt_specialty_pharmacy_form(fe_report_1, commercial_plan_type_id, provider_id, expected_source_comments_output);
 
 success:=true;
 return success;
