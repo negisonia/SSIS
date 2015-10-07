@@ -5,22 +5,22 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="GAPUSER-PC"
   DTS:CreatorName="gapuser-PC\gapuser"
-  DTS:DTSID="{9FE2CF76-CAF9-4A75-B3EC-F3193769774B}"
+  DTS:DTSID="{F07A8E82-AA16-4D23-A4B6-DFAB49AD341F}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.5583.0"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="189"
-  DTS:VersionGUID="{0CBAC3D9-FD58-4159-8EE6-66366559FC53}">
+  DTS:VersionBuild="191"
+  DTS:VersionGUID="{AE4B5577-6CD5-4B60-ADE2-3F5CCCDCF9A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[admin]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{EA64EDAE-D8A5-4399-83B8-C2E29244D7B9}"
+      DTS:DTSID="{DEF970C2-AF3B-4542-BAD4-A2DFE03C0637}"
       DTS:ObjectName="admin">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_admin;port=5432;"</DTS:PropertyExpression>
@@ -30,14 +30,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNQ5Kb2v0IY81jupyvSW+BJYKc+z/PcEz03e8swigy/wAAAAAOgAAAAAIAACAAAADOM/MQrikHrXI6Zo1f4+7NrRaxPDGImX+hbAwPL77jmBAAAACUCbNOOYOxNNBCGYC5F/3UQAAAAPegk7LoDZInB1GP+PIZu+6SF0uQ2EjTqbTaWPO0wSuNrsAtV079og7usUBopFPukoHjNdzuReulCliEdb6DgGA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADn6tOUQHf/gHzFCN1N5KtD8Ah389+6T4hfWb+TbULX5wAAAAAOgAAAAAIAACAAAAD1vvGG3yoz2Z4NAmhtwFRkVgYq9y9r+o6Bgay2qBKPQBAAAABS5POZt4HLiDEBHXiA5x+QQAAAAPv+T6ztAW7UYxaij1VujAbSbcheMW1kcskHJFzwyLJTzncQs/hy35C7a6CnKvfmo/808GqG1FrSlGhif6YOAgc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[data_warehouse]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{DF57BA46-1F4E-4022-8945-58752972D880}"
+      DTS:DTSID="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
       DTS:ObjectName="data_warehouse">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_data_warehouse;port=5432;"</DTS:PropertyExpression>
@@ -47,14 +47,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADWDOiDA44Ympr4GRSnhlznPiR7xUJcqfX08mpFhal3JgAAAAAOgAAAAAIAACAAAAABU0y3KSp/bQ4oiC9eMgKOfIMWKZKvU+SOffJpk2UhaxAAAAArIjCArC/hyGVTvquDsUjDQAAAAK/Ygi1+yoHC2H40IDWUqsmgsIxwOIdUV/t5CnEB0Ekx/R4wUwEmnaB8BgkXkGuiTU9Xh8L1G52WK5UzP5JmcqY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbHhXvAMuCon6usdQjnkjfItK4ZkKo2l13R491gVaFuwAAAAAOgAAAAAIAACAAAABjjQ9c35JBU64hhXT1MIt0HhBZaceqE0vQfgiEqV7fbBAAAAAU8f+9rGNQlOXlvAs/KgdtQAAAAAramcvfRnf+1ZOred24/Hh9GBOF+vkPJEi5XoNGOzEQYygGOrxioxw3KxBxQNQ0uL/492+tI3YtnY+JJWbxOQE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[front_end]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{E60A98AD-E3E5-4536-8132-158EB71FC235}"
+      DTS:DTSID="{6C1C50DD-8ED4-410E-9E04-141CCED06CC7}"
       DTS:ObjectName="front_end">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"_front_end;port=5432;"</DTS:PropertyExpression>
@@ -64,14 +64,14 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADvtvGa5/gEjAxeXSaimWWeRZBenoAgNCC6/pOFtyOo7gAAAAAOgAAAAAIAACAAAAAc10Xaoo/5qO6LOaDmzq5qXvw+KjzNOZFhn8CbB5XYXxAAAAAChoq26NHvJrsVFZ5s2/G+QAAAAD11Eu1qC++UUfkM5mDmSd68VITlRPph3MVGWX6RHuLhfEpq+hIU2D0cjzqQP6YWTUBiFetok2MTt4tq9ZFSnts</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/gVP8Qr8uqPxboBxvfc1JR4t/TDZTknTYHU3hvbdsxwAAAAAOgAAAAAIAACAAAADKhBhxGrCyDypLzWBO592JF/Cas8oqNT3U+3LlcsWVnRAAAADYT6GW3LUq8z0Gcy+ApN66QAAAAOF+bIyWR1l5rgSeRvoBWcqbHuXgOPtCewOKkPx34xIXlEzYJJoqBzamx/zF4ch7eOIQ+hnZ4JUdlpZMZSt8yEI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[report_data]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+      DTS:DTSID="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
       DTS:ObjectName="report_data">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "_report_data;port=5432;"</DTS:PropertyExpression>
@@ -81,7 +81,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1taUJmVUx10+kSuNjycls/FJMfJHbK5ivlwlLNBwxPAAAAAAOgAAAAAIAACAAAAA4b0uZTmyHhLRu2OjmcwjPl2oGD3RDPkW6U1I9lAEV+RAAAAC5CkPkpIcj+nLN8E+//3xjQAAAAFjqW1bIEZOhrZhUS5Uke9SgdB2JPWO0AXVKPPO66EvWv+7Azg0mrSzYYqqBCpH56zbXBlJfRl9VJfsQAnWdFD4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADAoay+0Dg0+qd+0gC9HHegAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAIJF1uSPQ5vnfLLJqDOIqlq/zNl8Wve5HQo7fnC3wpSAAAAAAOgAAAAAIAACAAAAB1FCoY9fX6TQzUn4Bs2YRKa72hw9jJyNMuZCXKbcwDRhAAAAC6nAIL0c/nEYOO93YADqUjQAAAACSAoFcG4L6bMUX+sOsDnhP/Pyqe6Co+ox8FDCyz9Dp6vfwMPNYuLdcFQj3mTN8B3ZsDX9donvdNlLVm1gql7mw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -89,7 +89,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EA137890-D808-493B-850B-AF4FD2318D22}"
+      DTS:DTSID="{A33090AD-D15A-479C-8024-E4A34FE67DF8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_password">
@@ -99,7 +99,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2A25CCD4-0628-4337-882F-AB4DEC7A19DD}"
+      DTS:DTSID="{CD39A771-02F4-42E5-B3FB-98A10A6EFA41}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_prefix">
@@ -108,7 +108,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1B38F449-AC30-4A17-A9E8-A1923741D2B9}"
+      DTS:DTSID="{5CCE939B-5C16-4962-A712-FF5043EA7DA2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_server">
@@ -117,7 +117,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B10E13DC-1EF0-4F82-967E-E81864670CBB}"
+      DTS:DTSID="{9E6CC991-228D-40EF-B8A0-E71502DD861F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="db_username">
@@ -130,7 +130,7 @@
       DTS:refId="Package\Custom Accounts Validation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{7D67E2B5-7093-4DBF-9D6B-B608BDDB4B59}"
+      DTS:DTSID="{CAB4C43A-ACC8-4A1B-BCC1-6BF32728A9D9}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Custom Accounts Validation">
@@ -140,16 +140,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 1"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{546C43D6-0BAD-4026-9B44-3893B4E2086C}"
+          DTS:DTSID="{E78D9BF1-2AFC-4618-B6AE-6BE6D90CB056}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 1"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="13">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="Select ca_etl_test_1()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -157,16 +157,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 10"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D6778EB3-D696-4CAC-B566-4BA75A1651A1}"
+          DTS:DTSID="{EAE1D834-6E25-48DE-BB5C-904C8847BF7A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 10"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="14">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_10_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -174,16 +174,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 11"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{766E4E29-5C09-490F-98C6-80B239FB0589}"
+          DTS:DTSID="{A6550167-039D-45BE-A830-9EC2F191AE21}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 11"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_11_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -191,16 +191,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 12"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{01C9123C-E694-44E8-A3D2-3D78981F6071}"
+          DTS:DTSID="{9EED39BA-22B2-4D28-8D65-7291B1C6C9FF}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 12"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="11">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_12_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -208,33 +208,67 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 13"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6cce0ca5-1f2a-41a1-a622-e45d5efbd459}"
+          DTS:DTSID="{44EF2C82-3C36-4FFE-9B87-9DE3D9203A46}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 13"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="12">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_13_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 14"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{715917a9-09c5-4ffb-bd82-69e002bcfb30}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test CA ETL Test 14"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
+              SQLTask:SqlStatementSource="Select res_ca_etl_test_14_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 15"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{96bc210a-640b-401a-9712-cd5d4f74ac94}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test CA ETL Test 15"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
+              SQLTask:SqlStatementSource="Select res_ca_etl_test_15_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 2"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{70C0C0E3-FCB3-4977-8839-5E8A1BCF8DD4}"
+          DTS:DTSID="{D9119AED-C01F-4BB8-8612-046AF0E6B20A}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 2"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select ca_etl_test_2()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -242,16 +276,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 3"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{942864F4-39AA-427E-9004-968BF00C0149}"
+          DTS:DTSID="{B4529F85-BD48-4E63-AD7A-DD31D2A3D91F}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 3"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_3_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -259,16 +293,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 4"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{95774CAA-0C9B-4AE8-90E5-9F1CDA7CE8DF}"
+          DTS:DTSID="{BD73AC49-00D6-445B-B863-FEAD88E7C7C1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 4"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_4_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -276,16 +310,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 5"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A4BBD0BA-9C24-4CB5-BBF6-BA612AE19672}"
+          DTS:DTSID="{E04F0F8B-4DC0-4884-954D-11C6BAA2DE37}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 5"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_5_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -293,16 +327,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 6"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D29D493A-A72D-4486-8F19-7F3675B461CD}"
+          DTS:DTSID="{7064EBA6-6A55-4195-BA0E-8F53286060F0}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 6"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_6_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -310,16 +344,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 7"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E486EC3D-215D-4600-8007-8FA3A894E9F4}"
+          DTS:DTSID="{0742518D-FF6B-4FED-B642-297DB31AA56E}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 7"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_7_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -327,16 +361,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 8"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{39FC8753-CC84-4B86-BAA4-4AAB07C2D292}"
+          DTS:DTSID="{AFB916F8-73F1-4892-BE87-4A6A624AE4BC}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 8"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="11">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_8_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -344,16 +378,16 @@
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 9"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6B99A698-7550-48E6-BBCE-6589AEF46218}"
+          DTS:DTSID="{DA731DA1-5A07-4B65-865E-1A7436CC6FE9}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test CA ETL Test 9"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="12">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select res_ca_etl_test_9_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -363,7 +397,7 @@
       DTS:refId="Package\Validation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{F178F3F2-919A-42ED-A252-F34C0144EEA8}"
+      DTS:DTSID="{DF2214DB-3DDA-4ED6-B14A-D293CA3A0EAA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Validation">
@@ -373,16 +407,16 @@
           DTS:refId="Package\Validation\Test 001 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C62F9B27-E928-44DB-A69D-072073AB3B2A}"
+          DTS:DTSID="{93577F6A-E0E3-4874-AD88-793EDA4F02B1}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 001 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="13">
+          DTS:ThreadHint="15">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_001_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -390,16 +424,16 @@
           DTS:refId="Package\Validation\Test 002 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{077EAB93-8E8A-442C-AC97-6FF0DAFB949D}"
+          DTS:DTSID="{B3227D31-A111-4DBF-B30A-CE783C176B04}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 002 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="13">
+          DTS:ThreadHint="15">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="select restrictions_test_002_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -407,16 +441,16 @@
           DTS:refId="Package\Validation\Test 003 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B85764A6-BA3E-49D9-815D-DCAC44A67AB6}"
+          DTS:DTSID="{E40960AC-E645-4AC2-BDC8-DCD8990A48A3}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 003 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="14">
+          DTS:ThreadHint="29">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_003_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -424,16 +458,16 @@
           DTS:refId="Package\Validation\Test 004 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8EE258AB-1850-46A6-92FF-B9AC5C50FF5C}"
+          DTS:DTSID="{C3BD07BE-C399-4A7B-B701-6033FA1633C3}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 004 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="14">
+          DTS:ThreadHint="29">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="select restrictions_test_004_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -441,16 +475,16 @@
           DTS:refId="Package\Validation\Test 005 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8D71C0B4-B748-4826-B8FE-97B232DCC93F}"
+          DTS:DTSID="{D70B94DE-F689-4C9B-9AA0-7894E05FFBA3}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 005 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="15">
+          DTS:ThreadHint="26">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_005_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -458,16 +492,16 @@
           DTS:refId="Package\Validation\Test 006 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E4BD441C-96C3-4236-82BC-B5C106CF1221}"
+          DTS:DTSID="{A9CE79AF-9178-44CA-A869-B1DC110A46BA}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 006 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="15">
+          DTS:ThreadHint="26">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_006_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -475,16 +509,16 @@
           DTS:refId="Package\Validation\Test 009 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C6CB3583-60D8-43AD-901A-714DD93C5F61}"
+          DTS:DTSID="{386D1746-CEFB-4034-AFB8-02CFA8FC1920}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 009 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="16">
+          DTS:ThreadHint="18">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EA64EDAE-D8A5-4399-83B8-C2E29244D7B9}"
+              SQLTask:Connection="{DEF970C2-AF3B-4542-BAD4-A2DFE03C0637}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_009_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -492,16 +526,16 @@
           DTS:refId="Package\Validation\Test 010 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{231111C6-1D27-4606-B8CF-66BEBFF27FFF}"
+          DTS:DTSID="{63D83858-491E-4EAD-8C89-3137B05F9D5E}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 010 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="16">
+          DTS:ThreadHint="18">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_010_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -509,16 +543,16 @@
           DTS:refId="Package\Validation\Test 011 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{760CC5AE-5824-4465-A67D-12F1529D6520}"
+          DTS:DTSID="{94F60B26-2021-4B49-AD82-D582511D2DEE}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 011 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="17">
+          DTS:ThreadHint="24">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EA64EDAE-D8A5-4399-83B8-C2E29244D7B9}"
+              SQLTask:Connection="{DEF970C2-AF3B-4542-BAD4-A2DFE03C0637}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_011_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -526,16 +560,16 @@
           DTS:refId="Package\Validation\Test 015 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B8B8AC83-EA9C-4523-A539-C47899240C1C}"
+          DTS:DTSID="{51F007F0-A365-4C2D-91F0-8CEEB299C201}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 015 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="18">
+          DTS:ThreadHint="20">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_015_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -543,16 +577,16 @@
           DTS:refId="Package\Validation\Test 016 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A2490922-01CD-4B6F-BEEC-19CD746CA36C}"
+          DTS:DTSID="{6BA318B3-7101-46A4-BCCB-9F732367E472}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 016 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="18">
+          DTS:ThreadHint="20">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="Select restrictions_test_016_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -560,16 +594,16 @@
           DTS:refId="Package\Validation\Test 017 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{AA5E9E6A-DF12-4F16-87DF-1327DEB16546}"
+          DTS:DTSID="{B5F3AA52-E455-4ACD-9F0A-C58936144234}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 017 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="19">
+          DTS:ThreadHint="23">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_017_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -577,16 +611,16 @@
           DTS:refId="Package\Validation\Test 018 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{70AF2C21-95BB-422F-905D-2C4B2B98C953}"
+          DTS:DTSID="{D195303E-9574-45FB-A5E5-AD02132F5AB7}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 018 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="20">
+          DTS:ThreadHint="34">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_018_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -594,16 +628,16 @@
           DTS:refId="Package\Validation\Test 019 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{184F0BD8-4C37-4FED-A537-E35EEDE47CE4}"
+          DTS:DTSID="{322D2128-987E-491F-A9F4-941016D2802D}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 019 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="21">
+          DTS:ThreadHint="33">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_019_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -611,16 +645,16 @@
           DTS:refId="Package\Validation\Test 07 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0F5774F3-C65B-4174-A5C9-E59A95852572}"
+          DTS:DTSID="{FDCFCD8C-D02D-4516-997F-410374F41BA7}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 07 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="22">
+          DTS:ThreadHint="16">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT  restrictions_test_007_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -628,16 +662,16 @@
           DTS:refId="Package\Validation\Test 08 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7E2ABFC5-DF17-4C29-BE2B-F87632769BC2}"
+          DTS:DTSID="{37BF564E-9AAC-4065-BBA6-E81253E58C01}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 08 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="22">
+          DTS:ThreadHint="16">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="select restrictions_test_008_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -645,16 +679,16 @@
           DTS:refId="Package\Validation\Test 20 validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6CF08ABC-D0FD-4189-8A32-D8CD9100B5FD}"
+          DTS:DTSID="{A6006AD9-6747-4FD6-BA79-3F6C3F6ABB4D}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 20 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="23">
+          DTS:ThreadHint="22">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_020_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -662,16 +696,16 @@
           DTS:refId="Package\Validation\Test 21 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4236DC07-BC41-4C00-ABE5-81668D65078C}"
+          DTS:DTSID="{40957CFC-728D-4226-884F-64FB2F77C84C}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 21 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="24">
+          DTS:ThreadHint="28">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_021_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -679,16 +713,16 @@
           DTS:refId="Package\Validation\Test 22 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{309FF83D-6E1D-4C16-88DE-96C37BC47D66}"
+          DTS:DTSID="{B98BA37F-C467-48B3-9A4B-8DC27183F989}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 22 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="25">
+          DTS:ThreadHint="21">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_022_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -696,16 +730,16 @@
           DTS:refId="Package\Validation\Test 23 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ABD1A3F1-4C2C-419C-B497-A99912A69B37}"
+          DTS:DTSID="{86D64AE7-03A9-4490-B2C0-95CB38E1F3C0}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 23 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="26">
+          DTS:ThreadHint="19">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_023_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -713,16 +747,16 @@
           DTS:refId="Package\Validation\Test 24 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8C53237D-03C8-4571-8F02-F14E4041C040}"
+          DTS:DTSID="{6EE0E2E6-A22B-4CD4-A132-D72F86DEC71F}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 24 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="27">
+          DTS:ThreadHint="17">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="select restrictions_test_024_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -730,16 +764,16 @@
           DTS:refId="Package\Validation\Test 25 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{EB8D7CFA-0E34-4E3E-9CF6-DF761ED25DCA}"
+          DTS:DTSID="{25596F1B-C1D3-4132-AF28-0FDA074C957F}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 25 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="28">
+          DTS:ThreadHint="25">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_025_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -747,16 +781,16 @@
           DTS:refId="Package\Validation\Test 26 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{92E44E52-56F5-4CE6-9FD6-9F7CB9F8D48E}"
+          DTS:DTSID="{FC10FA5B-3F8B-4782-92DF-26337ADF4153}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 26 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="29">
+          DTS:ThreadHint="27">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_026_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -764,7 +798,7 @@
           DTS:refId="Package\Validation\Test 27 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8D4388BA-D3D8-4C69-B4FC-744EE0479287}"
+          DTS:DTSID="{F2A9524C-7134-4C57-95BA-4B89D78B4E12}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 27 Validation"
@@ -773,7 +807,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_027_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -781,7 +815,7 @@
           DTS:refId="Package\Validation\Test 28 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{372B96F1-5A70-40A1-943D-C30CBFCD764B}"
+          DTS:DTSID="{62F9DB24-056F-4C24-BA3A-BC68A9351FE2}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 28 Validation"
@@ -790,7 +824,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_028_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -798,7 +832,7 @@
           DTS:refId="Package\Validation\Test 29 Validation"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E0C8D540-9D00-41F8-9742-302F653EA88C}"
+          DTS:DTSID="{EF713C02-A265-465D-BF21-CFEFF0EF6C36}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 29 Validation"
@@ -807,7 +841,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{542DCFE6-24FB-4B5D-A1BD-2D0E71E3CD0E}"
+              SQLTask:Connection="{EEB9F7F4-603C-4528-9475-2FAFED5EE687}"
               SQLTask:SqlStatementSource="SELECT restrictions_test_029_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -816,7 +850,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{B4F405EF-6BD9-4A73-8C75-229B82CAFCD6}"
+          DTS:DTSID="{C148C483-8587-4F95-AAD1-FFBF8F91455C}"
           DTS:From="Package\Validation\Test 001 validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -824,7 +858,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{A33B7368-94E7-41E4-A6AC-0477F0ACC798}"
+          DTS:DTSID="{E070285D-A619-480C-AE03-E1D064AA03EA}"
           DTS:From="Package\Validation\Test 003 validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -832,7 +866,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{44F85261-4030-47B3-A02B-BE2AED4B6D3C}"
+          DTS:DTSID="{54ABA86C-B154-4E1B-B13B-9330BDD91F31}"
           DTS:From="Package\Validation\Test 005 validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -840,7 +874,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{2EDC913E-D866-4942-B531-A6122C487CAA}"
+          DTS:DTSID="{94620C0A-B67C-41C5-A5B1-60D3F5E92E7E}"
           DTS:From="Package\Validation\Test 07 validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -848,7 +882,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{9F7E36A0-4C4D-45ED-8F58-A00FC4372ECB}"
+          DTS:DTSID="{07A3D07F-FDCF-4432-812A-3C83F5F9DBED}"
           DTS:From="Package\Validation\Test 009 validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -856,7 +890,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Validation.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{F403F440-E21B-4B4D-B1C0-29CCE93D0875}"
+          DTS:DTSID="{FB28D8CA-DBA2-4046-84D6-B1C9E3A40D1F}"
           DTS:From="Package\Validation\Test 015 Validation"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -868,7 +902,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{B1EDBE36-C25E-4474-A075-B352FBF7408B}"
+      DTS:DTSID="{3489CD45-FF8C-4027-B4DD-2D261E307C72}"
       DTS:EventID="587682088"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -876,7 +910,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{E4F545CB-A9EF-4347-BB75-076017938D66}"
+          DTS:DTSID="{1D1116EB-D227-4BD4-AB0A-33DB7549AB9A}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -889,7 +923,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Validate Restrictions Log Error"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9D0E18E3-F1E4-4A41-9F46-340D0296356B}"
+          DTS:DTSID="{D86D0979-440C-4469-B924-3D9FD28794E5}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Validate Restrictions Log Error"
@@ -897,7 +931,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="UPDATE log_etl_validation_process SET process_ended_at = now(), status='Restrictions Validation Package Failed' WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);&#xA;INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select  (SELECT MAX(id) FROM log_etl_validation_process), ?, ?, 'Failed', ? , now()&#xA;where not exists (select 1 from log_etl_validation_process_test_execution where error_log=? and log_etl_validation_process_id = (SELECT MAX(id) FROM log_etl_validation_process));&#xA;UPDATE log_etl_validation_process SET  total_succeded_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log=''), total_failed_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log !='') WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="3"
@@ -931,7 +965,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{0FEE7BB7-6868-43C2-BB03-B859E5B8870B}"
+      DTS:DTSID="{DFAAB2D7-7689-45FD-AA8A-C6CFE678AAF3}"
       DTS:EventID="308529088"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -939,7 +973,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{3DFC5946-C916-4744-9157-28CF03AAB958}"
+          DTS:DTSID="{BBEE6D9F-BE51-49A4-85B9-62136277B8AE}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -952,7 +986,7 @@
           DTS:refId="Package.EventHandlers[OnPostExecute]\Log Task Success"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{00539EAD-E776-4173-8356-F5B8AE1779AE}"
+          DTS:DTSID="{C5BEE8B4-55D2-47D4-A632-5DD80D4347F9}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
@@ -960,7 +994,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DF57BA46-1F4E-4022-8945-58752972D880}"
+              SQLTask:Connection="{E0F67B48-670A-448A-B297-1E4917A4FA1C}"
               SQLTask:SqlStatementSource="INSERT INTO log_etl_validation_process_test_execution(log_etl_validation_process_id, test_case_name, project_name, status, error_log, created_at) select (SELECT MAX(id) FROM log_etl_validation_process),?,?,'Success', '', now()&#xA;where not exists (select 1 from log_etl_validation_process_test_execution where status='Failed' and test_case_name = ?);&#xA;Delete from log_etl_validation_process_test_execution where test_case_name NOT ILIKE 'Test%';&#xA;UPDATE log_etl_validation_process SET  total_succeded_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log=''), total_failed_test_cases=(select count(*) from log_etl_validation_process_test_execution where error_log !='') WHERE id = (SELECT MAX(id) FROM log_etl_validation_process);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
@@ -1050,6 +1084,14 @@
           Size="171,42"
           Id="Package\Custom Accounts Validation\Test CA ETL Test 9"
           TopLeft="1825.88888888889,44.3333333333335" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Custom Accounts Validation\Test CA ETL Test 14"
+          TopLeft="737.25,133" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Custom Accounts Validation\Test CA ETL Test 15"
+          TopLeft="957.25,134.25" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -1157,6 +1199,10 @@
           Size="166,42"
           Id="Package\Validation\Test 28 Validation"
           TopLeft="264.5,552.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Validation\Test 29 Validation"
+          TopLeft="477.277777777778,225.166666666667" />
         <EdgeLayout
           Id="Package\Validation.PrecedenceConstraints[Constraint]"
           TopLeft="154.857142857143,66.5714285714287">
@@ -1289,14 +1335,10 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Validation\Test 29 Validation"
-          TopLeft="477.277777777778,225.166666666667" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="3725,654"
+          PanelSize="3725,655"
           Size="3725,698"
           Id="Package\Validation"
           TopLeft="1058.47799422799,90.5382395382433" />
