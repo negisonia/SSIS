@@ -39,10 +39,10 @@ expected_source_comments_output= '['||
     ']';
 PERFORM res_rpt_specialty_pharmacy_form(fe_report_1, commercial_plan_type_id, provider_id, expected_source_comments_output);
 
---MEDICAL FORMS
+--PA FORMS
 expected_source_comments_output = '['||
-    '{"drug_id":1,"drug_name":"drug_1","medical_policy_form_url":""},'||
-    '{"drug_id":2,"drug_name":"drug_2","medical_policy_form_url":"https://www.provider_1.com/drug_2hixMedicalform1.pdf"}'
+    '{"drug_id":1,"drug_name":"drug_1","pa_policy_form_url":""},'||
+    '{"drug_id":2,"drug_name":"drug_2","pa_policy_form_url":"https://www.provider_1.com/drug_2PAform1hix.pdf"}'
     ||']';
 PERFORM res_rpt_pa_policy_form_url(fe_report_1, hix_plan_type_id, provider_id, format(druglist,drug_1,drug_2), expected_source_comments_output);
 
