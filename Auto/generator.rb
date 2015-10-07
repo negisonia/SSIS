@@ -2,66 +2,126 @@ require 'erb'
 require 'json'
 require 'fileutils'
 
-class AutoGenerator
-  attr_accessor :data_hash
+class TestCasesGenerator
+  attr_accessor :json_hash
 
-  def initialize()
-    file = File.read(File.join(__dir__,"test_cases.json"))
-    @data_hash = JSON.parse(file)
+  def initialize(file_name)
+    file = File.read(File.join(__dir__,file_name))
+    @json_hash = JSON.parse(file)
   end
 
   def parse_file
-    @data_hash['selections'].each do |selection, index|
-      create_selection_directory(selection)
-      selection['test_cases'].each_with_index do |test_case, index|
-        test_case_generator = TestCasesTemplate.new()
-        test_case_generator.selection_id = selection['selection_id']
-        test_case_generator.test_number = index + 1
-        test_case_generator.total_test_cases = selection['test_cases'].size
-        test_case_generator.test_name = selection['test_name']
-        test_case_generator.expected_json = test_case['expected_json']
-        test_case_generator.condition_fields = test_case['condition_fields']
-        test_case_generator.geography = selection['geography']
-        test_case_generator.drug_class = selection['drug_class']
-        test_case_generator.state_list = selection['state_list']
-        test_case_generator.plan_list = selection['plan_list']
-        test_case_generator.drug_list = selection['drug_list']
-        test_case_generator.function_name = @data_hash['function_folder_name']
-        test_case_generator.tab_name = @data_hash['tab_folder_name']
-        test_case_generator.validation_fields = @data_hash['validation_fields']
-        test_case_generator.save(File.join(selection_path(selection), "#{test_case_generator.test_number_formated}_validate_data.sql"), :test_case_template)
-        test_case_generator.save(File.join(common_selection_path(selection), "test_001_0#{test_case_generator.total_test_cases_formated}_validate_data.sql"), :common_template)
-        test_case_generator.save(File.join(report_row_path(selection), "validate_#{test_case_generator.function_name}_report_row.sql"), :report_row_template)
-      end
+    parse_functions(@json_hash['functions'])
+  end
+
+  def parse_functions functions
+    functions.each do |function|
+      generator = TestCasesTemplate.new()
+      generator.function_name = function['function_folder_name']
+      generator.tab_name = function['tab_folder_name']
+      generator.validation_fields = function['validation_fields']
+
+      parse_selections(function['selections'], generator)
     end
   end
 
-  def create_selection_directory(selection)
-    FileUtils.mkdir_p(common_selection_path(selection))
-    FileUtils.mkdir_p(report_row_path(selection))
+  def parse_selections(selections, generator)
+    selections.each do |selection, index|
+        FilesGenerator.new(generator).create_directories
+
+        generator.selection_id = selection['selection_id']
+        generator.selection_name = selection['selection_name']
+        generator.total_test_cases = selection['test_cases'].size
+        generator.test_name = selection['test_name']
+        generator.geography = selection['geography']
+        generator.drug_class = selection['drug_class']
+        generator.state_list = selection['state_list']
+        generator.plan_list = selection['plan_list']
+        generator.drug_list = selection['drug_list']
+
+        parse_test_cases(selection['test_cases'], generator, selection)
+        
+        file_generator = FilesGenerator.new(generator)
+        file_generator.save_report_row_file
+        file_generator.save_validate_data_file
+    end
   end
 
-  def report_row_path(selection)
-    File.join(base_selection_path(selection), 'common_front_end')
+  def parse_test_cases(test_cases, generator, selection)
+    test_cases.each_with_index do |test_case, index|
+      generator.test_number = index + 1
+      generator.expected_json = test_case['expected_json']
+      generator.condition_fields = test_case['condition_fields']
+      
+      file = FilesGenerator.new(generator)
+      file.save_test_case_file
+    end
   end
 
-  def common_selection_path(selection)
-    File.join(selection_path(selection),'common_front_end')
+end
+
+class FilesGenerator
+  attr_accessor :selection_id, :selection_name,
+                :function_name, :tab_name, :template
+
+  def initialize generator
+    @selection_id = generator.selection_id
+    @selection_name = generator.selection_name
+    @function_name = generator.function_name
+    @tab_name = generator.tab_name
+    @template = generator
   end
 
-  def selection_path(selection)
-    File.join(base_selection_path(selection),selection['selection_name'])
+  def save_test_case_file
+    template.save(File.join(selection_path, test_case_file_name), :test_case_template)
   end
 
-  def base_selection_path(selection)
-    File.join(File.expand_path("../../Analytics/scripts/report_data/#{@data_hash['function_folder_name']}/#{@data_hash['tab_folder_name']}/selection", __FILE__))
+  def save_report_row_file
+    template.save(File.join(report_row_path, report_row_file_name), :report_row_template)
+  end
+
+  def save_validate_data_file
+    template.save(File.join(common_selection_path, common_validate_data_file_name), :common_template)
+  end
+
+  def test_case_file_name
+    "#{template.test_number_formated}_validate_data.sql"
+  end
+
+  def common_validate_data_file_name
+    "test_001_0#{template.total_test_cases_formated}_validate_data.sql"
+  end
+
+  def report_row_file_name
+    "validate_#{function_name}_report_row.sql"
+  end  
+
+  def create_directories
+    FileUtils.mkdir_p(common_selection_path)
+    FileUtils.mkdir_p(report_row_path)
+  end
+
+  def report_row_path
+    File.join(base_selection_path, 'common_front_end')
+  end
+
+  def common_selection_path
+    File.join(selection_path,'common_front_end')
+  end
+
+  def selection_path
+    File.join(base_selection_path,"#{selection_id} - #{selection_name}")
+  end
+
+  def base_selection_path
+    File.join(File.expand_path("../../Analytics/scripts/report_data/#{function_name}/#{tab_name}/selection", __FILE__))
   end
 
 end
 
 class TestCasesTemplate
   include ERB::Util
-  attr_accessor :selection_id, :condition_fields,
+  attr_accessor :selection_id, :condition_fields, :selection_name,
                 :test_number, :total_test_cases,
                 :test_name, :expected_json, :geography,
                 :drug_class, :state_list, :plan_list,
@@ -78,7 +138,7 @@ class TestCasesTemplate
 
   def total_test_cases_formated
     @total_test_cases.to_i > 10 ? @total_test_cases : "0#{@total_test_cases}"
-  end  
+  end
 
   def format_array list
     list.empty? ? 'ARRAY[]::varchar[]' : 'ARRAY[' + list.split(',').map{ |element| "'#{element}'" }.join(',') + ']'
@@ -86,6 +146,10 @@ class TestCasesTemplate
 
   def conditional_fields_formatted
     condition_fields.keys.map{ |element| "#{element}=''' || #{element} || ''' " }.join('AND ')
+  end
+
+  def dynamic_json_fields_formatted
+    condition_fields.keys.map{ |element| "\"#{element}\":\"%s\"" }.join(',')
   end
 
   def save(file, template_name)
@@ -106,7 +170,7 @@ DECLARE
   <% end %>
 BEGIN
 
-expected_value = format('[<%= expected_json %>]', <%= condition_fields.keys.join(', ') %>);
+expected_value = format('[{<%= dynamic_json_fields_formatted %>,<%= expected_json %>}]', <%= condition_fields.keys.join(', ') %>);
 
 PERFORM <%= test_name %>_selection_<%= selection_id %>_test_01_<%= total_test_cases_formated %>_validate_data(expected_value,'<%= test_number_formated %>', <%= condition_fields.keys.join(', ') %>);
 
@@ -156,9 +220,15 @@ success:=true;
 RETURN success;
 END
 $$ LANGUAGE plpgsql;}
-  end  
+  end
 
 end
 
-generator = AutoGenerator.new()
+unless ARGV.length == 1
+  puts "Not the right number of arguments."
+  puts "Usage: ruby generator.rb test_cases.json\n"
+  exit
+end
+
+generator = TestCasesGenerator.new(ARGV[0])
 generator.parse_file
