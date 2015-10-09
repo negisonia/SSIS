@@ -4,15 +4,12 @@ DECLARE
 success BOOLEAN DEFAULT FALSE;
 expected_rpt_geo_output VARCHAR;
 fe_report_1 INTEGER;
-drug_1 INTEGER;
 drug_2 INTEGER;
 medical_benefit_type INTEGER := 2;
 state_market_type INTEGER := 2;
 BEGIN
 
 --RETRIEVE DATA
-
-SELECT common_get_table_id_by_name('drugs','drug_1') INTO drug_1;
 SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
 
 
