@@ -159,6 +159,10 @@ class TestCasesTemplate
     end
   end
 
+  def ssis_task_name
+    "Test #{test_number_formated} #{function_name.gsub('rpt_','').humanize} by #{tab_name} Details"
+  end
+
   def test_case_template()
 %{CREATE OR REPLACE FUNCTION <%= test_name %>_selection_<%= selection_id %>_test_<%= test_number_formated %>_validate_data() --FRONT END
 RETURNS boolean AS $$
@@ -220,6 +224,26 @@ success:=true;
 RETURN success;
 END
 $$ LANGUAGE plpgsql;}
+  end
+
+  def ssis_executable_template()
+    %{<DTS:Executable
+          DTS:refId="Package\Rpt <%= function_name.gsub('rpt_','').humanize %>\<% tab_name.humanize %> Validation\<%= ssis_task_name %>"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{<%= SecureRandom.uuid %>}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="<%= ssis_task_name %>"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DA50DDF6-1F49-4D39-AA62-9B422C692442}"
+              SQLTask:SqlStatementSource="select <%= test_name %>_selection_<%= selection_id %>_test_<%= test_number_formated %>_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>}
   end
 
 end
