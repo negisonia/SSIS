@@ -8,7 +8,7 @@ DECLARE
 BEGIN
 
 -- Create Report Id
-SELECT util_report_1_generate() INTO fe_report_1;
+SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
 expected_output='['||
 '{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","restriction_name":"PA - Diagnosis","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_1","criteria_restriction_short_name":"criteria_diagnosis_1","health_plan_type_name":"commercial","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":200,"total_medical_lives":0,"total_health_plan_count":2,"total_provider_count":0},'||

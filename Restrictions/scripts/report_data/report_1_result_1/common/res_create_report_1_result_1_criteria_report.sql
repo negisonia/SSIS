@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION util_report_1_generate() --FRONT END
+CREATE OR REPLACE FUNCTION res_create_report_1_result_1_criteria_report() --FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 

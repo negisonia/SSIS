@@ -40,7 +40,7 @@ SELECT common_get_table_id_by_name('states','Massachusetts') INTO massachusetts_
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_market_id;
 
 --REPORT#1
-SELECT util_report_1_generate() INTO fe_report_1;
+SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
 -- Massachusetts
 expected_rpt_geo_output='['||

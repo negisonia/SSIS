@@ -16,7 +16,7 @@ SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commer
 SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_plan_type_id;
 
 --REPORT#1
-SELECT util_report_1_generate() INTO fe_report_1;
+SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
 --VALIDATE SUMMARY TABLE
 expected_provider_details_output= format('['||

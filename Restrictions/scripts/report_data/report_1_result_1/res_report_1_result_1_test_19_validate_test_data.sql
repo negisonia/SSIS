@@ -8,7 +8,7 @@ CREATE OR REPLACE FUNCTION res_report_1_result_1_test_19_validate_test_data() --
                     BEGIN
 
                     --REPORT#1
-                    SELECT util_report_1_generate() INTO fe_report_1;
+                    SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
                     expected_rpt_drug_output= format('['||
                         '{"criteria_report_id":%1$s,"indication_name":"indication_1","drug_name":"drug_2","benefit_name":"Medical","criteria_restriction_name":"Age - criteria_age_1","restriction_name":"Age","dim_restriction_type_id":2,"lives":200,"total_pharmacy_lives":0,"health_plan_count":0,"total_health_plan_count":0,"total_medical_lives":300,"provider_count":1,"total_provider_count":2},'||

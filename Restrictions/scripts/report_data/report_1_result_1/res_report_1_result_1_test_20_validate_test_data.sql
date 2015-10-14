@@ -10,7 +10,7 @@ expected_plan_details_output VARCHAR;
 BEGIN
 
 --REPORT#1
-SELECT util_report_1_generate() INTO fe_report_1;
+SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
 --VALIDATE SUMMARY TABLE
 expected_plan_details_output= '['||
