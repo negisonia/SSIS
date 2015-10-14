@@ -26,7 +26,7 @@ dim_restriction_type_id = 2;
 
   SELECT common_get_table_id_by_name(drugs,'drug_2') INTO drug_id;
   SELECT common_get_table_id_by_name(health_plan_types,'commercial') INTO plan_type_id;
-  PERFORM rpt_health_plan_notes_validate_data(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
+  PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
 
 -- Drug 02, Medical, Plan Type Hix 
   expected_output= '['||
@@ -34,7 +34,7 @@ dim_restriction_type_id = 2;
     '{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"ST - Single - custom_option_2^1 ","note_position":1,"notes":""}'||
     ']';
   SELECT common_get_table_id_by_name(health_plan_types,'hix') INTO plan_type_id;
-  PERFORM rpt_health_plan_notes_validate_data(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
+  PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_id, plan_type_id, drug_id, dim_restriction_type_id, expected_output);
 
 success:=true;
 RETURN success;

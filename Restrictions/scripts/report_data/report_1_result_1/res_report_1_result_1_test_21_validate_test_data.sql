@@ -37,20 +37,20 @@ expected_health_plan_notes_output= '['||
     '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"long message 100 characters"},'||
     '{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: long message 500 characters"}'||
     ']';
-PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
+PERFORM res_rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
 
 --VALIDATE NOTES (DRUG 1, PA, hix)
 expected_health_plan_notes_output= '['||
     '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"Criteria Unspecified","note_position":1,"notes":"Notes"}'||
     ']';
-PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
+PERFORM res_rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_1, pa_dim_criterion_type, expected_health_plan_notes_output);
 
 --VALIDATE NOTES (DRUG 2, PA, hix)
 expected_health_plan_notes_output= '['||
     '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":"message"},'||
     '{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: notes for drug 1"}'||
     ']';
-PERFORM rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, pa_dim_criterion_type, expected_health_plan_notes_output);
+PERFORM res_rpt_health_plan_notes_validate_data(admin_report_1, provider_1, hix_hpt, drug_2, pa_dim_criterion_type, expected_health_plan_notes_output);
 
 success:=true;
 return success;

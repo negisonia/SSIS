@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION rpt_health_plan_notes_validate_data(admin_report_id INTEGER, provider_id INTEGER, health_plan_type_id INTEGER, drug_id INTEGER, dim_restriction_type_id INTEGER, expected_json VARCHAR) --FRONT END
+CREATE OR REPLACE FUNCTION res_rpt_health_plan_notes_validate_data(admin_report_id INTEGER, provider_id INTEGER, health_plan_type_id INTEGER, drug_id INTEGER, dim_restriction_type_id INTEGER, expected_json VARCHAR) --FRONT END
 RETURNS boolean AS $$
 DECLARE
 success BOOLEAN DEFAULT FALSE;
