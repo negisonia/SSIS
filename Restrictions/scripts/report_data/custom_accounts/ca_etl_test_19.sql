@@ -1,25 +1,25 @@
-CREATE OR REPLACE FUNCTION restrictions_test_033_validate_test_data() --REPORT FRONT END
+CREATE OR REPLACE FUNCTION res_ca_etl_test_19_validate_test_data() --REPORT FRONT END
 RETURNS boolean AS $$
 DECLARE
-success BOOLEAN DEFAULT FALSE;
-expected_rpt_geo_output VARCHAR;
-fe_report_1 INTEGER;
-drug_1 INTEGER;
-drug_2 INTEGER;
-indication_1 INTEGER;
-county_market_type INTEGER := 1;
-state_market_type INTEGER := 2;
-medical_benefit_type INTEGER := 2;
-massachusetts_market_id INTEGER;
-ind1_m_age_1 INTEGER;
-ind1_m_criteria_diagnosis_3 INTEGER;
-ind1_m_st_custom_option_2 INTEGER;
-
+  success BOOLEAN DEFAULT FALSE;
+  expected_rpt_geo_output VARCHAR;
+  fe_report_1 INTEGER;
+  drugs VARCHAR:='drugs';
+  drug_1 INTEGER;
+  drug_2 INTEGER;
+  indication_1 INTEGER;
+  county_market_type INTEGER := 1;
+  state_market_type INTEGER := 2;
+  medical_benefit_type INTEGER := 2;
+  massachusetts_market_id INTEGER;
+  ind1_m_age_1 INTEGER;
+  ind1_m_criteria_diagnosis_3 INTEGER;
+  ind1_m_st_custom_option_2 INTEGER;
 BEGIN
 
 --RETRIEVE DATA
-SELECT common_get_table_id_by_name('drugs','drug_1') INTO drug_1;
-SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
+SELECT common_get_table_id_by_name(drugs,'drug_1') INTO drug_1;
+SELECT common_get_table_id_by_name(drugs,'drug_2') INTO drug_2;
 SELECT common_get_table_id_by_name('indications','indication_1') INTO indication_1;
 SELECT common_get_table_id_by_name('states','Massachusetts') INTO massachusetts_market_id;
 SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Age','criteria_age_1') INTO ind1_m_age_1;
@@ -28,7 +28,7 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Medical','ST - Single',
 
 
 --REPORT#1
-SELECT util_report_1_generate() INTO fe_report_1;
+SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO fe_report_1;
 
 expected_rpt_geo_output='['||
 '{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Medical","criteria_restriction_name":"Age - criteria_age_1","criteria_restriction_short_name":"criteria_age_1","market_name":"Middlesex","drug_name":"drug_2","lives":100,"health_plan_count":0,"provider_count":1,"total_pharmacy_lives":0,"total_medical_lives":200,"total_health_plan_count":0,"total_provider_count":2}'||
