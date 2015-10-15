@@ -51,7 +51,7 @@ SELECT res_create_report_1_result_1_criteria_report() INTO fe_report_1;
 expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":""}]';
 PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, commercial_hpt, drug_1, ind1_pa_diagnosis_1, expected_provider_notes);
 
-expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction"}]';
+expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction : l : 10 up : 30"}]';
 PERFORM res_rpt_provider_notes_validate_data(fe_report_1, provider_1, commercial_hpt, drug_1, ind1_pa_age_1, expected_provider_notes);
 
 expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"long message 100 characters"}]';
