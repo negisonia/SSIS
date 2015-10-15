@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ca_etl_test_1() --Data Warehouse
+CREATE OR REPLACE FUNCTION res_ca_general_test_1_validate_test_data() --Data Warehouse
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;

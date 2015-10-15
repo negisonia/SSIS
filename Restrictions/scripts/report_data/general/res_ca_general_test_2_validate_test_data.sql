@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ca_etl_test_2() --Front End
+CREATE OR REPLACE FUNCTION res_ca_general_test_2_validate_test_data() --Front End
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
