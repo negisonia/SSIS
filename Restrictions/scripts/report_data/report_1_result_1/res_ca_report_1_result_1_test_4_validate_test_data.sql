@@ -9,7 +9,7 @@ DECLARE
 BEGIN
 
 -- Create Criteria Report Id
-SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO criteria_report_id;
+SELECT res_ca_create_report_1_result_1_criteria_report() INTO criteria_report_id;
 
 expected_drug_output= format('['||
     '{"criteria_report_id":%1$s,"indication_name":"indication_1","drug_name":"drug_1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Age - criteria_age_1","restriction_name":"PA - Age","dim_restriction_type_id":1,"lives":100,"total_pharmacy_lives":300,"health_plan_count":1,"total_health_plan_count":3,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||

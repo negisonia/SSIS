@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_ca_etl_test_create_report_1_criteria_report_data() --FF NEW DB
+CREATE OR REPLACE FUNCTION res_ca_create_report_1_result_1_criteria_report() --FF NEW DB
 RETURNS INTEGER AS $$
 DECLARE
 

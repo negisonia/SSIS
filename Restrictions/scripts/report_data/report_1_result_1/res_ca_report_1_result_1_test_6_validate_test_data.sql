@@ -7,7 +7,7 @@ DECLARE
 BEGIN
 
 -- Create Criteria Report Id
-SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO criteria_report_id;
+SELECT res_ca_create_report_1_result_1_criteria_report() INTO criteria_report_id;
 
 expected_plan_output= '['||
 '{"provider_name":"provider_1","health_plan_name":"health_plan_comm","formulary_url":"https://health_plan_comm/test.pdf","health_plan_type_name":"commercial","lives":100,"drug_name":"drug_1","tierfid":1,"preferred_brand_tier_id":null,"has_quantity_limit":true,"has_prior_authorization":true,"has_step_therapy":false,"has_other_restriction":false,"has_medical":false,"reason_code_code":"92","reason_code_desc":"PA required if recommended dose duration exceeded."},'||

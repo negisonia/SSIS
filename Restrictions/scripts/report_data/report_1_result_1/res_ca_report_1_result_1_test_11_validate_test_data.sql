@@ -17,7 +17,7 @@ DECLARE
 BEGIN
 
 -- Create Report Id
-SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO criteria_report_id;
+SELECT res_ca_create_report_1_result_1_criteria_report() INTO criteria_report_id;
 
 SELECT common_get_table_id_by_name(providers,'provider_1') INTO provider_id;
 SELECT common_get_table_id_by_name(health_plan_types,'commercial') INTO commercial_plan_type_id;

@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_ca_etl_test_19_validate_test_data() --REPORT FRONT END
+CREATE OR REPLACE FUNCTION res_ca_report_1_result_1_test_19_validate_test_data() --REPORT FRONT END
 RETURNS boolean AS $$
 DECLARE
   success BOOLEAN DEFAULT FALSE;
@@ -28,7 +28,7 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Medical','ST - Single',
 
 
 --REPORT#1
-SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO fe_report_1;
+SELECT res_ca_create_report_1_result_1_criteria_report() INTO fe_report_1;
 
 expected_rpt_geo_output='['||
 '{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Medical","criteria_restriction_name":"Age - criteria_age_1","criteria_restriction_short_name":"criteria_age_1","market_name":"Middlesex","drug_name":"drug_2","lives":100,"health_plan_count":0,"provider_count":1,"total_pharmacy_lives":0,"total_medical_lives":200,"total_health_plan_count":0,"total_provider_count":2}'||

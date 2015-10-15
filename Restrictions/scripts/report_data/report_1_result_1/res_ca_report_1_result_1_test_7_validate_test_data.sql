@@ -14,7 +14,7 @@ DECLARE
 BEGIN
 
 -- Create Report Id
-SELECT get_report_id_by_criteria_report_id(res_ca_etl_test_create_report_1_criteria_report_data()) INTO report_id;
+SELECT get_report_id_by_criteria_report_id(res_ca_create_report_1_result_1_criteria_report()) INTO report_id;
 -- Get parameter values
 SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_id;
 -- PA

@@ -48,7 +48,7 @@ BEGIN
   SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','QL','criteria_ql_1') INTO ind1_pa_ql;
 
   --REPORT#1
-  SELECT res_ca_etl_test_create_report_1_criteria_report_data() INTO criteria_report_id;
+  SELECT res_ca_create_report_1_result_1_criteria_report() INTO criteria_report_id;
 
   expected_provider_notes = '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":""}]';
   PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, commercial_hpt, drug_1, ind1_pa_diagnosis_1, expected_provider_notes);
