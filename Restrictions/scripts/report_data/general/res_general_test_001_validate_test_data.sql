@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION restrictions_test_001_validate_test_data() --REPORT FRONT END
+﻿CREATE OR REPLACE FUNCTION res_general_test_001_validate_test_data() --REPORT FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
