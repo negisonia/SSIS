@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION restrictions_test_002_validate_test_data() --DATAWAREHOUSE
+﻿CREATE OR REPLACE FUNCTION res_general_test_002_validate_test_data() --DATAWAREHOUSE
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;

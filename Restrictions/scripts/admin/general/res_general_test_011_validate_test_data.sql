@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION restrictions_test_011_validate_test_data() --ADMIN
+CREATE OR REPLACE FUNCTION res_general_test_011_validate_test_data() --ADMIN
 RETURNS boolean AS $$
 DECLARE
 success BOOLEAN DEFAULT FALSE;

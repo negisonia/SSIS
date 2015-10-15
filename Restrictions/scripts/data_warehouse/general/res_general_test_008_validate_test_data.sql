@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION restrictions_test_008_validate_test_data() --DataWarehouse
+﻿CREATE OR REPLACE FUNCTION res_general_test_008_validate_test_data() --DataWarehouse
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
