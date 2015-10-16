@@ -52,7 +52,7 @@ SELECT common_get_table_id_by_name('indications','indication_1') INTO indication
 SELECT common_get_table_id_by_name('drugs','drug_1') INTO drug_1;
 SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
 
-SELECT array(common_get_table_id_by_name('states','Massachusetts')) INTO state_ids;
+SELECT array(select common_get_table_id_by_name('states','Massachusetts')) INTO state_ids;
 
 --RETRIEVE RESTRICTIONS
 
