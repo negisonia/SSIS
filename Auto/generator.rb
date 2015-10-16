@@ -90,15 +90,15 @@ class FilesGenerator
   end
 
   def test_case_file_name
-    "#{template.test_number_formated}_validate_data.sql"
+    "#{template.test_name}_selection_#{selection_id}_test_#{template.test_number_formated}_validate_data.sql"
   end
 
   def common_validate_data_file_name
-    "test_001_0#{template.total_test_cases_formated}_validate_data.sql"
+    "#{template.test_name}_selection_#{selection_id}_test_01_#{template.total_test_cases_formated}_validate_data.sql"
   end
 
   def report_row_file_name
-    "validate_#{function_name}_report_row.sql"
+    "ana_#{function_name}_#{tab_name}_validate_report_row.sql"
   end  
 
   def create_directories
@@ -107,11 +107,11 @@ class FilesGenerator
   end
 
   def report_row_path
-    File.join(base_selection_path, 'common_front_end')
+    File.join(base_selection_path, 'common')
   end
 
   def common_selection_path
-    File.join(selection_path,'common_front_end')
+    File.join(selection_path,'common')
   end
 
   def selection_path
@@ -138,11 +138,11 @@ class TestCasesTemplate
   end
 
   def test_number_formated
-    @test_number.to_i > 10 ? "0#{@test_number}" : "00#{@test_number}"
+    @test_number.to_i >= 10 ? "0#{@test_number}" : "00#{@test_number}"
   end
 
   def total_test_cases_formated
-    @total_test_cases.to_i > 10 ? @total_test_cases : "0#{@total_test_cases}"
+    @total_test_cases.to_i >= 10 ? @total_test_cases : "0#{@total_test_cases}"
   end
 
   def format_array list
