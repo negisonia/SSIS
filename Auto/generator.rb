@@ -164,8 +164,16 @@ class TestCasesTemplate
     end
   end
 
-  def ssis_task_name
-    "Test #{test_number_formated} #{function_name.gsub('rpt_','').gsub('_','').capitalize} by #{tab_name} Details"
+  def selection_name_formatted
+    "Selection #{selection_id} - #{selection_name}"
+  end
+
+  def test_name_formatted
+    "Test #{test_number_formated} #{function_name_formatted} #{tab_name.capitalize} Details"
+  end
+
+  def function_name_formatted
+    function_name.gsub('rpt_','').split('_').map(&:capitalize).join(' by ')
   end
 
   def test_case_template()
@@ -233,19 +241,19 @@ $$ LANGUAGE plpgsql;}
 
   def ssis_executable_template()
 %{<DTS:Executable
-      DTS:refId="Package\Rpt <%= function_name.gsub('rpt_','').gsub('_','').capitalize %>\<% tab_name.gsub('_','').capitalize %> Validation\<%= ssis_task_name %>"
+      DTS:refId="Package\\Report <%= function_name_formatted %>\\<%= tab_name.capitalize %> Validation\\<%= selection_name_formatted %>\\<%= test_name_formatted %>, <%= selection_name_formatted %>"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{<%= SecureRandom.uuid %>}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
-      DTS:ObjectName="<%= ssis_task_name %>"
+      DTS:ObjectName="<%= test_name_formatted %>,<%= selection_name_formatted %>"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DA50DDF6-1F49-4D39-AA62-9B422C692442}"
+          SQLTask:Connection="{CE1A9A1D-A669-49BA-9EC8-960DE1BB7D31}"
           SQLTask:SqlStatementSource="select <%= test_name %>_selection_<%= selection_id %>_test_<%= test_number_formated %>_validate_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>}
