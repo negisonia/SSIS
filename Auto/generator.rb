@@ -1,6 +1,7 @@
 require 'erb'
 require 'json'
 require 'fileutils'
+require 'securerandom'
 
 class TestCasesGenerator
   attr_accessor :json_hash
@@ -27,7 +28,6 @@ class TestCasesGenerator
 
   def parse_selections(selections, generator)
     selections.each do |selection, index|
-        FilesGenerator.new(generator).create_directories
 
         generator.selection_id = selection['selection_id']
         generator.selection_name = selection['selection_name']
@@ -38,10 +38,10 @@ class TestCasesGenerator
         generator.state_list = selection['state_list']
         generator.plan_list = selection['plan_list']
         generator.drug_list = selection['drug_list']
+        file_generator = FilesGenerator.new(generator)
+        file_generator.create_directories
 
         parse_test_cases(selection['test_cases'], generator, selection)
-        
-        file_generator = FilesGenerator.new(generator)
         file_generator.save_report_row_file
         file_generator.save_validate_data_file
     end
@@ -55,6 +55,7 @@ class TestCasesGenerator
       
       file = FilesGenerator.new(generator)
       file.save_test_case_file
+      file.save_ssis_test_case_file
     end
   end
 
@@ -74,6 +75,10 @@ class FilesGenerator
 
   def save_test_case_file
     template.save(File.join(selection_path, test_case_file_name), :test_case_template)
+  end
+  
+  def save_ssis_test_case_file
+    template.save(File.join(__dir__, "#{function_name}_#{tab_name}.xml"), :ssis_executable_template, "a+")
   end
 
   def save_report_row_file
@@ -152,15 +157,15 @@ class TestCasesTemplate
     condition_fields.keys.map{ |element| "\"#{element}\":\"%s\"" }.join(',')
   end
 
-  def save(file, template_name)
-    File.open(file, "w+") do |f|
+  def save(file, template_name, mode="w+")
+    File.open(file, mode) do |f|
       erb = ERB.new(self.send(template_name)).result(binding)
       f.write(erb)
     end
   end
 
   def ssis_task_name
-    "Test #{test_number_formated} #{function_name.gsub('rpt_','').humanize} by #{tab_name} Details"
+    "Test #{test_number_formated} #{function_name.gsub('rpt_','').gsub('_','').capitalize} by #{tab_name} Details"
   end
 
   def test_case_template()
@@ -228,7 +233,7 @@ $$ LANGUAGE plpgsql;}
 
   def ssis_executable_template()
 %{<DTS:Executable
-      DTS:refId="Package\Rpt <%= function_name.gsub('rpt_','').humanize %>\<% tab_name.humanize %> Validation\<%= ssis_task_name %>"
+      DTS:refId="Package\Rpt <%= function_name.gsub('rpt_','').gsub('_','').capitalize %>\<% tab_name.gsub('_','').capitalize %> Validation\<%= ssis_task_name %>"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{<%= SecureRandom.uuid %>}"
