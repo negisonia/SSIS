@@ -123,7 +123,7 @@ SELECT co.id INTO custom_option_4 FROM custom_options co WHERE co.name='custom_o
     --RETRIEVE StepCustomOptions
     SELECT sco.id INTO  step_custom_option_id FROM step_custom_options sco WHERE sco.customizable_id=custom_option_2 and sco.customizable_type='CustomOption';
 
-    PERFORM common_create_atomic_step_notes(data_entry_id, 'ST','custom_option_2', 2, step_custom_option_id, 'Drug2 notes: notes for drug 1');
+    PERFORM common_create_atomic_step_notes(data_entry_id, 'ST','custom_option_2', 2, step_custom_option_id, 'Drug2 notes: notes for drug 2');
 
 --RETRIEVE DATA ENTRY
     SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type, drug_2) INTO data_entry_id; -- already exists returns existing id
