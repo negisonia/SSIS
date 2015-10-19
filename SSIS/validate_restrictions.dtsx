@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="validate_restrictions"
   DTS:PackageType="5"
-  DTS:VersionBuild="213"
-  DTS:VersionGUID="{B0A8E594-0265-4E6B-A1B7-C7A8E4B1ABEA}">
+  DTS:VersionBuild="214"
+  DTS:VersionGUID="{ABBFC7B7-CABF-46A1-84AA-37ADFCB90808}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADeiLoUdphO+z1purlOYtIjy6Egj0fphQZO/hUaBr874gAAAAAOgAAAAAIAACAAAACX7nqgLyXqIE1mzYJmRa6WGmPX+DMm2u8cTuXu40rHGBAAAABMFk9XwkOuEsFFIEZKc4ZdQAAAAA9/cDuXrF8673FDeuvgRAaaS8GwKpzuUG9MCWuPLRIvvS8QUmtdGrRFQ1I/90VI0QfMGYYOjljUK9o8HlwWEI8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADEY1wz2L+XlW1nD+BlQe6JLR5icBqecm600UxI0BCF+AAAAAAOgAAAAAIAACAAAAAPEVV0TBRVl9J1XPQB7AaYl+Jy9aoNRHdr/3ANi6ziXhAAAADf322IXprZDmy5dhvsbAZ5QAAAAFO5ZIJybwVVvRqlQw057Bz8uyX5M3Wg+W+RQWpQ3OBelv/GMy+TEEc62YNv2/eBNsYEenffYXu93wNZzoP1Dog</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -47,7 +47,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACOjDPqE8hoOT28byPJG+QyamtrDSciDLpJ5dy4KVke6AAAAAAOgAAAAAIAACAAAABSVjsJF0TXRHQczxZix+LdsgH7Lz4p0Fa68+F9CyRDYRAAAABW67wV8tvpJVtoeX5NpxrMQAAAAHX7+sUPzpJ7HeuXIeX+AMsTyKiuLTqLUZGYem5XsoRg2zjxcb3eJBpeEn8VjCbbDDfsvPAapcsFkwS4DsftwyQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbkI3s2bY6/ULCB+lxNGYEY7f5UA3x27A0YRaAAVFPdAAAAAAOgAAAAAIAACAAAACdb62YHBJX1X7QGP37SqBxyCOIMbZWny585oj0JqxPmhAAAAA52bWxcrSs1xh6L9xFg41lQAAAACPZWrgw2ckEK1yoPMZB4wuFYk5d9vcSjH7fFreBHUM2bC9Pvo9hePpV22UiMP3FvkmvVLIPWflUmCpzek5kzNY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -64,7 +64,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA6ZLUb9E6PT67fGbzEofTVzqPEO6iYIqcAEH7wINgkfgAAAAAOgAAAAAIAACAAAAAkO4s3DEOVxec+1sAFaiC9qxVYM4iOhMPLWxBivzP3EBAAAAAP4q2dcMc7A9H0m1z97gUNQAAAAOLBzXWh6NLj9afeVaZ/mCjfM8WaQorHFBTi9q88N2bptVZ3J4sP8bFpjJvb5Lbbu8DEnUzF78krIziatN7rvik</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACLDosStUjcwmXQCXXWrtoxV+J5HYcZUeb1adtdIHc7wgAAAAAOgAAAAAIAACAAAACU+ihgaRoNPfYeSI6O7FjEJ+Llq1rH1h+y/yWtbgH3DhAAAABusBoWSITbCoATOYBw7k2kQAAAANSzzkIPUBvxyE8EWkPmEH/1Gs2OW0n6gOwQiPnnCHXNmYmqDNbAKO+nPntZEDNLvGfSm6MDBkaZ25JdmXz6UC8</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -81,7 +81,7 @@
           <DTS:Password
             DTS:Name="password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACSOm7CSQyQhrZjMT9gKZVL7gxZN/CiaFuM9BYnlHuePQAAAAAOgAAAAAIAACAAAACHfH97Z3VFRHpCTC7yohMqINEhGJON6fRBAGmStnPZFBAAAADBZ0RRwtNKDCF23wOYjyfKQAAAAI1aS7P9Df/C/6oULkzcOhD3ueTRssfSCvYKtIQVgrzXFkgdAu/bHisjfjm4PvLYKm/k6ffvpffp52D7sOA9+6E</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFkBgeup1wEWWmPVKQ0Z1/wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARl46XLz7oYOqfdzwHpmOulJGQitJr4+eDUIWfeg7cvAAAAAAOgAAAAAIAACAAAADxySg7mXbCRIHkNK7lZA3x94g0YgwwgGxvnelxJr4T9hAAAAA7+r8r2f0bqEw89ZL3ktA1QAAAABqyxzcEOilHz5pLJ0Rgj3p+dqQOdFRS4uawrdxNTNMd2F7dpB87ya9BV+fIc5FSezofQwUonS90VDZcJbYQGU4</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -409,6 +409,23 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 26"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{14913AD6-F31C-4A47-8983-ADFD75134D7C}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test CA ETL Test 26"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="23">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{29B8AC7B-2D45-4FA2-972B-F17F839313E6}"
+              SQLTask:SqlStatementSource="SELECT res_ca_report_1_result_2_test_26_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Custom Accounts Validation\Test CA ETL Test 3"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Execute SQL Task"
@@ -548,7 +565,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 001 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="23">
+          DTS:ThreadHint="24">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -565,7 +582,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 002 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="23">
+          DTS:ThreadHint="24">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -582,7 +599,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 003 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="24">
+          DTS:ThreadHint="25">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -599,7 +616,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 004 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="24">
+          DTS:ThreadHint="25">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -616,7 +633,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 005 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="25">
+          DTS:ThreadHint="26">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -633,7 +650,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 006 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="25">
+          DTS:ThreadHint="26">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -650,7 +667,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 009 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="26">
+          DTS:ThreadHint="27">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -667,7 +684,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 010 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="26">
+          DTS:ThreadHint="27">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -684,7 +701,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 011 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="27">
+          DTS:ThreadHint="28">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -701,7 +718,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 015 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="28">
+          DTS:ThreadHint="29">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -718,7 +735,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 016 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="28">
+          DTS:ThreadHint="29">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -735,7 +752,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 017 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="29">
+          DTS:ThreadHint="30">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -752,7 +769,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 018 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="30">
+          DTS:ThreadHint="31">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -769,7 +786,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 019 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="31">
+          DTS:ThreadHint="32">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -786,7 +803,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 07 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="32">
+          DTS:ThreadHint="33">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -803,7 +820,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 08 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="32">
+          DTS:ThreadHint="33">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -820,7 +837,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 20 validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="33">
+          DTS:ThreadHint="34">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -837,7 +854,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 21 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="34">
+          DTS:ThreadHint="35">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -854,7 +871,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 22 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="35">
+          DTS:ThreadHint="36">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -871,7 +888,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 23 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="36">
+          DTS:ThreadHint="37">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -888,7 +905,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 24 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="37">
+          DTS:ThreadHint="38">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -905,7 +922,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 25 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="38">
+          DTS:ThreadHint="39">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -922,7 +939,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 26 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="39">
+          DTS:ThreadHint="40">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -939,7 +956,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 27 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="40">
+          DTS:ThreadHint="41">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -956,7 +973,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 28 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="41">
+          DTS:ThreadHint="42">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -973,7 +990,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 29 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="42">
+          DTS:ThreadHint="43">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -990,7 +1007,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 30 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="43">
+          DTS:ThreadHint="44">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1007,7 +1024,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 31 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="44">
+          DTS:ThreadHint="45">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1024,7 +1041,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 32 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="45">
+          DTS:ThreadHint="46">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1041,7 +1058,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 33 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="46">
+          DTS:ThreadHint="47">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1058,7 +1075,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 34 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="47">
+          DTS:ThreadHint="48">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1075,7 +1092,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 35 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="48">
+          DTS:ThreadHint="49">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1092,7 +1109,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 36 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="49">
+          DTS:ThreadHint="50">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1109,7 +1126,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 37 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="52">
+          DTS:ThreadHint="51">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1126,7 +1143,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 38 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="50">
+          DTS:ThreadHint="52">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1143,12 +1160,29 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Test 39 Validation"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="51">
+          DTS:ThreadHint="53">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{29B8AC7B-2D45-4FA2-972B-F17F839313E6}"
               SQLTask:SqlStatementSource="SELECT res_report_1_result_2_test_39_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Validation\Test 40 Validation"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{24A2E17D-3591-4C3C-B469-A147316068EB}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Test 40 Validation"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="54">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{29B8AC7B-2D45-4FA2-972B-F17F839313E6}"
+              SQLTask:SqlStatementSource="SELECT res_report_1_result_2_test_40_validate_test_data()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1430,6 +1464,10 @@
           Size="171,42"
           Id="Package\Custom Accounts Validation\Test CA ETL Test 9"
           TopLeft="1825.88888888889,44.3333333333335" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Custom Accounts Validation\Test CA ETL Test 26"
+          TopLeft="1174,227" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -1569,6 +1607,10 @@
           Size="166,42"
           Id="Package\Validation\Test 36 Validation"
           TopLeft="675,294" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Validation\Test 37 Validation"
+          TopLeft="681,359" />
         <NodeLayout
           Size="166,42"
           Id="Package\Validation\Test 38 Validation"
@@ -1711,8 +1753,8 @@
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
-          Id="Package\Validation\Test 37 Validation"
-          TopLeft="681,359" />
+          Id="Package\Validation\Test 40 Validation"
+          TopLeft="682,553" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
