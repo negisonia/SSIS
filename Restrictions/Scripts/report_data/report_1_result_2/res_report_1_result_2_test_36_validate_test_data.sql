@@ -2,16 +2,12 @@ CREATE OR REPLACE FUNCTION res_report_1_result_2_test_36_validate_test_data() --
 RETURNS boolean AS $$
 DECLARE
 success BOOLEAN DEFAULT FALSE;
-fe_report_1 INTEGER;
-pharmacy_view CONSTANT integer:=1;
-medical_view CONSTANT integer:=2;
-expected_pharmacy_summary_table_output VARCHAR;
-expected_medical_summary_table_output VARCHAR;
+criteria_report_id INTEGER;
 BEGIN
 --REPORT#1
-SELECT res_create_report_1_result_2_criteria_report() INTO fe_report_1;
-PERFORM res_common_report_1_result_2_rpt_summary_table_pharmacy(fe_report_1);
-PERFORM res_common_report_1_result_2_rpt_summary_table_medical(fe_report_1);
+SELECT res_create_report_1_result_2_criteria_report() INTO criteria_report_id;
+PERFORM res_common_report_1_result_2_rpt_summary_table_pharmacy(criteria_report_id);
+PERFORM res_common_report_1_result_2_rpt_summary_table_medical(criteria_report_id);
 
 success=true;
 return success;
