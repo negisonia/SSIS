@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ana_rpt_cov_tier_drg_selection_1_test_01_14_validate_data(expected_value varchar, test_number varchar, drug_name varchar, dim_tier_name varchar)
+CREATE OR REPLACE FUNCTION ana_rpt_cov_tier_drg_selection_1_test_01_13_validate_data(expected_value varchar, test_number varchar, drug_name varchar, dim_tier_name varchar)
 RETURNS INTEGER AS $$
 DECLARE
 

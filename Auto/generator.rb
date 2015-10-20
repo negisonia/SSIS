@@ -119,7 +119,7 @@ class FilesGenerator
   end
 
   def base_selection_path
-    File.join(File.expand_path("../../Analytics/scripts/report_data/#{function_name}/#{tab_name}/selection", __FILE__))
+    File.join(File.expand_path("../../Analytics/Scripts/report_data/#{function_name}/#{tab_name}/selection", __FILE__))
   end
 
 end
