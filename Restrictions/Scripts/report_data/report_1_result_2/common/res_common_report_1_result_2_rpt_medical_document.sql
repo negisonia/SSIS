@@ -18,12 +18,13 @@ SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_plan_type
 SELECT common_get_table_id_by_name('drugs','drug_1') INTO drug_1;
 SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
 
-druglist:= '%1$s,%2$s';
+druglist:= '%2$s';
+--druglist:= '%1$s,%2$s';
 
 --MEDICAL FORMS  COMMERCIAL
 expected_output = format('['||
     '{"drug_id":%1$s,"drug_name":"drug_2","medical_policy_form_url":"https://www.provider_1.com/providerLevelMedicalform.pdf"}'||
-    ']',drug_1,drug_2);
+    ']',drug_2);
 PERFORM res_rpt_medical_policy_form_url(report_id, commercial_plan_type_id, provider_id, format(druglist,drug_2), expected_output);
 
 --SPECIALTY FORMS COMMERCIAL
