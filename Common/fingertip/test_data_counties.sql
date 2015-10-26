@@ -5,8 +5,9 @@ DECLARE
 state_001_id INTEGER;
 state_002_id INTEGER;
 state_003_id INTEGER;
-state_004_id INTEGER;
-state_005_id INTEGER;
+state_ma_id INTEGER;
+state_ct_id INTEGER;
+state_nh_id INTEGER;
 
 metro_stat_area_001_id INTEGER;
 metro_stat_area_002_id INTEGER;
@@ -23,8 +24,9 @@ BEGIN
   SELECT common_get_table_id_by_name(state,'STATE_001') into state_001_id;
   SELECT common_get_table_id_by_name(state,'STATE_002') into state_002_id;
   SELECT common_get_table_id_by_name(state,'STATE_003') into state_003_id;
-  SELECT common_get_table_id_by_name(state,'Massachusetts') into state_004_id;
-  SELECT common_get_table_id_by_name(state,'Connecticut') into state_005_id;
+  SELECT common_get_table_id_by_name(state,'Massachusetts') into state_ma_id;
+  SELECT common_get_table_id_by_name(state,'Connecticut') into state_ct_id;
+  SELECT common_get_table_id_by_name(state,'New Hampshire') into state_nh_id;
 
 --RETRIEVE METRO STAT AREAS
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_001') INTO metro_stat_area_001_id;
@@ -37,11 +39,13 @@ BEGIN
   PERFORM common_create_county('COUNTY_003',0,state_003_id,metro_stat_area_004_id);
   PERFORM common_create_county('COUNTY_004',0,state_003_id,metro_stat_area_001_id);
 
-  PERFORM common_create_county('Middlesex',0,state_004_id,NULL);
-  PERFORM common_create_county('Middlesex',0,state_005_id,NULL);
-  PERFORM common_create_county('New London',0,state_005_id,NULL);
-  PERFORM common_create_county('Bristol',0,state_004_id,NULL);
-  PERFORM common_create_county('Franklin',0,state_004_id,NULL);
+  PERFORM common_create_county('Middlesex',0,state_ma_id,NULL);
+  PERFORM common_create_county('Middlesex',0,state_ct_id,NULL);
+  PERFORM common_create_county('New London',0,state_ct_id,NULL);
+  PERFORM common_create_county('Bristol',0,state_ma_id,NULL);
+  PERFORM common_create_county('Franklin',0,state_ma_id,NULL);
+  PERFORM common_create_county('Strafford',0,state_nh_id,NULL);
+  PERFORM common_create_county('Hardford',0,state_ct_id,NULL);
 
   PERFORM common_create_county('COUNTY_005',0,state_001_id,metro_stat_area_002_id);
   PERFORM common_create_county('COUNTY_006',0,state_001_id,metro_stat_area_002_id);
