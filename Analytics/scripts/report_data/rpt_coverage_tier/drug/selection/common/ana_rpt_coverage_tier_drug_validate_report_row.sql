@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ana_rpt_coverage_tier_drug_validate_report_row(expected_value varchar, test_number varchar, drug_name varchar, dim_tier_name varchar, is_tier_preferred boolean, criteria_report_id integer)
+CREATE OR REPLACE FUNCTION ana_rpt_coverage_tier_drug_validate_report_row(expected_value varchar, test_number varchar, drug_name varchar, dim_tier_name varchar, is_tier_preferred varchar, criteria_report_id integer)
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;

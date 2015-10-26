@@ -157,7 +157,7 @@ class TestCasesTemplate
   def dynamic_json_fields_formatted
     result = []
     condition_fields.each_with_index do |element, index|
-      result << "\"#{element[0]}\":#{"\"" if condition_fields_data_types[index] == 'varchar'}' || #{element[0]} || '#{"\"" if condition_fields_data_types[index] == 'varchar'}"
+      result << "\"#{element[0]}\":#{"\"" if condition_fields_data_types[index] == 'varchar'}%s#{"\"" if condition_fields_data_types[index] == 'varchar'}"
     end
     result.join(',')
   end
@@ -182,7 +182,7 @@ class TestCasesTemplate
   end
 
   def condition_fields_parameters
-    condition_fields.keys.each_with_index.map { |field_name, index| "#{field_name} #{condition_fields_data_types[index]}" }.join(', ')
+    condition_fields.keys.each_with_index.map { |field_name, index| "#{field_name} varchar" }.join(', ')
   end
 
   def test_case_template()
@@ -192,11 +192,11 @@ DECLARE
   success boolean DEFAULT FALSE;
   expected_value varchar;
   <% condition_fields.each_with_index do |field, index| %>
-    <%= field[0] %> <%= condition_fields_data_types[index]  %> := <%= "\'" if condition_fields_data_types[index] == 'varchar'  %><%= field[1] %><%= "\'" if condition_fields_data_types[index] == 'varchar'  %>;
+    <%= field[0] %> varchar := <%= "\'" %><%= field[1] %><%= "\'" %>;
   <% end %>
 BEGIN
 
-expected_value = '[{<%= dynamic_json_fields_formatted %>,<%= expected_json %>}]';
+expected_value =  format('[{<%= dynamic_json_fields_formatted %>,<%= expected_json %>}]', <%= condition_fields.keys.join(', ') %>);
 
 PERFORM <%= test_name %>_selection_<%= selection_id %>_test_01_<%= total_test_cases_formated %>_validate_data(expected_value,'<%= test_number_formated %>', <%= condition_fields.keys.join(', ') %>);
 
