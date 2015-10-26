@@ -155,7 +155,6 @@ class TestCasesTemplate
   end
 
   def dynamic_json_fields_formatted
-    #condition_fields.keys.map{ |element| "\"#{element}\":\"%s\"" }.join(',')
     result = []
     condition_fields.each_with_index do |element, index|
       result << "\"#{element[0]}\":#{"\"" if condition_fields_data_types[index] == 'varchar'}' || #{element[0]} || '#{"\"" if condition_fields_data_types[index] == 'varchar'}"
