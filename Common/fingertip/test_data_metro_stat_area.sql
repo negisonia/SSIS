@@ -6,6 +6,11 @@ success BOOLEAN:=FALSE;
 
 BEGIN
 
+  PERFORM common_create_metro_stat_area('MSA_001','MSA_001');
+  PERFORM common_create_metro_stat_area('MSA_002','MSA_002');
+  PERFORM common_create_metro_stat_area('MSA_003','MSA_003');
+  PERFORM common_create_metro_stat_area('MSA_004','MSA_004');
+
   PERFORM common_create_metro_stat_area('Abilene, TX','Abilene');
   PERFORM common_create_metro_stat_area('Akron, OH','Akron');
   PERFORM common_create_metro_stat_area('Albany, GA','Albany');
@@ -381,10 +386,7 @@ BEGIN
   PERFORM common_create_metro_stat_area('Mankato-North Mankato, MN','the Mankato Area');
   PERFORM common_create_metro_stat_area('Palm Coast, FL','Palm Coast');
 
-  PERFORM common_create_metro_stat_area('MSA_001','MSA_001');
-  PERFORM common_create_metro_stat_area('MSA_002','MSA_002');
-  PERFORM common_create_metro_stat_area('MSA_003','MSA_003');
-  PERFORM common_create_metro_stat_area('MSA_004','MSA_004');
+
 
 success=true;
 return success;

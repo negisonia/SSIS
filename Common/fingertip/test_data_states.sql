@@ -20,7 +20,6 @@ BEGIN
     PERFORM common_create_state('Arkansas','AR',country_us_id,TRUE);
     PERFORM common_create_state('California','CA',country_us_id,TRUE);
     PERFORM common_create_state('Colorado','CO',country_us_id,TRUE);
-    PERFORM common_create_state('Connecticut','CT',country_us_id,TRUE);
     PERFORM common_create_state('Delaware','AL',country_us_id,TRUE);
     PERFORM common_create_state('District of Columbia','DC',country_us_id,TRUE);
     PERFORM common_create_state('Florida','FL',country_us_id,TRUE);
@@ -36,6 +35,7 @@ BEGIN
     PERFORM common_create_state('Maine','ME',country_us_id,TRUE);
     PERFORM common_create_state('Maryland','MD',country_us_id,TRUE);
     PERFORM common_create_state('Massachusetts','MA',country_us_id,TRUE);
+    PERFORM common_create_state('Connecticut','CT',country_us_id,TRUE);
     PERFORM common_create_state('Michigan','MI',country_us_id,TRUE);
     PERFORM common_create_state('Minnesota','MN',country_us_id,TRUE);
     PERFORM common_create_state('Mississippi','MS',country_us_id,TRUE);
