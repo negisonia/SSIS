@@ -8,7 +8,7 @@ DECLARE
   
     dim_tier_name varchar := 'Tier 3';
   
-    is_tier_preferred boolean := false;
+    is_tier_preferred boolean := true;
   
 BEGIN
 

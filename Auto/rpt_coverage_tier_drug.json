@@ -89,7 +89,7 @@
                               "condition_fields" : {
                                 "drug_name" : "DRUG_003",
                                 "dim_tier_name" : "Tier 3",
-                                "is_tier_preferred": "false"
+                                "is_tier_preferred": "true"
                               },
                               "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":60,\"total_lives\":1341,\"health_plan_count\":2,\"total_health_plan_count\":20"
                           },
