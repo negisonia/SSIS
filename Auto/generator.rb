@@ -21,6 +21,7 @@ class TestCasesGenerator
       generator.function_name = function['function_folder_name']
       generator.tab_name = function['tab_folder_name']
       generator.validation_fields = function['validation_fields']
+      generator.condition_fields_data_types = function['condition_fields_data_types'].split(',')
 
       parse_selections(function['selections'], generator)
     end
@@ -35,7 +36,7 @@ class TestCasesGenerator
         generator.test_name = selection['test_name']
         generator.geography = selection['geography']
         generator.drug_class = selection['drug_class']
-        generator.state_list = selection['state_list']
+        generator.geo_list = selection['geo_list']
         generator.plan_list = selection['plan_list']
         generator.drug_list = selection['drug_list']
         file_generator = FilesGenerator.new(generator)
@@ -129,9 +130,9 @@ class TestCasesTemplate
   attr_accessor :selection_id, :condition_fields, :selection_name,
                 :test_number, :total_test_cases,
                 :test_name, :expected_json, :geography,
-                :drug_class, :state_list, :plan_list,
+                :drug_class, :geo_list, :plan_list,
                 :drug_list, :function_name, :validation_fields,
-                :tab_name
+                :tab_name, :condition_fields_data_types
 
   def complete_function_name
     "#{function_name}_#{tab_name}"
@@ -154,7 +155,11 @@ class TestCasesTemplate
   end
 
   def dynamic_json_fields_formatted
-    condition_fields.keys.map{ |element| "\"#{element}\":\"%s\"" }.join(',')
+    result = []
+    condition_fields.each_with_index do |element, index|
+      result << "\"#{element[0]}\":#{"\"" if condition_fields_data_types[index] == 'varchar'}%s#{"\"" if condition_fields_data_types[index] == 'varchar'}"
+    end
+    result.join(',')
   end
 
   def save(file, template_name, mode="w+")
@@ -176,18 +181,22 @@ class TestCasesTemplate
     function_name.gsub('rpt_','').split('_').map(&:capitalize).join(' by ')
   end
 
+  def condition_fields_parameters
+    condition_fields.keys.each_with_index.map { |field_name, index| "#{field_name} varchar" }.join(', ')
+  end
+
   def test_case_template()
 %{CREATE OR REPLACE FUNCTION <%= test_name %>_selection_<%= selection_id %>_test_<%= test_number_formated %>_validate_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
   expected_value varchar;
-  <% condition_fields.each do |field_name, field_value| %>
-  <%= field_name %> varchar := '<%= field_value %>';
+  <% condition_fields.each_with_index do |field, index| %>
+    <%= field[0] %> varchar := <%= "\'" %><%= field[1] %><%= "\'" %>;
   <% end %>
 BEGIN
 
-expected_value = format('[{<%= dynamic_json_fields_formatted %>,<%= expected_json %>}]', <%= condition_fields.keys.join(', ') %>);
+expected_value =  format('[{<%= dynamic_json_fields_formatted %>,<%= expected_json %>}]', <%= condition_fields.keys.join(', ') %>);
 
 PERFORM <%= test_name %>_selection_<%= selection_id %>_test_01_<%= total_test_cases_formated %>_validate_data(expected_value,'<%= test_number_formated %>', <%= condition_fields.keys.join(', ') %>);
 
@@ -198,7 +207,7 @@ $$ LANGUAGE plpgsql;}
   end
 
   def common_template()
-%{CREATE OR REPLACE FUNCTION <%= test_name %>_selection_<%= selection_id %>_test_01_<%= total_test_cases_formated %>_validate_data(expected_value varchar, test_number varchar, <%= condition_fields.keys.join(' varchar, ') %> varchar)
+%{CREATE OR REPLACE FUNCTION <%= test_name %>_selection_<%= selection_id %>_test_01_<%= total_test_cases_formated %>_validate_data(expected_value varchar, test_number varchar, <%= condition_fields_parameters %>)
 RETURNS INTEGER AS $$
 DECLARE
 
@@ -206,7 +215,7 @@ criteria_report_id INTEGER;
 
 BEGIN
 
-SELECT ana_rpt_create_criteria_report_fe_data(<%= format_array(state_list) %>, <%= format_array(plan_list) %>, <%= format_array(drug_list) %>,'<%= geography %>','<%= drug_class %>') INTO criteria_report_id;
+SELECT ana_rpt_create_criteria_report_fe_data(<%= format_array(geo_list) %>, <%= format_array(plan_list) %>, <%= format_array(drug_list) %>,'<%= geography %>','<%= drug_class %>') INTO criteria_report_id;
 PERFORM ana_<%= complete_function_name %>_validate_report_row(expected_value, test_number, <%= condition_fields.keys.join(', ') %>, criteria_report_id);
 
 RETURN criteria_report_id;
@@ -215,7 +224,7 @@ $$ LANGUAGE plpgsql;}
   end
 
   def report_row_template()
-%{CREATE OR REPLACE FUNCTION ana_<%= complete_function_name %>_validate_report_row(expected_value varchar, test_number varchar, <%= condition_fields.keys.join(' varchar, ') %> varchar, criteria_report_id integer)
+%{CREATE OR REPLACE FUNCTION ana_<%= complete_function_name %>_validate_report_row(expected_value varchar, test_number varchar, <%= condition_fields_parameters %>, criteria_report_id integer)
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;

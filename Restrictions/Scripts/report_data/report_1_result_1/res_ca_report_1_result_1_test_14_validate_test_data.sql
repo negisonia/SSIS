@@ -35,8 +35,8 @@ PERFORM res_rpt_pa_policy_form_url(report_id, commercial_plan_type_id, provider_
 
 --SPECIALTY FORMS
 expected_output= '['||
-    '{"specialty_pharmacy_id":1,"name":"special_pharmacy_1","drug_id":1,"url":"http://www.special_pharmacy_1.com/drug_1SPEForm.pdf"},'||
-    '{"specialty_pharmacy_id":2,"name":"special_pharmacy_2","drug_id":2,"url":"http://www.special_pharmacy_2.com/drug_2SPEForm.pdf"}'||
+    '{"name":"special_pharmacy_1","drug_id":1,"url":"http://www.special_pharmacy_1.com/drug_1SPEForm.pdf"},'||
+    '{"name":"special_pharmacy_2","drug_id":2,"url":"http://www.special_pharmacy_2.com/drug_2SPEForm.pdf"}'||
     ']';
 PERFORM res_rpt_specialty_pharmacy_form(report_id, commercial_plan_type_id, provider_id, expected_output);
 
@@ -49,8 +49,8 @@ PERFORM res_rpt_pa_policy_form_url(report_id, hix_plan_type_id, provider_id, for
 
 --SPECIALTY FORMS
 expected_output='['||
-    '{"specialty_pharmacy_id":3,"name":"special_pharmacy_3","drug_id":1,"url":"http://www.special_pharmacy_3.com/drug_1SPEForm.pdf"},'||
-    '{"specialty_pharmacy_id":3,"name":"special_pharmacy_3","drug_id":2,"url":"http://www.special_pharmacy_3.com/drug_2SPEForm.pdf"}'||
+    '{"name":"special_pharmacy_3","drug_id":1,"url":"http://www.special_pharmacy_3.com/drug_1SPEForm.pdf"},'||
+    '{"name":"special_pharmacy_3","drug_id":2,"url":"http://www.special_pharmacy_3.com/drug_2SPEForm.pdf"}'||
     ']';
 PERFORM res_rpt_specialty_pharmacy_form(report_id, hix_plan_type_id, provider_id, expected_output);
 
