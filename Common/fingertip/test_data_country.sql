@@ -6,6 +6,7 @@ success BOOLEAN:=FALSE;
 
 BEGIN
 
+  PERFORM common_create_country('United States','US',TRUE);
   PERFORM common_create_country('COUNTRY_001','C_001',TRUE);
 
 success=true;
