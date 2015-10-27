@@ -62,7 +62,7 @@ SELECT common_get_table_id_by_name('clients', 'client_2') INTO existing_client_i
 SELECT custom_account_id from custom_accounts where name = 'Custom_Account_2' and client_id = existing_client_id INTO existing_custom_account_id;
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
-SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id) INTO msa_ids;
+SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id and metro_stat_area_id IS NOT NULL) INTO msa_ids;
 
 SELECT create_criteria_report(new_report_id,0,criteria_report_type,0,msa_geo_type_id,FALSE,FALSE,FALSE,ARRAY[drug_1_id,drug_2_id],ARRAY[]::integer[],'MetroStatArea',ARRAY[]::integer[],existing_custom_account_id,restrictions_array,NULL,msa_ids,NULL) INTO criteria_report_id;
 

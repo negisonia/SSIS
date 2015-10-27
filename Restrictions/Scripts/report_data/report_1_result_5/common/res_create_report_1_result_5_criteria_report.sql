@@ -72,7 +72,7 @@ SELECT custom_account_id from custom_accounts where name = 'Custom_Account_2' an
 health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
-SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id) INTO msa_ids;
+SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id and metro_stat_area_id IS NOT NULL) INTO msa_ids;
 
 SELECT create_criteria_report(new_report_id,0,criteria_report_type,0,msa_geo_type_id,FALSE,FALSE,FALSE,ARRAY[drug_1_id,drug_2_id],health_plan_types_array,'MetroStatArea',ARRAY[]::integer[],NULL,restrictions_array,NULL,msa_ids,NULL) INTO criteria_report_id;
 
