@@ -79,9 +79,9 @@ BEGIN
     PERFORM common_create_state (30, true, 'Missouri', 'MO', 1, 'mo', 6, 5800310, true, 29, 198433);
     PERFORM common_create_state (31, true, 'Montana', 'MT', 1, 'mt', 5, 935670, true, 30, 25934);
 
-    PERFORM common_create_state(72,TRUE,'STATE_001','S_001',country_001_id,NULL,NULL,NULL,NULL,NULL,NULL);
-    PERFORM common_create_state(73,TRUE,'STATE_002','S_002',country_001_id,NULL,NULL,NULL,NULL,NULL,NULL);
-    PERFORM common_create_state(74,TRUE,'STATE_003','S_003',country_001_id,NULL,NULL,NULL,NULL,NULL,NULL);
+    PERFORM common_create_state(72,TRUE,'STATE_001','S_001',1,NULL,NULL,NULL,NULL,NULL,NULL);
+    PERFORM common_create_state(73,TRUE,'STATE_002','S_002',1,NULL,NULL,NULL,NULL,NULL,NULL);
+    PERFORM common_create_state(74,TRUE,'STATE_003','S_003',1,NULL,NULL,NULL,NULL,NULL,NULL);
     
 success=true;
 return success;
