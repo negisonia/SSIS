@@ -13,9 +13,9 @@ metro_stat_area_001_id INTEGER;
 metro_stat_area_002_id INTEGER;
 metro_stat_area_003_id INTEGER;
 metro_stat_area_004_id INTEGER;
-Boston-Cambridge-Quincy INTEGER;
-Hartford-West INTEGER;
-Norwich-New-London INTEGER;
+Boston_Cambridge_Quincy INTEGER;
+Hartford_West INTEGER;
+Norwich_New_London INTEGER;
 state VARCHAR:='state';
 metrostatarea VARCHAR:='metrostatarea';
 
@@ -36,9 +36,9 @@ BEGIN
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_002') INTO metro_stat_area_002_id;
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_003') INTO metro_stat_area_003_id;
   SELECT common_get_table_id_by_name(metrostatarea,'MSA_004') INTO metro_stat_area_004_id;
-  SELECT common_get_table_id_by_name(metrostatarea,'Boston-Cambridge-Quincy') INTO Boston-Cambridge-Quincy;
-  SELECT common_get_table_id_by_name(metrostatarea,'Hartford-West Hartford-East Hartford') INTO Hartford-West;
-  SELECT common_get_table_id_by_name(metrostatarea,'Norwich-New London, CT') INTO Norwich-New-London;
+  SELECT common_get_table_id_by_name(metrostatarea,'Boston-Cambridge-Quincy') INTO Boston_Cambridge_Quincy;
+  SELECT common_get_table_id_by_name(metrostatarea,'Hartford-West Hartford-East Hartford') INTO Hartford_West;
+  SELECT common_get_table_id_by_name(metrostatarea,'Norwich-New London, CT') INTO Norwich_New_London;
 
   PERFORM common_create_county('COUNTY_001',0,state_002_id,metro_stat_area_001_id);
   PERFORM common_create_county('COUNTY_002',0,state_002_id,metro_stat_area_004_id);
