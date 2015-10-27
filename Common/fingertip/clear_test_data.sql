@@ -5,6 +5,7 @@ success boolean:= false;
 BEGIN
 
 	--CLEAR TABLES
+  TRUNCATE TABLE azbusinesscenter CASCADE;
   TRUNCATE TABLE healthplantype CASCADE;
   TRUNCATE TABLE healthplan CASCADE;
   TRUNCATE TABLE jcodes CASCADE;
@@ -82,6 +83,7 @@ BEGIN
   ALTER SEQUENCE pbm_specialty_pharmacy_drug_enrollment_urls_id_seq RESTART;
   ALTER SEQUENCE pbm_specialty_pharmacy_drugs_id_seq RESTART;
   ALTER SEQUENCE pbm_specialty_pharmacy_specialization_id_seq RESTART;
+  ALTER SEQUENCE azbusinesscenter_entityid_seq RESTART;
 
 success:=true;
 RETURN success;

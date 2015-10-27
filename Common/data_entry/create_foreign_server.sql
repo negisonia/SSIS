@@ -5,11 +5,11 @@ CREATE EXTENSION postgres_fdw;
 DROP USER MAPPING IF EXISTS FOR postgres SERVER foreign_ff_new;
 DROP SERVER IF EXISTS foreign_ff_new;
 
-CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com', dbname 'sandbox_ff_new', port '5432');
-CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'VsOCWIozIelwQcRgR4w3');
+--CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com', dbname 'sandbox_ff_new', port '5432');
+--CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'VsOCWIozIelwQcRgR4w3');
 
---CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'localhost', dbname 'sandbox_ff_new', port '5432');
---CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'clarodeluna');
+CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'localhost', dbname 'sandbox_ff_new', port '5432');
+CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'clarodeluna');
 
 
 CREATE FOREIGN TABLE ff.drugs_import
