@@ -79,9 +79,9 @@ BEGIN
     PERFORM common_create_state('Quebec','QC',country_us_id,TRUE);
     PERFORM common_create_state('Sakatchewan','SK',country_us_id,TRUE);
     PERFORM common_create_state('Yukon Territory','YT',country_us_id,TRUE);
-    PERFORM common_create_state('STATE_001','S_001',country_001_id,TRUE);
-    PERFORM common_create_state('STATE_002','S_002',country_001_id,TRUE);
-    PERFORM common_create_state('STATE_003','S_003',country_001_id,TRUE);
+    PERFORM common_create_state('STATE_001','S_001',country_us_id,TRUE);
+    PERFORM common_create_state('STATE_002','S_002',country_us_id,TRUE);
+    PERFORM common_create_state('STATE_003','S_003',country_us_id,TRUE);
     
 success=true;
 return success;
