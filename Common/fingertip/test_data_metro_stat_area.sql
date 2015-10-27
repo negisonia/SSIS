@@ -80,7 +80,7 @@ BEGIN
   PERFORM common_create_metro_stat_area('Clarksville, TN-KY','Clarksville');
   PERFORM common_create_metro_stat_area('Cleveland, TN','Cleveland');
   PERFORM common_create_metro_stat_area('Cleveland-Elyria-Mentor, OH','the Cleveland Area');
-  PERFORM common_create_metro_stat_area('Coeur d'Alene, ID','Coeur d'Alene');
+  PERFORM common_create_metro_stat_area('Coeur d''Alene, ID','Coeur d''Alene');
   PERFORM common_create_metro_stat_area('College Station-Bryan, TX','the College Station Area');
   PERFORM common_create_metro_stat_area('Colorado Springs, CO','Colorado Springs');
   PERFORM common_create_metro_stat_area('Columbia, MO','Columbia');
