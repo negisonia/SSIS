@@ -45,13 +45,13 @@ BEGIN
   PERFORM common_create_county('COUNTY_003',0,state_003_id,metro_stat_area_004_id);
   PERFORM common_create_county('COUNTY_004',0,state_003_id,metro_stat_area_001_id);
 
-  PERFORM common_create_county('Middlesex',0,state_ma_id,Boston-Cambridge-Quincy);
-  PERFORM common_create_county('Middlesex',0,state_ct_id,Hartford-West);
-  PERFORM common_create_county('New London',0,state_ct_id,Norwich-New-London);
+  PERFORM common_create_county('Middlesex',0,state_ma_id,Boston_Cambridge_Quincy);
+  PERFORM common_create_county('Middlesex',0,state_ct_id,Hartford_West);
+  PERFORM common_create_county('New London',0,state_ct_id,Norwich_New_London);
   PERFORM common_create_county('Bristol',0,state_ma_id,NULL);
   PERFORM common_create_county('Franklin',0,state_ma_id,NULL);
-  PERFORM common_create_county('Strafford',0,state_nh_id,Boston-Cambridge-Quincy);
-  PERFORM common_create_county('Hardford',0,state_ct_id,Hartford-West);
+  PERFORM common_create_county('Strafford',0,state_nh_id,Boston_Cambridge_Quincy);
+  PERFORM common_create_county('Hardford',0,state_ct_id,Hartford_West);
 
   PERFORM common_create_county('COUNTY_005',0,state_001_id,metro_stat_area_002_id);
   PERFORM common_create_county('COUNTY_006',0,state_001_id,metro_stat_area_002_id);
