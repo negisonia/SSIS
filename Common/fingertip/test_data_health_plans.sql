@@ -13,6 +13,7 @@ provider_7_id INTEGER;
 provider_8_id INTEGER;
 provider_9_id INTEGER;
 provider_10_id INTEGER;
+provider_11_id INTEGER;
 provider_001_id INTEGER;
 provider_002_id INTEGER;
 provider_003_id INTEGER;
@@ -50,6 +51,7 @@ BEGIN
 	SELECT common_get_table_id_by_name(provider, 'provider_8') INTO provider_8_id;
 	SELECT common_get_table_id_by_name(provider, 'provider_9') INTO provider_9_id;
 	SELECT common_get_table_id_by_name(provider, 'provider_10') INTO provider_10_id;
+    SELECT common_get_table_id_by_name(provider, 'provider_11') INTO provider_11_id;
     SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_001') INTO provider_001_id;
     SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_002') INTO provider_002_id;
     SELECT common_get_table_id_by_name(provider, 'TEST_PROVIDER_003') INTO provider_003_id;
@@ -90,6 +92,8 @@ BEGIN
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',NULL,provider_10_id,null);
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',common_create_formulary(TRUE,FALSE,NULL),provider_1_id,'https://health_plan_comm_1/test.pdf');
     PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',NULL,provider_1_id, null);
+    PERFORM common_create_healthplan(employer_hpt_id,FALSE,'health_plan_empl_1',NULL,provider_11_id, 'https://health_plan_empl_1/test.pdf');
+    PERFORM common_create_healthplan(medicare_ma_hpt_id,FALSE,'health_plan_ma_1',common_create_formulary(TRUE,FALSE,2),provider_11_id, 'https://health_plan_ma_1/test.pdf');
     
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
