@@ -1,0 +1,704 @@
+{
+  "functions" : [{
+    "function_folder_name" : "rpt_coverage_tier",
+    "tab_folder_name" : "geo",
+    "validation_fields" : "drug_name, dim_tier_name, is_tier_preferred, market_name, dim_tier_id, dim_tier_type_id, fips_id, state_abbreviation, avg_copay, lis_lives, total_lis_lives, lives, total_lives, health_plan_count, total_health_plan_count",
+    "condition_fields_data_types" : "varchar,varchar,boolean",
+    "selections" : [{
+      "selection_id" : "1",
+      "selection_name" : "All Drugs, National, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_geo",
+      "geography" : "National",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_003,DRUG_004",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred" : "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":200,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred" : "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_004",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":55.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":60.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":105,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":170,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true",
+                                "market_name" : "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":60,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NA",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":9,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":411,\"health_plan_count\":1,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NC",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":8,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":411,\"health_plan_count\":1,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":75,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "false",
+                                "market_name" : "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":40,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          }]
+    },{
+      "selection_id" : "2",
+      "selection_name" : "3 Drug, 2 MSA Diff States, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_geo",
+      "geography" : "MetroStatArea",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "MSA_002,MSA_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_003",
+      "test_cases"    :    []
+    },{
+      "selection_id" : "3",
+      "selection_name" : "3 Drugs, 3 States, 2 Plan Types",
+      "test_name" : "ana_rpt_cov_tier_geo",
+      "geography" : "State",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "STATE_001,STATE_002,STATE_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_003",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":430,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":430,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true",
+                                "market_name": "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":430,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":430,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_001"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_001,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":430,\"health_plan_count\":2,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":60.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":105,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":130,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred" : "true",
+                                "market_name": "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":60,\"total_lives\":411,\"health_plan_count\":2,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NA",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":9,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":411,\"health_plan_count\":1,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NC",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_002"
+                              },
+                              "expected_json" : "\"dim_tier_id\":8,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_002,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":411,\"health_plan_count\":1,\"total_health_plan_count\":8"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":75,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "false",
+                                "market_name": "STATE_003"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"fips_id\":null,\"state_abbreviation\":S_003,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":200,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          }]
+    },{
+      "selection_id" : "4",
+      "selection_name" : "1 Drug, 1 State, 2 Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "State",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "STATE_001",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_002",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":250,\"health_plan_count\":1,\"total_health_plan_count\":3"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":250,\"health_plan_count\":2,\"total_health_plan_count\":3"
+                          }]
+    },{
+      "selection_id" : "5",
+      "selection_name" : "1 Drug, 2 State, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "State",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "STATE_002,STATE_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_003",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":60.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":130,\"total_lives\":611,\"health_plan_count\":3,\"total_health_plan_count\":11"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":246,\"total_lives\":611,\"health_plan_count\":3,\"total_health_plan_count\":11"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":611,\"health_plan_count\":1,\"total_health_plan_count\":11"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":60,\"total_lives\":611,\"health_plan_count\":2,\"total_health_plan_count\":11"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NA",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":9,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":611,\"health_plan_count\":1,\"total_health_plan_count\":11"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NC",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":8,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":611,\"health_plan_count\":1,\"total_health_plan_count\":11"
+                          }]
+    },{
+      "selection_id" : "6",
+      "selection_name" : "3 Drug, 2 MSA Same State, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "MetroStatArea",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "MSA_002,MSA_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_004",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":200,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_004",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":55.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          }]
+    },{
+      "selection_id" : "7",
+      "selection_name" : "2 Drug, 2 Counties, Diff State, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "County",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "COUNTY_001,COUNTY_007",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_003",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":480,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":85,\"total_lives\":480,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":170,\"total_lives\":480,\"health_plan_count\":2,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NA",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":9,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":480,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NC",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":8,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":480,\"health_plan_count\":1,\"total_health_plan_count\":6"
+                          }]
+    },{
+      "selection_id" : "8",
+      "selection_name" : "3 Drug, All MSA Same State, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "MetroStatArea",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "MSA_002,MSA_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_004",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":200,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_004",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":55.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          }]
+    },{
+      "selection_id" : "9",
+      "selection_name" : "2 Drug, All State, All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "State",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "STATE_001,STATE_002,STATE_003",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_003",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":200,\"total_lives\":1041,\"health_plan_count\":2,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":60.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":130,\"total_lives\":1041,\"health_plan_count\":3,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":246,\"total_lives\":1041,\"health_plan_count\":3,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":60,\"total_lives\":1041,\"health_plan_count\":2,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NA",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":9,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":25,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_003",
+                                "dim_tier_name" : "NC",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":8,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":1041,\"health_plan_count\":1,\"total_health_plan_count\":16"
+                          }]
+    },{
+      "selection_id" : "10",
+      "selection_name" : "3 Drugs, All Counties (Same State), All Plan Types",
+      "test_name" : "ana_rpt_cov_tier_drg",
+      "geography" : "County",
+      "drug_class" : "DRUG_CLASS_001",
+      "geo_list" : "COUNTY_005,COUNTY_006,COUNTY_007,COUNTY_008",
+      "plan_list" : "HEALTH_PLAN_TYPE_001,HEALTH_PLAN_TYPE_002,HEALTH_PLAN_TYPE_003",
+      "drug_list" : "DRUG_001,DRUG_002,DRUG_004",
+      "test_cases"    :    [{
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":200,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":10.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 3",
+                                "is_tier_preferred": "true"
+                              },
+                              "expected_json" : "\"dim_tier_id\":3,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":30,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_001",
+                                "dim_tier_name" : "Tier 4",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":4,\"dim_tier_type_id\":1,\"avg_copay\":30.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 1",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":1,\"dim_tier_type_id\":1,\"avg_copay\":null,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":100,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_002",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":20.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":150,\"total_lives\":730,\"health_plan_count\":2,\"total_health_plan_count\":9"
+                          },
+                          {
+                              "condition_fields" : {
+                                "drug_name" : "DRUG_004",
+                                "dim_tier_name" : "Tier 2",
+                                "is_tier_preferred": "false"
+                              },
+                              "expected_json" : "\"dim_tier_id\":2,\"dim_tier_type_id\":1,\"avg_copay\":55.00,\"lis_lives\":0,\"total_lis_lives\":0,\"lives\":50,\"total_lives\":730,\"health_plan_count\":1,\"total_health_plan_count\":9"
+                          }]
+    }]
+  }]
+}
