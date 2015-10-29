@@ -38,6 +38,7 @@ criteria_ql_1 INTEGER;
 commercial_health_plan_type_id INTEGER;
 hix_health_plan_type_id INTEGER;
 employeer_health_plan_type_id INTEGER;
+medicare_ma_health_plan_type_id INTEGER;
 
 data_entry_id INTEGER;
 pa_id INTEGER;
@@ -93,6 +94,7 @@ SELECT p.id INTO provider_11_id FROM ff.providers_import p WHERE p.name='provide
 SELECT hpt.id INTO commercial_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
 SELECT hpt.id INTO hix_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
 SELECT hpt.id INTO employeer_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='employer';
+SELECT hpt.id INTO medicare_ma_health_plan_type_id FROM ff.health_plan_types_import hpt WHERE hpt.name='medicare_ma';
 
 
 -----INSERTS-----
@@ -215,6 +217,68 @@ SELECT hpt.id INTO employeer_health_plan_type_id FROM ff.health_plan_types_impor
     PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'note employee plan type');
     PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_11_id, employeer_health_plan_type_id, drug_3) INTO data_entry_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'message 1234');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'message 4567');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_1_id, hix_health_plan_type_id, drug_9) INTO data_entry_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'message 1234');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'message 4567');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_11_id, employeer_health_plan_type_id, drug_9) INTO data_entry_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1,TRUE,1, 10, 30, 'age restriction');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'indication_3 drug_3');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_1, provider_11_id, employeer_health_plan_type_id, drug_1) INTO data_entry_id;
+    --CREATE ATOMIC STEPS
+    SELECT common_create_atomic_steps('drug_3','1',1, 'PA/Medical', 'drug_3^1')  INTO atomic_step_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_1,TRUE,1, NULL, NULL, 'notes employee plan type');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'notes employee plan type');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1,TRUE,1, 10, 30, 'age restriction : notes employee plan type');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'notes employee plan type');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_1, provider_11_id, employeer_health_plan_type_id, drug_3) INTO data_entry_id;
+    --CREATE ATOMIC STEPS
+    SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id ;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_clinical_1,TRUE,1, NULL, NULL, 'message 1234');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'message 4567');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_1, provider_11_id, medicare_ma_health_plan_type_id, drug_1) INTO data_entry_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1,TRUE,1, NULL, NULL, 'notes 1234');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_lab_3,TRUE,1, NULL, NULL, 'notes 3456');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'notes');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
 success=true;
 return success;
 END
