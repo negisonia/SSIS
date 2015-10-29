@@ -112,6 +112,25 @@ SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id
 PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 1,10,'tabs','day','long message');
 PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
 
+--INSERT QUANTITY LIMITS
+SELECT common_create_data_entry(indication_3, provider_1_id, commercial_health_plan_type, drug_2) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
+PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, 1,10,'tabs','day','indication_3 drug_2');
+PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
+
+--INSERT QUANTITY LIMITS
+SELECT common_create_data_entry(indication_3, provider_1_id, commercial_health_plan_type, drug_9) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
+PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1,TRUE, NULL,NULL,NULL,NULL,'notes 3 tabs per 1 day');
+PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
+
+
+--INSERT QUANTITY LIMITS
+SELECT common_create_data_entry(indication_1, provider_1_id, commercial_health_plan_type, drug_3) INTO data_entry_id;--already exists returns existing id
+SELECT common_create_quantity_limits(data_entry_id, TRUE) INTO quantity_limit_id;
+PERFORM common_create_quantity_limit_criteria(quantity_limit_id, criteria_ql_1, TRUE, 1,10,'tabs','day','ql message');
+PERFORM common_update_data_entry(data_entry_id, NULL, quantity_limit_id, NULL , NULL, NULL);
+
 
 success=true;
 return success;
