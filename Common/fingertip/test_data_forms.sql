@@ -9,6 +9,8 @@ provider_1 INTEGER;
 provider_11 INTEGER;
 commercial_hpt INTEGER;
 hix_hpt INTEGER;
+employer_hpt INTEGER;
+medicare_ma_hpt INTEGER;
 drug_class_1 INTEGER;
 
 BEGIN

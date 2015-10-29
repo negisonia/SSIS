@@ -11,6 +11,7 @@ health_plan_comm_id INTEGER;
 health_plan_comm_1_id INTEGER;
 health_plan_union_id INTEGER;
 health_plan_empl_1 INTEGER;
+health_plan_ma_1 INTEGER;
 
 specialty_pharmacy_id INTEGER;
 
@@ -32,7 +33,7 @@ BEGIN
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_union') INTO health_plan_union_id;
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_hix') INTO health_plan_hix_id;
   SELECT common_get_table_id_by_name(health_plan, 'health_plan_empl_1') INTO health_plan_empl_1;
-  SELECT common_get_table_id_by_name(health_plan, 'health_plan_med_ma_1') INTO health_plan_med_ma_1;
+  SELECT common_get_table_id_by_name(health_plan, 'health_plan_ma_1') INTO health_plan_ma_1;
 
   -- special_pharmacy_1
   SELECT common_create_pbm_specialty_pharmacy('special_pharmacy_1',TRUE) INTO specialty_pharmacy_id;
