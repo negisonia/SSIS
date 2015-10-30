@@ -8,13 +8,13 @@ DECLARE
 BEGIN
 
 -- Current Month
-SELECT get_current_month() INTO current_month_int;
+SELECT ana_get_current_month() INTO current_month_int;
 
 report_select_columns  = 'drug_name, dim_tier_name, is_tier_preferred, dim_tier_id, dim_tier_type_id, avg_copay, lis_lives, total_lis_lives, lives, total_lives, health_plan_count, total_health_plan_count';
 --Query the actual value
-SELECT calculate_report_value_json(report_select_columns, get_report_name_call('rpt_coverage_tier_drug', ARRAY[criteria_report_id,current_month_int]), 'drug_name=''' || drug_name || ''' AND dim_tier_name=''' || dim_tier_name || ''' AND is_tier_preferred=''' || is_tier_preferred || ''' ') INTO actual_value;
+SELECT ana_calculate_report_row_as_json(report_select_columns, 'rpt_coverage_tier_drug', ARRAY[criteria_report_id,current_month_int], format('drug_name=''%s'' AND dim_tier_name=''%s'' AND is_tier_preferred=''%s''', drug_name, dim_tier_name, is_tier_preferred)) INTO actual_value;
 
-PERFORM validate_comparison_values_varchar(actual_value, expected_value,'ana_rpt_coverage_tier_drug_test_'|| test_number ||'_validate_data-error: EXPECTED FOR ROW RESULTS TO BE ');
+PERFORM ana_compare_results(actual_value, expected_value,'ana_rpt_coverage_tier_drug_test_'|| test_number ||'_validate_data-error: EXPECTED FOR ROW RESULTS TO BE ');
 
 success:=true;
 RETURN success;

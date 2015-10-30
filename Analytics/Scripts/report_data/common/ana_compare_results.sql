@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION validate_comparison_values_varchar(actual_value varchar, expected_value varchar, error_msg_expected_value VARCHAR)--ANALYTICS FRONT END
+CREATE OR REPLACE FUNCTION ana_compare_results(actual_value varchar, expected_value varchar, error_msg_expected_value VARCHAR)--ANALYTICS FRONT END
 RETURNS varchar AS $$
 DECLARE
 
