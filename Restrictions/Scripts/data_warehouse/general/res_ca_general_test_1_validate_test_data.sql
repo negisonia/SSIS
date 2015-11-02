@@ -19,6 +19,9 @@ BEGIN
  SELECT ca_etl_validate_custom_account('Custom_Account_3', 'client_1', custom_account_table_name, client_table_name, id_column) INTO custom_account_id;
  PERFORM ca_etl_validate_custom_account_criteria(custom_account_id, ARRAY[]::varchar[], ARRAY['health_plan_comm','health_plan_bcbs'], health_plan_table_name, provider_table_name, false);
 
+ SELECT ca_etl_validate_custom_account('Custom_Account_4', 'client_1', custom_account_table_name, client_table_name, id_column) INTO custom_account_id;
+ PERFORM ca_etl_validate_custom_account_criteria(custom_account_id, ARRAY[]::varchar[], ARRAY['health_plan_comm','health_plan_comm_1','health_plan_empl_1','health_plan_ma_1'], health_plan_table_name, provider_table_name, false);
+
 success:=true;
 RETURN success;
 END

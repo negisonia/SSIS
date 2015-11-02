@@ -30,7 +30,7 @@ restrictions_array INTEGER[];
 health_plan_types_array INTEGER[];
 
 commercial_hpt INTEGER;
-hix_hpt INTEGER;
+medicare_hpt INTEGER;
 
 drugs CONSTANT VARCHAR:='drugs';
 connecticut_state_id INTEGER;
@@ -41,7 +41,7 @@ BEGIN
 --GET the input data
 --RETRIEVE HEALTH PLAN TYPES
 SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_hpt;
-SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_hpt;
+SELECT common_get_table_id_by_name('health_plan_types','medicare_ma') INTO medicare_hpt;
 
 
 --RETRIEVE INDICATIONS
@@ -69,7 +69,7 @@ SELECT report_id from criteria_restriction_reports where report_name = 'report_1
 SELECT common_get_table_id_by_name('clients', 'client_2') INTO existing_client_id;
 SELECT custom_account_id from custom_accounts where name = 'Custom_Account_2' and client_id = existing_client_id INTO existing_custom_account_id;
 
-health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
+health_plan_types_array:= ARRAY[commercial_hpt,medicare_hpt];
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
 SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id and metro_stat_area_id IS NOT NULL) INTO msa_ids;
