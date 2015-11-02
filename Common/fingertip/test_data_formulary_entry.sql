@@ -112,7 +112,7 @@ BEGIN
     -- TEST_PLAN_010
     PERFORM common_create_formulary_data(common_get_formulary_id_by_plan_name('TEST_PLAN_010'), drug_003_id, tier_2, NULL, NULL, FALSE, FALSE, TRUE, FALSE);
     -- TEST_PLAN_011
-    PERFORM common_create_formulary_data(common_get_formulary_id_by_plan_name('TEST_PLAN_011'), drug_003_id, tier_1, NULL, NULL, TRUE, TRUE, TRUE, TRUE);
+    PERFORM common_create_formulary_data(common_get_formulary_id_by_plan_name('TEST_PLAN_011'), drug_003_id, tier_1, NULL, NULL, FALSE, FALSE, FALSE, FALSE);
     -- TEST_PLAN_012
     PERFORM common_create_formulary_data(common_get_formulary_id_by_plan_name('TEST_PLAN_012'), drug_003_id, tier_1, NULL, NULL, TRUE, TRUE, TRUE, TRUE);
     -- TEST_PLAN_013
