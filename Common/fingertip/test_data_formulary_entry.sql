@@ -149,7 +149,7 @@ BEGIN
     --formulary entry 6
     PERFORM common_create_formulary_data(formulary_hix_id, drug_4, tier_4, reason_code_60, NULL, FALSE, TRUE, FALSE, TRUE);
     --formulary entry 7
-    PERFORM common_create_formulary_data(formulary_comm_id, drug_5, tier_4, NULL, NULL, FALSE, FALSE, FALSE, FALSE);
+    PERFORM common_create_formulary_data(formulary_comm_id, drug_5, tier_4, reason_code_42, NULL, FALSE, FALSE, FALSE, FALSE);
     --formulary entry 8
     PERFORM common_create_formulary_data(formulary_comm_id, drug_6, tier_4, NULL, NULL, TRUE, FALSE, TRUE, FALSE);
     --formulary entry 9
