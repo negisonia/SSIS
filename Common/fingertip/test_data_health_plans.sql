@@ -92,8 +92,8 @@ BEGIN
     PERFORM common_create_healthplan(pbm_hpt_id,TRUE,'health_plan_pbm',common_create_formulary(TRUE,FALSE,NULL),provider_10_id,null);
     PERFORM common_create_healthplan(commercial_hpt_id,TRUE,'health_plan_comm_1',common_create_formulary(TRUE,FALSE,NULL),provider_1_id,'https://health_plan_comm_1/test.pdf');
     PERFORM common_create_healthplan(commercial_hpt_id,FALSE,'health_plan_comm_2',common_create_formulary(TRUE,FALSE,NULL),provider_1_id, null);
-    PERFORM common_create_healthplan(employer_hpt_id,FALSE,'health_plan_empl_1',common_create_formulary(TRUE,FALSE,NULL),provider_11_id, 'https://health_plan_empl_1/test.pdf');
-    PERFORM common_create_healthplan(medicare_ma_hpt_id,FALSE,'health_plan_ma_1',common_create_formulary(TRUE,FALSE,2),provider_11_id, 'https://health_plan_ma_1/test.pdf');
+    PERFORM common_create_healthplan(employer_hpt_id,TRUE,'health_plan_empl_1',common_create_formulary(TRUE,FALSE,NULL),provider_11_id, 'https://health_plan_empl_1/test.pdf');
+    PERFORM common_create_healthplan(medicare_ma_hpt_id,TRUE,'health_plan_ma_1',common_create_formulary(TRUE,FALSE,2),provider_11_id, 'https://health_plan_ma_1/test.pdf');
     
     PERFORM common_create_healthplan(health_plan_type_001_id, TRUE, 'TEST_PLAN_001', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
     PERFORM common_create_healthplan(health_plan_type_002_id, TRUE, 'TEST_PLAN_002', common_create_formulary(TRUE,FALSE,NULL), provider_001_id , null);
