@@ -58,7 +58,7 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Double'
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql_1, ind1_pa_age_1, ind1_pa_st_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_past_custom_option_1, ind1_pa_st_double_co_1_co_2];
 
 SELECT report_id from criteria_restriction_reports where report_name = 'report_1' INTO new_report_id;
-SELECT common_get_table_id_by_name('clients', 'client_2') INTO existing_client_id;
+SELECT common_get_table_id_by_name('clients', 'client_1') INTO existing_client_id;
 SELECT custom_account_id from custom_accounts where name = 'Custom_Account_4' and client_id = existing_client_id INTO existing_custom_account_id;
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
