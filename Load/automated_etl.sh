@@ -51,10 +51,10 @@ ADMIN_VALIDATION_SCRIPT_PATHS=(../Common/admin/ ../Common/utils ../Restrictions/
 FRONT_END_VALIDATION_SCRIPT_PATHS=(../Common/front_end/)
 
 create_pg_pass(){
-  echo "$HOST:5432:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
-  echo "$FF_NEW_DB_HOST:5432:postgres:" >> $HOME/.pgpass
-  echo "$DATA_ENTRY_DB_HOST:5432:$DATA_ENTRY_DB_USER:eod9Phouch1ued7sahho" >> $HOME/.pgpass
-  echo "$QA_DB_HOST:5432:postgres:VsOCWIozIelwQcRgR4w3" >> $HOME/.pgpass
+  echo "$HOST:5432:*:postgres:$SERVER_POSTGRES_PASSWORD" >> $HOME/.pgpass
+  echo "$FF_NEW_DB_HOST:5432:*:postgres:" >> $HOME/.pgpass
+  echo "$DATA_ENTRY_DB_HOST:5432:*:$DATA_ENTRY_DB_USER:eod9Phouch1ued7sahho" >> $HOME/.pgpass
+  echo "$QA_DB_HOST:5432:*:postgres:VsOCWIozIelwQcRgR4w3" >> $HOME/.pgpass
   chmod 0600 $HOME/.pgpass
 }
 

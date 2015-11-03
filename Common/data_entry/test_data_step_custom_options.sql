@@ -8,6 +8,7 @@ custom_option_3 INTEGER;
 custom_option_4 INTEGER;
 
 drug_8 INTEGER;
+drug_3 INTEGER;
 
 drug_class_4 INTEGER;
 drug_class_5 INTEGER;
@@ -22,6 +23,7 @@ SELECT co.id INTO custom_option_4 FROM custom_options co WHERE co.name='custom_o
 
 --RETRIEVE DRUG IDS
 SELECT d.id INTO drug_8 FROM ff.drugs_import d WHERE d.name='drug_8';
+SELECT d.id INTO drug_3 FROM ff.drugs_import d WHERE d.name='drug_3';
 
 --RETRIEVE DRUG CLASS
 SELECT dc.id INTO drug_class_4 FROM ff.drug_classes_import dc WHERE dc.name = 'drug_class_4';
@@ -32,6 +34,7 @@ PERFORM common_create_step_custom_option(custom_option_2,'CustomOption');
 PERFORM common_create_step_custom_option(custom_option_3,'CustomOption');
 PERFORM common_create_step_custom_option(custom_option_4,'CustomOption');
 PERFORM common_create_step_custom_option(drug_8,'Drug');
+PERFORM common_create_step_custom_option(drug_3,'Drug');
 PERFORM common_create_step_custom_option(drug_class_4,'DrugClass');
 PERFORM common_create_step_custom_option(drug_class_5,'DrugClass');
 

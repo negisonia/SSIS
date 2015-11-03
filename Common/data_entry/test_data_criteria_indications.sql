@@ -49,24 +49,41 @@ SELECT i.id INTO indication_5_id from indications i WHERE i.name='indication_5';
 
 PERFORM common_create_criteria_indication(criteria_diagnosis_1,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_diagnosis_1,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_diagnosis_2,indication_2_id);
 PERFORM common_create_criteria_indication(criteria_diagnosis_2,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_diagnosis_3,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_diagnosis_3,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_unspecified,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_unspecified,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_unspecified,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_exclusion_1,indication_2_id);
+
 PERFORM common_create_criteria_indication(criteria_clinical_1,indication_1_id);
+PERFORM common_create_criteria_indication(criteria_clinical_1,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_clinical_2,indication_2_id);
+
 PERFORM common_create_criteria_indication(criteria_clinical_3,indication_2_id);
 PERFORM common_create_criteria_indication(criteria_clinical_3,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_lab_1,indication_2_id);
+
 PERFORM common_create_criteria_indication(criteria_lab_2,indication_2_id);
 PERFORM common_create_criteria_indication(criteria_lab_2,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_lab_3,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_age_1,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_age_1,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_age_1,indication_3_id);
+
 PERFORM common_create_criteria_indication(criteria_ql_1,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_ql_1,indication_2_id);
+PERFORM common_create_criteria_indication(criteria_ql_1,indication_3_id);
 
 success=true;
 return success;

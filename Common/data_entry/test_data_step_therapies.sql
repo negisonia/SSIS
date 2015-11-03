@@ -37,11 +37,13 @@ criteria_ql_1 INTEGER;
 
 commercial_health_plan_type INTEGER;
 hix_health_plan_type INTEGER;
+medicare_ma_health_plan_type INTEGER;
 
 data_entry_id INTEGER;
 st_id INTEGER;
 atomic_step_id INTEGER;
 provider_1_id INTEGER;
+provider_11_id INTEGER;
 
 BEGIN
 
@@ -84,10 +86,12 @@ SELECT c.id INTO criteria_ql_1 FROM criteria c WHERE c.name='criteria_ql_1';
 
 --RETRIEVE PROVIDERS
 SELECT p.id INTO provider_1_id FROM ff.providers_import p WHERE p.name='provider_1' ;
+SELECT p.id INTO provider_11_id FROM ff.providers_import p WHERE p.name='provider_11' ;
 
 --RETRIEVE HEALTH PLAN TYPE ID
 SELECT hpt.id INTO commercial_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='commercial';
 SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='hix';
+SELECT hpt.id INTO medicare_ma_health_plan_type FROM ff.health_plan_types_import hpt WHERE hpt.name='medicare_ma';
 
 -----INSERTS-----
 --CREATE DATA ENTRY
@@ -104,6 +108,14 @@ SELECT hpt.id INTO hix_health_plan_type FROM ff.health_plan_types_import hpt WHE
     SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'ST', 'custom_option_1^1 ') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT common_create_step_therapies(data_entry_id, NULL,TRUE, atomic_step_id ) INTO st_id;
+    PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, st_id, NULL);
+
+--CREATE DATA ENTRY
+	SELECT common_create_data_entry(indication_1, provider_11_id, medicare_ma_health_plan_type, drug_2) INTO data_entry_id;
+	--CREATE ATOMIC STEPS
+    SELECT common_create_atomic_steps('drug_3 and custom_option_1', '1 and 2', 2, 'ST', 'drug_3^1 AND CustomOption1^2') INTO atomic_step_id ;
+	--CREATE Prior Authorization
+	SELECT common_create_step_therapies(data_entry_id, NULL,TRUE, atomic_step_id) INTO st_id;
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, st_id, NULL);
 
 success=true;
