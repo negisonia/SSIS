@@ -20,6 +20,7 @@ PERFORM common_create_provider(TRUE,'provider_7',NULL);
 PERFORM common_create_provider(TRUE,'provider_8',NULL);
 PERFORM common_create_provider(TRUE,'provider_9',NULL);
 PERFORM common_create_provider(TRUE,'provider_10',NULL);
+PERFORM common_create_provider(TRUE,'provider_11',NULL);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_001', parent_001_id);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_002', parent_001_id);
 PERFORM common_create_provider(TRUE, 'TEST_PROVIDER_003', parent_001_id);

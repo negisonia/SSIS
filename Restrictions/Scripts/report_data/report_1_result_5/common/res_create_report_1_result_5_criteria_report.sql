@@ -12,6 +12,7 @@ drug_2_id INTEGER;
 criteria_report_id INTEGER;
 
 new_report_id INTEGER;
+existing_client_id INTEGER;
 
 ind1_pa_diagnosis_1 INTEGER;
 ind1_pa_diagnosis_3 INTEGER;
@@ -28,7 +29,7 @@ restrictions_array INTEGER[];
 health_plan_types_array INTEGER[];
 
 commercial_hpt INTEGER;
-medicare_ma_hpt INTEGER;
+medicare_hpt INTEGER;
 
 drugs CONSTANT VARCHAR:='drugs';
 connecticut_state_id INTEGER;
@@ -39,7 +40,7 @@ BEGIN
 --GET the input data
 --RETRIEVE HEALTH PLAN TYPES
 SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_hpt;
-SELECT common_get_table_id_by_name('health_plan_types','medicare_ma') INTO medicare_ma_hpt;
+SELECT common_get_table_id_by_name('health_plan_types','medicare_ma') INTO medicare_hpt;
 
 
 --RETRIEVE INDICATIONS
@@ -64,12 +65,14 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Double'
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql_1, ind1_pa_age_1, ind1_pa_st_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_past_custom_option_1, ind1_pa_st_double_co_1_co_2];
 
 SELECT report_id from criteria_restriction_reports where report_name = 'report_1' INTO new_report_id;
-health_plan_types_array:= ARRAY[commercial_hpt,medicare_ma_hpt];
+SELECT common_get_table_id_by_name('clients', 'client_1') INTO existing_client_id;
+
+health_plan_types_array:= ARRAY[commercial_hpt,medicare_hpt];
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
 SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id and metro_stat_area_id IS NOT NULL) INTO msa_ids;
 
-SELECT create_criteria_report(new_report_id,0,criteria_report_type,0,msa_geo_type_id,TRUE,FALSE,FALSE,ARRAY[drug_1_id,drug_2_id],health_plan_types_array,'MetroStatArea',ARRAY[]::integer[],NULL,restrictions_array,NULL, msa_ids, NULL)INTO criteria_report_id;
+SELECT create_criteria_report(new_report_id,0,criteria_report_type,0,msa_geo_type_id,FALSE,FALSE,FALSE,ARRAY[drug_1_id,drug_2_id],health_plan_types_array,'MetroStatArea',ARRAY[]::integer[],NULL,restrictions_array,NULL,msa_ids,NULL) INTO criteria_report_id;
 
 RETURN criteria_report_id;
 END

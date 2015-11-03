@@ -151,7 +151,7 @@ class TestCasesTemplate
   end
 
   def conditional_fields_formatted
-    condition_fields.keys.map{ |element| "#{element}=''' || #{element} || ''' " }.join('AND ')
+    "format('#{condition_fields.keys.map{ |element| "#{element}=''%s''" }.join(' AND ')}', #{condition_fields.keys.join(', ')})"
   end
 
   def dynamic_json_fields_formatted
@@ -234,13 +234,13 @@ DECLARE
 BEGIN
 
 -- Current Month
-SELECT get_current_month() INTO current_month_int;
+SELECT ana_get_current_month() INTO current_month_int;
 
 report_select_columns  = '<%= validation_fields %>';
 --Query the actual value
-SELECT calculate_report_value_json(report_select_columns, get_report_name_call('<%= complete_function_name %>', ARRAY[criteria_report_id,current_month_int]), '<%= conditional_fields_formatted %>') INTO actual_value;
+SELECT ana_calculate_report_row_as_json(report_select_columns, '<%= complete_function_name %>', ARRAY[criteria_report_id,current_month_int], <%= conditional_fields_formatted %>) INTO actual_value;
 
-PERFORM validate_comparison_values_varchar(actual_value, expected_value,'ana_<%= complete_function_name %>_test_'|| test_number ||'_validate_data-error: EXPECTED FOR ROW RESULTS TO BE ');
+PERFORM ana_compare_results(actual_value, expected_value,'ana_<%= complete_function_name %>_test_'|| test_number ||'_validate_data-error: EXPECTED FOR ROW RESULTS TO BE ');
 
 success:=true;
 RETURN success;

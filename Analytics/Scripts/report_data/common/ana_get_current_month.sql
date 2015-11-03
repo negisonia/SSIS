@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION get_current_month()--ANALYTICS FRONT END
+CREATE OR REPLACE FUNCTION ana_get_current_month()--ANALYTICS FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 current_month integer;
