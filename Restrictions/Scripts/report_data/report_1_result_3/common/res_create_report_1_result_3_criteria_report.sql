@@ -61,7 +61,7 @@ health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 restrictions_array:= ARRAY[rep_1_group_1_pa,rep_1_group_3_pa,rep_1_group_1_m,rep_1_group_3_m];
 empty_array:= ARRAY[]::integer[];
 
-SELECT create_criteria_report( report1, user_id ,criteria_report_type, NULL, state_geo_type_id, TRUE, FALSE, FALSE, drugs_array, health_plan_types_array, 'State', empty_array, NULL, restrictions_array, states_ids, NULL, NULL) INTO fe_report_1;
+SELECT create_criteria_report( report1, user_id ,criteria_report_type, NULL, state_geo_type_id, TRUE, FALSE, FALSE, drugs_array, health_plan_types_array, 'State', empty_array, NULL, restrictions_array, state_ids, NULL, NULL) INTO fe_report_1;
 return fe_report_1;
 END
 $$ LANGUAGE plpgsql;
