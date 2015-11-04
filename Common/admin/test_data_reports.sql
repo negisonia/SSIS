@@ -15,6 +15,8 @@ rep_1_group_all INTEGER;
 rep_1_group_both INTEGER;
 rep_1_group_steps INTEGER;
 rep_3_group_1 INTEGER;
+rep_3_group_2_ind_1 INTEGER;
+rep_3_group_2_ind_3 INTEGER;
 rep_4_group_1 INTEGER;
 
 ind1_pa_diagnosis_1 INTEGER;
@@ -33,6 +35,9 @@ ind1_m_st_single_c2 INTEGER;
 ind3_m_criteria_lab_3 INTEGER;
 ind1_m_criteria_criteria_diagnosis_3 INTEGER;
 ind3_pa_criteria_clinical_3 INTEGER;
+ind3_pa_criteria_clinical_1 INTEGER;
+ind3_pa_criteria_age_1 INTEGER;
+ind3_m_criteria_age_1 INTEGER;
 
 drug_1 INTEGER;
 drug_2 INTEGER;
@@ -71,6 +76,8 @@ SELECT ccg.id INTO rep_1_group_all FROM custom_criteria_groups ccg  WHERE ccg.na
 SELECT ccg.id INTO rep_1_group_both FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_both' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_1_group_steps FROM custom_criteria_groups ccg  WHERE ccg.name='rep_1_group_steps' and ccg.indication_field_name='indication_1';
 SELECT ccg.id INTO rep_3_group_1 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_3_group_1' and ccg.indication_field_name='indication_1';
+SELECT ccg.id INTO rep_3_group_2_ind_1 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_3_group_2' and ccg.indication_field_name='indication_1';
+SELECT ccg.id INTO rep_3_group_2_ind_3 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_3_group_2' and ccg.indication_field_name='indication_3';
 SELECT ccg.id INTO rep_4_group_1 FROM custom_criteria_groups ccg  WHERE ccg.name='rep_4_group_1' and ccg.indication_field_name='indication_1';
 
 
@@ -108,6 +115,9 @@ SELECT cr.id INTO ind1_m_st_single_c2 FROM criteria_restriction cr WHERE cr.indi
 SELECT cr.id INTO ind3_m_criteria_lab_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_lab_3';
 SELECT cr.id INTO ind1_m_criteria_criteria_diagnosis_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_diagnosis_3';
 SELECT cr.id INTO ind3_pa_criteria_clinical_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_clinical_3';
+SELECT cr.id INTO ind3_pa_criteria_clinical_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_clinical_1';
+SELECT cr.id INTO ind3_pa_criteria_age_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_age_1';
+SELECT cr.id INTO ind3_m_criteria_age_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_age_1';
 
 
 --CREATE REPORT#1
@@ -229,6 +239,12 @@ PERFORM common_create_custom_criteria_group_criterias(rep_1_group_steps,ind1_pa_
 --REPORT # 3
 PERFORM common_create_custom_criteria_group_criterias(rep_3_group_1,ind3_m_criteria_lab_3);
 PERFORM common_create_custom_criteria_group_criterias(rep_3_group_1,ind3_pa_criteria_clinical_3);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_1,ind1_pa_clinical_1);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_1,ind1_pa_age_1);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_1,ind1_m_criteria_age_1);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_3,ind3_pa_criteria_clinical_1);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_3,ind3_pa_criteria_age_1);
+PERFORM common_create_custom_criteria_group_criterias(rep_3_group_2_ind_3,ind3_m_criteria_age_1);
 
 --REPORT # 4
 PERFORM common_create_custom_criteria_group_criterias(rep_4_group_1,ind1_pa_unspecified);
