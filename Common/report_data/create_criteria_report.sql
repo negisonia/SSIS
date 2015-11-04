@@ -6,7 +6,7 @@ intvalue integer;
 recordExist BOOLEAN DEFAULT FALSE;
 recordExist2 BOOLEAN DEFAULT FALSE;
 BEGIN
-
+-- MARKET TYPES IDS  1County 2State 3MSA 4National 5CBS
 ------------VALIDATE PARAMETERS
 --VALIDATE MARKET TYPE PARAMETER CONTAINS A VALID VALUE
 IF ((market_type = 'State') or (market_type = 'County') or (market_type = 'MetroStatArea') or (market_type = 'National') )  = FALSE THEN  
