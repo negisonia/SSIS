@@ -17,7 +17,8 @@ PERFORM common_create_custom_criteria_group('rep_1_group_steps', 'indication_1',
 --REPORT 3 GROUPS
 PERFORM common_create_custom_criteria_group('rep_3_group_1', 'indication_1',TRUE);
 PERFORM common_create_custom_criteria_group('rep_3_group_1', 'indication_3',TRUE);
-
+PERFORM common_create_custom_criteria_group('rep_3_group_2', 'indication_1',TRUE);
+PERFORM common_create_custom_criteria_group('rep_3_group_2', 'indication_3',TRUE);
 --REPORT 4 GROUPS
 PERFORM common_create_custom_criteria_group('rep_4_group_1', 'indication_1',FALSE);
 

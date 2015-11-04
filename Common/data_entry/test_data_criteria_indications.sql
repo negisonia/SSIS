@@ -75,6 +75,7 @@ PERFORM common_create_criteria_indication(criteria_lab_1,indication_2_id);
 PERFORM common_create_criteria_indication(criteria_lab_2,indication_2_id);
 PERFORM common_create_criteria_indication(criteria_lab_2,indication_3_id);
 
+PERFORM common_create_criteria_indication(criteria_lab_3,indication_1_id);
 PERFORM common_create_criteria_indication(criteria_lab_3,indication_3_id);
 
 PERFORM common_create_criteria_indication(criteria_age_1,indication_1_id);
