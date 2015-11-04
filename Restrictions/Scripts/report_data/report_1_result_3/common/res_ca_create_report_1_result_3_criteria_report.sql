@@ -19,6 +19,8 @@ empty_array INTEGER[];
 
 report1 INTEGER;
 fe_report_1 INTEGER;
+existing_client_id INTEGER;
+existing_custom_account_id INTEGER;
 
 criteria_report_type CONSTANT INTEGER:=1;
 state_geo_type_id CONSTANT INTEGER:=2;
