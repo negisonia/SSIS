@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_create_report_1_result_3_criteria_report() --FRONT END
+CREATE OR REPLACE FUNCTION res_ca_create_report_1_result_3_criteria_report() --FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 
