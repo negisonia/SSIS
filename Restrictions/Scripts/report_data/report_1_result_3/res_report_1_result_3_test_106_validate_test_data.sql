@@ -9,7 +9,7 @@ SELECT res_create_report_1_result_3_criteria_report() INTO criteria_report_id;
 PERFORM res_common_report_1_result_3_rpt_provider_details_pa(criteria_report_id);
 PERFORM res_common_report_1_result_3_rpt_provider_details_medical(criteria_report_id);
 
-success=true;
+success:=true;
 return success;
 END
 $$ LANGUAGE plpgsql;
