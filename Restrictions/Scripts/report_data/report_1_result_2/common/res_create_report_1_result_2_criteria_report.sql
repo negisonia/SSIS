@@ -31,8 +31,6 @@ commercial_hpt INTEGER;
 hix_hpt INTEGER;
 
 fe_report_1 INTEGER;
-summary_table_output VARCHAR;
-expected_summary_table_output VARCHAR;
 massachusetts_state_id INTEGER;
 state_ids INTEGER[];
 
