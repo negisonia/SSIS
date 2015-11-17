@@ -11,7 +11,7 @@
 # ---------------------
 
 # Script paths
-DATAWAREHOUSE_SCRIPT_PATH=data_warehouse/r20_data_warehouse.sql
+DATAWAREHOUSE_SCRIPT_PATH=
 FRONT_END_SCRIPT_PATH=front_end/front_end_db.sql
 REPORT_DATA_SCRIPT_PATH=report_data/report_data_db.sql
 ADMIN_SCRIPT_PATH=admin/r20_admin.sql
@@ -35,6 +35,8 @@ ADMIN=admin
 DATAWAREHOUSE=data_warehouse
 DATA_ENTRY=data_entry
 FF_NEW=ff_new
+FF_NEW_1=ff201510
+FF_NEW_2=ff201511
 FRONT_END=front_end
 REPORT_DATA=report_data
 DB_NAMES="$ADMIN $DATAWAREHOUSE $FRONT_END $REPORT_DATA $DATA_ENTRY $FF_NEW"
@@ -148,6 +150,8 @@ create_and_load_ff_new_data_entry(){
       pg_dump --exclude-table "DELETE*" -s ff_new -h $FF_NEW_DB_HOST -n public -U $FF_NEW_DB_USER -p 5432 -x > $FF_NEW_SCRIPT_PATH
       echo_msg_with_timestamp "  - AUTOMATED_ETL: Creating temp database for ff new and loading script"
       create_and_load_db $PREFIX_DB_NAME $FF_NEW_SCRIPT_PATH
+      create_and_load_db $FF_NEW_1 $FF_NEW_SCRIPT_PATH
+      create_and_load_db $FF_NEW_2 $FF_NEW_SCRIPT_PATH
     fi
   done
 }
