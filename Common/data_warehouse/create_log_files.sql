@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS log_etl_validation_process;
+DROP TABLE IF EXISTS log_etl_validation_process_test_execution;
+DROP TABLE IF EXISTS log_etl_validation_process_errors;
+
 CREATE TABLE log_etl_validation_process
   (
     id serial NOT NULL,
