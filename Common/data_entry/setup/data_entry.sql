@@ -11,6 +11,7 @@ SET client_min_messages = warning;
 
 SET search_path = public, pg_catalog;
 
+CREATE ROLE IF NOT EXISTS r2de WITH PASSWORD 'postgres';
 --
 -- Name: super_copy(integer); Type: FUNCTION; Schema: public; Owner: r2de
 --
