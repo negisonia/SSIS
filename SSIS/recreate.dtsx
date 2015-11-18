@@ -1,0 +1,3633 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/17/2015 3:54:35 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="GAPUSER-PC"
+  DTS:CreatorName="gapuser-PC\gapuser"
+  DTS:DTSID="{2BC4D33D-D11E-411F-B4DB-BF760D3E7017}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5583.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="recreate"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{6C5FE075-F2CA-498D-AD94-0EB828671FA2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[admin]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+      DTS:ObjectName="admin">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"admin;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_admin;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data_entry]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{EC653543-C340-4823-B067-B8759F794A8E}"
+      DTS:ObjectName="data_entry">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "data_entry;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_entry;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data_warehouse]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+      DTS:ObjectName="data_warehouse">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database="+@[db_prefix]+"data_warehouse;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_data_warehouse;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF New]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{527A6D34-B8D2-428F-B56B-01ADDEFD4A03}"
+      DTS:ObjectName="FF New">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "ff_new;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_ff_new;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[file_connection.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{09FF1F7F-F5C8-44DA-85B4-87DE840D77BF}"
+      DTS:ObjectName="file_connection.sql">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::file_path]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Front End]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{53345E47-2977-42F2-A428-D96D1328C226}"
+      DTS:ObjectName="Front End">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "front_end;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_front_end;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[postgres]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+      DTS:ObjectName="postgres">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=postgres;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=postgres;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[report_data]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{1B894806-6330-4D23-851B-92A718311C09}"
+      DTS:ObjectName="report_data">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Driver={PostgreSQL ANSI};server=" + @[db_server] + ";uid=" + @[db_username] + ";password=" + @[db_password] + ";Database=" + @[db_prefix] + "report_data;port=5432;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=postgres;Driver={PostgreSQL ANSI};Database=sandbox_report_data;port=5432;">
+          <DTS:Password
+            DTS:Name="password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3DABCD58-2AEC-46E9-B981-6DC69F097C72}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;admin&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="admin_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_admin</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF7C4BDB-62E1-4578-85E7-CFC01F38EBB1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::admin_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_admin">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_admin OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{367B30A6-3635-4E90-A2CD-BBDE4FD14157}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::data_entry_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_data_entry">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_data_entry OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5816A09A-B92B-482A-B92A-00924EF5A407}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::datawarehouse_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_data_warehouse">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_data_warehouse OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E887D6F-C817-40E2-A41A-5A9706A2E2EC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::ff_new_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_ff_new">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_ff_new OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{687A4854-95E2-4A65-877A-C6C9C66AF3A0}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::front_end_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_front_end">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_front_end OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5116CBE9-FFC9-4157-A876-C8C8A0C0FBB3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;CREATE DATABASE &quot;+ @[User::report_data_db_name]+&quot; OWNER postgres&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="create_report_data">
+      <DTS:VariableValue
+        DTS:DataType="8">CREATE DATABASE sandbox_report_data OWNER postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17AFCA8B-BF12-4365-9A62-2CD54626DB6B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;data_warehouse&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="datawarehouse_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_data_warehouse</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FBC64FCA-7FCB-42DD-9E12-A2337A042579}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;data_entry&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="data_entry_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_data_entry</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CA228EBE-799A-4B50-8186-5E4131D78376}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="db_password">
+      <DTS:VariableValue
+        DTS:DataType="8">clarodeluna</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9FAE59AF-2102-4D4C-87CC-79788EA51DD3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="db_prefix">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10959429-307F-4656-AE51-C962087FF1EF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="db_server">
+      <DTS:VariableValue
+        DTS:DataType="8">localhost</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35A72C3F-5D10-4A62-8849-C01FB11ED259}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="db_username">
+      <DTS:VariableValue
+        DTS:DataType="8">postgres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1369F244-E47C-49C2-8C5E-D46A473CCFAE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;drop database if exists &quot;+ @[User::admin_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_admin">
+      <DTS:VariableValue
+        DTS:DataType="8">drop database if exists sandbox_admin</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6093534-73E8-4B3F-B3C9-68647CFC157F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DROP DATABASE IF EXISTS &quot;+ @[User::data_entry_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_data_entry">
+      <DTS:VariableValue
+        DTS:DataType="8">DROP DATABASE IF EXISTS sandbox_data_entry</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{484AEF05-6470-4D31-9BA3-1C73EBE4BE5B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;drop database if exists &quot;+ @[User::datawarehouse_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_data_warehouse">
+      <DTS:VariableValue
+        DTS:DataType="8">drop database if exists sandbox_data_warehouse</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE82DE91-5BBC-4CF3-BFE0-02D95D153C07}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DROP DATABASE IF EXISTS &quot;+ @[User::ff_new_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_ff_new">
+      <DTS:VariableValue
+        DTS:DataType="8">DROP DATABASE IF EXISTS sandbox_ff_new</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F1EEDF82-6AE4-43B6-8DB3-011A9289E2EA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;drop database if exists &quot;+ @[User::front_end_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_front_end">
+      <DTS:VariableValue
+        DTS:DataType="8">drop database if exists sandbox_front_end</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B856A6E6-C51C-4748-BC31-D16B0B15E106}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;drop database if exists &quot;+ @[User::report_data_db_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="drop_report_data">
+      <DTS:VariableValue
+        DTS:DataType="8">drop database if exists sandbox_report_data</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{95A52B4B-0BA6-4F39-9901-98B95F9E13E3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;ff_new&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ff_new_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_ff_new</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FB0C5FEE-B23C-46DD-B862-F2220F30AB13}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00AD02B3-DECE-49FF-B05A-ECCB85AEFD16}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;front_end&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="front_end_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_front_end</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B022D371-ED81-4826-A13D-87159C48A58E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::db_prefix]+&quot;report_data&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="report_data_db_name">
+      <DTS:VariableValue
+        DTS:DataType="8">sandbox_report_data</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2BF2E87A-4985-40A0-8836-176533D902CE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="source_package_path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\gapuser\Desktop\data-warehouse-storeprocedures</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{91999627-D4F2-4823-B9CC-19CF44B69531}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="test_package_path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\load scripts"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{da6fa4b6-3b40-4de0-9f6b-cb83a180b66f}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="load scripts">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load  report data restrictions"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{9578088f-b87d-42a6-a807-14e60a1b15f5}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load  report data restrictions">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{a8f98c26-bd32-4fc4-8121-4de568936c82}"
+            DTS:ObjectName="{3BA46FA9-7EEF-4B6D-9316-47A82E645279}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Restrictions\\Scripts\\report_data"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Restrictions\Scripts\report_data" />
+                <FEFEProperty
+                  FileSpec="*.*" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="-1" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load  report data restrictions\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a644b73e-50b1-4669-85c8-284947d88f65}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{3E165AA7-8060-4A9C-8E57-892C44A6D980}"
+              DTS:ObjectName="{3E165AA7-8060-4A9C-8E57-892C44A6D980}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load Admin commons"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{9c37d0d5-9f8d-436e-ae2d-7eabdb93790b}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Admin commons">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{b414a730-b783-4342-a9b5-ed7ca2f76afe}"
+            DTS:ObjectName="{585BF57D-C1BE-44EC-B1E7-E5B4E5ADE598}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\admin"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\admin" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load Admin commons\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{d615c97d-46d2-483b-afb3-5a881cad1d13}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{A6C34E10-C890-4243-82BC-C531717E9B8B}"
+              DTS:ObjectName="{A6C34E10-C890-4243-82BC-C531717E9B8B}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load Admin Restrictions"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{aea155cb-38f4-4159-81c6-5023dc64fa16}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Admin Restrictions">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{af24268d-82a5-47c0-9061-dedfed21c555}"
+            DTS:ObjectName="{6119BBA0-D7F3-4E9E-8266-776D9A32FAFF}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Restrictions\\Scripts\\admin"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Restrictions\Scripts\admin" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="-1" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load Admin Restrictions\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{ecc9c99b-12ec-447f-8612-b55feab8971e}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{F03E0C4B-94CE-4431-B7E3-58E59650CE24}"
+              DTS:ObjectName="{F03E0C4B-94CE-4431-B7E3-58E59650CE24}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load commons ff_new"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{b657b25a-704c-46ee-81b7-375f95a53a78}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load commons ff_new">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{7e4db2f8-b71d-4325-8571-8b6cd78fed9f}"
+            DTS:ObjectName="{78E4A5DA-A90D-4CA5-A95A-B66ABE3F5A71}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\fingertip"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\fingertip" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load commons ff_new\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{9e15ea62-5d4c-440e-85ca-5a24ef15e6ac}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{527A6D34-B8D2-428F-B56B-01ADDEFD4A03}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{4FA64892-C3B6-4BB2-9931-66638FE1B3C4}"
+              DTS:ObjectName="{4FA64892-C3B6-4BB2-9931-66638FE1B3C4}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load commons front end"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{1e599e1b-1683-43f2-a3cc-5c6d69cc2efb}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load commons front end">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{fb33f846-8a16-4d3d-8da3-b022f72a329a}"
+            DTS:ObjectName="{51E7F8AA-2388-4A26-8334-433A6A72615D}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\front_end"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\front_end" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load commons front end\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{4abe0331-5d02-4045-959d-8a738c61fa69}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{53345E47-2977-42F2-A428-D96D1328C226}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{B710AF13-29DC-42E7-8CBE-6917165119F4}"
+              DTS:ObjectName="{B710AF13-29DC-42E7-8CBE-6917165119F4}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load data warehouse commons"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{eb0f3f5f-fd59-49f5-adb5-fa866f1cba06}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load data warehouse commons">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{6647ded4-30d8-4b95-97c3-90ed6789490c}"
+            DTS:ObjectName="{7448E792-0CA7-4EE4-BE69-A2CA75DE50B0}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\data_warehouse"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\data_warehouse" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load data warehouse commons\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{5f84a1d7-88c3-408e-b0af-6ddc5b04094e}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{3C021F56-9ABD-47E0-8A9F-C402067FE201}"
+              DTS:ObjectName="{3C021F56-9ABD-47E0-8A9F-C402067FE201}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load data warehouse Restrictions"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{e921e5c0-7820-462a-9455-ec50dd8359da}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load data warehouse Restrictions">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{cf3e5939-4e35-4f50-b9bc-3f690fbc52e7}"
+            DTS:ObjectName="{FEA67742-3F61-4B25-A2F8-7ADD83227691}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Restrictions\\Scripts\\data_warehouse"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Restrictions\Scripts\data_warehouse" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="-1" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load data warehouse Restrictions\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{199116dc-97a1-49c3-a331-41d9746c0614}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{14A0943B-5370-4EE4-BEF3-9BCEA01B462C}"
+              DTS:ObjectName="{14A0943B-5370-4EE4-BEF3-9BCEA01B462C}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load DataEntry commons"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{e8a7cf39-6963-4d9c-8322-c898d8b1f92b}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load DataEntry commons">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{e3cae9d4-4628-432a-bd74-613c9dda1f0c}"
+            DTS:ObjectName="{29575167-2776-4037-A70F-3EB93F434595}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\data_entry"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\data_entry" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load DataEntry commons\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{20c48528-e8e0-4531-beb5-d439120f9253}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EC653543-C340-4823-B067-B8759F794A8E}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{0470FF7F-80EC-4149-AFB9-C7F5E0BDDBD4}"
+              DTS:ObjectName="{0470FF7F-80EC-4149-AFB9-C7F5E0BDDBD4}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load report data analitycs"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{31bdd460-997c-437c-a54d-7dad421635b3}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load report data analitycs">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{74e9a81b-c888-4c3f-9646-8ff8cc395764}"
+            DTS:ObjectName="{6DB213AE-D686-4C80-8866-EB6D1727CDE5}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Analytics\\Scripts\\report_data"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Analytics\Scripts\report_data" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="-1" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load report data analitycs\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{f4d02e60-9ef1-400d-ac49-4078f5ad72b7}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{C904FF62-220E-405A-B824-E0F00CD86A81}"
+              DTS:ObjectName="{C904FF62-220E-405A-B824-E0F00CD86A81}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load report data commons"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{aaa18262-4b54-4265-b0f4-0c692f7b1f90}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load report data commons">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{f23b3f89-3cfe-4387-8b95-aaa3953e3639}"
+            DTS:ObjectName="{A9EB4A7A-4416-4F44-8E0D-0BC619C0D87D}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\report_data"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\report_data" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="-1" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load report data commons\load"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a7ea0697-de0f-463c-83aa-e29d11d23cfe}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{C98B6C4A-DB2C-4E18-A2F5-1C1E0ED7B6F1}"
+              DTS:ObjectName="{C98B6C4A-DB2C-4E18-A2F5-1C1E0ED7B6F1}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Load utils"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{e68c3820-0e8e-4555-a707-6ca9591bfbd0}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load utils">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="DTS.ForEachFileEnumerator.3"
+            DTS:DTSID="{1e2e7935-8676-4101-9ddd-351fc60b87a5}"
+            DTS:ObjectName="{FEC924C8-B03F-44A8-AC30-5EBB68830666}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::test_package_path]+"\\Common\\utils"</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Users\gapuser\Desktop\data-warehouse-storeprocedures-tests\Common\utils" />
+                <FEFEProperty
+                  FileSpec="*.sql" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load utils\load admin"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{04ff8da5-c048-4ea6-9055-eb9ae920d6e2}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load admin"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load utils\load data entry"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{edc4e685-7b66-415e-8847-7c3ad3682391}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load data entry"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EC653543-C340-4823-B067-B8759F794A8E}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load utils\load data warehouse"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{adffb94a-556c-43dc-bbce-b4791eac991b}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load data warehouse"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load utils\load ff new"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{cc25e7c3-9393-428c-919e-20d1aa8d9d88}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load ff new"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{527A6D34-B8D2-428F-B56B-01ADDEFD4A03}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Load utils\load report data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{e6ae5957-6129-487e-9e5e-95c8b23a8d5a}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load report data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{6D01F9AC-9331-41C5-869E-3EB6693A4A9B}"
+              DTS:ObjectName="{6D01F9AC-9331-41C5-869E-3EB6693A4A9B}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::file_path" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\load scripts\Update  foreign servers"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{41B8CC35-6B08-4C4F-91D8-FC074840A1F4}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update  foreign servers">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Update  foreign servers\update foreign server admin"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{30076C06-0DBF-40A4-B6A9-477CDB1798E7}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update foreign server admin"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+                  SQLTask:SqlStatementSource="Select alter_admin_foreign_servers(?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::db_server"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::datawarehouse_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::ff_new_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::db_password"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Update  foreign servers\update foreign server data entry"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{2af7283b-ec66-4c17-a0c3-0b87a92da8bf}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update foreign server data entry"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EC653543-C340-4823-B067-B8759F794A8E}"
+                  SQLTask:SqlStatementSource="Select alter_data_entry_foreign_servers(?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::db_server"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::ff_new_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::db_password"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Update  foreign servers\update foreign server data warehouse"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{6ceb57e1-d324-48fb-bf06-cbf9393aa524}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update foreign server data warehouse"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+                  SQLTask:SqlStatementSource="Select alter_datawarehouse_foreign_servers(?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::db_server"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::ff_new_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::data_entry_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::admin_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::db_password"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\load scripts\Update  foreign servers\update foreign server report data"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c4c6949e-e2be-4555-b446-91558aa13219}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update foreign server report data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStatementSource="Select alter_report_data_foreign_servers(?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::db_server"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::datawarehouse_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::front_end_db_name"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::db_password"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="-9"
+                    SQLTask:ParameterSize="1000" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{29926ee4-2afa-4200-8257-c8a4e7241054}"
+          DTS:From="Package\load scripts\Load utils"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\load scripts\Load Admin commons" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7668346d-5ad4-438c-852f-9855052b8224}"
+          DTS:From="Package\load scripts\Load Admin commons"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\load scripts\Load Admin Restrictions" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{0D2FFA82-4016-436F-B87C-06D86FCC5C37}"
+          DTS:From="Package\load scripts\Load report data commons"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\load scripts\Update  foreign servers" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5d5648f6-d1d2-4f24-9e77-0472486f5866}"
+          DTS:From="Package\load scripts\Load Admin Restrictions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\load scripts\Load DataEntry commons" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{ced9127b-f72e-492e-9def-6215550fb027}"
+          DTS:From="Package\load scripts\Load DataEntry commons"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\load scripts\Load data warehouse commons" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{4cecf471-9e62-4029-a4b9-3758309a5325}"
+          DTS:From="Package\load scripts\Load data warehouse commons"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\load scripts\Load data warehouse Restrictions" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{fb52566f-9982-407c-9f4d-71eada3e3241}"
+          DTS:From="Package\load scripts\Load data warehouse Restrictions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\load scripts\Load commons ff_new" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{66cd63b4-5c65-44f1-b54c-094b76faa868}"
+          DTS:From="Package\load scripts\Load commons ff_new"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\load scripts\Load commons front end" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{bc3c4f40-7376-46b7-b3b5-a961a7ec8b4d}"
+          DTS:From="Package\load scripts\Load commons front end"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\load scripts\Load  report data restrictions" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{4e11dfa5-0450-47c2-a72c-d09ebfae6401}"
+          DTS:From="Package\load scripts\Load  report data restrictions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\load scripts\Load report data analitycs" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\load scripts.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{41291402-2cde-4dca-9ccc-6aef397b5315}"
+          DTS:From="Package\load scripts\Load report data analitycs"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\load scripts\Load report data commons" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\recreate data bases"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{034640DE-C60E-402A-8F4E-C80D1308189A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="recreate data bases">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create admin data base"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{FA245289-90CA-4082-8190-C1AF212853A5}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create admin data base">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create admin data base\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{83AF37C5-EC8A-4D40-A06B-892980957FD9}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_admin" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create admin data base\load admin create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{C842B429-07C4-4FC6-8AB0-9CE150A96135}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load admin create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{d9fe0895-ab6c-45cd-8847-5a3dffb4c1b1}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create admin data base\set  admin script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{993082DD-C28F-41D3-B724-D131B7766BCD}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  admin script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]= @[User::source_package_path]+&quot;\\admin\\r20_admin.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create admin data base.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{E2C48BC2-9B26-4103-B33A-7EF5706A18F4}"
+              DTS:From="Package\recreate data bases\create admin data base\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create admin data base\set  admin script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create admin data base.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{449EC3D8-E60B-493F-AB71-EBA423389D47}"
+              DTS:From="Package\recreate data bases\create admin data base\set  admin script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create admin data base\load admin create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create data entry"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{fdb2d3e2-2bab-4897-8bf6-5a5c589d2505}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create data entry">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data entry\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{760dac8d-8474-4f1a-bd2a-8b0519e99013}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_data_entry" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data entry\load data entry create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{47172a46-37c2-4a8e-8723-11428bc988dd}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load data entry create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{EC653543-C340-4823-B067-B8759F794A8E}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data entry\set  data entry script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{2aa4707c-c6d4-4f68-98b5-ec6975b12c0a}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  data entry script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]= @[User::test_package_path] +&quot;\\Common\\data_entry\\setup\\data_entry.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create data entry.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{6aa4e085-c4bd-4fe2-9c7f-1d26823734d3}"
+              DTS:From="Package\recreate data bases\create data entry\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create data entry\set  data entry script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create data entry.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{d970a736-056a-4a7c-84d0-ab06f18cc19b}"
+              DTS:From="Package\recreate data bases\create data entry\set  data entry script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create data entry\load data entry create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create data warehouse"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{F242BC4A-0605-4AC1-9AA2-8FC149DC98B5}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create data warehouse">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data warehouse\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{94776bbc-24b9-4adc-99b3-d1e4326fc646}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_data_warehouse" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data warehouse\load data warehouse create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{9d0ba435-d2d1-4f4a-81d3-fa60ebc15e9c}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load data warehouse create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A6583DF8-45CB-49AC-83E4-FD461EE5C7EF}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create data warehouse\set  data warehouse script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{b7a57b21-7c4e-4053-8161-5ba2fec888a9}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  data warehouse script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]= @[User::source_package_path]+&quot;\\data_warehouse\\r20_data_warehouse.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create data warehouse.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{FC865148-06C8-4F28-85C6-77BF62EAC949}"
+              DTS:From="Package\recreate data bases\create data warehouse\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create data warehouse\set  data warehouse script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create data warehouse.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{42400956-B38B-43F1-B37F-04C9A0940404}"
+              DTS:From="Package\recreate data bases\create data warehouse\set  data warehouse script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create data warehouse\load data warehouse create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create ff new"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{73bcbc2e-b6b0-47bb-a998-9c7f3cee4d41}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create ff new">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create ff new\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c42e7b13-a8f1-4788-87ea-4d6d994b3051}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_ff_new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create ff new\load ff new create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{e25557b4-580d-4c3d-a63f-833145107398}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load ff new create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{527A6D34-B8D2-428F-B56B-01ADDEFD4A03}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create ff new\set  ff new script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{36192ea8-1f15-461d-a856-b451afb42c6f}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  ff new script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]=  @[User::test_package_path] + &quot;\\Common\\fingertip\\setup\\ff_new.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create ff new.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{25804c5c-7b57-4571-be1c-feb1a466dfcd}"
+              DTS:From="Package\recreate data bases\create ff new\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create ff new\set  ff new script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create ff new.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{4868bf49-5619-4e3c-8a92-886b50a1b22e}"
+              DTS:From="Package\recreate data bases\create ff new\set  ff new script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create ff new\load ff new create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create front end"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{47f93e6d-a176-430f-b437-11265117309f}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create front end">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create front end\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{313faf95-8414-4979-ad09-d655338b4f84}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_front_end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create front end\load front end create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{703a9be9-2623-4f62-97d7-17f6922f0f9d}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load front end create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{53345E47-2977-42F2-A428-D96D1328C226}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create front end\set  front end script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{fef66324-8ad8-4091-b985-6d46fc4a2283}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  front end script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]= @[User::source_package_path]+&quot;\\front_end\\front_end_db.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create front end.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{79091e2d-6ad9-4070-a583-eea6da11f5e7}"
+              DTS:From="Package\recreate data bases\create front end\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create front end\set  front end script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create front end.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{5b3b3fe5-3f6d-4ec0-b8ff-1d712b937315}"
+              DTS:From="Package\recreate data bases\create front end\set  front end script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create front end\load front end create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\create report data"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{6b5aa9aa-b35d-43bc-8337-b47de1d3a049}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="create report data">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create report data\create db"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{174f9208-07d1-4b0f-9bbe-7b29450a0754}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="create db"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::create_report_data" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create report data\load report data create script"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{108f7992-9424-4a1f-b744-190dd3ef000c}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load report data create script"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1B894806-6330-4D23-851B-92A718311C09}"
+                  SQLTask:SqlStmtSourceType="FileConnection"
+                  SQLTask:SqlStatementSource="file_connection.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\recreate data bases\create report data\set  report data script file path"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{298fd538-e0a5-41f7-b07a-32a4f4364aec}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="set  report data script file path"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::file_path]= @[User::source_package_path]+&quot;\\report_data\\report_data_db.sql&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create report data.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{6ab9d733-64bf-4cd3-8809-9f2aa350dec6}"
+              DTS:From="Package\recreate data bases\create report data\create db"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\recreate data bases\create report data\set  report data script file path" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\recreate data bases\create report data.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{5a1b11d2-d090-44bd-94e1-39560a589e4e}"
+              DTS:From="Package\recreate data bases\create report data\set  report data script file path"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\recreate data bases\create report data\load report data create script" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop admin db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CCEACF6B-DD20-4FFA-8404-58978FF7D46C}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop admin db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_admin" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop data entry db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F8F07DFB-8E2E-4455-9F11-96F76FC91AE3}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop data entry db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_data_entry" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop data warehouse db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{94AA78A9-8108-494E-BAB1-9AAEF10F4B1B}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop data warehouse db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_data_warehouse" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop ff_new db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{BC06A1FC-AC19-4236-B629-73226C3A6DD7}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop ff_new db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_ff_new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop front end db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CE952070-A91C-4F83-B7D4-FC8CBF82DCE6}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop front end db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_front_end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\drop report data db"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1B2FD760-E384-407A-9CFE-92C359D03159}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="drop report data db"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::drop_report_data" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill  data entry open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fe626809-32f6-4383-9150-77e91125a009}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill  data entry open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::data_entry_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill  ff_new open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bdaff096-e07b-43ba-8134-de765f977bf4}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill  ff_new open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::ff_new_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill  front end open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{dedd6da6-5e0f-4631-a091-43aed31f3d97}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill  front end open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::front_end_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill  report data open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5250a836-debd-4202-947b-f0ea7f64a83a}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill  report data open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::report_data_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill admin open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fb66fcf7-9375-42b5-9d38-8e18ffdba27c}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill admin open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::admin_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\recreate data bases\Kill dw open connections"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{00692734-10df-474a-9677-5f8b731830cb}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Kill dw open connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5D38AA27-D00A-4702-886A-40A7DDB99CAA}"
+              SQLTask:SqlStatementSource="SELECT pg_terminate_backend(pid) &#xA; FROM pg_stat_get_activity(NULL::integer) &#xA; WHERE datid=(SELECT oid from pg_database where datname = ?);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::datawarehouse_db_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="-9"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{955A2763-500F-4661-981D-B2DBE2823A25}"
+          DTS:From="Package\recreate data bases\Kill admin open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\recreate data bases\drop admin db" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{FE0DC606-386C-46DE-BF5A-D32613B218A1}"
+          DTS:From="Package\recreate data bases\Kill dw open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\recreate data bases\drop data warehouse db" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{F8212993-AB00-418F-8262-50C281D0C1FD}"
+          DTS:From="Package\recreate data bases\create front end"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\recreate data bases\create report data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{E974E13D-DAC2-4430-BE67-44197D2DD3DE}"
+          DTS:From="Package\recreate data bases\create report data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 11"
+          DTS:To="Package\recreate data bases\create ff new" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 12]"
+          DTS:CreationName=""
+          DTS:DTSID="{A15102A2-9FD9-4A18-B918-423B3C870FA4}"
+          DTS:From="Package\recreate data bases\drop data warehouse db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 12"
+          DTS:To="Package\recreate data bases\create data warehouse" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 13]"
+          DTS:CreationName=""
+          DTS:DTSID="{9AF3AC74-1DC3-4A1F-8061-2F1E00D29111}"
+          DTS:From="Package\recreate data bases\create data warehouse"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 13"
+          DTS:To="Package\recreate data bases\create front end" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 14]"
+          DTS:CreationName=""
+          DTS:DTSID="{9128E5A3-3742-4696-974B-8B3F58137433}"
+          DTS:From="Package\recreate data bases\drop ff_new db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 14"
+          DTS:To="Package\recreate data bases\create ff new" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 15]"
+          DTS:CreationName=""
+          DTS:DTSID="{A9DAE950-EDBD-42C0-9C4B-078EACCB99DF}"
+          DTS:From="Package\recreate data bases\drop data entry db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 15"
+          DTS:To="Package\recreate data bases\create data entry" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 16]"
+          DTS:CreationName=""
+          DTS:DTSID="{E8467A30-64A2-4B67-8A63-B961968C05E9}"
+          DTS:From="Package\recreate data bases\create ff new"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 16"
+          DTS:To="Package\recreate data bases\create data entry" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5AE545CE-E0E0-4CF6-BDA0-8896ACA67DF0}"
+          DTS:From="Package\recreate data bases\Kill  front end open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\recreate data bases\drop front end db" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{25A6B4CA-7167-44E1-A24B-F5AF43B9EB90}"
+          DTS:From="Package\recreate data bases\Kill  report data open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\recreate data bases\drop report data db" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{F050DE84-28A1-4E14-B30F-A84535AA6168}"
+          DTS:From="Package\recreate data bases\drop admin db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\recreate data bases\create admin data base" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{ABFD5357-11CB-4D0E-93F3-6EE8CE91AAEB}"
+          DTS:From="Package\recreate data bases\create admin data base"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\recreate data bases\create data warehouse" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{238C4F85-D170-4C82-9A4E-511388561ACA}"
+          DTS:From="Package\recreate data bases\drop front end db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\recreate data bases\create front end" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{833674E1-F8E6-418D-B4D6-77359783FBA3}"
+          DTS:From="Package\recreate data bases\drop report data db"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\recreate data bases\create report data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{DE26B0A7-1100-4051-910E-03B3F706FE98}"
+          DTS:From="Package\recreate data bases\Kill  ff_new open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\recreate data bases\drop ff_new db" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\recreate data bases.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{B0EAD3C5-65F0-4F8E-B076-C4256B04E8A0}"
+          DTS:From="Package\recreate data bases\Kill  data entry open connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\recreate data bases\drop data entry db" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0F51B510-AF07-42B5-A2F4-60BFFFA540DD}"
+      DTS:From="Package\recreate data bases"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\load scripts" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load  report data restrictions\load"
+          TopLeft="58.2857142857142,36.7142857142859" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,135"
+          Size="254,178"
+          Id="Package\load scripts\Load  report data restrictions"
+          TopLeft="1879.57142857143,243.428571428571" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load Admin commons\load"
+          TopLeft="32,30" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="190,127"
+          Size="190,170"
+          Id="Package\load scripts\Load Admin commons"
+          TopLeft="42.8571428571433,233.142857142857" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load Admin Restrictions\load"
+          TopLeft="36.8333333333334,29.3333333333333" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="192,123"
+          Size="192,166"
+          Id="Package\load scripts\Load Admin Restrictions"
+          TopLeft="283.97619047619,237.119047619047" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load commons ff_new\load"
+          TopLeft="62,35.6666666666667" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="230,133"
+          Size="230,176"
+          Id="Package\load scripts\Load commons ff_new"
+          TopLeft="1336.35714285714,236.047619047619" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load commons front end\load"
+          TopLeft="59.5000000000002,30.3333333333334" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="246,130"
+          Size="246,173"
+          Id="Package\load scripts\Load commons front end"
+          TopLeft="1597.90476190476,234.857142857143" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load data warehouse commons\load"
+          TopLeft="65.6666666666666,29.8333333333334" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="259,129"
+          Size="259,172"
+          Id="Package\load scripts\Load data warehouse commons"
+          TopLeft="758.97619047619,228.904761904762" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load data warehouse Restrictions\load"
+          TopLeft="72.8333333333331,30.6666666666667" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="249,135"
+          Size="249,178"
+          Id="Package\load scripts\Load data warehouse Restrictions"
+          TopLeft="1052.90476190476,229.023809523809" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load DataEntry commons\load"
+          TopLeft="43.8333333333331,34.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="225,131"
+          Size="225,174"
+          Id="Package\load scripts\Load DataEntry commons"
+          TopLeft="533.142857142857,226.404761904761" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load report data analitycs\load"
+          TopLeft="53,38.5714285714286" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="236,134"
+          Size="236,177"
+          Id="Package\load scripts\Load report data analitycs"
+          TopLeft="2161.85714285714,252.571428571429" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\load scripts\Load report data commons\load"
+          TopLeft="32.8571428571429,40.8571428571429" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="243,146"
+          Size="243,189"
+          Id="Package\load scripts\Load report data commons"
+          TopLeft="2139.59523809524,491.738095238096" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\load scripts\Load utils\load admin"
+          TopLeft="38,21" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\load scripts\Load utils\load data entry"
+          TopLeft="207,18.6666666666667" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\load scripts\Load utils\load data warehouse"
+          TopLeft="383.666666666667,17.8333333333333" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\load scripts\Load utils\load ff new"
+          TopLeft="592,18.6666666666667" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\load scripts\Load utils\load report data"
+          TopLeft="757,20.3333333333334" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="970,128"
+          Size="970,171"
+          Id="Package\load scripts\Load utils"
+          TopLeft="515.571428571428,3.28571428571422" />
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint]"
+          TopLeft="1000.57142857143,174.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-862.714285714285,58.8571428571431"
+              Start="0,0"
+              End="-862.714285714285,51.3571428571431">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4285714285716" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.4285714285716"
+                    Point2="0,29.4285714285716"
+                    Point3="-4,29.4285714285716" />
+                  <mssgle:LineSegment
+                    End="-858.714285714285,29.4285714285716" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-858.714285714285,29.4285714285716"
+                    Point2="-862.714285714285,29.4285714285716"
+                    Point3="-862.714285714285,33.4285714285716" />
+                  <mssgle:LineSegment
+                    End="-862.714285714285,51.3571428571431" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 1]"
+          TopLeft="232.857142857142,319.130952380952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.1190476190476,0"
+              Start="0,0"
+              End="43.6190476190476,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.6190476190476,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 2]"
+          TopLeft="475.97619047619,316.761904761904">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.1666666666672,0"
+              Start="0,0"
+              End="49.6666666666672,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.6666666666672,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 3]"
+          TopLeft="645.642857142857,226.404761904761">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="242.833333333333,2.50000000000114"
+              Start="0,0"
+              End="242.833333333333,-4.99999999999886">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="238.833333333333,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="238.833333333333,-22.5"
+                    Point2="242.833333333333,-22.5"
+                    Point3="242.833333333333,-18.5" />
+                  <mssgle:LineSegment
+                    End="242.833333333333,-4.99999999999886" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1017.97619047619,316.464285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.9285714285738,0"
+              Start="0,0"
+              End="27.4285714285738,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.4285714285738,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1301.90476190476,321.035714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.4523809523801,0"
+              Start="0,0"
+              End="26.9523809523801,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.9523809523801,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1566.35714285714,322.702380952381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.5476190476197,0"
+              Start="0,0"
+              End="24.0476190476197,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.0476190476197,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 7]"
+          TopLeft="1843.90476190476,321.357142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.6666666666642,11.0714285714284"
+              Start="0,0"
+              End="28.1666666666642,11.0714285714284">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="13.8333333333321,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.8333333333321,0"
+                    Point2="17.8333333333321,0"
+                    Point3="17.8333333333321,4" />
+                  <mssgle:LineSegment
+                    End="17.8333333333321,7.07142857142844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.8333333333321,7.07142857142844"
+                    Point2="17.8333333333321,11.0714285714284"
+                    Point3="21.8333333333321,11.0714285714284" />
+                  <mssgle:LineSegment
+                    End="28.1666666666642,11.0714285714284" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 8]"
+          TopLeft="2133.57142857143,332.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.2857142857138,8.64285714285757"
+              Start="0,0"
+              End="20.7857142857138,8.64285714285757">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="10.1428571428569,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.1428571428569,0"
+                    Point2="14.1428571428569,0"
+                    Point3="14.1428571428569,4" />
+                  <mssgle:LineSegment
+                    End="14.1428571428569,4.64285714285757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1428571428569,4.64285714285757"
+                    Point2="14.1428571428569,8.64285714285757"
+                    Point3="18.1428571428569,8.64285714285757" />
+                  <mssgle:LineSegment
+                    End="20.7857142857138,8.64285714285757" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 9]"
+          TopLeft="2279.85714285714,429.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.7619047619041,62.1666666666672"
+              Start="0,0"
+              End="-18.7619047619041,54.6666666666672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0833333333336" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.0833333333336"
+                    Point2="0,31.0833333333336"
+                    Point3="-4,31.0833333333336" />
+                  <mssgle:LineSegment
+                    End="-14.7619047619041,31.0833333333336" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.7619047619041,31.0833333333336"
+                    Point2="-18.7619047619041,31.0833333333336"
+                    Point3="-18.7619047619041,35.0833333333336" />
+                  <mssgle:LineSegment
+                    End="-18.7619047619041,54.6666666666672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="250,42"
+          Id="Package\load scripts\Update  foreign servers\update foreign server admin"
+          TopLeft="28.5,7" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\load scripts\Update  foreign servers\update foreign server data entry"
+          TopLeft="23,66" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\load scripts\Update  foreign servers\update foreign server data warehouse"
+          TopLeft="24,125" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\load scripts\Update  foreign servers\update foreign server report data"
+          TopLeft="25,191" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="303,322"
+          Size="303,365"
+          Id="Package\load scripts\Update  foreign servers"
+          TopLeft="1691,436" />
+        <EdgeLayout
+          Id="Package\load scripts.PrecedenceConstraints[Constraint 10]"
+          TopLeft="2139.59523809524,586.238095238096">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.59523809524,32.261904761904"
+              Start="0,0"
+              End="-138.09523809524,32.261904761904">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-68.7976190476199,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.7976190476199,0"
+                    Point2="-72.7976190476199,0"
+                    Point3="-72.7976190476199,4" />
+                  <mssgle:LineSegment
+                    End="-72.7976190476199,28.261904761904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-72.7976190476199,28.261904761904"
+                    Point2="-72.7976190476199,32.261904761904"
+                    Point3="-76.7976190476199,32.261904761904" />
+                  <mssgle:LineSegment
+                    End="-138.09523809524,32.261904761904" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="2403,858"
+          Size="2403,901"
+          Id="Package\load scripts"
+          TopLeft="332.5,1255.5" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create admin data base\create db"
+          TopLeft="78.3846153846154,24.0769230769231" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\recreate data bases\create admin data base\load admin create script"
+          TopLeft="56,175" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\recreate data bases\create admin data base\set  admin script file path"
+          TopLeft="45.9999999999999,104.230769230769" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create admin data base.PrecedenceConstraints[Constraint]"
+          TopLeft="143.692307692308,66.0769230769231">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1538461538461"
+              Start="0,0"
+              End="0,30.6538461538461">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6538461538461" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create admin data base.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.75,146.230769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7692307692309"
+              Start="0,0"
+              End="0,21.2692307692309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2692307692309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="310,299"
+          Size="310,342"
+          Id="Package\recreate data bases\create admin data base"
+          TopLeft="75.6373626373627,230.472527472527" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create data entry\create db"
+          TopLeft="86.5384615384617,20.3076923076923" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\recreate data bases\create data entry\load data entry create script"
+          TopLeft="45.8333333333333,190.858974358975" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\recreate data bases\create data entry\set  data entry script file path"
+          TopLeft="42.8333333333335,102.987179487179" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create data entry.PrecedenceConstraints[Constraint]"
+          TopLeft="150.935897435898,62.3076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.6794871794867"
+              Start="0,0"
+              End="0,33.1794871794867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1794871794867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create data entry.PrecedenceConstraints[Constraint 1]"
+          TopLeft="152.833333333333,144.987179487179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.871794871796"
+              Start="0,0"
+              End="0,38.371794871796">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.371794871796" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="299,314"
+          Size="299,357"
+          Id="Package\recreate data bases\create data entry"
+          TopLeft="1991.44444444444,225.888888888889" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create data warehouse\create db"
+          TopLeft="86.5384615384617,20.3076923076923" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\recreate data bases\create data warehouse\load data warehouse create script"
+          TopLeft="34.9999999999999,186.692307692308" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\recreate data bases\create data warehouse\set  data warehouse script file path"
+          TopLeft="27.0000000000001,102.153846153846" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create data warehouse.PrecedenceConstraints[Constraint]"
+          TopLeft="149.769230769231,62.3076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.846153846154"
+              Start="0,0"
+              End="0,32.346153846154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.346153846154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create data warehouse.PrecedenceConstraints[Constraint 1]"
+          TopLeft="152.75,144.153846153846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5384615384617"
+              Start="0,0"
+              End="0,35.0384615384617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0384615384617" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="324,312"
+          Size="324,355"
+          Id="Package\recreate data bases\create data warehouse"
+          TopLeft="439.769230769231,229.307692307692" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create ff new\create db"
+          TopLeft="86.5384615384617,20.3076923076923" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\recreate data bases\create ff new\load ff new create script"
+          TopLeft="45.8333333333333,190.858974358975" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\recreate data bases\create ff new\set  ff new script file path"
+          TopLeft="42.8333333333335,102.987179487179" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create ff new.PrecedenceConstraints[Constraint]"
+          TopLeft="146.435897435898,62.3076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.6794871794867"
+              Start="0,0"
+              End="0,33.1794871794867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1794871794867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create ff new.PrecedenceConstraints[Constraint 1]"
+          TopLeft="143.583333333333,144.987179487179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.871794871796"
+              Start="0,0"
+              End="0,38.371794871796">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.371794871796" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="299,314"
+          Size="299,357"
+          Id="Package\recreate data bases\create ff new"
+          TopLeft="1592.55555555556,227" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create front end\create db"
+          TopLeft="86.5384615384617,20.3076923076923" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\recreate data bases\create front end\load front end create script"
+          TopLeft="45.8333333333333,190.858974358975" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\recreate data bases\create front end\set  front end script file path"
+          TopLeft="42.8333333333335,102.987179487179" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create front end.PrecedenceConstraints[Constraint]"
+          TopLeft="149.685897435898,62.3076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.6794871794869"
+              Start="0,0"
+              End="0,33.1794871794869">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1794871794869" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create front end.PrecedenceConstraints[Constraint 1]"
+          TopLeft="150.333333333333,144.987179487179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.8717948717954"
+              Start="0,0"
+              End="0,38.3717948717954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3717948717954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="299,314"
+          Size="299,357"
+          Id="Package\recreate data bases\create front end"
+          TopLeft="812.662393162392,229.162393162393" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\recreate data bases\create report data\create db"
+          TopLeft="86.5384615384617,20.3076923076923" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\recreate data bases\create report data\load report data create script"
+          TopLeft="45.8333333333333,190.858974358975" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\recreate data bases\create report data\set  report data script file path"
+          TopLeft="42.8333333333335,102.987179487179" />
+        <EdgeLayout
+          Id="Package\recreate data bases\create report data.PrecedenceConstraints[Constraint]"
+          TopLeft="151.935897435898,62.3076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.6794871794867"
+              Start="0,0"
+              End="0,33.1794871794867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1794871794867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases\create report data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="154.833333333333,144.987179487179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.871794871796"
+              Start="0,0"
+              End="0,38.371794871796">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.371794871796" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="299,314"
+          Size="299,357"
+          Id="Package\recreate data bases\create report data"
+          TopLeft="1202.55555555556,229.222222222222" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\recreate data bases\drop admin db"
+          TopLeft="148.571428571429,131.214285714286" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\recreate data bases\drop data entry db"
+          TopLeft="2051.73015873016,120.793650793651" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\recreate data bases\drop data warehouse db"
+          TopLeft="500.535714285714,137.821428571429" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\recreate data bases\drop ff_new db"
+          TopLeft="1658.61904761905,118.904761904762" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\recreate data bases\drop front end db"
+          TopLeft="882.285714285714,126.821428571429" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\recreate data bases\drop report data db"
+          TopLeft="1265.36904761905,124.210317460317" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\recreate data bases\Kill  data entry open connections"
+          TopLeft="2020.98015873016,50.6984126984133" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\recreate data bases\Kill  ff_new open connections"
+          TopLeft="1630.36904761905,49.9761904761909" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\recreate data bases\Kill  front end open connections"
+          TopLeft="851.785714285714,44.0714285714286" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\recreate data bases\Kill  report data open connections"
+          TopLeft="1238.61904761905,52.4603174603175" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\recreate data bases\Kill admin open connections"
+          TopLeft="114.321428571428,52.2142857142859" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\recreate data bases\Kill dw open connections"
+          TopLeft="497.535714285714,56.0714285714286" />
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint]"
+          TopLeft="221.946428571429,94.2142857142859">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.9999999999998"
+              Start="0,0"
+              End="0,29.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 1]"
+          TopLeft="597.285714285714,98.0714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.75"
+              Start="0,0"
+              End="0,32.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 10]"
+          TopLeft="1111.66239316239,407.692307692308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.8931623931635,0"
+              Start="0,0"
+              End="83.3931623931635,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.3931623931635,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 11]"
+          TopLeft="1501.55555555556,406.611111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,0"
+              Start="0,0"
+              End="83.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 12]"
+          TopLeft="600.152472527473,179.821428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.4862637362637"
+              Start="0,0"
+              End="0,41.9862637362637">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9862637362637" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 13]"
+          TopLeft="763.769230769231,407.235042735043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.8931623931614,0"
+              Start="0,0"
+              End="41.3931623931614,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.3931623931614,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 14]"
+          TopLeft="1738.5873015873,160.904761904762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.0952380952381"
+              Start="0,0"
+              End="0,58.5952380952381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5952380952381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 15]"
+          TopLeft="2138.5873015873,162.793650793651">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.095238095238"
+              Start="0,0"
+              End="0,55.595238095238">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.595238095238" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 16]"
+          TopLeft="1891.55555555556,404.944444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.8888888888882,0"
+              Start="0,0"
+              End="92.3888888888882,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="92.3888888888882,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 2]"
+          TopLeft="965.535714285714,86.0714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.75"
+              Start="0,0"
+              End="0,33.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 3]"
+          TopLeft="1352.74404761905,94.4603174603175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.75"
+              Start="0,0"
+              End="0,22.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 4]"
+          TopLeft="227.104395604396,173.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.2582417582415"
+              Start="0,0"
+              End="0,49.7582417582415">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.7582417582415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 5]"
+          TopLeft="385.637362637363,404.14010989011">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.131868131868,0"
+              Start="0,0"
+              End="46.631868131868,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.631868131868,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 6]"
+          TopLeft="963.224053724053,168.821428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.3409645909645"
+              Start="0,0"
+              End="0,52.8409645909645">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8409645909645" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 7]"
+          TopLeft="1351.9623015873,166.210317460317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.0119047619048"
+              Start="0,0"
+              End="0,55.5119047619048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5119047619048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 8]"
+          TopLeft="1737.49404761905,91.9761904761909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.928571428571"
+              Start="0,0"
+              End="0,19.428571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.428571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\recreate data bases.PrecedenceConstraints[Constraint 9]"
+          TopLeft="2137.35515873016,92.6984126984133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.0952380952376"
+              Start="0,0"
+              End="0,20.5952380952376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5952380952376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="2427,721"
+          Size="2427,764"
+          Id="Package\recreate data bases"
+          TopLeft="222.850649350649,260.401348651349" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1436.35064935065,1024.40134865135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97.6493506493509,231.098651348651"
+              Start="0,0"
+              End="97.6493506493509,223.598651348651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,111.549325674325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,111.549325674325"
+                    Point2="0,115.549325674325"
+                    Point3="4,115.549325674325" />
+                  <mssgle:LineSegment
+                    End="93.6493506493509,115.549325674325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93.6493506493509,115.549325674325"
+                    Point2="97.6493506493509,115.549325674325"
+                    Point3="97.6493506493509,119.549325674325" />
+                  <mssgle:LineSegment
+                    End="97.6493506493509,223.598651348651" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
