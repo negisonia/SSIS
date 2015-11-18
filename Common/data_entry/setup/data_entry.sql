@@ -11,6 +11,7 @@ SET client_min_messages = warning;
 
 SET search_path = public, pg_catalog;
 
+DROP ROLE IF EXISTS r2de;
 CREATE ROLE r2de WITH PASSWORD 'postgres';
 
 --

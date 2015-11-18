@@ -20,7 +20,6 @@ SET search_path = public, pg_catalog;
 -- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
-CREATE ROLE IF NOT EXISTS ff_new
 CREATE SCHEMA IF NOT EXISTS public;
 
 
