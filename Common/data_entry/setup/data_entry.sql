@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -11,7 +11,8 @@ SET client_min_messages = warning;
 
 SET search_path = public, pg_catalog;
 
-CREATE ROLE IF NOT EXISTS r2de WITH PASSWORD 'postgres';
+CREATE ROLE r2de WITH PASSWORD 'postgres';
+
 --
 -- Name: super_copy(integer); Type: FUNCTION; Schema: public; Owner: r2de
 --
@@ -1474,55 +1475,6 @@ CREATE TABLE internal_comments (
 
 ALTER TABLE internal_comments OWNER TO r2de;
 
---
--- Name: active_indication_healthplantype_providers; Type: VIEW; Schema: public; Owner: r2de
---
-
-CREATE VIEW active_indication_healthplantype_providers AS
- SELECT DISTINCT aihp.indication_id,
-    aihp.provider_id,
-    aihp.provider_name,
-    aihp.healthplantype_id,
-    aihp.healthplantype_name,
-    cl.id AS copy_log_id,
-    cl.status AS copy_log_status,
-    cl.target_comments AS copy_log_comments,
-    aihp.updated_at,
-        CASE
-            WHEN ((ccs.source_healthplantype_id = aihp.healthplantype_id) AND (ccs.source_provider_id = aihp.provider_id)) THEN true
-            ELSE false
-        END AS is_source,
-        CASE
-            WHEN ((cct.target_healthplantype_id = aihp.healthplantype_id) AND (cct.target_provider_id = aihp.provider_id)) THEN true
-            ELSE false
-        END AS is_destination
-   FROM (((( SELECT ahp.indication_id,
-            ahp.provider_id,
-            p.webname AS provider_name,
-            ahp.healthplantype_id,
-            hpt.webname AS healthplantype_name,
-            max(GREATEST(de.updated_at, ded.updated_at, ic.updated_at)) AS updated_at
-           FROM (((((( SELECT DISTINCT ap.provider_id,
-                    ap.healthplantype_id,
-                    di.indication_id
-                   FROM (ff_new.active_healthplantype_providers ap
-                     JOIN drug_indications di ON ((di.drug_id = ap.drug_id)))) ahp
-             JOIN ff_new.provider p ON (((p.id = ahp.provider_id) AND (p.isactive = true))))
-             JOIN ff_new.healthplantype hpt ON (((hpt.id = ahp.healthplantype_id) AND (hpt.isactive = true))))
-             LEFT JOIN data_entries de ON ((((de.provider_id = ahp.provider_id) AND (de.healthplantype_id = ahp.healthplantype_id)) AND (de.indication_id = ahp.indication_id))))
-             LEFT JOIN data_entries_details ded ON ((((ded.provider_id = ahp.provider_id) AND (ded.healthplantype_id = ahp.healthplantype_id)) AND (ded.indication_id = ahp.indication_id))))
-             LEFT JOIN internal_comments ic ON (((ic.provider_id = ahp.provider_id) AND (ic.healthplantype_id = ahp.healthplantype_id))))
-          GROUP BY ahp.indication_id, ahp.provider_id, p.webname, ahp.healthplantype_id, hpt.webname) aihp
-     LEFT JOIN copy_logs cl ON (((((cl.target_provider_id = aihp.provider_id) AND (cl.target_healthplantype_id = aihp.healthplantype_id)) AND (cl.target_indication_id = aihp.indication_id)) AND (cl.status = 2))))
-     LEFT JOIN ( SELECT DISTINCT ccs_1.source_healthplantype_id,
-            ccs_1.source_provider_id
-           FROM copy_configurations ccs_1) ccs ON (((ccs.source_healthplantype_id = aihp.healthplantype_id) AND (ccs.source_provider_id = aihp.provider_id))))
-     LEFT JOIN ( SELECT DISTINCT cct_1.target_healthplantype_id,
-            cct_1.target_provider_id
-           FROM copy_configurations cct_1) cct ON (((cct.target_healthplantype_id = aihp.healthplantype_id) AND (cct.target_provider_id = aihp.provider_id))));
-
-
-ALTER TABLE active_indication_healthplantype_providers OWNER TO r2de;
 
 --
 -- Name: atomic_steps; Type: TABLE; Schema: public; Owner: r2de; Tablespace: 
@@ -2081,57 +2033,6 @@ ALTER TABLE medicals_id_seq OWNER TO r2de;
 ALTER SEQUENCE medicals_id_seq OWNED BY medicals.id;
 
 
---
--- Name: opsman_ma_active_restrictions_providers; Type: VIEW; Schema: public; Owner: r2de
---
-
-CREATE VIEW opsman_ma_active_restrictions_providers AS
- SELECT DISTINCT aihp.indication_id,
-    aihp.indication_name,
-    aihp.provider_id,
-    aihp.provider_name,
-    aihp.healthplantype_id,
-    aihp.healthplantype_name,
-    cl.id AS copy_log_id,
-    cl.status AS copy_log_status,
-    cl.target_comments AS copy_log_comments,
-    aihp.updated_at,
-        CASE
-            WHEN ((ccs.source_healthplantype_id = aihp.healthplantype_id) AND (ccs.source_provider_id = aihp.provider_id)) THEN true
-            ELSE false
-        END AS is_source,
-        CASE
-            WHEN ((cct.target_healthplantype_id = aihp.healthplantype_id) AND (cct.target_provider_id = aihp.provider_id)) THEN true
-            ELSE false
-        END AS is_destination
-   FROM (((( SELECT ahp.indication_id,
-            ind.name AS indication_name,
-            ahp.provider_id,
-            p.webname AS provider_name,
-            ahp.healthplantype_id,
-            hpt.webname AS healthplantype_name,
-            max(GREATEST(de.updated_at, ded.updated_at)) AS updated_at
-           FROM (((((( SELECT DISTINCT ap.provider_id,
-                    ap.healthplantype_id,
-                    di.indication_id
-                   FROM (ff_new.active_healthplantype_providers ap
-                     JOIN drug_indications di ON ((di.drug_id = ap.drug_id)))) ahp
-             JOIN ff_new.provider p ON (((p.id = ahp.provider_id) AND (p.isactive = true))))
-             JOIN ff_new.healthplantype hpt ON (((hpt.id = ahp.healthplantype_id) AND (hpt.isactive = true))))
-             JOIN indications ind ON ((ind.id = ahp.indication_id)))
-             LEFT JOIN data_entries de ON ((((de.provider_id = ahp.provider_id) AND (de.healthplantype_id = ahp.healthplantype_id)) AND (de.indication_id = ahp.indication_id))))
-             LEFT JOIN data_entries_details ded ON ((((ded.provider_id = ahp.provider_id) AND (ded.healthplantype_id = ahp.healthplantype_id)) AND (ded.indication_id = ahp.indication_id))))
-          GROUP BY ahp.indication_id, ind.name, ahp.provider_id, p.webname, ahp.healthplantype_id, hpt.webname) aihp
-     LEFT JOIN copy_logs cl ON (((((cl.target_provider_id = aihp.provider_id) AND (cl.target_healthplantype_id = aihp.healthplantype_id)) AND (cl.target_indication_id = aihp.indication_id)) AND (cl.status = 2))))
-     LEFT JOIN ( SELECT DISTINCT ccs_1.source_healthplantype_id,
-            ccs_1.source_provider_id
-           FROM copy_configurations ccs_1) ccs ON (((ccs.source_healthplantype_id = aihp.healthplantype_id) AND (ccs.source_provider_id = aihp.provider_id))))
-     LEFT JOIN ( SELECT DISTINCT cct_1.target_healthplantype_id,
-            cct_1.target_provider_id
-           FROM copy_configurations cct_1) cct ON (((cct.target_healthplantype_id = aihp.healthplantype_id) AND (cct.target_provider_id = aihp.provider_id))));
-
-
-ALTER TABLE opsman_ma_active_restrictions_providers OWNER TO r2de;
 
 --
 -- Name: other_restrictions; Type: TABLE; Schema: public; Owner: r2de; Tablespace: 
