@@ -1,5 +1,11 @@
+CREATE OR REPLACE FUNCTION create_admin_foreign_servers() --Admin
+RETURNS void AS $$
+DECLARE
+
+BEGIN
+
 CREATE SERVER foreign_ff_new FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host 'restrictions20-psql94.cayadjd1xwwj.us-east-1.rds.amazonaws.com', dbname 'sandbox_ff_new', port '5432');
-CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'VsOCWIozIelwQcRgR4w3'); 
+CREATE USER MAPPING FOR postgres SERVER foreign_ff_new OPTIONS (user 'postgres', password 'VsOCWIozIelwQcRgR4w3');
 
 CREATE FOREIGN TABLE health_plan_import
 (
@@ -59,3 +65,6 @@ CREATE FOREIGN TABLE provider_import
 )
 SERVER foreign_ff_new
 OPTIONS (schema_name 'public', table_name 'provider');
+
+END
+$$ LANGUAGE plpgsql;
