@@ -1,4 +1,4 @@
-saCREATE OR REPLACE FUNCTION alter_datawarehouse_foreign_servers(host_name varchar, temp_ff_new_db_name varchar, temp_data_entry_db_name varchar, temp_admin_db_name varchar, postgres_password varchar) --Data Warehouse
+CREATE OR REPLACE FUNCTION alter_datawarehouse_foreign_servers(host_name varchar, temp_ff_new_db_name varchar, temp_data_entry_db_name varchar, temp_admin_db_name varchar, postgres_password varchar) --Data Warehouse
 RETURNS void AS $$
 DECLARE
   
