@@ -31,10 +31,10 @@ SELECT common_get_table_id_by_name(health_plan_types,'hix') INTO hix_plan_type_i
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3"},'||
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified"},'||
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%3$s,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_1","criteria_restriction_name":"PA - Unspecified - Criteria Unspecified"},'||
-    '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"QL - criteria_ql_1"},'||
-    '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"QL - criteria_ql_1"},'||
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%3$s,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
+    '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"QL - criteria_ql_1"},'||
+    '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%2$s,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_2","criteria_restriction_name":"QL - criteria_ql_1"},'||
     '{"provider_id":%1$s,"benefit_name":"Pharmacy","health_plan_type_id":%3$s,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"ST - Double - custom_option_1 AND  custom_option_2"}'||
     ']',provider_id,commercial_plan_type_id,hix_plan_type_id);
 
