@@ -8,6 +8,7 @@ BEGIN
 
 --VALIDATE SUMMARY TABLE
 expected_pharmacy_summary_table_output= format('['||
+'{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"PA/ST","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":100,"health_plan_count":1,"total_health_plan_count":1,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
 '{"criteria_report_id":%1$s,"drug_name":"drug_1","benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":100,"health_plan_count":1,"total_health_plan_count":1,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
 '{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"PA","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":100,"health_plan_count":1,"total_health_plan_count":1,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
 '{"criteria_report_id":%1$s,"drug_name":"drug_2","benefit_restriction_name":"Pharmacy","benefit_name":"Pharmacy","lives":100,"total_pharmacy_lives":100,"health_plan_count":1,"total_health_plan_count":1,"total_medical_lives":0,"provider_count":0,"total_provider_count":0},'||
