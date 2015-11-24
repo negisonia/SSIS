@@ -8,7 +8,7 @@ BEGIN
 --CREATE CRITERIA REPORT
 SELECT res_create_report_1_result_4_criteria_report() INTO criteria_report_id;
 PERFORM res_common_report_1_result_4_rpt_summary_table_pharmacy(criteria_report_id);
-
+PERFORM res_common_report_1_result_4_rpt_summary_table_medical(criteria_report_id);
 success:=true;
 return success;
 END

@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION res_create_report_1_result_4_criteria_report() --FRONT END
+CREATE OR REPLACE FUNCTION res_ca_create_report_1_result_4_criteria_report() --FRONT END
 RETURNS INTEGER AS $$
 DECLARE
 
@@ -63,7 +63,7 @@ SELECT common_get_table_id_by_name('states','Massachusetts') INTO massachusetts_
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
 SELECT array(select id from counties where state_id IN (massachusetts_state_id,connecticut_state_id) and name = 'Middlesex') INTO county_ids;
 
-SELECT common_get_table_id_by_name('clients', 'client_1') INTO existing_client_id;
+SELECT common_get_table_id_by_name('clients', 'client_2') INTO existing_client_id;
 SELECT custom_account_id from custom_accounts where name = 'Custom_Account_2' and client_id = existing_client_id INTO existing_custom_account_id;
 
 --REPORT#1
