@@ -22,7 +22,7 @@ report1 INTEGER;
 fe_report_1 INTEGER;
 existing_client_id INTEGER;
 existing_custom_account_id INTEGER;
-criteria_report_type CONSTANT INTEGER:=1;
+criteria_report_type CONSTANT INTEGER:=2;
 county_geo_type_id CONSTANT INTEGER:=1;
 
 user_id CONSTANT INTEGER:=1;
