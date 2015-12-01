@@ -4,6 +4,7 @@ DECLARE
 success BOOLEAN DEFAULT FALSE;
 rpt_geo_output VARCHAR DEFAULT FALSE;
 BEGIN
+--MARKET TYPES : 1 COUNTIES , 2 STATES , 3 MSA
 
 IF (benefit_type IS DISTINCT FROM 1) AND (benefit_type IS DISTINCT FROM 2) THEN
     SELECT throw_error(format('TYPE: %s PASSED AS ARGUMENT IS INVALID', benefit_type));
