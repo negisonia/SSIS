@@ -14,7 +14,11 @@ SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_id;
 SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_plan_type_id;
 SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_plan_type_id;
 
-expected_provider_details_table_output= '';
+expected_provider_details_table_output= '['||
+'{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":1,"health_plan_type_name":"commercial","lives":200,"drug_name":"drug_1","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
+'{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"PA/ST - Single - custom_option_1"},'||
+'{"provider_id":1,"benefit_name":"Pharmacy","health_plan_type_id":13,"health_plan_type_name":"hix","lives":100,"drug_name":"drug_2","criteria_restriction_name":"ST - Double - custom_option_1 AND  custom_option_2"}'||
+']';
 
 
 PERFORM res_rpt_provider_details_validate_data(report_id, pharmacy_view, expected_provider_details_table_output);
