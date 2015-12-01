@@ -1,5 +1,5 @@
 -- Summary Table, Pharmacy and Medical - Report 3
-CREATE OR REPLACE FUNCTION res_ca_report_1_result_4_test_57_validate_test_data() --FRONT END
+CREATE OR REPLACE FUNCTION res_ca_report_1_result_4_test_58_validate_test_data() --FRONT END
 RETURNS boolean AS $$
 DECLARE
   success boolean DEFAULT FALSE;
