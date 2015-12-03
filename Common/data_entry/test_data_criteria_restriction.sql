@@ -102,6 +102,10 @@ PERFORM common_create_criteria_restriction(criteria_lab_2, pa_pa_id);
 PERFORM common_create_criteria_restriction(criteria_lab_2, pa_labs_id);
 PERFORM common_create_criteria_restriction(criteria_lab_2, medical_medical_id);
 PERFORM common_create_criteria_restriction(criteria_lab_2, medical_labs_id);
+
+PERFORM common_create_criteria_restriction(criteria_lab_3, pa_pa_id);
+PERFORM common_create_criteria_restriction(criteria_lab_3, pa_labs_id);
+
 PERFORM common_create_criteria_restriction(criteria_lab_3, medical_medical_id);
 PERFORM common_create_criteria_restriction(criteria_lab_3, medical_labs_id);
 PERFORM common_create_criteria_restriction(criteria_age_1, pa_pa_id);
