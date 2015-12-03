@@ -59,7 +59,7 @@ restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3, ind1_pa_cli
 
 SELECT report_id from criteria_restriction_reports where report_name = 'report_1' INTO new_report_id;
 SELECT common_get_table_id_by_name('clients', 'client_1') INTO existing_client_id;
-SELECT custom_account_id from custom_accounts where name = 'Custom_Account_4' and client_id = existing_client_id INTO existing_custom_account_id;
+SELECT custom_account_id from custom_accounts where name = 'Custom_Account_5' and client_id = existing_client_id INTO existing_custom_account_id;
 
 SELECT common_get_table_id_by_name('states','Connecticut') INTO connecticut_state_id;
 SELECT array(select distinct(metro_stat_area_id) from counties where state_id=connecticut_state_id and metro_stat_area_id IS NOT NULL) INTO msa_ids;
