@@ -59,7 +59,7 @@ expected_provider_notes= '['||
 ']';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, hix_hpt, drug_2, ind1_m_st_custom_option_2, expected_provider_notes);
 
-----DRUG 2 PROVIDER 1 COMMERCIAL  UNSPECIFIED PHARMACY  TODO this report does not contains a step unspecified record this is not a valid scenario
+----DRUG 2 PROVIDER 1 COMMERCIAL  UNSPECIFIED PHARMACY  TODO a step unspecified record not created by etl
 expected_provider_notes= null;
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, commercial_hpt, drug_2, ind1_m_st_custom_option_2, expected_provider_notes);
 
