@@ -35,12 +35,16 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Double'
 SELECT common_get_dim_criteria_restriction(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_m_st_custom_option_2;
 
 --DRUG 1 PROVIDER 1 COMMERCIAL CUSTOM OPTION 1 PHARMACY
-expected_provider_notes= null;
-PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, commercial_hpt, drug_1, ind1_pa_st_custom_option_1, expected_provider_notes);
+expected_provider_notes= '['||
+'{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: long message 500 characters"}'||
+']';
+PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, commercial_hpt, drug_1, ind1_pa_past_custom_option_1, expected_provider_notes);
 
 --DRUG 2 PROVIDER 1 HIX CUSTOM OPTION 1 PHARMACY
-expected_provider_notes= null;
-PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, hix_hpt, drug_2, ind1_pa_st_custom_option_1, expected_provider_notes);
+expected_provider_notes= '['||
+'{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":2,"criterion_name":"PA/ST - Single - custom_option_1^1","note_position":1,"notes":"Drug1 notes: notes for drug 1"}'||
+']';
+PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, hix_hpt, drug_2, ind1_pa_past_custom_option_1, expected_provider_notes);
 
 --DRUG 2 PROVIDER 1 HIX DOUBLE CUSTOM OPTION 1  & 2 PHARMACY
 expected_provider_notes= '['||
