@@ -62,7 +62,7 @@ SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA/ST - Sing
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA/ST - Single','custom_option_1') INTO ind1_pa_past_custom_option_1;
 SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Double','custom_option_1 AND  custom_option_2') INTO ind1_pa_st_double_co_1_co_2;
 
-restrictions_array:= ARRAY[ind1_pa_diagnosis_1, ind1_pa_diagnosis_3, ind1_pa_clinical_1, ind1_pa_unspecified, ind1_pa_ql_1, ind1_pa_age_1, ind1_pa_st_custom_option_1, ind1_pa_past_co_1_co_2, ind1_pa_past_custom_option_1, ind1_pa_st_double_co_1_co_2];
+restrictions_array:= ARRAY[ind1_pa_diagnosis_1,ind1_pa_diagnosis_3,ind1_pa_clinical_1,ind1_pa_unspecified,ind1_pa_ql_1,ind1_pa_age_1,ind1_pa_st_custom_option_1,ind1_pa_past_co_1_co_2,ind1_pa_past_custom_option_1,ind1_pa_st_double_co_1_co_2];
 
 SELECT report_id from criteria_restriction_reports where report_name = 'report_1' INTO new_report_id;
 SELECT common_get_table_id_by_name('clients', 'client_1') INTO existing_client_id;
