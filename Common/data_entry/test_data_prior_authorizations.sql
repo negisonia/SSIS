@@ -279,6 +279,17 @@ SELECT hpt.id INTO medicare_ma_health_plan_type_id FROM ff.health_plan_types_imp
     PERFORM common_create_prior_authorization_criteria(pa_id,criteria_lab_3,TRUE,1, NULL, NULL, 'notes 3456');
     PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'notes');
     PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
+    --CREATE DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_11_id, medicare_ma_health_plan_type_id, drug_9) INTO data_entry_id;
+    --CREATE Prior Authorization
+    SELECT  common_create_prior_authorization(data_entry_id , TRUE,NULL) INTO pa_id;
+    --CREATE Prior Authorization Criterias
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_age_1,TRUE,1, NULL, NULL, 'note for age criteria drug_9');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_lab_3,TRUE,1, NULL, NULL, 'note for lab criteria drug_9');
+    PERFORM common_create_prior_authorization_criteria(pa_id,criteria_diagnosis_3,TRUE,1, NULL, NULL, 'note for diagnosis 3');
+    PERFORM common_update_data_entry(data_entry_id, pa_id, NULL, NULL, NULL, NULL);
+
 success=true;
 return success;
 END

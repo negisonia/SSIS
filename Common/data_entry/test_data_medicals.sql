@@ -194,6 +194,27 @@ SELECT hpt.id INTO medicare_ma_health_plan_type FROM ff.health_plan_types_import
     PERFORM common_create_medical_criteria(medical_id, criteria_lab_3, TRUE, 'notes drug 2');
     PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
+    --INSERT DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_11_id, medicare_ma_health_plan_type, drug_1) INTO data_entry_id;
+    --INSERT ATOMIC STEPS
+    SELECT common_create_atomic_steps('drug_9','1',1, 'PA/Medical', 'drug_9^1')  INTO atomic_step_id;
+    --INSERT MEDICAL
+    SELECT common_create_medical(data_entry_id,TRUE,atomic_step_id) INTO medical_id;
+    --INSERT MEDICAL CRITERIA
+    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE, 'notes for age criteria');
+    PERFORM common_create_medical_criteria(medical_id, criteria_lab_3, TRUE, 'note for lab criteria Medical benefit');
+    PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
+
+    --INSERT DATA ENTRY
+    SELECT common_create_data_entry(indication_3, provider_11_id, medicare_ma_health_plan_type, drug_2) INTO data_entry_id;
+    --INSERT ATOMIC STEPS
+    SELECT common_create_atomic_steps('custom_option_1','1',1, 'PA/Medical', 'custom_option_1^1')  INTO atomic_step_id;
+    --INSERT MEDICAL
+    SELECT common_create_medical(data_entry_id,TRUE,atomic_step_id) INTO medical_id;
+    --INSERT MEDICAL CRITERIA
+    PERFORM common_create_medical_criteria(medical_id, criteria_age_1, TRUE, 'note for age criteria drug_2');
+    PERFORM common_create_medical_criteria(medical_id, criteria_diagnosis_3, TRUE, 'note for diagnosis 3');
+    PERFORM common_update_data_entry(data_entry_id, NULL, NULL, NULL, NULL, medical_id);
 
 success=true;
 return success;

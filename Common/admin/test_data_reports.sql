@@ -38,6 +38,9 @@ ind3_pa_criteria_clinical_3 INTEGER;
 ind3_pa_criteria_clinical_1 INTEGER;
 ind3_pa_criteria_age_1 INTEGER;
 ind3_m_criteria_age_1 INTEGER;
+ind1_pa_criteria_lab_3 INTEGER;
+ind1_pa_d3_c1 INTEGER;
+ind1_m_criteria_lab_3 INTEGER;
 
 drug_1 INTEGER;
 drug_2 INTEGER;
@@ -57,6 +60,8 @@ report_1 INTEGER;
 report_2 INTEGER;
 report_3 INTEGER;
 report_4 INTEGER;
+report_5 INTEGER;
+report_6 INTEGER;
 
 success BOOLEAN DEFAULT FALSE;
 BEGIN
@@ -118,6 +123,9 @@ SELECT cr.id INTO ind3_pa_criteria_clinical_3 FROM criteria_restriction cr WHERE
 SELECT cr.id INTO ind3_pa_criteria_clinical_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_clinical_1';
 SELECT cr.id INTO ind3_pa_criteria_age_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_age_1';
 SELECT cr.id INTO ind3_m_criteria_age_1 FROM criteria_restriction cr WHERE cr.indication_id=indication_3 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_age_1';
+SELECT cr.id INTO ind1_pa_criteria_lab_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='criteria_lab_3';
+SELECT cr.id INTO ind1_pa_d3_c1 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Pharmacy' AND cr.criteria_restriction_short_name='drug_3 and custom_option_1';
+SELECT cr.id INTO ind1_m_criteria_lab_3 FROM criteria_restriction cr WHERE cr.indication_id=indication_1 AND cr.benefit_name='Medical' AND cr.criteria_restriction_short_name='criteria_lab_3';
 
 
 --CREATE REPORT#1
@@ -125,6 +133,8 @@ SELECT create_report('report_1','report_1',TRUE) INTO report_1;
 SELECT create_report('report_2','report_2',TRUE) INTO report_2;
 SELECT create_report('report_3','report_3',TRUE) INTO report_3;
 SELECT create_report('report_4','report_4',TRUE) INTO report_4;
+SELECT create_report('report_5','report_5',TRUE) INTO report_5;
+SELECT create_report('report_6','report_6',TRUE) INTO report_6;
 
 -------CREATE REPORT_DRUGS
 --DRUGS REPORT #1
@@ -148,10 +158,17 @@ PERFORM common_create_report_drug(report_3, indication_3, drug_1);
 PERFORM common_create_report_drug(report_3, indication_3, drug_2);
 PERFORM common_create_report_drug(report_3, indication_3, drug_3);
 
-
 --DRUGS REPORT #4
 PERFORM common_create_report_drug(report_4, indication_1, drug_1);
 PERFORM common_create_report_drug(report_4, indication_1, drug_2);
+
+--DRUGS REPORT #5
+PERFORM common_create_report_drug(report_5, indication_1, drug_1);
+PERFORM common_create_report_drug(report_5, indication_1, drug_2);
+
+--DRUGS REPORT #6
+PERFORM common_create_report_drug(report_6, indication_1, drug_1);
+PERFORM common_create_report_drug(report_6, indication_1, drug_2);
 
 -------CREATE REPORT CLIENTS
 --CLIENTS REPORT #1
@@ -167,6 +184,12 @@ PERFORM common_create_report_client(report_3, client_3);
 
 --CLIENTS REPORT #4
 PERFORM common_create_report_client(report_4, client_4);
+
+--CLIENTS REPORT #5
+PERFORM common_create_report_client(report_5, client_1);
+
+--CLIENTS REPORT #6
+PERFORM common_create_report_client(report_6, client_1);
 
 -------CREATE REPORT CRITERIAS
 --CRITERIAS REPORT #1
@@ -201,6 +224,32 @@ PERFORM common_create_report_criteria(report_4, ind1_pa_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_age_1);
 
+--CRITERIAS REPORT #5
+PERFORM common_create_report_criteria(report_5, ind1_pa_criteria_diagnosis_1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_diagnosis_3);
+PERFORM common_create_report_criteria(report_5, ind1_pa_clinical_1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_unspecified);
+PERFORM common_create_report_criteria(report_5, ind1_pa_ql);
+PERFORM common_create_report_criteria(report_5, ind1_pa_age_1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_past_single_c1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_past_single_c1_c2);
+PERFORM common_create_report_criteria(report_5, ind1_pa_st_single_c1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_st_double_c1_c2);
+PERFORM common_create_report_criteria(report_5, ind1_pa_criteria_lab_3);
+PERFORM common_create_report_criteria(report_5, ind1_pa_d3_c1);
+PERFORM common_create_report_criteria(report_5, ind1_m_criteria_unspecified);
+PERFORM common_create_report_criteria(report_5, ind1_m_criteria_criteria_diagnosis_3);
+PERFORM common_create_report_criteria(report_5, ind1_m_criteria_age_1);
+PERFORM common_create_report_criteria(report_5, ind1_m_st_single_c2);
+PERFORM common_create_report_criteria(report_5, ind1_m_criteria_lab_3);
+
+--CRITERIAS REPORT #6
+PERFORM common_create_report_criteria(report_6, ind1_pa_criteria_lab_3);
+PERFORM common_create_report_criteria(report_6, ind1_pa_age_1);
+PERFORM common_create_report_criteria(report_6, ind1_pa_diagnosis_3);
+PERFORM common_create_report_criteria(report_6, ind1_pa_unspecified);
+PERFORM common_create_report_criteria(report_6, ind1_pa_ql);
+PERFORM common_create_report_criteria(report_6, ind1_pa_d3_c1);
 
 -------CREATE REPORT CUSTOM CRITERIA GROUPS
 --REPORT # 1
