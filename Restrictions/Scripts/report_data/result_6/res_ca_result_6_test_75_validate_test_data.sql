@@ -1,11 +1,11 @@
-CREATE OR REPLACE FUNCTION res_result_6_test_89_validate_test_data() -- REPORT FRONT END
+CREATE OR REPLACE FUNCTION res_ca_result_6_test_75_validate_test_data() -- REPORT FRONT END
 RETURNS boolean AS $$
 DECLARE
   success BOOLEAN DEFAULT FALSE;
   criteria_report_id INTEGER;
 BEGIN
 --REPORT#1
-SELECT res_create_result_6_criteria_report() INTO criteria_report_id;
+SELECT res_ca_create_result_6_criteria_report() INTO criteria_report_id;
 PERFORM res_common_result_6_rpt_provider_src_comments(criteria_report_id);
 
 success=true;
