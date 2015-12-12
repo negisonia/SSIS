@@ -225,7 +225,7 @@ PERFORM common_create_report_criteria(report_4, ind1_m_criteria_unspecified);
 PERFORM common_create_report_criteria(report_4, ind1_m_criteria_age_1);
 
 --CRITERIAS REPORT #5
-PERFORM common_create_report_criteria(report_5, ind1_pa_criteria_diagnosis_1);
+PERFORM common_create_report_criteria(report_5, ind1_pa_diagnosis_1);
 PERFORM common_create_report_criteria(report_5, ind1_pa_diagnosis_3);
 PERFORM common_create_report_criteria(report_5, ind1_pa_clinical_1);
 PERFORM common_create_report_criteria(report_5, ind1_pa_unspecified);
