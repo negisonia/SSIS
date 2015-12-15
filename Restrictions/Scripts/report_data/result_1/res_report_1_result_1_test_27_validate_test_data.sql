@@ -9,7 +9,6 @@ hix_plan_type_id INTEGER;
 expected_source_comments_output TEXT;
 
 BEGIN
-
 --RETRIEVE PROVIDER ID
 SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1;
 
