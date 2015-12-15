@@ -21,7 +21,7 @@ empty_array INTEGER[];
 report1 INTEGER;
 fe_report_1 INTEGER;
 
-criteria_report_type CONSTANT INTEGER:=2;
+criteria_report_type CONSTANT INTEGER:=1;
 county_geo_type_id CONSTANT INTEGER:=1;
 
 user_id CONSTANT INTEGER:=1;
