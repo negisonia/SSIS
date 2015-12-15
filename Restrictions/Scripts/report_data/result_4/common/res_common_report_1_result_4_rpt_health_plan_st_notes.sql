@@ -19,7 +19,9 @@ SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commer
 SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_id;
 
 --ST COMMERCIAL DRUG 2
-expected_output= NULL;
+expected_output= '['||
+'{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"ST - Unspecified","note_position":1,"notes":""}'
+']';
 PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_id, commercial_hpt, drug_2_id, dim_restriction_type_id, expected_output);
 
 --ST HIX DRUG 2
