@@ -21,9 +21,9 @@ SELECT common_get_table_id_by_name('drugs','drug_2') INTO drug_2;
 SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1;
 SELECT common_get_table_id_by_name('health_plan_types','commercial') INTO commercial_hpt;
 SELECT common_get_table_id_by_name('health_plan_types','hix') INTO hix_hpt;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_med_diagnosis_3;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Age','criteria_age_1') INTO ind1_med_age_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_med_st_custom_option_2;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_med_diagnosis_3;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Age','criteria_age_1') INTO ind1_med_age_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_med_st_custom_option_2;
 
 expected_provider_notes= '['||
     '{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"notes"}'||

@@ -139,26 +139,26 @@ SELECT common_get_table_id_by_name('drug_classes','drug_class_5') INTO drug_clas
 
 
 --RETRIEVE RESTRICTIONS
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_1') INTO ind1_pa_diagnosis_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_3') INTO ind1_pa_diagnosis_3;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Clinical','criteria_clinical_1') INTO ind1_pa_clinical_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Unspecified','Criteria Unspecified') INTO ind1_pa_unspecified;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','QL','criteria_ql_1') INTO ind1_pa_ql;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA - Age','criteria_age_1') INTO ind1_pa_age_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Single','custom_option_1') INTO ind1_pa_st_custom_option_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA/ST - Single','Fail any one: custom_option_1, custom_option_2') INTO ind1_pa_past_co_1_co_2;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','PA/ST - Single','custom_option_1') INTO ind1_pa_past_custom_option_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','ST - Double','custom_option_1 AND  custom_option_2') INTO ind1_pa_st_double_co_1_co_2;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Unspecified','Criteria Unspecified') INTO ind1_m_unspecified;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Age','criteria_age_1') INTO ind1_m_age_1;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_m_st_custom_option_2;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_single','rep_1_group_single') INTO ind1_rep_1_group_single;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_all','rep_1_group_all') INTO ind1_rep_1_group_all;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_both','rep_1_group_both') INTO ind1_rep_1_group_both;
-SELECT common_get_dim_criteria_restriction(indication_1,'Pharmacy','rep_1_group_steps','rep_1_group_steps') INTO ind1_rep_1_group_steps;
-SELECT common_get_dim_criteria_restriction(indication_3,'Medical','Labs','criteria_lab_3') INTO ind3_m_criteria_lab_3;
-SELECT common_get_dim_criteria_restriction(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_m_criteria_diagnosis_3;
-SELECT common_get_dim_criteria_restriction(indication_3,'Pharmacy','PA - Clinical','criteria_clinical_3') INTO ind3_pa_criteria_clinical_3;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_1') INTO ind1_pa_diagnosis_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA - Diagnosis','criteria_diagnosis_3') INTO ind1_pa_diagnosis_3;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA - Clinical','criteria_clinical_1') INTO ind1_pa_clinical_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA - Unspecified','Criteria Unspecified') INTO ind1_pa_unspecified;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','QL','criteria_ql_1') INTO ind1_pa_ql;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA - Age','criteria_age_1') INTO ind1_pa_age_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','ST - Single','custom_option_1') INTO ind1_pa_st_custom_option_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA/ST - Single','Fail any one: custom_option_1, custom_option_2') INTO ind1_pa_past_co_1_co_2;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA/ST - Single','custom_option_1') INTO ind1_pa_past_custom_option_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','ST - Double','custom_option_1 AND  custom_option_2') INTO ind1_pa_st_double_co_1_co_2;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Unspecified','Criteria Unspecified') INTO ind1_m_unspecified;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Age','criteria_age_1') INTO ind1_m_age_1;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_m_st_custom_option_2;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','rep_1_group_single','rep_1_group_single') INTO ind1_rep_1_group_single;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','rep_1_group_all','rep_1_group_all') INTO ind1_rep_1_group_all;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','rep_1_group_both','rep_1_group_both') INTO ind1_rep_1_group_both;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','rep_1_group_steps','rep_1_group_steps') INTO ind1_rep_1_group_steps;
+SELECT common_get_dim_criteria_restriction_by_name(indication_3,'Medical','Labs','criteria_lab_3') INTO ind3_m_criteria_lab_3;
+SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_m_criteria_diagnosis_3;
+SELECT common_get_dim_criteria_restriction_by_name(indication_3,'Pharmacy','PA - Clinical','criteria_clinical_3') INTO ind3_pa_criteria_clinical_3;
 
 
 --REPORT#1
