@@ -59,8 +59,8 @@ expected_provider_notes= '['||
 ']';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, hix_hpt, drug_2, ind1_m_st_custom_option_2, expected_provider_notes);
 
-----DRUG 2 PROVIDER 1 COMMERCIAL  UNSPECIFIED PHARMACY  TODO a step unspecified record not created by etl
-'['||
+--DRUG 2 PROVIDER 1 COMMERCIAL  UNSPECIFIED PHARMACY  TODO a step unspecified record not created by etl
+expected_provider_notes= '['||
 '{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"ST - Unspecified","note_position":1,"notes":""}'||
 ']';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_1, commercial_hpt, drug_2, ind1_m_st_custom_option_2, expected_provider_notes);
