@@ -17,7 +17,7 @@ SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1_id;
 
 --COMMERCIAL DRUG 1
 expected_output= '['||
-'{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}'||
+'{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 1 week"}'||
 ']';
 PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_1_id, commercial_plan_type_id, drug_1_id, dim_restriction_type_id, expected_output);
 
