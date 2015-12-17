@@ -37,7 +37,7 @@ PERFORM res_rpt_health_plan_notes_validate_data(admin_report_1, provider_1, comm
 
 --VALIDATE NOTES (DRUG 1, QL, commercial)
 expected_health_plan_notes_output= '['||
-    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}'||
+    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 1 week"}'||
     ']';
 PERFORM res_rpt_health_plan_notes_validate_data(admin_report_1, provider_1, commercial_hpt, drug_1, ql_dim_criterion_type, expected_health_plan_notes_output);
 
