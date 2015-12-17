@@ -57,7 +57,7 @@ expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_id, commercial_plan_type_id, drug_1_id, ind1_pa_diagnosis_1, expected_provider_notes);
 
 --drug: Drug_1 provider: provider_1 plan type: commercial Criteria: Criteria_age_1 benefit: pharmacy
-expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction"}]';
+expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction : l:10 up:30"}]';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_id, commercial_plan_type_id, drug_1_id, ind1_pa_age_1, expected_provider_notes);
 
 --drug: Drug_1 provider: provider_1 plan type: commercial Criteria: Criteria_diagnosis_3 benefit: pharmacy
