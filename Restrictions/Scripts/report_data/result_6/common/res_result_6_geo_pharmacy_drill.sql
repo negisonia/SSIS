@@ -23,10 +23,6 @@ ind1_pa_past_co_1_co_2 INTEGER;
 ind1_pa_past_custom_option_1 INTEGER;
 ind1_pa_st_custom_option_1 INTEGER;
 ind1_pa_st_double_co_1_co_2 INTEGER;
-ind1_m_unspecified INTEGER;
-ind1_m_criteria_diagnosis_3 INTEGER;
-ind1_m_age_1 INTEGER;
-ind1_m_st_custom_option_2 INTEGER;
 
 ct_middlesex_id INTEGER;
 ma_middlesex_id INTEGER;
@@ -53,10 +49,6 @@ SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA/S
 SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','PA/ST - Single','custom_option_1') INTO ind1_pa_past_custom_option_1;
 SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','ST - Single','custom_option_1') INTO ind1_pa_st_custom_option_1;
 SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Pharmacy','ST - Double','custom_option_1 AND  custom_option_2') INTO ind1_pa_st_double_co_1_co_2;
-SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Unspecified','Criteria Unspecified') INTO ind1_m_unspecified;
-SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Diagnosis','criteria_diagnosis_3') INTO ind1_m_criteria_diagnosis_3;
-SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Age','criteria_age_1') INTO ind1_m_age_1;
-SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_m_st_custom_option_2;
 
 
 --Drill down to Middlesex, MA
