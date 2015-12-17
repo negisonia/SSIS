@@ -73,7 +73,7 @@ expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_id, commercial_plan_type_id, drug_1_id, ind1_pa_past_custom_option_1, expected_provider_notes);
 
 --drug: Drug_1 provider: provider_1 plan type: Commercial Criteria: Criteria_QL benefit: Pharmacy
-expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}]';
+expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 1 week"}]';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_id, commercial_plan_type_id, drug_1_id, ind1_pa_ql, expected_provider_notes);
 
 --drug: Drug_1 provider: provider_1 plan type: HIX Criteria: PA - Unspecified -criteria_unspecified benefit: pharmacy
