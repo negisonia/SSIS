@@ -25,6 +25,8 @@ ind1_m_unspecified INTEGER;
 ind1_m_criteria_diagnosis_3 INTEGER;
 ind1_m_age_1 INTEGER;
 ind1_m_st_custom_option_2 INTEGER;
+existing_client_id INTEGER;
+existing_custom_account_id INTEGER;
 
 drugs_array INTEGER[];
 health_plan_types_array INTEGER[];
@@ -37,8 +39,6 @@ criteria_report_type CONSTANT INTEGER:=1;
 state_geo_type_id CONSTANT INTEGER:=2;
 fe_report_1 INTEGER;
 state_ids INTEGER[];
-existing_client_id INTEGER;
-existing_custom_account_id INTEGER;
 BEGIN
 
 --RETRIEVE HEALTH PLAN TYPES
@@ -72,12 +72,10 @@ SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Diagn
 SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','Age','criteria_age_1') INTO ind1_m_age_1;
 SELECT common_get_dim_criteria_restriction_by_name(indication_1,'Medical','ST - Single','custom_option_2') INTO ind1_m_st_custom_option_2;
 
-
-SELECT array(select id from counties where state_id IN (massachusetts_state_id,connecticut_state_id)) INTO county_ids; --all counties in CT MA
-
+SELECT array(select distinct s.id FROM states s WHERE s.is_active=true and s.name='Massachusetts' or s.name='Connecticut') INTO state_ids;
 SELECT common_get_table_id_by_name('clients', 'client_2') INTO existing_client_id;
 SELECT custom_account_id from custom_accounts where name = 'Custom_Account_2' and client_id = existing_client_id INTO existing_custom_account_id;
-SELECT array(select distinct s.id FROM states s WHERE s.is_active=true and s.name='Massachusetts' or s.name='Connecticut') INTO state_ids;
+
 
 --REPORT#1
 drugs_array:= ARRAY[drug_1,drug_2];
@@ -85,7 +83,7 @@ health_plan_types_array:= ARRAY[commercial_hpt,hix_hpt];
 restrictions_array:= ARRAY[ind1_pa_diagnosis_1,ind1_pa_diagnosis_3,ind1_pa_clinical_1,ind1_pa_unspecified,ind1_pa_ql,ind1_pa_age_1,ind1_pa_past_co_1_co_2,ind1_pa_past_custom_option_1,ind1_pa_st_custom_option_1,ind1_pa_st_double_co_1_co_2,ind1_m_unspecified,ind1_m_criteria_diagnosis_3,ind1_m_age_1,ind1_m_st_custom_option_2];
 empty_array:= ARRAY[]::integer[];
 
-SELECT create_criteria_report( report1, userid , criteria_report_type , NULL, state_geo_type_id, NULL, NULL, NULL,drugs_array, empty_array, 'State', empty_array, existing_custom_account_id,restrictions_array, state_ids, NULL, NULL) INTO fe_report_1;
+SELECT create_criteria_report( report1, userid , criteria_report_type , NULL, state_geo_type_id, NULL, NULL, NULL,drugs_array, health_plan_types_array, 'State', empty_array, existing_custom_account_id,restrictions_array, state_ids, NULL, NULL) INTO fe_report_1;
 
 return fe_report_1;
 

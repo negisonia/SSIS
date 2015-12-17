@@ -31,7 +31,7 @@ dim_restriction_type_id = 4;
 
 -- Drug 01, Commercial
   expected_output= '['||
-    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}'||
+    '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 1 week"}'||
     ']';  
 
   SELECT common_get_table_id_by_name(drugs,'drug_1') INTO drug_id;
