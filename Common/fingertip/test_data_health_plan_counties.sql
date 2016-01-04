@@ -11,6 +11,8 @@ county_bristol_ma_id INTEGER;
 county_new_london_ct_id INTEGER;
 county_franklin_ma_id INTEGER;
 county_middlesex_ct_id INTEGER;
+county_strafford_nh_id INTEGER;
+county_hartford_ct_id INTEGER;
 county_005_id INTEGER;
 county_006_id INTEGER;
 county_007_id INTEGER;
@@ -33,6 +35,8 @@ BEGIN
     SELECT common_get_county_id_by_name_and_state('New London','Connecticut') INTO county_new_london_ct_id;
     SELECT common_get_county_id_by_name_and_state('Franklin','Massachusetts') INTO county_franklin_ma_id;
     SELECT common_get_county_id_by_name_and_state('Middlesex','Connecticut') INTO county_middlesex_ct_id;
+    SELECT common_get_county_id_by_name_and_state('Strafford','New Hampshire') INTO county_strafford_nh_id;
+    SELECT common_get_county_id_by_name_and_state('Hartford','Connecticut') INTO county_hartford_ct_id;
     SELECT common_get_table_id_by_name(county,'COUNTY_005') INTO county_005_id;
     SELECT common_get_table_id_by_name(county,'COUNTY_006') INTO county_006_id;
     SELECT common_get_table_id_by_name(county,'COUNTY_007') INTO county_007_id;
@@ -71,7 +75,10 @@ BEGIN
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), county_franklin_ma_id);
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_comm_1'), county_middlesex_ct_id);
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), county_bristol_ma_id);
-    
+    PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_empl_1'), county_strafford_nh_id);
+    PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_ma_1'), county_hartford_ct_id);
+    PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'health_plan_ma_1'), county_new_london_ct_id);
+
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'TEST_PLAN_018'), county_001_id);
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'TEST_PLAN_019'), county_001_id);
     PERFORM common_create_health_plan_county(common_get_table_id_by_name(health_plan, 'TEST_PLAN_020'), county_005_id);
