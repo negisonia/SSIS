@@ -27,7 +27,7 @@ PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_id, commerci
 
 --MEDICAL COMMERCIAL DRUG 1
 expected_output= '['||
-'{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 10 week"}'||
+'{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_ql_1","note_position":1,"notes":"2 tabs per 1 week"}'||
 ']';
 PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_id, commercial_hpt, drug_1_id, dim_restriction_type_id, expected_output);
 
