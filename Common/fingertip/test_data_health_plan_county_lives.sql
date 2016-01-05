@@ -31,6 +31,8 @@ metro_stat_area_003_id INTEGER;
 metro_stat_area_boston_ma_nh_id INTEGER;
 metro_stat_area_harford_ct_id INTEGER;
 metro_stat_area_norwich_ct_id INTEGER;
+metro_stat_area_providence_ma_id INTEGER;
+metro_stat_area_springfield_ma_id INTEGER;
 
 health_plan VARCHAR:='healthplan';
 state VARCHAR:='state';
@@ -72,6 +74,8 @@ BEGIN
     SELECT common_get_table_id_by_name(metrostatarea, 'Boston-Cambridge-Quincy, MA-NH') INTO metro_stat_area_boston_ma_nh_id;
     SELECT common_get_table_id_by_name(metrostatarea, 'Hartford-West Hartford-East Hartford, CT') INTO metro_stat_area_harford_ct_id;
     SELECT common_get_table_id_by_name(metrostatarea, 'Norwich-New London, CT') INTO metro_stat_area_norwich_ct_id;
+    SELECT common_get_table_id_by_name(metrostatarea, 'Providence-New Bedford-Fall River, RI-MA') INTO metro_stat_area_providence_ma_id;
+    SELECT common_get_table_id_by_name(metrostatarea, 'Springfield, MA') INTO metro_stat_area_springfield_ma_id;
 
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'TEST_PLAN_001'), state_001_id, county_006_id, metro_stat_area_002_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'TEST_PLAN_002'), state_001_id, county_005_id, metro_stat_area_002_id, 100);
@@ -98,19 +102,19 @@ BEGIN
 
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm'), state_ma_id, county_middlesex_ma_id, metro_stat_area_boston_ma_nh_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_hix'), state_ma_id, county_middlesex_ma_id, metro_stat_area_boston_ma_nh_id, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_bcbs'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_bcbs'), state_ma_id, county_bristol_ma_id, metro_stat_area_providence_ma_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_empl'), state_ct_id, county_new_london_ct_id, metro_stat_area_norwich_ct_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_ma'), state_ma_id, county_middlesex_ma_id, metro_stat_area_boston_ma_nh_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_sn'), state_ma_id, county_middlesex_ma_id, metro_stat_area_boston_ma_nh_id, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pdp'), state_ma_id, county_bristol_ma_id, NULL, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_state'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pdp'), state_ma_id, county_bristol_ma_id, metro_stat_area_providence_ma_id, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_state'), state_ma_id, county_bristol_ma_id, metro_stat_area_providence_ma_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_dpp'), state_ma_id, county_middlesex_ma_id, metro_stat_area_boston_ma_nh_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_com_med'), state_ct_id, county_new_london_ct_id, metro_stat_area_norwich_ct_id, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_union'), state_ma_id, county_bristol_ma_id, NULL, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_mun'), state_ma_id, county_franklin_ma_id, NULL, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), state_ma_id, county_franklin_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_union'), state_ma_id, county_bristol_ma_id, metro_stat_area_providence_ma_id, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_mun'), state_ma_id, county_franklin_ma_id, metro_stat_area_springfield_ma_id, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_pbm'), state_ma_id, county_franklin_ma_id, metro_stat_area_springfield_ma_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm_1'), state_ct_id, county_middlesex_ct_id, metro_stat_area_harford_ct_id, 100);
-    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), state_ma_id, county_bristol_ma_id, NULL, 100);
+    PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_comm_2'), state_ma_id, county_bristol_ma_id, metro_stat_area_providence_ma_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_empl_1'), state_nh_id, county_strafford_nh_id, metro_stat_area_boston_ma_nh_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_ma_1'), state_ct_id, county_hartford_ct_id, metro_stat_area_harford_ct_id, 100);
     PERFORM common_create_health_plan_county_lives(common_get_table_id_by_name(health_plan, 'health_plan_ma_1'), state_ct_id, county_new_london_ct_id, metro_stat_area_norwich_ct_id, 100);
