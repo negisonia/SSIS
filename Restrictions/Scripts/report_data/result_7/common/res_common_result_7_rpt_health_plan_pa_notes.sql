@@ -24,7 +24,7 @@ SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1_id;
 SELECT common_get_table_id_by_name('providers','provider_11') INTO provider_11_id;
 
 --DRUG1 commercial
---expected_output= '['||
+expected_output= '['||
 '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"age restriction : l:10 up:30"},'||
 '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_clinical_1","note_position":1,"notes":"long message 500 characters"},'||
 '{"indication_name":"indication_1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_1","note_position":1,"notes":""},'||
