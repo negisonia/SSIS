@@ -38,7 +38,7 @@ BEGIN
   PERFORM common_create_qualifier_form_drug_class(provider_1, commercial_hpt, drug_class_1, 'https://www.provider_1.com/providerLevelPAform.pdf', NULL, NULL, 'https://www.provider_1.com/providerLevelMedicalform.pdf', TRUE);
   PERFORM common_create_qualifier_form_drug_class(provider_1, hix_hpt, drug_class_1, NULL, NULL, NULL, NULL, TRUE);
   PERFORM common_create_qualifier_form_drug_class(provider_11, employer_hpt, drug_class_1, 'https://www.provider_11.com/providerLevelPAform.pdf', NULL, NULL, 'https://www.provider_11.com/providerLevelMedicalform.pdf', TRUE);
-  PERFORM common_create_qualifier_form_drug_class(provider_11, medicare_ma_hpt, drug_class_1, 'https://www.provider_11.com/providerLevelPAform.pdf', NULL, NULL, 'https://www.provider_11.com/providerLevelMedicareformMA.pdf', TRUE);
+  PERFORM common_create_qualifier_form_drug_class(provider_11, medicare_ma_hpt, drug_class_1, 'https://www.provider_11.com/providerLevelPAformMedicare.pdf', NULL, NULL, 'https://www.provider_11.com/providerLevelMedicareformMA.pdf', TRUE);
 
 success=true;
 return success;
