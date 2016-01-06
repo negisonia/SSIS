@@ -8,6 +8,7 @@ provider_1_id INTEGER;
 provider_11_id INTEGER;
 commercial_plan_type_id INTEGER;
 hix_plan_type_id INTEGER;
+medicare_ma_plan_type_id INTEGER;
 
 BEGIN
 
