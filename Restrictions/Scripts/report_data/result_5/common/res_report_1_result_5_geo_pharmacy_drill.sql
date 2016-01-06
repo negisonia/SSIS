@@ -90,7 +90,7 @@ expected_rpt_geo_output=NULL;
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_criteria_lab_3, drug_1, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
 expected_rpt_geo_output=NULL;
-PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_criteria_lab_3, drug_2, county_market_type, ct_new_london_id, expected_rpt_geo_output);
+PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_d3_c1, drug_2, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
 
 success:=true;
