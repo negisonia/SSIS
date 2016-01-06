@@ -40,8 +40,8 @@ PERFORM res_rpt_specialty_pharmacy_form(report_id, commercial_plan_type_id, prov
 --MEDICARE MA
 --PA FORMS
 expected_output = format('['||
-'{"drug_id":%1$s,"drug_name":"drug_1","pa_policy_form_url":""},'||
-'{"drug_id":%2$s,"drug_name":"drug_2","pa_policy_form_url":""}'||
+'{"drug_id":%1$s,"drug_name":"drug_1","pa_policy_form_url":"https://www.provider_11.com/providerLevelPAformMedicare.pdf"},'||
+'{"drug_id":%2$s,"drug_name":"drug_2","pa_policy_form_url":"https://www.provider_11.com/providerLevelPAformMedicare.pdf"}'||
 ']',drug_1,drug_2);
 PERFORM res_rpt_pa_policy_form_url(report_id, medicare_plan_type_id, provider_11_id, format(druglist,drug_1,drug_2), expected_output);
 

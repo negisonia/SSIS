@@ -19,7 +19,7 @@ SELECT common_get_table_id_by_name('health_plan_types','medicare_ma') INTO medic
 SELECT common_get_table_id_by_name('providers','provider_1') INTO provider_1_id;
 SELECT common_get_table_id_by_name('providers','provider_11') INTO provider_11_id;
 
---ST COMMERCIAL DRUG 2
+--ST MEDICARE MA DRUG 2
 expected_output= '['||
 '{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"ST - Double - drug_3^1 AND CustomOption1^2","note_position":1,"notes":"Drug_2 notes: notes for custom option 1"},'||
 '{"indication_name":"indication_1","dim_criterion_type_id":2,"criterion_name":"ST - Double - drug_3^1 AND CustomOption1^2","note_position":1,"notes":"Drug_1 notes: notes for drug 3"}'||

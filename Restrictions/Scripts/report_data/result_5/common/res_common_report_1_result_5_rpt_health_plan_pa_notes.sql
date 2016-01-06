@@ -36,7 +36,7 @@ expected_output= '['||
 PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_1_id, commercial_plan_type_id, drug_2_id, dim_restriction_type_id, expected_output);
 
 --DRUG2 MEDICARE_MA PROVIDER 11
-expected_output= NULL;
+expected_output= null;
 PERFORM res_rpt_health_plan_notes_validate_data(report_id, provider_11_id, medicare_hpt, drug_2_id, dim_restriction_type_id, expected_output);
 
 
