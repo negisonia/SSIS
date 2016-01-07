@@ -57,13 +57,13 @@ expected_provider_notes= '['||
 ']';
 PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_11_id, medicare_hpt, drug_1_id, ind1_pa_criteria_lab_3, expected_provider_notes);
 
---DRUG 1 PROVIDER 11 COMMERCIAL PHARMACY CRITERIA age 1
-expected_provider_notes= null;
-PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_11_id, commercial_plan_type_id, drug_1_id, ind1_pa_age_1, expected_provider_notes);
+--DRUG 1 PROVIDER 11 MEDICARE MA PHARMACY CRITERIA age 1
+expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_age_1","note_position":1,"notes":"notes 1234"}]';
+PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_11_id, medicare_hpt, drug_1_id, ind1_pa_age_1, expected_provider_notes);
 
 --DRUG 1 PROVIDER 11 COMMERCIAL PHARMACY CRITERIA DIAGNOSIS 3
-expected_provider_notes= null;
-PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_11_id, commercial_plan_type_id, drug_1_id, ind1_pa_diagnosis_3, expected_provider_notes);
+expected_provider_notes= '[{"indication_name":"indication_1","indication_abbre":"Ind1","dim_criterion_type_id":1,"criterion_name":"criteria_diagnosis_3","note_position":1,"notes":"notes"}]';
+PERFORM res_rpt_provider_notes_validate_data(criteria_report_id, provider_11_id, medicare_hpt, drug_1_id, ind1_pa_diagnosis_3, expected_provider_notes);
 
 --DRUG 2 PROVIDER 1 COMMERCIAL PHARMACY CRITERIA UNSPECIFIED
 expected_provider_notes= '['||
