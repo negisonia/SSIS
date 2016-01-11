@@ -67,29 +67,31 @@ expected_rpt_geo_output='['||
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_ql, drug_2, county_market_type, ct_middlesex_id, expected_rpt_geo_output);
 
 --Drill down to Hartford, CT
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='['||
+'{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3","criteria_restriction_short_name":"criteria_diagnosis_3","market_name":"Hartford","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}'||
+']';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_diagnosis_3, drug_1, county_market_type, ct_hartford_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Age - criteria_age_1","criteria_restriction_short_name":"criteria_age_1","market_name":"Hartford","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_age_1, drug_1, county_market_type, ct_hartford_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Labs - criteria_lab_3","criteria_restriction_short_name":"criteria_lab_3","market_name":"Hartford","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_criteria_lab_3, drug_1, county_market_type, ct_hartford_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"ST - Double - drug_3 and custom_option_1","criteria_restriction_short_name":"drug_3 and custom_option_1","market_name":"Hartford","drug_name":"drug_2","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_d3_c1, drug_2, county_market_type, ct_hartford_id, expected_rpt_geo_output);
 
 --Drill down to New London, CT
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Diagnosis - criteria_diagnosis_3","criteria_restriction_short_name":"criteria_diagnosis_3","market_name":"New London","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_diagnosis_3, drug_1, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Age - criteria_age_1","criteria_restriction_short_name":"criteria_age_1","market_name":"New London","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_age_1, drug_1, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"PA - Labs - criteria_lab_3","criteria_restriction_short_name":"criteria_lab_3","market_name":"New London","drug_name":"drug_1","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_criteria_lab_3, drug_1, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
-expected_rpt_geo_output=NULL;
+expected_rpt_geo_output='[{"indication_name":"indication_1","indication_abbre":"Ind1","benefit_name":"Pharmacy","criteria_restriction_name":"ST - Double - drug_3 and custom_option_1","criteria_restriction_short_name":"drug_3 and custom_option_1","market_name":"New London","drug_name":"drug_2","lives":100,"health_plan_count":1,"provider_count":0,"total_pharmacy_lives":100,"total_medical_lives":0,"total_health_plan_count":1,"total_provider_count":0}]';
 PERFORM res_rpt_geo_drill_state_validate_data(report_id, pharmacy_benefit_type, county_market_type, ind1_pa_d3_c1, drug_2, county_market_type, ct_new_london_id, expected_rpt_geo_output);
 
 
