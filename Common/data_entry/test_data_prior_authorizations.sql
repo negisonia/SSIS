@@ -115,7 +115,7 @@ SELECT hpt.id INTO medicare_ma_health_plan_type_id FROM ff.health_plan_types_imp
 --CREATE DATA ENTRY
 	SELECT common_create_data_entry(indication_1, provider_1_id, hix_health_plan_type_id, drug_2) INTO data_entry_id;
 	--CREATE ATOMIC STEPS
-    --SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id ;
+    SELECT common_create_atomic_steps('custom_option_1', '1', 1, 'PA/Medical', 'custom_option_1^1') INTO atomic_step_id ;
 	--CREATE Prior Authorization
 	SELECT  common_create_prior_authorization(data_entry_id , TRUE,atomic_step_id) INTO pa_id;
 	--CREATE Prior Authorization Criterias
